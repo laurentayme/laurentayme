@@ -4,3 +4,228 @@
 
 #include "state/Exemple.h"
 #endif
+#include<string.h>
+
+namespace state {
+
+  /// class Position - 
+  class Position {
+    // Attributes
+  public:
+    int x;
+    int y;
+  };
+
+  /// class TypeId - 
+  class TypeId {
+    // Attributes
+  public:
+    int obstacle;
+    int space;
+    int character;
+  };
+
+  /// class Element - 
+  class Element {
+    // Associations
+    state::Position* unnamed;
+    state::TypeId* unnamed;
+    // Attributes
+  public:
+    Position position;
+    TypeId typeId;
+    // Operations
+  public:
+    Element ();
+    bool const isStatique ();
+    TypeId const getTypeId ();
+  };
+
+  /// class Direction - 
+  class Direction {
+    // Attributes
+  public:
+    int North;
+    int East;
+    int South;
+    int West;
+  };
+
+  /// class CharacterClass - 
+  class CharacterClass {
+    // Attributes
+  public:
+    int iop;
+    int sadida;
+    int sram;
+    int pandawa;
+    int cra;
+    int fantome;
+  };
+
+  /// class Equipment - 
+  class Equipment {
+    // Attributes
+  public:
+    std::string cape;
+    std::string casqueDesMercenaires;
+    std::string casque;
+     ;
+     ;
+     ;
+     ;
+  };
+
+  /// class CharacterStatut - 
+  class CharacterStatut {
+    // Attributes
+  public:
+    int normal;
+    int poisoned;
+    int dead;
+  };
+
+  /// class Abilities - 
+  class Abilities {
+    // Attributes
+  public:
+    List<std::string> iopAbilities;
+    List<std::string> sadidaAbilities;
+    List<std::string> sramAbilities;
+    List<std::string> pandawaAbilities;
+    List<std::string> craAbilities;
+    List<std::string> fantomeAbilities;
+  };
+
+  /// class Stats - 
+  class Stats {
+    // Attributes
+  public:
+    List<int> iopStats;
+    List<int> sadidaStats;
+    List<int> sramStats;
+    List<int> pandawaStats;
+    List<int> craStats;
+    List<int> fantomeStats;
+  };
+
+  /// class MobileElement - 
+  class MobileElement : public Element {
+    // Associations
+    state::Equipment* unnamed;
+    state::Direction* unnamed;
+    state::CharacterStatut* unnamed;
+    state::Abilities* unnamed;
+    state::Stats* unnamed;
+    state::CharacterClass* unnamed;
+    // Attributes
+  public:
+    Direction direction;
+    List<Stats> stats;
+    List<Abilities> abilities;
+    List<Equipment> equipment;
+    // Operations
+  public:
+    void MobileElement ();
+    bool const isPlayer ();
+    bool const isStatic ();
+    void getCharacterClass (CharacterClass selectedClass);
+    getStats (CharacterClass character, List<Stats> stats);
+    getAbilities (CharacterClass character, List<Abilities> abilities);
+    getEquipment (List<equipment> equiment);
+    void setCharacterClass (CharacterClass characterClass);
+  };
+
+  /// class StaticElement - 
+  class StaticElement : public Element {
+    // Operations
+  public:
+    bool const isStatic ();
+    bool const isObsctacle ();
+  };
+
+  /// class Obstacle - 
+  class Obstacle : public StaticElement {
+    // Operations
+  public:
+    void Obstacle ();
+    bool const isObstacle ();
+    bool const isWall ();
+    TypeId const getTypeId ();
+  };
+
+  /// class Wall - 
+  class Wall : public Obstacle {
+    // Operations
+  public:
+    wall ();
+    bool const isWall ();
+  };
+
+  /// class Landscape - 
+  class Landscape : public Obstacle {
+    // Operations
+  public:
+    landscape ();
+    bool const isObstacle ();
+    TypeId const getTypeId ();
+  };
+
+  /// class SpaceTypeId - 
+  class SpaceTypeId {
+    // Attributes
+  public:
+    int Empty;
+    int Start;
+    int Trap;
+  };
+
+  /// class Space - 
+  class Space : public StaticElement {
+    // Associations
+    state::SpaceTypeId* unnamed;
+    // Operations
+  public:
+    space (SpaceTypeId id);
+    bool const isSpace ();
+    TypeId const getTypeId ();
+    SpaceTypeId const getSpaceTypeId ();
+    void setSpaceTypeId (SpaceTypeId id);
+  };
+
+  /// class ElementTab - 
+  class ElementTab {
+    // Attributes
+  private:
+    size_t Width;
+    size_t height;
+    List<Element> elementList;
+    // Operations
+  public:
+    ElementTab (size_t width, size_t height);
+    size_t const getHeight ();
+    size_t const getWidth ();
+    Element* const getElement (Position position);
+    void setElement (Position position, Element* element*);
+    void resize (size_t width, size_t height);
+    size_t addElement (Element* e);
+  };
+
+  /// class State - 
+  class State {
+    // Associations
+    state::ElementTab* unnamed;
+    // Attributes
+  public:
+    int deadcount;
+  private:
+    ElementTab map;
+    ElementTab characters;
+    // Operations
+  public:
+    ElementTab& getGrid ();
+    ElementTab getCharacters ();
+  };
+
+};
+

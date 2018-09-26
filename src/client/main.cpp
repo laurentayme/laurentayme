@@ -18,9 +18,7 @@ using namespace state;
 
 int main(int argc,char* argv[]) 
 {
-    Exemple exemple;
-    exemple.setX(53);
-
+    
     /*cout << "It works !" << endl;*/
     if (argc>1){                 // vérifie s'il y a un argument
         if  (strcmp(argv[1],"hello")==0) {   // vérification que l'argument est le bon
