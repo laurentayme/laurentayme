@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/main.cpp.o -c /home/valentin/laurentayme/src/client/main.cpp",
+  "file": "/home/valentin/laurentayme/src/client/main.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/shared/state/Exemple.cpp.o -c /home/valentin/laurentayme/src/shared/state/Exemple.cpp",
+  "file": "/home/valentin/laurentayme/src/shared/state/Exemple.cpp"
+}
+]
