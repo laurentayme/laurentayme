@@ -1,4 +1,4 @@
-#include <vector>
+#include<vector>
 namespace state {
 
   /// class Position - 
@@ -7,6 +7,9 @@ namespace state {
   public:
     int x;
     int y;
+    // Operations
+  public:
+    Position ();
   };
 
   /// class TypeId - 
@@ -16,23 +19,11 @@ namespace state {
     int obstacle;
     int space;
     int character;
-  };
-
-  /// class Element - 
-  class Element {
-    // Associations
-    state::TypeId* unnamed;
-    state::Position* unnamed;
-    // Attributes
-  public:
-    Position position;
-    TypeId typeid;
     // Operations
   public:
-    Element ();
-    bool const isStatique ();
-    void const getTypeId ();
-    void setTypeId (TypeId typeid);
+    TypeId ();
+    TypeId const getTypeId ();
+    void setTypeId ();
   };
 
   /// class Direction - 
@@ -43,6 +34,9 @@ namespace state {
     int East;
     int South;
     int West;
+    // Operations
+  public:
+    Direction ();
   };
 
   /// class CharacterClass - 
@@ -55,39 +49,111 @@ namespace state {
     int pandawa;
     int cra;
     int fantome;
+    // Operations
+  public:
+    CharacterClass ();
   };
 
-  /// class Equipment - 
-  class Equipment {
+  /// class MobileElement - 
+  class MobileElement {
     // Attributes
   public:
-    std::string cape;
-    std::string casque;
-     ;
-     ;
-     ;
-     ;
+    int characterClass;
+    int characterStatut;
+    std::vector<Stats> stats;
+    std::vector<Abilities> abilities;
+    Direction direction;
+    std::vector<Equipment> equipment;
+    // Operations
+  public:
+    MobileElement ();
+    bool const isPlayer ();
+    void setCharacterClass (CharacterClass characterclass);
+    void getCharacterClass (CharacterClass selectedClass);
+    void setCharacterStatut (int statut);
+    int const getCharacterStatut ();
+    void setStats (std::vector<Stats> stats);
+    std::vector<Stats> getStats (std::vector<Stats> stats);
+    void setAbilities (std::vector<Abilities> abilities);
+    void getAbilities (std::vector<Abilities> abilities);
+    void setEquipment (std::vector<Equipment> equipment);
+    void getEquipment (std::vector<Equipment> equiment);
+    void setDirection (int direction);
+    int getDirection ();
   };
 
-  /// class CharacterStatut - 
-  class CharacterStatut {
+  /// class Element - 
+  class Element {
+    // Associations
+    state::TypeId* unnamed;
+    state::Position* unnamed;
     // Attributes
   public:
-    int normal;
-    int poisoned;
-    int dead;
+    Position position;
+    TypeId idType;
+    MobileElement mobileElement;
+    // Operations
+  public:
+    Element ();
+    int const getTypeId (TypeId idtype);
+    void setTypeId (TypeId idtype);
+    Position getPosition ();
+    void setPosition (Position position);
   };
 
-  /// class Abilities - 
-  class Abilities {
+  /// class StaticElement - 
+  class StaticElement : public Element {
+    // Operations
+  public:
+    StaticElement ();
+    bool const isObsctacle ();
+  };
+
+  /// class Obstacle - 
+  class Obstacle : public StaticElement {
+    // Operations
+  public:
+    Obstacle ();
+    bool const isWall ();
+  };
+
+  /// class Wall - 
+  class Wall : public Obstacle {
+    // Operations
+  public:
+    Wall ();
+  };
+
+  /// class Landscape - 
+  class Landscape : public Obstacle {
+    // Operations
+  public:
+    Landscape ();
+  };
+
+  /// class SpaceTypeId - 
+  class SpaceTypeId {
     // Attributes
   public:
-    std::vector<std::string> iopAbilities;
-    std::vector<std::string> sadidaAbilities;
-    std::vector<std::string> sramAbilities;
-    std::vector<std::string> pandawaAbilities;
-    std::vector<std::string> craAbilities;
-    std::vector<std::string> fantomeAbilities;
+    int Empty;
+    int Start;
+    int Trap;
+    // Operations
+  public:
+    SpaceTypeId ();
+  };
+
+  /// class Space - 
+  class Space : public StaticElement {
+    // Associations
+    state::SpaceTypeId* unnamed;
+    // Operations
+  public:
+    Space (SpaceTypeId id);
+    bool const isSpace ();
+    TypeId const getTypeId (TypeId idtype);
+    SpaceTypeId const getSpaceTypeId (SpaceTypeId spacetypeid);
+    void setSpaceTypeId (SpaceTypeId id);
   };
 
   /// class Stats - 
@@ -100,108 +166,71 @@ namespace state {
     std::vector<int> pandawaStats;
     std::vector<int> craStats;
     std::vector<int> fantomeStats;
+    // Operations
+  public:
+    Stats ();
   };
 
-  /// class MobileElement - 
-  class MobileElement : public Element {
-    // Associations
-    state::Equipment* unnamed;
-    state::Direction* unnamed;
-    state::CharacterStatut* unnamed;
-    state::Abilities* unnamed;
-    state::Stats* unnamed;
-    state::CharacterClass* unnamed;
+  /// class Abilities - 
+  class Abilities {
     // Attributes
   public:
-    Direction direction;
-    std::vector<Stats> stats;
-    std::vector<Abilities> abilities;
-    std::vector<Equipment> equipment;
+    std::vector<std::string> iopAbilities;
+    std::vector<std::string> sadidaAbilities;
+    std::vector<std::string> sramAbilities;
+    std::vector<std::string> pandawaAbilities;
+    std::vector<std::string> craAbilities;
+    std::vector<std::string> fantomeAbilities;
     // Operations
   public:
-    MobileElement ();
-    bool const isPlayer ();
-    bool const isStatic ();
-    void getCharacterClass (CharacterClass selectedClass);
-    void getStats (CharacterClass character, std::vector<Stats> stats);
-    void getAbilities (CharacterClass character, std::vector<Abilities> abilities);
-    void getEquipment (std::vector<Equipment> equiment);
-    void setCharacterClass (CharacterClass characterclass);
+    Abilities ();
   };
 
-  /// class StaticElement - 
-  class StaticElement : public Element {
-    // Operations
-  public:
-    bool const isStatic ();
-    bool const isObsctacle ();
-  };
-
-  /// class Obstacle - 
-  class Obstacle : public StaticElement {
-    // Operations
-  public:
-    Obstacle ();
-    bool const isObstacle ();
-    bool const isWall ();
-    void const getTypeId ();
-  };
-
-  /// class Wall - 
-  class Wall : public Obstacle {
-    // Operations
-  public:
-    Wall ();
-    bool const isWall ();
-  };
-
-  /// class Landscape - 
-  class Landscape : public Obstacle {
-    // Operations
-  public:
-    Landscape ();
-    bool const isObstacle ();
-    void const getTypeId ();
-  };
-
-  /// class SpaceTypeId - 
-  class SpaceTypeId {
+  /// class CharacterStatut - 
+  class CharacterStatut {
     // Attributes
   public:
-    int Empty;
-    int Start;
-    int Trap;
-  };
-
-  /// class Space - 
-  class Space : public StaticElement {
-    // Associations
-    state::SpaceTypeId* unnamed;
+    int normal;
+    int poisoned;
+    int dead;
     // Operations
   public:
-    Space (SpaceTypeId id);
-    bool const isSpace ();
-    void const getTypeId (TypeId typeid);
-    void const getSpaceTypeId (SpaceTypeId spacetypeid);
-    void setSpaceTypeId (SpaceTypeId id);
+    CharacterStatut ();
+  };
+
+  /// class Equipment - 
+  class Equipment {
+    // Attributes
+  public:
+    std::string cape;
+    std::string casque;
+     ;
+     ;
+     ;
+     ;
+    // Operations
+  public:
+    Equipment ();
   };
 
   /// class ElementTab - 
   class ElementTab {
     // Attributes
   private:
+    /// Largeur de la Map
     size_t Width;
+    /// Longueur de la Map
     size_t height;
     std::vector<Element> elementList;
     // Operations
   public:
-    ElementTab (size_t width, size_t height);
+    ElementTab (size_t width, size_t height, std::vector<Element> elementsList);
     size_t const getHeight ();
     size_t const getWidth ();
-    Element* const getElement (Position position);
-    void setElement (Position position, Element* element*);
+    element* const getElement (Position position);
+    void setElement (Position position, Element* element_ptr);
     void resize (size_t width, size_t height);
-    size_t addElement (Element* e);
+    void addElement (Element* e);
   };
 
   /// class State - 
@@ -213,11 +242,10 @@ namespace state {
     int deadcount;
   private:
     ElementTab map;
-    ElementTab characters;
     // Operations
   public:
-    ElementTab& getGrid ();
-    ElementTab getCharacters ();
+    State ();
+    ElementTab& getMap ();
   };
 
 };
