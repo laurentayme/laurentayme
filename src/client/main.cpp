@@ -19,16 +19,18 @@ int main(int argc,char* argv[])
         }
         else if (strcmp(argv[1],"state")==0){
             cout<<"Phase de Tests unitaires"<<endl;
-            
-            MobileElement iop;
-            iop.setCharacterClass(1);
-            iop.setCharacterstatut(1);
+   
             
            
         }
     }
     
+    Character iop("Iop");
     
+    iop.affiche_Classe();
+    
+    iop.affiche_AbilitiesList();
+  
     
     return 0;
 }
