@@ -20,13 +20,14 @@ namespace state {
     // Attributes
   private:
     /// Largeur de la Map
-    size_t Width;
+    size_t width;
     /// Longueur de la Map
     size_t height;
     std::vector<Element*> elementList;
     // Operations
   public:
     ElementTab (size_t width, size_t height, std::vector<Element*> elementsList);
+    ~ElementTab ();
     size_t const getHeight ();
     size_t const getWidth ();
     std::vector<Element*> getElementList ();

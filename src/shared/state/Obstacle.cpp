@@ -15,4 +15,5 @@ Obstacle::Obstacle(){
 }
 
 Obstacle::~Obstacle(){
+    
 }

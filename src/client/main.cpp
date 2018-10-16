@@ -27,11 +27,11 @@ int main(int argc,char* argv[])
     }
     
     Character iop("Iop");
-    vector<Element*> elementList;
-    //elementList.push_back(iop);
+    //vector<Element*> elementList;
+    ElementTab::addElement(iop);
     
     
-    //ElementTab carte(1,2,elementList);
+    ElementTab carte(1,2,elementList);
     
     
     //iop.affiche_AbilitiesList();

@@ -22,7 +22,7 @@ namespace state {
     StaticElement ();
     ~StaticElement ();
     StaticElement (Position* pos);
-    virtual bool const isObstacle ();
+    bool const isObstacle ();
     // Setters and Getters
     bool getObstacle() const;
     void setObstacle(bool obstacle);

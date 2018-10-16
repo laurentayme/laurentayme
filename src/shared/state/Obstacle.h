@@ -20,8 +20,8 @@ namespace state {
   public:
     Obstacle ();
     ~Obstacle ();
-    virtual bool const isWall ();
-    virtual bool const isObstacle ();
+    bool const isWall ();
+    bool const isObstacle ();
     // Setters and Getters
     bool getWall() const;
     void setWall(bool wall);
