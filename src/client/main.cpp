@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
+#include <vector>
 
 #include "state.h"
 
@@ -26,10 +27,14 @@ int main(int argc,char* argv[])
     }
     
     Character iop("Iop");
+    vector<Element*> elementList;
+    //elementList.push_back(iop);
     
-    iop.affiche_Classe();
     
-    iop.affiche_AbilitiesList();
+    //ElementTab carte(1,2,elementList);
+    
+    
+    //iop.affiche_AbilitiesList();
   
     
     return 0;
