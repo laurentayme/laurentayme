@@ -18,6 +18,7 @@ namespace state {
     Wall ();
     bool const isWall ();
     bool const isObstacle ();
+    void affiche_Classe ();
     // Setters and Getters
   };
 

@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "state.h"
+#include <iostream>
 
 using namespace state;
 
@@ -22,4 +23,8 @@ bool const Landscape::isWall(){
 
 bool const Landscape::isObstacle(){
     return(obstacle);
+}
+
+void Landscape::affiche_Classe(){
+    std::cout<<"Je suis un Landscape."<<std::endl;
 }

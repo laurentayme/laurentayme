@@ -21,6 +21,7 @@ namespace state {
     Space (int spaceType);
     int const getSpaceType ();
     bool const isObstacle ();
+    void affiche_Classe ();
     // Setters and Getters
   };
 

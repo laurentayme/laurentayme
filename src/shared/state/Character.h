@@ -52,10 +52,10 @@ namespace state {
     int const getDirection ();
     void setDirection (int direction);
     bool const isPlayer ();
-    void const affiche_Classe ();
+    void affiche_Classe ();
     void const affiche_Stats ();
     void const affiche_EquipmentList ();
-    void const affiche_AbilitiesList ();
+    virtual void const affiche_AbilitiesList ();
     // Setters and Getters
   };
 

@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "state.h"
+#include <iostream>
 
 using namespace state;
 
@@ -22,6 +23,10 @@ bool const Wall::isWall(){
 
 bool const Wall::isObstacle(){
     return(obstacle);
+}
+
+void Wall::affiche_Classe(){
+    std::cout<<"Je suis un Wall."<<std::endl;
 }
 
 

@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "state.h"
+#include <iostream>
 
 using namespace state;
 
@@ -22,4 +23,8 @@ int const Space::getSpaceType(){
 
 bool const Space::isObstacle(){
     return(obstacle);
+}
+
+void Space::affiche_Classe(){
+    std::cout<<"Je suis un Space."<<std::endl;
 }

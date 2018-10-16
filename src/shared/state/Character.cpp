@@ -158,7 +158,7 @@ void Character::setDirection(int dir){
     direction=dir;
 }
 
-void const Character::affiche_Classe(){
+void Character::affiche_Classe(){
     cout<<"Je suis un "<<characterClass<<"."<<endl;
 }
 

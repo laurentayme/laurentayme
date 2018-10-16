@@ -18,6 +18,7 @@ namespace state {
     Landscape ();
     bool const isObstacle ();
     bool const isWall ();
+    void affiche_Classe ();
     // Setters and Getters
   };
 

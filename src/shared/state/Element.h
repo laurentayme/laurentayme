@@ -28,6 +28,7 @@ namespace state {
     Position const getPosition ();
     void setPosition (Position& position);
     void const affiche_Position ();
+    virtual void affiche_Classe () = 0;
     // Setters and Getters
     const Position& getPosition_ptr() const;
     void setPosition_ptr(const Position& position_ptr);

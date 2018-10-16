@@ -43,3 +43,5 @@ void const Element::affiche_Position(){
     std::cout<<"Coordonnées actuelles: ("<<position->getX()<<","<<position->getY()<<")"<<std::endl;
 }
 
+
+
