@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "state.h"
 #include <iostream>
+#include <exception>
 
 using namespace std;
 using namespace state;
@@ -143,19 +144,40 @@ bool const Character::isPlayer(){
 }*/
 
 void Character::setPV(int life){
-    pv=life;
+	if(life>=0){
+		pv=life;
+	}
+	else{
+		pv=0;
+		throw "PV negatifs";
+	}
 }
 
 void Character::setPA(int action){
-    pa=action;
+	if(action>=0){
+		pa=action;
+	}
+	else{
+		throw "PA negatifs";
+	}
 }
 
 void Character::setPM(int move){
-    pm=move;
+	if(move>=0){
+		pm=move;
+	}
+	else{
+		throw "PM negatifs";
+	}
 }
 
 void Character::setDirection(int dir){
-    direction=dir;
+	if(dir<1 || dir>4){
+		throw "direction inconnue";
+	}
+	else{
+    		direction=dir;
+	}
 }
 
 void const Character::affiche_Classe(){

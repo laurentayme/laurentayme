@@ -2,6 +2,7 @@
 #ifndef STATE__POSITION__H
 #define STATE__POSITION__H
 
+#include <stdlib.h>
 
 namespace state {
 
@@ -9,8 +10,8 @@ namespace state {
   class Position {
     // Attributes
   private:
-    int x;
-    int y;
+    size_t x;
+    size_t y;
     // Operations
   public:
     Position (int x = 0, int y = 0);

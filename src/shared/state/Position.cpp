@@ -19,12 +19,22 @@ Position::Position(int abs, int ord){
 
 //Affectation position X
 void Position::setX(int abs){
-    x=abs;
+	if(abs>=0){
+		x=abs;
+	}
+	else{
+		throw "abscisse negative";
+	}
 }
 
 //Affectation position Y
 void Position::setY(int ord){
-    y=ord;
+	if(ord>=0){
+		y=ord;
+	}
+	else{
+		throw "Ordonnee negative";
+	}
 }
 
 int const Position::getX(){

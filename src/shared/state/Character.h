@@ -3,6 +3,7 @@
 #define STATE__CHARACTER__H
 
 #include <string>
+#include <stdlib.h>
 #include <vector>
 
 namespace state {
@@ -23,13 +24,13 @@ namespace state {
     // Attributes
   private:
     std::string characterClass;
-    int pv;
-    int pm;
-    int pa;
+    size_t pv;
+    size_t pm;
+    size_t pa;
     std::vector<Equipment*> equipment_List;
     std::vector<Abilities*> abilities_List;
     int statut;
-    int direction;
+    size_t direction;
     bool  player;
     // Operations
   public:

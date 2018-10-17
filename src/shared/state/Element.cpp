@@ -32,7 +32,12 @@ int const Element::getTypeId(){
 }
 
 void Element::setPosition(Position& futur_position){
-    *position=futur_position;
+	if(futur_position.getX()<0||futur_position.getY()<0){
+		throw "hors de la map";
+	}
+	else{
+		*position=futur_position;
+	}
 }
 
 void Element::setTypeId(int ty){

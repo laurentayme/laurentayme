@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <vector>
-
+#include<exception>
 #include "state.h"
 
 using namespace std;
@@ -26,17 +26,79 @@ int main(int argc,char* argv[])
         }
     }
     
-    Character iop("Iop");
-    //vector<Element*> elementList;
-    ElementTab::addElement(iop);
+ /*   Character* iop_ptr=new Character("Iop");
+    vector<Element*> elementList;
+    elementList.push_back(iop_ptr);
     
     
     ElementTab carte(1,2,elementList);
-    
+
+cout<<"largeur: "<<carte.getWidth()<<" longueur :"<<carte.getHeight()<<endl;
+ 	carte.resize(4,5);
+
+cout<<"largeur: "<<carte.getWidth()<<" longueur :"<<carte.getHeight()<<endl;*/
     
     //iop.affiche_AbilitiesList();
   
     
+	Character* iop=new Character("Iop");
+	try{
+		iop->setPV(-3);
+	}
+	catch(const char* e){
+		cout<<"Exception rencontree : "<<e<<endl;
+	}
+	
+	cout<<"PV actuels : "<<iop->getPV()<<endl;
+
+	try{
+		iop->setPA(-1);
+	}
+	catch(const char* e){
+		cout<<"Exception rencontree : "<<e<<endl;
+	}
+	cout<<"PA actuels : "<<iop->getPA()<<endl;
+	try{
+		iop->setPM(-2);
+	}
+	catch(const char* e){
+		cout<<"Exception rencontree : "<<e<<endl;
+	}
+	cout<<"PM actuels : "<<iop->getPM()<<endl;
+
+	try{
+		iop->setDirection(6);
+	}
+	catch(const char* e){
+		cout<<"Exception rencontree : "<<e<<endl;
+	}
+	Position pos;
+	try{
+		pos.setX(-1);
+	}
+	catch(const char* e){
+		cout<<"Exception rencontree : "<<e<<endl;
+	}
+	
+	try{
+		pos.setY(-3);
+	}
+	catch(const char* e){
+		cout<<"Exception rencontree : "<<e<<endl;
+	}
+
+	Position* pos1=new Position(-1,-3);
+
+	try{
+		iop->setPosition(*pos1);
+	}
+	catch(const char* e){
+		cout<<"Exception rencontree : "<<e<<endl;
+	}
+
+	delete iop;
+	delete pos1;
+
     return 0;
 }
 
