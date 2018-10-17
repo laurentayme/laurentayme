@@ -16,7 +16,7 @@ namespace state {
     std::string emplacement_equipment;
     // Operations
   public:
-    Equipment (std::string name, std::string emplacement, size_t stats);
+    Equipment (std::string name, std::string emplacement, int stats);
     std::string const getName ();
     std::string const getEmplacement ();
     size_t const getStats ();

@@ -85,7 +85,15 @@ void Test_Unitaire(){
             //Instancication ElementTab
             cout<<"   Instanciation ElementTab..."<<endl;
             vector<Element*> elementList;
-            ElementTab elTab(2,4,elementList);
+            try{
+                ElementTab elTab(2,4,elementList);
+            }
+            
+            catch(const char* e){
+                c+=1;
+                cout<<"   Exception: "<<e<<endl;
+            }
+            
             
             //Instancication Character
             cout<<"   Instanciation Character..."<<endl;
@@ -109,17 +117,27 @@ void Test_Unitaire(){
             
             //Instancication Space
             cout<<"   Instanciation Space..."<<endl;
-            Space* space;
+            Space* space=nullptr;
             try{
-                space= new Space(1);
+                space= new Space(0);
             }
             catch(const char* e){
-                cout<<"Exception: "<<e<<endl;
+                c+=1;
+                cout<<"   Exception: "<<e<<endl;
             }
             
             //Instancication Equipment
+            Equipment* epee_ptr=nullptr;
             cout<<"   Instanciation Equipment..."<<endl;
-            Equipment epee("Epée","main",5);
+            try{
+                epee_ptr= new Equipment("Epée","main",1); 
+            }
+            catch(const char* e){
+                c+=1;
+                cout<<"   Exception: "<<e<<endl;
+            }
+                
+                
             
             //Instancication Abilities
             cout<<"   Instanciation Abilities..."<<endl;
@@ -165,9 +183,11 @@ void Test_Unitaire(){
             cout<<endl;
             
             //Test affiche_Weapon de Equipment//
-            cout<<"   Test affiche_Weapon sur Equipment"<<endl;
-            cout<<"      Result: ";
-            epee.affiche_Weapon();
+            if(epee_ptr!=nullptr){
+                cout<<"   Test affiche_Weapon sur Equipment"<<endl;
+                cout<<"      Result: ";
+                epee_ptr->affiche_Weapon();
+            }
             
             cout<<endl;
             
