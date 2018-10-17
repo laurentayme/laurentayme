@@ -61,20 +61,20 @@ Character::Character (std::string Classname){
 
 Character::~Character(){
     // Destruction des pointeurs vers Equipement
-    for(int i=0;i<equipment_List.size();i++){
+    for(size_t i=0;i<equipment_List.size();i++){
         delete equipment_List[i];
         equipment_List[i]=0; //Remise à 0 des pointeurs equipement.
     }
     
     // Destruction des pointeurs vers Abilite
-    for(int i=0;i<abilities_List.size();i++){
+    for(size_t i=0;i<abilities_List.size();i++){
         delete abilities_List[i];
         abilities_List[i]=0; //Remise à 0 des pointeurs equipement.
     }
     
 }
 
-void Character::addEquipment(string nom, string emplacement, int degats){
+void Character::addEquipment(string nom, string emplacement, size_t degats){
     Equipment *equipment(0);// Initialisation pointeur arme nulle.
     equipment = new Equipment(nom,emplacement,degats);
     equipment_List.push_back(equipment); // Ajout d'un equipement dans notre liste d'équipements
@@ -93,7 +93,7 @@ void Character::addEquipment(Equipment *equipement){
 }
 
 void Character::removeEquipment(Equipment *equipment){
-    for(int i=0;i<equipment_List.size();i++){
+    for(size_t i=0;i<equipment_List.size();i++){
         if (equipment_List[i]->getName()==equipment->getName()){
             equipment_List.erase(equipment_List.begin()+i);
         }
@@ -104,23 +104,23 @@ std::string const Character::getClass(){
     return(characterClass);
 }
 
-int const Character::getPV(){
+size_t const Character::getPV(){
     return(pv);
 }
 
-int const Character::getPA(){
+size_t const Character::getPA(){
     return(pa);
 }
 
-int const Character::getPM(){
+size_t const Character::getPM(){
     return(pm);
 }
 
-int const Character::getStatut(){
+size_t const Character::getStatut(){
     return(statut);
 }
 
-int const Character::getDirection(){
+size_t const Character::getDirection(){
     return(direction);
 }
 
@@ -142,19 +142,19 @@ bool const Character::isPlayer(){
     characterClass=classe;
 }*/
 
-void Character::setPV(int life){
+void Character::setPV(size_t life){
     pv=life;
 }
 
-void Character::setPA(int action){
+void Character::setPA(size_t action){
     pa=action;
 }
 
-void Character::setPM(int move){
+void Character::setPM(size_t move){
     pm=move;
 }
 
-void Character::setDirection(int dir){
+void Character::setDirection(size_t dir){
     direction=dir;
 }
 
@@ -175,7 +175,7 @@ void const Character::affiche_EquipmentList(){
         cout<<"Aucun objet n'est équipé."<<endl;
     }
     else{
-        for(int i=0;i<equipment_List.size();i++){
+        for(size_t i=0;i<equipment_List.size();i++){
             cout<<"  ";
             equipment_List[i]->affiche_Weapon();
         }
@@ -188,7 +188,7 @@ void const Character::affiche_AbilitiesList(){
         cout<<"Aucune Abilité."<<endl;
     }
     else{
-        for(int i=0;i<abilities_List.size();i++){
+        for(size_t i=0;i<abilities_List.size();i++){
             cout<<"  ";
             cout<<abilities_List[i]->getName()<<endl;
         }

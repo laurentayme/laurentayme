@@ -2,6 +2,7 @@
 #ifndef STATE__DIRECTION__H
 #define STATE__DIRECTION__H
 
+#include <stdlib.h>
 
 namespace state {
 
@@ -10,10 +11,10 @@ namespace state {
   class Direction {
     // Attributes
   public:
-    int North     = 1;
-    int East     = 2;
-    int South     = 3;
-    int West     = 4;
+    size_t North     = 1;
+    size_t East     = 2;
+    size_t South     = 3;
+    size_t West     = 4;
     // Setters and Getters
   };
 

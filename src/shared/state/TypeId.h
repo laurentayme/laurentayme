@@ -2,6 +2,7 @@
 #ifndef STATE__TYPEID__H
 #define STATE__TYPEID__H
 
+#include <stdlib.h>
 
 namespace state {
 
@@ -10,8 +11,8 @@ namespace state {
   class TypeId {
     // Attributes
   private:
-    int staticElement     = 0;
-    int character     = 1;
+    size_t staticElement     = 0;
+    size_t character     = 1;
     // Setters and Getters
   };
 

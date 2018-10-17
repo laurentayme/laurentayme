@@ -2,6 +2,7 @@
 #ifndef STATE__SPACE__H
 #define STATE__SPACE__H
 
+#include <stdlib.h>
 
 namespace state {
   class StaticElement;
@@ -15,11 +16,11 @@ namespace state {
   class Space : public state::StaticElement {
     // Attributes
   private:
-    int spaceType;
+    size_t spaceType;
     // Operations
   public:
-    Space (int spaceType);
-    int const getSpaceType ();
+    Space (size_t spaceType);
+    size_t const getSpaceType ();
     bool const isObstacle ();
     void affiche_Classe ();
     // Setters and Getters

@@ -11,14 +11,14 @@ namespace state {
     // Attributes
   private:
     std::string name_equipment;
-    int stats_equipment;
+    size_t stats_equipment;
     std::string emplacement_equipment;
     // Operations
   public:
-    Equipment (std::string name, std::string emplacement, int stats);
+    Equipment (std::string name, std::string emplacement, size_t stats);
     std::string const getName ();
     std::string const getEmplacement ();
-    int const getStats ();
+    size_t const getStats ();
     void affiche_Weapon ();
     // Setters and Getters
   };

@@ -12,12 +12,12 @@
 
 using namespace state;
 
-Space::Space(int space){
+Space::Space(size_t space){
     spaceType=space;
     obstacle=false;
 }
 
-int const Space::getSpaceType(){
+size_t const Space::getSpaceType(){
     return(spaceType);
 }
 

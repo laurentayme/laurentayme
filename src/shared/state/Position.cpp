@@ -12,26 +12,26 @@
 using namespace state;
 
 //Constructeur
-Position::Position(int abs, int ord){
+Position::Position(size_t abs, size_t ord){
     x=abs;
     y=ord;
 }
 
 //Affectation position X
-void Position::setX(int abs){
+void Position::setX(size_t abs){
     x=abs;
 }
 
 //Affectation position Y
-void Position::setY(int ord){
+void Position::setY(size_t ord){
     y=ord;
 }
 
-int const Position::getX(){
+size_t const Position::getX(){
     return(x);
 }
 
-int const Position::getY(){
+size_t const Position::getY(){
     return(y);
 }
 

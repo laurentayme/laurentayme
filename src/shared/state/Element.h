@@ -2,6 +2,7 @@
 #ifndef STATE__ELEMENT__H
 #define STATE__ELEMENT__H
 
+#include <stdlib.h>
 
 namespace state {
   class Position;
@@ -18,13 +19,13 @@ namespace state {
     // Attributes
   protected:
     Position* position;
-    int idType;
+    size_t idType;
     // Operations
   public:
-    Element (int idtype = 0);
+    Element (size_t idtype = 0);
     ~Element ();
-    int const getTypeId ();
-    void setTypeId (int idtype);
+    size_t const getTypeId ();
+    void setTypeId (size_t idtype);
     Position const getPosition ();
     void setPosition (Position& position);
     void const affiche_Position ();
@@ -32,8 +33,8 @@ namespace state {
     // Setters and Getters
     const Position& getPosition_ptr() const;
     void setPosition_ptr(const Position& position_ptr);
-    int getIdType() const;
-    void setIdType(int idType);
+    const size_t& getIdType() const;
+    void setIdType(const size_t& idType);
   };
 
 };

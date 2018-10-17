@@ -2,6 +2,7 @@
 #ifndef STATE__STATUT__H
 #define STATE__STATUT__H
 
+#include <stdlib.h>
 
 namespace state {
 
@@ -10,9 +11,9 @@ namespace state {
   class Statut {
     // Attributes
   public:
-    int normal     = 1;
-    int poisoned     = 2;
-    int dead     = 3;
+    size_t normal     = 1;
+    size_t poisoned     = 2;
+    size_t dead     = 3;
     // Setters and Getters
   };
 

@@ -13,7 +13,7 @@
 using namespace std;
 using namespace state;
 
-Abilities::Abilities(std::string const name,int const  degats,int const Class_owner){
+Abilities::Abilities(std::string const name,size_t const  degats,size_t const Class_owner){
     name_ability=name;
     degats_ability=degats;
     classOwner_ability=Class_owner;
@@ -28,11 +28,11 @@ std::string const Abilities::getName(){
     return(name_ability);
 }
 
-int const Abilities::getDegats(){
+size_t const Abilities::getDegats(){
     return(degats_ability);
 }
 
-int const Abilities::getClassOwner(){
+size_t const Abilities::getClassOwner(){
     return(classOwner_ability);
 }
 

@@ -13,7 +13,7 @@
 using namespace std;
 using namespace state;
 
-Equipment::Equipment(string name, string emplacement, int stats){
+Equipment::Equipment(string name, string emplacement, size_t stats){
     // Vérification de l'emplacement
     if(emplacement=="main" || emplacement=="dos" || emplacement=="pied" || emplacement=="tete"){
         emplacement_equipment=emplacement;
@@ -35,7 +35,7 @@ string const Equipment::getEmplacement(){
     return(emplacement_equipment);
 }
 
-int const Equipment::getStats(){
+size_t const Equipment::getStats(){
     return(stats_equipment);
 }
 

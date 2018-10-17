@@ -3,6 +3,7 @@
 #define STATE__ABILITIES__H
 
 #include <string>
+#include <stdlib.h>
 
 namespace state {
 
@@ -15,11 +16,11 @@ namespace state {
     int classOwner_ability;
     // Operations
   public:
-    Abilities (std::string const name, int const degats, int const owner);
+    Abilities (std::string const name, size_t const degats, size_t const owner);
      ~Abilities ();
     std::string const getName ();
-    int const getDegats ();
-    int const getClassOwner ();
+    size_t const getDegats ();
+    size_t const getClassOwner ();
     void const afficheStats ();
     // Setters and Getters
   };

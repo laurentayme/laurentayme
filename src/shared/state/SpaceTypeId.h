@@ -2,6 +2,7 @@
 #ifndef STATE__SPACETYPEID__H
 #define STATE__SPACETYPEID__H
 
+#include <stdlib.h>
 
 namespace state {
 
@@ -10,9 +11,9 @@ namespace state {
   class SpaceTypeId {
     // Attributes
   public:
-    int Empty     = 1;
-    int Start     = 2;
-    int Trap     = 3;
+    size_t Empty     = 1;
+    size_t Start     = 2;
+    size_t Trap     = 3;
     // Setters and Getters
   };
 

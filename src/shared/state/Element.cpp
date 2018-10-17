@@ -12,7 +12,7 @@
 
 using namespace state;
 
-Element::Element(int type){
+Element::Element(size_t type){
     position =0; // Initialisation du pointeur à l'adresse nulle
     position = new Position();
     idType=type; //Initialisation du type d'Element
@@ -27,7 +27,7 @@ Position const Element::getPosition(){
     return(*position);
 }
 
-int const Element::getTypeId(){
+size_t const Element::getTypeId(){
     return(idType);
 }
 
@@ -35,7 +35,7 @@ void Element::setPosition(Position& futur_position){
     *position=futur_position;
 }
 
-void Element::setTypeId(int ty){
+void Element::setTypeId(size_t ty){
     idType=ty;
 }
 
