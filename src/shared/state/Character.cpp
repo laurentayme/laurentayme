@@ -149,6 +149,11 @@ bool const Character::isPlayer(){
 void Character::setPV(int life){
     if(life>=0){
         pv=life;
+        
+        if (pv==0){
+            setStatut(3);
+        }
+        
     }
     else{
         pv=0;
@@ -219,6 +224,27 @@ void const Character::affiche_AbilitiesList(){
             cout<<"  ";
             cout<<abilities_List[i]->getName()<<endl;
         }
+    }
+}
+
+void Character::setStatut(int act_statut){
+    if(act_statut>=1 && act_statut<=3){
+        statut=act_statut;
+    }
+    else{
+        throw "Statut incorrect !";
+    }
+}
+
+void const Character::afficheStatut(){
+    if(statut==1){
+        cout<<"Votre personnage est en état 'normal'."<<endl;
+    }
+    else if(statut==2){
+        cout<<"Votre personnage est en état 'empoisonné'."<<endl;
+    }
+    else{
+        cout<<"Votre personnage est en état 'mort'."<<endl;
     }
 }
 
