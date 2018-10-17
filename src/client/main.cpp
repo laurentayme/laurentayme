@@ -27,7 +27,7 @@ int main(int argc,char* argv[])
     
     /*cout << "It works !" << endl;*/
     
-    
+    /*
     Character* iop_ptr=new Character("Iop");
     Position* pos = new Position(4,3);
     iop_ptr->setPosition(*pos);
@@ -60,22 +60,13 @@ int main(int argc,char* argv[])
     
     
     ElementTab carte(1,2,elementList);
-    
-    //carte.getElementList()[0]->affiche_Classe();
-    
-    /*Landscape land;
-    Wall wall;
-    Space space(1);
-    land.affiche_Classe();
-    wall.affiche_Classe();
-    space.affiche_Classe();*/
-  
+  */
     
     return 0;
 }
 
 void Test_Unitaire(){
-    
+            size_t c=0;
             cout<<"//Phase de Tests unitaires//"<<endl;
             cout<<endl;
 
@@ -86,7 +77,7 @@ void Test_Unitaire(){
             cout<<"   Instanciation ElementTab..."<<endl;
             vector<Element*> elementList;
             try{
-                ElementTab elTab(2,4,elementList);
+                ElementTab elTab(2,-1,elementList);
             }
             
             catch(const char* e){
@@ -98,9 +89,9 @@ void Test_Unitaire(){
             //Instancication Character
             cout<<"   Instanciation Character..."<<endl;
             Character* iop_ptr=nullptr;
-            size_t c=0;
+           
             try{
-                iop_ptr= new Character("Io");
+                iop_ptr= new Character("Iop");
             }
             catch(const char* e){
                 c+=1;
@@ -192,8 +183,8 @@ void Test_Unitaire(){
             cout<<endl;
             
             //Test affiche_Position...//
+            cout<<"   Test affiche_Position..."<<endl;
             if(iop_ptr!=nullptr){
-                cout<<"   Test affiche_Position..."<<endl;
                 cout<<"      Test sur Character"<<endl;
                 cout<<"      Result: ";
             
@@ -228,9 +219,25 @@ void Test_Unitaire(){
             //Test affiche_EquipmentList de Character//
             if(iop_ptr!=nullptr){
                 cout<<"   Test affiche_EquipmentList sur Character"<<endl;
-                cout<<"      Result: ";
+                cout<<"   Result: ";
                 iop_ptr->affiche_EquipmentList();
             }
+            
+            cout<<endl;
+            
+            //Test affiche_Statut de Character//
+            if(iop_ptr!=nullptr){
+                cout<<"   Test affiche_Statut sur Character"<<endl;
+                cout<<"   Result: ";
+                iop_ptr->afficheStatut();
+                iop_ptr->setPV(0);
+                iop_ptr->afficheStatut();
+                
+            }
+            
+            
+            
+            
             delete iop_ptr;
             iop_ptr=nullptr;
             

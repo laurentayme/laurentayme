@@ -49,6 +49,7 @@ namespace state {
     void removeEquipment (Equipment* equipment);
     bool const isEquipped (Equipment* equipment_ptr);
     size_t const getStatut ();
+    void setStatut (int act_statut);
     std::vector<Abilities*> const getAbilitiesList ();
     size_t const getDirection ();
     void setDirection (int direction);
@@ -57,6 +58,7 @@ namespace state {
     void const affiche_Stats ();
     void const affiche_EquipmentList ();
     virtual void const affiche_AbilitiesList ();
+    void const afficheStatut ();
     // Setters and Getters
     const std::string& getCharacterClass() const;
     void setCharacterClass(const std::string& characterClass);
@@ -70,7 +72,6 @@ namespace state {
     void setEquipment_List(const std::vector<Equipment*>& equipment_List);
     const std::vector<Abilities*>& getAbilities_List() const;
     void setAbilities_List(const std::vector<Abilities*>& abilities_List);
-    void setStatut(const size_t& statut);
     const bool & getPlayer() const;
     void setPlayer(const bool & player);
   };
