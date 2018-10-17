@@ -16,7 +16,7 @@ namespace state {
     int classOwner_ability;
     // Operations
   public:
-    Abilities (std::string const name, size_t const degats, size_t const owner);
+    Abilities (std::string const name, int const degats);
      ~Abilities ();
     std::string const getName ();
     size_t const getDegats ();

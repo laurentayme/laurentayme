@@ -32,10 +32,10 @@ Character::Character (std::string Classname){
         equipment_List.push_back(epee);
         
         //Création des abilités adéquates
-        Abilities* coup_epee(new Abilities("Coup d'Epée",4,1));
+        Abilities* coup_epee(new Abilities("Coup d'Epée",4));
         abilities_List.push_back(coup_epee);
         
-        Abilities* colere(new Abilities("Colère",3,1));
+        Abilities* colere(new Abilities("Colère",3));
         abilities_List.push_back(colere);
         
         
@@ -51,15 +51,15 @@ Character::Character (std::string Classname){
         equipment_List.push_back(baton);
                          
         //Création des abilités adéquates
-        Abilities* coup_baton(new Abilities("Coup de bâton",2,2));
+        Abilities* coup_baton(new Abilities("Coup de bâton",2));
         abilities_List.push_back(coup_baton);
         
-        Abilities* sortilege(new Abilities("Sortilège",4,2));
+        Abilities* sortilege(new Abilities("Sortilège",4));
         abilities_List.push_back(sortilege);
     }
     
     else{
-        throw "Classe Incorrecte !";
+        throw "Classe Incorrecte ! (Tapez 'Iop' ou 'Sadida')";
     }
 }
 

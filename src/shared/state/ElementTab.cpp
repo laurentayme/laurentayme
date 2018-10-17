@@ -18,7 +18,7 @@ ElementTab::ElementTab(int w, int h,std::vector<Element*> elementList){
     		this->elementList=elementList;
 	}
 	else{
-		throw "dimensions map impossibles";
+		throw "Dimensions de la map incorrectes !";
 	}
 
 }

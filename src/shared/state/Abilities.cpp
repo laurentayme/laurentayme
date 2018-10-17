@@ -13,10 +13,17 @@
 using namespace std;
 using namespace state;
 
-Abilities::Abilities(std::string const name,size_t const  degats,size_t const Class_owner){
-    name_ability=name;
-    degats_ability=degats;
-    classOwner_ability=Class_owner;
+Abilities::Abilities(std::string const name,int const  degats){
+    
+    if(degats>=0){
+        name_ability=name;
+        degats_ability=degats;
+    }
+    else{
+        throw "Degats Abilité Incorrects !";
+    }
+    
+    
 }
 
 Abilities::~Abilities(){

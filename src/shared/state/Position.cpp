@@ -13,8 +13,14 @@ using namespace state;
 
 //Constructeur
 Position::Position(int abs, int ord){
-    x=abs;
-    y=ord;
+    if(abs>=0 && ord>=0){
+        x=abs;
+        y=ord;
+    }
+    else{
+        throw "Coordonnées Incorrectes !";
+    }
+    
 }
 
 //Affectation position X
@@ -23,7 +29,7 @@ void Position::setX(int abs){
 		x=abs;
 	}
 	else{
-		throw "abscisse negative";
+		throw "Abscisse negative !";
 	}
 }
 
@@ -33,7 +39,7 @@ void Position::setY(int ord){
 		y=ord;
 	}
 	else{
-		throw "Ordonnee negative";
+		throw "Ordonnee negative !";
 	}
 }
 

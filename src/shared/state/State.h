@@ -19,7 +19,7 @@ namespace state {
     ElementTab* carte;
     // Operations
   public:
-    State ();
+    State (ElementTab* carte);
     ElementTab* getMap ();
     // Setters and Getters
   };

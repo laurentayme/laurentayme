@@ -21,7 +21,8 @@ Equipment::Equipment(string name, string emplacement, int stats){
         stats_equipment=stats;
     }
     else{
-        throw "Veuillez rentrer un emplacement valide: 'main', 'dos', 'pied' ou 'tete', et un nombre de dégats correct !";
+        throw "Veuillez rentrer un emplacement valide: 'main', 'dos', 'pied' ou 'tete',\n"
+                "   et un nombre de dégats correct !";
     }
     
     

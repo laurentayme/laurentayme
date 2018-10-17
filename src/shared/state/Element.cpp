@@ -12,10 +12,16 @@
 
 using namespace state;
 
-Element::Element(size_t type){
-    position =0; // Initialisation du pointeur à l'adresse nulle
-    position = new Position();
-    idType=type; //Initialisation du type d'Element
+Element::Element(size_t idtype){
+    if(idtype==0 || idtype==1){
+        position =0; // Initialisation du pointeur à l'adresse nulle
+        position = new Position();
+        idType=idtype; //Initialisation du type d'Element
+    }
+    else{
+        throw "Type d'Element Incorrect ! (0=StaticElement / 1=Character)";
+    }
+    
 }
 
 Element::~Element(){
@@ -36,7 +42,12 @@ void Element::setPosition(Position& futur_position){
 }
 
 void Element::setTypeId(size_t ty){
-    idType=ty;
+    if(ty==0 || ty==1){
+        idType=ty;
+    }
+    else{
+        throw "Type d'Element Incorrect ! (0=StaticElement / 1=Character)";
+    }
 }
 
 void const Element::affiche_Position(){
