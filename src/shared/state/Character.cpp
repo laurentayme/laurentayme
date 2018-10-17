@@ -57,6 +57,10 @@ Character::Character (std::string Classname){
         Abilities* sortilege(new Abilities("Sortilège",4,2));
         abilities_List.push_back(sortilege);
     }
+    
+    else{
+        throw "Classe Incorrecte !";
+    }
 }
 
 Character::~Character(){
@@ -142,20 +146,43 @@ bool const Character::isPlayer(){
     characterClass=classe;
 }*/
 
-void Character::setPV(size_t life){
-    pv=life;
+void Character::setPV(int life){
+    if(life>=0){
+        pv=life;
+    }
+    else{
+        pv=0;
+        throw "PV ne peuvent être négatifs !";
+    }
+    
 }
 
-void Character::setPA(size_t action){
-    pa=action;
+void Character::setPA(int action){
+    if(action>=0){
+        pa=action;
+    }
+    else{
+        throw "PA ne peuvent être négatifs !";
+    }
 }
 
-void Character::setPM(size_t move){
-    pm=move;
+void Character::setPM(int move){
+    if(move>=0){
+        pm=move;
+    }
+    else{
+        throw "PM ne peuvent être négatifs !";
+    }
 }
 
-void Character::setDirection(size_t dir){
-    direction=dir;
+void Character::setDirection(int dir){
+    if( dir >=1 && dir <=4 ){
+        direction=dir;
+    }
+    else{
+        throw "Direction Incorrecte !";
+    }
+    
 }
 
 void Character::affiche_Classe(){

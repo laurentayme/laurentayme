@@ -23,7 +23,7 @@ namespace state {
     // Operations
   public:
     Element (size_t idtype = 0);
-    ~Element ();
+    virtual ~Element ();
     size_t const getTypeId ();
     void setTypeId (size_t idtype);
     Position const getPosition ();

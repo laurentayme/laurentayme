@@ -13,8 +13,13 @@
 using namespace state;
 
 Space::Space(size_t space){
-    spaceType=space;
-    obstacle=false;
+    if (space>=1 && space <=3){
+        spaceType=space;
+        obstacle=false;
+    }
+    else{
+        throw "Type de Space Incorrect !";
+    }
 }
 
 size_t const Space::getSpaceType(){

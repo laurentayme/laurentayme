@@ -3,6 +3,7 @@
 #define STATE__EQUIPMENT__H
 
 #include <string>
+#include <stdlib.h>
 
 namespace state {
 

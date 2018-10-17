@@ -38,11 +38,11 @@ namespace state {
      ~Character ();
     std::string const getClass ();
     size_t const getPV ();
-    void setPV (size_t pv);
+    void setPV (int pv);
     size_t const getPA ();
-    void setPA (size_t pa);
+    void setPA (int pa);
     size_t const getPM ();
-    void setPM (size_t pm);
+    void setPM (int pm);
     std::vector<Equipment*> const getEquipmentList ();
     void addEquipment (std::string nom, std::string emplacement, size_t degats);
     void addEquipment (Equipment* equipment);
@@ -51,7 +51,7 @@ namespace state {
     size_t const getStatut ();
     std::vector<Abilities*> const getAbilitiesList ();
     size_t const getDirection ();
-    void setDirection (size_t direction);
+    void setDirection (int direction);
     bool const isPlayer ();
     void affiche_Classe ();
     void const affiche_Stats ();
