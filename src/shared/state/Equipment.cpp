@@ -13,15 +13,15 @@
 using namespace std;
 using namespace state;
 
-Equipment::Equipment(string name, string emplacement, size_t stats){
+Equipment::Equipment(string name, string emplacement, int stats){
     // Vérification de l'emplacement
-    if(emplacement=="main" || emplacement=="dos" || emplacement=="pied" || emplacement=="tete"){
+    if((emplacement=="main" || emplacement=="dos" || emplacement=="pied" || emplacement=="tete") && stats>=0){
         emplacement_equipment=emplacement;
         name_equipment=name;
         stats_equipment=stats;
     }
     else{
-        cout<<"Veuillez rentrer un emplacement valide: 'main', 'dos', 'pied' ou 'tete'."<<endl;
+        throw "Veuillez rentrer un emplacement valide: 'main', 'dos', 'pied' ou 'tete', et un nombre de dégats correct !";
     }
     
     

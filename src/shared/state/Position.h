@@ -14,9 +14,9 @@ namespace state {
     size_t y;
     // Operations
   public:
-    Position (size_t x = 0, size_t y = 0);
-    void setX (size_t x);
-    void setY (size_t y);
+    Position (int x = 0, int y = 0);
+    void setX (int x);
+    void setY (int y);
     size_t const getX ();
     size_t const getY ();
     // Setters and Getters

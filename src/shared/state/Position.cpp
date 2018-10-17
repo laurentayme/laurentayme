@@ -12,19 +12,29 @@
 using namespace state;
 
 //Constructeur
-Position::Position(size_t abs, size_t ord){
+Position::Position(int abs, int ord){
     x=abs;
     y=ord;
 }
 
 //Affectation position X
-void Position::setX(size_t abs){
-    x=abs;
+void Position::setX(int abs){
+	if(abs>=0){
+		x=abs;
+	}
+	else{
+		throw "abscisse negative";
+	}
 }
 
 //Affectation position Y
-void Position::setY(size_t ord){
-    y=ord;
+void Position::setY(int ord){
+	if(ord>=0){
+		y=ord;
+	}
+	else{
+		throw "Ordonnee negative";
+	}
 }
 
 size_t const Position::getX(){
@@ -34,9 +44,6 @@ size_t const Position::getX(){
 size_t const Position::getY(){
     return(y);
 }
-
-
-
 
 
 
