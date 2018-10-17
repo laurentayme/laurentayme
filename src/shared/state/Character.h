@@ -49,6 +49,7 @@ namespace state {
     void removeEquipment (Equipment* equipment);
     bool const isEquipped (Equipment* equipment_ptr);
     int const getStatut ();
+    void setStatut (int act_statut);
     std::vector<Abilities*> const getAbilitiesList ();
     int const getDirection ();
     void setDirection (int direction);
@@ -57,6 +58,7 @@ namespace state {
     void const affiche_Stats ();
     void const affiche_EquipmentList ();
     void const affiche_AbilitiesList ();
+    void afficheStatut ();
     // Setters and Getters
   };
 
