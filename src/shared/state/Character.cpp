@@ -58,6 +58,9 @@ Character::Character (std::string Classname){
         Abilities* sortilege(new Abilities("Sortilège",4,2));
         abilities_List.push_back(sortilege);
     }
+	else{
+		throw "classe incorecte";
+	}
 }
 
 Character::~Character(){
