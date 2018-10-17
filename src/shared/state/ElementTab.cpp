@@ -11,10 +11,16 @@
 
 using namespace state;
 
-ElementTab::ElementTab(size_t w, size_t h,std::vector<Element*> elementList){
-    width=w;
-    height=h;
-    this->elementList=elementList;
+ElementTab::ElementTab(int w, int h,std::vector<Element*> elementList){
+	if(w>=0&&h>=0){
+		width=w;
+		height=h;
+    		this->elementList=elementList;
+	}
+	else{
+		throw "dimensions map impossibles";
+	}
+
 }
 
 ElementTab::~ElementTab(){

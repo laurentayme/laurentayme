@@ -36,12 +36,11 @@ void Position::setY(int ord){
 		throw "Ordonnee negative";
 	}
 }
-
-int const Position::getX(){
+size_t const Position::getX(){
     return(x);
 }
 
-int const Position::getY(){
+size_t const Position::getY(){
     return(y);
 }
 

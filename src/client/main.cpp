@@ -75,6 +75,7 @@ void TestsUnitaires(){
 		cout<<"Exception rencontree : "<<e<<endl;
 	}
 
+
 	delete iop;
 	delete pos1;
 
@@ -96,7 +97,7 @@ int main(int argc,char* argv[])
         }
         else if (strcmp(argv[1],"state")==0){
             cout<<"Phase de Tests unitaires"<<endl;
-   
+		    TestsUnitaires();
             
            
         }
@@ -116,7 +117,7 @@ cout<<"largeur: "<<carte.getWidth()<<" longueur :"<<carte.getHeight()<<endl;*/
     
     //iop.affiche_AbilitiesList();
   
-    TestsUnitaires();
+
 	
 
     return 0;
