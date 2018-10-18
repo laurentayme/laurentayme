@@ -15,7 +15,6 @@ namespace state {
   /// class Element - 
   class Element {
     // Associations
-    state::Position position_ptr;
     // Attributes
   protected:
     Position* position;
@@ -31,8 +30,6 @@ namespace state {
     void const affiche_Position ();
     virtual void affiche_Classe () = 0;
     // Setters and Getters
-    const Position& getPosition_ptr() const;
-    void setPosition_ptr(const Position& position_ptr);
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);
   };

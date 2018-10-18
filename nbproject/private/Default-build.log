@@ -1,9 +1,0 @@
-running /home/valentin/plt/bin/dia2code -ns state -d ../src/shared -t cpp ../src/state.dia  2>&1
--- Found SFML 2.3.2 in /usr/include
--- Configuring done
--- Generating done
--- Build files have been written to: /home/valentin/plt/build
-[ 33%] Building CXX object CMakeFiles/client.dir/src/client/main.cpp.o
-[ 66%] Building CXX object CMakeFiles/client.dir/src/shared/state/Exemple.cpp.o
-[100%] Linking CXX executable ../bin/client
-[100%] Built target client
