@@ -1,0 +1,67 @@
+[
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/State.cpp.o -c /home/valentin/laurentayme/src/client/State.cpp",
+  "file": "/home/valentin/laurentayme/src/client/State.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/Element.cpp.o -c /home/valentin/laurentayme/src/client/Element.cpp",
+  "file": "/home/valentin/laurentayme/src/client/Element.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/ElementTab.cpp.o -c /home/valentin/laurentayme/src/client/ElementTab.cpp",
+  "file": "/home/valentin/laurentayme/src/client/ElementTab.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/Wall.cpp.o -c /home/valentin/laurentayme/src/client/Wall.cpp",
+  "file": "/home/valentin/laurentayme/src/client/Wall.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/StaticElement.cpp.o -c /home/valentin/laurentayme/src/client/StaticElement.cpp",
+  "file": "/home/valentin/laurentayme/src/client/StaticElement.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/Abilities.cpp.o -c /home/valentin/laurentayme/src/client/Abilities.cpp",
+  "file": "/home/valentin/laurentayme/src/client/Abilities.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/Position.cpp.o -c /home/valentin/laurentayme/src/client/Position.cpp",
+  "file": "/home/valentin/laurentayme/src/client/Position.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/Obstacle.cpp.o -c /home/valentin/laurentayme/src/client/Obstacle.cpp",
+  "file": "/home/valentin/laurentayme/src/client/Obstacle.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/Landscape.cpp.o -c /home/valentin/laurentayme/src/client/Landscape.cpp",
+  "file": "/home/valentin/laurentayme/src/client/Landscape.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/Character.cpp.o -c /home/valentin/laurentayme/src/client/Character.cpp",
+  "file": "/home/valentin/laurentayme/src/client/Character.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/Equipment.cpp.o -c /home/valentin/laurentayme/src/client/Equipment.cpp",
+  "file": "/home/valentin/laurentayme/src/client/Equipment.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/Space.cpp.o -c /home/valentin/laurentayme/src/client/Space.cpp",
+  "file": "/home/valentin/laurentayme/src/client/Space.cpp"
+},
+{
+  "directory": "/home/valentin/laurentayme",
+  "command": "/usr/bin/g++    -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared   -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/client.dir/src/client/main.cpp.o -c /home/valentin/laurentayme/src/client/main.cpp",
+  "file": "/home/valentin/laurentayme/src/client/main.cpp"
+}
+]
