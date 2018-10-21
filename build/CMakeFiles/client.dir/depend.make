@@ -210,6 +210,35 @@ CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/TypeId
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Wall.h
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/client/StaticElement.cpp
 
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Abilities.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Character.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Direction.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Element.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/ElementTab.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Equipment.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Obstacle.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Position.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Space.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/SpaceTypeId.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/State.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/StaticElement.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Statut.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/TypeId.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/Surface.cpp
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/CharacterTileSet.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/ElementTabLayer.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/Layer.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/MapTileSet.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/StateLayer.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/StateTileSet.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/Surface.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/Tile.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/TileSet.h
+
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Character.h

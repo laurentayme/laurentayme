@@ -210,6 +210,35 @@ CMakeFiles/client.dir/src/client/StaticElement.cpp.o
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  /home/valentin/laurentayme/src/client/StaticElement.cpp
+CMakeFiles/client.dir/src/client/Surface.cpp.o
+ ../src/shared/state.h
+ ../src/shared/state/Abilities.h
+ ../src/shared/state/Character.h
+ ../src/shared/state/Direction.h
+ ../src/shared/state/Element.h
+ ../src/shared/state/ElementTab.h
+ ../src/shared/state/Equipment.h
+ ../src/shared/state/Landscape.h
+ ../src/shared/state/Obstacle.h
+ ../src/shared/state/Position.h
+ ../src/shared/state/Space.h
+ ../src/shared/state/SpaceTypeId.h
+ ../src/shared/state/State.h
+ ../src/shared/state/StaticElement.h
+ ../src/shared/state/Statut.h
+ ../src/shared/state/TypeId.h
+ ../src/shared/state/Wall.h
+ /home/valentin/laurentayme/src/client/Surface.cpp
+ /home/valentin/laurentayme/src/client/render.h
+ /home/valentin/laurentayme/src/client/render/CharacterTileSet.h
+ /home/valentin/laurentayme/src/client/render/ElementTabLayer.h
+ /home/valentin/laurentayme/src/client/render/Layer.h
+ /home/valentin/laurentayme/src/client/render/MapTileSet.h
+ /home/valentin/laurentayme/src/client/render/StateLayer.h
+ /home/valentin/laurentayme/src/client/render/StateTileSet.h
+ /home/valentin/laurentayme/src/client/render/Surface.h
+ /home/valentin/laurentayme/src/client/render/Tile.h
+ /home/valentin/laurentayme/src/client/render/TileSet.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o
  ../src/shared/state.h
  ../src/shared/state/Abilities.h

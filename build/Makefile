@@ -420,6 +420,33 @@ src/client/StaticElement.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/StaticElement.cpp.s
 .PHONY : src/client/StaticElement.cpp.s
 
+src/client/Surface.o: src/client/Surface.cpp.o
+
+.PHONY : src/client/Surface.o
+
+# target to build an object file
+src/client/Surface.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Surface.cpp.o
+.PHONY : src/client/Surface.cpp.o
+
+src/client/Surface.i: src/client/Surface.cpp.i
+
+.PHONY : src/client/Surface.i
+
+# target to preprocess a source file
+src/client/Surface.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Surface.cpp.i
+.PHONY : src/client/Surface.cpp.i
+
+src/client/Surface.s: src/client/Surface.cpp.s
+
+.PHONY : src/client/Surface.s
+
+# target to generate assembly for a file
+src/client/Surface.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Surface.cpp.s
+.PHONY : src/client/Surface.cpp.s
+
 src/client/Wall.o: src/client/Wall.cpp.o
 
 .PHONY : src/client/Wall.o
@@ -516,6 +543,9 @@ help:
 	@echo "... src/client/StaticElement.o"
 	@echo "... src/client/StaticElement.i"
 	@echo "... src/client/StaticElement.s"
+	@echo "... src/client/Surface.o"
+	@echo "... src/client/Surface.i"
+	@echo "... src/client/Surface.s"
 	@echo "... src/client/Wall.o"
 	@echo "... src/client/Wall.i"
 	@echo "... src/client/Wall.s"

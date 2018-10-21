@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/src/client/ElementTab.cpp.o"
   "CMakeFiles/client.dir/src/client/Wall.cpp.o"
   "CMakeFiles/client.dir/src/client/StaticElement.cpp.o"
+  "CMakeFiles/client.dir/src/client/Surface.cpp.o"
   "CMakeFiles/client.dir/src/client/Abilities.cpp.o"
   "CMakeFiles/client.dir/src/client/Position.cpp.o"
   "CMakeFiles/client.dir/src/client/Obstacle.cpp.o"

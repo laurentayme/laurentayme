@@ -177,9 +177,33 @@ CMakeFiles/client.dir/src/client/StaticElement.cpp.o.provides: CMakeFiles/client
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o.provides.build: CMakeFiles/client.dir/src/client/StaticElement.cpp.o
 
 
+CMakeFiles/client.dir/src/client/Surface.cpp.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/Surface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/client.dir/src/client/Surface.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Surface.cpp.o -c /home/valentin/laurentayme/src/client/Surface.cpp
+
+CMakeFiles/client.dir/src/client/Surface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/client/Surface.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/laurentayme/src/client/Surface.cpp > CMakeFiles/client.dir/src/client/Surface.cpp.i
+
+CMakeFiles/client.dir/src/client/Surface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/client/Surface.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/laurentayme/src/client/Surface.cpp -o CMakeFiles/client.dir/src/client/Surface.cpp.s
+
+CMakeFiles/client.dir/src/client/Surface.cpp.o.requires:
+
+.PHONY : CMakeFiles/client.dir/src/client/Surface.cpp.o.requires
+
+CMakeFiles/client.dir/src/client/Surface.cpp.o.provides: CMakeFiles/client.dir/src/client/Surface.cpp.o.requires
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Surface.cpp.o.provides.build
+.PHONY : CMakeFiles/client.dir/src/client/Surface.cpp.o.provides
+
+CMakeFiles/client.dir/src/client/Surface.cpp.o.provides.build: CMakeFiles/client.dir/src/client/Surface.cpp.o
+
+
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/client/Abilities.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/client.dir/src/client/Abilities.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/client.dir/src/client/Abilities.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Abilities.cpp.o -c /home/valentin/laurentayme/src/client/Abilities.cpp
 
 CMakeFiles/client.dir/src/client/Abilities.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/client.dir/src/client/Abilities.cpp.o.provides.build: CMakeFiles/clie
 
 CMakeFiles/client.dir/src/client/Position.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/client/Position.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/client.dir/src/client/Position.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/client.dir/src/client/Position.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Position.cpp.o -c /home/valentin/laurentayme/src/client/Position.cpp
 
 CMakeFiles/client.dir/src/client/Position.cpp.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/client.dir/src/client/Position.cpp.o.provides.build: CMakeFiles/clien
 
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/client/Obstacle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/client.dir/src/client/Obstacle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/client.dir/src/client/Obstacle.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Obstacle.cpp.o -c /home/valentin/laurentayme/src/client/Obstacle.cpp
 
 CMakeFiles/client.dir/src/client/Obstacle.cpp.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/client.dir/src/client/Obstacle.cpp.o.provides.build: CMakeFiles/clien
 
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/client/Landscape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/client.dir/src/client/Landscape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/client.dir/src/client/Landscape.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Landscape.cpp.o -c /home/valentin/laurentayme/src/client/Landscape.cpp
 
 CMakeFiles/client.dir/src/client/Landscape.cpp.i: cmake_force
@@ -275,7 +299,7 @@ CMakeFiles/client.dir/src/client/Landscape.cpp.o.provides.build: CMakeFiles/clie
 
 CMakeFiles/client.dir/src/client/Character.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/client/Character.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/client.dir/src/client/Character.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/client.dir/src/client/Character.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Character.cpp.o -c /home/valentin/laurentayme/src/client/Character.cpp
 
 CMakeFiles/client.dir/src/client/Character.cpp.i: cmake_force
@@ -299,7 +323,7 @@ CMakeFiles/client.dir/src/client/Character.cpp.o.provides.build: CMakeFiles/clie
 
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/client/Equipment.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/client.dir/src/client/Equipment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/client.dir/src/client/Equipment.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Equipment.cpp.o -c /home/valentin/laurentayme/src/client/Equipment.cpp
 
 CMakeFiles/client.dir/src/client/Equipment.cpp.i: cmake_force
@@ -323,7 +347,7 @@ CMakeFiles/client.dir/src/client/Equipment.cpp.o.provides.build: CMakeFiles/clie
 
 CMakeFiles/client.dir/src/client/Space.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/client/Space.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/client.dir/src/client/Space.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/client.dir/src/client/Space.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Space.cpp.o -c /home/valentin/laurentayme/src/client/Space.cpp
 
 CMakeFiles/client.dir/src/client/Space.cpp.i: cmake_force
@@ -347,7 +371,7 @@ CMakeFiles/client.dir/src/client/Space.cpp.o.provides.build: CMakeFiles/client.d
 
 CMakeFiles/client.dir/src/client/main.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/client.dir/src/client/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/client.dir/src/client/main.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/main.cpp.o -c /home/valentin/laurentayme/src/client/main.cpp
 
 CMakeFiles/client.dir/src/client/main.cpp.i: cmake_force
@@ -376,6 +400,7 @@ client_OBJECTS = \
 "CMakeFiles/client.dir/src/client/ElementTab.cpp.o" \
 "CMakeFiles/client.dir/src/client/Wall.cpp.o" \
 "CMakeFiles/client.dir/src/client/StaticElement.cpp.o" \
+"CMakeFiles/client.dir/src/client/Surface.cpp.o" \
 "CMakeFiles/client.dir/src/client/Abilities.cpp.o" \
 "CMakeFiles/client.dir/src/client/Position.cpp.o" \
 "CMakeFiles/client.dir/src/client/Obstacle.cpp.o" \
@@ -393,6 +418,7 @@ client_EXTERNAL_OBJECTS =
 ../bin/client: CMakeFiles/client.dir/src/client/ElementTab.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/Wall.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/StaticElement.cpp.o
+../bin/client: CMakeFiles/client.dir/src/client/Surface.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/Abilities.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/Position.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/Obstacle.cpp.o
@@ -403,7 +429,7 @@ client_EXTERNAL_OBJECTS =
 ../bin/client: CMakeFiles/client.dir/src/client/main.cpp.o
 ../bin/client: CMakeFiles/client.dir/build.make
 ../bin/client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable ../bin/client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable ../bin/client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -416,6 +442,7 @@ CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Element.cpp.o.r
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/ElementTab.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Wall.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/StaticElement.cpp.o.requires
+CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Surface.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Abilities.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Position.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Obstacle.cpp.o.requires

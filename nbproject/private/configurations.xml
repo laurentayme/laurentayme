@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="src" name="0">
+      <df name="client">
+        <df name="render">
+          <in>CharacterTileSet.h</in>
+          <in>ElementTabLayer.h</in>
+          <in>Layer.h</in>
+          <in>MapTileSet.h</in>
+          <in>StateLayer.h</in>
+          <in>StateTileSet.h</in>
+          <in>Surface.h</in>
+          <in>Tile.h</in>
+          <in>TileSet.h</in>
+        </df>
+        <in>Abilities.cpp</in>
+        <in>Character.cpp</in>
+        <in>Element.cpp</in>
+        <in>ElementTab.cpp</in>
+        <in>Equipment.cpp</in>
+        <in>Landscape.cpp</in>
+        <in>Obstacle.cpp</in>
+        <in>Position.cpp</in>
+        <in>Space.cpp</in>
+        <in>State.cpp</in>
+        <in>StaticElement.cpp</in>
+        <in>Surface.cpp</in>
+        <in>Wall.cpp</in>
+        <in>main.cpp</in>
+        <in>render.h</in>
+      </df>
+      <df name="shared">
+        <df name="state">
+          <in>Abilities.h</in>
+          <in>Character.h</in>
+          <in>Direction.h</in>
+          <in>Element.h</in>
+          <in>ElementTab.h</in>
+          <in>Equipment.h</in>
+          <in>Landscape.h</in>
+          <in>Obstacle.h</in>
+          <in>Position.h</in>
+          <in>Space.h</in>
+          <in>SpaceTypeId.h</in>
+          <in>State.h</in>
+          <in>StaticElement.h</in>
+          <in>Statut.h</in>
+          <in>TypeId.h</in>
+          <in>Wall.h</in>
+        </df>
+        <in>state.h</in>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>build/Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>build</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>
