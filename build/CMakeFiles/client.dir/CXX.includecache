@@ -225,4 +225,6 @@ exception
 -
 state.h
 /home/valentin/laurentayme/src/client/state.h
+SFML/Graphics.hpp
+-
 
