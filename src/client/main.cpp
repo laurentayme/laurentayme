@@ -5,8 +5,18 @@
 #include <exception>
 #include "state.h"
 
+
 using namespace std;
 using namespace state;
+
+// Les lignes suivantes ne servent qu'à vérifier que la compilation avec SFML fonctionne
+#include <SFML/Graphics.hpp>
+
+void testSFML() {
+    sf::Texture texture;
+}
+
+// Fin test SFML
 
 void Test_Unitaire();
 
