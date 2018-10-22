@@ -11,6 +11,7 @@
           <in>StateLayer.h</in>
           <in>StateTileSet.h</in>
           <in>Surface.h</in>
+          <in>Tile.cpp</in>
           <in>Tile.h</in>
           <in>TileSet.h</in>
         </df>

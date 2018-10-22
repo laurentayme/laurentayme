@@ -12,9 +12,19 @@
 using namespace render;
 
 Surface::Surface(){
-    quads[0].position=sf ::Vector2f(0,0);
-    quads[1].position=sf ::Vector2f(149,0);
-    quads[2].position=sf ::Vector2f(149,149);
-    quads[3].position=sf ::Vector2f(0,149);
-    
+    quads.setPrimitiveType(sf::Quads);
 }
+
+
+void Surface::initQuads(int count){
+    quads.resize(count*4);
+}
+
+void Surface::setSpriteTexture(int i, const Tile& texture){
+    sf::Vertex* quad_ptr = &quads[i*4];
+    quad_ptr[0].texCoords=sf::Vector2f(texture.getX(),texture.getY());
+    /*quad_ptr[1].texCoords=sf::Vector2f(texture.getTilex()+texture.getTileWidth(),texture.getTiley());
+    quad_ptr[2].texCoords=sf::Vector2f(texture.getTilex() +texture.getTileWidth(),texture.getTiley()+ texture.getTileHeight());
+    quad_ptr[3].texCoords=sf::Vector2f(texture.getTilex(),texture.getTiley()+ texture.getTileHeight());
+
+     */ }

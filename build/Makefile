@@ -501,6 +501,33 @@ src/client/main.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main.cpp.s
 .PHONY : src/client/main.cpp.s
 
+src/client/render/Tile.o: src/client/render/Tile.cpp.o
+
+.PHONY : src/client/render/Tile.o
+
+# target to build an object file
+src/client/render/Tile.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Tile.cpp.o
+.PHONY : src/client/render/Tile.cpp.o
+
+src/client/render/Tile.i: src/client/render/Tile.cpp.i
+
+.PHONY : src/client/render/Tile.i
+
+# target to preprocess a source file
+src/client/render/Tile.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Tile.cpp.i
+.PHONY : src/client/render/Tile.cpp.i
+
+src/client/render/Tile.s: src/client/render/Tile.cpp.s
+
+.PHONY : src/client/render/Tile.s
+
+# target to generate assembly for a file
+src/client/render/Tile.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Tile.cpp.s
+.PHONY : src/client/render/Tile.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -552,6 +579,9 @@ help:
 	@echo "... src/client/main.o"
 	@echo "... src/client/main.i"
 	@echo "... src/client/main.s"
+	@echo "... src/client/render/Tile.o"
+	@echo "... src/client/render/Tile.i"
+	@echo "... src/client/render/Tile.s"
 .PHONY : help
 
 

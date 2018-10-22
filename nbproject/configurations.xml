@@ -3,6 +3,9 @@
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="src" name="0">
       <df name="client">
+        <df name="render">
+          <in>Tile.cpp</in>
+        </df>
         <in>Abilities.cpp</in>
         <in>Character.cpp</in>
         <in>Element.cpp</in>
@@ -121,6 +124,8 @@
       <item path="src/client/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/client/render/Tile.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

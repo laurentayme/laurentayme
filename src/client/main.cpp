@@ -60,7 +60,7 @@ void testSFML() {
 	carre2[2].texCoords = sf::Vector2f(400,400);
 	carre2[3].texCoords = sf::Vector2f(400,0);*/
 
-	texture.loadFromFile("/home/vincent/Bureau/pltimages/myAvatar2.png");
+	texture.loadFromFile("/home/valentin/laurentayme/src/client/Pack.png.png");
 	//texture2.loadFromFile("/home/vincent/Bureau/pltimages/myAvatar.png");
 
 	sf::RenderWindow window(sf::VideoMode(2000, 2000), "My window");
@@ -105,42 +105,48 @@ public:
 
         // on redimensionne le tableau de vertex pour qu'il puisse contenir tout le niveau
         m_vertices.setPrimitiveType(sf::Quads);
-        m_vertices.resize(2*width * height * 4);
+        m_vertices.resize((2*width-1) * (height) * 4);
 
 
         // on remplit le tableau de vertex, avec un quad par tuile
-        for (unsigned int i = 0; i < width*2; ++i)
+        for (unsigned int i = 0; i < 2*width-1; ++i)
             for (unsigned int j = 0; j < height; ++j)
             {
                 // on récupère le numéro de tuile courant
-                int tileNumber = tiles[i + j * width];
+                int tileNumber = tiles[i + j * (2*width-1)];
 
                 // on en déduit sa position dans la texture du tileset
                 int tu = tileNumber % (m_tileset.getSize().x / tileSize.x);
                 int tv = tileNumber / (m_tileset.getSize().x / tileSize.x);
 
                 // on récupère un pointeur vers le quad à définir dans le tableau de vertex
-                sf::Vertex* quad = &m_vertices[(i + j * width*2) * 4];
+                sf::Vertex* quad = &m_vertices[(i + j * (2*width-1)) * 4];
 		
 
                 // on définit ses quatre coins
 		if(i%2==0){
-                	quad[0].position = sf::Vector2f(i/2 * tileSize.x+32, j * tileSize.y);
-                	quad[1].position = sf::Vector2f((i/2 + 1) * tileSize.x, j * tileSize.y+16);
-                	quad[2].position = sf::Vector2f((i/2 + 1) * tileSize.x-32, (j + 1) * tileSize.y);
-                	quad[3].position = sf::Vector2f(i/2 * tileSize.x, (j + 1) * tileSize.y-16);
+                	quad[0].position = sf::Vector2f(i/2 * tileSize.x+tileSize.x/2, j * tileSize.y);
+                	quad[1].position = sf::Vector2f((i/2 + 1) * tileSize.x, j * tileSize.y+tileSize.y/2);
+                	quad[2].position = sf::Vector2f((i/2 + 1) * tileSize.x-tileSize.x/2, (j + 1) * tileSize.y);
+                	quad[3].position = sf::Vector2f(i/2 * tileSize.x, (j + 1) * tileSize.y-tileSize.y/2);
 		}
-		else{
-			quad[0].position = sf::Vector2f((i+1)/2 * tileSize.x, j * tileSize.y+16);
-                	quad[1].position = sf::Vector2f(((i+1)/2 + 1) * tileSize.x-32, (j+1) * tileSize.y);
-                	quad[2].position = sf::Vector2f((i+1)/2 * tileSize.x, (j + 1) * tileSize.y+16);
-                	quad[3].position = sf::Vector2f((i+1)/2 * tileSize.x-32, (j + 1) * tileSize.y);
-		}
+		else if (j!=height-1){
+                    
+              
+                        quad[0].position = sf::Vector2f((i+1)/2 * tileSize.x, j * tileSize.y+tileSize.y/2);
+                	quad[1].position = sf::Vector2f(((i+1)/2 + 1) * tileSize.x-tileSize.x/2, (j+1) * tileSize.y);
+                	quad[2].position = sf::Vector2f((i+1)/2 * tileSize.x, (j + 1) * tileSize.y+tileSize.y/2);
+                	quad[3].position = sf::Vector2f((i+1)/2 * tileSize.x-tileSize.x/2, (j + 1) * tileSize.y);
+		
+     
+                        
+                    
+			}
                 // on définit ses quatre coordonnées de texture
-                quad[0].texCoords = sf::Vector2f(tu * tileSize.x+32, tv * tileSize.y);
-                quad[1].texCoords = sf::Vector2f((tu + 1) * tileSize.x, tv * tileSize.y+16);
-                quad[2].texCoords = sf::Vector2f((tu + 1) * tileSize.x-32, (tv + 1) * tileSize.y);
-                quad[3].texCoords = sf::Vector2f(tu * tileSize.x, (tv + 1) * tileSize.y-16);
+                quad[0].texCoords = sf::Vector2f(tu * tileSize.x+(tileSize.x)/2, tv * tileSize.y);
+                quad[1].texCoords = sf::Vector2f((tu + 1) * tileSize.x, tv * tileSize.y+(tileSize.y)/2);
+                quad[2].texCoords = sf::Vector2f((tu + 1) * tileSize.x-(tileSize.x)/2, (tv + 1) * tileSize.y);
+                quad[3].texCoords = sf::Vector2f(tu * tileSize.x, (tv + 1) * tileSize.y-(tileSize.y)/2);
 		
             }
 
@@ -227,31 +233,63 @@ int main(int argc,char* argv[])
     
 //test map
 	// on crée la fenêtre
-    sf::RenderWindow window(sf::VideoMode(640, 320), "Tilemap");
+    sf::RenderWindow window(sf::VideoMode(149*5, 86*5), "Tilemap");
 
     // on définit le niveau à l'aide de numéro de tuiles
     const int level[] =
     {
-       	0, 0, 0, 0, 0, 0, 1, 1, 1, 1,1, 1, 1, 1, 1, 1,0, 1, 1, 1, 
-	1, 1, 1, 0, 0, 0, 0, 2, 0, 0,0, 0,1, 1, 0, 0, 0, 0, 0, 0,
-	3, 3, 3, 3, 3, 3, 3, 3,0, 1,0, 0, 2, 0, 4, 4, 3, 0, 1, 1,
-	1, 0, 0, 0,0, 1, 1, 0, 3, 3,3, 7, 7, 0, 1, 1, 1, 2, 0, 0,
-	1, 0, 1, 0, 1, 0, 1, 0, 1, 0,1 ,0, 0, 5, 4, 6, 8, 8, 8, 7,
-	0, 0, 0, 0, 0, 0, 1, 1, 1, 1,1, 1, 1, 1, 1, 1,0, 1, 1, 1, 
-	1, 1, 1, 0, 0, 0, 0, 2, 0, 0,0, 0,1, 1, 0, 0, 0, 0, 0, 0,
-	3, 3, 3, 3, 3, 3, 3, 3,0, 1,0, 0, 2, 0, 4, 4, 3, 0, 1, 1,
-	1, 0, 0, 0,0, 1, 1, 0, 3, 3,3, 7, 7, 0, 1, 1, 1, 2, 0, 0,
-	1, 0, 1, 0, 1, 0, 1, 0, 1, 0,1 ,0, 0, 5, 4, 6, 8, 8, 8, 7
+       	1, 16, 1, 16, 1, 16, 1, 16, 1,
+        1, 16, 16, 19, 19, 19, 16, 16, 1,
+        1, 16, 19, 19, 19, 19, 19, 16, 1,
+        1, 16, 16, 16, 19, 16, 16, 16, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1,
+        
     };
 
     // on crée la tilemap avec le niveau précédemment défini
     TileMap map;
-    if (!map.load("/home/vincent/Bureau/pltimages/tilsetsaisonplat.png", sf::Vector2u(64, 32), level, 10,10))
-        return -1;
+    
+    sf::Texture texture;
+    
+    sf:: Texture texture_2;
+    
+    sf::VertexArray iop_quads(sf::Quads,4);
+                        iop_quads[0].position = sf::Vector2f(149,20);
+    			iop_quads[1].position = sf::Vector2f(111+149,20);
+    			iop_quads[2].position = sf::Vector2f(111+149,325);
+                        iop_quads[3].position = sf::Vector2f(149,325);
+                        
+    			iop_quads[0].texCoords = sf::Vector2f(0, 0);
+    			iop_quads[1].texCoords = sf::Vector2f(111, 0);
+    			iop_quads[2].texCoords = sf::Vector2f(111,305);
+    			iop_quads[3].texCoords = sf::Vector2f(0,305);
+                        
+    sf::VertexArray quads(sf::Quads,4);
+    
+                        quads[0].position = sf::Vector2f(0,0);
+    			quads[1].position = sf::Vector2f(149,0);
+    			quads[2].position = sf::Vector2f(149,86);
+                        quads[3].position = sf::Vector2f(0,86);
+                        
+                        quads[0].position = sf::Vector2f(149*2,2*86);
+    			quads[1].position = sf::Vector2f(149*3,2*86);
+    			quads[2].position = sf::Vector2f(3*149,3*86);
+                        quads[3].position = sf::Vector2f(149*2,3*86);
+                        
+    			quads[0].texCoords = sf::Vector2f(3*149, 4*86);
+    			quads[1].texCoords = sf::Vector2f(4*149,4*86);
+    			quads[2].texCoords = sf::Vector2f(4*149,5*86);
+    			quads[3].texCoords = sf::Vector2f(3*149,5*86);
+    
 
     // on fait tourner la boucle principale
     while (window.isOpen())
     {
+        if (!map.load("/home/valentin/laurentayme/src/client/Pack.png", sf::Vector2u(149, 86), level, 5,5))
+        return -1;
+        
+        texture.loadFromFile("/home/valentin/laurentayme/res/IOP_2.png");
+        texture_2.loadFromFile("/home/valentin/laurentayme/res/Pack_texture_1.png");
         // on gère les évènements
         sf::Event event;
         while (window.pollEvent(event))
@@ -263,6 +301,9 @@ int main(int argc,char* argv[])
         // on dessine le niveau
         window.clear();
         window.draw(map);
+        window.draw(quads,&texture_2);
+        window.draw(iop_quads,&texture);
+       
         window.display();
     }
 //fin test mapS
