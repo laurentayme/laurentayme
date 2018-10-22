@@ -13,7 +13,80 @@ using namespace state;
 #include <SFML/Graphics.hpp>
 
 void testSFML() {
-    sf::Texture texture;
+    	sf::Texture texture;
+    	//sf::Texture texture2;
+    
+	//sf::VertexArray carre(sf::Quads, 4);
+	//sf::VertexArray carre2(sf::Quads, 4);
+	std::vector<sf::VertexArray> quadlist;
+	for(int j=0;j<5;j++){
+	
+		for(int i=0;i<5;i++){
+    			sf::VertexArray quadd(sf::Quads,4);
+    			quadd[0].position = sf::Vector2f(j*400,400*i);
+    			quadd[1].position = sf::Vector2f(j*400,400*(i+1));
+    			quadd[2].position = sf::Vector2f(400*(j+1),400*(i+1));
+    			quadd[3].position = sf::Vector2f(400*(j+1),400*i);
+    			quadd[0].texCoords = sf::Vector2f(0, 0);
+    			quadd[1].texCoords = sf::Vector2f(0, 400);
+    			quadd[2].texCoords = sf::Vector2f(400,400);
+    			quadd[3].texCoords = sf::Vector2f(400,0);
+    			quadlist.push_back(quadd);
+		}
+	}
+
+	/*// essai sur les quads
+	carre[0].position = sf::Vector2f(0, 0);
+	carre[1].position = sf::Vector2f(0, 400);
+	carre[2].position = sf::Vector2f(400, 400);
+	carre[3].position = sf::Vector2f(400, 0);
+	carre2[0].position = sf::Vector2f(400, 0);
+	carre2[1].position = sf::Vector2f(400, 400);
+	carre2[2].position = sf::Vector2f(800, 400);
+	carre2[3].position = sf::Vector2f(800, 0);
+
+	// on définit la couleur des sommets du carre
+	/*carre[0].color = sf::Color::Red;
+	carre[1].color = sf::Color::Blue;
+	carre[2].color = sf::Color::Green;
+	carre[3].color = sf::Color::Yellow;*/
+
+	/*carre[0].texCoords = sf::Vector2f(0, 0);
+	carre[1].texCoords = sf::Vector2f(0, 400);
+	carre[2].texCoords = sf::Vector2f(400,400);
+	carre[3].texCoords = sf::Vector2f(400,0);
+	carre2[0].texCoords = sf::Vector2f(0, 0);
+	carre2[1].texCoords = sf::Vector2f(0, 400);
+	carre2[2].texCoords = sf::Vector2f(400,400);
+	carre2[3].texCoords = sf::Vector2f(400,0);*/
+
+	texture.loadFromFile("/home/vincent/Bureau/pltimages/myAvatar2.png");
+	//texture2.loadFromFile("/home/vincent/Bureau/pltimages/myAvatar.png");
+
+	sf::RenderWindow window(sf::VideoMode(2000, 2000), "My window");
+	while (window.isOpen())
+	    {
+	        // on inspecte tous les évènements de la fenêtre qui ont été émis depuis la 			précédente itération
+        	sf::Event event;
+        	while (window.pollEvent(event))
+        	{
+        	    // évènement "fermeture demandée" : on ferme la fenêtre
+        	    if (event.type == sf::Event::Closed)
+        	        window.close();
+        	}
+        	window.clear(sf::Color::Black);
+            	for(int i=0;i<25;i++){
+                window.draw(quadlist[i],&texture);
+        	}
+       	 	//window.draw(carre, &texture);
+        	//window.draw(carre2, &texture2);
+        	//window.draw(carre);
+       	 	window.display();
+    }
+
+
+
+    
 }
 
 // Fin test SFML
@@ -23,6 +96,7 @@ void Test_Unitaire();
 
 int main(int argc,char* argv[])
 {
+    testSFML();
     if (argc>1){                 // vérifie s'il y a un argument
         if  (strcmp(argv[1],"hello")==0) {   // vérification que l'argument est le bon
             cout << "Bonjour le monde!" << endl;
