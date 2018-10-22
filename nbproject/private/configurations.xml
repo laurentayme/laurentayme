@@ -7,6 +7,7 @@
           <in>CharacterTileSet.h</in>
           <in>ElementTabLayer.h</in>
           <in>Layer.h</in>
+          <in>MapTileSet.cpp</in>
           <in>MapTileSet.h</in>
           <in>StateLayer.h</in>
           <in>StateTileSet.h</in>
@@ -27,6 +28,7 @@
         <in>State.cpp</in>
         <in>StaticElement.cpp</in>
         <in>Surface.cpp</in>
+        <in>Tile.cpp</in>
         <in>Wall.cpp</in>
         <in>main.cpp</in>
         <in>render.h</in>

@@ -4,6 +4,7 @@
     <df root="src" name="0">
       <df name="client">
         <df name="render">
+          <in>MapTileSet.cpp</in>
           <in>Tile.cpp</in>
         </df>
         <in>Abilities.cpp</in>
@@ -18,6 +19,7 @@
         <in>State.cpp</in>
         <in>StaticElement.cpp</in>
         <in>Surface.cpp</in>
+        <in>Tile.cpp</in>
         <in>Wall.cpp</in>
         <in>main.cpp</in>
       </df>
@@ -117,6 +119,8 @@
       </item>
       <item path="src/client/Surface.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/client/Tile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/client/Wall.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
@@ -124,6 +128,8 @@
       <item path="src/client/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/client/render/MapTileSet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/client/render/Tile.cpp" ex="false" tool="1" flavor2="0">
       </item>

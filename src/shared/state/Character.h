@@ -36,7 +36,7 @@ namespace state {
   public:
     Character (std::string characterClass);
      ~Character ();
-    std::string const getClass ();
+    std::string const getClass () const;
     size_t const getPV ();
     void setPV (int pv);
     size_t const getPA ();
@@ -51,7 +51,7 @@ namespace state {
     size_t const getStatut ();
     void setStatut (int act_statut);
     std::vector<Abilities*> const getAbilitiesList ();
-    size_t const getDirection ();
+    size_t const getDirection () const;
     void setDirection (int direction);
     bool const isPlayer ();
     void affiche_Classe ();

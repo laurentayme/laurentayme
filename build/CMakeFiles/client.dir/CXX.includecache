@@ -360,6 +360,16 @@ Surface.h
 TileSet.h
 /home/valentin/laurentayme/src/client/render/TileSet.h
 
+/home/valentin/laurentayme/src/client/render/MapTileSet.cpp
+stdio.h
+-
+state.h
+/home/valentin/laurentayme/src/client/render/state.h
+render.h
+/home/valentin/laurentayme/src/client/render/render.h
+SFML/Graphics.hpp
+-
+
 /home/valentin/laurentayme/src/client/render/MapTileSet.h
 vector
 -

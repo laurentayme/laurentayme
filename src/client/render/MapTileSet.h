@@ -25,9 +25,9 @@ namespace render {
     // Operations
   public:
     MapTileSet ();
-    int const getCellHeight (std::vector<Tile> decor);
-    int const getCellWidth ();
-    std::string const getImageFile ();
+    int const getCellHeight (std::vector<Tile> mapset);
+    int const getCellWidth (std::vector<Tile> mapset);
+    std::string const getImageFile (std::vector<Tile> mapset);
     const Tile&  getTile (const state::Element& e);
     // Setters and Getters
   };

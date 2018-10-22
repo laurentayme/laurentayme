@@ -17,17 +17,18 @@ Wall::Wall(){
     wall=true;
 }
 
-bool const Wall::isWall(){
-    return(wall);
+bool const Wall::isWall() const {
+    return(true);
 }
 
-bool const Wall::isObstacle(){
-    return(obstacle);
+bool const Wall::isObstacle() const {
+    return(true);
 }
 
 void Wall::affiche_Classe(){
     std::cout<<"Je suis un Wall."<<std::endl;
 }
+
 
 
 

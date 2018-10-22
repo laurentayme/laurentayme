@@ -26,7 +26,7 @@ size_t const Space::getSpaceType(){
     return(spaceType);
 }
 
-bool const Space::isObstacle(){
+bool const Space::isObstacle() const{
     return(obstacle);
 }
 

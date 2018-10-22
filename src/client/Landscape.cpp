@@ -17,11 +17,11 @@ Landscape::Landscape(){
     wall=false;
 }
 
-bool const Landscape::isWall(){
+bool const Landscape::isWall() const {
     return(wall);
 }
 
-bool const Landscape::isObstacle(){
+bool const Landscape::isObstacle() const {
     return(obstacle);
 }
 

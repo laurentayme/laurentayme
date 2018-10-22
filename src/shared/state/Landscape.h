@@ -16,8 +16,8 @@ namespace state {
     // Operations
   public:
     Landscape ();
-    bool const isObstacle ();
-    bool const isWall ();
+    bool const isObstacle () const;
+    bool const isWall () const;
     void affiche_Classe ();
     // Setters and Getters
   };

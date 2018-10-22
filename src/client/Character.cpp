@@ -104,7 +104,7 @@ void Character::removeEquipment(Equipment *equipment){
     }
 }
 
-std::string const Character::getClass(){
+std::string const Character::getClass() const {
     return(characterClass);
 }
 
@@ -124,7 +124,7 @@ size_t const Character::getStatut(){
     return(statut);
 }
 
-size_t const Character::getDirection(){
+size_t const Character::getDirection() const {
     return(direction);
 }
 

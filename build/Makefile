@@ -501,6 +501,33 @@ src/client/main.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main.cpp.s
 .PHONY : src/client/main.cpp.s
 
+src/client/render/MapTileSet.o: src/client/render/MapTileSet.cpp.o
+
+.PHONY : src/client/render/MapTileSet.o
+
+# target to build an object file
+src/client/render/MapTileSet.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o
+.PHONY : src/client/render/MapTileSet.cpp.o
+
+src/client/render/MapTileSet.i: src/client/render/MapTileSet.cpp.i
+
+.PHONY : src/client/render/MapTileSet.i
+
+# target to preprocess a source file
+src/client/render/MapTileSet.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.i
+.PHONY : src/client/render/MapTileSet.cpp.i
+
+src/client/render/MapTileSet.s: src/client/render/MapTileSet.cpp.s
+
+.PHONY : src/client/render/MapTileSet.s
+
+# target to generate assembly for a file
+src/client/render/MapTileSet.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.s
+.PHONY : src/client/render/MapTileSet.cpp.s
+
 src/client/render/Tile.o: src/client/render/Tile.cpp.o
 
 .PHONY : src/client/render/Tile.o
@@ -579,6 +606,9 @@ help:
 	@echo "... src/client/main.o"
 	@echo "... src/client/main.i"
 	@echo "... src/client/main.s"
+	@echo "... src/client/render/MapTileSet.o"
+	@echo "... src/client/render/MapTileSet.i"
+	@echo "... src/client/render/MapTileSet.s"
 	@echo "... src/client/render/Tile.o"
 	@echo "... src/client/render/Tile.i"
 	@echo "... src/client/render/Tile.s"

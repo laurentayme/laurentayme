@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/src/client/Equipment.cpp.o"
   "CMakeFiles/client.dir/src/client/Space.cpp.o"
   "CMakeFiles/client.dir/src/client/main.cpp.o"
+  "CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o"
   "CMakeFiles/client.dir/src/client/render/Tile.cpp.o"
   "../bin/client.pdb"
   "../bin/client"
