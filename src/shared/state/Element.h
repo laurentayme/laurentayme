@@ -3,6 +3,7 @@
 #define STATE__ELEMENT__H
 
 #include <stdlib.h>
+#include <string>
 
 namespace state {
   class Position;
@@ -23,12 +24,16 @@ namespace state {
   public:
     Element (size_t idtype = 0);
     virtual ~Element ();
-    size_t const getTypeId ();
+    size_t const getTypeId () const;
     void setTypeId (size_t idtype);
     Position const getPosition ();
     void setPosition (Position& position);
     void const affiche_Position ();
     virtual void affiche_Classe () = 0;
+    virtual bool const isObstacle () const = 0;
+    virtual bool const isWall () const = 0;
+    virtual std::string const getClass () const = 0;
+    virtual size_t const getDirection () const = 0;
     // Setters and Getters
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);

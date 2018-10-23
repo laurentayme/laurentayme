@@ -4,6 +4,7 @@
     <df root="src" name="0">
       <df name="client">
         <df name="render">
+          <in>CharacterTileSet.cpp</in>
           <in>CharacterTileSet.h</in>
           <in>ElementTabLayer.h</in>
           <in>Layer.h</in>

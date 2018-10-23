@@ -59,6 +59,8 @@ namespace state {
     void const affiche_EquipmentList ();
     virtual void const affiche_AbilitiesList ();
     void const afficheStatut ();
+    bool const isObstacle () const;
+    bool const isWall () const;
     // Setters and Getters
     const std::string& getCharacterClass() const;
     void setCharacterClass(const std::string& characterClass);

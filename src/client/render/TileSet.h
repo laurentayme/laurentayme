@@ -19,10 +19,10 @@ namespace render {
   public:
     TileSet ();
     virtual ~TileSet ();
-    virtual int const getCellWidth () = 0;
-    virtual int const getCellHeight () = 0;
-    virtual std::string const getImageFile () = 0;
-    const Tile& getTile (const state::Element& e);
+    virtual int const getCellWidth () const = 0;
+    virtual int const getCellHeight () const = 0;
+    virtual std::string const getImageFile (const state::Element& e) = 0;
+    const Tile& getTile (const state::Element& e, int i);
     const Tile& getCharTile (char c);
     // Setters and Getters
   };

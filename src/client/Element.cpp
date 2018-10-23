@@ -33,7 +33,7 @@ Position const Element::getPosition(){
     return(*position);
 }
 
-size_t const Element::getTypeId(){
+size_t const Element::getTypeId() const {
     return(idType);
 }
 

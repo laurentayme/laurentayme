@@ -28,3 +28,11 @@ bool const Landscape::isObstacle() const {
 void Landscape::affiche_Classe(){
     std::cout<<"Je suis un Landscape."<<std::endl;
 }
+
+std::string const Landscape::getClass() const{
+    return("None");
+}
+
+size_t const Landscape::getDirection() const{
+    return(0);
+}

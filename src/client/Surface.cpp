@@ -15,11 +15,22 @@ Surface::Surface(){
     quads.setPrimitiveType(sf::Quads);
 }
 
-
 void Surface::initQuads(int count){
     quads.resize(count*4);
 }
 
+void Surface::loadTexture(const std::string& image_file){
+    texture.loadFromFile(image_file);
+}
+
+void Surface::setSpriteLocation(int i, int x, int y){
+    sf::Vertex* quad_ptr = &quads[i*4];
+    quad_ptr[0].position=sf::Vector2f(x,y);
+    quad_ptr[1].position=sf::Vector2f(x,y);
+    quad_ptr[2].position=sf::Vector2f(x,y);
+    quad_ptr[3].position=sf::Vector2f(x,y);
+
+}
 void Surface::setSpriteTexture(int i, const Tile& texture){
     sf::Vertex* quad_ptr = &quads[i*4];
     quad_ptr[0].texCoords=sf::Vector2f(texture.getX(),texture.getY());

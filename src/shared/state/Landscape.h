@@ -2,6 +2,8 @@
 #ifndef STATE__LANDSCAPE__H
 #define STATE__LANDSCAPE__H
 
+#include <string>
+#include <stdlib.h>
 
 namespace state {
   class Obstacle;
@@ -19,6 +21,8 @@ namespace state {
     bool const isObstacle () const;
     bool const isWall () const;
     void affiche_Classe ();
+    std::string const getClass () const;
+    size_t const getDirection () const;
     // Setters and Getters
   };
 

@@ -29,6 +29,14 @@ void Wall::affiche_Classe(){
     std::cout<<"Je suis un Wall."<<std::endl;
 }
 
+std::string const Wall::getClass() const{
+    return("None");
+}
+
+size_t const Wall::getDirection() const{
+    return(0);
+}
+
 
 
 

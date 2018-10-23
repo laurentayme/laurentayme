@@ -248,6 +248,14 @@ void const Character::afficheStatut(){
     }
 }
 
+bool const Character::isObstacle() const {
+    return(false);
+}
+
+bool const Character::isWall() const {
+    return(false);
+}
+
 
 
 

@@ -147,6 +147,8 @@ stdlib.h
 ../src/shared/state/Element.h
 stdlib.h
 -
+string
+-
 Position.h
 ../src/shared/state/Position.h
 
@@ -165,6 +167,10 @@ stdlib.h
 -
 
 ../src/shared/state/Landscape.h
+string
+-
+stdlib.h
+-
 Obstacle.h
 ../src/shared/state/Obstacle.h
 
@@ -178,6 +184,8 @@ stdlib.h
 
 ../src/shared/state/Space.h
 stdlib.h
+-
+string
 -
 StaticElement.h
 ../src/shared/state/StaticElement.h
@@ -203,6 +211,10 @@ stdlib.h
 -
 
 ../src/shared/state/Wall.h
+string
+-
+stdlib.h
+-
 Obstacle.h
 ../src/shared/state/Obstacle.h
 
@@ -337,6 +349,16 @@ render/StateLayer.h
 /home/valentin/laurentayme/src/client/render/StateLayer.h
 render/ElementTabLayer.h
 /home/valentin/laurentayme/src/client/render/ElementTabLayer.h
+
+/home/valentin/laurentayme/src/client/render/CharacterTileSet.cpp
+stdio.h
+-
+state.h
+/home/valentin/laurentayme/src/client/render/state.h
+render.h
+/home/valentin/laurentayme/src/client/render/render.h
+SFML/Graphics.hpp
+-
 
 /home/valentin/laurentayme/src/client/render/CharacterTileSet.h
 vector

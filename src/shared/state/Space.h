@@ -3,6 +3,7 @@
 #define STATE__SPACE__H
 
 #include <stdlib.h>
+#include <string>
 
 namespace state {
   class StaticElement;
@@ -23,6 +24,9 @@ namespace state {
     size_t const getSpaceType ();
     bool const isObstacle () const;
     void affiche_Classe ();
+    bool const isWall () const;
+    std::string const getClass () const;
+    size_t const getDirection () const;
     // Setters and Getters
   };
 

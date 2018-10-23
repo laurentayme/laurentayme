@@ -24,10 +24,10 @@ namespace render {
     // Operations
   public:
     CharacterTileSet ();
-    int const getCellWidth ();
-    int const getCellHeight ();
-    std::string const getImageFile ();
-    const Tile&  getTile (const state::Element& e);
+    int const getCellWidth () const;
+    int const getCellHeight () const;
+    std::string const getImageFile (const state::Element& e);
+    const Tile&  getTile (const state::Element& e, int i);
     // Setters and Getters
     const std::vector<Tile>& getIop() const;
     void setIop(const std::vector<Tile>& iop);

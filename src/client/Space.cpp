@@ -33,3 +33,15 @@ bool const Space::isObstacle() const{
 void Space::affiche_Classe(){
     std::cout<<"Je suis un Space."<<std::endl;
 }
+
+bool const Space::isWall() const {
+    return(false);
+}
+
+std::string const Space::getClass() const{
+    return("None");
+}
+
+size_t const Space::getDirection() const{
+    return(0);
+}

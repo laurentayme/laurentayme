@@ -28,7 +28,7 @@ void Tile::setX(int xi) {
         this->x=xi;
     }
     else{
-        throw "Position Invalide !";
+        throw "Position Abscisse Invalide !";
     }
     
 }
@@ -42,7 +42,7 @@ void Tile::setY(int yi) {
         this->y=yi;
     }
     else{
-        throw "Position Invalide !";
+        throw "Position Ordonnée Invalide !";
     }
     
 }

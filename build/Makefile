@@ -501,6 +501,33 @@ src/client/main.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main.cpp.s
 .PHONY : src/client/main.cpp.s
 
+src/client/render/CharacterTileSet.o: src/client/render/CharacterTileSet.cpp.o
+
+.PHONY : src/client/render/CharacterTileSet.o
+
+# target to build an object file
+src/client/render/CharacterTileSet.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o
+.PHONY : src/client/render/CharacterTileSet.cpp.o
+
+src/client/render/CharacterTileSet.i: src/client/render/CharacterTileSet.cpp.i
+
+.PHONY : src/client/render/CharacterTileSet.i
+
+# target to preprocess a source file
+src/client/render/CharacterTileSet.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.i
+.PHONY : src/client/render/CharacterTileSet.cpp.i
+
+src/client/render/CharacterTileSet.s: src/client/render/CharacterTileSet.cpp.s
+
+.PHONY : src/client/render/CharacterTileSet.s
+
+# target to generate assembly for a file
+src/client/render/CharacterTileSet.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.s
+.PHONY : src/client/render/CharacterTileSet.cpp.s
+
 src/client/render/MapTileSet.o: src/client/render/MapTileSet.cpp.o
 
 .PHONY : src/client/render/MapTileSet.o
@@ -606,6 +633,9 @@ help:
 	@echo "... src/client/main.o"
 	@echo "... src/client/main.i"
 	@echo "... src/client/main.s"
+	@echo "... src/client/render/CharacterTileSet.o"
+	@echo "... src/client/render/CharacterTileSet.i"
+	@echo "... src/client/render/CharacterTileSet.s"
 	@echo "... src/client/render/MapTileSet.o"
 	@echo "... src/client/render/MapTileSet.i"
 	@echo "... src/client/render/MapTileSet.s"
