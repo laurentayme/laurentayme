@@ -555,6 +555,33 @@ src/client/render/MapTileSet.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.s
 .PHONY : src/client/render/MapTileSet.cpp.s
 
+src/client/render/StateTileSet.o: src/client/render/StateTileSet.cpp.o
+
+.PHONY : src/client/render/StateTileSet.o
+
+# target to build an object file
+src/client/render/StateTileSet.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o
+.PHONY : src/client/render/StateTileSet.cpp.o
+
+src/client/render/StateTileSet.i: src/client/render/StateTileSet.cpp.i
+
+.PHONY : src/client/render/StateTileSet.i
+
+# target to preprocess a source file
+src/client/render/StateTileSet.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.i
+.PHONY : src/client/render/StateTileSet.cpp.i
+
+src/client/render/StateTileSet.s: src/client/render/StateTileSet.cpp.s
+
+.PHONY : src/client/render/StateTileSet.s
+
+# target to generate assembly for a file
+src/client/render/StateTileSet.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.s
+.PHONY : src/client/render/StateTileSet.cpp.s
+
 src/client/render/Tile.o: src/client/render/Tile.cpp.o
 
 .PHONY : src/client/render/Tile.o
@@ -581,6 +608,33 @@ src/client/render/Tile.s: src/client/render/Tile.cpp.s
 src/client/render/Tile.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Tile.cpp.s
 .PHONY : src/client/render/Tile.cpp.s
+
+src/client/render/TileSet.o: src/client/render/TileSet.cpp.o
+
+.PHONY : src/client/render/TileSet.o
+
+# target to build an object file
+src/client/render/TileSet.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/TileSet.cpp.o
+.PHONY : src/client/render/TileSet.cpp.o
+
+src/client/render/TileSet.i: src/client/render/TileSet.cpp.i
+
+.PHONY : src/client/render/TileSet.i
+
+# target to preprocess a source file
+src/client/render/TileSet.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/TileSet.cpp.i
+.PHONY : src/client/render/TileSet.cpp.i
+
+src/client/render/TileSet.s: src/client/render/TileSet.cpp.s
+
+.PHONY : src/client/render/TileSet.s
+
+# target to generate assembly for a file
+src/client/render/TileSet.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/TileSet.cpp.s
+.PHONY : src/client/render/TileSet.cpp.s
 
 # Help Target
 help:
@@ -639,9 +693,15 @@ help:
 	@echo "... src/client/render/MapTileSet.o"
 	@echo "... src/client/render/MapTileSet.i"
 	@echo "... src/client/render/MapTileSet.s"
+	@echo "... src/client/render/StateTileSet.o"
+	@echo "... src/client/render/StateTileSet.i"
+	@echo "... src/client/render/StateTileSet.s"
 	@echo "... src/client/render/Tile.o"
 	@echo "... src/client/render/Tile.i"
 	@echo "... src/client/render/Tile.s"
+	@echo "... src/client/render/TileSet.o"
+	@echo "... src/client/render/TileSet.i"
+	@echo "... src/client/render/TileSet.s"
 .PHONY : help
 
 

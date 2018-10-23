@@ -26,16 +26,12 @@ void Surface::loadTexture(const std::string& image_file){
 void Surface::setSpriteLocation(int i, int x, int y){
     sf::Vertex* quad_ptr = &quads[i*4];
     quad_ptr[0].position=sf::Vector2f(x,y);
-    quad_ptr[1].position=sf::Vector2f(x,y);
-    quad_ptr[2].position=sf::Vector2f(x,y);
-    quad_ptr[3].position=sf::Vector2f(x,y);
-
 }
+
 void Surface::setSpriteTexture(int i, const Tile& texture){
     sf::Vertex* quad_ptr = &quads[i*4];
     quad_ptr[0].texCoords=sf::Vector2f(texture.getX(),texture.getY());
     quad_ptr[1].texCoords=sf::Vector2f(texture.getX()+texture.getWidth(),texture.getY());
     quad_ptr[2].texCoords=sf::Vector2f(texture.getX()+texture.getWidth(),texture.getY()+ texture.getHeight());
     quad_ptr[3].texCoords=sf::Vector2f(texture.getX(),texture.getY()+ texture.getHeight());
-
-    }
+}

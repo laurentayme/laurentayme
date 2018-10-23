@@ -20,7 +20,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/valentin/laurentayme/src/client/main.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/main.cpp.o"
   "/home/valentin/laurentayme/src/client/render/CharacterTileSet.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o"
   "/home/valentin/laurentayme/src/client/render/MapTileSet.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o"
+  "/home/valentin/laurentayme/src/client/render/StateTileSet.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o"
   "/home/valentin/laurentayme/src/client/render/Tile.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/render/Tile.cpp.o"
+  "/home/valentin/laurentayme/src/client/render/TileSet.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/render/TileSet.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -406,6 +406,16 @@ TileSet.h
 Layer.h
 /home/valentin/laurentayme/src/client/render/Layer.h
 
+/home/valentin/laurentayme/src/client/render/StateTileSet.cpp
+stdio.h
+-
+state.h
+/home/valentin/laurentayme/src/client/render/state.h
+render.h
+/home/valentin/laurentayme/src/client/render/render.h
+SFML/Graphics.hpp
+-
+
 /home/valentin/laurentayme/src/client/render/StateTileSet.h
 vector
 -
@@ -433,6 +443,16 @@ SFML/Graphics.hpp
 -
 
 /home/valentin/laurentayme/src/client/render/Tile.h
+
+/home/valentin/laurentayme/src/client/render/TileSet.cpp
+stdio.h
+-
+state.h
+/home/valentin/laurentayme/src/client/render/state.h
+render.h
+/home/valentin/laurentayme/src/client/render/render.h
+SFML/Graphics.hpp
+-
 
 /home/valentin/laurentayme/src/client/render/TileSet.h
 string

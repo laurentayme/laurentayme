@@ -6,7 +6,9 @@
         <df name="render">
           <in>CharacterTileSet.cpp</in>
           <in>MapTileSet.cpp</in>
+          <in>StateTileSet.cpp</in>
           <in>Tile.cpp</in>
+          <in>TileSet.cpp</in>
         </df>
         <in>Abilities.cpp</in>
         <in>Character.cpp</in>
@@ -137,7 +139,11 @@
       </item>
       <item path="src/client/render/MapTileSet.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/client/render/StateTileSet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/client/render/Tile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/client/render/TileSet.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

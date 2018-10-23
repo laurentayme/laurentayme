@@ -63,3 +63,35 @@ const Tile& CharacterTileSet::getTile(const state::Element& e,int i) {
         throw "This is not a StaticElement !"; 
     }
 }
+
+int const CharacterTileSet::getCellWidth(const state::Element& e) const{
+    // Cas d'un Character
+    if (e.getTypeId()==1){ 
+        // Cas d'un Iop
+        if(e.getClass()=="Iop"){
+            return(181);
+        }
+        else if (e.getClass()=="Sadida"){
+            return(181);
+        }
+    }
+    else{
+        throw "Ceci est un StaticElement !";
+    }
+}
+
+int const CharacterTileSet::getCellHeight(const state::Element& e) const{
+    // Cas d'un Character
+    if (e.getTypeId()==1){ 
+        // Cas d'un Iop
+        if(e.getClass()=="Iop"){
+            return(306);
+        }
+        else if (e.getClass()=="Sadida"){
+            return(306);
+        }
+    }
+    else{
+        throw "Ceci est un StaticElement !";
+    }
+}

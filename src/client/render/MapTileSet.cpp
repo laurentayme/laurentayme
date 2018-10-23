@@ -67,5 +67,38 @@ const Tile& MapTileSet::getTile(const state::Element& e,int i){
     }
 }
 
+int const MapTileSet::getCellWidth(const state::Element& e) const{
+    // Cas d'un Character
+    if (e.getTypeId()==0){ 
+        // Cas d'un Iop
+        if(e.isObstacle()==true){ // Cas d'un Landscape ou Wall
+            return(149);
+        }
+        else { //Cas d'un Space
+                return(149);
+            }
+            
+    }
+    else{
+        throw "Ceci est un Character !";
+    }
+}
+
+int const MapTileSet::getCellHeight(const state::Element& e) const{
+    // Cas d'un Character
+    if (e.getTypeId()==0){ 
+        // Cas d'un Iop
+        if(e.isObstacle()==true){ // Cas d'un Landscape ou Wall
+            return(86);
+        }
+        else { //Cas d'un Space
+                return(86);
+            }
+            
+    }
+    else{
+        throw "Ceci est un Character !";
+    }
+}
 
        

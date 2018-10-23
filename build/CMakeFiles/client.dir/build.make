@@ -393,9 +393,33 @@ CMakeFiles/client.dir/src/client/main.cpp.o.provides: CMakeFiles/client.dir/src/
 CMakeFiles/client.dir/src/client/main.cpp.o.provides.build: CMakeFiles/client.dir/src/client/main.cpp.o
 
 
+CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/client/render/TileSet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/client.dir/src/client/render/TileSet.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/render/TileSet.cpp.o -c /home/valentin/laurentayme/src/client/render/TileSet.cpp
+
+CMakeFiles/client.dir/src/client/render/TileSet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/client/render/TileSet.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/laurentayme/src/client/render/TileSet.cpp > CMakeFiles/client.dir/src/client/render/TileSet.cpp.i
+
+CMakeFiles/client.dir/src/client/render/TileSet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/client/render/TileSet.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/laurentayme/src/client/render/TileSet.cpp -o CMakeFiles/client.dir/src/client/render/TileSet.cpp.s
+
+CMakeFiles/client.dir/src/client/render/TileSet.cpp.o.requires:
+
+.PHONY : CMakeFiles/client.dir/src/client/render/TileSet.cpp.o.requires
+
+CMakeFiles/client.dir/src/client/render/TileSet.cpp.o.provides: CMakeFiles/client.dir/src/client/render/TileSet.cpp.o.requires
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/TileSet.cpp.o.provides.build
+.PHONY : CMakeFiles/client.dir/src/client/render/TileSet.cpp.o.provides
+
+CMakeFiles/client.dir/src/client/render/TileSet.cpp.o.provides.build: CMakeFiles/client.dir/src/client/render/TileSet.cpp.o
+
+
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/client/render/CharacterTileSet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o -c /home/valentin/laurentayme/src/client/render/CharacterTileSet.cpp
 
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.i: cmake_force
@@ -419,7 +443,7 @@ CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o.provides.build: C
 
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/client/render/MapTileSet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o -c /home/valentin/laurentayme/src/client/render/MapTileSet.cpp
 
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.i: cmake_force
@@ -441,9 +465,33 @@ CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o.provides: CMakeFiles/cl
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o.provides.build: CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o
 
 
+CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/client/render/StateTileSet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o -c /home/valentin/laurentayme/src/client/render/StateTileSet.cpp
+
+CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valentin/laurentayme/src/client/render/StateTileSet.cpp > CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.i
+
+CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valentin/laurentayme/src/client/render/StateTileSet.cpp -o CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.s
+
+CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o.requires:
+
+.PHONY : CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o.requires
+
+CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o.provides: CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o.requires
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o.provides.build
+.PHONY : CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o.provides
+
+CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o.provides.build: CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o
+
+
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/client/render/Tile.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/client.dir/src/client/render/Tile.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/client.dir/src/client/render/Tile.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/render/Tile.cpp.o -c /home/valentin/laurentayme/src/client/render/Tile.cpp
 
 CMakeFiles/client.dir/src/client/render/Tile.cpp.i: cmake_force
@@ -481,8 +529,10 @@ client_OBJECTS = \
 "CMakeFiles/client.dir/src/client/Equipment.cpp.o" \
 "CMakeFiles/client.dir/src/client/Space.cpp.o" \
 "CMakeFiles/client.dir/src/client/main.cpp.o" \
+"CMakeFiles/client.dir/src/client/render/TileSet.cpp.o" \
 "CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o" \
 "CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o" \
+"CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o" \
 "CMakeFiles/client.dir/src/client/render/Tile.cpp.o"
 
 # External object files for target client
@@ -502,12 +552,14 @@ client_EXTERNAL_OBJECTS =
 ../bin/client: CMakeFiles/client.dir/src/client/Equipment.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/Space.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/main.cpp.o
+../bin/client: CMakeFiles/client.dir/src/client/render/TileSet.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o
+../bin/client: CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/render/Tile.cpp.o
 ../bin/client: CMakeFiles/client.dir/build.make
 ../bin/client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable ../bin/client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valentin/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable ../bin/client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -529,8 +581,10 @@ CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Character.cpp.o
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Equipment.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Space.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/main.cpp.o.requires
+CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/render/TileSet.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o.requires
+CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/render/Tile.cpp.o.requires
 
 .PHONY : CMakeFiles/client.dir/requires
