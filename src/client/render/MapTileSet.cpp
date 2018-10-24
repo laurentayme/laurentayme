@@ -10,14 +10,25 @@
 
 using namespace render;
 
-/*
-int const MapTileSet::getCellHeight() const {
-    return(0);
-}*/
+MapTileSet::MapTileSet(){
+    for(int i=0;i<6;i++){
+        for(int j=0;j<5;j++){
+            Tile t(149*i,86*j,149,86);
+            space.push_back(t);
+        }
+    }
+    
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            Tile t(149*i,86*j,149,86);
+            landscape.push_back(t);
+            wall.push_back(t);
+        }
+    }
+}
 
-/*int const MapTileSet::getCellWidth() const {
-    return(0);
-}*/
+MapTileSet::~MapTileSet(){
+}
 
 std::string const MapTileSet::getImageFile(const state::Element& e){
     //Vérification StaticElement

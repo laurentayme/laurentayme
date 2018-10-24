@@ -10,6 +10,9 @@
 #include <SFML/Graphics.hpp>
 
 using namespace render;
+TileSet::TileSet(){
+    
+}
 
 TileSet::~TileSet(){ 
 }

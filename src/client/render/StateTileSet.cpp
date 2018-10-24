@@ -12,35 +12,13 @@
 using namespace render;
 
 int const StateTileSet::getCellWidth(const state::Element& e) const{
-    // Cas d'un Character
-    if (e.getTypeId()==0){ 
-        // Cas d'un Iop
-        if(e.isObstacle()==true){ // Cas d'un Landscape ou Wall
-            return(149);
-        }
-        else { //Cas d'un Space
-                return(149);
-            }
-            
-    }
-    else{
-        throw "Ceci est un Character !";
-    }
+    return(3508);
 }
 
 int const StateTileSet::getCellHeight(const state::Element& e) const{
-    // Cas d'un Character
-    if (e.getTypeId()==0){ 
-        // Cas d'un Iop
-        if(e.isObstacle()==true){ // Cas d'un Landscape ou Wall
-            return(86);
-        }
-        else { //Cas d'un Space
-                return(86);
-            }
-            
-    }
-    else{
-        throw "Ceci est un Character !";
-    }
+    return(2479);
+}
+
+std::string const StateTileSet::getImageFile(const state::Element& e){
+    return("/home/valentin/laurentayme/res/State_Tileset.png");
 }

@@ -10,6 +10,20 @@
 
 using namespace render;
 
+CharacterTileSet::CharacterTileSet(){
+    for(int i=0;i<4;i++){
+        for(int j=0;j<3;j++){
+            Tile t(i*181,j*306,181,306);
+            iop.push_back(t);
+            sadida.push_back(t);
+        }
+        
+    }
+}
+
+CharacterTileSet::~CharacterTileSet(){
+}
+
 std::string const CharacterTileSet::getImageFile(const state::Element& e){
     //Vérification Character
     if (e.getTypeId()==1){

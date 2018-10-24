@@ -233,7 +233,7 @@ int main(int argc,char* argv[])
     
 //test map
 	// on crée la fenêtre
-    sf::RenderWindow window(sf::VideoMode(149*5, 86*5), "Tilemap");
+    sf::RenderWindow window(sf::VideoMode(149*6, 86*6), "Tilemap");
 
     // on définit le niveau à l'aide de numéro de tuiles
     const int level[] =
@@ -267,19 +267,22 @@ int main(int argc,char* argv[])
     sf::VertexArray quads(sf::Quads,4);
     
                         quads[0].position = sf::Vector2f(0,0);
-    			quads[1].position = sf::Vector2f(149,0);
-    			quads[2].position = sf::Vector2f(149,86);
-                        quads[3].position = sf::Vector2f(0,86);
+    			quads[1].position = sf::Vector2f(149*6,0);
+    			quads[2].position = sf::Vector2f(149*6,86*6);
+                        quads[3].position = sf::Vector2f(0,86*6);
                         
+                        /*
                         quads[0].position = sf::Vector2f(149*2,2*86);
     			quads[1].position = sf::Vector2f(149*3,2*86);
     			quads[2].position = sf::Vector2f(3*149,3*86);
                         quads[3].position = sf::Vector2f(149*2,3*86);
+                        */
                         
-    			quads[0].texCoords = sf::Vector2f(3*149, 4*86);
-    			quads[1].texCoords = sf::Vector2f(4*149,4*86);
-    			quads[2].texCoords = sf::Vector2f(4*149,5*86);
-    			quads[3].texCoords = sf::Vector2f(3*149,5*86);
+    			quads[0].texCoords = sf::Vector2f(0, 0);
+    			quads[1].texCoords = sf::Vector2f(3508,0);
+    			quads[2].texCoords = sf::Vector2f(3508,2479);
+    			quads[3].texCoords = sf::Vector2f(0,2479);
+                        
     
 
     // on fait tourner la boucle principale
@@ -289,7 +292,7 @@ int main(int argc,char* argv[])
         return -1;
         
         texture.loadFromFile("/home/valentin/laurentayme/res/IOP_2.png");
-        texture_2.loadFromFile("/home/valentin/laurentayme/res/Pack_texture_1.png");
+        texture_2.loadFromFile("/home/valentin/laurentayme/res/State_Tileset.png");
         // on gère les évènements
         sf::Event event;
         while (window.pollEvent(event))

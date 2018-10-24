@@ -7,12 +7,17 @@
 
 namespace render {
   class Tile;
+};
+namespace sf {
+  class Drawable;
+  class Transformable;
 }
+
 
 namespace render {
 
   /// class Surface - 
-  class Surface {
+  class Surface : public sf::Drawable, public sf::Transformable {
     // Attributes
   private:
     sf::Texture texture;

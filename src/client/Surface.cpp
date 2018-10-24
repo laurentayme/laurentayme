@@ -35,3 +35,15 @@ void Surface::setSpriteTexture(int i, const Tile& texture){
     quad_ptr[2].texCoords=sf::Vector2f(texture.getX()+texture.getWidth(),texture.getY()+ texture.getHeight());
     quad_ptr[3].texCoords=sf::Vector2f(texture.getX(),texture.getY()+ texture.getHeight());
 }
+
+void const Surface::draw(sf::RenderTarget& target, sf::RenderStates states){
+    
+    // On applique la transformation
+    states.transform *= getTransform();
+
+    // On applique la texture du tileset
+    states.texture = &texture;
+
+    // Et on dessine enfin le tableau de vertex
+    target.draw(quads, states);
+}

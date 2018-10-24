@@ -39,20 +39,8 @@
       <df name="shared">
         <df name="state">
           <in>Abilities.h</in>
-          <in>Character.h</in>
-          <in>Direction.h</in>
-          <in>Element.h</in>
-          <in>ElementTab.h</in>
-          <in>Equipment.h</in>
-          <in>Landscape.h</in>
           <in>Obstacle.h</in>
-          <in>Position.h</in>
           <in>Space.h</in>
-          <in>SpaceTypeId.h</in>
-          <in>State.h</in>
-          <in>StaticElement.h</in>
-          <in>Statut.h</in>
-          <in>TypeId.h</in>
           <in>Wall.h</in>
         </df>
         <in>state.h</in>
