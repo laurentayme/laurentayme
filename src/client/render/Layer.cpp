@@ -5,7 +5,9 @@
 
 using namespace render;
 
-Layer::Layer() : surface(make_unique<Surface>()){
+Layer::Layer(){
+    surface.reset(new Surface);
+    
 }
 
 Layer::~Layer(){

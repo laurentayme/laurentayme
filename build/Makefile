@@ -528,6 +528,60 @@ src/client/render/CharacterTileSet.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.s
 .PHONY : src/client/render/CharacterTileSet.cpp.s
 
+src/client/render/ElementTabLayer.o: src/client/render/ElementTabLayer.cpp.o
+
+.PHONY : src/client/render/ElementTabLayer.o
+
+# target to build an object file
+src/client/render/ElementTabLayer.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o
+.PHONY : src/client/render/ElementTabLayer.cpp.o
+
+src/client/render/ElementTabLayer.i: src/client/render/ElementTabLayer.cpp.i
+
+.PHONY : src/client/render/ElementTabLayer.i
+
+# target to preprocess a source file
+src/client/render/ElementTabLayer.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.i
+.PHONY : src/client/render/ElementTabLayer.cpp.i
+
+src/client/render/ElementTabLayer.s: src/client/render/ElementTabLayer.cpp.s
+
+.PHONY : src/client/render/ElementTabLayer.s
+
+# target to generate assembly for a file
+src/client/render/ElementTabLayer.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.s
+.PHONY : src/client/render/ElementTabLayer.cpp.s
+
+src/client/render/Layer.o: src/client/render/Layer.cpp.o
+
+.PHONY : src/client/render/Layer.o
+
+# target to build an object file
+src/client/render/Layer.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Layer.cpp.o
+.PHONY : src/client/render/Layer.cpp.o
+
+src/client/render/Layer.i: src/client/render/Layer.cpp.i
+
+.PHONY : src/client/render/Layer.i
+
+# target to preprocess a source file
+src/client/render/Layer.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Layer.cpp.i
+.PHONY : src/client/render/Layer.cpp.i
+
+src/client/render/Layer.s: src/client/render/Layer.cpp.s
+
+.PHONY : src/client/render/Layer.s
+
+# target to generate assembly for a file
+src/client/render/Layer.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Layer.cpp.s
+.PHONY : src/client/render/Layer.cpp.s
+
 src/client/render/MapTileSet.o: src/client/render/MapTileSet.cpp.o
 
 .PHONY : src/client/render/MapTileSet.o
@@ -690,6 +744,12 @@ help:
 	@echo "... src/client/render/CharacterTileSet.o"
 	@echo "... src/client/render/CharacterTileSet.i"
 	@echo "... src/client/render/CharacterTileSet.s"
+	@echo "... src/client/render/ElementTabLayer.o"
+	@echo "... src/client/render/ElementTabLayer.i"
+	@echo "... src/client/render/ElementTabLayer.s"
+	@echo "... src/client/render/Layer.o"
+	@echo "... src/client/render/Layer.i"
+	@echo "... src/client/render/Layer.s"
 	@echo "... src/client/render/MapTileSet.o"
 	@echo "... src/client/render/MapTileSet.i"
 	@echo "... src/client/render/MapTileSet.s"

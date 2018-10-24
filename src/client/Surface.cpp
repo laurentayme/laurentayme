@@ -11,11 +11,8 @@
 
 using namespace render;
 
-Surface::Surface(){
-    quads.setPrimitiveType(sf::Quads);
-}
-
 void Surface::initQuads(int count){
+    quads.setPrimitiveType(sf::Quads);
     quads.resize(count*4);
 }
 
@@ -36,7 +33,7 @@ void Surface::setSpriteTexture(int i, const Tile& texture){
     quad_ptr[3].texCoords=sf::Vector2f(texture.getX(),texture.getY()+ texture.getHeight());
 }
 
-void const Surface::draw(sf::RenderTarget& target, sf::RenderStates states){
+void Surface::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     
     // On applique la transformation
     states.transform *= getTransform();

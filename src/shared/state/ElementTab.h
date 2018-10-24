@@ -30,7 +30,7 @@ namespace state {
     ~ElementTab ();
     size_t const getHeight ();
     size_t const getWidth ();
-    std::vector<Element*> getElementList ();
+    std::vector<Element*> getElementList () const;
     void addElement (Element* e);
     Element* const getLocatedElement (Position* position);
     void setElement (Position* position, Element* element_ptr);

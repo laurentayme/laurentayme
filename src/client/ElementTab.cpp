@@ -39,7 +39,7 @@ size_t const ElementTab::getWidth(){
     return(width);
 }
 
-std::vector<Element*> ElementTab::getElementList(){
+std::vector<Element*> ElementTab::getElementList() const {
     return(elementList);
 }
 
