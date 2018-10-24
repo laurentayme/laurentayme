@@ -21,12 +21,25 @@ void Surface::loadTexture(const std::string& image_file){
 }
 
 void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet){
-    sf::Vertex* quad_ptr = &quads[i*4];
+    	sf::Vertex* quad_ptr = &quads[i*4];
+	if(x%2==0){
+    		quad_ptr[0].position=sf::Vector2f(x*tileSet.getCellWidth()+tileSet.getCellWidth()/2,y*tileSet.getCellHeight());
+		quad_ptr[1].position=sf::Vector2f(x*tileSet.getCellWidth(),y*tileSet.getCellHeight()+tileSet.getCellHeight()/2);
+		quad_ptr[2].position=sf::Vector2f(x*tileSet.getCellWidth()+tileSet.getCellWidth()/2,y*tileSet.getCellHeight()+tileSet.getCellHeight());
+		quad_ptr[3].position=sf::Vector2f(x*tileSet.getCellWidth()+tileSet.getCellWidth(),y*tileSet.getCellHeight()+tileSet.getCellHeight()/2);
+	}
 
-    	quad_ptr[0].position=sf::Vector2f(x*tileSet.getCellWidth()+tileSet.getCellWidth()/2,y*tileSet.getCellHeight());
-	quad_ptr[1].position=sf::Vector2f(x*tileSet.getCellWidth(),y*tileSet.getCellHeight()+tileSet.getCellHeight()/2);
-	quad_ptr[2].position=sf::Vector2f(x*tileSet.getCellWidth()+tileSet.getCellWidth()/2,y*tileSet.getCellHeight()+tileSet.getCellHeight());
-	quad_ptr[3].position=sf::Vector2f(x*tileSet.getCellWidth()+tileSet.getCellWidth(),y*tileSet.getCellHeight()+tileSet.getCellHeight()/2);
+	else{
+               
+		quad_ptr[0].position = sf::Vector2f((x+1)/2 * tileSet.getCellWidth(), y * tileSet.getCellHeight()+tileSet.getCellHeight()/2);
+		quad_ptr[1].position = sf::Vector2f(((x+1)/2 + 1) * tileSet.getCellWidth()-tileSet.getCellWidth()/2, (y+1) * tileSet.getCellHeight());
+		quad_ptr[2].position = sf::Vector2f((x+1)/2 * tileSet.getCellWidth(), (y + 1) * tileSet.getCellHeight()+tileSet.getCellHeight()/2);
+		quad_ptr[3].position = sf::Vector2f((x+1)/2 * tileSet.getCellWidth()-tileSet.getCellWidth()/2, (y + 1) * tileSet.getCellHeight());
+		
+     
+                        
+                    
+			}
 	
 }
 

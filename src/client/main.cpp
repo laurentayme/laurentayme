@@ -22,7 +22,7 @@ void testSFML() {
         for(int i=0;i<2;i++){
             	Space* s_ptr=new Space(i+1);
 		s_ptr->setTypeId(0);
-		Position position(0,i);
+		Position position(i,0);
 		Position posref=position;
 		s_ptr->setPosition(posref);
             elmt_list.push_back(s_ptr);
