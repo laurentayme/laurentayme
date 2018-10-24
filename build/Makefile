@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valentin/laurentayme
+CMAKE_SOURCE_DIR = /home/vincent/cloneplt/laurentayme
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valentin/laurentayme/build
+CMAKE_BINARY_DIR = /home/vincent/cloneplt/laurentayme/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/laurentayme/build/CMakeFiles /home/valentin/laurentayme/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles /home/vincent/cloneplt/laurentayme/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/laurentayme/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -501,6 +501,33 @@ src/client/main.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main.cpp.s
 .PHONY : src/client/main.cpp.s
 
+src/client/main_old.o: src/client/main_old.cpp.o
+
+.PHONY : src/client/main_old.o
+
+# target to build an object file
+src/client/main_old.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main_old.cpp.o
+.PHONY : src/client/main_old.cpp.o
+
+src/client/main_old.i: src/client/main_old.cpp.i
+
+.PHONY : src/client/main_old.i
+
+# target to preprocess a source file
+src/client/main_old.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main_old.cpp.i
+.PHONY : src/client/main_old.cpp.i
+
+src/client/main_old.s: src/client/main_old.cpp.s
+
+.PHONY : src/client/main_old.s
+
+# target to generate assembly for a file
+src/client/main_old.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main_old.cpp.s
+.PHONY : src/client/main_old.cpp.s
+
 src/client/render/CharacterTileSet.o: src/client/render/CharacterTileSet.cpp.o
 
 .PHONY : src/client/render/CharacterTileSet.o
@@ -608,6 +635,33 @@ src/client/render/MapTileSet.s: src/client/render/MapTileSet.cpp.s
 src/client/render/MapTileSet.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.s
 .PHONY : src/client/render/MapTileSet.cpp.s
+
+src/client/render/StateLayer.o: src/client/render/StateLayer.cpp.o
+
+.PHONY : src/client/render/StateLayer.o
+
+# target to build an object file
+src/client/render/StateLayer.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o
+.PHONY : src/client/render/StateLayer.cpp.o
+
+src/client/render/StateLayer.i: src/client/render/StateLayer.cpp.i
+
+.PHONY : src/client/render/StateLayer.i
+
+# target to preprocess a source file
+src/client/render/StateLayer.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/StateLayer.cpp.i
+.PHONY : src/client/render/StateLayer.cpp.i
+
+src/client/render/StateLayer.s: src/client/render/StateLayer.cpp.s
+
+.PHONY : src/client/render/StateLayer.s
+
+# target to generate assembly for a file
+src/client/render/StateLayer.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/StateLayer.cpp.s
+.PHONY : src/client/render/StateLayer.cpp.s
 
 src/client/render/StateTileSet.o: src/client/render/StateTileSet.cpp.o
 
@@ -741,6 +795,9 @@ help:
 	@echo "... src/client/main.o"
 	@echo "... src/client/main.i"
 	@echo "... src/client/main.s"
+	@echo "... src/client/main_old.o"
+	@echo "... src/client/main_old.i"
+	@echo "... src/client/main_old.s"
 	@echo "... src/client/render/CharacterTileSet.o"
 	@echo "... src/client/render/CharacterTileSet.i"
 	@echo "... src/client/render/CharacterTileSet.s"
@@ -753,6 +810,9 @@ help:
 	@echo "... src/client/render/MapTileSet.o"
 	@echo "... src/client/render/MapTileSet.i"
 	@echo "... src/client/render/MapTileSet.s"
+	@echo "... src/client/render/StateLayer.o"
+	@echo "... src/client/render/StateLayer.i"
+	@echo "... src/client/render/StateLayer.s"
 	@echo "... src/client/render/StateTileSet.o"
 	@echo "... src/client/render/StateTileSet.i"
 	@echo "... src/client/render/StateTileSet.s"

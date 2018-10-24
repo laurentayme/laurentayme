@@ -25,7 +25,7 @@ namespace render {
   public:
     Layer ();
     virtual ~Layer ();
-    const Surface* const getSurface ();
+    std::unique_ptr<Surface> const& getSurface ();
     void setSurface (Surface* surface);
     virtual void initSurface () = 0;
     // Setters and Getters

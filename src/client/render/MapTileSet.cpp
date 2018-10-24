@@ -31,7 +31,7 @@ MapTileSet::~MapTileSet(){
 }
 
 std::string const MapTileSet::getImageFile(){
-    return("/home/valentin/laurentayme/res/Map_Tileset.png");
+    return("/home/vincent/cloneplt/laurentayme/src/MapTileSet.png");
 }
 
 

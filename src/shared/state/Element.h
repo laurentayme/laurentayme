@@ -26,7 +26,7 @@ namespace state {
     virtual ~Element ();
     size_t const getTypeId () const;
     void setTypeId (size_t idtype);
-    Position const getPosition ();
+    Position const getPosition () const;
     void setPosition (Position& position);
     void const affiche_Position ();
     virtual void affiche_Classe () = 0;

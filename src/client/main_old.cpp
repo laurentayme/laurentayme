@@ -12,7 +12,7 @@ using namespace state;
 // Les lignes suivantes ne servent qu'à vérifier que la compilation avec SFML fonctionne
 #include <SFML/Graphics.hpp>
 
-void testSFML() {
+/*void testSFML() {
     	sf::Texture texture;
     	//sf::Texture texture2;
     
@@ -35,7 +35,7 @@ void testSFML() {
 		}
 	}
 
-	/*// essai sur les quads
+	// essai sur les quads
 	carre[0].position = sf::Vector2f(0, 0);
 	carre[1].position = sf::Vector2f(0, 400);
 	carre[2].position = sf::Vector2f(400, 400);
@@ -46,10 +46,10 @@ void testSFML() {
 	carre2[3].position = sf::Vector2f(800, 0);
 
 	// on définit la couleur des sommets du carre
-	/*carre[0].color = sf::Color::Red;
+	carre[0].color = sf::Color::Red;
 	carre[1].color = sf::Color::Blue;
 	carre[2].color = sf::Color::Green;
-	carre[3].color = sf::Color::Yellow;*/
+	carre[3].color = sf::Color::Yellow;
 
 	/*carre[0].texCoords = sf::Vector2f(0, 0);
 	carre[1].texCoords = sf::Vector2f(0, 400);
@@ -58,7 +58,7 @@ void testSFML() {
 	carre2[0].texCoords = sf::Vector2f(0, 0);
 	carre2[1].texCoords = sf::Vector2f(0, 400);
 	carre2[2].texCoords = sf::Vector2f(400,400);
-	carre2[3].texCoords = sf::Vector2f(400,0);*/
+	carre2[3].texCoords = sf::Vector2f(400,0);
 
 	texture.loadFromFile("/home/valentin/laurentayme/src/client/Pack.png.png");
 	//texture2.loadFromFile("/home/vincent/Bureau/pltimages/myAvatar.png");
@@ -87,13 +87,13 @@ void testSFML() {
 
 
     
-}
+}*/
 
 // Fin test SFML
 
 // test map
 
-class TileMap : public sf::Drawable, public sf::Transformable
+/*class TileMap : public sf::Drawable, public sf::Transformable
 {
 public:
 
@@ -170,16 +170,16 @@ private:
 
     sf::VertexArray m_vertices;
     sf::Texture m_tileset;
-};
+};*/
 
 //fin test map
 
 
 
-void Test_Unitaire();
+//void Test_Unitaire();
 
 
-int main(int argc,char* argv[])
+/*int main(int argc,char* argv[])
 {
     //testSFML();
     if (argc>1){                 // vérifie s'il y a un argument
@@ -233,7 +233,7 @@ int main(int argc,char* argv[])
     
 //test map
 	// on crée la fenêtre
-    sf::RenderWindow window(sf::VideoMode(149*6, 86*6), "Tilemap");
+    /*sf::RenderWindow window(sf::VideoMode(149*6, 86*6), "Tilemap");
 
     // on définit le niveau à l'aide de numéro de tuiles
     const int level[] =
@@ -278,15 +278,15 @@ int main(int argc,char* argv[])
                         quads[3].position = sf::Vector2f(149*2,3*86);
                         */
                         
-    			quads[0].texCoords = sf::Vector2f(0, 0);
+    			/*quads[0].texCoords = sf::Vector2f(0, 0);
     			quads[1].texCoords = sf::Vector2f(3508,0);
     			quads[2].texCoords = sf::Vector2f(3508,2479);
-    			quads[3].texCoords = sf::Vector2f(0,2479);
+    			quads[3].texCoords = sf::Vector2f(0,2479);*/
                         
     
 
     // on fait tourner la boucle principale
-    while (window.isOpen())
+    /*while (window.isOpen())
     {
         if (!map.load("/home/valentin/laurentayme/src/client/Pack.png", sf::Vector2u(149, 86), level, 5,5))
         return -1;
@@ -314,9 +314,9 @@ int main(int argc,char* argv[])
 
 
     return 0;
-}
+}*/
 
-void Test_Unitaire(){
+/*void Test_Unitaire(){
             size_t c=0;
             cout<<"//Phase de Tests unitaires//"<<endl;
             cout<<endl;
@@ -565,5 +565,5 @@ void Test_Unitaire(){
             
             delete space;
             space=nullptr;
-}
+}*/
 

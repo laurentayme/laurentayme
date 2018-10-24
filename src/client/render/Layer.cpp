@@ -14,8 +14,8 @@ Layer::~Layer(){
 
 }
 
-const Surface* const Layer::getSurface(){
-    Surface surf = *surface;
-    const Surface* const s=&surf;
-    return(s);
+std::unique_ptr<Surface> const& Layer::getSurface(){
+    //Surface surf = *surface;
+    //const Surface* const s=&surf;
+    return(surface);
 }

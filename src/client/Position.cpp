@@ -43,11 +43,11 @@ void Position::setY(int ord){
 	}
 }
 
-size_t const Position::getX(){
+size_t const Position::getX() const {
     return(x);
 }
 
-size_t const Position::getY(){
+size_t const Position::getY() const {
     return(y);
 }
 

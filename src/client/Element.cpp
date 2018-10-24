@@ -29,7 +29,7 @@ Element::~Element(){
     position=0; // Pointeur remis à l'adresse nulle
 }
 
-Position const Element::getPosition(){
+Position const Element::getPosition() const{
     return(*position);
 }
 

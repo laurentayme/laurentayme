@@ -19,14 +19,18 @@ void testSFML() {
         std::vector<Element*> elmt_list;
         
         //Initialisation d'une ElementList
-        for(int i=0;i<25;i++){
-            Space* s_ptr=new Space(1);
+        for(int i=0;i<1;i++){
+            Character* s_ptr=new Character("Iop");
+		s_ptr->setTypeId(1);
+		Position position(0,i);
+		Position posref=position;
+		s_ptr->setPosition(posref);
             elmt_list.push_back(s_ptr);
         }
         
         
         //Création de l'ElementTab
-        ElementTab elmt_tab(5,5,elmt_list);
+        ElementTab elmt_tab(1,2,elmt_list);
         
         //Création de l'ElementTabLayer
         ElementTab& tab_ref=elmt_tab;
@@ -34,14 +38,14 @@ void testSFML() {
         
         //Initialisation de la Surface
         elmt_tab_layer.initSurface();
-        const Surface* surf_ptr=elmt_tab_layer.getSurface();
-        sf::Texture text;
-        text=surf_ptr->getTexture();
+        //Surface surf_ptr=*elmt_tab_layer.getSurface();
+        //sf::Texture text;
+        //text=surf_ptr->getTexture();
         //surf_ptr->draw(surf_ptr->getQuads(),&text);
         
         
         // Création de la fenêtre
-    sf::RenderWindow window(sf::VideoMode(149*6, 86*6), "Tilemap");
+    sf::RenderWindow window(sf::VideoMode(149*3, 86*3), "Tilemap");
     while (window.isOpen()){
         // on gère les évènements
         sf::Event event;
@@ -53,7 +57,7 @@ void testSFML() {
         // on dessine le niveau
         window.clear();
         
-       
+       	window.draw(*elmt_tab_layer.getSurface());
         window.display();
 
     }

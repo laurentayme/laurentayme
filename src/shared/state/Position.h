@@ -17,8 +17,8 @@ namespace state {
     Position (int x = 0, int y = 0);
     void setX (int x);
     void setY (int y);
-    size_t const getX ();
-    size_t const getY ();
+    size_t const getX () const;
+    size_t const getY () const;
     // Setters and Getters
   };
 

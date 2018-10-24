@@ -28,7 +28,7 @@ void ElementTabLayer::initSurface(){
     for(int i=0; i<list.size(); i++){
         state::Element& e=*list[i];
         const Tile& t=tileset->getTile(e);
-        surface->setSpriteLocation(i,t.getX(),t.getY());
+     	surface->setSpriteLocation(i,e.getPosition().getX(),e.getPosition().getY(),sf::Vector2u (t.getWidth(),t.getHeight()));
         surface->setSpriteTexture(i,t);
     }
 }
