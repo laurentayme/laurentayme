@@ -36,6 +36,7 @@
         <in>Tile.cpp</in>
         <in>Wall.cpp</in>
         <in>main.cpp</in>
+        <in>main_old.cpp</in>
         <in>render.h</in>
       </df>
       <df name="shared">

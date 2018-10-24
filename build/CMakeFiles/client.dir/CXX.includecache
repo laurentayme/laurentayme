@@ -327,6 +327,8 @@ exception
 -
 state.h
 /home/valentin/laurentayme/src/client/state.h
+render.h
+/home/valentin/laurentayme/src/client/render.h
 SFML/Graphics.hpp
 -
 

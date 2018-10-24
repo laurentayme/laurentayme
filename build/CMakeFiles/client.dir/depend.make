@@ -276,6 +276,16 @@ CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Wall.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/main.cpp
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/CharacterTileSet.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/ElementTabLayer.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/Layer.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/MapTileSet.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/StateLayer.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/StateTileSet.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/Surface.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/Tile.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/TileSet.h
 
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/client/render.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/client/render/CharacterTileSet.h

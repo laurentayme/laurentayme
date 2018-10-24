@@ -277,6 +277,16 @@ CMakeFiles/client.dir/src/client/main.cpp.o
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  /home/valentin/laurentayme/src/client/main.cpp
+ /home/valentin/laurentayme/src/client/render.h
+ /home/valentin/laurentayme/src/client/render/CharacterTileSet.h
+ /home/valentin/laurentayme/src/client/render/ElementTabLayer.h
+ /home/valentin/laurentayme/src/client/render/Layer.h
+ /home/valentin/laurentayme/src/client/render/MapTileSet.h
+ /home/valentin/laurentayme/src/client/render/StateLayer.h
+ /home/valentin/laurentayme/src/client/render/StateTileSet.h
+ /home/valentin/laurentayme/src/client/render/Surface.h
+ /home/valentin/laurentayme/src/client/render/Tile.h
+ /home/valentin/laurentayme/src/client/render/TileSet.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o
  ../src/client/render.h
  ../src/client/render/CharacterTileSet.h

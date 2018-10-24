@@ -13,3 +13,9 @@ Layer::Layer(){
 Layer::~Layer(){
 
 }
+
+const Surface* const Layer::getSurface(){
+    Surface surf = *surface;
+    const Surface* const s=&surf;
+    return(s);
+}

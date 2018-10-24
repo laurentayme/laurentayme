@@ -12,6 +12,14 @@
 
 using namespace render;
 
+Tile::Tile(){
+    x=0;
+    y=0;
+    this->width=149;
+    this->height=86;
+}
+
+
 Tile::Tile(int abs, int ord, int width, int height){
     x=abs;
     y=ord;
