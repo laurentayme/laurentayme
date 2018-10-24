@@ -17,3 +17,5 @@ TileSet::TileSet(){
 TileSet::~TileSet(){ 
 }
 
+const Tile& TileSet::getTile(const state::Element& e){
+}

@@ -27,8 +27,8 @@ namespace render {
     ~CharacterTileSet ();
     int const getCellWidth (const state::Element& e) const;
     int const getCellHeight (const state::Element& e) const;
-    std::string const getImageFile (const state::Element& e);
-    const Tile&  getTile (const state::Element& e, int i);
+    std::string const getImageFile ();
+    const Tile&  getTile (const state::Element& e);
     // Setters and Getters
     const std::vector<Tile>& getIop() const;
     void setIop(const std::vector<Tile>& iop);

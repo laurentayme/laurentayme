@@ -19,7 +19,7 @@ namespace render {
     // Operations
   public:
     ElementTabLayer (const state::ElementTab& tab);
-    void initSurface (int count);
+    void initSurface ();
     // Setters and Getters
   };
 

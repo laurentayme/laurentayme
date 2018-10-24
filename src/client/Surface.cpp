@@ -44,3 +44,13 @@ void Surface::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     // Et on dessine enfin le tableau de vertex
     target.draw(quads, states);
 }
+
+const sf::Texture Surface::getTexture() const{
+    const sf::Texture& t=texture;
+    return(t);
+}
+
+const sf::VertexArray Surface::getQuads() const{
+    const sf::VertexArray& s=quads;
+    return(s);
+}

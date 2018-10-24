@@ -17,21 +17,18 @@ ElementTabLayer::ElementTabLayer (const state::ElementTab& tab) : tab(tab) {
     
 }
 
-void ElementTabLayer::initSurface(int count){
+void ElementTabLayer::initSurface(){
     
-    surface->initQuads(count);
-    //surface->loadTexture(tileset->getImageFile());
+    std::vector<state::Element*> list= tab.getElementList();
     
-    
-    
-    /*for(int i=0; i<t->size();i++){
-        setSpriteLocation();
-        setSpriteTexture();
-    }*/
+    surface->initQuads(list.size());
+    surface->loadTexture(tileset->getImageFile());
+ 
+    //Boucle sur l'ensemble des éléments d'un ElementTab
+    for(int i=0; i<list.size(); i++){
+        state::Element& e=*list[i];
+        const Tile& t=tileset->getTile(e);
+        surface->setSpriteLocation(i,t.getX(),t.getY());
+        surface->setSpriteTexture(i,t);
+    }
 }
-
-    
-
-/*ElementTabLayer::~ElementTabLayer(){
-
-}*/

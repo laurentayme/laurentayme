@@ -24,25 +24,11 @@ CharacterTileSet::CharacterTileSet(){
 CharacterTileSet::~CharacterTileSet(){
 }
 
-std::string const CharacterTileSet::getImageFile(const state::Element& e){
-    //Vérification Character
-    if (e.getTypeId()==1){
-        //Cas d'un Iop
-        if (e.getClass()=="Iop"){ 
-            return("/home/valentin/laurentayme/res/Iop_Tileset.png");
-        }
-        // Cas d'un Sadida
-        else if (e.getClass()=="Sadida"){
-            return("/home/valentin/laurentayme/res/Sadida_Tileset.png");
-        }
-    }
-    // Cas d'un StaticElement
-    else{
-        throw "This is not a Character !"; 
-    }
+std::string const CharacterTileSet::getImageFile(){
+    return("/home/valentin/laurentayme/res/Character_Tileset.png");
 }
 
-const Tile& CharacterTileSet::getTile(const state::Element& e,int i) {
+const Tile& CharacterTileSet::getTile(const state::Element& e) {
     //Cas d'un Character
     if (e.getTypeId()==1){ 
         // Cas d'un Iop

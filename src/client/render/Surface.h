@@ -19,7 +19,7 @@ namespace render {
   /// class Surface - 
   class Surface : public sf::Drawable, public sf::Transformable {
     // Attributes
-  private:
+  protected:
     sf::Texture texture;
     sf::VertexArray quads;
     // Operations
@@ -29,7 +29,11 @@ namespace render {
     void setSpriteLocation (int i, int x, int y);
     void setSpriteTexture (int i, const Tile& texture);
     void draw (sf::RenderTarget&  target, sf::RenderStates states) const;
+    const sf::Texture getTexture () const;
+    const sf::VertexArray getQuads () const;
     // Setters and Getters
+    void setTexture(const sf::Texture& texture);
+    void setQuads(const sf::VertexArray& quads);
   };
 
 };
