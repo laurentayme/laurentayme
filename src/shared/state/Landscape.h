@@ -23,6 +23,7 @@ namespace state {
     void affiche_Classe ();
     std::string const getClass () const;
     size_t const getDirection () const;
+    size_t const getSpaceType () const;
     // Setters and Getters
   };
 

@@ -6,6 +6,7 @@
 #include <string>
 
 namespace render {
+  class TileSet;
   class Tile;
 };
 namespace sf {
@@ -26,7 +27,7 @@ namespace render {
   public:
     void loadTexture (const std::string& image_file);
     void initQuads (int count);
-    void setSpriteLocation (int i, int x, int y, sf::Vector2u tileSize);
+    void setSpriteLocation (int i, int x, int y, TileSet& tileSet);
     void setSpriteTexture (int i, const Tile& texture);
     void draw (sf::RenderTarget&  target, sf::RenderStates states) const;
     const sf::Texture getTexture () const;

@@ -61,6 +61,7 @@ namespace state {
     void const afficheStatut ();
     bool const isObstacle () const;
     bool const isWall () const;
+    size_t const getSpaceType () const;
     // Setters and Getters
     const std::string& getCharacterClass() const;
     void setCharacterClass(const std::string& characterClass);

@@ -36,3 +36,8 @@ std::string const Landscape::getClass() const{
 size_t const Landscape::getDirection() const{
     return(0);
 }
+
+size_t const Landscape::getSpaceType() const {
+	return 0;
+}
+

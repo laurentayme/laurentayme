@@ -25,9 +25,7 @@ namespace render {
     StateTileSet ();
     ~StateTileSet ();
     int const getCellWidth () const;
-    int const getCellWidth (const state::Element& e) const;
     int const getCellHeight () const;
-    int const getCellHeight (const state::Element& e) const;
     const Tile&  getCharTile (char c);
     std::string const getImageFile ();
     const Tile& getTile (const state::Element& e);

@@ -256,7 +256,9 @@ bool const Character::isWall() const {
     return(false);
 }
 
-
+size_t const Character::getSpaceType() const {
+	return 0;
+}
 
 
 

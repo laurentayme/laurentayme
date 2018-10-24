@@ -11,11 +11,11 @@
 
 using namespace render;
 
-int const StateTileSet::getCellWidth(const state::Element& e) const{
+int const StateTileSet::getCellWidth() const{
     return(3508);
 }
 
-int const StateTileSet::getCellHeight(const state::Element& e) const{
+int const StateTileSet::getCellHeight() const{
     return(2479);
 }
 

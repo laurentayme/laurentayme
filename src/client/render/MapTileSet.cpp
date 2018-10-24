@@ -52,49 +52,29 @@ const Tile& MapTileSet::getTile(const state::Element& e){
             }
         }
         // Cas d'un Space
-        else{
-            Tile& s=space[0];
+        else if(e.getSpaceType()==1){	
+		Tile& s=space[0];
             return(s);
         }
-    }
+	else if(e.getSpaceType()==2){
+		Tile& s=space[14];
+	return(s);
+	}
+   }
     // Cas d'un Character
     else{
         throw "This is not a StaticElement !"; 
     }
 }
 
-int const MapTileSet::getCellWidth(const state::Element& e) const{
-    // Cas d'un Character
-    if (e.getTypeId()==0){ 
-        // Cas d'un Iop
-        if(e.isObstacle()==true){ // Cas d'un Landscape ou Wall
-            return(149);
-        }
-        else { //Cas d'un Space
+int const MapTileSet::getCellWidth() const{
                 return(149);
             }
-            
-    }
-    else{
-        throw "Ceci est un Character !";
-    }
-}
 
-int const MapTileSet::getCellHeight(const state::Element& e) const{
-    // Cas d'un Character
-    if (e.getTypeId()==0){ 
-        // Cas d'un Iop
-        if(e.isObstacle()==true){ // Cas d'un Landscape ou Wall
-            return(86);
-        }
-        else { //Cas d'un Space
+
+int const MapTileSet::getCellHeight() const{
                 return(86);
             }
-            
-    }
-    else{
-        throw "Ceci est un Character !";
-    }
-}
+
 
        

@@ -21,7 +21,7 @@ namespace state {
     // Operations
   public:
     Space (size_t spaceType);
-    size_t const getSpaceType ();
+    size_t const getSpaceType () const;
     bool const isObstacle () const;
     void affiche_Classe ();
     bool const isWall () const;

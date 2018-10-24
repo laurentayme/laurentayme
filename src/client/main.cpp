@@ -19,9 +19,9 @@ void testSFML() {
         std::vector<Element*> elmt_list;
         
         //Initialisation d'une ElementList
-        for(int i=0;i<1;i++){
-            Character* s_ptr=new Character("Iop");
-		s_ptr->setTypeId(1);
+        for(int i=0;i<2;i++){
+            	Space* s_ptr=new Space(i+1);
+		s_ptr->setTypeId(0);
 		Position position(0,i);
 		Position posref=position;
 		s_ptr->setPosition(posref);
@@ -30,7 +30,7 @@ void testSFML() {
         
         
         //Création de l'ElementTab
-        ElementTab elmt_tab(1,2,elmt_list);
+        ElementTab elmt_tab(5,5,elmt_list);
         
         //Création de l'ElementTabLayer
         ElementTab& tab_ref=elmt_tab;

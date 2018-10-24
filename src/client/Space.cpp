@@ -22,7 +22,7 @@ Space::Space(size_t space){
     }
 }
 
-size_t const Space::getSpaceType(){
+size_t const Space::getSpaceType() const{
     return(spaceType);
 }
 

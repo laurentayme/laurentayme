@@ -38,6 +38,9 @@ size_t const Wall::getDirection() const{
 }
 
 
+size_t const Wall::getSpaceType() const {
+	return 0;
+}
 
 
 
