@@ -65,10 +65,10 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
 }
 
 int const CharacterTileSet::getCellWidth() const{
-              return(181/1.55);
+              return(181/1.75);
 }
 
 int const CharacterTileSet::getCellHeight() const{
-            return(306/1.55);
+            return(306/1.75);
 
 }
