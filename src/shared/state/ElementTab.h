@@ -28,8 +28,8 @@ namespace state {
   public:
     ElementTab (int width, int height, std::vector<Element*> elementsList);
     ~ElementTab ();
-    size_t const getHeight ();
-    size_t const getWidth ();
+    size_t const getHeight () const;
+    size_t const getWidth () const;
     std::vector<Element*> getElementList () const;
     void addElement (Element* e);
     Element* const getLocatedElement (Position* position);

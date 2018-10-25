@@ -13,14 +13,14 @@ using namespace render;
 MapTileSet::MapTileSet(){
     for(int i=0;i<6;i++){
         for(int j=0;j<5;j++){
-            Tile t(149*i,86*j,149,86);
+            Tile t(149*j,86*i,149,86);
             space.push_back(t);
         }
     }
     
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
-            Tile t(149*i,86*j,149,86);
+            Tile t(149*j,86*i,149,86);
             landscape.push_back(t);
             wall.push_back(t);
         }
@@ -31,7 +31,7 @@ MapTileSet::~MapTileSet(){
 }
 
 std::string const MapTileSet::getImageFile(){
-    return("/home/vincent/cloneplt/laurentayme/src/MapTileSet.png");
+    return("/home/valentin/laurentayme/res/Map_Tileset.png");
 }
 
 
@@ -52,12 +52,17 @@ const Tile& MapTileSet::getTile(const state::Element& e){
             }
         }
         // Cas d'un Space
+        else if(e.getSpaceType()==0){	
+		Tile& s=space[16];
+            return(s);
+        }
+        
         else if(e.getSpaceType()==1){	
 		Tile& s=space[0];
             return(s);
         }
 	else if(e.getSpaceType()==2){
-		Tile& s=space[14];
+		Tile& s=space[9];
 	return(s);
 	}
    }
@@ -68,12 +73,12 @@ const Tile& MapTileSet::getTile(const state::Element& e){
 }
 
 int const MapTileSet::getCellWidth() const{
-                return(149);
+                return(149/1.25);
             }
 
 
 int const MapTileSet::getCellHeight() const{
-                return(86);
+                return(86/1.25);
             }
 
 

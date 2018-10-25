@@ -13,7 +13,7 @@ using namespace render;
 CharacterTileSet::CharacterTileSet(){
     for(int i=0;i<4;i++){
         for(int j=0;j<3;j++){
-            Tile t(i*181,j*306,181,306);
+            Tile t(i*181,j*309,181,309);
             iop.push_back(t);
             sadida.push_back(t);
         }
@@ -25,7 +25,7 @@ CharacterTileSet::~CharacterTileSet(){
 }
 
 std::string const CharacterTileSet::getImageFile(){
-    return("/home/vincent/cloneplt/laurentayme/res/Character_Tileset.png");
+    return("/home/valentin/laurentayme/res/Character_Tileset.png");
 }
 
 const Tile& CharacterTileSet::getTile(const state::Element& e) {
@@ -33,15 +33,15 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
     if (e.getTypeId()==1){ 
         // Cas d'un Iop
         if (e.getClass()=="Iop"){
-                Tile& s=iop[0];
+                Tile& s=iop[9];
                 
                 if(e.getDirection()==1){ //North
-                    s=iop[3];
+                    s=iop[9];
                     return(s);
                 }
                 
-                else if(e.getDirection()==2){ //East
-                    s=iop[4];
+                else if(e.getDirection()==2){ //West
+                    s=iop[2];
                     return(s);
                 }
                     
@@ -51,8 +51,8 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
                     return(s);
                 }
                 
-                else if(e.getDirection()==4){ //South
-                    s=iop[8];
+                else if(e.getDirection()==4){ //East
+                    s=iop[1];
                     return(s);
                 }
             }
@@ -65,10 +65,10 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
 }
 
 int const CharacterTileSet::getCellWidth() const{
-              return(181);
+              return(181/1.55);
 }
 
 int const CharacterTileSet::getCellHeight() const{
-            return(306);
+            return(306/1.55);
 
 }

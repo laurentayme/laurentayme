@@ -27,8 +27,8 @@ namespace render {
   public:
     void loadTexture (const std::string& image_file);
     void initQuads (int count);
-    void setSpriteLocation (int i, int x, int y, TileSet& tileSet);
-    void setSpriteTexture (int i, const Tile& texture);
+    void setSpriteLocation (int i, int x, int y, TileSet& tileSet, const state::ElementTab& elmt_tab);
+    void setSpriteTexture (int i, const Tile& texture, const state::ElementTab& elmt_tab);
     void draw (sf::RenderTarget&  target, sf::RenderStates states) const;
     const sf::Texture getTexture () const;
     const sf::VertexArray getQuads () const;

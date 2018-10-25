@@ -12,6 +12,7 @@
           <in>Layer.h</in>
           <in>MapTileSet.cpp</in>
           <in>MapTileSet.h</in>
+          <in>StateLayer.cpp</in>
           <in>StateLayer.h</in>
           <in>StateTileSet.cpp</in>
           <in>StateTileSet.h</in>

@@ -31,11 +31,11 @@ ElementTab::~ElementTab(){
     }
 }
 
-size_t const ElementTab::getHeight(){
+size_t const ElementTab::getHeight() const {
     return(height);
 }
 
-size_t const ElementTab::getWidth(){
+size_t const ElementTab::getWidth() const {
     return(width);
 }
 

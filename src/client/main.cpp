@@ -17,27 +17,49 @@ using namespace render;
 void testSFML() {
     	sf::Texture texture;
         std::vector<Element*> elmt_list;
+        std::vector<Element*> elmt_list2;
         
         //Initialisation d'une ElementList
-        for(int i=0;i<2;i++){
-            	Space* s_ptr=new Space(i+1);
+        for(int i=0;i<11;i++){
+            for(int j=0;j<7;j++){
+                Space* s_ptr=new Space(0);
 		s_ptr->setTypeId(0);
-		Position position(i,0);
+		Position position(i,j);
 		Position posref=position;
 		s_ptr->setPosition(posref);
-            elmt_list.push_back(s_ptr);
+                elmt_list.push_back(s_ptr);
+            }
+            	
         }
+        
+        Character* c_ptr=new Character("Iop");
+        c_ptr->setTypeId(1);
+        Position pos(0,0);
+        c_ptr->setPosition(pos);
+        std::cout<<c_ptr->getDirection()<<std::endl;
+        c_ptr->setDirection(4);
+        elmt_list2.push_back(c_ptr);
         
         
         //Création de l'ElementTab
-        ElementTab elmt_tab(5,5,elmt_list);
+        ElementTab elmt_tab(11,7,elmt_list);
+        ElementTab elmt_tab2(1,1,elmt_list2);
         
         //Création de l'ElementTabLayer
         ElementTab& tab_ref=elmt_tab;
         ElementTabLayer elmt_tab_layer(tab_ref);
         
+        ElementTab& tab_ref2=elmt_tab2;
+        ElementTabLayer elmt_tab_layer2(tab_ref2);
+        
         //Initialisation de la Surface
-        elmt_tab_layer.initSurface();
+        try{
+            elmt_tab_layer.initSurface();
+            elmt_tab_layer2.initSurface();
+        }
+        catch(const char* e){
+            cout<<"Exception: "<<e<<endl;
+        }
         //Surface surf_ptr=*elmt_tab_layer.getSurface();
         //sf::Texture text;
         //text=surf_ptr->getTexture();
@@ -45,7 +67,7 @@ void testSFML() {
         
         
         // Création de la fenêtre
-    sf::RenderWindow window(sf::VideoMode(149*3, 86*3), "Tilemap");
+    sf::RenderWindow window(sf::VideoMode(149*10, 86*8), "Tilemap");
     while (window.isOpen()){
         // on gère les évènements
         sf::Event event;
@@ -58,6 +80,7 @@ void testSFML() {
         window.clear();
         
        	window.draw(*elmt_tab_layer.getSurface());
+        window.draw(*elmt_tab_layer2.getSurface());
         window.display();
 
     }
