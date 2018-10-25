@@ -11,15 +11,29 @@
 
 using namespace render;
 
+
+StateTileSet::StateTileSet(){
+    Tile t(0,0,1490,1053);
+    state.push_back(t);
+   
+}
+
 int const StateTileSet::getCellWidth() const{
-    return(3508);
+    return(1490);
 }
 
 int const StateTileSet::getCellHeight() const{
-    return(2479);
+    return(1053);
 }
 
 std::string const StateTileSet::getImageFile(){
     return("/home/valentin/laurentayme/res/State_Tileset.png");
 }
 
+StateTileSet::~StateTileSet(){
+}
+
+const Tile& StateTileSet::getTile(const state::Element& e){ 
+    Tile& s=state[0];
+    return(s);
+}

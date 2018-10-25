@@ -18,7 +18,7 @@ MapTileSet::MapTileSet(){
         }
     }
     
-    for(int i=0;i<9;i++){
+    for(int i=0;i<8;i++){
         for(int j=0;j<9;j++){
             Tile t(149*j,86*i,149,86);
             landscape.push_back(t);

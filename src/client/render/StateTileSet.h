@@ -19,14 +19,13 @@ namespace render {
   class StateTileSet : public render::TileSet {
     // Attributes
   private:
-    std::vector<Tile> chars;
+    std::vector<Tile> state;
     // Operations
   public:
     StateTileSet ();
     ~StateTileSet ();
     int const getCellWidth () const;
     int const getCellHeight () const;
-    const Tile&  getCharTile (char c);
     std::string const getImageFile ();
     const Tile& getTile (const state::Element& e);
     // Setters and Getters

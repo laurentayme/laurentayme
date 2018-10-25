@@ -18,11 +18,21 @@ void testSFML() {
     	sf::Texture texture;
         std::vector<Element*> elmt_list;
         std::vector<Element*> elmt_list2;
+        std::vector<Element*> elmt_list3;
+        sf::Text text;
+        sf::Text textpa;
+        sf::Text textpm;
+        sf::Font font;
         
-        //Initialisation d'une ElementList
+        
+        
+        
+        
+        
+        //Creation MAP
         for(int i=0;i<11;i++){
             for(int j=0;j<7;j++){
-                Space* s_ptr=new Space(0);
+                Space* s_ptr=new Space(i%3);
 		s_ptr->setTypeId(0);
 		Position position(i,j);
 		Position posref=position;
@@ -32,18 +42,56 @@ void testSFML() {
             	
         }
         
+        //Personnage IOP
         Character* c_ptr=new Character("Iop");
         c_ptr->setTypeId(1);
-        Position pos(0,0);
+        Position pos(4,4);
         c_ptr->setPosition(pos);
-        std::cout<<c_ptr->getDirection()<<std::endl;
+        c_ptr->affiche_Position();
         c_ptr->setDirection(4);
         elmt_list2.push_back(c_ptr);
+        
+        //Menu de State
+        try{
+            Space* state_ptr=new Space(1);
+            state_ptr->setTypeId(2);
+            elmt_list3.push_back(state_ptr);
+        }
+        catch(const char* e){
+            std::cout<<"Exception: "<<e<<std::endl;
+        }
+        
+        //Affichage de l'état
+        if(!font.loadFromFile("/home/valentin/laurentayme/res/font.TTF")){
+            throw "Error Font Loading !";
+        }
+        
+        text.setFont(font);
+        
+        text.setString(std::to_string(c_ptr->getPV()));
+        text.setCharacterSize(24);
+        text.setColor(sf::Color::White);
+        text.setPosition(240,86*7.4);
+        
+        textpa.setFont(font);
+        
+        textpa.setString(std::to_string(c_ptr->getPA()));
+        textpa.setCharacterSize(23);
+        textpa.setColor(sf::Color::White);
+        textpa.setPosition(297,86*8.43);
+        
+        textpm.setFont(font);
+        textpm.setString(std::to_string(c_ptr->getPM()));
+        textpm.setCharacterSize(23);
+        textpm.setColor(sf::Color::White);
+        textpm.setPosition(220,86*8.44);
+        
         
         
         //Création de l'ElementTab
         ElementTab elmt_tab(11,7,elmt_list);
         ElementTab elmt_tab2(1,1,elmt_list2);
+        ElementTab elmt_tab3(1,1,elmt_list3);
         
         //Création de l'ElementTabLayer
         ElementTab& tab_ref=elmt_tab;
@@ -52,10 +100,14 @@ void testSFML() {
         ElementTab& tab_ref2=elmt_tab2;
         ElementTabLayer elmt_tab_layer2(tab_ref2);
         
+        ElementTab& tab_ref3=elmt_tab3;
+        ElementTabLayer elmt_tab_layer3(tab_ref3);
+        
         //Initialisation de la Surface
         try{
             elmt_tab_layer.initSurface();
             elmt_tab_layer2.initSurface();
+            elmt_tab_layer3.initSurface();
         }
         catch(const char* e){
             cout<<"Exception: "<<e<<endl;
@@ -67,7 +119,7 @@ void testSFML() {
         
         
         // Création de la fenêtre
-    sf::RenderWindow window(sf::VideoMode(149*10, 86*8), "Tilemap");
+    sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Tilemap");
     while (window.isOpen()){
         // on gère les évènements
         sf::Event event;
@@ -81,6 +133,10 @@ void testSFML() {
         
        	window.draw(*elmt_tab_layer.getSurface());
         window.draw(*elmt_tab_layer2.getSurface());
+        window.draw(*elmt_tab_layer3.getSurface());
+        window.draw(text);
+        window.draw(textpa);
+        window.draw(textpm);
         window.display();
 
     }
