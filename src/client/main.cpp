@@ -17,6 +17,7 @@ using namespace render;
 void testSFML() {
     	sf::Texture texture;
         std::vector<Element*> elmt_list;
+        std::vector<Element*> elmt_list_wall;
         std::vector<Element*> elmt_list2;
         std::vector<Element*> elmt_list3;
         sf::Text text;
@@ -39,6 +40,14 @@ void testSFML() {
 		s_ptr->setPosition(posref);
                 elmt_list.push_back(s_ptr);
             }
+            
+            Wall* w_ptr=new Wall;
+            w_ptr->setTypeId(0);
+            Position position(7,5);
+	    Position posref=position;
+            w_ptr->setPosition(posref);
+            elmt_list_wall.push_back(w_ptr);
+            
             	
         }
         
@@ -92,22 +101,31 @@ void testSFML() {
         ElementTab elmt_tab(11,7,elmt_list);
         ElementTab elmt_tab2(1,1,elmt_list2);
         ElementTab elmt_tab3(1,1,elmt_list3);
+        ElementTab elmt_tab_wall(1,1,elmt_list_wall);
         
         //Création de l'ElementTabLayer
+        //1st Layer
         ElementTab& tab_ref=elmt_tab;
         ElementTabLayer elmt_tab_layer(tab_ref);
         
+        //Character
         ElementTab& tab_ref2=elmt_tab2;
         ElementTabLayer elmt_tab_layer2(tab_ref2);
         
+        //State
         ElementTab& tab_ref3=elmt_tab3;
         ElementTabLayer elmt_tab_layer3(tab_ref3);
+        
+        //2nd Layer
+        ElementTab& tab_ref_wall=elmt_tab_wall;
+        ElementTabLayer elmt_tab_layer_wall(tab_ref_wall);
         
         //Initialisation de la Surface
         try{
             elmt_tab_layer.initSurface();
             elmt_tab_layer2.initSurface();
             elmt_tab_layer3.initSurface();
+            elmt_tab_layer_wall.initSurface();
         }
         catch(const char* e){
             cout<<"Exception: "<<e<<endl;
@@ -132,6 +150,7 @@ void testSFML() {
         window.clear();
         
        	window.draw(*elmt_tab_layer.getSurface());
+        window.draw(*elmt_tab_layer_wall.getSurface());
         window.draw(*elmt_tab_layer2.getSurface());
         window.draw(*elmt_tab_layer3.getSurface());
         window.draw(text);

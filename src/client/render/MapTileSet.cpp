@@ -18,11 +18,14 @@ MapTileSet::MapTileSet(){
         }
     }
     
+    Tile t(149*4.25,86*6,86,86);
+    wall.push_back(t);
+    
     for(int i=0;i<8;i++){
         for(int j=0;j<9;j++){
-            Tile t(149*j,86*i,149,86);
+            Tile t(149*j,86*i,86,86);
             landscape.push_back(t);
-            wall.push_back(t);
+            
         }
     }
 }
@@ -73,6 +76,7 @@ const Tile& MapTileSet::getTile(const state::Element& e){
 }
 
 int const MapTileSet::getCellWidth() const{
+                
                 return(149/1.25);
             }
 
