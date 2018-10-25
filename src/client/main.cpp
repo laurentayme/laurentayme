@@ -180,35 +180,18 @@ int main(int argc,char* argv[])
         }
         
         else if (strcmp(argv[1],"render")==0){
-                testSFML();
-                
-                // on crée la fenêtre
-                sf::RenderWindow window(sf::VideoMode(149*6, 86*6), "Tilemap");
-                while (window.isOpen()){
-                    // on gère les évènements
-                    sf::Event event;
-                    while (window.pollEvent(event)){
-                        if(event.type == sf::Event::Closed)
-                        window.close();
-                    }
-
-                // on dessine le niveau
-                /*window.clear();
-                window.draw(map);
-                window.draw(quads,&texture_2);
-                window.draw(iop_quads,&texture);
-       
-                window.display();*/
+            //Test Map    
+            testSFML();
+ 
                 }
     
         }
     }
     
 //test map
-testSFML();
+//testSFML();
                 
 
-}
 
 void Test_Unitaire(){
             size_t c=0;
