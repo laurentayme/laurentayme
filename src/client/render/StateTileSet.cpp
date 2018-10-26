@@ -27,7 +27,7 @@ int const StateTileSet::getCellHeight() const{
 }
 
 std::string const StateTileSet::getImageFile(){
-    return("/home/valentin/laurentayme/res/State_Tileset.png");
+    return("res/State_Tileset.png");
 }
 
 StateTileSet::~StateTileSet(){

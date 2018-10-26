@@ -71,7 +71,7 @@ void testSFML() {
         }
         
         //Affichage de l'état
-        if(!font.loadFromFile("/home/valentin/laurentayme/res/font.TTF")){
+        if(!font.loadFromFile("res/font.TTF")){
             throw "Error Font Loading !";
         }
         
