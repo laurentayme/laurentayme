@@ -19,6 +19,7 @@ CMakeFiles/client.dir/src/client/Abilities.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Abilities.cpp
 CMakeFiles/client.dir/src/client/Character.cpp.o
  ../src/shared/state.h
@@ -38,6 +39,7 @@ CMakeFiles/client.dir/src/client/Character.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Character.cpp
 CMakeFiles/client.dir/src/client/Element.cpp.o
  ../src/shared/state.h
@@ -57,6 +59,7 @@ CMakeFiles/client.dir/src/client/Element.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Element.cpp
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o
  ../src/shared/state.h
@@ -76,6 +79,7 @@ CMakeFiles/client.dir/src/client/ElementTab.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/ElementTab.cpp
 CMakeFiles/client.dir/src/client/Equipment.cpp.o
  ../src/shared/state.h
@@ -95,6 +99,7 @@ CMakeFiles/client.dir/src/client/Equipment.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Equipment.cpp
 CMakeFiles/client.dir/src/client/Landscape.cpp.o
  ../src/shared/state.h
@@ -114,6 +119,7 @@ CMakeFiles/client.dir/src/client/Landscape.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Landscape.cpp
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o
  ../src/shared/state.h
@@ -133,6 +139,7 @@ CMakeFiles/client.dir/src/client/Obstacle.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Obstacle.cpp
 CMakeFiles/client.dir/src/client/Position.cpp.o
  ../src/shared/state.h
@@ -152,6 +159,7 @@ CMakeFiles/client.dir/src/client/Position.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Position.cpp
 CMakeFiles/client.dir/src/client/Space.cpp.o
  ../src/shared/state.h
@@ -171,6 +179,7 @@ CMakeFiles/client.dir/src/client/Space.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Space.cpp
 CMakeFiles/client.dir/src/client/State.cpp.o
  ../src/shared/state.h
@@ -190,6 +199,7 @@ CMakeFiles/client.dir/src/client/State.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/State.cpp
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o
  ../src/shared/state.h
@@ -209,6 +219,7 @@ CMakeFiles/client.dir/src/client/StaticElement.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/StaticElement.cpp
 CMakeFiles/client.dir/src/client/Surface.cpp.o
  ../src/shared/state.h
@@ -228,6 +239,7 @@ CMakeFiles/client.dir/src/client/Surface.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Surface.cpp
  /home/valentin/laurentayme/src/client/render.h
  /home/valentin/laurentayme/src/client/render/CharacterTileSet.h
@@ -257,6 +269,7 @@ CMakeFiles/client.dir/src/client/Wall.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Wall.cpp
 CMakeFiles/client.dir/src/client/main.cpp.o
  ../src/shared/state.h
@@ -276,6 +289,7 @@ CMakeFiles/client.dir/src/client/main.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/main.cpp
  /home/valentin/laurentayme/src/client/render.h
  /home/valentin/laurentayme/src/client/render/CharacterTileSet.h
@@ -305,6 +319,7 @@ CMakeFiles/client.dir/src/client/main_old.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/main_old.cpp
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o
  ../src/client/render.h
@@ -334,6 +349,7 @@ CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/render/CharacterTileSet.cpp
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o
  ../src/client/render.h
@@ -363,6 +379,7 @@ CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/render/ElementTabLayer.cpp
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o
  ../src/client/render.h
@@ -392,6 +409,7 @@ CMakeFiles/client.dir/src/client/render/Layer.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/render/Layer.cpp
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o
  ../src/client/render.h
@@ -421,6 +439,7 @@ CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/render/MapTileSet.cpp
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o
  ../src/client/render.h
@@ -450,6 +469,7 @@ CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/render/StateLayer.cpp
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o
  ../src/client/render.h
@@ -479,6 +499,7 @@ CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/render/StateTileSet.cpp
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o
  ../src/client/render.h
@@ -508,6 +529,7 @@ CMakeFiles/client.dir/src/client/render/Tile.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/render/Tile.cpp
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o
  ../src/client/render.h
@@ -537,4 +559,5 @@ CMakeFiles/client.dir/src/client/render/TileSet.cpp.o
  ../src/shared/state/Statut.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/render/TileSet.cpp

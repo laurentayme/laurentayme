@@ -57,6 +57,7 @@
           <in>Statut.h</in>
           <in>TypeId.h</in>
           <in>Wall.h</in>
+          <in>WallTypeId.h</in>
         </df>
         <in>state.h</in>
       </df>

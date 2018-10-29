@@ -15,6 +15,7 @@ using namespace state;
 Landscape::Landscape(){
     obstacle=true;
     wall=false;
+    landscapeType=0;
 }
 
 bool const Landscape::isWall() const {
@@ -39,5 +40,23 @@ size_t const Landscape::getDirection() const{
 
 size_t const Landscape::getSpaceType() const {
 	return 0;
+}
+
+int Landscape::getWallType() const{
+    return 0;
+}
+
+int Landscape::getLandscapeType() const{
+    return(landscapeType);
+}
+
+void Landscape::setLandscapeType(int landscape){
+    if(landscape==0 || landscape==1){
+        landscapeType=landscape;
+    }
+    else{
+        throw "Incorrect Landscape Type !";
+    }
+    
 }
 

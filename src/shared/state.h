@@ -18,4 +18,5 @@
 #include "state/State.h"
 #include "state/Abilities.h"
 #include "state/Character.h"
+#include "state/WallTypeId.h"
 #endif

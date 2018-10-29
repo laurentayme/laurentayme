@@ -13,11 +13,17 @@ using namespace render;
 CharacterTileSet::CharacterTileSet(){
     for(int i=0;i<4;i++){
         for(int j=0;j<3;j++){
-            Tile t(i*181,j*309,181,309);
+            Tile t(i*400,j*680,370,680);
             iop.push_back(t);
-            sadida.push_back(t);
+            
+        }    
+    }
+    
+    for(int i=0; i<4;i++){
+        for(int j=0;j<3;j++){
+            Tile t_sram(370*4+i*455+66,73+585*j,270,600);
+            sadida.push_back(t_sram);
         }
-        
     }
 }
 
@@ -33,7 +39,7 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
     if (e.getTypeId()==1){ 
         // Cas d'un Iop
         if (e.getClass()=="Iop"){
-                Tile& s=iop[9];
+                Tile& s=iop[3];
                 
                 if(e.getDirection()==1){ //North
                     s=iop[9];
@@ -43,8 +49,7 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
                 else if(e.getDirection()==2){ //West
                     s=iop[2];
                     return(s);
-                }
-                    
+                }        
                     
                 else if(e.getDirection()==3){ //South
                     s=iop[0];
@@ -57,8 +62,14 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
                 }
             }
         }
-            // Cas d'un Landscape
-    // Cas d'un Character
+    
+    else if (e.getClass()=="Sadida"){
+        Tile& s=sadida[0];
+        return(s);
+        
+    }
+    
+    // Cas d'un Landscape
     else{
         throw "This is not a StaticElement !"; 
     }
@@ -68,7 +79,13 @@ int const CharacterTileSet::getCellWidth() const{
               return(181/1.75);
 }
 int const CharacterTileSet::getCellWidth(state::Element& elmt) const{
-              return(181/1.75);
+    if(elmt.getClass()=="Iop"){
+        return(181/1.75);
+    }
+    else if (elmt.getClass()=="Sadida"){
+        return(145/1.75);
+    }
+              
 }
 
 int const CharacterTileSet::getCellHeight() const{
@@ -77,6 +94,11 @@ int const CharacterTileSet::getCellHeight() const{
 }
 
 int const CharacterTileSet::getCellHeight(state::Element& elmt) const{
-            return(306/1.75);
+            if(elmt.getClass()=="Iop"){
+        return(306/1.75);
+    }
+    else if (elmt.getClass()=="Sadida"){
+        return(275/1.75);
+    }
 
 }

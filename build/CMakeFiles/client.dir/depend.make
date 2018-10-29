@@ -18,6 +18,7 @@ CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/StaticElem
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/client/Abilities.cpp
 
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state.h
@@ -37,6 +38,7 @@ CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/StaticElem
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/client/Character.cpp
 
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state.h
@@ -56,6 +58,7 @@ CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/StaticElemen
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/client/Element.cpp
 
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state.h
@@ -75,6 +78,7 @@ CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/StaticEle
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/client/ElementTab.cpp
 
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state.h
@@ -94,6 +98,7 @@ CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/StaticElem
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/client/Equipment.cpp
 
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state.h
@@ -113,6 +118,7 @@ CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/StaticElem
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/client/Landscape.cpp
 
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state.h
@@ -132,6 +138,7 @@ CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/StaticEleme
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/client/Obstacle.cpp
 
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state.h
@@ -151,6 +158,7 @@ CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/StaticEleme
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/client/Position.cpp
 
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state.h
@@ -170,6 +178,7 @@ CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/StaticElement.
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/client/Space.cpp
 
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state.h
@@ -189,6 +198,7 @@ CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/StaticElement.
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/client/State.cpp
 
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state.h
@@ -208,6 +218,7 @@ CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Static
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/client/StaticElement.cpp
 
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state.h
@@ -227,6 +238,7 @@ CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/StaticElemen
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/Surface.cpp
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/client/render/CharacterTileSet.h
@@ -256,6 +268,7 @@ CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/StaticElement.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/client/Wall.cpp
 
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state.h
@@ -275,6 +288,7 @@ CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/StaticElement.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/main.cpp
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/client/render/CharacterTileSet.h
@@ -304,6 +318,7 @@ CMakeFiles/client.dir/src/client/main_old.cpp.o: ../src/shared/state/StaticEleme
 CMakeFiles/client.dir/src/client/main_old.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/main_old.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/main_old.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/main_old.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/main_old.cpp.o: ../src/client/main_old.cpp
 
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/client/render.h
@@ -333,6 +348,7 @@ CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/st
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/client/render/CharacterTileSet.cpp
 
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/client/render.h
@@ -362,6 +378,7 @@ CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/sta
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/client/render/ElementTabLayer.cpp
 
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/client/render.h
@@ -391,6 +408,7 @@ CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/StaticE
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/client/render/Layer.cpp
 
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/client/render.h
@@ -420,6 +438,7 @@ CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/St
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/client/render/MapTileSet.cpp
 
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/client/render.h
@@ -449,6 +468,7 @@ CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/St
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/client/render/StateLayer.cpp
 
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/client/render.h
@@ -478,6 +498,7 @@ CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/client/render/StateTileSet.cpp
 
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/client/render.h
@@ -507,6 +528,7 @@ CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/StaticEl
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/client/render/Tile.cpp
 
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/client/render.h
@@ -536,5 +558,6 @@ CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/Stati
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/Statut.h
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/client/render/TileSet.cpp
 

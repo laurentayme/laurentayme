@@ -27,6 +27,8 @@ namespace state {
     bool const isWall () const;
     std::string const getClass () const;
     size_t const getDirection () const;
+    int getWallType () const;
+    int getLandscapeType () const;
     // Setters and Getters
   };
 

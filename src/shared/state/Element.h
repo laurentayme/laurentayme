@@ -35,6 +35,8 @@ namespace state {
     virtual std::string const getClass () const = 0;
     virtual size_t const getDirection () const = 0;
     virtual size_t const getSpaceType () const = 0;
+    virtual int getWallType () const = 0;
+    virtual int getLandscapeType () const = 0;
     // Setters and Getters
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);

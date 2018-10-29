@@ -5,6 +5,7 @@
 #include <exception>
 #include "state.h"
 #include "render.h"
+#include <random>
 
 
 using namespace std;
@@ -26,58 +27,93 @@ void testSFML() {
         sf::Text textpm;
         sf::Font font;
         
-        
+        //Paramètres de Map//
+        int width=9;
+        int height=12;
         
         
         
         
         //Creation MAP
-        for(int i=0;i<11;i++){
-            for(int j=0;j<8;j++){
-                Space* s_ptr=new Space(i%3);
-		s_ptr->setTypeId(0);
-		Position position(i,j);
-		Position posref=position;
-		s_ptr->setPosition(posref);
-                elmt_list.push_back(s_ptr);
+        for(int i=0;i<height;i++){
+            for(int j=0;j<width;j++){
+                if(i==0 || j==0){
+                    Space* s_ptr=new Space(1);
+                    s_ptr->setTypeId(0);
+                    Position position(i,j);
+                    Position posref=position;
+                    s_ptr->setPosition(posref);
+                    elmt_list.push_back(s_ptr);
+                }
+                else{
+                    Space* s_ptr=new Space(0);
+                    s_ptr->setTypeId(0);
+                    Position position(i,j);
+                    Position posref=position;
+                    s_ptr->setPosition(posref);
+                    elmt_list.push_back(s_ptr);
+                }
+                
+		
             }
         }
             
-        for(int i=0;i<4;i++){
-            Landscape* l_ptr=new Landscape;
-            l_ptr->setTypeId(0);
-            Position position(7,2+i);
-            Position posref=position;
-            l_ptr->setPosition(posref);
-            elmt_list_landscape.push_back(l_ptr);
+        //Affichage du Landscape//
+        for(int i=2;i<height-1;i++){
+            for(int j=2;j<width-1;j++){
+                Landscape* l_ptr=new Landscape;
+                l_ptr->setTypeId(0);
+                
+                //Aleatoire//
+                std::random_device rd;
+                std::mt19937 gen(rd());
+                std::uniform_int_distribution<int> dis(1,8);
+                int x=dis(gen);
+                
+                
+                if((i%x==0) && (j%(x+2)==0)){
+                    l_ptr->setLandscapeType(1);
+                    Position position(i,j);
+                    Position posref=position;
+                    l_ptr->setPosition(posref);
+                    elmt_list_landscape.push_back(l_ptr);
+                }
+                else if(((i%(x+3)==0) && (j%2==0))||((i%2==0) && (j%(x)==0))){
+                    Position position(i,j);
+                    Position posref=position;
+                    l_ptr->setPosition(posref);
+                    elmt_list_landscape.push_back(l_ptr);
+                }
+                
+                
+                
+            }
         }
             
-            
-        for(int i=0;i<11;i++){
-            for(int j=0;j<8;j++){
-                if(i==0|| j==0){
+        //Affichage des Wall//
+        for(int i=0;i<height;i++){
+            for(int j=0;j<width;j++){
+                if(i==0|| j==0){//Visible Wall
                     Wall* w_ptr= new Wall;
                     w_ptr->setTypeId(0);
                     Position position_wall(i,j);
                     Position posref_wall=position_wall;
                     w_ptr->setPosition(posref_wall);
                     elmt_list_wall.push_back(w_ptr);
+                }
+                //Invisible Wall
+                else if(i==height-1|| j==width-1){
+                    Wall* w_ptr= new Wall;
+                    w_ptr->setTypeId(0);
+                    w_ptr->setWallType(2);
+                    Position position_wall(i,j);
+                    Position posref_wall=position_wall;
+                    w_ptr->setPosition(posref_wall);
+                    //elmt_list_wall.push_back(w_ptr);
                 }
             }
         }
         
-        for(int i=0;i<11;i++){
-            for(int j=0;j<8;j++){
-                if(i==10|| j==7){
-                    Wall* w_ptr= new Wall;
-                    w_ptr->setTypeId(0);
-                    Position position_wall(i,j);
-                    Position posref_wall=position_wall;
-                    w_ptr->setPosition(posref_wall);
-                    elmt_list_wall.push_back(w_ptr);
-                }
-            }
-        }
             
             
             /*Wall* w_ptr2=new Wall;
@@ -90,14 +126,18 @@ void testSFML() {
 	
         
         
-        //Personnage IOP
+        //Affichage Personnages
         Character* c_ptr=new Character("Iop");
+        Character* sad_ptr=new Character("Sadida");
         c_ptr->setTypeId(1);
-        Position pos(4,4);
+        c_ptr->setDirection(1);
+        Position pos(height-1,width/2);
         c_ptr->setPosition(pos);
-        c_ptr->affiche_Position();
-        c_ptr->setDirection(4);
+        Position pos_sad(1,width/2);
+        sad_ptr->setPosition(pos_sad);
+        //c_ptr->setDirection(4);
         elmt_list2.push_back(c_ptr);
+        elmt_list2.push_back(sad_ptr);
         
         
         //Menu de State

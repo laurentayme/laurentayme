@@ -119,6 +119,8 @@ state/Abilities.h
 ../src/shared/state/Abilities.h
 state/Character.h
 ../src/shared/state/Character.h
+state/WallTypeId.h
+../src/shared/state/WallTypeId.h
 
 ../src/shared/state/Abilities.h
 string
@@ -167,9 +169,9 @@ stdlib.h
 -
 
 ../src/shared/state/Landscape.h
-string
--
 stdlib.h
+-
+string
 -
 Obstacle.h
 ../src/shared/state/Obstacle.h
@@ -211,12 +213,16 @@ stdlib.h
 -
 
 ../src/shared/state/Wall.h
-string
--
 stdlib.h
+-
+string
 -
 Obstacle.h
 ../src/shared/state/Obstacle.h
+
+../src/shared/state/WallTypeId.h
+stdlib.h
+-
 
 /home/valentin/laurentayme/src/client/Abilities.cpp
 stdio.h
@@ -329,6 +335,8 @@ state.h
 /home/valentin/laurentayme/src/client/state.h
 render.h
 /home/valentin/laurentayme/src/client/render.h
+random
+-
 SFML/Graphics.hpp
 -
 
@@ -425,11 +433,17 @@ TileSet.h
 /home/valentin/laurentayme/src/client/render/MapTileSet.cpp
 stdio.h
 -
+stdlib.h
+-
+iostream
+-
 state.h
 /home/valentin/laurentayme/src/client/render/state.h
 render.h
 /home/valentin/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
+-
+random
 -
 
 /home/valentin/laurentayme/src/client/render/MapTileSet.h
