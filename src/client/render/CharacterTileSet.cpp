@@ -25,7 +25,7 @@ CharacterTileSet::~CharacterTileSet(){
 }
 
 std::string const CharacterTileSet::getImageFile(){
-    return("/home/valentin/laurentayme/res/Character_Tileset.png");
+    return("res/Character_Tileset.png");
 }
 
 const Tile& CharacterTileSet::getTile(const state::Element& e) {
@@ -67,8 +67,16 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
 int const CharacterTileSet::getCellWidth() const{
               return(181/1.75);
 }
+int const CharacterTileSet::getCellWidth(state::Element& elmt) const{
+              return(181/1.75);
+}
 
 int const CharacterTileSet::getCellHeight() const{
+            return(306/1.75);
+
+}
+
+int const CharacterTileSet::getCellHeight(state::Element& elmt) const{
             return(306/1.75);
 
 }

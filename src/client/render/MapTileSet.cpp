@@ -18,23 +18,21 @@ MapTileSet::MapTileSet(){
         }
     }
     
-    Tile t(149*4.25,86*6,86,86);
-    wall.push_back(t);
-    
-    for(int i=0;i<8;i++){
-        for(int j=0;j<9;j++){
-            Tile t(149*j,86*i,86,86);
-            landscape.push_back(t);
-            
-        }
+    for(int i=0;i<2;i++){
+        Tile t(149*4+(149-86)/2,86*6,86,86);
+        landscape.push_back(t);
     }
+    
+    Tile t1(149*4+(149-61)/2,(86*7)+146,61,146);
+    wall.push_back(t1);
+            
 }
 
 MapTileSet::~MapTileSet(){
 }
 
 std::string const MapTileSet::getImageFile(){
-    return("/home/valentin/laurentayme/res/Map_Tileset.png");
+    return("res/Map_Tileset.png");
 }
 
 
@@ -75,15 +73,36 @@ const Tile& MapTileSet::getTile(const state::Element& e){
     }
 }
 
-int const MapTileSet::getCellWidth() const{
+int const MapTileSet::getCellWidth(state::Element& elmt) const{
+    if (elmt.isObstacle()==true){
+        if(elmt.isWall()==true){
+            return(61);
+        }
+        else{//Landscape
+            return(86/1.26);
+        }
+        
+    }
+    else{//Space
+        return(149/1.25);
+    }
                 
-                return(149/1.25);
-            }
+}
 
 
-int const MapTileSet::getCellHeight() const{
-                return(86/1.25);
-            }
+int const MapTileSet::getCellHeight(state::Element& elmt) const{
+    if (elmt.isObstacle()==true){
+        if(elmt.isWall()==true){
+            return(146);
+        }
+        else{//Landscape
+            return(86/1.26);
+        }
+    }
+    else{//Space
+        return(75/1.25);
+    }
+}
 
 
        

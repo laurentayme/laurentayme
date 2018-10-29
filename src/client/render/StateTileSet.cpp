@@ -18,16 +18,16 @@ StateTileSet::StateTileSet(){
    
 }
 
-int const StateTileSet::getCellWidth() const{
+int const StateTileSet::getCellWidth(state::Element& elmt) const{
     return(1490);
 }
 
-int const StateTileSet::getCellHeight() const{
+int const StateTileSet::getCellHeight(state::Element& elmt) const{
     return(1053);
 }
 
 std::string const StateTileSet::getImageFile(){
-    return("/home/valentin/laurentayme/res/State_Tileset.png");
+    return("res/State_Tileset.png");
 }
 
 StateTileSet::~StateTileSet(){

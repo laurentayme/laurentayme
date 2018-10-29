@@ -26,10 +26,10 @@ namespace render {
   public:
     MapTileSet ();
     ~MapTileSet ();
-    int const getCellWidth () const;
+    int const getCellWidth (state::Element& elmt) const;
+    int const getCellHeight (state::Element& elmt) const;
     std::string const getImageFile ();
     const Tile&  getTile (const state::Element& e);
-    int const getCellHeight () const;
     // Setters and Getters
   };
 
