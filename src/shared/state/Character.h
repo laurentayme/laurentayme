@@ -62,6 +62,8 @@ namespace state {
     bool const isObstacle () const;
     bool const isWall () const;
     size_t const getSpaceType () const;
+    int getWallType () const;
+    int getLandscapeType () const;
     // Setters and Getters
     const std::string& getCharacterClass() const;
     void setCharacterClass(const std::string& characterClass);

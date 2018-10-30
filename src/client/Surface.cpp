@@ -31,67 +31,49 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
         
         //Affichage d'objets de Map
         if(elmt_list[0]->getTypeId()==0){
-        /*
-        //Si Abscisse pair, alors position Tile "classique"
-	if(int(x)%2==0){
-    		quad_ptr[0].position=sf::Vector2f((x/2)*tileSet.getCellWidth()+tileSet.getCellWidth()/2+200,y*tileSet.getCellHeight()+50);
-		quad_ptr[1].position=sf::Vector2f((x/2+1)*tileSet.getCellWidth()+200,y*tileSet.getCellHeight()+tileSet.getCellHeight()/2+50);
-		quad_ptr[2].position=sf::Vector2f((x/2+1)*tileSet.getCellWidth()-tileSet.getCellWidth()/2+200,y*tileSet.getCellHeight()+tileSet.getCellHeight()+50);
-		quad_ptr[3].position=sf::Vector2f((x/2)*tileSet.getCellWidth()+200,(y+1)*tileSet.getCellHeight()-tileSet.getCellHeight()/2+50);
-	}
-        //Sinon position du Tile décalé
-	else if (y!=elmt_tab.getWidth()-1){
-               
-		quad_ptr[0].position = sf::Vector2f((x+1)/2 * tileSet.getCellWidth()+200, y * tileSet.getCellHeight()+tileSet.getCellHeight()/2+50);
-		quad_ptr[1].position = sf::Vector2f(((x+1)/2 + 1) * tileSet.getCellWidth()-tileSet.getCellWidth()/2+200, (y+1) * tileSet.getCellHeight()+50);
-		quad_ptr[2].position = sf::Vector2f((x+1)/2 * tileSet.getCellWidth()+200, (y + 1) * tileSet.getCellHeight()+tileSet.getCellHeight()/2+50);
-		quad_ptr[3].position = sf::Vector2f((x+1)/2 * tileSet.getCellWidth()-tileSet.getCellWidth()/2+200, (y + 1) * tileSet.getCellHeight()+50);
-			}
-        
-        }*/
+ 
+        if (elmt_list[i]->isObstacle()==true){ //Affichage Obstacle
             
-        quad_ptr[0].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth()/2,((x+y))*tileSet.getCellHeight()/2+20);
-	quad_ptr[1].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth()/2+tileSet.getCellWidth(),((x+y))*tileSet.getCellHeight()/2+20);
-        quad_ptr[2].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth()/2+tileSet.getCellWidth(),((x+y))*tileSet.getCellHeight()/2+20+tileSet.getCellHeight());
-        quad_ptr[3].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth()/2,((x+y))*tileSet.getCellHeight()/2+20+tileSet.getCellHeight());
+            if(elmt_list[i]->isWall()==true){
+                quad_ptr[3].position=sf::Vector2f((149/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
+                quad_ptr[2].position=sf::Vector2f((149/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
+                quad_ptr[1].position=sf::Vector2f((149/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
+                quad_ptr[0].position=sf::Vector2f((149/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
+            }  
+            else{
+                quad_ptr[3].position=sf::Vector2f((149/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)+40+75/2.5+0.25*tileSet.getCellHeight(*elmt_list[i]));
+                quad_ptr[2].position=sf::Vector2f((149/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)+40+75/2.5+0.25*tileSet.getCellHeight(*elmt_list[i]));
+                quad_ptr[1].position=sf::Vector2f((149/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+75/2.5+0.25*tileSet.getCellHeight(*elmt_list[i]));
+                quad_ptr[0].position=sf::Vector2f((149/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+75/2.5+0.25*tileSet.getCellHeight(*elmt_list[i]));
             
+            
+            }
+            
+        }    
+        else{ //Affichage Space
+        quad_ptr[0].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2,((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40);
+	quad_ptr[1].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2+tileSet.getCellWidth(*elmt_list[i]),((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40);
+        quad_ptr[2].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2+tileSet.getCellWidth(*elmt_list[i]),((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40+tileSet.getCellHeight(*elmt_list[i]));
+        quad_ptr[3].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2,((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40+tileSet.getCellHeight(*elmt_list[i]));
+        }  
         }
         
         //Affichage de Characters
         else if (elmt_list[0]->getTypeId()==1){
            
-            /*
-            if(y%2==0){
-                y=y/2;
-
-                quad_ptr[0].position=sf::Vector2f((149/1.25)*(y+1/2)-tileSet.getCellWidth()/2+200+149/2,(86/1.25)*(x+1/2)+50+86/2+0.1*tileSet.getCellHeight());
-                quad_ptr[1].position=sf::Vector2f((149/1.25)*(y+1/2)+tileSet.getCellWidth()/2+200+149/2,(86/1.25)*(x+1/2)+50+86/2+0.1*tileSet.getCellHeight());
-                quad_ptr[2].position=sf::Vector2f((149/1.25)*(y+1/2)+tileSet.getCellWidth()/2+200+149/2,(86/1.25)*(x+1/2)-tileSet.getCellHeight()+50+86/2+0.1*tileSet.getCellHeight());
-                quad_ptr[3].position=sf::Vector2f((149/1.25)*(y+1/2)-tileSet.getCellWidth()/2+200+149/2,(86/1.25)*(x+1/2)-tileSet.getCellHeight()+50+86/2+0.1*tileSet.getCellHeight());
-            }
-            else{
-                y=(y+1)/2;
-                quad_ptr[0].position=sf::Vector2f((149/1.25)*(y)-tileSet.getCellWidth()/2+200,(86/1.25)*(x+1)+50+0.1*tileSet.getCellHeight());
-                quad_ptr[1].position=sf::Vector2f((149/1.25)*(y+1/2)+tileSet.getCellWidth()/2+200,(86/1.25)*(x+1)+50+0.1*tileSet.getCellHeight());
-                quad_ptr[2].position=sf::Vector2f((149/1.25)*(y+1/2)+tileSet.getCellWidth()/2+200,(86/1.25)*(x+1)-tileSet.getCellHeight()+50+0.1*tileSet.getCellHeight());
-                quad_ptr[3].position=sf::Vector2f((149/1.25)*(y)-tileSet.getCellWidth()/2+200,(86/1.25)*(x+1)-tileSet.getCellHeight()+50+0.1*tileSet.getCellHeight());
-            
-                
-            }
-            */
-            quad_ptr[0].position=sf::Vector2f((149/2.5)*(y-x)-tileSet.getCellWidth()/2+650+149/2.5,(86/2.5)*(x+y)+20+86/2.5+0.1*tileSet.getCellHeight());
-            quad_ptr[1].position=sf::Vector2f((149/2.5)*(y-x)+tileSet.getCellWidth()/2+650+149/2.5,(86/2.5)*(x+y)+20+86/2.5+0.1*tileSet.getCellHeight());
-            quad_ptr[2].position=sf::Vector2f((149/2.5)*(y-x)+tileSet.getCellWidth()/2+650+149/2.5,(86/2.5)*(x+y)-tileSet.getCellHeight()+20+86/2.5+0.1*tileSet.getCellHeight());
-            quad_ptr[3].position=sf::Vector2f((149/2.5)*(y-x)-tileSet.getCellWidth()/2+650+149/2.5,(86/2.5)*(x+y)-tileSet.getCellHeight()+20+86/2.5+0.1*tileSet.getCellHeight());
+            quad_ptr[0].position=sf::Vector2f((149/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
+            quad_ptr[1].position=sf::Vector2f((149/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
+            quad_ptr[2].position=sf::Vector2f((149/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
+            quad_ptr[3].position=sf::Vector2f((149/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
             
         }
         
         //Affichage du menu d'état
         else if(elmt_list[0]->getTypeId()==2){
             quad_ptr[0].position=sf::Vector2f(0,0);
-            quad_ptr[1].position=sf::Vector2f(0+tileSet.getCellWidth()-300,0);
-            quad_ptr[2].position=sf::Vector2f(0+tileSet.getCellWidth()-300,y+tileSet.getCellHeight()-280);
-            quad_ptr[3].position=sf::Vector2f(0,y+tileSet.getCellHeight()-280);
+            quad_ptr[1].position=sf::Vector2f(0+tileSet.getCellWidth(*elmt_list[i])-300,0);
+            quad_ptr[2].position=sf::Vector2f(0+tileSet.getCellWidth(*elmt_list[i])-300,y+tileSet.getCellHeight(*elmt_list[i])-280);
+            quad_ptr[3].position=sf::Vector2f(0,y+tileSet.getCellHeight(*elmt_list[i])-280);
             
         }
 	

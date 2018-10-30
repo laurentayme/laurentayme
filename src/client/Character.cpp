@@ -260,6 +260,13 @@ size_t const Character::getSpaceType() const {
 	return 0;
 }
 
+int Character::getWallType() const{
+    return 0;
+}
+
+int Character::getLandscapeType() const{
+    return(-1);
+}
 
 
 

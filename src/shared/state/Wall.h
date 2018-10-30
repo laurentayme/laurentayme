@@ -2,8 +2,8 @@
 #ifndef STATE__WALL__H
 #define STATE__WALL__H
 
-#include <string>
 #include <stdlib.h>
+#include <string>
 
 namespace state {
   class Obstacle;
@@ -15,6 +15,9 @@ namespace state {
 
   /// class Wall - 
   class Wall : public state::Obstacle {
+    // Attributes
+  protected:
+    size_t wallType;
     // Operations
   public:
     Wall ();
@@ -24,6 +27,9 @@ namespace state {
     std::string const getClass () const;
     size_t const getDirection () const;
     size_t const getSpaceType () const;
+    int getWallType () const;
+    void setWallType (int wall);
+    int getLandscapeType () const;
     // Setters and Getters
   };
 

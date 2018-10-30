@@ -45,3 +45,11 @@ std::string const Space::getClass() const{
 size_t const Space::getDirection() const{
     return(0);
 }
+
+int Space::getWallType() const{
+    return 0;
+}
+
+int Space::getLandscapeType() const{
+    return(-1);
+}

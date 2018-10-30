@@ -15,6 +15,7 @@ using namespace state;
 Wall::Wall(){
     obstacle=true;
     wall=true;
+    wallType=1;
 }
 
 bool const Wall::isWall() const {
@@ -42,7 +43,23 @@ size_t const Wall::getSpaceType() const {
 	return 0;
 }
 
+int Wall::getWallType() const{
+    return wallType;
+}
 
+void Wall::setWallType(int wall_type) {
+    if(wall_type==1 || wall_type==2){
+        wallType=wall_type;
+    }
+    else{
+        throw "Incorrect Wall Type !";
+    }
+    
+}
+
+int Wall::getLandscapeType() const{
+    return(-1);
+}
 
 
 

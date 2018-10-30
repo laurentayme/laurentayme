@@ -18,11 +18,11 @@ StateTileSet::StateTileSet(){
    
 }
 
-int const StateTileSet::getCellWidth() const{
+int const StateTileSet::getCellWidth(state::Element& elmt) const{
     return(1490);
 }
 
-int const StateTileSet::getCellHeight() const{
+int const StateTileSet::getCellHeight(state::Element& elmt) const{
     return(1053);
 }
 
