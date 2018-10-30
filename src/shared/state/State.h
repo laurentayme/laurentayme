@@ -17,10 +17,12 @@ namespace state {
     // Attributes
   private:
     ElementTab* carte;
+    ElementTab* characters;
     // Operations
   public:
     State (ElementTab* carte);
-    ElementTab* getMap ();
+    ElementTab* getMap () const;
+    ElementTab* getCharacters () const;
     // Setters and Getters
   };
 

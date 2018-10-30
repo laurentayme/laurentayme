@@ -6,6 +6,10 @@ State::State(ElementTab* tab){
 	carte=tab;
 }
 	
-ElementTab* State::getMap(){
-	return carte  ;     
+ElementTab* State::getMap() const{
+	return carte;     
  }
+
+ElementTab* State::getCharacters() const{
+    return characters;
+}

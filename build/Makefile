@@ -177,6 +177,33 @@ src/client/Character.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Character.cpp.s
 .PHONY : src/client/Character.cpp.s
 
+src/client/Command.o: src/client/Command.cpp.o
+
+.PHONY : src/client/Command.o
+
+# target to build an object file
+src/client/Command.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Command.cpp.o
+.PHONY : src/client/Command.cpp.o
+
+src/client/Command.i: src/client/Command.cpp.i
+
+.PHONY : src/client/Command.i
+
+# target to preprocess a source file
+src/client/Command.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Command.cpp.i
+.PHONY : src/client/Command.cpp.i
+
+src/client/Command.s: src/client/Command.cpp.s
+
+.PHONY : src/client/Command.s
+
+# target to generate assembly for a file
+src/client/Command.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Command.cpp.s
+.PHONY : src/client/Command.cpp.s
+
 src/client/Element.o: src/client/Element.cpp.o
 
 .PHONY : src/client/Element.o
@@ -284,6 +311,60 @@ src/client/Landscape.s: src/client/Landscape.cpp.s
 src/client/Landscape.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Landscape.cpp.s
 .PHONY : src/client/Landscape.cpp.s
+
+src/client/LifeCommand.o: src/client/LifeCommand.cpp.o
+
+.PHONY : src/client/LifeCommand.o
+
+# target to build an object file
+src/client/LifeCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LifeCommand.cpp.o
+.PHONY : src/client/LifeCommand.cpp.o
+
+src/client/LifeCommand.i: src/client/LifeCommand.cpp.i
+
+.PHONY : src/client/LifeCommand.i
+
+# target to preprocess a source file
+src/client/LifeCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LifeCommand.cpp.i
+.PHONY : src/client/LifeCommand.cpp.i
+
+src/client/LifeCommand.s: src/client/LifeCommand.cpp.s
+
+.PHONY : src/client/LifeCommand.s
+
+# target to generate assembly for a file
+src/client/LifeCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LifeCommand.cpp.s
+.PHONY : src/client/LifeCommand.cpp.s
+
+src/client/MoveCharacterCommand.o: src/client/MoveCharacterCommand.cpp.o
+
+.PHONY : src/client/MoveCharacterCommand.o
+
+# target to build an object file
+src/client/MoveCharacterCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o
+.PHONY : src/client/MoveCharacterCommand.cpp.o
+
+src/client/MoveCharacterCommand.i: src/client/MoveCharacterCommand.cpp.i
+
+.PHONY : src/client/MoveCharacterCommand.i
+
+# target to preprocess a source file
+src/client/MoveCharacterCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.i
+.PHONY : src/client/MoveCharacterCommand.cpp.i
+
+src/client/MoveCharacterCommand.s: src/client/MoveCharacterCommand.cpp.s
+
+.PHONY : src/client/MoveCharacterCommand.s
+
+# target to generate assembly for a file
+src/client/MoveCharacterCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.s
+.PHONY : src/client/MoveCharacterCommand.cpp.s
 
 src/client/Obstacle.o: src/client/Obstacle.cpp.o
 
@@ -759,6 +840,9 @@ help:
 	@echo "... src/client/Character.o"
 	@echo "... src/client/Character.i"
 	@echo "... src/client/Character.s"
+	@echo "... src/client/Command.o"
+	@echo "... src/client/Command.i"
+	@echo "... src/client/Command.s"
 	@echo "... src/client/Element.o"
 	@echo "... src/client/Element.i"
 	@echo "... src/client/Element.s"
@@ -771,6 +855,12 @@ help:
 	@echo "... src/client/Landscape.o"
 	@echo "... src/client/Landscape.i"
 	@echo "... src/client/Landscape.s"
+	@echo "... src/client/LifeCommand.o"
+	@echo "... src/client/LifeCommand.i"
+	@echo "... src/client/LifeCommand.s"
+	@echo "... src/client/MoveCharacterCommand.o"
+	@echo "... src/client/MoveCharacterCommand.i"
+	@echo "... src/client/MoveCharacterCommand.s"
 	@echo "... src/client/Obstacle.o"
 	@echo "... src/client/Obstacle.i"
 	@echo "... src/client/Obstacle.s"
