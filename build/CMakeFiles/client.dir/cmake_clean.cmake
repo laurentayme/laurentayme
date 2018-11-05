@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o"
   "CMakeFiles/client.dir/src/client/State.cpp.o"
   "CMakeFiles/client.dir/src/client/Element.cpp.o"
   "CMakeFiles/client.dir/src/client/ElementTab.cpp.o"
@@ -10,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/src/client/Position.cpp.o"
   "CMakeFiles/client.dir/src/client/Obstacle.cpp.o"
   "CMakeFiles/client.dir/src/client/Landscape.cpp.o"
+  "CMakeFiles/client.dir/src/client/Command.cpp.o"
+  "CMakeFiles/client.dir/src/client/LifeCommand.cpp.o"
   "CMakeFiles/client.dir/src/client/Character.cpp.o"
   "CMakeFiles/client.dir/src/client/Equipment.cpp.o"
   "CMakeFiles/client.dir/src/client/Space.cpp.o"

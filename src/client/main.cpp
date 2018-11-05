@@ -30,9 +30,7 @@ void testSFML() {
         //Paramètres de Map//
         int width=9;
         int height=12;
-        
-        
-        
+             
         
         //Creation MAP
         for(int i=0;i<height;i++){

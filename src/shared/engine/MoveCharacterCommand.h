@@ -23,7 +23,8 @@ namespace engine {
     // Operations
   public:
     MoveCharacterCommand (int character);
-    CommandTypeId  getTypeId () const;
+    ~MoveCharacterCommand ();
+    CommandTypeId getTypeId () const;
     void execute (state::State& state);
     // Setters and Getters
     int getCharacter() const;

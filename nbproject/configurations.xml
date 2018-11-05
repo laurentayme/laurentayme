@@ -15,10 +15,13 @@
         </df>
         <in>Abilities.cpp</in>
         <in>Character.cpp</in>
+        <in>Command.cpp</in>
         <in>Element.cpp</in>
         <in>ElementTab.cpp</in>
         <in>Equipment.cpp</in>
         <in>Landscape.cpp</in>
+        <in>LifeCommand.cpp</in>
+        <in>MoveCharacterCommand.cpp</in>
         <in>Obstacle.cpp</in>
         <in>Position.cpp</in>
         <in>Space.cpp</in>
@@ -87,6 +90,8 @@
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="src/client/Command.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/client/Element.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
@@ -102,6 +107,13 @@
       <item path="src/client/Landscape.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/client/LifeCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/client/MoveCharacterCommand.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="src/client/Obstacle.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">

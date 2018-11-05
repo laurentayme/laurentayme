@@ -8,7 +8,8 @@ namespace engine {
   enum CommandTypeId {
     LOAD     = 1,
     DIRECTION     = 2,
-    MOVE_CHARACTER     = 3
+    MOVE_CHARACTER     = 3,
+    LIFE     = 4
   };
 
 };

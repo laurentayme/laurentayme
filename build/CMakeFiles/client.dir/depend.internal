@@ -41,6 +41,35 @@ CMakeFiles/client.dir/src/client/Character.cpp.o
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Character.cpp
+CMakeFiles/client.dir/src/client/Command.cpp.o
+ ../src/shared/engine.h
+ ../src/shared/engine/Command.h
+ ../src/shared/engine/CommandTypeId.h
+ ../src/shared/engine/Engine.h
+ ../src/shared/engine/HandleAbilitiesCommand.h
+ ../src/shared/engine/LifeCommand.h
+ ../src/shared/engine/LoadCommand.h
+ ../src/shared/engine/MoveCharacterCommand.h
+ ../src/shared/engine/OrientationCommand.h
+ ../src/shared/state.h
+ ../src/shared/state/Abilities.h
+ ../src/shared/state/Character.h
+ ../src/shared/state/Direction.h
+ ../src/shared/state/Element.h
+ ../src/shared/state/ElementTab.h
+ ../src/shared/state/Equipment.h
+ ../src/shared/state/Landscape.h
+ ../src/shared/state/Obstacle.h
+ ../src/shared/state/Position.h
+ ../src/shared/state/Space.h
+ ../src/shared/state/SpaceTypeId.h
+ ../src/shared/state/State.h
+ ../src/shared/state/StaticElement.h
+ ../src/shared/state/Statut.h
+ ../src/shared/state/TypeId.h
+ ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
+ /home/valentin/laurentayme/src/client/Command.cpp
 CMakeFiles/client.dir/src/client/Element.cpp.o
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -121,6 +150,64 @@ CMakeFiles/client.dir/src/client/Landscape.cpp.o
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/Landscape.cpp
+CMakeFiles/client.dir/src/client/LifeCommand.cpp.o
+ ../src/shared/engine.h
+ ../src/shared/engine/Command.h
+ ../src/shared/engine/CommandTypeId.h
+ ../src/shared/engine/Engine.h
+ ../src/shared/engine/HandleAbilitiesCommand.h
+ ../src/shared/engine/LifeCommand.h
+ ../src/shared/engine/LoadCommand.h
+ ../src/shared/engine/MoveCharacterCommand.h
+ ../src/shared/engine/OrientationCommand.h
+ ../src/shared/state.h
+ ../src/shared/state/Abilities.h
+ ../src/shared/state/Character.h
+ ../src/shared/state/Direction.h
+ ../src/shared/state/Element.h
+ ../src/shared/state/ElementTab.h
+ ../src/shared/state/Equipment.h
+ ../src/shared/state/Landscape.h
+ ../src/shared/state/Obstacle.h
+ ../src/shared/state/Position.h
+ ../src/shared/state/Space.h
+ ../src/shared/state/SpaceTypeId.h
+ ../src/shared/state/State.h
+ ../src/shared/state/StaticElement.h
+ ../src/shared/state/Statut.h
+ ../src/shared/state/TypeId.h
+ ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
+ /home/valentin/laurentayme/src/client/LifeCommand.cpp
+CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o
+ ../src/shared/engine.h
+ ../src/shared/engine/Command.h
+ ../src/shared/engine/CommandTypeId.h
+ ../src/shared/engine/Engine.h
+ ../src/shared/engine/HandleAbilitiesCommand.h
+ ../src/shared/engine/LifeCommand.h
+ ../src/shared/engine/LoadCommand.h
+ ../src/shared/engine/MoveCharacterCommand.h
+ ../src/shared/engine/OrientationCommand.h
+ ../src/shared/state.h
+ ../src/shared/state/Abilities.h
+ ../src/shared/state/Character.h
+ ../src/shared/state/Direction.h
+ ../src/shared/state/Element.h
+ ../src/shared/state/ElementTab.h
+ ../src/shared/state/Equipment.h
+ ../src/shared/state/Landscape.h
+ ../src/shared/state/Obstacle.h
+ ../src/shared/state/Position.h
+ ../src/shared/state/Space.h
+ ../src/shared/state/SpaceTypeId.h
+ ../src/shared/state/State.h
+ ../src/shared/state/StaticElement.h
+ ../src/shared/state/Statut.h
+ ../src/shared/state/TypeId.h
+ ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
+ /home/valentin/laurentayme/src/client/MoveCharacterCommand.cpp
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o
  ../src/shared/state.h
  ../src/shared/state/Abilities.h

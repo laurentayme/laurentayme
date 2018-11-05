@@ -6,10 +6,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/valentin/laurentayme/src/client/Abilities.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Abilities.cpp.o"
   "/home/valentin/laurentayme/src/client/Character.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Character.cpp.o"
+  "/home/valentin/laurentayme/src/client/Command.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Command.cpp.o"
   "/home/valentin/laurentayme/src/client/Element.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Element.cpp.o"
   "/home/valentin/laurentayme/src/client/ElementTab.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/ElementTab.cpp.o"
   "/home/valentin/laurentayme/src/client/Equipment.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Equipment.cpp.o"
   "/home/valentin/laurentayme/src/client/Landscape.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Landscape.cpp.o"
+  "/home/valentin/laurentayme/src/client/LifeCommand.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/LifeCommand.cpp.o"
+  "/home/valentin/laurentayme/src/client/MoveCharacterCommand.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o"
   "/home/valentin/laurentayme/src/client/Obstacle.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Obstacle.cpp.o"
   "/home/valentin/laurentayme/src/client/Position.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Position.cpp.o"
   "/home/valentin/laurentayme/src/client/Space.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Space.cpp.o"
