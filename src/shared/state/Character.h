@@ -30,7 +30,6 @@ namespace state {
     std::vector<Equipment*> equipment_List;
     std::vector<Abilities*> abilities_List;
     size_t statut;
-    size_t direction;
     bool  player;
     // Operations
   public:
@@ -52,7 +51,7 @@ namespace state {
     void setStatut (int act_statut);
     std::vector<Abilities*> const getAbilitiesList ();
     size_t const getDirection () const;
-    void setDirection (int direction);
+    void setDirection (size_t direction);
     bool const isPlayer ();
     void affiche_Classe ();
     void const affiche_Stats ();

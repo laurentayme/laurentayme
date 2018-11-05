@@ -20,15 +20,16 @@ namespace engine {
   class LoadCommand : public engine::Command {
     // Attributes
   protected:
-    std::string file_name;
+    std::string fileName;
     // Operations
   public:
     LoadCommand (const char* f);
     CommandTypeId getTypeId () const;
     void execute (state::State& state);
+    ~LoadCommand ();
     // Setters and Getters
-    const std::string& getFile_name() const;
-    void setFile_name(const std::string& file_name);
+    const std::string& getFileName() const;
+    void setFileName(const std::string& fileName);
   };
 
 };

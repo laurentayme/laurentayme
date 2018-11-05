@@ -31,6 +31,7 @@ namespace engine {
     OrientationCommand (int character, int direction);
     CommandTypeId getTypeId () const;
     void execute (state::State& state);
+    ~OrientationCommand ();
     // Setters and Getters
     int getCharacter() const;
     void setCharacter(int character);

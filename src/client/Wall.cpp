@@ -62,4 +62,8 @@ int Wall::getLandscapeType() const{
 }
 
 
+void Wall::setDirection(size_t direction){
+	std::cout<<"Un mur n'a pas de direction"<<std::endl;
+}
+
 

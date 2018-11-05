@@ -53,3 +53,7 @@ int Space::getWallType() const{
 int Space::getLandscapeType() const{
     return(-1);
 }
+
+void Space::setDirection (size_t direction){
+	std::cout<<"Un espace n'a pas de direction"<<std::endl;
+}

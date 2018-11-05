@@ -180,7 +180,7 @@ void Character::setPM(int move){
     }
 }
 
-void Character::setDirection(int dir){
+void Character::setDirection(size_t dir){
     if( dir >=1 && dir <=4 ){
         direction=dir;
     }

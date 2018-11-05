@@ -26,6 +26,7 @@ namespace state {
     void affiche_Classe ();
     std::string const getClass () const;
     size_t const getDirection () const;
+    void setDirection (size_t direction);
     size_t const getSpaceType () const;
     int getWallType () const;
     int getLandscapeType () const;

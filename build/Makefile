@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valentin/laurentayme
+CMAKE_SOURCE_DIR = /home/vincent/cloneplt/laurentayme
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valentin/laurentayme/build
+CMAKE_BINARY_DIR = /home/vincent/cloneplt/laurentayme/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/laurentayme/build/CMakeFiles /home/valentin/laurentayme/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles /home/vincent/cloneplt/laurentayme/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/laurentayme/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -339,6 +339,33 @@ src/client/LifeCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LifeCommand.cpp.s
 .PHONY : src/client/LifeCommand.cpp.s
 
+src/client/LoadCommand.o: src/client/LoadCommand.cpp.o
+
+.PHONY : src/client/LoadCommand.o
+
+# target to build an object file
+src/client/LoadCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LoadCommand.cpp.o
+.PHONY : src/client/LoadCommand.cpp.o
+
+src/client/LoadCommand.i: src/client/LoadCommand.cpp.i
+
+.PHONY : src/client/LoadCommand.i
+
+# target to preprocess a source file
+src/client/LoadCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LoadCommand.cpp.i
+.PHONY : src/client/LoadCommand.cpp.i
+
+src/client/LoadCommand.s: src/client/LoadCommand.cpp.s
+
+.PHONY : src/client/LoadCommand.s
+
+# target to generate assembly for a file
+src/client/LoadCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LoadCommand.cpp.s
+.PHONY : src/client/LoadCommand.cpp.s
+
 src/client/MoveCharacterCommand.o: src/client/MoveCharacterCommand.cpp.o
 
 .PHONY : src/client/MoveCharacterCommand.o
@@ -392,6 +419,33 @@ src/client/Obstacle.s: src/client/Obstacle.cpp.s
 src/client/Obstacle.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Obstacle.cpp.s
 .PHONY : src/client/Obstacle.cpp.s
+
+src/client/OrientationCommand.o: src/client/OrientationCommand.cpp.o
+
+.PHONY : src/client/OrientationCommand.o
+
+# target to build an object file
+src/client/OrientationCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o
+.PHONY : src/client/OrientationCommand.cpp.o
+
+src/client/OrientationCommand.i: src/client/OrientationCommand.cpp.i
+
+.PHONY : src/client/OrientationCommand.i
+
+# target to preprocess a source file
+src/client/OrientationCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/OrientationCommand.cpp.i
+.PHONY : src/client/OrientationCommand.cpp.i
+
+src/client/OrientationCommand.s: src/client/OrientationCommand.cpp.s
+
+.PHONY : src/client/OrientationCommand.s
+
+# target to generate assembly for a file
+src/client/OrientationCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/OrientationCommand.cpp.s
+.PHONY : src/client/OrientationCommand.cpp.s
 
 src/client/Position.o: src/client/Position.cpp.o
 
@@ -858,12 +912,18 @@ help:
 	@echo "... src/client/LifeCommand.o"
 	@echo "... src/client/LifeCommand.i"
 	@echo "... src/client/LifeCommand.s"
+	@echo "... src/client/LoadCommand.o"
+	@echo "... src/client/LoadCommand.i"
+	@echo "... src/client/LoadCommand.s"
 	@echo "... src/client/MoveCharacterCommand.o"
 	@echo "... src/client/MoveCharacterCommand.i"
 	@echo "... src/client/MoveCharacterCommand.s"
 	@echo "... src/client/Obstacle.o"
 	@echo "... src/client/Obstacle.i"
 	@echo "... src/client/Obstacle.s"
+	@echo "... src/client/OrientationCommand.o"
+	@echo "... src/client/OrientationCommand.i"
+	@echo "... src/client/OrientationCommand.s"
 	@echo "... src/client/Position.o"
 	@echo "... src/client/Position.i"
 	@echo "... src/client/Position.s"

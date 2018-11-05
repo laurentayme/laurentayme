@@ -20,6 +20,7 @@ namespace state {
   protected:
     Position* position;
     size_t idType;
+    size_t direction;
     // Operations
   public:
     Element (size_t idtype = 0);
@@ -34,6 +35,7 @@ namespace state {
     virtual bool const isWall () const = 0;
     virtual std::string const getClass () const = 0;
     virtual size_t const getDirection () const = 0;
+    virtual void setDirection (size_t direction) = 0;
     virtual size_t const getSpaceType () const = 0;
     virtual int getWallType () const = 0;
     virtual int getLandscapeType () const = 0;

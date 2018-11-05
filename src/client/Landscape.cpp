@@ -60,3 +60,7 @@ void Landscape::setLandscapeType(int landscape){
     
 }
 
+void Landscape::setDirection(size_t direction){
+	std::cout<< "Un paysage n'a pas de direction"<<std::endl;
+
+}
