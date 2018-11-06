@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/client.dir/src/client/StaticElement.cpp.o"
   "CMakeFiles/client.dir/src/client/Element.cpp.o"
+  "CMakeFiles/client.dir/src/client/TabEvent.cpp.o"
   "CMakeFiles/client.dir/src/client/State.cpp.o"
   "CMakeFiles/client.dir/src/client/Obstacle.cpp.o"
+  "CMakeFiles/client.dir/src/client/StateEvent.cpp.o"
   "CMakeFiles/client.dir/src/client/Character.cpp.o"
   "CMakeFiles/client.dir/src/client/Position.cpp.o"
   "CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o"
@@ -13,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o"
   "CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o"
   "CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o"
+  "CMakeFiles/client.dir/src/client/Observable.cpp.o"
   "CMakeFiles/client.dir/src/client/Abilities.cpp.o"
   "CMakeFiles/client.dir/src/client/main.cpp.o"
   "CMakeFiles/client.dir/src/client/LifeCommand.cpp.o"

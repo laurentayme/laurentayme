@@ -393,6 +393,33 @@ src/client/MoveCharacterCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.s
 .PHONY : src/client/MoveCharacterCommand.cpp.s
 
+src/client/Observable.o: src/client/Observable.cpp.o
+
+.PHONY : src/client/Observable.o
+
+# target to build an object file
+src/client/Observable.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Observable.cpp.o
+.PHONY : src/client/Observable.cpp.o
+
+src/client/Observable.i: src/client/Observable.cpp.i
+
+.PHONY : src/client/Observable.i
+
+# target to preprocess a source file
+src/client/Observable.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Observable.cpp.i
+.PHONY : src/client/Observable.cpp.i
+
+src/client/Observable.s: src/client/Observable.cpp.s
+
+.PHONY : src/client/Observable.s
+
+# target to generate assembly for a file
+src/client/Observable.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Observable.cpp.s
+.PHONY : src/client/Observable.cpp.s
+
 src/client/Obstacle.o: src/client/Obstacle.cpp.o
 
 .PHONY : src/client/Obstacle.o
@@ -528,6 +555,33 @@ src/client/State.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/State.cpp.s
 .PHONY : src/client/State.cpp.s
 
+src/client/StateEvent.o: src/client/StateEvent.cpp.o
+
+.PHONY : src/client/StateEvent.o
+
+# target to build an object file
+src/client/StateEvent.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/StateEvent.cpp.o
+.PHONY : src/client/StateEvent.cpp.o
+
+src/client/StateEvent.i: src/client/StateEvent.cpp.i
+
+.PHONY : src/client/StateEvent.i
+
+# target to preprocess a source file
+src/client/StateEvent.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/StateEvent.cpp.i
+.PHONY : src/client/StateEvent.cpp.i
+
+src/client/StateEvent.s: src/client/StateEvent.cpp.s
+
+.PHONY : src/client/StateEvent.s
+
+# target to generate assembly for a file
+src/client/StateEvent.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/StateEvent.cpp.s
+.PHONY : src/client/StateEvent.cpp.s
+
 src/client/StaticElement.o: src/client/StaticElement.cpp.o
 
 .PHONY : src/client/StaticElement.o
@@ -581,6 +635,33 @@ src/client/Surface.s: src/client/Surface.cpp.s
 src/client/Surface.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Surface.cpp.s
 .PHONY : src/client/Surface.cpp.s
+
+src/client/TabEvent.o: src/client/TabEvent.cpp.o
+
+.PHONY : src/client/TabEvent.o
+
+# target to build an object file
+src/client/TabEvent.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TabEvent.cpp.o
+.PHONY : src/client/TabEvent.cpp.o
+
+src/client/TabEvent.i: src/client/TabEvent.cpp.i
+
+.PHONY : src/client/TabEvent.i
+
+# target to preprocess a source file
+src/client/TabEvent.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TabEvent.cpp.i
+.PHONY : src/client/TabEvent.cpp.i
+
+src/client/TabEvent.s: src/client/TabEvent.cpp.s
+
+.PHONY : src/client/TabEvent.s
+
+# target to generate assembly for a file
+src/client/TabEvent.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TabEvent.cpp.s
+.PHONY : src/client/TabEvent.cpp.s
 
 src/client/Wall.o: src/client/Wall.cpp.o
 
@@ -918,6 +999,9 @@ help:
 	@echo "... src/client/MoveCharacterCommand.o"
 	@echo "... src/client/MoveCharacterCommand.i"
 	@echo "... src/client/MoveCharacterCommand.s"
+	@echo "... src/client/Observable.o"
+	@echo "... src/client/Observable.i"
+	@echo "... src/client/Observable.s"
 	@echo "... src/client/Obstacle.o"
 	@echo "... src/client/Obstacle.i"
 	@echo "... src/client/Obstacle.s"
@@ -933,12 +1017,18 @@ help:
 	@echo "... src/client/State.o"
 	@echo "... src/client/State.i"
 	@echo "... src/client/State.s"
+	@echo "... src/client/StateEvent.o"
+	@echo "... src/client/StateEvent.i"
+	@echo "... src/client/StateEvent.s"
 	@echo "... src/client/StaticElement.o"
 	@echo "... src/client/StaticElement.i"
 	@echo "... src/client/StaticElement.s"
 	@echo "... src/client/Surface.o"
 	@echo "... src/client/Surface.i"
 	@echo "... src/client/Surface.s"
+	@echo "... src/client/TabEvent.o"
+	@echo "... src/client/TabEvent.i"
+	@echo "... src/client/TabEvent.s"
 	@echo "... src/client/Wall.o"
 	@echo "... src/client/Wall.i"
 	@echo "... src/client/Wall.s"

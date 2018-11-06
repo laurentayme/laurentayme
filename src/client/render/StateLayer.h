@@ -3,16 +3,25 @@
 #define RENDER__STATELAYER__H
 
 
+namespace state {
+  class State;
+};
 namespace render {
   class Layer;
+};
+namespace state {
+  class Observer;
 }
 
 #include "Layer.h"
+#include "state/Observer.h"
+#include "state/State.h"
 
 namespace render {
 
   /// class StateLayer - 
-  class StateLayer : public render::Layer {
+  class StateLayer : public render::Layer, public state::Observer {
+    // Associations
     // Attributes
   private:
     const state::State& state;
@@ -20,6 +29,7 @@ namespace render {
   public:
     StateLayer (const state::State& state);
     void initSurface ();
+    void stateChanged (const state::Event& event);
     // Setters and Getters
   };
 

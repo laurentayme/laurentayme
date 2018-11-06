@@ -9,14 +9,21 @@ CMakeFiles/client.dir/src/client/Abilities.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -29,14 +36,21 @@ CMakeFiles/client.dir/src/client/Character.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -58,14 +72,21 @@ CMakeFiles/client.dir/src/client/Command.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -78,14 +99,21 @@ CMakeFiles/client.dir/src/client/Element.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -98,14 +126,21 @@ CMakeFiles/client.dir/src/client/ElementTab.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -118,14 +153,21 @@ CMakeFiles/client.dir/src/client/Equipment.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -138,14 +180,21 @@ CMakeFiles/client.dir/src/client/Landscape.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -167,14 +216,21 @@ CMakeFiles/client.dir/src/client/LifeCommand.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -196,14 +252,21 @@ CMakeFiles/client.dir/src/client/LoadCommand.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -225,18 +288,52 @@ CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
  /home/vincent/cloneplt/laurentayme/src/client/MoveCharacterCommand.cpp
+CMakeFiles/client.dir/src/client/Observable.cpp.o
+ ../src/shared/state.h
+ ../src/shared/state/Abilities.h
+ ../src/shared/state/Character.h
+ ../src/shared/state/Direction.h
+ ../src/shared/state/Element.h
+ ../src/shared/state/ElementTab.h
+ ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
+ ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
+ ../src/shared/state/Obstacle.h
+ ../src/shared/state/Position.h
+ ../src/shared/state/Space.h
+ ../src/shared/state/SpaceTypeId.h
+ ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
+ ../src/shared/state/StaticElement.h
+ ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
+ ../src/shared/state/TypeId.h
+ ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
+ /home/vincent/cloneplt/laurentayme/src/client/Observable.cpp
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -245,14 +342,21 @@ CMakeFiles/client.dir/src/client/Obstacle.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -274,14 +378,21 @@ CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -294,14 +405,21 @@ CMakeFiles/client.dir/src/client/Position.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -314,14 +432,21 @@ CMakeFiles/client.dir/src/client/Space.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -334,18 +459,52 @@ CMakeFiles/client.dir/src/client/State.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
  /home/vincent/cloneplt/laurentayme/src/client/State.cpp
+CMakeFiles/client.dir/src/client/StateEvent.cpp.o
+ ../src/shared/state.h
+ ../src/shared/state/Abilities.h
+ ../src/shared/state/Character.h
+ ../src/shared/state/Direction.h
+ ../src/shared/state/Element.h
+ ../src/shared/state/ElementTab.h
+ ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
+ ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
+ ../src/shared/state/Obstacle.h
+ ../src/shared/state/Position.h
+ ../src/shared/state/Space.h
+ ../src/shared/state/SpaceTypeId.h
+ ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
+ ../src/shared/state/StaticElement.h
+ ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
+ ../src/shared/state/TypeId.h
+ ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
+ /home/vincent/cloneplt/laurentayme/src/client/StateEvent.cpp
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -354,14 +513,21 @@ CMakeFiles/client.dir/src/client/StaticElement.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -374,14 +540,21 @@ CMakeFiles/client.dir/src/client/Surface.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -396,6 +569,33 @@ CMakeFiles/client.dir/src/client/Surface.cpp.o
  /home/vincent/cloneplt/laurentayme/src/client/render/Surface.h
  /home/vincent/cloneplt/laurentayme/src/client/render/Tile.h
  /home/vincent/cloneplt/laurentayme/src/client/render/TileSet.h
+CMakeFiles/client.dir/src/client/TabEvent.cpp.o
+ ../src/shared/state.h
+ ../src/shared/state/Abilities.h
+ ../src/shared/state/Character.h
+ ../src/shared/state/Direction.h
+ ../src/shared/state/Element.h
+ ../src/shared/state/ElementTab.h
+ ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
+ ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
+ ../src/shared/state/Obstacle.h
+ ../src/shared/state/Position.h
+ ../src/shared/state/Space.h
+ ../src/shared/state/SpaceTypeId.h
+ ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
+ ../src/shared/state/StaticElement.h
+ ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
+ ../src/shared/state/TypeId.h
+ ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
+ /home/vincent/cloneplt/laurentayme/src/client/TabEvent.cpp
 CMakeFiles/client.dir/src/client/Wall.cpp.o
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -404,14 +604,21 @@ CMakeFiles/client.dir/src/client/Wall.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -424,14 +631,21 @@ CMakeFiles/client.dir/src/client/main.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -454,14 +668,21 @@ CMakeFiles/client.dir/src/client/main_old.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -484,14 +705,21 @@ CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -514,14 +742,21 @@ CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -544,14 +779,21 @@ CMakeFiles/client.dir/src/client/render/Layer.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -574,14 +816,21 @@ CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -604,14 +853,21 @@ CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -634,14 +890,21 @@ CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -664,14 +927,21 @@ CMakeFiles/client.dir/src/client/render/Tile.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
@@ -694,14 +964,21 @@ CMakeFiles/client.dir/src/client/render/TileSet.cpp.o
  ../src/shared/state/Element.h
  ../src/shared/state/ElementTab.h
  ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
  ../src/shared/state/Landscape.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
  ../src/shared/state/Obstacle.h
  ../src/shared/state/Position.h
  ../src/shared/state/Space.h
  ../src/shared/state/SpaceTypeId.h
  ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
  ../src/shared/state/StaticElement.h
  ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
  ../src/shared/state/TypeId.h
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h

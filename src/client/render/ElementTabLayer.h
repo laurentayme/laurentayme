@@ -3,16 +3,25 @@
 #define RENDER__ELEMENTTABLAYER__H
 
 
+namespace state {
+  class ElementTab;
+};
 namespace render {
   class Layer;
+};
+namespace state {
+  class Observer;
 }
 
 #include "Layer.h"
+#include "state/Observer.h"
+#include "state/ElementTab.h"
 
 namespace render {
 
   /// class ElementTabLayer - 
-  class ElementTabLayer : public render::Layer {
+  class ElementTabLayer : public render::Layer, public state::Observer {
+    // Associations
     // Attributes
   private:
     const state::ElementTab& tab;
@@ -20,6 +29,7 @@ namespace render {
   public:
     ElementTabLayer (const state::ElementTab& tab);
     void initSurface ();
+    void stateChanged (const state::Event& event);
     // Setters and Getters
   };
 

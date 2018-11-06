@@ -7,6 +7,11 @@
 
 namespace render {
   class TileSet;
+};
+namespace state {
+  class ElementTab;
+};
+namespace render {
   class Tile;
 };
 namespace sf {

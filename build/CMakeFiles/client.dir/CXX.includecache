@@ -39,6 +39,10 @@ TileSet.h
 ../src/client/render/ElementTabLayer.h
 Layer.h
 ../src/client/render/Layer.h
+state/Observer.h
+../src/client/render/state/Observer.h
+state/ElementTab.h
+../src/client/render/state/ElementTab.h
 
 ../src/client/render/Layer.h
 memory
@@ -61,6 +65,10 @@ TileSet.h
 ../src/client/render/StateLayer.h
 Layer.h
 ../src/client/render/Layer.h
+state/Observer.h
+../src/client/render/state/Observer.h
+state/State.h
+../src/client/render/state/State.h
 
 ../src/client/render/StateTileSet.h
 vector
@@ -183,6 +191,14 @@ state/Direction.h
 ../src/shared/state/Direction.h
 state/Equipment.h
 ../src/shared/state/Equipment.h
+state/EventTypeId.h
+../src/shared/state/EventTypeId.h
+state/Event.h
+../src/shared/state/Event.h
+state/Observer.h
+../src/shared/state/Observer.h
+state/Observable.h
+../src/shared/state/Observable.h
 state/ElementTab.h
 ../src/shared/state/ElementTab.h
 state/State.h
@@ -193,6 +209,12 @@ state/Character.h
 ../src/shared/state/Character.h
 state/WallTypeId.h
 ../src/shared/state/WallTypeId.h
+state/TabEvent.h
+../src/shared/state/TabEvent.h
+state/StateEventId.h
+../src/shared/state/StateEventId.h
+state/StateEvent.h
+../src/shared/state/StateEvent.h
 
 ../src/shared/state/Abilities.h
 string
@@ -231,6 +253,8 @@ stdlib.h
 -
 vector
 -
+Observable.h
+../src/shared/state/Observable.h
 Element.h
 ../src/shared/state/Element.h
 
@@ -240,6 +264,12 @@ string
 stdlib.h
 -
 
+../src/shared/state/Event.h
+EventTypeId.h
+../src/shared/state/EventTypeId.h
+
+../src/shared/state/EventTypeId.h
+
 ../src/shared/state/Landscape.h
 stdlib.h
 -
@@ -247,6 +277,18 @@ string
 -
 Obstacle.h
 ../src/shared/state/Obstacle.h
+
+../src/shared/state/Observable.h
+vector
+-
+Event.h
+../src/shared/state/Event.h
+Observer.h
+../src/shared/state/Observer.h
+
+../src/shared/state/Observer.h
+Event.h
+../src/shared/state/Event.h
 
 ../src/shared/state/Obstacle.h
 StaticElement.h
@@ -269,8 +311,20 @@ stdlib.h
 -
 
 ../src/shared/state/State.h
+Observable.h
+../src/shared/state/Observable.h
 ElementTab.h
 ../src/shared/state/ElementTab.h
+
+../src/shared/state/StateEvent.h
+StateEventId.h
+../src/shared/state/StateEventId.h
+EventTypeId.h
+../src/shared/state/EventTypeId.h
+Event.h
+../src/shared/state/Event.h
+
+../src/shared/state/StateEventId.h
 
 ../src/shared/state/StaticElement.h
 Element.h
@@ -279,6 +333,14 @@ Element.h
 ../src/shared/state/Statut.h
 stdlib.h
 -
+
+../src/shared/state/TabEvent.h
+EventTypeId.h
+../src/shared/state/EventTypeId.h
+Event.h
+../src/shared/state/Event.h
+ElementTab.h
+../src/shared/state/ElementTab.h
 
 ../src/shared/state/TypeId.h
 stdlib.h
@@ -380,6 +442,24 @@ state.h
 engine.h
 /home/vincent/cloneplt/laurentayme/src/client/engine.h
 
+/home/vincent/cloneplt/laurentayme/src/client/Observable.cpp
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/state.h
+vector
+-
+iterator
+-
+list
+-
+algorithm
+-
+
 /home/vincent/cloneplt/laurentayme/src/client/Obstacle.cpp
 stdio.h
 -
@@ -418,6 +498,16 @@ stdio.h
 state.h
 /home/vincent/cloneplt/laurentayme/src/client/state.h
 
+/home/vincent/cloneplt/laurentayme/src/client/StateEvent.cpp
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/state.h
+
 /home/vincent/cloneplt/laurentayme/src/client/StaticElement.cpp
 stdio.h
 -
@@ -433,6 +523,16 @@ render.h
 /home/vincent/cloneplt/laurentayme/src/client/render.h
 SFML/Graphics.hpp
 -
+
+/home/vincent/cloneplt/laurentayme/src/client/TabEvent.cpp
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/state.h
 
 /home/vincent/cloneplt/laurentayme/src/client/Wall.cpp
 stdio.h
@@ -529,10 +629,16 @@ SFML/Graphics.hpp
 -
 memory
 -
+iostream
+-
 
 /home/vincent/cloneplt/laurentayme/src/client/render/ElementTabLayer.h
 Layer.h
 /home/vincent/cloneplt/laurentayme/src/client/render/Layer.h
+state/Observer.h
+/home/vincent/cloneplt/laurentayme/src/client/render/state/Observer.h
+state/ElementTab.h
+/home/vincent/cloneplt/laurentayme/src/client/render/state/ElementTab.h
 
 /home/vincent/cloneplt/laurentayme/src/client/render/Layer.cpp
 stdio.h
@@ -587,10 +693,16 @@ render.h
 /home/vincent/cloneplt/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
 -
+iostream
+-
 
 /home/vincent/cloneplt/laurentayme/src/client/render/StateLayer.h
 Layer.h
 /home/vincent/cloneplt/laurentayme/src/client/render/Layer.h
+state/Observer.h
+/home/vincent/cloneplt/laurentayme/src/client/render/state/Observer.h
+state/State.h
+/home/vincent/cloneplt/laurentayme/src/client/render/state/State.h
 
 /home/vincent/cloneplt/laurentayme/src/client/render/StateTileSet.cpp
 stdio.h

@@ -3,8 +3,10 @@
 #include "render.h"
 #include <SFML/Graphics.hpp>
 #include <memory>
+#include <iostream>
 
 using namespace render;
+
 
 ElementTabLayer::ElementTabLayer (const state::ElementTab& tab) : tab(tab) {
     std::vector<state::Element*> list = tab.getElementList();
@@ -50,3 +52,10 @@ void ElementTabLayer::initSurface(){
         
     }
 }
+
+void ElementTabLayer::stateChanged(const state::Event& event){
+	std::cout<<"Un evenement a eu lieu et la couche ElementTabLayer est au courant"<<std::endl;
+	
+}
+
+
