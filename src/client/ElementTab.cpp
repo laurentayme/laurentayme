@@ -82,8 +82,17 @@ void ElementTab::setElement(Position& pos,int elmt){
     }
     TabEvent e;
     notifyObservers(e);
-    //std::cout<<"Observer notifié !"<<std::endl;
     
+}
+
+void ElementTab::setElementDirection(int dir, int elmt){
+    for(size_t i=0;i<elementList.size();i++){
+        if (i==elmt){
+            elementList[elmt]->setDirection(dir);
+        }
+    }
+    TabEvent e;
+    notifyObservers(e);
 }
 
 

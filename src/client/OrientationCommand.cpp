@@ -19,8 +19,11 @@ CommandTypeId OrientationCommand::getTypeId () const {
 
 
 void OrientationCommand::execute(state::State& state){
-	const std::vector<Element*> characterList = state.getCharacters()->getElementList();
-	characterList[character]->setDirection(direction);
+	/*const std::vector<Element*> characterList = state.getCharacters()->getElementList();
+	characterList[character]->setDirection(direction);*/
+        
+        std::vector<state::Element*> chars=state.getCharacters()->getElementList();
+        state.getCharacters()->setElementDirection(direction,character);
 
 }
 

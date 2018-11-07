@@ -18,11 +18,15 @@ namespace engine {
   /// class MoveCharacterCommand - 
   class MoveCharacterCommand : public engine::Command {
     // Attributes
+  public:
+    int vectX;
+    int vectY;
+    int direction;
   protected:
     int character;
     // Operations
   public:
-    MoveCharacterCommand (int character);
+    MoveCharacterCommand (int character, int vectX, int vectY);
     ~MoveCharacterCommand ();
     CommandTypeId getTypeId () const;
     void execute (state::State& state);

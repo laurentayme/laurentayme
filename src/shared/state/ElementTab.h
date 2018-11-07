@@ -37,6 +37,7 @@ namespace state {
     Element* const getLocatedElement (Position* position);
     void setElement (Position& position, int element);
     void resize (size_t width, size_t height);
+    void setElementDirection (int direction, int element);
     // Setters and Getters
   };
 
