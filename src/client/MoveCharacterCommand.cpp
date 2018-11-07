@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include "state.h"
 #include "engine.h"
+#include <iostream>
 
 using namespace engine;
 
@@ -35,14 +36,20 @@ void MoveCharacterCommand::execute(state::State& act_state){
     size_t longueur=act_state.getMap()->getHeight();
     size_t largeur=act_state.getMap()->getWidth();
     
+    std::cout<<pos.getX()<<std::endl;
     //Cas du Character orienté vers le Nord
     if(chars[character]->getDirection()==1){
         if(pos.getX()>1){ //Vérification Bordure de Map
             pos.setX(pos.getX()-1);
-            chars[character]->setPosition(pos);
+            state::Position& posRef=pos;
+            
+            act_state.getCharacters()->setElement(posRef,character);
+            
+            //chars[character]->setPosition(pos);
         }
         else{
             throw "Déplacement vers le Nord Impossible !";
+            chars[character]->affiche_Position();
         }
     }
     

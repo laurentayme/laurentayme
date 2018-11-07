@@ -8,7 +8,7 @@
 using namespace render;
 
 
-ElementTabLayer::ElementTabLayer (const state::ElementTab& tab) : tab(tab) {
+ElementTabLayer::ElementTabLayer (state::ElementTab& tab) : tab(tab) {
     std::vector<state::Element*> list = tab.getElementList();
     if (list[0]->getTypeId()==0){
         tileset.reset(new MapTileSet);
@@ -54,9 +54,12 @@ void ElementTabLayer::initSurface(){
 }
 
 void ElementTabLayer::stateChanged(const state::Event& event){
-	std::cout<<"Un evenement a eu lieu et la couche ElementTabLayer est au courant"<<std::endl;
-	initSurface();
-	
+	std::cout<<"Un evenement a eu lieu dans la couche ElementTabLayer"<<std::endl;
+        initSurface();
+}
+
+state::ElementTab& ElementTabLayer::getTab() const{
+    return(tab);
 }
 
 

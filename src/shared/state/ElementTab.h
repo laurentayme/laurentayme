@@ -35,7 +35,7 @@ namespace state {
     std::vector<Element*> getElementList () const;
     void addElement (Element* e);
     Element* const getLocatedElement (Position* position);
-    void setElement (Position* position, Element* element_ptr);
+    void setElement (Position& position, int element);
     void resize (size_t width, size_t height);
     // Setters and Getters
   };

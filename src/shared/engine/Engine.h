@@ -28,6 +28,7 @@ namespace engine {
   public:
     Engine ();
     ~Engine ();
+    void setState (state::State state);
     const state::State& getState () const;
     void addPassiveCommands ();
     void addCommand (int priority, Command* cmd);

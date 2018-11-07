@@ -131,9 +131,10 @@ void testSFML() {
         Character* c_ptr=new Character("Iop");
         Character* sad_ptr=new Character("Sadida");
         c_ptr->setTypeId(1);
-        c_ptr->setDirection(1);
+        c_ptr->setDirection(1); //Nord
         Position pos(height-1,width/2);
         c_ptr->setPosition(pos);
+        cout<<c_ptr->getPosition().getX()<<endl;
         Position pos_sad(1,width/2);
         sad_ptr->setPosition(pos_sad);
         //c_ptr->setDirection(4);
@@ -179,38 +180,44 @@ void testSFML() {
         
         
         //Création de l'ElementTab
-        ElementTab elmt_tab(11,7,elmt_list);
+        
+        ElementTab* elmtTab_ptr=new ElementTab(11,7,elmt_list);
+        ElementTab* elmtTab2_ptr=new ElementTab(1,1,elmt_list2);
+        ElementTab* elmtTabLandscape_ptr=new ElementTab(1,1,elmt_list_landscape);
+        ElementTab* elmtTabWall_ptr=new ElementTab(1,1,elmt_list_wall);
+        
+        
+        
+        /*ElementTab elmt_tab(11,7,elmt_list);
         ElementTab elmt_tab2(1,1,elmt_list2);
         //ElementTab elmt_tab3(1,1,elmt_list3);
         ElementTab elmt_tab_landscape(1,1,elmt_list_landscape);
         ElementTab elmt_tab_wall(1,1,elmt_list_wall);
+         */ 
         
         //Création de l'ElementTabLayer
         //1st Layer
-        ElementTab& tab_ref=elmt_tab;
+        ElementTab& tab_ref=*elmtTab_ptr;
         ElementTabLayer elmt_tab_layer(tab_ref);
         
         //Character
-        ElementTab& tab_ref2=elmt_tab2;
+        ElementTab& tab_ref2=*elmtTab2_ptr;
         ElementTabLayer elmt_tab_layer2(tab_ref2);
         
-        //State
-       // ElementTab& tab_ref3=elmt_tab3;
-       // ElementTabLayer elmt_tab_layer3(tab_ref3);
+        
         
         //2nd Layer
-        ElementTab& tab_ref_landscape=elmt_tab_landscape;
+        ElementTab& tab_ref_landscape=*elmtTabLandscape_ptr;
         ElementTabLayer elmt_tab_layer_landscape(tab_ref_landscape);
         
         //3rd Layer
-        ElementTab& tab_ref_wall=elmt_tab_wall;
+        ElementTab& tab_ref_wall=*elmtTabWall_ptr;
         ElementTabLayer elmt_tab_layer_wall(tab_ref_wall);
         
         //Initialisation de la Surface
         try{
             elmt_tab_layer.initSurface();
             elmt_tab_layer2.initSurface();
-            //elmt_tab_layer3.initSurface();
             elmt_tab_layer_landscape.initSurface();
             elmt_tab_layer_wall.initSurface();
         }
@@ -218,22 +225,47 @@ void testSFML() {
             cout<<"Exception: "<<e<<endl;
         }
         
-        
-        //Surface surf_ptr=*elmt_tab_layer.getSurface();
-        //sf::Texture text;
-        //text=surf_ptr->getTexture();
-        //surf_ptr->draw(surf_ptr->getQuads(),&text);
-        
-        
+        //Définition du State et des pointeurs ElementTab
+        State state;
 
+        state.setMap(&elmt_tab_layer.getTab());
+        state.setCharacters(&elmt_tab_layer2.getTab());
+        //state.setMenu();
+        
+        
+        
+    //Engine & Observables
 	Engine engine;
-	
-
-
+        Observable observable;
+        
+        engine.setState(state);
+        
+        ElementTabLayer* elmtTabLayer_ref=new ElementTabLayer(tab_ref);
+        ElementTabLayer* elmtTabLayer2_ref=new ElementTabLayer(tab_ref2);
+        ElementTabLayer* elmtTabLayerLandscape_ref=new ElementTabLayer(tab_ref_landscape);
+        ElementTabLayer* elmtTabLayerWall_ref=new ElementTabLayer(tab_ref_wall);
+        
+        elmtTab_ptr->addObserver(elmtTabLayer_ref);
+        elmtTab2_ptr->addObserver(elmtTabLayer2_ref);
+        
+        //state.addObserver(elmtTabLayer2_ref);
+        
+        //elmt_tab_landscape.addObserver(elmtTabLayerLandscape_ref);
+        //elmt_tab_wall.addObserver(elmtTabLayerWall_ref);
+      
 
         // Création de la fenêtre
     sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Tilemap");
     while (window.isOpen()){
+        
+        //Initialisation de la Surface
+        try{   
+            //elmt_tab_layer2.initSurface();
+        }
+        catch(const char* e){
+            cout<<"Exception: "<<e<<endl;
+        }
+        
         // on gère les évènements
         sf::Event event;
         while (window.pollEvent(event)){
@@ -261,9 +293,22 @@ void testSFML() {
             //int y_mouse_iso=-(2*(localPosition.x/149-localPosition.y/75)-650+80/75)/2-321;
             
                 if(int(x_mouse_iso)>=0 and int(x_mouse_iso)<=11 and int(y_mouse_iso)>=0 and int(y_mouse_iso)<=7) {
-			MoveCharacterCommand* pas= new MoveCharacterCommand(0);
+			
+                        //Engine & Observables
+                    /*cout<<"Nbre Observers dans elmt_tab 2 avant Move :"<<elmt_tab2.observers.size()<<endl;
+                    cout<<"Nbre Observers dans state avant Move :"<<state.observers.size()<<endl;
+                    TabEvent e;
+                    elmt_tab2.notifyObservers(e);*/
+                    try{
+                        MoveCharacterCommand* pas= new MoveCharacterCommand(0);
 			engine.addCommand(1,pas);
 			engine.update();
+                        elmt_tab_layer2.initSurface();
+                    }
+                    catch(const char* e){
+                        cout<<"Exception :"<<e<<endl;
+                    }
+                        
                         /*cout<<"Coordonnées ok !"<<endl;
                         cout<<"Mouse X: "<<int(x_mouse_iso)<<" , Mouse Y: "<<int(y_mouse_iso)<<endl;
                         
@@ -302,10 +347,6 @@ void testSFML() {
         window.draw(*elmt_tab_layer_landscape.getSurface());
         window.draw(*elmt_tab_layer_wall.getSurface());
         window.draw(*elmt_tab_layer2.getSurface());
-       /* window.draw(*elmt_tab_layer3.getSurface());
-        window.draw(text);
-        window.draw(textpa);
-        window.draw(textpm);*/
         window.display();
 
     }
@@ -338,7 +379,7 @@ int main(int argc,char* argv[])
     
         }
     
-    
+    return(0);
 //test map
 //testSFML();
 }

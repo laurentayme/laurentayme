@@ -244,6 +244,33 @@ CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Wall.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/client/Equipment.cpp
 
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Abilities.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Character.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Direction.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Element.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/ElementTab.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Equipment.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Event.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/EventTypeId.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Observable.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Observer.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Obstacle.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Position.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Space.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/SpaceTypeId.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/State.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/StateEvent.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/StateEventId.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/StaticElement.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Statut.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/TabEvent.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/TypeId.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/WallTypeId.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/client/Event.cpp
+
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Character.h
@@ -405,6 +432,33 @@ CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/TypeId.h
 CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/Wall.h
 CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/client/Observable.cpp
+
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Abilities.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Character.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Direction.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Element.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/ElementTab.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Equipment.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Event.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/EventTypeId.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Observable.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Observer.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Obstacle.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Position.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Space.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/SpaceTypeId.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/State.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/StateEvent.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/StateEventId.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/StaticElement.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Statut.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/TabEvent.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/TypeId.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/WallTypeId.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/client/Observer.cpp
 
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/Abilities.h

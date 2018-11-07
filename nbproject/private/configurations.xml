@@ -23,20 +23,29 @@
           <in>TileSet.h</in>
         </df>
         <in>Abilities.cpp</in>
+        <in>AttackCommand.cpp</in>
         <in>Character.cpp</in>
         <in>Command.cpp</in>
         <in>Element.cpp</in>
         <in>ElementTab.cpp</in>
+        <in>Engine.cpp</in>
         <in>Equipment.cpp</in>
+        <in>Event.cpp</in>
         <in>Landscape.cpp</in>
         <in>LifeCommand.cpp</in>
+        <in>LoadCommand.cpp</in>
         <in>MoveCharacterCommand.cpp</in>
+        <in>Observable.cpp</in>
+        <in>Observer.cpp</in>
         <in>Obstacle.cpp</in>
+        <in>OrientationCommand.cpp</in>
         <in>Position.cpp</in>
         <in>Space.cpp</in>
         <in>State.cpp</in>
+        <in>StateEvent.cpp</in>
         <in>StaticElement.cpp</in>
         <in>Surface.cpp</in>
+        <in>TabEvent.cpp</in>
         <in>Wall.cpp</in>
         <in>main.cpp</in>
         <in>main_old.cpp</in>
@@ -44,10 +53,10 @@
       </df>
       <df name="shared">
         <df name="engine">
+          <in>AttackCommand.h</in>
           <in>Command.h</in>
           <in>CommandTypeId.h</in>
           <in>Engine.h</in>
-          <in>HandleAbilitiesCommand.h</in>
           <in>LifeCommand.h</in>
           <in>LoadCommand.h</in>
           <in>MoveCharacterCommand.h</in>
@@ -60,14 +69,21 @@
           <in>Element.h</in>
           <in>ElementTab.h</in>
           <in>Equipment.h</in>
+          <in>Event.h</in>
+          <in>EventTypeId.h</in>
           <in>Landscape.h</in>
+          <in>Observable.h</in>
+          <in>Observer.h</in>
           <in>Obstacle.h</in>
           <in>Position.h</in>
           <in>Space.h</in>
           <in>SpaceTypeId.h</in>
           <in>State.h</in>
+          <in>StateEvent.h</in>
+          <in>StateEventId.h</in>
           <in>StaticElement.h</in>
           <in>Statut.h</in>
+          <in>TabEvent.h</in>
           <in>TypeId.h</in>
           <in>Wall.h</in>
           <in>WallTypeId.h</in>

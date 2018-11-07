@@ -26,6 +26,9 @@ namespace state {
     ElementTab* getMap () const;
     ElementTab* getCharacters () const;
     ElementTab* getMenu () const;
+    void setMap (ElementTab* map);
+    void setCharacters (ElementTab* characters);
+    void setMenu (ElementTab* menu);
     // Setters and Getters
   };
 

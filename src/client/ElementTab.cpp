@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "state.h"
+#include <iostream>
 
 using namespace state;
 
@@ -41,10 +42,13 @@ size_t const ElementTab::getWidth() const {
 
 std::vector<Element*> ElementTab::getElementList() const {
     return(elementList);
+    
 }
 
 void ElementTab::addElement(Element* elmt){
     elementList.push_back(elmt);
+    TabEvent e;
+    notifyObservers(e);
 }
 
 Element* const ElementTab::getLocatedElement(Position *loc){
@@ -54,7 +58,11 @@ Element* const ElementTab::getLocatedElement(Position *loc){
             return(elementList[i]);
         }
         
+        
     }
+    TabEvent e;
+    notifyObservers(e);
+    
     //Cas où il n'y a aucun élément sur cette position
     return(nullptr);
 }
@@ -62,15 +70,23 @@ Element* const ElementTab::getLocatedElement(Position *loc){
 void ElementTab::resize(size_t w, size_t h){
     width=w;
     height=h;
+    TabEvent e;
+    notifyObservers(e);
 }
 
-void ElementTab::setElement(Position* pos,Element* elmt){
+void ElementTab::setElement(Position& pos,int elmt){
     for(size_t i=0;i<elementList.size();i++){
-        if (elementList[i]==elmt){
-            elementList[i]->setPosition(*pos);
+        if (i==elmt){
+            elementList[elmt]->setPosition(pos);
         }
     }
+    TabEvent e;
+    notifyObservers(e);
+    //std::cout<<"Observer notifié !"<<std::endl;
+    
 }
+
+
 
 
 

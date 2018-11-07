@@ -14,20 +14,29 @@
           <in>TileSet.cpp</in>
         </df>
         <in>Abilities.cpp</in>
+        <in>AttackCommand.cpp</in>
         <in>Character.cpp</in>
         <in>Command.cpp</in>
         <in>Element.cpp</in>
         <in>ElementTab.cpp</in>
+        <in>Engine.cpp</in>
         <in>Equipment.cpp</in>
+        <in>Event.cpp</in>
         <in>Landscape.cpp</in>
         <in>LifeCommand.cpp</in>
+        <in>LoadCommand.cpp</in>
         <in>MoveCharacterCommand.cpp</in>
+        <in>Observable.cpp</in>
+        <in>Observer.cpp</in>
         <in>Obstacle.cpp</in>
+        <in>OrientationCommand.cpp</in>
         <in>Position.cpp</in>
         <in>Space.cpp</in>
         <in>State.cpp</in>
+        <in>StateEvent.cpp</in>
         <in>StaticElement.cpp</in>
         <in>Surface.cpp</in>
+        <in>TabEvent.cpp</in>
         <in>Wall.cpp</in>
         <in>main.cpp</in>
         <in>main_old.cpp</in>
@@ -86,11 +95,17 @@
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="src/client/AttackCommand.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
       <item path="src/client/Character.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/Command.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/Command.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
       <item path="src/client/Element.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -100,22 +115,44 @@
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="src/client/Engine.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
       <item path="src/client/Equipment.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/client/Event.cpp" ex="false" tool="1" flavor2="4">
       </item>
       <item path="src/client/Landscape.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/LifeCommand.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/LifeCommand.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/client/LoadCommand.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
       <item path="src/client/MoveCharacterCommand.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+      </item>
+      <item path="src/client/Observable.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/client/Observer.cpp" ex="false" tool="1" flavor2="4">
       </item>
       <item path="src/client/Obstacle.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/client/OrientationCommand.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
@@ -131,11 +168,19 @@
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="src/client/StateEvent.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
       <item path="src/client/StaticElement.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
       <item path="src/client/Surface.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/client/TabEvent.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>

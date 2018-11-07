@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vincent/cloneplt/laurentayme
+CMAKE_SOURCE_DIR = /home/valentin/laurentayme
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vincent/cloneplt/laurentayme/build
+CMAKE_BINARY_DIR = /home/valentin/laurentayme/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles /home/vincent/cloneplt/laurentayme/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/laurentayme/build/CMakeFiles /home/valentin/laurentayme/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/laurentayme/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -339,6 +339,33 @@ src/client/Equipment.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Equipment.cpp.s
 .PHONY : src/client/Equipment.cpp.s
 
+src/client/Event.o: src/client/Event.cpp.o
+
+.PHONY : src/client/Event.o
+
+# target to build an object file
+src/client/Event.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Event.cpp.o
+.PHONY : src/client/Event.cpp.o
+
+src/client/Event.i: src/client/Event.cpp.i
+
+.PHONY : src/client/Event.i
+
+# target to preprocess a source file
+src/client/Event.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Event.cpp.i
+.PHONY : src/client/Event.cpp.i
+
+src/client/Event.s: src/client/Event.cpp.s
+
+.PHONY : src/client/Event.s
+
+# target to generate assembly for a file
+src/client/Event.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Event.cpp.s
+.PHONY : src/client/Event.cpp.s
+
 src/client/Landscape.o: src/client/Landscape.cpp.o
 
 .PHONY : src/client/Landscape.o
@@ -473,6 +500,33 @@ src/client/Observable.s: src/client/Observable.cpp.s
 src/client/Observable.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Observable.cpp.s
 .PHONY : src/client/Observable.cpp.s
+
+src/client/Observer.o: src/client/Observer.cpp.o
+
+.PHONY : src/client/Observer.o
+
+# target to build an object file
+src/client/Observer.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Observer.cpp.o
+.PHONY : src/client/Observer.cpp.o
+
+src/client/Observer.i: src/client/Observer.cpp.i
+
+.PHONY : src/client/Observer.i
+
+# target to preprocess a source file
+src/client/Observer.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Observer.cpp.i
+.PHONY : src/client/Observer.cpp.i
+
+src/client/Observer.s: src/client/Observer.cpp.s
+
+.PHONY : src/client/Observer.s
+
+# target to generate assembly for a file
+src/client/Observer.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Observer.cpp.s
+.PHONY : src/client/Observer.cpp.s
 
 src/client/Obstacle.o: src/client/Obstacle.cpp.o
 
@@ -1047,6 +1101,9 @@ help:
 	@echo "... src/client/Equipment.o"
 	@echo "... src/client/Equipment.i"
 	@echo "... src/client/Equipment.s"
+	@echo "... src/client/Event.o"
+	@echo "... src/client/Event.i"
+	@echo "... src/client/Event.s"
 	@echo "... src/client/Landscape.o"
 	@echo "... src/client/Landscape.i"
 	@echo "... src/client/Landscape.s"
@@ -1062,6 +1119,9 @@ help:
 	@echo "... src/client/Observable.o"
 	@echo "... src/client/Observable.i"
 	@echo "... src/client/Observable.s"
+	@echo "... src/client/Observer.o"
+	@echo "... src/client/Observer.i"
+	@echo "... src/client/Observer.s"
 	@echo "... src/client/Obstacle.o"
 	@echo "... src/client/Obstacle.i"
 	@echo "... src/client/Obstacle.s"

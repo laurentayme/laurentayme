@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/vincent/cloneplt/laurentayme/src/client -I/home/vincent/cloneplt/laurentayme/src/server -I/home/vincent/cloneplt/laurentayme/src/shared 
+CXX_INCLUDES = -I/home/valentin/laurentayme/src/client -I/home/valentin/laurentayme/src/server -I/home/valentin/laurentayme/src/shared 
 

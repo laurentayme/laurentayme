@@ -29,6 +29,10 @@ void Engine::addCommand(int priority,Command* cmd){
 
 }
 
+void Engine::setState(state::State state){
+    currentState=state;
+}
+
 
 void Engine::update(){
 	for(int i=0;i<10;i++){

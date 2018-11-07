@@ -24,12 +24,13 @@ namespace render {
     // Associations
     // Attributes
   private:
-    const state::ElementTab& tab;
+    state::ElementTab& tab;
     // Operations
   public:
-    ElementTabLayer (const state::ElementTab& tab);
+    ElementTabLayer (state::ElementTab& tab);
     void initSurface ();
     void stateChanged (const state::Event& event);
+    state::ElementTab& getTab () const;
     // Setters and Getters
   };
 

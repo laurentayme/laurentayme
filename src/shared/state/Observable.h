@@ -23,9 +23,9 @@ namespace state {
     // Operations
   public:
     ~Observable ();
-    void addObserver (Observer* pobs);
-    void removeObserver (Observer* pobs);
-    void notify (Event& e);
+    void addObserver (Observer* obs);
+    void removeObserver (Observer* obs);
+    void notifyObservers (Event& e);
     // Setters and Getters
   };
 

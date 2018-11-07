@@ -13,6 +13,7 @@ namespace state {
   public:
     ~Event ();
     virtual EventTypeId getEventType () const = 0;
+    Event ();
     // Setters and Getters
   };
 

@@ -19,3 +19,15 @@ ElementTab* State::getCharacters() const{
 ElementTab* State::getMenu() const{
     return menu;
 }
+
+void State::setMap(ElementTab* map){
+    this->carte=map;
+}
+
+void State::setCharacters(ElementTab* characters){
+    this->characters=characters;
+}
+
+void State::setMenu(ElementTab* menu){
+    this->menu=menu;
+}

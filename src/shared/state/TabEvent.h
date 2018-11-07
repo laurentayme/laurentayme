@@ -23,7 +23,8 @@ namespace state {
     int y;
     // Operations
   public:
-    TabEvent (int x, int y);
+    TabEvent (int x = 0, int y = 0);
+    ~TabEvent ();
     EventTypeId getEventType () const;
     // Setters and Getters
   };
