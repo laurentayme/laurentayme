@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <string>
+#include <vector>
 
 namespace state {
   class Obstacle;
@@ -31,6 +32,7 @@ namespace state {
     int getWallType () const;
     void setWallType (int wall);
     int getLandscapeType () const;
+    std::vector<Abilities*> getAbilitiesList () const;
     // Setters and Getters
   };
 

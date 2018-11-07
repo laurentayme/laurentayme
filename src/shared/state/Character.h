@@ -14,7 +14,6 @@ namespace state {
 
 #include "Element.h"
 #include "Equipment.h"
-#include "Abilities.h"
 
 namespace state {
 
@@ -49,7 +48,7 @@ namespace state {
     bool const isEquipped (Equipment* equipment_ptr);
     size_t const getStatut ();
     void setStatut (int act_statut);
-    std::vector<Abilities*> const getAbilitiesList ();
+    std::vector<Abilities*>  getAbilitiesList () const;
     size_t const getDirection () const;
     void setDirection (size_t direction);
     bool const isPlayer ();

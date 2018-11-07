@@ -101,8 +101,6 @@ engine/Command.h
 ../src/shared/engine/Command.h
 engine/LoadCommand.h
 ../src/shared/engine/LoadCommand.h
-engine/HandleAbilitiesCommand.h
-../src/shared/engine/HandleAbilitiesCommand.h
 engine/MoveCharacterCommand.h
 ../src/shared/engine/MoveCharacterCommand.h
 engine/OrientationCommand.h
@@ -111,6 +109,16 @@ engine/Engine.h
 ../src/shared/engine/Engine.h
 engine/LifeCommand.h
 ../src/shared/engine/LifeCommand.h
+engine/AttackCommand.h
+../src/shared/engine/AttackCommand.h
+
+../src/shared/engine/AttackCommand.h
+string
+-
+CommandTypeId.h
+../src/shared/engine/CommandTypeId.h
+Command.h
+../src/shared/engine/Command.h
 
 ../src/shared/engine/Command.h
 CommandTypeId.h
@@ -127,14 +135,6 @@ memory
 -
 state/State.h
 ../src/shared/engine/state/State.h
-Command.h
-../src/shared/engine/Command.h
-
-../src/shared/engine/HandleAbilitiesCommand.h
-vector
--
-CommandTypeId.h
-../src/shared/engine/CommandTypeId.h
 Command.h
 ../src/shared/engine/Command.h
 
@@ -169,6 +169,8 @@ state/Direction.h
 ../src/shared/state.h
 state/Position.h
 ../src/shared/state/Position.h
+state/Abilities.h
+../src/shared/state/Abilities.h
 state/Element.h
 ../src/shared/state/Element.h
 state/TypeId.h
@@ -203,8 +205,6 @@ state/ElementTab.h
 ../src/shared/state/ElementTab.h
 state/State.h
 ../src/shared/state/State.h
-state/Abilities.h
-../src/shared/state/Abilities.h
 state/Character.h
 ../src/shared/state/Character.h
 state/WallTypeId.h
@@ -233,8 +233,6 @@ Element.h
 ../src/shared/state/Element.h
 Equipment.h
 ../src/shared/state/Equipment.h
-Abilities.h
-../src/shared/state/Abilities.h
 
 ../src/shared/state/Direction.h
 stdlib.h
@@ -245,8 +243,12 @@ stdlib.h
 -
 string
 -
+vector
+-
 Position.h
 ../src/shared/state/Position.h
+Abilities.h
+../src/shared/state/Abilities.h
 
 ../src/shared/state/ElementTab.h
 stdlib.h
@@ -275,6 +277,8 @@ stdlib.h
 -
 string
 -
+vector
+-
 Obstacle.h
 ../src/shared/state/Obstacle.h
 
@@ -302,6 +306,8 @@ stdlib.h
 stdlib.h
 -
 string
+-
+vector
 -
 StaticElement.h
 ../src/shared/state/StaticElement.h
@@ -351,6 +357,8 @@ stdlib.h
 -
 string
 -
+vector
+-
 Obstacle.h
 ../src/shared/state/Obstacle.h
 
@@ -365,6 +373,14 @@ state.h
 /home/vincent/cloneplt/laurentayme/src/client/state.h
 iostream
 -
+
+/home/vincent/cloneplt/laurentayme/src/client/AttackCommand.cpp
+stdio.h
+-
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/state.h
+engine.h
+/home/vincent/cloneplt/laurentayme/src/client/engine.h
 
 /home/vincent/cloneplt/laurentayme/src/client/Character.cpp
 stdio.h
@@ -395,6 +411,20 @@ stdio.h
 -
 state.h
 /home/vincent/cloneplt/laurentayme/src/client/state.h
+
+/home/vincent/cloneplt/laurentayme/src/client/Engine.cpp
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/state.h
+engine.h
+/home/vincent/cloneplt/laurentayme/src/client/engine.h
+utility
+-
 
 /home/vincent/cloneplt/laurentayme/src/client/Equipment.cpp
 stdio.h
@@ -559,6 +589,10 @@ render.h
 /home/vincent/cloneplt/laurentayme/src/client/render.h
 random
 -
+engine.h
+/home/vincent/cloneplt/laurentayme/src/client/engine.h
+math.h
+/home/vincent/cloneplt/laurentayme/src/client/math.h
 SFML/Graphics.hpp
 -
 

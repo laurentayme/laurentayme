@@ -4,12 +4,15 @@
 
 #include <stdlib.h>
 #include <string>
+#include <vector>
 
 namespace state {
   class Position;
+  class Abilities;
 }
 
 #include "Position.h"
+#include "Abilities.h"
 
 namespace state {
 
@@ -39,6 +42,7 @@ namespace state {
     virtual size_t const getSpaceType () const = 0;
     virtual int getWallType () const = 0;
     virtual int getLandscapeType () const = 0;
+    virtual std::vector<Abilities*> getAbilitiesList () const = 0;
     // Setters and Getters
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);

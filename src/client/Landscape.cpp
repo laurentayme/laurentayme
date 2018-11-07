@@ -64,3 +64,9 @@ void Landscape::setDirection(size_t direction){
 	std::cout<< "Un paysage n'a pas de direction"<<std::endl;
 
 }
+
+
+std::vector<Abilities*> Landscape::getAbilitiesList() const {
+    std::vector<Abilities*> list;
+	return(list);
+}

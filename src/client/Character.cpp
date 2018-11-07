@@ -132,7 +132,7 @@ vector<Equipment*> const Character::getEquipmentList(){
     return(equipment_List);
 }
 
-vector<Abilities*> const Character::getAbilitiesList(){
+vector<Abilities*> Character::getAbilitiesList() const {
     return(abilities_List);
 }
 

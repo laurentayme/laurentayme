@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <string>
+#include <vector>
 
 namespace state {
   class StaticElement;
@@ -30,6 +31,7 @@ namespace state {
     void setDirection (size_t direction);
     int getWallType () const;
     int getLandscapeType () const;
+    std::vector<Abilities*> getAbilitiesList () const;
     // Setters and Getters
   };
 

@@ -3,6 +3,7 @@
 #define __STATE__H
 
 #include "state/Position.h"
+#include "state/Abilities.h"
 #include "state/Element.h"
 #include "state/TypeId.h"
 #include "state/StaticElement.h"
@@ -20,7 +21,6 @@
 #include "state/Observable.h"
 #include "state/ElementTab.h"
 #include "state/State.h"
-#include "state/Abilities.h"
 #include "state/Character.h"
 #include "state/WallTypeId.h"
 #include "state/TabEvent.h"

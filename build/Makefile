@@ -150,6 +150,33 @@ src/client/Abilities.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Abilities.cpp.s
 .PHONY : src/client/Abilities.cpp.s
 
+src/client/AttackCommand.o: src/client/AttackCommand.cpp.o
+
+.PHONY : src/client/AttackCommand.o
+
+# target to build an object file
+src/client/AttackCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/AttackCommand.cpp.o
+.PHONY : src/client/AttackCommand.cpp.o
+
+src/client/AttackCommand.i: src/client/AttackCommand.cpp.i
+
+.PHONY : src/client/AttackCommand.i
+
+# target to preprocess a source file
+src/client/AttackCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/AttackCommand.cpp.i
+.PHONY : src/client/AttackCommand.cpp.i
+
+src/client/AttackCommand.s: src/client/AttackCommand.cpp.s
+
+.PHONY : src/client/AttackCommand.s
+
+# target to generate assembly for a file
+src/client/AttackCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/AttackCommand.cpp.s
+.PHONY : src/client/AttackCommand.cpp.s
+
 src/client/Character.o: src/client/Character.cpp.o
 
 .PHONY : src/client/Character.o
@@ -257,6 +284,33 @@ src/client/ElementTab.s: src/client/ElementTab.cpp.s
 src/client/ElementTab.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/ElementTab.cpp.s
 .PHONY : src/client/ElementTab.cpp.s
+
+src/client/Engine.o: src/client/Engine.cpp.o
+
+.PHONY : src/client/Engine.o
+
+# target to build an object file
+src/client/Engine.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine.cpp.o
+.PHONY : src/client/Engine.cpp.o
+
+src/client/Engine.i: src/client/Engine.cpp.i
+
+.PHONY : src/client/Engine.i
+
+# target to preprocess a source file
+src/client/Engine.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine.cpp.i
+.PHONY : src/client/Engine.cpp.i
+
+src/client/Engine.s: src/client/Engine.cpp.s
+
+.PHONY : src/client/Engine.s
+
+# target to generate assembly for a file
+src/client/Engine.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine.cpp.s
+.PHONY : src/client/Engine.cpp.s
 
 src/client/Equipment.o: src/client/Equipment.cpp.o
 
@@ -972,6 +1026,9 @@ help:
 	@echo "... src/client/Abilities.o"
 	@echo "... src/client/Abilities.i"
 	@echo "... src/client/Abilities.s"
+	@echo "... src/client/AttackCommand.o"
+	@echo "... src/client/AttackCommand.i"
+	@echo "... src/client/AttackCommand.s"
 	@echo "... src/client/Character.o"
 	@echo "... src/client/Character.i"
 	@echo "... src/client/Character.s"
@@ -984,6 +1041,9 @@ help:
 	@echo "... src/client/ElementTab.o"
 	@echo "... src/client/ElementTab.i"
 	@echo "... src/client/ElementTab.s"
+	@echo "... src/client/Engine.o"
+	@echo "... src/client/Engine.i"
+	@echo "... src/client/Engine.s"
 	@echo "... src/client/Equipment.o"
 	@echo "... src/client/Equipment.i"
 	@echo "... src/client/Equipment.s"

@@ -57,3 +57,9 @@ int Space::getLandscapeType() const{
 void Space::setDirection (size_t direction){
 	std::cout<<"Un espace n'a pas de direction"<<std::endl;
 }
+
+std::vector<Abilities*> Space::getAbilitiesList() const {
+    std::vector<Abilities*> list;
+	return(list);
+}
+

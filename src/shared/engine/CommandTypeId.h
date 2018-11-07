@@ -9,7 +9,8 @@ namespace engine {
     LOAD     = 1,
     DIRECTION     = 2,
     MOVE_CHARACTER     = 3,
-    LIFE     = 4
+    LIFE     = 4,
+    ATTACK     = 5
   };
 
 };

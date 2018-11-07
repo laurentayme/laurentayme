@@ -67,3 +67,8 @@ void Wall::setDirection(size_t direction){
 }
 
 
+std::vector<Abilities*> Wall::getAbilitiesList() const {
+    std::vector<Abilities*> list;
+	return(list);
+}
+

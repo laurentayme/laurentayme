@@ -20,11 +20,12 @@ namespace state {
   private:
     ElementTab* carte;
     ElementTab* characters;
+    ElementTab* menu;
     // Operations
   public:
-    State (ElementTab* carte);
     ElementTab* getMap () const;
     ElementTab* getCharacters () const;
+    ElementTab* getMenu () const;
     // Setters and Getters
   };
 

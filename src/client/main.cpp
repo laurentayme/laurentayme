@@ -6,11 +6,14 @@
 #include "state.h"
 #include "render.h"
 #include <random>
+#include "engine.h"
+#include "math.h"
 
 
 using namespace std;
 using namespace state;
 using namespace render;
+using namespace engine;
 
 // Les lignes suivantes ne servent qu'à vérifier que la compilation avec SFML fonctionne
 #include <SFML/Graphics.hpp>
@@ -21,11 +24,11 @@ void testSFML() {
         std::vector<Element*> elmt_list_landscape;
         std::vector<Element*> elmt_list_wall;
         std::vector<Element*> elmt_list2;
-        std::vector<Element*> elmt_list3;
+        /*std::vector<Element*> elmt_list3;
         sf::Text text;
         sf::Text textpa;
         sf::Text textpm;
-        sf::Font font;
+        sf::Font font;*/
         
         //Paramètres de Map//
         int width=9;
@@ -139,17 +142,17 @@ void testSFML() {
         
         
         //Menu de State
-        try{
+       /* try{
             Space* state_ptr=new Space(1);
             state_ptr->setTypeId(2);
             elmt_list3.push_back(state_ptr);
         }
         catch(const char* e){
             std::cout<<"Exception: "<<e<<std::endl;
-        }
+        }*/
         
         //Affichage de l'état
-        if(!font.loadFromFile("res/font.TTF")){
+      /*  if(!font.loadFromFile("res/font.TTF")){
             throw "Error Font Loading !";
         }
         
@@ -171,14 +174,14 @@ void testSFML() {
         textpm.setString(std::to_string(c_ptr->getPM()));
         textpm.setCharacterSize(23);
         textpm.setColor(sf::Color::White);
-        textpm.setPosition(220,86*8.44);
+        textpm.setPosition(220,86*8.44);*/
         
         
         
         //Création de l'ElementTab
         ElementTab elmt_tab(11,7,elmt_list);
         ElementTab elmt_tab2(1,1,elmt_list2);
-        ElementTab elmt_tab3(1,1,elmt_list3);
+        //ElementTab elmt_tab3(1,1,elmt_list3);
         ElementTab elmt_tab_landscape(1,1,elmt_list_landscape);
         ElementTab elmt_tab_wall(1,1,elmt_list_wall);
         
@@ -192,8 +195,8 @@ void testSFML() {
         ElementTabLayer elmt_tab_layer2(tab_ref2);
         
         //State
-        ElementTab& tab_ref3=elmt_tab3;
-        ElementTabLayer elmt_tab_layer3(tab_ref3);
+       // ElementTab& tab_ref3=elmt_tab3;
+       // ElementTabLayer elmt_tab_layer3(tab_ref3);
         
         //2nd Layer
         ElementTab& tab_ref_landscape=elmt_tab_landscape;
@@ -207,7 +210,7 @@ void testSFML() {
         try{
             elmt_tab_layer.initSurface();
             elmt_tab_layer2.initSurface();
-            elmt_tab_layer3.initSurface();
+            //elmt_tab_layer3.initSurface();
             elmt_tab_layer_landscape.initSurface();
             elmt_tab_layer_wall.initSurface();
         }
@@ -222,15 +225,75 @@ void testSFML() {
         //surf_ptr->draw(surf_ptr->getQuads(),&text);
         
         
+
+	Engine engine;
+	
+
+
+
         // Création de la fenêtre
     sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Tilemap");
     while (window.isOpen()){
         // on gère les évènements
         sf::Event event;
         while (window.pollEvent(event)){
-            if(event.type == sf::Event::Closed)
+	sf::Vector2i localPosition = sf::Mouse::getPosition(window);
+            if(event.type == sf::Event::Closed){
                 window.close();
             }
+
+
+	// Boutton souris cliqué
+        else if (event.type == sf::Event::MouseButtonPressed){
+            //Obtenir la coordonnée suivant X
+            
+            float cote=sqrt(pow(32.0/2.25,2.0)+pow(75/2.25,2.0));
+            
+            float Tile_height=75.0/1.25;
+            float Tile_Width=149.0/1.25;
+            
+              
+            float x_mouse_iso=(localPosition.y-40)/Tile_height-(localPosition.x-650-Tile_Width/2)/Tile_Width;
+            
+            float y_mouse_iso=(localPosition.y-40)/Tile_height+(localPosition.x-650-Tile_Width/2)/Tile_Width;
+            
+            //int x_mouse_iso=(2*(localPosition.y/75-localPosition.x/149)+650-80/75)/2-321;
+            //int y_mouse_iso=-(2*(localPosition.x/149-localPosition.y/75)-650+80/75)/2-321;
+            
+                if(int(x_mouse_iso)>=0 and int(x_mouse_iso)<=11 and int(y_mouse_iso)>=0 and int(y_mouse_iso)<=7) {
+			MoveCharacterCommand* pas= new MoveCharacterCommand(0);
+			engine.addCommand(1,pas);
+			engine.update();
+                        /*cout<<"Coordonnées ok !"<<endl;
+                        cout<<"Mouse X: "<<int(x_mouse_iso)<<" , Mouse Y: "<<int(y_mouse_iso)<<endl;
+                        
+                        //Position* pos_ptr=new Position(0,0);
+                        //*pos_ptr=pos;
+                        
+                        //c_ptr->setPosition(Position p(1,2));
+                        c_ptr->affiche_Position();
+                        pos.setX(int(x_mouse_iso));
+                        pos.setY(int(y_mouse_iso));
+                        c_ptr->setPosition(pos);
+                        c_ptr->affiche_Position();
+                        elmt_list2.push_back(c_ptr);
+                        
+                        elmt_tab_layer2.initSurface();
+                        
+              
+                        //elmt_tab_layer2.getElementTab().getElementList()[0]->set_Position();
+                        //delete pos_ptr;*/
+                        
+                        
+                }
+                    
+                else{
+                    cout<<"Nope ! (X)"<<endl;
+                    cout<<"Mouse X: "<<int(x_mouse_iso)<<" , Mouse Y: "<<int(y_mouse_iso)<<endl;
+                    //std::this_thread::sleep_for(std::chrono::milliseconds(10));
+                }
+	}
+             
 
         // on dessine le niveau
         window.clear();
@@ -239,13 +302,14 @@ void testSFML() {
         window.draw(*elmt_tab_layer_landscape.getSurface());
         window.draw(*elmt_tab_layer_wall.getSurface());
         window.draw(*elmt_tab_layer2.getSurface());
-        window.draw(*elmt_tab_layer3.getSurface());
+       /* window.draw(*elmt_tab_layer3.getSurface());
         window.draw(text);
         window.draw(textpa);
-        window.draw(textpm);
+        window.draw(textpm);*/
         window.display();
 
     }
+	}
     	
 //fin test map
 }
@@ -292,7 +356,7 @@ void Test_Unitaire(){
             //Instancication ElementTab
             cout<<" ->Instanciation State..."<<endl;
             ElementTab* elTab_ptr=nullptr;
-            State state(elTab_ptr);
+            //State state(elTab_ptr);
             
             //Instancication ElementTab
             cout<<" ->Instanciation ElementTab..."<<endl;

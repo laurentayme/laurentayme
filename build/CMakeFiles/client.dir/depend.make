@@ -28,6 +28,42 @@ CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/Wall.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/client/Abilities.cpp
 
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/AttackCommand.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/Command.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/CommandTypeId.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/Engine.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/LifeCommand.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/LoadCommand.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/OrientationCommand.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Abilities.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Character.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Direction.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Element.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/ElementTab.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Equipment.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Event.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/EventTypeId.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Observable.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Observer.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Obstacle.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Position.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Space.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/SpaceTypeId.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/State.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/StateEvent.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/StateEventId.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/StaticElement.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Statut.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/TabEvent.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/TypeId.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/WallTypeId.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/client/AttackCommand.cpp
+
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Character.h
@@ -56,10 +92,10 @@ CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/WallTypeId
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/client/Character.cpp
 
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine.h
+CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/AttackCommand.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/Command.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/CommandTypeId.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/Engine.h
-CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/HandleAbilitiesCommand.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/LifeCommand.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/LoadCommand.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
@@ -145,6 +181,42 @@ CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/Wall.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/client/ElementTab.cpp
 
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/AttackCommand.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/Command.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/CommandTypeId.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/Engine.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/LifeCommand.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/LoadCommand.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/OrientationCommand.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Abilities.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Character.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Direction.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Element.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/ElementTab.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Equipment.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Event.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/EventTypeId.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Observable.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Observer.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Obstacle.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Position.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Space.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/SpaceTypeId.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/State.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/StateEvent.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/StateEventId.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/StaticElement.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Statut.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/TabEvent.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/TypeId.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/WallTypeId.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/client/Engine.cpp
+
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Character.h
@@ -200,10 +272,10 @@ CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/WallTypeId
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/client/Landscape.cpp
 
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine.h
+CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/AttackCommand.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/Command.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/CommandTypeId.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/Engine.h
-CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/HandleAbilitiesCommand.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/LifeCommand.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/LoadCommand.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
@@ -236,10 +308,10 @@ CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/state/WallType
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/client/LifeCommand.cpp
 
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine.h
+CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/AttackCommand.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/Command.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/CommandTypeId.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/Engine.h
-CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/HandleAbilitiesCommand.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/LifeCommand.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/LoadCommand.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
@@ -272,10 +344,10 @@ CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/WallType
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/client/LoadCommand.cpp
 
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine.h
+CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/AttackCommand.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/Command.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/CommandTypeId.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/Engine.h
-CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/HandleAbilitiesCommand.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/LifeCommand.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/LoadCommand.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
@@ -362,10 +434,10 @@ CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/WallTypeId.
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/client/Obstacle.cpp
 
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine.h
+CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/AttackCommand.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/Command.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/CommandTypeId.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/Engine.h
-CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/HandleAbilitiesCommand.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/LifeCommand.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/LoadCommand.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
@@ -623,6 +695,15 @@ CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Wall.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/client/Wall.cpp
 
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/AttackCommand.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/Command.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/CommandTypeId.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/Engine.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/LifeCommand.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/LoadCommand.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Character.h
