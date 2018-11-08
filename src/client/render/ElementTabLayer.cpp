@@ -31,15 +31,13 @@ void ElementTabLayer::initSurface(){
     surface->loadTexture(tileset->getImageFile());
  
     //Boucle sur l'ensemble des éléments d'un ElementTab
-    for(int i=0; i<list.size(); i++){
+    for(size_t i=0; i<list.size(); i++){
         state::Element& e=*list[i];
         const Tile& t=tileset->getTile(e);
 	TileSet& tileSet2= *tileset; 
         
         //Cas d'un Character
         if(e.getTypeId()==1){
-        float abs=(e.getPosition().getX()/t.getWidth())*(149/1.25);
-        float ord=(e.getPosition().getY()/t.getHeight())*(149/1.25);
             
         surface->setSpriteLocation(i,e.getPosition().getX(),e.getPosition().getY(),tileSet2,tab);
            

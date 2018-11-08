@@ -33,6 +33,9 @@ namespace state {
     void setWallType (int wall);
     int getLandscapeType () const;
     std::vector<Abilities*> getAbilitiesList () const;
+    size_t getPV () const;
+    size_t getPM () const;
+    size_t getPA () const;
     // Setters and Getters
   };
 

@@ -6,6 +6,10 @@
 namespace state {
   class State;
 };
+namespace sf {
+  class Text;
+  class Font;
+};
 namespace render {
   class Layer;
 };
@@ -20,16 +24,24 @@ namespace state {
 namespace render {
 
   /// class StateLayer - 
-  class StateLayer : public render::Layer, public state::Observer {
+  class StateLayer : public sf::Font, public sf::Text, public render::Layer, public state::Observer {
     // Associations
     // Attributes
   private:
     const state::State& state;
+    Text textpv;
+    Text textpa;
+    Text textpm;
+    Font font;
     // Operations
   public:
     StateLayer (const state::State& state);
     void initSurface ();
     void stateChanged (const state::Event& event);
+    Text getTextpv () const;
+    Text getTextpa () const;
+    Text getTextpm () const;
+    Font getFont () const;
     // Setters and Getters
   };
 

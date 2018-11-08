@@ -72,3 +72,15 @@ std::vector<Abilities*> Wall::getAbilitiesList() const {
 	return(list);
 }
 
+size_t Wall::getPV() const{
+	return(1);
+}
+
+size_t Wall::getPA() const{
+	return(1);
+}
+
+size_t Wall::getPM() const{
+	return(1);
+}
+

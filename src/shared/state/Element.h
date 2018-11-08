@@ -43,6 +43,9 @@ namespace state {
     virtual int getWallType () const = 0;
     virtual int getLandscapeType () const = 0;
     virtual std::vector<Abilities*> getAbilitiesList () const = 0;
+    virtual size_t getPV () const = 0;
+    virtual size_t getPM () const = 0;
+    virtual size_t getPA () const = 0;
     // Setters and Getters
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);

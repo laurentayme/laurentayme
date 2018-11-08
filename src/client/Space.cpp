@@ -63,3 +63,14 @@ std::vector<Abilities*> Space::getAbilitiesList() const {
 	return(list);
 }
 
+size_t Space::getPV() const{
+	return(1);
+}
+
+size_t Space::getPA() const{
+	return(1);
+}
+
+size_t Space::getPM() const{
+	return(1);
+}

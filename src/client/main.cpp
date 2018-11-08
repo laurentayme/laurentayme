@@ -25,8 +25,8 @@ void testSFML() {
         std::vector<Element*> elmt_list_wall;
         std::vector<Element*> elmt_list2;
         std::vector<Element*> elmt_listRed;
-        /*std::vector<Element*> elmt_list3;
-        sf::Text text;
+	std::vector<Element*> listMenu;
+        /*sf::Text text;
         sf::Text textpa;
         sf::Text textpm;
         sf::Font font;*/
@@ -150,6 +150,18 @@ void testSFML() {
         ElementTab* elmtTabWall_ptr=new ElementTab(8,12,elmt_list_wall);
         ElementTab* elmtTabRed_ptr=new ElementTab(8,12,elmt_listRed);
 
+
+
+	//Creation de State
+	Space* state_ptr=new Space(1);
+	state_ptr->setTypeId(2);
+	listMenu.push_back(state_ptr);
+	ElementTab* elmtTabMenu_ptr = new ElementTab(1,1,listMenu);
+	State stateMenu;
+	stateMenu.setMap(elmtTab_ptr);
+	stateMenu.setCharacters(elmtTab2_ptr);
+	stateMenu.setMenu(elmtTabMenu_ptr);
+
         //////////////////////////
 
 
@@ -173,6 +185,11 @@ void testSFML() {
             //Red Layer
             ElementTab& tab_ref_red=*elmtTabRed_ptr;
             ElementTabLayer elmt_tab_layer_redl(tab_ref_red);
+
+	//State
+	State& stateMenu_ref=stateMenu;
+	StateLayer stateMenuLayer(stateMenu_ref);
+
         ////////////////////////////////
 
         ElementTabLayer* elmtTabLayer_ptr=new ElementTabLayer(tab_ref);
@@ -180,8 +197,10 @@ void testSFML() {
         ElementTabLayer* elmtTabLayerLandscape_ptr=new ElementTabLayer(tab_ref_landscape);
         ElementTabLayer* elmtTabLayerWall_ptr=new ElementTabLayer(tab_ref_wall);
         ElementTabLayer* elmtTabLayerRed_ptr=new ElementTabLayer(tab_ref_red);
+	StateLayer* elmtStateLayerMenu_ref=new StateLayer(stateMenu_ref);
 
         //Ajout d'observers sur chaque Couche: map + Personnages//
+	elmtTabMenu_ptr->addObserver(elmtStateLayerMenu_ref);
         elmtTab_ptr->addObserver(elmtTabLayer_ptr);
         elmtTab2_ptr->addObserver(elmtTabLayer2_ptr);
         elmtTabRed_ptr->addObserver(elmtTabLayerRed_ptr);
@@ -195,23 +214,25 @@ void testSFML() {
             elmtTabLayerLandscape_ptr->initSurface();
             elmtTabLayerWall_ptr->initSurface();
             elmtTabLayerRed_ptr->initSurface();
+		stateMenuLayer.initSurface();
         }
         catch(const char* e){
             cout<<"Exception: "<<e<<endl;
         }
 
         //Définition du State
-        State state;
+        /*State state;
         state.setMap(&elmtTabLayer_ptr->getTab());
-        state.setCharacters(&elmtTabLayer2_ptr->getTab());
+        state.setCharacters(&elmtTabLayer2_ptr->getTab());*/
+
         //Surbrillance
-        state.setRedMap(&elmtTabLayerRed_ptr->getTab());
+        stateMenu.setRedMap(&elmtTabLayerRed_ptr->getTab());
 
     //Engine & Observables
 	Engine engine;
         Observable observable;
 
-        engine.setState(state);
+        engine.setState(stateMenu);
 
 
     ///// Création de la fenêtre/////
@@ -298,6 +319,10 @@ void testSFML() {
         window.draw(*elmtTabLayerLandscape_ptr->getSurface());
         window.draw(*elmtTabLayerWall_ptr->getSurface());
         window.draw(*elmtTabLayer2_ptr->getSurface());
+	window.draw(*stateMenuLayer.getSurface());
+	window.draw(stateMenuLayer.getTextpv());
+        window.draw(stateMenuLayer.getTextpa());
+        window.draw(stateMenuLayer.getTextpm());
         
 
         window.display();

@@ -35,11 +35,11 @@ namespace state {
     Character (std::string characterClass);
      ~Character ();
     std::string const getClass () const;
-    size_t const getPV ();
+    size_t getPV () const;
     void setPV (int pv);
-    size_t const getPA ();
+    size_t getPA () const;
     void setPA (int pa);
-    size_t const getPM ();
+    size_t getPM () const;
     void setPM (int pm);
     std::vector<Equipment*> const getEquipmentList ();
     void addEquipment (std::string nom, std::string emplacement, size_t degats);

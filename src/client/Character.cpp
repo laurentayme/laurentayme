@@ -108,15 +108,15 @@ std::string const Character::getClass() const {
     return(characterClass);
 }
 
-size_t const Character::getPV(){
+size_t Character::getPV() const {
     return(pv);
 }
 
-size_t const Character::getPA(){
+size_t Character::getPA() const {
     return(pa);
 }
 
-size_t const Character::getPM(){
+size_t Character::getPM()  const {
     return(pm);
 }
 

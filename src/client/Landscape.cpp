@@ -70,3 +70,15 @@ std::vector<Abilities*> Landscape::getAbilitiesList() const {
     std::vector<Abilities*> list;
 	return(list);
 }
+
+size_t Landscape::getPV() const{
+	return(1);
+}
+
+size_t Landscape::getPA() const{
+	return(1);
+}
+
+size_t Landscape::getPM() const{
+	return(1);
+}
