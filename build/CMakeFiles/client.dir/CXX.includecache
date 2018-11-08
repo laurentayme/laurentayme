@@ -671,6 +671,12 @@ engine.h
 /home/valentin/laurentayme/src/client/engine.h
 math.h
 /home/valentin/laurentayme/src/client/math.h
+cstdio
+-
+chrono
+-
+thread
+-
 SFML/Graphics.hpp
 -
 
