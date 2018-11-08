@@ -13,7 +13,7 @@
 using namespace state;
 
 Space::Space(size_t space){
-    if (space>=0 && space <=4){
+    if (space>=0 && space <=5){
         spaceType=space;
         obstacle=false;
     }

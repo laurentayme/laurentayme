@@ -54,5 +54,19 @@ void const Element::affiche_Position(){
     std::cout<<"Coordonnées actuelles: ("<<position->getX()<<","<<position->getY()<<")"<<std::endl;
 }
 
+void Element::setLoc(float x, float y){
+    loc_x=x;
+    loc_y=y;
+    
+}
+
+float Element::getLoc_x() const{
+    return(loc_x);
+}
+
+float Element::getLoc_y() const{
+    return(loc_y);
+}
+
 
 

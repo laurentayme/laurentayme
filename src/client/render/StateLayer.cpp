@@ -91,7 +91,7 @@ void StateLayer::initSurface (){
 }
 
 void StateLayer::stateChanged(const state::Event& event){
-	std::cout<<"Un evenement a eu lieu et la couche StateLayer est au courant"<<std::endl;
+	//std::cout<<"Un evenement a eu lieu et la couche StateLayer est au courant"<<std::endl;
 	initSurface();
 	
 }

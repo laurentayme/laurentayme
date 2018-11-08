@@ -14,7 +14,9 @@ using namespace render;
 
 StateTileSet::StateTileSet(){
     Tile t(0,0,1490,1053);
+    //Tile t_light(1490,0,1490,1053);
     state.push_back(t);
+    //state.push_back(t_light);
    
 }
 

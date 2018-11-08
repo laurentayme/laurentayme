@@ -41,6 +41,7 @@ namespace state {
     void setCharacterPV (int element, int pv);
     void setCharacterPM (int element, int pm);
     void setCharacterPA (int element, int pa);
+    void setLocation (float x, float y, int elmt);
     // Setters and Getters
   };
 

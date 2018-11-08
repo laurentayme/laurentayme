@@ -45,8 +45,9 @@ MapTileSet::MapTileSet(){
     
     //Instanciation Tile Space Red
     Tile t_red(0,86*3,149,86);
+    Tile t_white((149-66)/2,6*86,66,62);
     red.push_back(t_red);
-            
+    red.push_back(t_white);
 }
 
 MapTileSet::~MapTileSet(){
@@ -152,6 +153,11 @@ const Tile& MapTileSet::getTile(const state::Element& e){
             Tile& s=red[0];
             return(s);
         }
+        
+        else if(e.getSpaceType()==5){
+            Tile& s=red[1];
+            return(s);
+        }
    }
     // Cas d'un Character
     else{
@@ -180,7 +186,13 @@ int const MapTileSet::getCellWidth(state::Element& elmt) const{
         
     }
     else{//Space
-        return(149/1.25);
+        if(elmt.getSpaceType()==5){
+            return(40);
+        }
+        else{
+          return(149/1.25);  
+        }
+        
     }
                 
 }
@@ -204,7 +216,12 @@ int const MapTileSet::getCellHeight(state::Element& elmt) const{
         }
     }
     else{//Space
-        return(75/1.25);
+        if(elmt.getSpaceType()==5){
+            return(20);
+        }
+        else{
+            return(75/1.25);
+        }
     }
 }
 

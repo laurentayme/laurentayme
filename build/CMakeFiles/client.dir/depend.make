@@ -38,6 +38,7 @@ CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/LoadC
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Character.h
@@ -102,6 +103,7 @@ CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/LoadCommand
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/Character.h
@@ -193,6 +195,7 @@ CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/LoadCommand.
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Character.h
@@ -311,6 +314,7 @@ CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/LoadCom
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/LifeCommand.cpp.o: ../src/shared/state/Character.h
@@ -348,6 +352,7 @@ CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/LoadCom
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/Character.h
@@ -385,6 +390,7 @@ CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engin
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state/Character.h
@@ -503,6 +509,7 @@ CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o: ../src/shared/state/Character.h
@@ -675,6 +682,7 @@ CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/engine
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/Character.h
@@ -793,6 +801,44 @@ CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Wall.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/WallTypeId.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/client/Wall.cpp
 
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/AttackCommand.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/Command.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/CommandTypeId.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/Engine.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/LifeCommand.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/LoadCommand.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/OrientationCommand.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Abilities.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Character.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Direction.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Element.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/ElementTab.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Equipment.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Event.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/EventTypeId.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Observable.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Observer.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Obstacle.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Position.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Space.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/SpaceTypeId.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/State.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/StateEvent.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/StateEventId.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/StaticElement.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Statut.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/TabEvent.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/TypeId.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Wall.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/WallTypeId.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/client/WhiteSurbrillanceCommand.cpp
+
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/AttackCommand.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/Command.h
@@ -803,6 +849,7 @@ CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/LoadCommand.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/MoveCharacterCommand.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/OrientationCommand.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/SurbrillanceCommand.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/engine/WhiteSurbrillanceCommand.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Abilities.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Character.h

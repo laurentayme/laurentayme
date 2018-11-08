@@ -11,7 +11,8 @@ namespace engine {
     MOVE_CHARACTER     = 3,
     LIFE     = 4,
     ATTACK     = 5,
-    SURBRILLANCE     = 6
+    SURBRILLANCE     = 6,
+    WHITESURBRILLANCE     = 7
   };
 
 };

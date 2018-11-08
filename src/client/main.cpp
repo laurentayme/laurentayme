@@ -138,7 +138,15 @@ void testSFML() {
 
             //Element List Surbrillance//
                 Space* red_space=new Space(4);
+                Space* white_space= new Space(5);
+                white_space->setLoc(362,615);
                 elmt_listRed.push_back(red_space);
+                elmt_listRed.push_back(white_space);
+                
+            //State MEnu list
+            Space* state_menu=new Space(1);
+            state_menu->setTypeId(2);
+            listMenu.push_back(state_menu);
 
         /////// FIN Instanciation MAP /////////////
 
@@ -149,18 +157,16 @@ void testSFML() {
         ElementTab* elmtTabLandscape_ptr=new ElementTab(8,12,elmt_list_landscape);
         ElementTab* elmtTabWall_ptr=new ElementTab(8,12,elmt_list_wall);
         ElementTab* elmtTabRed_ptr=new ElementTab(8,12,elmt_listRed);
-
+        
+        ElementTab* elmtTabMenu_ptr = new ElementTab(8,12,listMenu);
 
 
 	//Creation de State
-	Space* state_ptr=new Space(1);
-	state_ptr->setTypeId(2);
-	listMenu.push_back(state_ptr);
-	ElementTab* elmtTabMenu_ptr = new ElementTab(1,1,listMenu);
-	State* stateMenu_ptr=new State;
-	stateMenu_ptr->setMap(elmtTab_ptr);
-	stateMenu_ptr->setCharacters(elmtTab2_ptr);
-	stateMenu_ptr->setMenu(elmtTabMenu_ptr);
+	
+        State* state=new State;
+	state->setMap(elmtTab_ptr);
+	state->setCharacters(elmtTab2_ptr);
+	state->setMenu(elmtTabMenu_ptr);
 
         //////////////////////////
 
@@ -186,13 +192,13 @@ void testSFML() {
             ElementTab& tab_ref_red=*elmtTabRed_ptr;
             ElementTabLayer elmt_tab_layer_redl(tab_ref_red);
 	
-	//Menu Layer
-	ElementTab& tabMenu_ref=*elmtTabMenu_ptr;
-        ElementTabLayer elmt_tabMenu_layer(tabMenu_ref);
+            //Menu Layer
+            ElementTab& tabMenu_ref=*elmtTabMenu_ptr;
+            ElementTabLayer elmt_tabMenu_layer(tabMenu_ref);
 
-	//State
-	State& stateMenu_ref=*stateMenu_ptr;
-	StateLayer stateMenuLayer(stateMenu_ref);
+            //State
+            State& stateMenu_ref=*state;
+            StateLayer stateMenuLayer(stateMenu_ref);
 
         ////////////////////////////////
 
@@ -205,11 +211,16 @@ void testSFML() {
 	StateLayer* stateLayerMenu_ptr=new StateLayer(stateMenu_ref);
 
         //Ajout d'observers sur chaque Couche: map + Personnages//
-	stateMenu_ptr->addObserver(stateLayerMenu_ptr);
-	elmtTabMenu_ptr->addObserver(elmtTabLayerMenu_ptr);
+	
+	
+        //Liaisons Observers/Observable//
         elmtTab_ptr->addObserver(elmtTabLayer_ptr);
         elmtTab2_ptr->addObserver(elmtTabLayer2_ptr);
         elmtTabRed_ptr->addObserver(elmtTabLayerRed_ptr);
+        //Menu
+        elmtTabMenu_ptr->addObserver(elmtTabLayerMenu_ptr);
+        //Stats dans le Menu
+        elmtTab2_ptr->addObserver(stateLayerMenu_ptr);
 
         //////////////////////////////////////////////////////////
 
@@ -220,7 +231,8 @@ void testSFML() {
             elmtTabLayerLandscape_ptr->initSurface();
             elmtTabLayerWall_ptr->initSurface();
             elmtTabLayerRed_ptr->initSurface();
-		stateLayerMenu_ptr->initSurface();
+            elmtTabLayerMenu_ptr->initSurface();
+            stateLayerMenu_ptr->initSurface();
         }
         catch(const char* e){
             cout<<"Exception: "<<e<<endl;
@@ -232,13 +244,13 @@ void testSFML() {
         state.setCharacters(&elmtTabLayer2_ptr->getTab());*/
 
         //Surbrillance
-        stateMenu_ptr->setRedMap(&elmtTabLayerRed_ptr->getTab());
+        state->setRedMap(&elmtTabLayerRed_ptr->getTab());
 
     //Engine & Observables
 	Engine engine;
         Observable observable;
 
-        engine.setState(*stateMenu_ptr);
+        engine.setState(*state);
 
 
     ///// Création de la fenêtre/////
@@ -268,8 +280,14 @@ void testSFML() {
 
 	// Souris déplacé seulement !
             else if(event.type==sf::Event::MouseMoved){
+                
+                if(localPosition.y>=615 and  localPosition.x>=362 ){
+                    WhiteSurbrillanceCommand* case_blanche=new WhiteSurbrillanceCommand(localPosition.x,localPosition.y);
+                    engine.addCommand(1,case_blanche);
+                    engine.update();
+                }
 
-                if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9) {
+                else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9) {
 
                     //Gestion Surbrillance//
 
@@ -285,6 +303,9 @@ void testSFML() {
                     if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9) {
 
                     //Gestion Surbrillance//
+                        
+                    //c_ptr->setPM(2);
+                    //stateLayerMenu_ptr->initSurface();
 
                     SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
                     engine.addCommand(1, case_rouge);
@@ -321,11 +342,11 @@ void testSFML() {
         // on dessine le niveau
         window.clear();
         window.draw(*elmtTabLayer_ptr->getSurface());
+        window.draw(*elmtTabLayerMenu_ptr->getSurface());
         window.draw(*elmtTabLayerRed_ptr->getSurface());
         window.draw(*elmtTabLayerLandscape_ptr->getSurface());
         window.draw(*elmtTabLayerWall_ptr->getSurface());
         window.draw(*elmtTabLayer2_ptr->getSurface());
-	window.draw(*stateLayerMenu_ptr->getSurface());
 	window.draw(stateLayerMenu_ptr->getTextpv());
         window.draw(stateLayerMenu_ptr->getTextpa());
         window.draw(stateLayerMenu_ptr->getTextpm());
@@ -354,15 +375,21 @@ int main(int argc,char* argv[])
             cout << "Bonjour le monde!" << endl;
         }
         else if (strcmp(argv[1],"state")==0){
-                Test_Unitaire();
+                //Test_Unitaire();
 
         }
 
-        else if (strcmp(argv[1],"render")==0){
+        else if (strcmp(argv[1],"engine")==0){
             //Test Map
             testSFML();
+            
+            cout<<"//Etat Initial//"<<endl;
+            
+            cout<<"Iop se déplace d'une case vers la droite..."<<endl;
+            
+            
 
-                }
+        }
 
         }
 
@@ -373,253 +400,3 @@ int main(int argc,char* argv[])
 
 
 
-void Test_Unitaire(){
-            size_t c=0;
-            cout<<"//Phase de Tests unitaires//"<<endl;
-            cout<<endl;
-
-            //Test des instanciations
-            cout<<"/Instanciation de chaque classe/"<<endl;
-
-            //Instancication ElementTab
-            cout<<" ->Instanciation State..."<<endl;
-            ElementTab* elTab_ptr=nullptr;
-            //State state(elTab_ptr);
-
-            //Instancication ElementTab
-            cout<<" ->Instanciation ElementTab..."<<endl;
-            vector<Element*> elementList;
-            try{
-                elTab_ptr=new ElementTab(2,-1,elementList);
-            }
-
-            catch(const char* e){
-                c+=1;
-                cout<<"   Exception: "<<e<<endl;
-            }
-
-
-            //Instancication Character
-            cout<<" ->Instanciation Character..."<<endl;
-            Character* iop_ptr=nullptr;
-
-            try{
-                iop_ptr= new Character("Iop");
-            }
-            catch(const char* e){
-                c+=1;
-                cout<<"   Exception: "<<e<<endl;
-            }
-
-            //Instancication Wall
-            cout<<" ->Instanciation Wall..."<<endl;
-            Wall wall;
-
-            //Instancication Landscape
-            cout<<" ->Instanciation Landscape..."<<endl;
-            Landscape landscape;
-
-            //Instancication Space
-            cout<<" ->Instanciation Space..."<<endl;
-            Space* space=nullptr;
-            try{
-                space= new Space(-1);
-            }
-            catch(const char* e){
-                c+=1;
-                cout<<"   Exception: "<<e<<endl;
-            }
-
-            //Instancication Position
-            Position* position_ptr=nullptr;
-            cout<<" ->Instanciation Position..."<<endl;
-            try{
-                position_ptr= new Position(1,1);
-            }
-            catch(const char* e){
-                c+=1;
-                cout<<"   Exception: "<<e<<endl;
-            }
-
-            //Instancication Equipment
-            Equipment* epee_ptr=nullptr;
-            cout<<" ->Instanciation Equipment..."<<endl;
-            try{
-                epee_ptr= new Equipment("Epée","main",-1);
-            }
-            catch(const char* e){
-                c+=1;
-                cout<<"   Exception: "<<e<<endl;
-            }
-
-
-            //Instancication Abilities
-            try{
-                cout<<" ->Instanciation Abilities..."<<endl;
-                Abilities abilities("Sort",-1);
-            }
-            catch(const char* e){
-                c+=1;
-                cout<<"   Exception: "<<e<<endl;
-            }
-
-
-            if(c==0){
-                cout<<"/Aucune Erreur"<<endl;
-            }
-            else{
-                cout<<"/Il y a eu "<<c<<" erreur(s) !"<<endl;
-            }
-
-
-            cout<<endl;
-            cout<<"/Test de methodes des classes/"<<endl;
-
-            //Test affiche_Classe de Character//
-            cout<<" ->Test affiche_Classe..."<<endl;
-
-            //Character//
-            if(iop_ptr!=nullptr){
-                cout<<"     -Test Character"<<endl;
-                cout<<"      Result: ";
-                iop_ptr->affiche_Classe();
-            }
-            //Wall//
-            cout<<"     -Test Wall"<<endl;
-            cout<<"      Result: ";
-            wall.affiche_Classe();
-
-            //Space//
-            if(space!=nullptr){
-                cout<<"     -Test Space"<<endl;
-                cout<<"      Result: ";
-                space->affiche_Classe();
-            }
-
-            //Landscape//
-            cout<<"     -Test Landscape"<<endl;
-            cout<<"      Result: ";
-            landscape.affiche_Classe();
-
-            cout<<endl;
-
-            //Test affiche_Weapon de Equipment//
-            if(epee_ptr!=nullptr){
-                cout<<" ->Test affiche_Weapon sur Equipment"<<endl;
-                cout<<"      Result: ";
-                epee_ptr->affiche_Weapon();
-            }
-
-            cout<<endl;
-
-            //Test affiche_Position...//
-            cout<<" ->Test affiche_Position..."<<endl;
-            if(iop_ptr!=nullptr){
-                cout<<"     -Test sur Character"<<endl;
-                cout<<"      Result: ";
-
-                iop_ptr->affiche_Position();
-            }
-            cout<<"     -Test sur Wall"<<endl;
-            cout<<"      Result: ";
-            wall.affiche_Position();
-
-            cout<<"     -Test sur Landscape"<<endl;
-            cout<<"      Result: ";
-            landscape.affiche_Position();
-
-            if(space!=nullptr){
-                cout<<"     -Test sur Space"<<endl;
-                cout<<"      Result: ";
-                space->affiche_Position();
-            }
-
-            cout<<endl;
-
-            //Test setPosition//
-            if(position_ptr!=nullptr){
-                try{
-                    cout<<" ->Test setX()"<<endl;
-                    position_ptr->setX(-1);
-                    cout<<"      Result: "<<position_ptr->getX()<<endl;
-                }
-                catch(const char* e){
-                    cout<<"      Exception: "<<e<<endl;
-                }
-
-                try{
-                    cout<<" ->Test setY()"<<endl;
-                    position_ptr->setY(-1);
-                    cout<<"      Result: "<<position_ptr->getY()<<endl;
-                }
-                catch(const char* e){
-                    cout<<"      Exception: "<<e<<endl;
-                }
-
-            }
-
-            cout<<endl;
-
-            //Test setTypeId//
-            if(iop_ptr!=nullptr){
-                try{
-                    cout<<" ->Test setTypeId()"<<endl;
-                    iop_ptr->setTypeId(2);
-                    cout<<"      Result: "<<iop_ptr->getTypeId()<<endl;
-                }
-                catch(const char* e){
-                    cout<<"      Exception: "<<e<<endl;
-                }
-
-            }
-
-            cout<<endl;
-
-
-            //Test affiche_Stats de Character//
-            if(iop_ptr!=nullptr){
-                cout<<" ->Test affiche_Stats sur Character"<<endl;
-                cout<<"      Result: ";
-                iop_ptr->affiche_Stats();
-            }
-            cout<<endl;
-
-
-
-            //Test affiche_EquipmentList de Character//
-            if(iop_ptr!=nullptr){
-                cout<<" ->Test affiche_EquipmentList sur Character"<<endl;
-                cout<<"   Result: ";
-                iop_ptr->affiche_EquipmentList();
-            }
-
-            cout<<endl;
-
-            //Test affiche_Statut de Character//
-            if(iop_ptr!=nullptr){
-                cout<<" ->Test affiche_Statut sur Character"<<endl;
-                cout<<"   Mise à 0 des pts de vie..."<<endl;;
-                iop_ptr->setPV(0);
-                cout<<"   Result: ";
-                iop_ptr->afficheStatut();
-
-            }
-
-            cout<<endl;
-            cout<<"//Fin des Tests unitaires//"<<endl;
-
-            delete elTab_ptr;
-            elTab_ptr=nullptr;
-
-            delete iop_ptr;
-            iop_ptr=nullptr;
-
-            delete position_ptr;
-            position_ptr=nullptr;
-
-            delete epee_ptr;
-            epee_ptr=nullptr;
-
-            delete space;
-            space=nullptr;
-}

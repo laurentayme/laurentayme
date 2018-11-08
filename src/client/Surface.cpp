@@ -30,7 +30,7 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
         
         
         //Affichage d'objets de Map
-        if(elmt_list[0]->getTypeId()==0){
+        if(elmt_list[i]->getTypeId()==0){
  
         if (elmt_list[i]->isObstacle()==true){ //Affichage Obstacle
             
@@ -50,11 +50,25 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
             }
             
         }    
-        else{ //Affichage Space
-        quad_ptr[0].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2,((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40);
-	quad_ptr[1].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2+tileSet.getCellWidth(*elmt_list[i]),((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40);
-        quad_ptr[2].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2+tileSet.getCellWidth(*elmt_list[i]),((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40+tileSet.getCellHeight(*elmt_list[i]));
-        quad_ptr[3].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2,((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40+tileSet.getCellHeight(*elmt_list[i]));
+        else{//Affichage Space
+        
+            //Surbrillance blanche
+            if(elmt_list[i]->getTypeId()==0 and elmt_list[i]->getSpaceType()==5){
+                quad_ptr[0].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y());
+                quad_ptr[1].position=sf::Vector2f(elmt_list[i]->getLoc_x()+67,elmt_list[i]->getLoc_y());
+                quad_ptr[2].position=sf::Vector2f(elmt_list[i]->getLoc_x()+67,elmt_list[i]->getLoc_y()+62);
+                quad_ptr[3].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y()+62);
+
+                
+            }
+            //Space "normaux"
+            else{
+                quad_ptr[0].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2,((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40);
+                quad_ptr[1].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2+tileSet.getCellWidth(*elmt_list[i]),((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40);
+                quad_ptr[2].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2+tileSet.getCellWidth(*elmt_list[i]),((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40+tileSet.getCellHeight(*elmt_list[i]));
+                quad_ptr[3].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2,((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40+tileSet.getCellHeight(*elmt_list[i]));
+
+            }
         }  
         }
         
@@ -69,7 +83,7 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
         }
         
         //Affichage du menu d'état
-        else if(elmt_list[0]->getTypeId()==2){
+        else if(elmt_list[i]->getTypeId()==2){
             quad_ptr[0].position=sf::Vector2f(0,0);
             quad_ptr[1].position=sf::Vector2f(0+tileSet.getCellWidth(*elmt_list[i])-300,0);
             quad_ptr[2].position=sf::Vector2f(0+tileSet.getCellWidth(*elmt_list[i])-300,y+tileSet.getCellHeight(*elmt_list[i])-280);
@@ -86,7 +100,7 @@ void Surface::setSpriteTexture(int i, const Tile& texture,const state::ElementTa
     elmt_list=elmt_tab.getElementList();
     
     //Affichage d'objets de Map
-    if(elmt_list[0]->getTypeId()==0){
+    if(elmt_list[i]->getTypeId()==0){
         
     quad_ptr[0].texCoords=sf::Vector2f(texture.getX(),texture.getY());
     quad_ptr[1].texCoords=sf::Vector2f(texture.getX()+texture.getWidth(),texture.getY());

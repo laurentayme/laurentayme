@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vincent/cloneplt/laurentayme
+CMAKE_SOURCE_DIR = /home/valentin/laurentayme
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vincent/cloneplt/laurentayme/build
+CMAKE_BINARY_DIR = /home/valentin/laurentayme/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles /home/vincent/cloneplt/laurentayme/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/laurentayme/build/CMakeFiles /home/valentin/laurentayme/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/valentin/laurentayme/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -825,6 +825,33 @@ src/client/Wall.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Wall.cpp.s
 .PHONY : src/client/Wall.cpp.s
 
+src/client/WhiteSurbrillanceCommand.o: src/client/WhiteSurbrillanceCommand.cpp.o
+
+.PHONY : src/client/WhiteSurbrillanceCommand.o
+
+# target to build an object file
+src/client/WhiteSurbrillanceCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o
+.PHONY : src/client/WhiteSurbrillanceCommand.cpp.o
+
+src/client/WhiteSurbrillanceCommand.i: src/client/WhiteSurbrillanceCommand.cpp.i
+
+.PHONY : src/client/WhiteSurbrillanceCommand.i
+
+# target to preprocess a source file
+src/client/WhiteSurbrillanceCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.i
+.PHONY : src/client/WhiteSurbrillanceCommand.cpp.i
+
+src/client/WhiteSurbrillanceCommand.s: src/client/WhiteSurbrillanceCommand.cpp.s
+
+.PHONY : src/client/WhiteSurbrillanceCommand.s
+
+# target to generate assembly for a file
+src/client/WhiteSurbrillanceCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.s
+.PHONY : src/client/WhiteSurbrillanceCommand.cpp.s
+
 src/client/main.o: src/client/main.cpp.o
 
 .PHONY : src/client/main.o
@@ -1155,6 +1182,9 @@ help:
 	@echo "... src/client/Wall.o"
 	@echo "... src/client/Wall.i"
 	@echo "... src/client/Wall.s"
+	@echo "... src/client/WhiteSurbrillanceCommand.o"
+	@echo "... src/client/WhiteSurbrillanceCommand.i"
+	@echo "... src/client/WhiteSurbrillanceCommand.s"
 	@echo "... src/client/main.o"
 	@echo "... src/client/main.i"
 	@echo "... src/client/main.s"

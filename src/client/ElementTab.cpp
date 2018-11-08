@@ -85,6 +85,7 @@ void ElementTab::setElement(Position& pos,int elmt){
     
 }
 
+
 void ElementTab::setElementDirection(int dir, int elmt){
     for(size_t i=0;i<elementList.size();i++){
         if (i==elmt){
@@ -95,14 +96,25 @@ void ElementTab::setElementDirection(int dir, int elmt){
     notifyObservers(e);
 }
 
+void ElementTab::setLocation(float x, float y,int elmt){
+    for(size_t i=0;i<elementList.size();i++){
+        if (i==elmt){
+            elementList[elmt]->setLoc(x,y);
+        }
+    }
+    TabEvent e;
+    notifyObservers(e);
+    
+}
+
 void ElementTab::setCharacterPV(int element,int pv){
 	for(size_t i=0;i<elementList.size();i++){
 		if (i==element){
             		elementList[element]->setPV(pv);
        	 	}
     	}
-    	TabEvent e;
-    	notifyObservers(e);
+    	StateEvent s(StateEventId::PVChanged);
+    	notifyObservers(s);
 }
 
 void ElementTab::setCharacterPM(int element,int pm){
@@ -111,8 +123,9 @@ void ElementTab::setCharacterPM(int element,int pm){
             	elementList[element]->setPM(pm);
         	}
     	}
-    	TabEvent e;
-    	notifyObservers(e);
+        std::cout<<"I am in setPM function"<<std::endl;
+    	StateEvent s(StateEventId::PMChanged);
+    	notifyObservers(s);
 }
 
 void ElementTab::setCharacterPA(int element,int pa){
@@ -121,8 +134,8 @@ void ElementTab::setCharacterPA(int element,int pa){
             		elementList[element]->setPA(pa);
         	}
     	}
-    	TabEvent e;
-    	notifyObservers(e);
+    	StateEvent s(StateEventId::PAChanged);
+    	notifyObservers(s);
 }
 
 

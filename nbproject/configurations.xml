@@ -39,6 +39,8 @@
         <in>Surface.cpp</in>
         <in>TabEvent.cpp</in>
         <in>Wall.cpp</in>
+        <in>WhiteSurbrillanceCommand.c</in>
+        <in>WhiteSurbrillanceCommand.cpp</in>
         <in>main.cpp</in>
         <in>main_old.cpp</in>
       </df>
@@ -190,6 +192,16 @@
       <item path="src/client/Wall.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/client/WhiteSurbrillanceCommand.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="src/client/WhiteSurbrillanceCommand.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="src/client/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
