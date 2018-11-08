@@ -16,6 +16,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/src/client/Landscape.cpp.o"
   "CMakeFiles/client.dir/src/client/AttackCommand.cpp.o"
   "CMakeFiles/client.dir/src/client/Command.cpp.o"
+  "CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o"
   "CMakeFiles/client.dir/src/client/LoadCommand.cpp.o"
   "CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o"
   "CMakeFiles/client.dir/src/client/TabEvent.cpp.o"

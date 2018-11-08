@@ -22,6 +22,7 @@ namespace render {
     std::vector<Tile> wall;
     std::vector<Tile> space;
     std::vector<Tile> landscape;
+    std::vector<Tile> red;
     // Operations
   public:
     MapTileSet ();

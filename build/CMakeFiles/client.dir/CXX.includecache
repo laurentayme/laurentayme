@@ -111,6 +111,8 @@ engine/LifeCommand.h
 ../src/shared/engine/LifeCommand.h
 engine/AttackCommand.h
 ../src/shared/engine/AttackCommand.h
+engine/SurbrillanceCommand.h
+../src/shared/engine/SurbrillanceCommand.h
 
 ../src/shared/engine/AttackCommand.h
 string
@@ -165,6 +167,12 @@ Command.h
 ../src/shared/engine/Command.h
 state/Direction.h
 ../src/shared/engine/state/Direction.h
+
+../src/shared/engine/SurbrillanceCommand.h
+CommandTypeId.h
+../src/shared/engine/CommandTypeId.h
+Command.h
+../src/shared/engine/Command.h
 
 ../src/shared/state.h
 state/Position.h
@@ -579,6 +587,18 @@ stdio.h
 -
 state.h
 /home/valentin/laurentayme/src/client/state.h
+
+/home/valentin/laurentayme/src/client/SurbrillanceCommand.cpp
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+state.h
+/home/valentin/laurentayme/src/client/state.h
+engine.h
+/home/valentin/laurentayme/src/client/engine.h
 
 /home/valentin/laurentayme/src/client/Surface.cpp
 stdio.h

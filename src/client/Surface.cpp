@@ -87,12 +87,7 @@ void Surface::setSpriteTexture(int i, const Tile& texture,const state::ElementTa
     
     //Affichage d'objets de Map
     if(elmt_list[0]->getTypeId()==0){
-   /*
-    quad_ptr[0].texCoords=sf::Vector2f(texture.getX()+texture.getWidth()/2,texture.getY());
-    quad_ptr[1].texCoords=sf::Vector2f(texture.getX()+texture.getWidth(),texture.getY()+ texture.getHeight()/2);
-    quad_ptr[2].texCoords=sf::Vector2f(texture.getX()+texture.getWidth()-texture.getWidth()/2,texture.getY()+texture.getHeight());
-    quad_ptr[3].texCoords=sf::Vector2f(texture.getX(),texture.getY()+texture.getHeight()-texture.getHeight()/2);
-    */
+        
     quad_ptr[0].texCoords=sf::Vector2f(texture.getX(),texture.getY());
     quad_ptr[1].texCoords=sf::Vector2f(texture.getX()+texture.getWidth(),texture.getY());
     quad_ptr[2].texCoords=sf::Vector2f(texture.getX()+texture.getWidth(),texture.getY()+texture.getHeight());

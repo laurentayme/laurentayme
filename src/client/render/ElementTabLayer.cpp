@@ -54,7 +54,7 @@ void ElementTabLayer::initSurface(){
 }
 
 void ElementTabLayer::stateChanged(const state::Event& event){
-	std::cout<<"Un evenement a eu lieu dans la couche ElementTabLayer"<<std::endl;
+	//std::cout<<"Un evenement a eu lieu dans la couche ElementTabLayer"<<std::endl;
         initSurface();
 }
 

@@ -10,7 +10,8 @@ namespace engine {
     DIRECTION     = 2,
     MOVE_CHARACTER     = 3,
     LIFE     = 4,
-    ATTACK     = 5
+    ATTACK     = 5,
+    SURBRILLANCE     = 6
   };
 
 };

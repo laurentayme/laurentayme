@@ -14,6 +14,8 @@
 using namespace render;
 
 MapTileSet::MapTileSet(){
+    
+    //Instanciation Tiles Space
     for(int i=0;i<6;i++){
         for(int j=0;j<5;j++){
             Tile t(149*j,86*i,149,86);
@@ -21,7 +23,7 @@ MapTileSet::MapTileSet(){
         }
     }
     
-    
+    //Instanciation Tiles Landscape
     Tile t(149*4+(149-86)/2,86*6,86,86); //Stone Block1
     Tile t_block(149*3+(149-86)/2,86*6,97,91); //Stone Block 2
     Tile t_ground(149*2+(149-86)/2,86*6,86,86); //Ground
@@ -31,8 +33,7 @@ MapTileSet::MapTileSet(){
     landscape.push_back(t_ground);
     landscape.push_back(t_block2);
     
-    
-    
+    //Instanciation Tiles Wall
     Tile t1(149*4+(149-61)/2,(86*7),61,146); // Normal Wall
     Tile t2(149*4+(149-61)/2,(86*7)+146,61,146); // Erased Wall
     Tile t3(149*2+(149-64)/2,(86*7),64,143); // Pic Wall
@@ -41,6 +42,10 @@ MapTileSet::MapTileSet(){
     wall.push_back(t2);
     wall.push_back(t3);
     wall.push_back(t4);
+    
+    //Instanciation Tile Space Red
+    Tile t_red(0,86*3,149,86);
+    red.push_back(t_red);
             
 }
 
@@ -133,7 +138,7 @@ const Tile& MapTileSet::getTile(const state::Element& e){
 		
             
         }
-        
+        // Cas d'un red Space
         else if(e.getSpaceType()==1){	
 		Tile& s=space[0];
             return(s);
@@ -142,6 +147,11 @@ const Tile& MapTileSet::getTile(const state::Element& e){
 		Tile& s=space[9];
 	return(s);
 	}
+        
+        else if(e.getSpaceType()==4){
+            Tile& s=red[0];
+            return(s);
+        }
    }
     // Cas d'un Character
     else{

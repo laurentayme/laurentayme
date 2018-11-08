@@ -35,6 +35,7 @@
         <in>State.cpp</in>
         <in>StateEvent.cpp</in>
         <in>StaticElement.cpp</in>
+        <in>SurbrillanceCommand.cpp</in>
         <in>Surface.cpp</in>
         <in>TabEvent.cpp</in>
         <in>Wall.cpp</in>
@@ -175,6 +176,8 @@
       <item path="src/client/StaticElement.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/client/SurbrillanceCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/client/Surface.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">

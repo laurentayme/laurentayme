@@ -717,6 +717,33 @@ src/client/StaticElement.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/StaticElement.cpp.s
 .PHONY : src/client/StaticElement.cpp.s
 
+src/client/SurbrillanceCommand.o: src/client/SurbrillanceCommand.cpp.o
+
+.PHONY : src/client/SurbrillanceCommand.o
+
+# target to build an object file
+src/client/SurbrillanceCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o
+.PHONY : src/client/SurbrillanceCommand.cpp.o
+
+src/client/SurbrillanceCommand.i: src/client/SurbrillanceCommand.cpp.i
+
+.PHONY : src/client/SurbrillanceCommand.i
+
+# target to preprocess a source file
+src/client/SurbrillanceCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.i
+.PHONY : src/client/SurbrillanceCommand.cpp.i
+
+src/client/SurbrillanceCommand.s: src/client/SurbrillanceCommand.cpp.s
+
+.PHONY : src/client/SurbrillanceCommand.s
+
+# target to generate assembly for a file
+src/client/SurbrillanceCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.s
+.PHONY : src/client/SurbrillanceCommand.cpp.s
+
 src/client/Surface.o: src/client/Surface.cpp.o
 
 .PHONY : src/client/Surface.o
@@ -1143,6 +1170,9 @@ help:
 	@echo "... src/client/StaticElement.o"
 	@echo "... src/client/StaticElement.i"
 	@echo "... src/client/StaticElement.s"
+	@echo "... src/client/SurbrillanceCommand.o"
+	@echo "... src/client/SurbrillanceCommand.i"
+	@echo "... src/client/SurbrillanceCommand.s"
 	@echo "... src/client/Surface.o"
 	@echo "... src/client/Surface.i"
 	@echo "... src/client/Surface.s"

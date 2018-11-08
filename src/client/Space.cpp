@@ -13,12 +13,12 @@
 using namespace state;
 
 Space::Space(size_t space){
-    if (space>=0 && space <=3){
+    if (space>=0 && space <=4){
         spaceType=space;
         obstacle=false;
     }
     else{
-        throw "Type de Space Incorrect ! (1=Empty, 2=Start et 3=Trap)";
+        throw "Type de Space Incorrect ! (1=Empty, 2=Start, 3=Trap et 4=RedSpace)";
     }
 }
 

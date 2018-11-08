@@ -10,4 +10,5 @@
 #include "engine/Engine.h"
 #include "engine/LifeCommand.h"
 #include "engine/AttackCommand.h"
+#include "engine/SurbrillanceCommand.h"
 #endif

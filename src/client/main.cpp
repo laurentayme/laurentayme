@@ -24,6 +24,7 @@ void testSFML() {
         std::vector<Element*> elmt_list_landscape;
         std::vector<Element*> elmt_list_wall;
         std::vector<Element*> elmt_list2;
+        std::vector<Element*> elmt_listRed;
         /*std::vector<Element*> elmt_list3;
         sf::Text text;
         sf::Text textpa;
@@ -128,7 +129,6 @@ void testSFML() {
                 c_ptr->setDirection(1); //Nord
                 Position pos(height-1,width/2);
                 c_ptr->setPosition(pos);
-                cout<<c_ptr->getPosition().getX()<<endl;
                 Position pos_sad(1,width/2);
                 sad_ptr->setPosition(pos_sad);
                 //c_ptr->setDirection(4);
@@ -136,8 +136,11 @@ void testSFML() {
                 elmt_list2.push_back(sad_ptr);
             ////////////////////////
 
-        /////// FIN Instanciation MAP /////////////
+            //Element List Surbrillance//
+                Space* red_space=new Space(4);
+                elmt_listRed.push_back(red_space);
 
+        /////// FIN Instanciation MAP /////////////
 
         //Création des ElementTab//
 
@@ -145,12 +148,13 @@ void testSFML() {
         ElementTab* elmtTab2_ptr=new ElementTab(8,12,elmt_list2);
         ElementTab* elmtTabLandscape_ptr=new ElementTab(8,12,elmt_list_landscape);
         ElementTab* elmtTabWall_ptr=new ElementTab(8,12,elmt_list_wall);
+        ElementTab* elmtTabRed_ptr=new ElementTab(8,12,elmt_listRed);
 
         //////////////////////////
 
 
         //Création de l'ElementTabLayer//
-            //1st Layer
+            //Space Layer
             ElementTab& tab_ref=*elmtTab_ptr;
             ElementTabLayer elmt_tab_layer(tab_ref);
 
@@ -158,23 +162,30 @@ void testSFML() {
             ElementTab& tab_ref2=*elmtTab2_ptr;
             ElementTabLayer elmt_tab_layer2(tab_ref2);
 
-            //2nd Layer
+            //Landscape Layer
             ElementTab& tab_ref_landscape=*elmtTabLandscape_ptr;
             ElementTabLayer elmt_tab_layer_landscape(tab_ref_landscape);
 
-            //3rd Layer
+            //Wall Layer
             ElementTab& tab_ref_wall=*elmtTabWall_ptr;
             ElementTabLayer elmt_tab_layer_wall(tab_ref_wall);
+
+            //Red Layer
+            ElementTab& tab_ref_red=*elmtTabRed_ptr;
+            ElementTabLayer elmt_tab_layer_redl(tab_ref_red);
         ////////////////////////////////
 
         ElementTabLayer* elmtTabLayer_ptr=new ElementTabLayer(tab_ref);
         ElementTabLayer* elmtTabLayer2_ptr=new ElementTabLayer(tab_ref2);
         ElementTabLayer* elmtTabLayerLandscape_ptr=new ElementTabLayer(tab_ref_landscape);
         ElementTabLayer* elmtTabLayerWall_ptr=new ElementTabLayer(tab_ref_wall);
+        ElementTabLayer* elmtTabLayerRed_ptr=new ElementTabLayer(tab_ref_red);
 
         //Ajout d'observers sur chaque Couche: map + Personnages//
         elmtTab_ptr->addObserver(elmtTabLayer_ptr);
         elmtTab2_ptr->addObserver(elmtTabLayer2_ptr);
+        elmtTabRed_ptr->addObserver(elmtTabLayerRed_ptr);
+
         //////////////////////////////////////////////////////////
 
         //Initialisation de la Surface de chaque Layer
@@ -183,6 +194,7 @@ void testSFML() {
             elmtTabLayer2_ptr->initSurface();
             elmtTabLayerLandscape_ptr->initSurface();
             elmtTabLayerWall_ptr->initSurface();
+            elmtTabLayerRed_ptr->initSurface();
         }
         catch(const char* e){
             cout<<"Exception: "<<e<<endl;
@@ -192,6 +204,8 @@ void testSFML() {
         State state;
         state.setMap(&elmtTabLayer_ptr->getTab());
         state.setCharacters(&elmtTabLayer2_ptr->getTab());
+        //Surbrillance
+        state.setRedMap(&elmtTabLayerRed_ptr->getTab());
 
     //Engine & Observables
 	Engine engine;
@@ -204,21 +218,13 @@ void testSFML() {
     sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Tilemap");
     while (window.isOpen()){
 
+        
+
         // on gère les évènements
         sf::Event event;
         while (window.waitEvent(event)){
-	sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-            if(event.type == sf::Event::Closed){
-                window.close();
-            }
-
-
-	// Boutton souris cliqué
-        else if (event.type == sf::Event::MouseButtonPressed){
-            //Obtenir la coordonnée suivant X
-
-            float cote=sqrt(pow(32.0/2.25,2.0)+pow(75/2.25,2.0));
-
+            
+            sf::Vector2i localPosition = sf::Mouse::getPosition(window);
             float Tile_height=75.0/1.25;
             float Tile_Width=149.0/1.25;
 
@@ -227,126 +233,79 @@ void testSFML() {
 
             float y_mouse_iso=(localPosition.y-40)/Tile_height+(localPosition.x-650-Tile_Width/2)/Tile_Width;
 
-            cout<<"Click X :"<<x_mouse_iso<<"/ Click Y: "<<y_mouse_iso<<endl;
+
+            if(event.type == sf::Event::Closed){
+                window.close();
+            }
+
+
+	// Souris déplacé seulement !
+            else if(event.type==sf::Event::MouseMoved){
 
                 if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9) {
 
-                    try{
+                    //Gestion Surbrillance//
 
-                        int vectX=x_mouse_iso-c_ptr->getPosition().getX();
-                        int vectY=y_mouse_iso-c_ptr->getPosition().getY();
-
-                        cout<<vectX<<endl;
-                        cout<<vectY<<endl;
-
-                        MoveCharacterCommand* deplacement=new MoveCharacterCommand(0,vectX,vectY);
-                        engine.addCommand(1,deplacement);
-                        engine.update();
-
-
-                        /*if(vectY<=0){
-                            //East Direction
-                            OrientationCommand* dir= new OrientationCommand(0,2);
-                            engine.addCommand(1,dir);
-
-                            for(int i=0; i<abs(vectY);i++){
-                                cout<<"I'll move !"<<endl;
-                                MoveCharacterCommand* pas= new MoveCharacterCommand(0);
-                                engine.addCommand(2,pas);
-                                engine.update();
-                            }
-                            if(vectX>0){
-                              //South Direction
-                              OrientationCommand* dir= new OrientationCommand(0,3);
-                              engine.addCommand(1,dir);
-
-                              for(int i=0; i<abs(vectX);i++){
-                                  //cout<<"I'll move !"<<endl;
-                                  MoveCharacterCommand* pas= new MoveCharacterCommand(0);
-                                  engine.addCommand(2,pas);
-                                  engine.update();
-                              }
-                            }
-                            else if(vectX<0){
-                              //North Direction
-                              OrientationCommand* dir= new OrientationCommand(0,1);
-                              engine.addCommand(1,dir);
-
-                              for(int i=0; i<abs(vectX);i++){
-                                  //cout<<"I'll move !"<<endl;
-                                  MoveCharacterCommand* pas= new MoveCharacterCommand(0);
-                                  engine.addCommand(2,pas);
-                                  engine.update();
-                              }
-                            }
-                        }
-
-                        else if(vectY>=0){
-                            OrientationCommand* dir= new OrientationCommand(0,4);
-                            engine.addCommand(1,dir);
-
-
-                            for(int i=0; i<vectY;i++){
-                                cout<<"I'll move !"<<endl;
-                                MoveCharacterCommand* pas= new MoveCharacterCommand(0);
-                                engine.addCommand(2,pas);
-                                engine.update();
-                            }
-                            if(vectX>0){
-                              //South Direction
-                              OrientationCommand* dir= new OrientationCommand(0,3);
-                              engine.addCommand(1,dir);
-
-                              for(int i=0; i<abs(vectX);i++){
-                                  //cout<<"I'll move !"<<endl;
-                                  MoveCharacterCommand* pas= new MoveCharacterCommand(0);
-                                  engine.addCommand(2,pas);
-                                  engine.update();
-                              }
-                            }
-                            else if(vectX<0){
-                              //North Direction
-                              OrientationCommand* dir= new OrientationCommand(0,1);
-                              engine.addCommand(1,dir);
-
-                              for(int i=0; i<abs(vectX);i++){
-                                  //cout<<"I'll move !"<<endl;
-                                  MoveCharacterCommand* pas= new MoveCharacterCommand(0);
-                                  engine.addCommand(2,pas);
-                                  engine.update();
-                              }
-                            }
-                        }*/
-
-
-
-
-                    }
-                    catch(const char* e){
-                        cout<<"Exception :"<<e<<endl;
-                    }
-
+                    SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
+                    engine.addCommand(1, case_rouge);
+                    engine.update();
                 }
+            }
+                   
+                    
+            else if (event.type == sf::Event::MouseButtonPressed ){
+                    
+                    if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9) {
 
-                else{
-                    cout<<"Nope ! (X)"<<endl;
-                    cout<<"Mouse X: "<<int(x_mouse_iso)<<" , Mouse Y: "<<int(y_mouse_iso)<<endl;
-                    //std::this_thread::sleep_for(std::chrono::milliseconds(10));
+                    //Gestion Surbrillance//
+
+                    SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
+                    engine.addCommand(1, case_rouge);
+                    engine.update();
+                
+
+                                   cout<<"Click X :"<<x_mouse_iso<<"/ Click Y: "<<y_mouse_iso<<endl;
+
+
+                                       try{
+
+                                           //Gestion Déplacement//
+                                           int vectX=int(x_mouse_iso)-c_ptr->getPosition().getX();
+                                           int vectY=int(y_mouse_iso)-c_ptr->getPosition().getY();
+
+                                           cout<<vectX<<endl;
+                                           cout<<vectY<<endl;
+
+                                           MoveCharacterCommand* deplacement=new MoveCharacterCommand(0,vectX,vectY);
+                                           engine.addCommand(2,deplacement);
+                                           engine.update();
+
+                                       }
+                                       catch(const char* e){
+                                           cout<<"Exception :"<<e<<endl;
+                                       }
+                    }
+                
                 }
-	}
+                    
+    
 
 
         // on dessine le niveau
         window.clear();
-
-       	window.draw(*elmtTabLayer_ptr->getSurface());
+        window.draw(*elmtTabLayer_ptr->getSurface());
+        window.draw(*elmtTabLayerRed_ptr->getSurface());
         window.draw(*elmtTabLayerLandscape_ptr->getSurface());
         window.draw(*elmtTabLayerWall_ptr->getSurface());
         window.draw(*elmtTabLayer2_ptr->getSurface());
-        window.display();
+        
 
+        window.display();
     }
-	}
+    }
+
+
+
 
 //fin test map
 }
