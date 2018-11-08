@@ -54,45 +54,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vincent/cloneplt/laurentayme
+CMAKE_SOURCE_DIR = /home/vincent/cloneplt/laurentayme/extern/dia2code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vincent/cloneplt/laurentayme/build
+CMAKE_BINARY_DIR = /home/vincent/cloneplt/laurentayme/extern/dia2code/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/client.dir
+# Target rules for target CMakeFiles/dia2code.dir
 
 # All Build rule for target.
-CMakeFiles/client.dir/all:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vincent/cloneplt/laurentayme/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 "Built target client"
-.PHONY : CMakeFiles/client.dir/all
+CMakeFiles/dia2code.dir/all:
+	$(MAKE) -f CMakeFiles/dia2code.dir/build.make CMakeFiles/dia2code.dir/depend
+	$(MAKE) -f CMakeFiles/dia2code.dir/build.make CMakeFiles/dia2code.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vincent/cloneplt/laurentayme/extern/dia2code/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target dia2code"
+.PHONY : CMakeFiles/dia2code.dir/all
 
 # Include target in all.
-all: CMakeFiles/client.dir/all
+all: CMakeFiles/dia2code.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles 37
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/build/CMakeFiles 0
-.PHONY : CMakeFiles/client.dir/rule
+CMakeFiles/dia2code.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/extern/dia2code/build/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/dia2code.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/cloneplt/laurentayme/extern/dia2code/build/CMakeFiles 0
+.PHONY : CMakeFiles/dia2code.dir/rule
 
 # Convenience name for target.
-client: CMakeFiles/client.dir/rule
+dia2code: CMakeFiles/dia2code.dir/rule
 
-.PHONY : client
-
-# clean rule for target.
-CMakeFiles/client.dir/clean:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/clean
-.PHONY : CMakeFiles/client.dir/clean
+.PHONY : dia2code
 
 # clean rule for target.
-clean: CMakeFiles/client.dir/clean
+CMakeFiles/dia2code.dir/clean:
+	$(MAKE) -f CMakeFiles/dia2code.dir/build.make CMakeFiles/dia2code.dir/clean
+.PHONY : CMakeFiles/dia2code.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/dia2code.dir/clean
 
 .PHONY : clean
 
