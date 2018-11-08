@@ -36,6 +36,9 @@ namespace state {
     size_t getPV () const;
     size_t getPM () const;
     size_t getPA () const;
+    void setPV (int pv);
+    void setPM (int pm);
+    void setPA (int pa);
     // Setters and Getters
   };
 

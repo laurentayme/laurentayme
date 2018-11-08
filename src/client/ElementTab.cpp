@@ -95,7 +95,35 @@ void ElementTab::setElementDirection(int dir, int elmt){
     notifyObservers(e);
 }
 
+void ElementTab::setCharacterPV(int element,int pv){
+	for(size_t i=0;i<elementList.size();i++){
+		if (i==element){
+            		elementList[element]->setPV(pv);
+       	 	}
+    	}
+    	TabEvent e;
+    	notifyObservers(e);
+}
 
+void ElementTab::setCharacterPM(int element,int pm){
+	for(size_t i=0;i<elementList.size();i++){
+        	if (i==element){
+            	elementList[element]->setPM(pm);
+        	}
+    	}
+    	TabEvent e;
+    	notifyObservers(e);
+}
+
+void ElementTab::setCharacterPA(int element,int pa){
+	for(size_t i=0;i<elementList.size();i++){
+        	if (i==element){
+            		elementList[element]->setPA(pa);
+        	}
+    	}
+    	TabEvent e;
+    	notifyObservers(e);
+}
 
 
 

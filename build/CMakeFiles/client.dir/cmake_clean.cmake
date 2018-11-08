@@ -32,7 +32,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/src/client/Landscape.cpp.o"
   "CMakeFiles/client.dir/src/client/Surface.cpp.o"
   "CMakeFiles/client.dir/src/client/ElementTab.cpp.o"
-  "CMakeFiles/client.dir/src/client/main_old.cpp.o"
   "CMakeFiles/client.dir/src/client/Event.cpp.o"
   "CMakeFiles/client.dir/src/client/Equipment.cpp.o"
   "../bin/client.pdb"

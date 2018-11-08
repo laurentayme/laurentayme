@@ -233,9 +233,9 @@ stdlib.h
 ../src/shared/state/Character.h
 string
 -
-stdlib.h
--
 vector
+-
+stdlib.h
 -
 Element.h
 ../src/shared/state/Element.h
@@ -649,22 +649,6 @@ engine.h
 /home/vincent/cloneplt/laurentayme/src/client/engine.h
 math.h
 /home/vincent/cloneplt/laurentayme/src/client/math.h
-SFML/Graphics.hpp
--
-
-/home/vincent/cloneplt/laurentayme/src/client/main_old.cpp
-iostream
--
-stdio.h
--
-string.h
--
-vector
--
-exception
--
-state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
 SFML/Graphics.hpp
 -
 

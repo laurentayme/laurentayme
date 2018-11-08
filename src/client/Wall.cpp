@@ -84,3 +84,12 @@ size_t Wall::getPM() const{
 	return(1);
 }
 
+void Wall::setPM(int pm){
+}
+
+void Wall::setPA(int pa){
+}
+
+void Wall::setPV(int pv){
+}
+

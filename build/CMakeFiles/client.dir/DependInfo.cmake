@@ -31,7 +31,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vincent/cloneplt/laurentayme/src/client/TabEvent.cpp" "/home/vincent/cloneplt/laurentayme/build/CMakeFiles/client.dir/src/client/TabEvent.cpp.o"
   "/home/vincent/cloneplt/laurentayme/src/client/Wall.cpp" "/home/vincent/cloneplt/laurentayme/build/CMakeFiles/client.dir/src/client/Wall.cpp.o"
   "/home/vincent/cloneplt/laurentayme/src/client/main.cpp" "/home/vincent/cloneplt/laurentayme/build/CMakeFiles/client.dir/src/client/main.cpp.o"
-  "/home/vincent/cloneplt/laurentayme/src/client/main_old.cpp" "/home/vincent/cloneplt/laurentayme/build/CMakeFiles/client.dir/src/client/main_old.cpp.o"
   "/home/vincent/cloneplt/laurentayme/src/client/render/CharacterTileSet.cpp" "/home/vincent/cloneplt/laurentayme/build/CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o"
   "/home/vincent/cloneplt/laurentayme/src/client/render/ElementTabLayer.cpp" "/home/vincent/cloneplt/laurentayme/build/CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o"
   "/home/vincent/cloneplt/laurentayme/src/client/render/Layer.cpp" "/home/vincent/cloneplt/laurentayme/build/CMakeFiles/client.dir/src/client/render/Layer.cpp.o"

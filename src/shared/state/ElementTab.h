@@ -38,6 +38,9 @@ namespace state {
     void setElement (Position& position, int element);
     void resize (size_t width, size_t height);
     void setElementDirection (int direction, int element);
+    void setCharacterPV (int element, int pv);
+    void setCharacterPM (int element, int pm);
+    void setCharacterPA (int element, int pa);
     // Setters and Getters
   };
 

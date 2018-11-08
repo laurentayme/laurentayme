@@ -849,33 +849,9 @@ CMakeFiles/client.dir/src/client/ElementTab.cpp.o.provides: CMakeFiles/client.di
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o.provides.build: CMakeFiles/client.dir/src/client/ElementTab.cpp.o
 
 
-CMakeFiles/client.dir/src/client/main_old.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/src/client/main_old.cpp.o: ../src/client/main_old.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vincent/cloneplt/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/client.dir/src/client/main_old.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/main_old.cpp.o -c /home/vincent/cloneplt/laurentayme/src/client/main_old.cpp
-
-CMakeFiles/client.dir/src/client/main_old.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/client/main_old.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vincent/cloneplt/laurentayme/src/client/main_old.cpp > CMakeFiles/client.dir/src/client/main_old.cpp.i
-
-CMakeFiles/client.dir/src/client/main_old.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/client/main_old.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vincent/cloneplt/laurentayme/src/client/main_old.cpp -o CMakeFiles/client.dir/src/client/main_old.cpp.s
-
-CMakeFiles/client.dir/src/client/main_old.cpp.o.requires:
-
-.PHONY : CMakeFiles/client.dir/src/client/main_old.cpp.o.requires
-
-CMakeFiles/client.dir/src/client/main_old.cpp.o.provides: CMakeFiles/client.dir/src/client/main_old.cpp.o.requires
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main_old.cpp.o.provides.build
-.PHONY : CMakeFiles/client.dir/src/client/main_old.cpp.o.provides
-
-CMakeFiles/client.dir/src/client/main_old.cpp.o.provides.build: CMakeFiles/client.dir/src/client/main_old.cpp.o
-
-
 CMakeFiles/client.dir/src/client/Event.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/client/Event.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vincent/cloneplt/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/client.dir/src/client/Event.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vincent/cloneplt/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/client.dir/src/client/Event.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Event.cpp.o -c /home/vincent/cloneplt/laurentayme/src/client/Event.cpp
 
 CMakeFiles/client.dir/src/client/Event.cpp.i: cmake_force
@@ -899,7 +875,7 @@ CMakeFiles/client.dir/src/client/Event.cpp.o.provides.build: CMakeFiles/client.d
 
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/client/Equipment.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vincent/cloneplt/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/client.dir/src/client/Equipment.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vincent/cloneplt/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/client.dir/src/client/Equipment.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/Equipment.cpp.o -c /home/vincent/cloneplt/laurentayme/src/client/Equipment.cpp
 
 CMakeFiles/client.dir/src/client/Equipment.cpp.i: cmake_force
@@ -956,7 +932,6 @@ client_OBJECTS = \
 "CMakeFiles/client.dir/src/client/Landscape.cpp.o" \
 "CMakeFiles/client.dir/src/client/Surface.cpp.o" \
 "CMakeFiles/client.dir/src/client/ElementTab.cpp.o" \
-"CMakeFiles/client.dir/src/client/main_old.cpp.o" \
 "CMakeFiles/client.dir/src/client/Event.cpp.o" \
 "CMakeFiles/client.dir/src/client/Equipment.cpp.o"
 
@@ -996,12 +971,11 @@ client_EXTERNAL_OBJECTS =
 ../bin/client: CMakeFiles/client.dir/src/client/Landscape.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/Surface.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/ElementTab.cpp.o
-../bin/client: CMakeFiles/client.dir/src/client/main_old.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/Event.cpp.o
 ../bin/client: CMakeFiles/client.dir/src/client/Equipment.cpp.o
 ../bin/client: CMakeFiles/client.dir/build.make
 ../bin/client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vincent/cloneplt/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Linking CXX executable ../bin/client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vincent/cloneplt/laurentayme/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable ../bin/client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1042,7 +1016,6 @@ CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Wall.cpp.o.requ
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Landscape.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Surface.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/ElementTab.cpp.o.requires
-CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/main_old.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Event.cpp.o.requires
 CMakeFiles/client.dir/requires: CMakeFiles/client.dir/src/client/Equipment.cpp.o.requires
 

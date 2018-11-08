@@ -82,3 +82,12 @@ size_t Landscape::getPA() const{
 size_t Landscape::getPM() const{
 	return(1);
 }
+
+void Landscape::setPM(int pm){
+}
+
+void Landscape::setPV(int pv){
+}
+
+void Landscape::setPA(int pv){
+}

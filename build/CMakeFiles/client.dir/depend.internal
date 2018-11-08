@@ -840,33 +840,6 @@ CMakeFiles/client.dir/src/client/main.cpp.o
  /home/vincent/cloneplt/laurentayme/src/client/render/Surface.h
  /home/vincent/cloneplt/laurentayme/src/client/render/Tile.h
  /home/vincent/cloneplt/laurentayme/src/client/render/TileSet.h
-CMakeFiles/client.dir/src/client/main_old.cpp.o
- ../src/shared/state.h
- ../src/shared/state/Abilities.h
- ../src/shared/state/Character.h
- ../src/shared/state/Direction.h
- ../src/shared/state/Element.h
- ../src/shared/state/ElementTab.h
- ../src/shared/state/Equipment.h
- ../src/shared/state/Event.h
- ../src/shared/state/EventTypeId.h
- ../src/shared/state/Landscape.h
- ../src/shared/state/Observable.h
- ../src/shared/state/Observer.h
- ../src/shared/state/Obstacle.h
- ../src/shared/state/Position.h
- ../src/shared/state/Space.h
- ../src/shared/state/SpaceTypeId.h
- ../src/shared/state/State.h
- ../src/shared/state/StateEvent.h
- ../src/shared/state/StateEventId.h
- ../src/shared/state/StaticElement.h
- ../src/shared/state/Statut.h
- ../src/shared/state/TabEvent.h
- ../src/shared/state/TypeId.h
- ../src/shared/state/Wall.h
- ../src/shared/state/WallTypeId.h
- /home/vincent/cloneplt/laurentayme/src/client/main_old.cpp
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o
  ../src/client/render.h
  ../src/client/render/CharacterTileSet.h

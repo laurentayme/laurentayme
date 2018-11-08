@@ -3,8 +3,8 @@
 #define STATE__CHARACTER__H
 
 #include <string>
-#include <stdlib.h>
 #include <vector>
+#include <stdlib.h>
 
 namespace state {
   class Equipment;
@@ -23,9 +23,6 @@ namespace state {
     // Attributes
   protected:
     std::string characterClass;
-    size_t pv;
-    size_t pm;
-    size_t pa;
     std::vector<Equipment*> equipment_List;
     std::vector<Abilities*> abilities_List;
     size_t statut;
@@ -65,12 +62,6 @@ namespace state {
     // Setters and Getters
     const std::string& getCharacterClass() const;
     void setCharacterClass(const std::string& characterClass);
-    const size_t& getPv() const;
-    void setPv(const size_t& pv);
-    const size_t& getPm() const;
-    void setPm(const size_t& pm);
-    const size_t& getPa() const;
-    void setPa(const size_t& pa);
     const std::vector<Equipment*>& getEquipment_List() const;
     void setEquipment_List(const std::vector<Equipment*>& equipment_List);
     const std::vector<Abilities*>& getAbilities_List() const;

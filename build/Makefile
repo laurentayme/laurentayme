@@ -852,33 +852,6 @@ src/client/main.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main.cpp.s
 .PHONY : src/client/main.cpp.s
 
-src/client/main_old.o: src/client/main_old.cpp.o
-
-.PHONY : src/client/main_old.o
-
-# target to build an object file
-src/client/main_old.cpp.o:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main_old.cpp.o
-.PHONY : src/client/main_old.cpp.o
-
-src/client/main_old.i: src/client/main_old.cpp.i
-
-.PHONY : src/client/main_old.i
-
-# target to preprocess a source file
-src/client/main_old.cpp.i:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main_old.cpp.i
-.PHONY : src/client/main_old.cpp.i
-
-src/client/main_old.s: src/client/main_old.cpp.s
-
-.PHONY : src/client/main_old.s
-
-# target to generate assembly for a file
-src/client/main_old.cpp.s:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/main_old.cpp.s
-.PHONY : src/client/main_old.cpp.s
-
 src/client/render/CharacterTileSet.o: src/client/render/CharacterTileSet.cpp.o
 
 .PHONY : src/client/render/CharacterTileSet.o
@@ -1185,9 +1158,6 @@ help:
 	@echo "... src/client/main.o"
 	@echo "... src/client/main.i"
 	@echo "... src/client/main.s"
-	@echo "... src/client/main_old.o"
-	@echo "... src/client/main_old.i"
-	@echo "... src/client/main_old.s"
 	@echo "... src/client/render/CharacterTileSet.o"
 	@echo "... src/client/render/CharacterTileSet.i"
 	@echo "... src/client/render/CharacterTileSet.s"

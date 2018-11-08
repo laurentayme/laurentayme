@@ -24,6 +24,9 @@ namespace state {
     Position* position;
     size_t idType;
     size_t direction;
+    size_t pv;
+    size_t pm;
+    size_t pa;
     // Operations
   public:
     Element (size_t idtype = 0);
@@ -46,9 +49,18 @@ namespace state {
     virtual size_t getPV () const = 0;
     virtual size_t getPM () const = 0;
     virtual size_t getPA () const = 0;
+    virtual void setPM (int pm) = 0;
+    virtual void setPA (int pa) = 0;
+    virtual void setPV (int pv) = 0;
     // Setters and Getters
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);
+    const size_t& getPv() const;
+    void setPv(const size_t& pv);
+    const size_t& getPm() const;
+    void setPm(const size_t& pm);
+    const size_t& getPa() const;
+    void setPa(const size_t& pa);
   };
 
 };

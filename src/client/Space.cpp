@@ -74,3 +74,12 @@ size_t Space::getPA() const{
 size_t Space::getPM() const{
 	return(1);
 }
+
+void Space::setPM(int pm){
+}
+
+void Space::setPA(int pa){
+}
+
+void Space::setPV(int pv){
+}

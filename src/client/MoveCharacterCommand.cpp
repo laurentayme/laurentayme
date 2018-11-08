@@ -47,6 +47,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
     size_t longueur=act_state.getMap()->getHeight();
     size_t largeur=act_state.getMap()->getWidth();
 
+if(chars[character]->getPM()>0){
+
     if(vectY<=0){
       //East Direction
       this->direction=2;
@@ -60,6 +62,7 @@ void MoveCharacterCommand::execute(state::State& act_state){
               pos.setY(pos.getY()-1);
               state::Position& posRef=pos;
               act_state.getCharacters()->setElement(posRef,character);
+		act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
               //std::this_thread::sleep_for(std::chrono::nanoseconds(100));
           }
           else if(pos.getY()>largeur){
@@ -79,6 +82,7 @@ void MoveCharacterCommand::execute(state::State& act_state){
                 pos.setX(pos.getX()+1);
                 state::Position& posRef=pos;
                 act_state.getCharacters()->setElement(posRef,character);
+		act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
             }
             else if(pos.getX()>longueur){
                 throw "Déplacement vers le Sud Impossible !";
@@ -97,6 +101,7 @@ void MoveCharacterCommand::execute(state::State& act_state){
                 pos.setX(pos.getX()-1);
                 state::Position& posRef=pos;
                 act_state.getCharacters()->setElement(posRef,character);
+		act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
             }
             else if(pos.getX()<=0){
                 throw "Déplacement vers le Nord Impossible !";
@@ -118,6 +123,7 @@ void MoveCharacterCommand::execute(state::State& act_state){
               pos.setY(pos.getY()+1);
               state::Position& posRef=pos;
               act_state.getCharacters()->setElement(posRef,character);
+		act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
               //std::this_thread::sleep_for(std::chrono::nanoseconds(100));
           }
           else if(pos.getY()>largeur){
@@ -137,6 +143,7 @@ void MoveCharacterCommand::execute(state::State& act_state){
                 pos.setX(pos.getX()+1);
                 state::Position& posRef=pos;
                 act_state.getCharacters()->setElement(posRef,character);
+		act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
             }
             else if(pos.getX()>longueur){
                 throw "Déplacement vers le Sud Impossible !";
@@ -155,6 +162,7 @@ void MoveCharacterCommand::execute(state::State& act_state){
                 pos.setX(pos.getX()-1);
                 state::Position& posRef=pos;
                 act_state.getCharacters()->setElement(posRef,character);
+		act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
             }
             else if(pos.getX()<=0){
                 throw "Déplacement vers le Nord Impossible !";
@@ -162,6 +170,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
           }
         }
     }
+
+}
     /*
 
     //Cas du Character orienté vers le Nord
