@@ -123,7 +123,7 @@ void ElementTab::setCharacterPM(int element,int pm){
             	elementList[element]->setPM(pm);
         	}
     	}
-        std::cout<<"I am in setPM function"<<std::endl;
+        //std::cout<<"I am in setPM function"<<std::endl;
     	StateEvent s(StateEventId::PMChanged);
     	notifyObservers(s);
 }

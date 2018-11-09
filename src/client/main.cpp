@@ -8,6 +8,12 @@
 #include <random>
 #include "engine.h"
 #include "math.h"
+#include <cstdio>
+#include <chrono>
+#include <thread>
+
+std::chrono::system_clock::time_point a = std::chrono::system_clock::now();
+std::chrono::system_clock::time_point b = std::chrono::system_clock::now();
 
 
 using namespace std;
@@ -124,14 +130,17 @@ void testSFML() {
 
             //Affichage Personnages//
                 Character* c_ptr=new Character("Iop");
-                Character* sad_ptr=new Character("Sadida");
-                c_ptr->setTypeId(1);
+                
+                Character* sad_ptr=new Character("Iop");
+              
                 c_ptr->setDirection(1); //Nord
+                sad_ptr->setDirection(3); //Nord
                 Position pos(height-1,width/2);
                 c_ptr->setPosition(pos);
-                Position pos_sad(1,width/2);
+                
+                Position pos_sad(1,4);   
                 sad_ptr->setPosition(pos_sad);
-                //c_ptr->setDirection(4);
+                
                 elmt_list2.push_back(c_ptr);
                 elmt_list2.push_back(sad_ptr);
             ////////////////////////
@@ -252,10 +261,24 @@ void testSFML() {
 
         engine.setState(*state);
 
-
+    sad_ptr->affiche_Position();
     ///// Création de la fenêtre/////
     sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Tilemap");
     while (window.isOpen()){
+        
+        // Maintain designated frequency of 5 Hz (200 ms per frame)
+        a = std::chrono::system_clock::now();
+        std::chrono::duration<double, std::milli> work_time = a - b;
+
+        if (work_time.count() < 100.0)
+        {
+            std::chrono::duration<double, std::milli> delta_ms(100.0 - work_time.count());
+            auto delta_ms_duration = std::chrono::duration_cast<std::chrono::milliseconds>(delta_ms);
+            std::this_thread::sleep_for(std::chrono::milliseconds(delta_ms_duration.count()));
+        }
+
+        b = std::chrono::system_clock::now();
+        std::chrono::duration<double, std::milli> sleep_time = b - a;
 
         
 
@@ -382,10 +405,7 @@ int main(int argc,char* argv[])
         else if (strcmp(argv[1],"engine")==0){
             //Test Map
             testSFML();
-            
-            cout<<"//Etat Initial//"<<endl;
-            
-            cout<<"Iop se déplace d'une case vers la droite..."<<endl;
+
             
             
 
