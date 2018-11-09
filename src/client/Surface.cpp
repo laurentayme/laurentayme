@@ -70,7 +70,7 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
 
             }
         }  
-       }
+        }
         
         //Affichage de Characters
         else if (elmt_list[i]->getTypeId()==1){

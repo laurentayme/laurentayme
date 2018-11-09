@@ -18,11 +18,7 @@ Character::Character (std::string Classname){
     player= true;
     statut=1;
     direction=1;
-<<<<<<< HEAD
     idType=1;
-=======
-	
->>>>>>> 24322c451e3febec2eed7127804da9dfd2fdc41a
     
 //Attribution des stats en fonction de la classe choisie//
     
