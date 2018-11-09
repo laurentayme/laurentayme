@@ -70,10 +70,10 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
 
             }
         }  
-        }
+       }
         
         //Affichage de Characters
-        else if (elmt_list[i]->getTypeId()==1){
+        else if (elmt_list[0]->getTypeId()==1){
            
             quad_ptr[0].position=sf::Vector2f((149/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
             quad_ptr[1].position=sf::Vector2f((149/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(75/2.5)*(x+y)+40+75/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
@@ -100,7 +100,7 @@ void Surface::setSpriteTexture(int i, const Tile& texture,const state::ElementTa
     elmt_list=elmt_tab.getElementList();
     
     //Affichage d'objets de Map
-    if(elmt_list[0]->getTypeId()==0){
+    if(elmt_list[i]->getTypeId()==0){
         
     quad_ptr[0].texCoords=sf::Vector2f(texture.getX(),texture.getY());
     quad_ptr[1].texCoords=sf::Vector2f(texture.getX()+texture.getWidth(),texture.getY());

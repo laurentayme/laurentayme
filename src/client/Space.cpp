@@ -18,7 +18,7 @@ Space::Space(size_t space){
         obstacle=false;
     }
     else{
-        throw "Type de Space Incorrect ! (1=Empty, 2=Start, 3=Trap et 4=RedSpace, 5=WhiteSpace)";
+        throw "Type de Space Incorrect ! (1=Empty, 2=Start, 3=Trap et 4=RedSpace)";
     }
 }
 
