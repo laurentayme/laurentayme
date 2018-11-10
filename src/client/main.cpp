@@ -176,6 +176,7 @@ void testSFML() {
 	state->setMap(elmtTab_ptr);
 	state->setCharacters(elmtTab2_ptr);
 	state->setMenu(elmtTabMenu_ptr);
+	state->setLandscape(elmtTabLandscape_ptr);
 
         //////////////////////////
 

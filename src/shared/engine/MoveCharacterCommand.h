@@ -8,15 +8,20 @@ namespace state {
 };
 namespace engine {
   class Command;
+};
+namespace state {
+  class Direction;
 }
 
 #include "CommandTypeId.h"
 #include "Command.h"
+#include "state/Direction.h"
 
 namespace engine {
 
   /// class MoveCharacterCommand - 
   class MoveCharacterCommand : public engine::Command {
+    // Associations
     // Attributes
   public:
     int vectX;
