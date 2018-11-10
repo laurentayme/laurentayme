@@ -75,11 +75,17 @@ void MoveCharacterCommand::execute(state::State& act_state){
 					//Vérification d'obstacle
 					for(auto it = lands.begin(); it != lands.end(); ++it){
     						if((*it)->getPosition().getX()==posMap.getX() and (*it)->getPosition().getY()==(posMap.getY()-1)){
-							//obstacle=(*it)->isObstacle();
 							obstacle=true;
 						}
 					}
-					if(obstacle==false){
+					bool filledcase=false;
+					//Vérification de personnage
+					for(auto it = chars.begin(); it != chars.end(); ++it){
+    						if((*it)->getPosition().getX()==posMap.getX() and (*it)->getPosition().getY()==(posMap.getY()-1) and (*it)!=chars[character]){
+							filledcase=true;
+						}
+					}
+					if(obstacle==false and filledcase==false){
               					pos.setY(pos.getY()-1);
 						posMap.setY(posMap.getY()-1);
               					state::Position& posRef=pos;
@@ -87,6 +93,12 @@ void MoveCharacterCommand::execute(state::State& act_state){
 						act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
               					//std::this_thread::sleep_for(std::chrono::nanoseconds(100));
 					}
+					/*else if(obstacle==true){
+						throw "un obstacle se trouve à cet endroit !";
+					}
+					else if(filledcase==false){
+						throw "un personnage se trouve déjà à cet endroit !";
+					}*/
           			}
           			else if(pos.getY()>largeur){
              				throw "Déplacement vers l'Ouest Impossible !";
@@ -111,13 +123,26 @@ void MoveCharacterCommand::execute(state::State& act_state){
 							obstacle=true;
 							}
 						}
-						if(obstacle==false){
+						bool filledcase=false;
+						//Vérification de personnage
+						for(auto it = chars.begin(); it != chars.end(); ++it){
+    							if((*it)->getPosition().getX()==(posMap.getX()+1) and (*it)->getPosition().getY()==(posMap.getY()) and (*it)!=chars[character]){
+								filledcase=true;
+							}
+						}
+						if(obstacle==false and filledcase==false){
                 					pos.setX(pos.getX()+1);
 							posMap.setX(posMap.getX()+1);
                 					state::Position& posRef=pos;
                 					act_state.getCharacters()->setElement(posRef,character);
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
             					}
+						/*else if(obstacle==true){
+							throw "un obstacle se trouve à cet endroit !";
+						}
+						else if(filledcase==false){
+							throw "un personnage se trouve déjà à cet endroit !";
+						}*/
 					}
            		 		else if(pos.getX()>longueur){
                 			throw "Déplacement vers le Sud Impossible !";
@@ -142,13 +167,26 @@ void MoveCharacterCommand::execute(state::State& act_state){
 							obstacle=true;
 							}
 						}
-						if(obstacle==false){
+						bool filledcase=false;
+						//Vérification de personnage
+						for(auto it = chars.begin(); it != chars.end(); ++it){
+    							if((*it)->getPosition().getX()==(posMap.getX()-1) and (*it)->getPosition().getY()==(posMap.getY()) and (*it)!=chars[character]){
+								filledcase=true;
+							}
+						}
+						if(obstacle==false and filledcase==false){
                 					pos.setX(pos.getX()-1);
 							posMap.setX(posMap.getX()-1);
                 					state::Position& posRef=pos;
                 					act_state.getCharacters()->setElement(posRef,character);
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
 						}
+						/*else if(obstacle==true){
+							throw "un obstacle se trouve à cet endroit !";
+						}
+						else if(filledcase==false){
+							throw "un personnage se trouve déjà à cet endroit !";
+						}*/
            			 	}
 					else if(pos.getX()<=0){
                 				throw "Déplacement vers le Nord Impossible !";
@@ -174,17 +212,30 @@ void MoveCharacterCommand::execute(state::State& act_state){
 							obstacle=true;
 						}
 					}
-					if(obstacle==false){
+					bool filledcase=false;
+						//Vérification de personnage
+						for(auto it = chars.begin(); it != chars.end(); ++it){
+    							if((*it)->getPosition().getX()==posMap.getX() and (*it)->getPosition().getY()==(posMap.getY()+1) and (*it)!=chars[character]){
+								filledcase=true;
+							}
+						}
+						if(obstacle==false and filledcase==false){
               					pos.setY(pos.getY()+1);
 						posMap.setY(posMap.getY()+1);
               					state::Position& posRef=pos;
               					act_state.getCharacters()->setElement(posRef,character);
 						act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
               					//std::this_thread::sleep_for(std::chrono::nanoseconds(100));
-					}
-          			}
-         			else if(pos.getY()>largeur){
-              			throw "Déplacement vers l'Ouest Impossible !";
+						}
+						/*else if(obstacle==true){
+							throw "un obstacle se trouve à cet endroit !";
+						}
+						else if(filledcase==false){
+							throw "un personnage se trouve déjà à cet endroit !";
+						}*/
+          				}
+         				else if(pos.getY()>largeur){
+              					throw "Déplacement vers l'Ouest Impossible !";
           			}
         		}
 
@@ -205,13 +256,26 @@ void MoveCharacterCommand::execute(state::State& act_state){
 								obstacle=true;
 							}
 						}
-						if(obstacle==false){
+						bool filledcase=false;
+						//Vérification de personnage
+						for(auto it = chars.begin(); it != chars.end(); ++it){
+    							if((*it)->getPosition().getX()==(posMap.getX()+1) and (*it)->getPosition().getY()==posMap.getY() and (*it)!=chars[character]){
+								filledcase=true;
+							}
+						}
+						if(obstacle==false and filledcase==false){
                 					pos.setX(pos.getX()+1);
 							posMap.setX(posMap.getX()+1);
                 					state::Position& posRef=pos;
                 					act_state.getCharacters()->setElement(posRef,character);
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
 						}
+						/*else if(obstacle==true){
+							throw "un obstacle se trouve à cet endroit !";
+						}
+						else if(filledcase==false){
+							throw "un personnage se trouve déjà à cet endroit !";
+						}*/
            				}
            				else if(pos.getX()>longueur){
                 				throw "Déplacement vers le Sud Impossible !";
@@ -235,13 +299,26 @@ void MoveCharacterCommand::execute(state::State& act_state){
 								obstacle=true;
 							}
 						}
-						if(obstacle==false){
+						bool filledcase=false;
+						//Vérification de personnage
+						for(auto it = chars.begin(); it != chars.end(); ++it){
+    							if((*it)->getPosition().getX()==(posMap.getX()-1) and (*it)->getPosition().getY()==posMap.getY() and (*it)!=chars[character]){
+								filledcase=true;
+							}
+						}
+						if(obstacle==false and filledcase==false){
                 					pos.setX(pos.getX()-1);
 							posMap.setX(posMap.getX()-1);
                 					state::Position& posRef=pos;
                 					act_state.getCharacters()->setElement(posRef,character);
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
 						}
+						/*else if(obstacle==true){
+							throw "un obstacle se trouve à cet endroit !";
+						}
+						else if(filledcase==false){
+							throw "un personnage se trouve déjà à cet endroit !";
+						}*/
             				}
             				else if(pos.getX()<=0){
                 				throw "Déplacement vers le Nord Impossible !";
