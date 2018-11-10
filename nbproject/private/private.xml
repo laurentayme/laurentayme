@@ -10,9 +10,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/valentin/laurentayme/src/client/Observer.cpp</file>
+            <file>file:/home/valentin/laurentayme/src/client/Surface.cpp</file>
+            <file>file:/home/valentin/laurentayme/src/client/WhiteSurbrillanceCommand.c</file>
+            <file>file:/home/valentin/laurentayme/src/client/WhiteSurbrillanceCommand.cpp</file>
             <file>file:/home/valentin/laurentayme/src/client/main.cpp</file>
-            <file>file:/home/valentin/laurentayme/src/client/Observable.cpp</file>
+            <file>file:/home/valentin/laurentayme/src/client/render/StateTileSet.cpp</file>
         </group>
     </open-files>
 </project-private>

@@ -48,6 +48,8 @@
         <in>Surface.cpp</in>
         <in>TabEvent.cpp</in>
         <in>Wall.cpp</in>
+        <in>WhiteSurbrillanceCommand.c</in>
+        <in>WhiteSurbrillanceCommand.cpp</in>
         <in>main.cpp</in>
         <in>main_old.cpp</in>
         <in>render.h</in>
@@ -63,6 +65,7 @@
           <in>MoveCharacterCommand.h</in>
           <in>OrientationCommand.h</in>
           <in>SurbrillanceCommand.h</in>
+          <in>WhiteSurbrillanceCommand.h</in>
         </df>
         <df name="state">
           <in>Abilities.h</in>
@@ -74,6 +77,7 @@
           <in>Event.h</in>
           <in>EventTypeId.h</in>
           <in>Landscape.h</in>
+          <in>LandscapeType.h</in>
           <in>Observable.h</in>
           <in>Observer.h</in>
           <in>Obstacle.h</in>
@@ -120,6 +124,8 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>

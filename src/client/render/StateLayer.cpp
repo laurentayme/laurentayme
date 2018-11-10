@@ -52,20 +52,20 @@ void StateLayer::initSurface (){
 	textpv.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPV()));
         textpv.setCharacterSize(24);
         textpv.setColor(sf::Color::White);
-        textpv.setPosition(240,86*7.4);
+        textpv.setPosition(240,86*7.4-25);
         
         textpa.setFont(font);
         
         textpa.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPA()));
         textpa.setCharacterSize(23);
         textpa.setColor(sf::Color::White);
-        textpa.setPosition(297,86*8.43);
+        textpa.setPosition(297,86*8.43-25);
         
         textpm.setFont(font);
         textpm.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPM()));
         textpm.setCharacterSize(23);
         textpm.setColor(sf::Color::White);
-        textpm.setPosition(220,86*8.44);
+        textpm.setPosition(220,86*8.44-25);
 
 	const ElementTab* menu =state.getMenu();
 	const ElementTab& menu_ref=*menu;

@@ -393,33 +393,6 @@ src/client/Landscape.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Landscape.cpp.s
 .PHONY : src/client/Landscape.cpp.s
 
-src/client/LifeCommand.o: src/client/LifeCommand.cpp.o
-
-.PHONY : src/client/LifeCommand.o
-
-# target to build an object file
-src/client/LifeCommand.cpp.o:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LifeCommand.cpp.o
-.PHONY : src/client/LifeCommand.cpp.o
-
-src/client/LifeCommand.i: src/client/LifeCommand.cpp.i
-
-.PHONY : src/client/LifeCommand.i
-
-# target to preprocess a source file
-src/client/LifeCommand.cpp.i:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LifeCommand.cpp.i
-.PHONY : src/client/LifeCommand.cpp.i
-
-src/client/LifeCommand.s: src/client/LifeCommand.cpp.s
-
-.PHONY : src/client/LifeCommand.s
-
-# target to generate assembly for a file
-src/client/LifeCommand.cpp.s:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LifeCommand.cpp.s
-.PHONY : src/client/LifeCommand.cpp.s
-
 src/client/LoadCommand.o: src/client/LoadCommand.cpp.o
 
 .PHONY : src/client/LoadCommand.o
@@ -554,33 +527,6 @@ src/client/Obstacle.s: src/client/Obstacle.cpp.s
 src/client/Obstacle.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Obstacle.cpp.s
 .PHONY : src/client/Obstacle.cpp.s
-
-src/client/OrientationCommand.o: src/client/OrientationCommand.cpp.o
-
-.PHONY : src/client/OrientationCommand.o
-
-# target to build an object file
-src/client/OrientationCommand.cpp.o:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/OrientationCommand.cpp.o
-.PHONY : src/client/OrientationCommand.cpp.o
-
-src/client/OrientationCommand.i: src/client/OrientationCommand.cpp.i
-
-.PHONY : src/client/OrientationCommand.i
-
-# target to preprocess a source file
-src/client/OrientationCommand.cpp.i:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/OrientationCommand.cpp.i
-.PHONY : src/client/OrientationCommand.cpp.i
-
-src/client/OrientationCommand.s: src/client/OrientationCommand.cpp.s
-
-.PHONY : src/client/OrientationCommand.s
-
-# target to generate assembly for a file
-src/client/OrientationCommand.cpp.s:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/OrientationCommand.cpp.s
-.PHONY : src/client/OrientationCommand.cpp.s
 
 src/client/Position.o: src/client/Position.cpp.o
 
@@ -1134,9 +1080,6 @@ help:
 	@echo "... src/client/Landscape.o"
 	@echo "... src/client/Landscape.i"
 	@echo "... src/client/Landscape.s"
-	@echo "... src/client/LifeCommand.o"
-	@echo "... src/client/LifeCommand.i"
-	@echo "... src/client/LifeCommand.s"
 	@echo "... src/client/LoadCommand.o"
 	@echo "... src/client/LoadCommand.i"
 	@echo "... src/client/LoadCommand.s"
@@ -1152,9 +1095,6 @@ help:
 	@echo "... src/client/Obstacle.o"
 	@echo "... src/client/Obstacle.i"
 	@echo "... src/client/Obstacle.s"
-	@echo "... src/client/OrientationCommand.o"
-	@echo "... src/client/OrientationCommand.i"
-	@echo "... src/client/OrientationCommand.s"
 	@echo "... src/client/Position.o"
 	@echo "... src/client/Position.i"
 	@echo "... src/client/Position.s"

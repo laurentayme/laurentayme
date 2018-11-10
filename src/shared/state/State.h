@@ -17,6 +17,8 @@ namespace state {
   class State : public state::Observable {
     // Associations
     // Attributes
+  public:
+    ElementTab* landscape;
   private:
     ElementTab* carte;
     ElementTab* characters;
@@ -32,6 +34,8 @@ namespace state {
     void setMenu (ElementTab* menu);
     ElementTab* getRedMap () const;
     void setRedMap (ElementTab* red_map);
+    ElementTab* getLandscape () const;
+    void setLandscape (ElementTab* landscape);
     // Setters and Getters
   };
 

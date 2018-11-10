@@ -16,13 +16,14 @@ Wall::Wall(){
     obstacle=true;
     wall=true;
     wallType=1;
+    idType=0;
 }
 
-bool const Wall::isWall() const {
+bool Wall::isWall() const {
     return(true);
 }
 
-bool const Wall::isObstacle() const {
+bool Wall::isObstacle() const {
     return(true);
 }
 
@@ -30,16 +31,16 @@ void Wall::affiche_Classe(){
     std::cout<<"Je suis un Wall."<<std::endl;
 }
 
-std::string const Wall::getClass() const{
+std::string Wall::getClass() const{
     return("None");
 }
 
-size_t const Wall::getDirection() const{
+size_t Wall::getDirection() const{
     return(0);
 }
 
 
-size_t const Wall::getSpaceType() const {
+size_t Wall::getSpaceType() const {
 	return 0;
 }
 
@@ -67,7 +68,7 @@ void Wall::setDirection(size_t direction){
 }
 
 
-std::vector<Abilities*> Wall::getAbilitiesList() const {
+std::vector<Abilities*> Wall::getAbilitiesList() {
     std::vector<Abilities*> list;
 	return(list);
 }
@@ -93,3 +94,13 @@ void Wall::setPA(int pa){
 void Wall::setPV(int pv){
 }
 
+size_t Wall::getTypeId() const{
+    return(idType);
+}
+
+int Wall::getStatut() const{
+    return(3);
+}
+
+void Wall::setStatut(int statut){
+}

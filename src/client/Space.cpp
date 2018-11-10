@@ -16,17 +16,18 @@ Space::Space(size_t space){
     if (space>=0 && space <=5){
         spaceType=space;
         obstacle=false;
+        idType=0;
     }
     else{
         throw "Type de Space Incorrect ! (1=Empty, 2=Start, 3=Trap et 4=RedSpace, 5=WhiteSpace)";
     }
 }
 
-size_t const Space::getSpaceType() const{
+size_t Space::getSpaceType() const{
     return(spaceType);
 }
 
-bool const Space::isObstacle() const{
+bool Space::isObstacle() const{
     return(obstacle);
 }
 
@@ -34,15 +35,15 @@ void Space::affiche_Classe(){
     std::cout<<"Je suis un Space."<<std::endl;
 }
 
-bool const Space::isWall() const {
+bool Space::isWall() const {
     return(false);
 }
 
-std::string const Space::getClass() const{
+std::string Space::getClass() const{
     return("None");
 }
 
-size_t const Space::getDirection() const{
+size_t Space::getDirection() const{
     return(0);
 }
 
@@ -58,7 +59,7 @@ void Space::setDirection (size_t direction){
 	std::cout<<"Un espace n'a pas de direction"<<std::endl;
 }
 
-std::vector<Abilities*> Space::getAbilitiesList() const {
+std::vector<Abilities*> Space::getAbilitiesList() {
     std::vector<Abilities*> list;
 	return(list);
 }
@@ -82,4 +83,15 @@ void Space::setPA(int pa){
 }
 
 void Space::setPV(int pv){
+}
+
+size_t Space::getTypeId() const{
+    return(idType);
+}
+
+int Space::getStatut() const{
+    return(3);
+}
+
+void Space::setStatut(int statut){
 }

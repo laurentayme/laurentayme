@@ -103,12 +103,8 @@ engine/LoadCommand.h
 ../src/shared/engine/LoadCommand.h
 engine/MoveCharacterCommand.h
 ../src/shared/engine/MoveCharacterCommand.h
-engine/OrientationCommand.h
-../src/shared/engine/OrientationCommand.h
 engine/Engine.h
 ../src/shared/engine/Engine.h
-engine/LifeCommand.h
-../src/shared/engine/LifeCommand.h
 engine/AttackCommand.h
 ../src/shared/engine/AttackCommand.h
 engine/SurbrillanceCommand.h
@@ -142,12 +138,6 @@ state/State.h
 Command.h
 ../src/shared/engine/Command.h
 
-../src/shared/engine/LifeCommand.h
-CommandTypeId.h
-../src/shared/engine/CommandTypeId.h
-Command.h
-../src/shared/engine/Command.h
-
 ../src/shared/engine/LoadCommand.h
 string
 -
@@ -157,12 +147,6 @@ Command.h
 ../src/shared/engine/Command.h
 
 ../src/shared/engine/MoveCharacterCommand.h
-CommandTypeId.h
-../src/shared/engine/CommandTypeId.h
-Command.h
-../src/shared/engine/Command.h
-
-../src/shared/engine/OrientationCommand.h
 CommandTypeId.h
 ../src/shared/engine/CommandTypeId.h
 Command.h
@@ -231,6 +215,8 @@ state/StateEventId.h
 ../src/shared/state/StateEventId.h
 state/StateEvent.h
 ../src/shared/state/StateEvent.h
+state/LandscapeType.h
+../src/shared/state/LandscapeType.h
 
 ../src/shared/state/Abilities.h
 string
@@ -257,9 +243,9 @@ stdlib.h
 ../src/shared/state/Element.h
 stdlib.h
 -
-string
--
 vector
+-
+string
 -
 Position.h
 ../src/shared/state/Position.h
@@ -297,6 +283,8 @@ vector
 -
 Obstacle.h
 ../src/shared/state/Obstacle.h
+
+../src/shared/state/LandscapeType.h
 
 ../src/shared/state/Observable.h
 vector
@@ -397,6 +385,12 @@ state.h
 /home/valentin/laurentayme/src/client/state.h
 engine.h
 /home/valentin/laurentayme/src/client/engine.h
+iostream
+-
+math.h
+/home/valentin/laurentayme/src/client/math.h
+algorithm
+-
 
 /home/valentin/laurentayme/src/client/Character.cpp
 stdio.h
@@ -470,14 +464,6 @@ state.h
 iostream
 -
 
-/home/valentin/laurentayme/src/client/LifeCommand.cpp
-stdio.h
--
-state.h
-/home/valentin/laurentayme/src/client/state.h
-engine.h
-/home/valentin/laurentayme/src/client/engine.h
-
 /home/valentin/laurentayme/src/client/LoadCommand.cpp
 stdio.h
 -
@@ -547,18 +533,6 @@ stdio.h
 -
 state.h
 /home/valentin/laurentayme/src/client/state.h
-
-/home/valentin/laurentayme/src/client/OrientationCommand.cpp
-stdio.h
--
-stdlib.h
--
-iostream
--
-state.h
-/home/valentin/laurentayme/src/client/state.h
-engine.h
-/home/valentin/laurentayme/src/client/engine.h
 
 /home/valentin/laurentayme/src/client/Position.cpp
 stdio.h
@@ -661,14 +635,8 @@ vector
 -
 exception
 -
-state.h
-/home/valentin/laurentayme/src/client/state.h
-render.h
-/home/valentin/laurentayme/src/client/render.h
 random
 -
-engine.h
-/home/valentin/laurentayme/src/client/engine.h
 math.h
 /home/valentin/laurentayme/src/client/math.h
 cstdio
@@ -677,6 +645,14 @@ chrono
 -
 thread
 -
+memory
+-
+state.h
+/home/valentin/laurentayme/src/client/state.h
+render.h
+/home/valentin/laurentayme/src/client/render.h
+engine.h
+/home/valentin/laurentayme/src/client/engine.h
 SFML/Graphics.hpp
 -
 
