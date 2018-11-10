@@ -21,6 +21,7 @@ Character::Character (std::string Classname){
         this->direction=1;
         this->idType=1;
     
+<<<<<<< HEAD
     //Attribution des stats en fonction de la classe choisie//
 
         //Classe Iop
@@ -59,6 +60,45 @@ Character::Character (std::string Classname){
             Abilities* sortilege(new Abilities("Sortilège",4,3));
             AbilitiesList.push_back(sortilege);
         }
+=======
+//Attribution des stats en fonction de la classe choisie//
+    
+    //Classe Iop
+    if (characterClass=="Iop"){
+        pv=100;
+        pa=3;
+        pm=100;
+        
+        //Création de l'equipement initial
+        Equipment* epee(new Equipment("Epée","main",5));
+        equipment_List.push_back(epee);
+        
+        //Création des abilités adéquates
+        Abilities* coup_epee(new Abilities("Coup d'Epée",4));
+        abilities_List.push_back(coup_epee);
+        
+        Abilities* colere(new Abilities("Colère",3));
+        abilities_List.push_back(colere);
+        
+        
+        
+    }
+    else if (characterClass=="Sadida"){
+        pv=110;
+        pa=2;
+        pm=4;
+        
+        //Création de l'equipement initial
+        Equipment* baton(new Equipment("Bâton","main",4));
+        equipment_List.push_back(baton);
+                         
+        //Création des abilités adéquates
+        Abilities* coup_baton(new Abilities("Coup de bâton",2));
+        abilities_List.push_back(coup_baton);
+        
+        Abilities* sortilege(new Abilities("Sortilège",4));
+        abilities_List.push_back(sortilege);
+>>>>>>> 1e59ee2b289f9df740635e3ddaceeeb1dadd78c2
     }
 
     else{

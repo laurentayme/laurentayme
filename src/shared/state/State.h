@@ -24,6 +24,7 @@ namespace state {
     ElementTab* characters;
     ElementTab* menu;
     ElementTab* red_map;
+    ElementTab* landscape;
     // Operations
   public:
     ElementTab* getMap () const;

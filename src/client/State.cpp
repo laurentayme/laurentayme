@@ -51,5 +51,8 @@ ElementTab* State::getLandscape() const {
 	return landscape;     
  }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e59ee2b289f9df740635e3ddaceeeb1dadd78c2
 
