@@ -13,6 +13,7 @@ namespace state {
   private:
     size_t staticElement     = 0;
     size_t character     = 1;
+    size_t menu     = 2;
     // Setters and Getters
   };
 

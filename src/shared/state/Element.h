@@ -3,8 +3,8 @@
 #define STATE__ELEMENT__H
 
 #include <stdlib.h>
-#include <string>
 #include <vector>
+#include <string>
 
 namespace state {
   class Position;
@@ -26,31 +26,34 @@ namespace state {
     size_t direction;
     float loc_x;
     float loc_y;
+    std::vector<Abilities*> AbilitiesList;
     // Operations
   public:
-    Element (size_t idtype = 0);
+    Element ();
     virtual ~Element ();
-    size_t const getTypeId () const;
+    virtual size_t  getTypeId () const = 0;
     void setTypeId (size_t idtype);
     Position getPosition () const;
     void setPosition (Position& position);
     void const affiche_Position ();
     virtual void affiche_Classe () = 0;
-    virtual bool const isObstacle () const = 0;
-    virtual bool const isWall () const = 0;
-    virtual std::string const getClass () const = 0;
-    virtual size_t const getDirection () const = 0;
+    virtual bool isObstacle () const = 0;
+    virtual bool isWall () const = 0;
+    virtual std::string getClass () const = 0;
+    virtual size_t getDirection () const = 0;
     virtual void setDirection (size_t direction) = 0;
-    virtual size_t const getSpaceType () const = 0;
+    virtual size_t getSpaceType () const = 0;
     virtual int getWallType () const = 0;
     virtual int getLandscapeType () const = 0;
-    virtual std::vector<Abilities*> getAbilitiesList () const = 0;
+    virtual std::vector<Abilities*> getAbilitiesList () = 0;
     virtual size_t getPV () const = 0;
     virtual size_t getPM () const = 0;
     virtual size_t getPA () const = 0;
     virtual void setPM (int pm) = 0;
     virtual void setPA (int pa) = 0;
     virtual void setPV (int pv) = 0;
+    virtual void setStatut (int statut) = 0;
+    virtual int getStatut () const = 0;
     virtual void setLoc (float x, float y);
     // Setters and Getters
     const size_t& getIdType() const;
@@ -59,6 +62,7 @@ namespace state {
     void setLoc_x(float loc_x);
     float getLoc_y() const;
     void setLoc_y(float loc_y);
+    void setAbilitiesList(const std::vector<Abilities*>& AbilitiesList);
   };
 
 };

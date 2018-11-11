@@ -17,12 +17,13 @@ namespace state {
   class State : public state::Observable {
     // Associations
     // Attributes
+  public:
+    ElementTab* landscape;
   private:
     ElementTab* carte;
     ElementTab* characters;
     ElementTab* menu;
     ElementTab* red_map;
-    ElementTab* landscape;
     // Operations
   public:
     ElementTab* getMap () const;

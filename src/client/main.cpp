@@ -3,14 +3,16 @@
 #include <string.h>
 #include <vector>
 #include <exception>
-#include "state.h"
-#include "render.h"
 #include <random>
-#include "engine.h"
 #include "math.h"
 #include <cstdio>
 #include <chrono>
 #include <thread>
+#include <memory>
+
+#include "state.h"
+#include "render.h"
+#include "engine.h"
 
 std::chrono::system_clock::time_point a = std::chrono::system_clock::now();
 std::chrono::system_clock::time_point b = std::chrono::system_clock::now();
@@ -40,7 +42,8 @@ void testSFML() {
         //Paramètres de Map//
         int width=9;
         int height=12;
-
+        
+        try{
 
         ////Instanciation de la  MAP////
 
@@ -48,8 +51,7 @@ void testSFML() {
                 for(int i=0;i<height;i++){
                     for(int j=0;j<width;j++){
                         if(i==0 || j==0){
-                            Space* s_ptr=new Space(1);
-                            s_ptr->setTypeId(0);
+                            Space* s_ptr=new Space(0);
                             Position position(i,j);
                             Position posref=position;
                             s_ptr->setPosition(posref);
@@ -57,7 +59,6 @@ void testSFML() {
                         }
                         else{
                             Space* s_ptr=new Space(0);
-                            s_ptr->setTypeId(0);
                             Position position(i,j);
                             Position posref=position;
                             s_ptr->setPosition(posref);
@@ -73,7 +74,6 @@ void testSFML() {
                 for(int i=2;i<height-1;i++){
                     for(int j=2;j<width-1;j++){
                         Landscape* l_ptr=new Landscape;
-                        l_ptr->setTypeId(0);
 
                         //Aleatoire//
                         std::random_device rd;
@@ -107,42 +107,41 @@ void testSFML() {
                     for(int j=0;j<width;j++){
                         if(i==0|| j==0){//Visible Wall
                             Wall* w_ptr= new Wall;
-                            w_ptr->setTypeId(0);
                             Position position_wall(i,j);
                             Position posref_wall=position_wall;
                             w_ptr->setPosition(posref_wall);
                             elmt_list_wall.push_back(w_ptr);
                         }
                         //Invisible Wall
-                        else if(i==height-1|| j==width-1){
+                        /*else if(i==height-1|| j==width-1){
                             Wall* w_ptr= new Wall;
-                            w_ptr->setTypeId(0);
                             w_ptr->setWallType(2);
                             Position position_wall(i,j);
                             Position posref_wall=position_wall;
                             w_ptr->setPosition(posref_wall);
-                            //elmt_list_wall.push_back(w_ptr);
-                        }
+                            elmt_list_wall.push_back(w_ptr);
+                        }*/
                     }
                 }
             ////////////////////
 
 
             //Affichage Personnages//
+            
+                //Création du Iop//
                 Character* c_ptr=new Character("Iop");
-                
-                Character* sad_ptr=new Character("Iop");
-              
-                c_ptr->setDirection(1); //Nord
-                sad_ptr->setDirection(3); //Nord
                 Position pos(height-1,width/2);
                 c_ptr->setPosition(pos);
-                
+                elmt_list2.push_back(c_ptr);
+ 
+                //Création du Sram//
+                Character* sad_ptr=new Character("Sram");
+                sad_ptr->setDirection(3); //Sud
                 Position pos_sad(1,4);   
                 sad_ptr->setPosition(pos_sad);
-                
-                elmt_list2.push_back(c_ptr);
                 elmt_list2.push_back(sad_ptr);
+                
+       
             ////////////////////////
 
             //Element List Surbrillance//
@@ -261,8 +260,8 @@ void testSFML() {
         Observable observable;
 
         engine.setState(*state);
-
-    sad_ptr->affiche_Position();
+        
+        
     ///// Création de la fenêtre/////
     sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Tilemap");
     while (window.isOpen()){
@@ -271,7 +270,7 @@ void testSFML() {
         a = std::chrono::system_clock::now();
         std::chrono::duration<double, std::milli> work_time = a - b;
 
-        if (work_time.count() < 100.0)
+        if (work_time.count() < 30.0)
         {
             std::chrono::duration<double, std::milli> delta_ms(100.0 - work_time.count());
             auto delta_ms_duration = std::chrono::duration_cast<std::chrono::milliseconds>(delta_ms);
@@ -307,12 +306,12 @@ void testSFML() {
                 
                 if(localPosition.y>=615 and  localPosition.x>=362 ){
                     WhiteSurbrillanceCommand* case_blanche=new WhiteSurbrillanceCommand(localPosition.x,localPosition.y);
-                    engine.addCommand(1,case_blanche);
+                    engine.addCommand(3,case_blanche);
                     engine.update();
                 }
 
-                else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9) {
-
+                else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9 and ((x_mouse_iso+y_mouse_iso)!=16)) {
+                    
                     //Gestion Surbrillance//
 
                     SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
@@ -324,19 +323,23 @@ void testSFML() {
                     
             else if (event.type == sf::Event::MouseButtonPressed ){
                     
-                    if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9) {
+                    if(localPosition.x>=362 and localPosition.x<=362+67 and localPosition.y>=615 and localPosition.y<=615+62){
+                        
+                        
+                        AttackCommand* attaque= new AttackCommand(0,1,"Coup d'Epée");
+                        engine.addCommand(2,attaque);
+                        engine.update();
+                        
+                    }
+                
+                
+                    else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9) {
 
                     //Gestion Surbrillance//
-                        
-                    //c_ptr->setPM(2);
-                    //stateLayerMenu_ptr->initSurface();
 
-                    SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
-                    engine.addCommand(1, case_rouge);
-                    engine.update();
+                        SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
+                        engine.addCommand(1, case_rouge);
                 
-
-                                   cout<<"Click X :"<<x_mouse_iso<<"/ Click Y: "<<y_mouse_iso<<endl;
 
 
                                        try{
@@ -351,16 +354,32 @@ void testSFML() {
                                            MoveCharacterCommand* deplacement=new MoveCharacterCommand(0,vectX,vectY);
                                            engine.addCommand(2,deplacement);
                                            engine.update();
+              
+                                          
 
                                        }
                                        catch(const char* e){
                                            cout<<"Exception :"<<e<<endl;
                                        }
                     }
+                    
+                    
+                    
                 
                 }
-                    
-    
+                 
+            
+        //Vérification des états des personnages//
+            for(int i=0;i<state->getCharacters()->getElementList().size();i++){
+                //Si le Personnage est mort
+                if(state->getCharacters()->getElementList()[i]->getStatut()==3){
+                    elmtTabLayer2_ptr->getTab().getElementList().erase(elmtTabLayer2_ptr->getTab().getElementList().begin() + i);
+                    elmtTabLayer2_ptr->initSurface();
+                
+                }
+            }
+        ///////////////////////////////////////////
+        
 
 
         // on dessine le niveau
@@ -379,16 +398,19 @@ void testSFML() {
         window.display();
     }
     }
+    
+    }
+        catch(const char* e){
+            cout<<"Exception :"<<e<<endl;
+        }
 
 
 
 
 //fin test map
+    
 }
 ///// Fin Fenetre SFML /////
-
-
-void Test_Unitaire();
 
 
 int main(int argc,char* argv[])
@@ -406,17 +428,13 @@ int main(int argc,char* argv[])
         else if (strcmp(argv[1],"engine")==0){
             //Test Map
             testSFML();
-
             
-            
-
         }
 
-        }
+    }
 
     return(0);
-//test map
-//testSFML();
+
 }
 
 

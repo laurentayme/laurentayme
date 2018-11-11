@@ -28,7 +28,6 @@ namespace engine {
     AttackCommand (int CharacterAttacker, int CharacterTarget, std::string AbilityUsed);
     CommandTypeId getTypeId () const;
     void execute (state::State& state);
-    ~AttackCommand ();
     // Setters and Getters
     int getCharacterAttacker() const;
     void setCharacterAttacker(int CharacterAttacker);

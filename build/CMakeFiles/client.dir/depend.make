@@ -11,6 +11,7 @@ CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/Equipment.
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Abilities.cpp.o: ../src/shared/state/Obstacle.h
@@ -47,6 +48,7 @@ CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Equipm
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/AttackCommand.cpp.o: ../src/shared/state/Obstacle.h
@@ -74,6 +76,7 @@ CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Equipment.
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Character.cpp.o: ../src/shared/state/Obstacle.h
@@ -110,6 +113,7 @@ CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Command.cpp.o: ../src/shared/state/Obstacle.h
@@ -137,6 +141,7 @@ CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Element.cpp.o: ../src/shared/state/Obstacle.h
@@ -164,6 +169,7 @@ CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/Equipment
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/ElementTab.cpp.o: ../src/shared/state/Obstacle.h
@@ -200,6 +206,7 @@ CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Engine.cpp.o: ../src/shared/state/Obstacle.h
@@ -227,6 +234,7 @@ CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Equipment.
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Equipment.cpp.o: ../src/shared/state/Obstacle.h
@@ -254,6 +262,7 @@ CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Event.cpp.o: ../src/shared/state/Obstacle.h
@@ -281,6 +290,7 @@ CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Equipment.
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Landscape.cpp.o: ../src/shared/state/Obstacle.h
@@ -317,6 +327,7 @@ CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/Equipmen
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/LoadCommand.cpp.o: ../src/shared/state/Obstacle.h
@@ -353,6 +364,7 @@ CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o: ../src/shared/state/Obstacle.h
@@ -380,6 +392,7 @@ CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/Equipment
 CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Observable.cpp.o: ../src/shared/state/Obstacle.h
@@ -407,6 +420,7 @@ CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Observer.cpp.o: ../src/shared/state/Obstacle.h
@@ -434,6 +448,7 @@ CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Obstacle.cpp.o: ../src/shared/state/Obstacle.h
@@ -461,6 +476,7 @@ CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Position.cpp.o: ../src/shared/state/Obstacle.h
@@ -488,6 +504,7 @@ CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Space.cpp.o: ../src/shared/state/Obstacle.h
@@ -515,6 +532,7 @@ CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/State.cpp.o: ../src/shared/state/Obstacle.h
@@ -542,6 +560,7 @@ CMakeFiles/client.dir/src/client/StateEvent.cpp.o: ../src/shared/state/Equipment
 CMakeFiles/client.dir/src/client/StateEvent.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/StateEvent.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/StateEvent.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/StateEvent.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/StateEvent.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/StateEvent.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/StateEvent.cpp.o: ../src/shared/state/Obstacle.h
@@ -569,6 +588,7 @@ CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Equipm
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/StaticElement.cpp.o: ../src/shared/state/Obstacle.h
@@ -605,6 +625,7 @@ CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o: ../src/shared/state/Obstacle.h
@@ -632,6 +653,7 @@ CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Surface.cpp.o: ../src/shared/state/Obstacle.h
@@ -669,6 +691,7 @@ CMakeFiles/client.dir/src/client/TabEvent.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/TabEvent.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/TabEvent.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/TabEvent.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/TabEvent.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/TabEvent.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/TabEvent.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/TabEvent.cpp.o: ../src/shared/state/Obstacle.h
@@ -696,6 +719,7 @@ CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/Wall.cpp.o: ../src/shared/state/Obstacle.h
@@ -732,6 +756,7 @@ CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/s
 CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o: ../src/shared/state/Obstacle.h
@@ -768,6 +793,7 @@ CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Equipment.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/main.cpp.o: ../src/shared/state/Obstacle.h
@@ -815,6 +841,7 @@ CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/st
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o: ../src/shared/state/Obstacle.h
@@ -852,6 +879,7 @@ CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/sta
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o: ../src/shared/state/Obstacle.h
@@ -889,6 +917,7 @@ CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/Equipme
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/render/Layer.cpp.o: ../src/shared/state/Obstacle.h
@@ -926,6 +955,7 @@ CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/Eq
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o: ../src/shared/state/Obstacle.h
@@ -963,6 +993,7 @@ CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/Eq
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o: ../src/shared/state/Obstacle.h
@@ -1000,6 +1031,7 @@ CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o: ../src/shared/state/Obstacle.h
@@ -1037,6 +1069,7 @@ CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/Equipmen
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/render/Tile.cpp.o: ../src/shared/state/Obstacle.h
@@ -1074,6 +1107,7 @@ CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/Equip
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/Event.h
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/EventTypeId.h
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/Landscape.h
+CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/LandscapeType.h
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/Observable.h
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/Observer.h
 CMakeFiles/client.dir/src/client/render/TileSet.cpp.o: ../src/shared/state/Obstacle.h

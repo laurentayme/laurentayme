@@ -215,6 +215,8 @@ state/StateEventId.h
 ../src/shared/state/StateEventId.h
 state/StateEvent.h
 ../src/shared/state/StateEvent.h
+state/LandscapeType.h
+../src/shared/state/LandscapeType.h
 
 ../src/shared/state/Abilities.h
 string
@@ -241,9 +243,9 @@ stdlib.h
 ../src/shared/state/Element.h
 stdlib.h
 -
-string
--
 vector
+-
+string
 -
 Position.h
 ../src/shared/state/Position.h
@@ -281,6 +283,8 @@ vector
 -
 Obstacle.h
 ../src/shared/state/Obstacle.h
+
+../src/shared/state/LandscapeType.h
 
 ../src/shared/state/Observable.h
 vector
@@ -366,55 +370,61 @@ Obstacle.h
 stdlib.h
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/Abilities.cpp
+/home/valentin/laurentayme/src/client/Abilities.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/AttackCommand.cpp
+/home/valentin/laurentayme/src/client/AttackCommand.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 engine.h
-/home/vincent/cloneplt/laurentayme/src/client/engine.h
+/home/valentin/laurentayme/src/client/engine.h
+iostream
+-
+math.h
+/home/valentin/laurentayme/src/client/math.h
+algorithm
+-
 
-/home/vincent/cloneplt/laurentayme/src/client/Character.cpp
+/home/valentin/laurentayme/src/client/Character.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/Command.cpp
+/home/valentin/laurentayme/src/client/Command.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 engine.h
-/home/vincent/cloneplt/laurentayme/src/client/engine.h
+/home/valentin/laurentayme/src/client/engine.h
 
-/home/vincent/cloneplt/laurentayme/src/client/Element.cpp
+/home/valentin/laurentayme/src/client/Element.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/ElementTab.cpp
+/home/valentin/laurentayme/src/client/ElementTab.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/Engine.cpp
+/home/valentin/laurentayme/src/client/Engine.cpp
 stdio.h
 -
 stdlib.h
@@ -422,21 +432,21 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 engine.h
-/home/vincent/cloneplt/laurentayme/src/client/engine.h
+/home/valentin/laurentayme/src/client/engine.h
 utility
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/Equipment.cpp
+/home/valentin/laurentayme/src/client/Equipment.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/Event.cpp
+/home/valentin/laurentayme/src/client/Event.cpp
 stdio.h
 -
 stdlib.h
@@ -444,17 +454,17 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 
-/home/vincent/cloneplt/laurentayme/src/client/Landscape.cpp
+/home/valentin/laurentayme/src/client/Landscape.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/LoadCommand.cpp
+/home/valentin/laurentayme/src/client/LoadCommand.cpp
 stdio.h
 -
 stdlib.h
@@ -462,19 +472,19 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 engine.h
-/home/vincent/cloneplt/laurentayme/src/client/engine.h
+/home/valentin/laurentayme/src/client/engine.h
 SFML/Graphics.hpp
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/MoveCharacterCommand.cpp
+/home/valentin/laurentayme/src/client/MoveCharacterCommand.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 engine.h
-/home/vincent/cloneplt/laurentayme/src/client/engine.h
+/home/valentin/laurentayme/src/client/engine.h
 iostream
 -
 chrono
@@ -482,7 +492,7 @@ chrono
 thread
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/Observable.cpp
+/home/valentin/laurentayme/src/client/Observable.cpp
 stdio.h
 -
 stdlib.h
@@ -490,7 +500,7 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 vector
 -
 iterator
@@ -500,7 +510,7 @@ list
 algorithm
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/Observer.cpp
+/home/valentin/laurentayme/src/client/Observer.cpp
 stdio.h
 -
 stdlib.h
@@ -508,7 +518,7 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 vector
 -
 iterator
@@ -518,33 +528,33 @@ list
 algorithm
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/Obstacle.cpp
+/home/valentin/laurentayme/src/client/Obstacle.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 
-/home/vincent/cloneplt/laurentayme/src/client/Position.cpp
+/home/valentin/laurentayme/src/client/Position.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 
-/home/vincent/cloneplt/laurentayme/src/client/Space.cpp
+/home/valentin/laurentayme/src/client/Space.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/State.cpp
+/home/valentin/laurentayme/src/client/State.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 
-/home/vincent/cloneplt/laurentayme/src/client/StateEvent.cpp
+/home/valentin/laurentayme/src/client/StateEvent.cpp
 stdio.h
 -
 stdlib.h
@@ -552,15 +562,15 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 
-/home/vincent/cloneplt/laurentayme/src/client/StaticElement.cpp
+/home/valentin/laurentayme/src/client/StaticElement.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 
-/home/vincent/cloneplt/laurentayme/src/client/SurbrillanceCommand.cpp
+/home/valentin/laurentayme/src/client/SurbrillanceCommand.cpp
 stdio.h
 -
 stdlib.h
@@ -568,21 +578,21 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 engine.h
-/home/vincent/cloneplt/laurentayme/src/client/engine.h
+/home/valentin/laurentayme/src/client/engine.h
 
-/home/vincent/cloneplt/laurentayme/src/client/Surface.cpp
+/home/valentin/laurentayme/src/client/Surface.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 render.h
-/home/vincent/cloneplt/laurentayme/src/client/render.h
+/home/valentin/laurentayme/src/client/render.h
 SFML/Graphics.hpp
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/TabEvent.cpp
+/home/valentin/laurentayme/src/client/TabEvent.cpp
 stdio.h
 -
 stdlib.h
@@ -590,17 +600,17 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 
-/home/vincent/cloneplt/laurentayme/src/client/Wall.cpp
+/home/valentin/laurentayme/src/client/Wall.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/WhiteSurbrillanceCommand.cpp
+/home/valentin/laurentayme/src/client/WhiteSurbrillanceCommand.cpp
 stdio.h
 -
 stdlib.h
@@ -608,13 +618,13 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
+/home/valentin/laurentayme/src/client/state.h
 engine.h
-/home/vincent/cloneplt/laurentayme/src/client/engine.h
+/home/valentin/laurentayme/src/client/engine.h
 math.h
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/main.cpp
+/home/valentin/laurentayme/src/client/main.cpp
 iostream
 -
 stdio.h
@@ -625,72 +635,74 @@ vector
 -
 exception
 -
-state.h
-/home/vincent/cloneplt/laurentayme/src/client/state.h
-render.h
-/home/vincent/cloneplt/laurentayme/src/client/render.h
 random
 -
-engine.h
-/home/vincent/cloneplt/laurentayme/src/client/engine.h
 math.h
-/home/vincent/cloneplt/laurentayme/src/client/math.h
+/home/valentin/laurentayme/src/client/math.h
 cstdio
 -
 chrono
 -
 thread
 -
+memory
+-
+state.h
+/home/valentin/laurentayme/src/client/state.h
+render.h
+/home/valentin/laurentayme/src/client/render.h
+engine.h
+/home/valentin/laurentayme/src/client/engine.h
 SFML/Graphics.hpp
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render.h
+/home/valentin/laurentayme/src/client/render.h
 render/Tile.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Tile.h
+/home/valentin/laurentayme/src/client/render/Tile.h
 render/TileSet.h
-/home/vincent/cloneplt/laurentayme/src/client/render/TileSet.h
+/home/valentin/laurentayme/src/client/render/TileSet.h
 render/CharacterTileSet.h
-/home/vincent/cloneplt/laurentayme/src/client/render/CharacterTileSet.h
+/home/valentin/laurentayme/src/client/render/CharacterTileSet.h
 render/MapTileSet.h
-/home/vincent/cloneplt/laurentayme/src/client/render/MapTileSet.h
+/home/valentin/laurentayme/src/client/render/MapTileSet.h
 render/StateTileSet.h
-/home/vincent/cloneplt/laurentayme/src/client/render/StateTileSet.h
+/home/valentin/laurentayme/src/client/render/StateTileSet.h
 render/Surface.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Surface.h
+/home/valentin/laurentayme/src/client/render/Surface.h
 render/Layer.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Layer.h
+/home/valentin/laurentayme/src/client/render/Layer.h
 render/StateLayer.h
-/home/vincent/cloneplt/laurentayme/src/client/render/StateLayer.h
+/home/valentin/laurentayme/src/client/render/StateLayer.h
 render/ElementTabLayer.h
-/home/vincent/cloneplt/laurentayme/src/client/render/ElementTabLayer.h
+/home/valentin/laurentayme/src/client/render/ElementTabLayer.h
 
-/home/vincent/cloneplt/laurentayme/src/client/render/CharacterTileSet.cpp
+/home/valentin/laurentayme/src/client/render/CharacterTileSet.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state.h
+/home/valentin/laurentayme/src/client/render/state.h
 render.h
-/home/vincent/cloneplt/laurentayme/src/client/render/render.h
+/home/valentin/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render/CharacterTileSet.h
+/home/valentin/laurentayme/src/client/render/CharacterTileSet.h
 vector
 -
 string
 -
 Tile.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Tile.h
+/home/valentin/laurentayme/src/client/render/Tile.h
 TileSet.h
-/home/vincent/cloneplt/laurentayme/src/client/render/TileSet.h
+/home/valentin/laurentayme/src/client/render/TileSet.h
 
-/home/vincent/cloneplt/laurentayme/src/client/render/ElementTabLayer.cpp
+/home/valentin/laurentayme/src/client/render/ElementTabLayer.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state.h
+/home/valentin/laurentayme/src/client/render/state.h
 render.h
-/home/vincent/cloneplt/laurentayme/src/client/render/render.h
+/home/valentin/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
 -
 memory
@@ -698,33 +710,33 @@ memory
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render/ElementTabLayer.h
+/home/valentin/laurentayme/src/client/render/ElementTabLayer.h
 Layer.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Layer.h
+/home/valentin/laurentayme/src/client/render/Layer.h
 state/Observer.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state/Observer.h
+/home/valentin/laurentayme/src/client/render/state/Observer.h
 state/ElementTab.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state/ElementTab.h
+/home/valentin/laurentayme/src/client/render/state/ElementTab.h
 
-/home/vincent/cloneplt/laurentayme/src/client/render/Layer.cpp
+/home/valentin/laurentayme/src/client/render/Layer.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state.h
+/home/valentin/laurentayme/src/client/render/state.h
 render.h
-/home/vincent/cloneplt/laurentayme/src/client/render/render.h
+/home/valentin/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render/Layer.h
+/home/valentin/laurentayme/src/client/render/Layer.h
 memory
 -
 Surface.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Surface.h
+/home/valentin/laurentayme/src/client/render/Surface.h
 TileSet.h
-/home/vincent/cloneplt/laurentayme/src/client/render/TileSet.h
+/home/valentin/laurentayme/src/client/render/TileSet.h
 
-/home/vincent/cloneplt/laurentayme/src/client/render/MapTileSet.cpp
+/home/valentin/laurentayme/src/client/render/MapTileSet.cpp
 stdio.h
 -
 stdlib.h
@@ -732,95 +744,95 @@ stdlib.h
 iostream
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state.h
+/home/valentin/laurentayme/src/client/render/state.h
 render.h
-/home/vincent/cloneplt/laurentayme/src/client/render/render.h
+/home/valentin/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
 -
 random
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render/MapTileSet.h
+/home/valentin/laurentayme/src/client/render/MapTileSet.h
 vector
 -
 string
 -
 Tile.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Tile.h
+/home/valentin/laurentayme/src/client/render/Tile.h
 TileSet.h
-/home/vincent/cloneplt/laurentayme/src/client/render/TileSet.h
+/home/valentin/laurentayme/src/client/render/TileSet.h
 
-/home/vincent/cloneplt/laurentayme/src/client/render/StateLayer.cpp
+/home/valentin/laurentayme/src/client/render/StateLayer.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state.h
+/home/valentin/laurentayme/src/client/render/state.h
 render.h
-/home/vincent/cloneplt/laurentayme/src/client/render/render.h
+/home/valentin/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
 -
 iostream
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render/StateLayer.h
+/home/valentin/laurentayme/src/client/render/StateLayer.h
 Layer.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Layer.h
+/home/valentin/laurentayme/src/client/render/Layer.h
 state/Observer.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state/Observer.h
+/home/valentin/laurentayme/src/client/render/state/Observer.h
 state/State.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state/State.h
+/home/valentin/laurentayme/src/client/render/state/State.h
 
-/home/vincent/cloneplt/laurentayme/src/client/render/StateTileSet.cpp
+/home/valentin/laurentayme/src/client/render/StateTileSet.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state.h
+/home/valentin/laurentayme/src/client/render/state.h
 render.h
-/home/vincent/cloneplt/laurentayme/src/client/render/render.h
+/home/valentin/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render/StateTileSet.h
+/home/valentin/laurentayme/src/client/render/StateTileSet.h
 vector
 -
 string
 -
 Tile.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Tile.h
+/home/valentin/laurentayme/src/client/render/Tile.h
 TileSet.h
-/home/vincent/cloneplt/laurentayme/src/client/render/TileSet.h
+/home/valentin/laurentayme/src/client/render/TileSet.h
 
-/home/vincent/cloneplt/laurentayme/src/client/render/Surface.h
+/home/valentin/laurentayme/src/client/render/Surface.h
 SFML/Graphics.hpp
 -
 string
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render/Tile.cpp
+/home/valentin/laurentayme/src/client/render/Tile.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state.h
+/home/valentin/laurentayme/src/client/render/state.h
 render.h
-/home/vincent/cloneplt/laurentayme/src/client/render/render.h
+/home/valentin/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render/Tile.h
+/home/valentin/laurentayme/src/client/render/Tile.h
 
-/home/vincent/cloneplt/laurentayme/src/client/render/TileSet.cpp
+/home/valentin/laurentayme/src/client/render/TileSet.cpp
 stdio.h
 -
 state.h
-/home/vincent/cloneplt/laurentayme/src/client/render/state.h
+/home/valentin/laurentayme/src/client/render/state.h
 render.h
-/home/vincent/cloneplt/laurentayme/src/client/render/render.h
+/home/valentin/laurentayme/src/client/render/render.h
 SFML/Graphics.hpp
 -
 
-/home/vincent/cloneplt/laurentayme/src/client/render/TileSet.h
+/home/valentin/laurentayme/src/client/render/TileSet.h
 string
 -
 Tile.h
-/home/vincent/cloneplt/laurentayme/src/client/render/Tile.h
+/home/valentin/laurentayme/src/client/render/Tile.h
 
