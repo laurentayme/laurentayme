@@ -368,7 +368,7 @@ void testSFML() {
                 
                 }
                  
-            
+        /*
         //Vérification des états des personnages//
             for(int i=0;i<state->getCharacters()->getElementList().size();i++){
                 //Si le Personnage est mort
@@ -377,7 +377,7 @@ void testSFML() {
                     elmtTabLayer2_ptr->initSurface();
                 
                 }
-            }
+            }*/
         ///////////////////////////////////////////
         
 
@@ -391,6 +391,7 @@ void testSFML() {
         window.draw(*elmtTabLayerWall_ptr->getSurface());
         window.draw(*elmtTabLayer2_ptr->getSurface());
 	window.draw(stateLayerMenu_ptr->getTextpv());
+        //window.draw(stateLayerMenu_ptr->getTextpvSram());
         window.draw(stateLayerMenu_ptr->getTextpa());
         window.draw(stateLayerMenu_ptr->getTextpm());
         

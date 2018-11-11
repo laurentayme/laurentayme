@@ -48,11 +48,34 @@ void StateLayer::initSurface (){
             throw "Error Font Loading !";
         }
         
+        //PV Iop//
 	textpv.setFont(font);
 	textpv.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPV()));
         textpv.setCharacterSize(24);
         textpv.setColor(sf::Color::White);
         textpv.setPosition(240,86*7.4-25);
+        /////////
+        
+        //PV Sram//
+        
+        //Sram Vivant/ 
+        if(state.getCharacters()->getElementList().size()!=1){
+        
+            textpv_sram.setFont(font);
+            textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[1]->getPV()));
+            textpv_sram.setCharacterSize(18);
+            textpv_sram.setColor(sf::Color::White);
+            textpv_sram.setPosition(142,130);
+        }
+        //Sram Mort
+        else{
+            textpv_sram.setFont(font);
+            textpv_sram.setString(std::to_string(0));
+            textpv_sram.setCharacterSize(18);
+            textpv_sram.setColor(sf::Color::White);
+            textpv_sram.setPosition(142,130);
+        }
+        ///////////
         
         textpa.setFont(font);
         
@@ -98,6 +121,10 @@ void StateLayer::stateChanged(const state::Event& event){
 
 sf::Text StateLayer::getTextpv() const {
 	return(textpv);
+}
+
+sf::Text StateLayer::getTextpvSram() const {
+	return(textpv_sram);
 }
 
 sf::Text StateLayer::getTextpa() const {
