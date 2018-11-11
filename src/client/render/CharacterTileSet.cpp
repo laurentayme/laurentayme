@@ -61,30 +61,12 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
                     return(s);
                 }
             }
-        
-    else if (e.getClass()=="Sram"){
+        }
+    
+    else if (e.getClass()=="Sadida"){
         Tile& s=sadida[0];
-        if(e.getDirection()==1){ //North
-                    s=sadida[9];
-                    return(s);
-                }
-                
-                else if(e.getDirection()==2){ //West
-                    s=sadida[2];
-                    return(s);
-                }        
-                    
-                else if(e.getDirection()==3){ //South
-                    s=sadida[0];
-                    return(s);
-                }
-                
-                else if(e.getDirection()==4){ //East
-                    s=sadida[1];
-                    return(s);
-                }
+        return(s);
         
-    }
     }
     
     // Cas d'un Landscape
@@ -100,7 +82,7 @@ int const CharacterTileSet::getCellWidth(state::Element& elmt) const{
     if(elmt.getClass()=="Iop"){
         return(181/1.75);
     }
-    else if (elmt.getClass()=="Sram"){
+    else if (elmt.getClass()=="Sadida"){
         return(145/1.75);
     }
               
@@ -115,7 +97,7 @@ int const CharacterTileSet::getCellHeight(state::Element& elmt) const{
             if(elmt.getClass()=="Iop"){
         return(306/1.75);
     }
-    else if (elmt.getClass()=="Sram"){
+    else if (elmt.getClass()=="Sadida"){
         return(275/1.75);
     }
 

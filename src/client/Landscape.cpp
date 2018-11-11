@@ -16,14 +16,13 @@ Landscape::Landscape(){
     obstacle=true;
     wall=false;
     landscapeType=0;
-    idType=0;
 }
 
-bool Landscape::isWall() const {
+bool const Landscape::isWall() const {
     return(wall);
 }
 
-bool Landscape::isObstacle() const {
+bool const Landscape::isObstacle() const {
     return(obstacle);
 }
 
@@ -31,15 +30,15 @@ void Landscape::affiche_Classe(){
     std::cout<<"Je suis un Landscape."<<std::endl;
 }
 
-std::string Landscape::getClass() const{
+std::string const Landscape::getClass() const{
     return("None");
 }
 
-size_t Landscape::getDirection() const{
+size_t const Landscape::getDirection() const{
     return(0);
 }
 
-size_t Landscape::getSpaceType() const {
+size_t const Landscape::getSpaceType() const {
 	return 0;
 }
 
@@ -67,9 +66,9 @@ void Landscape::setDirection(size_t direction){
 }
 
 
-std::vector<Abilities*> Landscape::getAbilitiesList() {
+std::vector<Abilities*> Landscape::getAbilitiesList() const {
     std::vector<Abilities*> list;
-    return(list);
+	return(list);
 }
 
 size_t Landscape::getPV() const{
@@ -91,15 +90,4 @@ void Landscape::setPV(int pv){
 }
 
 void Landscape::setPA(int pv){
-}
-
-size_t Landscape::getTypeId() const{
-    return(idType);
-}
-
-int Landscape::getStatut() const{
-    return(3);
-}
-
-void Landscape::setStatut(int statut){
 }

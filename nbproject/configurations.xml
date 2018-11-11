@@ -39,7 +39,6 @@
         <in>Surface.cpp</in>
         <in>TabEvent.cpp</in>
         <in>Wall.cpp</in>
-        <in>WhiteSurbrillanceCommand.cpp</in>
         <in>main.cpp</in>
         <in>main_old.cpp</in>
       </df>
@@ -148,9 +147,7 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/Observer.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
+      <item path="src/client/Observer.cpp" ex="false" tool="1" flavor2="4">
       </item>
       <item path="src/client/Obstacle.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -180,7 +177,7 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/SurbrillanceCommand.cpp" ex="false" tool="1" flavor2="4">
+      <item path="src/client/SurbrillanceCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/client/Surface.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -191,13 +188,6 @@
         </ccTool>
       </item>
       <item path="src/client/Wall.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
-      </item>
-      <item path="src/client/WhiteSurbrillanceCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>

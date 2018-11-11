@@ -22,26 +22,23 @@ namespace state {
     // Operations
   public:
     Landscape ();
-    bool isObstacle () const;
-    bool isWall () const;
+    bool const isObstacle () const;
+    bool const isWall () const;
     void affiche_Classe ();
-    std::string getClass () const;
-    size_t getDirection () const;
+    std::string const getClass () const;
+    size_t const getDirection () const;
     void setDirection (size_t direction);
-    size_t getSpaceType () const;
+    size_t const getSpaceType () const;
     int getWallType () const;
     int getLandscapeType () const;
     void setLandscapeType (int landscape);
-    std::vector<Abilities*> getAbilitiesList ();
+    std::vector<Abilities*> getAbilitiesList () const;
     size_t getPV () const;
     size_t getPA () const;
     size_t getPM () const;
     void setPV (int pv);
     void setPM (int pm);
     void setPA (int pa);
-    size_t getTypeId () const;
-    void setStatut (int statut);
-    int getStatut () const;
     // Setters and Getters
   };
 

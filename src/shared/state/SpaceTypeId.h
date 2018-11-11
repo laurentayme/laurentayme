@@ -14,8 +14,6 @@ namespace state {
     size_t Empty     = 1;
     size_t Start     = 2;
     size_t Trap     = 3;
-    size_t RedSpace     = 4;
-    size_t WhiteSpace     = 5;
     // Setters and Getters
   };
 
