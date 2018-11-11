@@ -29,7 +29,7 @@ void AttackCommand::execute(state::State& state){
                     if((chars[CharacterAttacker]->getPA())>=abilities_list[i]->getnb_pa()){
                         state.getCharacters()->setCharacterPA(CharacterAttacker,chars[CharacterAttacker]->getPA()-abilities_list[i]->getnb_pa());
 			state.getCharacters()->setCharacterPV(CharacterTarget,std::max(0,int(chars[CharacterTarget]->getPV()-abilities_list[i]->getDegats())));
-                    
+                        std::cout<<"Vous avez utilisé l'attaque: "<<abilities_list[i]->getName()<<std::endl;
                         if(chars[CharacterTarget]->getPV()==0){
                             state.getCharacters()->setCharacterStatut(CharacterTarget,3);
                             state.getCharacters()->eraseCharacter();

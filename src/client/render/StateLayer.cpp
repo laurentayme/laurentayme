@@ -65,7 +65,13 @@ void StateLayer::initSurface (){
             textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[1]->getPV()));
             textpv_sram.setCharacterSize(18);
             textpv_sram.setColor(sf::Color::White);
-            textpv_sram.setPosition(142,130);
+            if(state.getCharacters()->getElementList()[1]->getPV()<10){
+                textpv_sram.setPosition(154,130);
+            }
+            else{
+                textpv_sram.setPosition(142,130);
+            }
+            
         }
         //Sram Mort
         else{
@@ -73,7 +79,7 @@ void StateLayer::initSurface (){
             textpv_sram.setString(std::to_string(0));
             textpv_sram.setCharacterSize(18);
             textpv_sram.setColor(sf::Color::White);
-            textpv_sram.setPosition(142,130);
+            textpv_sram.setPosition(154,130);
         }
         ///////////
         

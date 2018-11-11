@@ -149,11 +149,14 @@ void ElementTab::setCharacterStatut(int element, int statut){
 void ElementTab::eraseCharacter(){
     for(size_t i=0;i<elementList.size();i++){
         if(elementList[i]->getStatut()==3){
+            std::string name =elementList[i]->getClass();
              elementList.erase(elementList.begin() + i);
+             std::cout<<name<<" a été tué !"<<std::endl; 
         }
         
     }
     	StateEvent s(StateEventId::PAChanged);
     	notifyObservers(s);
+        
 }
 
