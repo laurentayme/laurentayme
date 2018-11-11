@@ -25,14 +25,30 @@ void AttackCommand::execute(state::State& state){
 
         
 	for(int i=0;i<abilities_list.size();i++){
+                //Vérification de la possession de l'Abilité par le personnage
 		if(abilities_list[i]->getName()==AbilityUsed) {
+                    //Vérification du nombe de PA suffisant 
                     if((chars[CharacterAttacker]->getPA())>=abilities_list[i]->getnb_pa()){
-                        state.getCharacters()->setCharacterPA(CharacterAttacker,chars[CharacterAttacker]->getPA()-abilities_list[i]->getnb_pa());
-			state.getCharacters()->setCharacterPV(CharacterTarget,std::max(0,int(chars[CharacterTarget]->getPV()-abilities_list[i]->getDegats())));
-                        std::cout<<"Vous avez utilisé l'attaque: "<<abilities_list[i]->getName()<<std::endl;
-                        if(chars[CharacterTarget]->getPV()==0){
-                            state.getCharacters()->setCharacterStatut(CharacterTarget,3);
-                            state.getCharacters()->eraseCharacter();
+                        //Vérification de la distance d'utilisation
+                        
+                        int ecart_x=abs(chars[CharacterAttacker]->getPosition().getX()-chars[CharacterTarget]->getPosition().getX());
+                        int ecart_y=abs(chars[CharacterAttacker]->getPosition().getY()-chars[CharacterTarget]->getPosition().getY());
+                        
+                        int distance = std::sqrt(std::pow(ecart_x,2.0)+std::pow(ecart_y,2.0));
+                        
+                        if(distance<=abilities_list[i]->getUseDistance()){
+                            state.getCharacters()->setCharacterPA(CharacterAttacker,chars[CharacterAttacker]->getPA()-abilities_list[i]->getnb_pa());
+                            state.getCharacters()->setCharacterPV(CharacterTarget,std::max(0,int(chars[CharacterTarget]->getPV()-abilities_list[i]->getDegats())));
+                            std::cout<<"Vous avez utilisé l'attaque: "<<abilities_list[i]->getName()<<std::endl;
+                            if(chars[CharacterTarget]->getPV()==0){
+                                state.getCharacters()->setCharacterStatut(CharacterTarget,3);
+                                state.getCharacters()->eraseCharacter();
+                            }
+                        
+                        }
+                        else{
+                            std::cout<<"Vous etes trop loin de la cible pour utiliser la compétence :"<<abilities_list[i]->getName()<<" !"<<std::endl;
+                            std::cout<<"La compétence :"<<abilities_list[i]->getName()<<", nécessite d'etre à une distance minimum de "<<abilities_list[i]->getUseDistance()<<" de la cible."<<std::endl;
                         }
                     }
                     else{

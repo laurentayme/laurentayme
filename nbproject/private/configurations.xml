@@ -55,6 +55,10 @@
         <in>render.h</in>
       </df>
       <df name="shared">
+        <df name="ai">
+          <in>AI.h</in>
+          <in>Random AI.h</in>
+        </df>
         <df name="engine">
           <in>AttackCommand.h</in>
           <in>Command.h</in>
@@ -92,6 +96,7 @@
           <in>Wall.h</in>
           <in>WallTypeId.h</in>
         </df>
+        <in>ai.h</in>
         <in>engine.h</in>
         <in>state.h</in>
       </df>
