@@ -94,7 +94,13 @@ void StateLayer::initSurface (){
         textpm.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPM()));
         textpm.setCharacterSize(23);
         textpm.setColor(sf::Color::White);
-        textpm.setPosition(220,86*8.44-25);
+        if(state.getCharacters()->getElementList()[0]->getPM()>10){
+            textpm.setPosition(205,86*8.44-25);
+        }
+        else{
+            textpm.setPosition(220,86*8.44-25);
+        }
+        
 
 	const ElementTab* menu =state.getMenu();
 	const ElementTab& menu_ref=*menu;

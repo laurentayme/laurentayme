@@ -270,7 +270,7 @@ void testSFML() {
         a = std::chrono::system_clock::now();
         std::chrono::duration<double, std::milli> work_time = a - b;
 
-        if (work_time.count() < 30.0)
+        if (work_time.count() < 20.0)
         {
             std::chrono::duration<double, std::milli> delta_ms(100.0 - work_time.count());
             auto delta_ms_duration = std::chrono::duration_cast<std::chrono::milliseconds>(delta_ms);
@@ -306,16 +306,16 @@ void testSFML() {
                 
                 if(localPosition.y>=615 and  localPosition.x>=362 ){
                     WhiteSurbrillanceCommand* case_blanche=new WhiteSurbrillanceCommand(localPosition.x,localPosition.y);
-                    engine.addCommand(3,case_blanche);
+                    engine.addCommand(1,case_blanche);
                     engine.update();
                 }
 
-                else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9 and ((x_mouse_iso+y_mouse_iso)!=16)) {
+                else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9 and ((x_mouse_iso+y_mouse_iso)<18) and localPosition.y<=615) {
                     
                     //Gestion Surbrillance//
 
                     SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
-                    engine.addCommand(1, case_rouge);
+                    engine.addCommand(2, case_rouge);
                     engine.update();
                 }
             }
@@ -327,18 +327,18 @@ void testSFML() {
                         
                         
                         AttackCommand* attaque= new AttackCommand(0,1,"Coup d'Epée");
-                        engine.addCommand(2,attaque);
+                        engine.addCommand(1,attaque);
                         engine.update();
                         
                     }
                 
                 
-                    else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9) {
+                    else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9 and localPosition.y<=615 ) {
 
                     //Gestion Surbrillance//
 
                         SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
-                        engine.addCommand(1, case_rouge);
+                        engine.addCommand(2, case_rouge);
                 
 
 
@@ -384,14 +384,14 @@ void testSFML() {
 
         // on dessine le niveau
         window.clear();
-        window.draw(*elmtTabLayer_ptr->getSurface());
+        window.draw(*elmtTabLayer_ptr->getSurface()); 
         window.draw(*elmtTabLayerMenu_ptr->getSurface());
         window.draw(*elmtTabLayerRed_ptr->getSurface());
         window.draw(*elmtTabLayerLandscape_ptr->getSurface());
         window.draw(*elmtTabLayerWall_ptr->getSurface());
         window.draw(*elmtTabLayer2_ptr->getSurface());
 	window.draw(stateLayerMenu_ptr->getTextpv());
-        //window.draw(stateLayerMenu_ptr->getTextpvSram());
+        window.draw(stateLayerMenu_ptr->getTextpvSram());
         window.draw(stateLayerMenu_ptr->getTextpa());
         window.draw(stateLayerMenu_ptr->getTextpm());
         
