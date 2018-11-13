@@ -9,7 +9,7 @@ using namespace state;
 
 StateLayer::StateLayer (const state::State& state) : state(state) {
 	std::shared_ptr<StateTileSet> tileseto;
-		/*std::shared_ptr<StateTileSet> tileset=std::shared_ptr<StateTileSet>(tileset);*/
+		//std::shared_ptr<StateTileSet> tileset=std::shared_ptr<StateTileSet>(tileset);
 	this->tileset=tileseto;
 	
 	

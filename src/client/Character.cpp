@@ -47,7 +47,7 @@ Character::Character (std::string Classname){
         else if (characterClass=="Sram"){
             pv=40;
             pa=2;
-            pm=4;
+            pm=2;
 
             //Création de l'equipement initial
             Equipment* baton(new Equipment("Bâton","main",4));

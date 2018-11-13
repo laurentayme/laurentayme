@@ -25,9 +25,15 @@ void Engine::addPassiveCommands(){
 }
 
 void Engine::addCommand(int priority,Command* cmd){
-	currentCommands[priority]=std::unique_ptr<Command>(cmd);
-
+	currentCommands[priority]=(std::shared_ptr<Command>) cmd;
 }
+
+/*void Engine::addCommandIA(int priority,std::unique_ptr<Command> cmd){
+	std::vector<unique_ptr<Command>> cmd_ref
+	currentCommands[priority]=cmd;
+
+}*/
+
 
 void Engine::setState(state::State state){
     currentState=state;
@@ -35,16 +41,15 @@ void Engine::setState(state::State state){
 
 
 void Engine::update(){
-	for(int i=0;i<10;i++){
+	for(int i=0;i<3;i++){
 		for(auto it =currentCommands.begin();it!=currentCommands.end();it++){
 		
 			if(it->first==i){
 				it->second->execute(currentState);
-				currentCommands.erase(it);
 			}
 		}
 	}
-	
+	//currentCommands.clear();
 }
 
 

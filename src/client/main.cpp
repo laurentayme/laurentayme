@@ -391,7 +391,7 @@ void testSFML() {
             
         ///Gestion de l'IA///
         /////////////////////
-        //ai.run(engine,1,*state); 
+       	ai.run(engine,1,*state); 
 
 
         // on dessine le niveau

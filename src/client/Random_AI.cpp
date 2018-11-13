@@ -25,10 +25,12 @@ Random_AI::Random_AI(int randomSeed){
 
 void Random_AI::run(engine::Engine& Engine, int character, state::State& state){
     
-    std::vector<std::unique_ptr<engine::Command>> move_list;
-    
-    listCommands(state,character,move_list);
-    
+    std::vector<std::shared_ptr<engine::Command>> move_list;
+
+    listCommands(state,character,move_list);   
+
+	//cout<<move_list.size()<<endl;
+
     std::cout<<"Move List created !"<<std::endl;
     
     //Choix Aléatoire Uniforme de la direction//
@@ -39,7 +41,7 @@ void Random_AI::run(engine::Engine& Engine, int character, state::State& state){
     int pm=state.getCharacters()->getElementList()[character]->getPM();
     
     //On fait une boucle sur le nbre de PM du character
-    for(int i=1; i<=x;i++){
+    for(int i=1; i<=pm;i++){
         if(x==i){ //Se déplace vers le Nord
             Engine.addCommand(3,move_list[i].get());
         }
