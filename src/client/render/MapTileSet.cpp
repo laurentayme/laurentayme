@@ -169,17 +169,17 @@ int const MapTileSet::getCellWidth(state::Element& elmt) const{
     if (elmt.isObstacle()==true){
         if(elmt.isWall()==true){
             //return(61);
-            return(64);
+            return(55);
         }
         else{//Landscape
             
             //Cad d'un Stone Block
             if(elmt.getLandscapeType()==0){
-                return(86/1.26);
+                return(60/1.26);
             }
             
             else{
-                return(96/1.26);
+                return(86/1.26);
             }
             
         }
@@ -190,7 +190,7 @@ int const MapTileSet::getCellWidth(state::Element& elmt) const{
             return(40);
         }
         else{
-          return(149/1.25);  
+          return(120/1.25);  
         }
         
     }
@@ -202,12 +202,12 @@ int const MapTileSet::getCellHeight(state::Element& elmt) const{
     if (elmt.isObstacle()==true){
         if(elmt.isWall()==true){
             //return(146);
-            return(146);
+            return(136);
         }
         else{//Landscape
             //Cad d'un Stone Block
             if(elmt.getLandscapeType()==0){
-                return(86/1.26);
+                return(55/1.26);
             }
             
             else{
@@ -220,7 +220,7 @@ int const MapTileSet::getCellHeight(state::Element& elmt) const{
             return(20);
         }
         else{
-            return(75/1.25);
+            return(60/1.25);
         }
     }
 }
