@@ -12,7 +12,7 @@
 
 using namespace state;
 
-ElementTab::ElementTab(int w, int h,std::vector<Element*> elementList){
+ElementTab::ElementTab(int w, int h,std::vector<Element*>& elementList){
 	if(w>=0&&h>=0){
 		width=w;
 		height=h;

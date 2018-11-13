@@ -28,7 +28,7 @@ namespace state {
     std::vector<Element*> elementList;
     // Operations
   public:
-    ElementTab (int width, int height, std::vector<Element*> elementsList);
+    ElementTab (int width, int height, std::vector<Element*>& elementsList);
     ~ElementTab ();
     size_t const getHeight () const;
     size_t const getWidth () const;

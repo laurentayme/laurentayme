@@ -29,10 +29,6 @@ void Engine::addCommand(int priority,Command* cmd){
 
 }
 
-/*void Engine::addCommand(int priority, std::unique_ptr<Command> cmd){
-        
-    currentCommands.insert(std::make_pair(priority, cmd));
-}*/
 
 void Engine::setState(state::State state){
     currentState=state;
@@ -43,11 +39,8 @@ int Engine::getNbCommands() const {
 }
 
 
-void Engine::update(){
-    
-    if(currentState.getTour()%2==0){
-           std::cout<<"I enter into Engine::Update()"<<std::endl; 
-           for(int i=0;i<6;i++){
+void Engine::update(){ 
+           for(int i=0;i<4;i++){
             //std::cout<<"1st Loop !"<<std::endl;
 		for(auto it =currentCommands.begin();it!=currentCommands.end();it++){
                         
@@ -57,19 +50,6 @@ void Engine::update(){
 		}
 	}
         currentCommands.erase (currentCommands.begin(), currentCommands.end() );
-    }
-    else{ 
-           for(int i=0;i<6;i++){
-            //std::cout<<"1st Loop !"<<std::endl;
-		for(auto it =currentCommands.begin();it!=currentCommands.end();it++){
-                        
-			if(it->first==i){
-				it->second->execute(currentState);
-			}
-		}
-	}
-        currentCommands.erase (currentCommands.begin(), currentCommands.end() );
-    }
 
 	
 }

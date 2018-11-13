@@ -73,6 +73,7 @@ Character::~Character(){
     delete[] &AbilitiesList;
     
     
+    
     // Destruction des pointeurs vers Abilite
     /*for(size_t i=0;i<AbilitiesList.size();i++){
         delete AbilitiesList[i];
@@ -142,12 +143,6 @@ vector<Abilities*> Character::getAbilitiesList() {
 bool Character::isPlayer() const{
     return(player);
 }
-
-
-//Inutile
-/*void Character::setClass(string classe){
-    characterClass=classe;
-}*/
 
 void Character::setPV(int life){
     if(life>=0){

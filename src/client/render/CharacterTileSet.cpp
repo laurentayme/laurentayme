@@ -19,12 +19,13 @@ CharacterTileSet::CharacterTileSet(){
         }    
     }
     
-    for(int i=0; i<4;i++){
-        for(int j=0;j<3;j++){
-            Tile t_sram(370*4+i*455+66,73+585*j,270,600);
-            sadida.push_back(t_sram);
-        }
+    for(int j=0;j<3;j++){
+        Tile t_sram(370*4+90,684*j,317,684);
+        sadida.push_back(t_sram);
     }
+    
+    Tile t_sram2(370*4+90+317,0,317,684);
+    sadida.push_back(t_sram2);
 }
 
 CharacterTileSet::~CharacterTileSet(){
@@ -65,11 +66,11 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
     else if (e.getClass()=="Sram"){
         Tile& s=sadida[0];
         if(e.getDirection()==1){ //North
-                    s=sadida[9];
+                    s=sadida[3];
                     return(s);
                 }
                 
-                else if(e.getDirection()==2){ //West
+        else if(e.getDirection()==2){ //West
                     s=sadida[2];
                     return(s);
                 }        
@@ -101,7 +102,7 @@ int const CharacterTileSet::getCellWidth(state::Element& elmt) const{
         return(170/1.75);
     }
     else if (elmt.getClass()=="Sram"){
-        return(120/1.75);
+        return(165/1.75);
     }
               
 }
@@ -116,7 +117,7 @@ int const CharacterTileSet::getCellHeight(state::Element& elmt) const{
         return(266/1.75);
     }
     else if (elmt.getClass()=="Sram"){
-        return(215/1.75);
+        return(246/1.75);
     }
 
 }

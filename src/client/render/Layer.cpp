@@ -19,3 +19,7 @@ std::unique_ptr<Surface> const& Layer::getSurface(){
     //const Surface* const s=&surf;
     return(surface);
 }
+
+void Layer::setSurface(Surface* surface){
+    //this->surface.reset(*surface);
+}

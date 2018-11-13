@@ -35,10 +35,6 @@ void testSFML() {
         std::vector<Element*> elmt_list2;
         std::vector<Element*> elmt_listRed;
 	std::vector<Element*> listMenu;
-        /*sf::Text text;
-        sf::Text textpa;
-        sf::Text textpm;
-        sf::Font font;*/
 
         //Paramètres de Map//
         int width=11;
@@ -177,7 +173,7 @@ void testSFML() {
 	state->setMap(elmtTab_ptr);
 	state->setCharacters(elmtTab2_ptr);
 	state->setMenu(elmtTabMenu_ptr);
-	//state->setLandscape(elmtTabLandscape_ptr);
+	state->setLandscape(elmtTabLandscape_ptr);
         state->setTour(1);
 
         //////////////////////////
@@ -222,18 +218,15 @@ void testSFML() {
 	ElementTabLayer* elmtTabLayerMenu_ptr=new ElementTabLayer(tabMenu_ref);
 	StateLayer* stateLayerMenu_ptr=new StateLayer(stateMenu_ref);
 
-        //Ajout d'observers sur chaque Couche: map + Personnages//
-	
-	
-        //Liaisons Observers/Observable//
-        elmtTab_ptr->addObserver(elmtTabLayer_ptr);
-        elmtTab2_ptr->addObserver(elmtTabLayer2_ptr);
-        elmtTabRed_ptr->addObserver(elmtTabLayerRed_ptr);
-        //Menu
-        elmtTabMenu_ptr->addObserver(elmtTabLayerMenu_ptr);
-        //Stats dans le Menu
-        elmtTab2_ptr->addObserver(stateLayerMenu_ptr);
-
+        //Ajout d'observers sur chaque Couche: map + Personnages//	
+            //Liaisons Observers/Observable//
+            elmtTab_ptr->addObserver(elmtTabLayer_ptr);
+            elmtTab2_ptr->addObserver(elmtTabLayer2_ptr);
+            elmtTabRed_ptr->addObserver(elmtTabLayerRed_ptr);
+            //Menu
+            elmtTabMenu_ptr->addObserver(elmtTabLayerMenu_ptr);
+            //Stats dans le Menu
+            elmtTab2_ptr->addObserver(stateLayerMenu_ptr);
         //////////////////////////////////////////////////////////
 
         //Initialisation de la Surface de chaque Layer
@@ -284,9 +277,12 @@ void testSFML() {
         
     ///// Création de la fenêtre/////
     sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Tilemap");
+    window.setVerticalSyncEnabled(true);
+    //window.setFramerateLimit(24);
+    
     while (window.isOpen()){
         
-        // Maintain designated frequency of 5 Hz (200 ms per frame)
+        /*// Maintain designated frequency of 5 Hz (200 ms per frame)
         a = std::chrono::system_clock::now();
         std::chrono::duration<double, std::milli> work_time = a - b;
 
@@ -298,7 +294,7 @@ void testSFML() {
         }
 
         b = std::chrono::system_clock::now();
-        std::chrono::duration<double, std::milli> sleep_time = b - a;
+        std::chrono::duration<double, std::milli> sleep_time = b - a;*/
 
         //Réinitialisation des Stats//
         state->getCharacters()->setCharacterPA(0,iop_pa);
@@ -372,37 +368,22 @@ void testSFML() {
                         }
 
 
-                        else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<height and int(y_mouse_iso)>0 and int(y_mouse_iso)<width and localPosition.y<=615 ) {
+                        else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<height and int(y_mouse_iso)>0 and int(y_mouse_iso)<width and ((x_mouse_iso+y_mouse_iso)<22) and localPosition.y<=600) {
+                            
+                            //Gestion Déplacement//
+                            int vectX=int(x_mouse_iso)-c_ptr->getPosition().getX();
+                            int vectY=int(y_mouse_iso)-c_ptr->getPosition().getY();
 
-                        //Gestion Surbrillance//
+                            //cout<<vectX<<endl;
+                            //cout<<vectY<<endl;
+                            cout<<"Déplacement du personnage !"<<endl;
 
-                            SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
-                            engine.addCommand(1, case_rouge);
-                            engine.update();
+                            MoveCharacterCommand* deplacement=new MoveCharacterCommand(0,vectX,vectY);
+                            engine.addCommand(2,deplacement);
+                            engine.update();  
+                           
 
-
-
-                                           try{
-
-                                               //Gestion Déplacement//
-                                               int vectX=int(x_mouse_iso)-c_ptr->getPosition().getX();
-                                               int vectY=int(y_mouse_iso)-c_ptr->getPosition().getY();
-
-                                               //cout<<vectX<<endl;
-                                               //cout<<vectY<<endl;
-                                               cout<<"Déplacement du personnage !"<<endl;
-
-                                               MoveCharacterCommand* deplacement=new MoveCharacterCommand(0,vectX,vectY);
-                                               engine.addCommand(1,deplacement);
-                                               engine.update();
-                                              
-
-
-
-                                           }
-                                           catch(const char* e){
-                                               cout<<"Exception :"<<e<<endl;
-                                           }
+                                           
                         }
 
 
@@ -414,14 +395,14 @@ void testSFML() {
             window.draw(*elmtTabLayer_ptr->getSurface()); 
             window.draw(*elmtTabLayerMenu_ptr->getSurface());
             window.draw(*elmtTabLayerRed_ptr->getSurface());
-                window.draw(*elmtTabLayerLandscape_ptr->getSurface());
-                window.draw(*elmtTabLayerWall_ptr->getSurface());
-                window.draw(*elmtTabLayer2_ptr->getSurface());
-                window.draw(stateLayerMenu_ptr->getTextpv());
-                window.draw(stateLayerMenu_ptr->getTextpvSram());
-                window.draw(stateLayerMenu_ptr->getTextpa());
-                window.draw(stateLayerMenu_ptr->getTextpm());
-                window.display();
+            window.draw(*elmtTabLayerLandscape_ptr->getSurface());
+            window.draw(*elmtTabLayerWall_ptr->getSurface());
+            window.draw(*elmtTabLayer2_ptr->getSurface());
+            window.draw(stateLayerMenu_ptr->getTextpv());
+            window.draw(stateLayerMenu_ptr->getTextpvSram());
+            window.draw(stateLayerMenu_ptr->getTextpa());
+            window.draw(stateLayerMenu_ptr->getTextpm());
+            window.display();
             
             
             
