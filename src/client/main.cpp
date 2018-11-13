@@ -177,7 +177,8 @@ void testSFML() {
 	state->setMap(elmtTab_ptr);
 	state->setCharacters(elmtTab2_ptr);
 	state->setMenu(elmtTabMenu_ptr);
-	state->setLandscape(elmtTabLandscape_ptr);
+	//state->setLandscape(elmtTabLandscape_ptr);
+        state->setTour(1);
 
         //////////////////////////
 
@@ -261,7 +262,24 @@ void testSFML() {
         engine.setState(*state);
         
         //Random IA 
-        ai::Random_AI ai(1);
+        ai::Random_AI ai(0);
+        
+        //Gestion des tours
+        int tour=state->getTour();
+        
+        //PA et PM initiaux//
+        
+            //PA
+            int iop_pa=state->getCharacters()->getElementList()[0]->getPA();
+            int sram_pa=state->getCharacters()->getElementList()[1]->getPA();
+            
+            //PM
+            int iop_pm=state->getCharacters()->getElementList()[0]->getPM();
+            int sram_pm=state->getCharacters()->getElementList()[1]->getPM();
+            
+            cout<<sram_pm<<endl;
+        
+        
         
         
     ///// Création de la fenêtre/////
@@ -282,140 +300,173 @@ void testSFML() {
         b = std::chrono::system_clock::now();
         std::chrono::duration<double, std::milli> sleep_time = b - a;
 
+        //Réinitialisation des Stats//
+        state->getCharacters()->setCharacterPA(0,iop_pa);
+        state->getCharacters()->setCharacterPA(1,sram_pa);
+        
+        state->getCharacters()->setCharacterPM(0,iop_pm);
+        state->getCharacters()->setCharacterPM(1,sram_pm);
         
         
-       
         
-        /////////////////////
-        
-        // on gère les évènements
-        sf::Event event;
-        while (window.waitEvent(event)){
-            engine.update();
-            
-            sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-            float Tile_height=60.0/1.25;
-            float Tile_Width=120.0/1.25;
+        ////Tour Joueur////
+        if(state->getTour()%2==1){
+            cout<<"Tour :"<<state->getTour()<<endl;
+            cout<<"//Tour Joueur//"<<endl;
+            // on gère les évènements
+            sf::Event event;
+            while (window.waitEvent(event)){
+                engine.update();
+
+                sf::Vector2i localPosition = sf::Mouse::getPosition(window);
+                float Tile_height=60.0/1.25;
+                float Tile_Width=120.0/1.25;
 
 
-            float x_mouse_iso=(localPosition.y-40)/Tile_height-(localPosition.x-650-Tile_Width/2)/Tile_Width;
+                float x_mouse_iso=(localPosition.y-40)/Tile_height-(localPosition.x-650-Tile_Width/2)/Tile_Width;
 
-            float y_mouse_iso=(localPosition.y-40)/Tile_height+(localPosition.x-650-Tile_Width/2)/Tile_Width;
-
-
-            if(event.type == sf::Event::Closed){
-                window.close();
-            }
+                float y_mouse_iso=(localPosition.y-40)/Tile_height+(localPosition.x-650-Tile_Width/2)/Tile_Width;
 
 
-	// Souris déplacé seulement !
-            else if(event.type==sf::Event::MouseMoved){
-                
-                if(localPosition.y>=615 and  localPosition.x>=362 ){
-                    WhiteSurbrillanceCommand* case_blanche=new WhiteSurbrillanceCommand(localPosition.x,localPosition.y);
-                    engine.addCommand(1,case_blanche);
-                    engine.update();
+                if(event.type == sf::Event::Closed){
+                    window.close();
                 }
 
-                else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<height and int(y_mouse_iso)>0 and int(y_mouse_iso)<width and ((x_mouse_iso+y_mouse_iso)<22) and localPosition.y<=615) {
-                    
-                    //Gestion Surbrillance//
 
-                    SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
-                    engine.addCommand(1, case_rouge);
-                    engine.update();
-                }
-            }
-                   
-                    
-            else if (event.type == sf::Event::MouseButtonPressed ){
-                    
-                    if(localPosition.x>=362 and localPosition.x<=362+67 and localPosition.y>=615 and localPosition.y<=615+62){
-                        
-                        
-                        AttackCommand* attaque= new AttackCommand(0,1,"Coup d'Epée");
-                        engine.addCommand(1,attaque);
+            // Souris déplacé seulement !
+                else if(event.type==sf::Event::MouseMoved){
+
+                    if(localPosition.y>=615 and  localPosition.x>=362 ){
+                        WhiteSurbrillanceCommand* case_blanche=new WhiteSurbrillanceCommand(localPosition.x,localPosition.y);
+                        engine.addCommand(1,case_blanche);
                         engine.update();
-                        
                     }
-                
-                
-                    else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<height and int(y_mouse_iso)>0 and int(y_mouse_iso)<width and localPosition.y<=615 ) {
 
-                    //Gestion Surbrillance//
+                    else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<height and int(y_mouse_iso)>0 and int(y_mouse_iso)<width and ((x_mouse_iso+y_mouse_iso)<22) and localPosition.y<=615) {
+
+                        //Gestion Surbrillance//
 
                         SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
                         engine.addCommand(1, case_rouge);
                         engine.update();
-                
-
-
-                                       try{
-
-                                           //Gestion Déplacement//
-                                           int vectX=int(x_mouse_iso)-c_ptr->getPosition().getX();
-                                           int vectY=int(y_mouse_iso)-c_ptr->getPosition().getY();
-
-                                           //cout<<vectX<<endl;
-                                           //cout<<vectY<<endl;
-                                           cout<<"Déplacement du personnage !"<<endl;
-
-                                           MoveCharacterCommand* deplacement=new MoveCharacterCommand(0,vectX,vectY);
-                                           engine.addCommand(1,deplacement);
-                                           engine.update();
-              
-                                          
-
-                                       }
-                                       catch(const char* e){
-                                           cout<<"Exception :"<<e<<endl;
-                                       }
                     }
-                    
-                    
-                    
-                
                 }
-                 
-        /*
-        //Vérification des états des personnages//
-            for(int i=0;i<state->getCharacters()->getElementList().size();i++){
-                //Si le Personnage est mort
-                if(state->getCharacters()->getElementList()[i]->getStatut()==3){
-                    elmtTabLayer2_ptr->getTab().getElementList().erase(elmtTabLayer2_ptr->getTab().getElementList().begin() + i);
-                    elmtTabLayer2_ptr->initSurface();
-                
-                }
-            }*/
-        ///////////////////////////////////////////
-            
-        ///Gestion de l'IA///
-        /////////////////////
-        //ai.run(engine,1,*state); 
 
 
+                else if (event.type == sf::Event::MouseButtonPressed ){
+
+                        if(localPosition.x>=362 and localPosition.x<=362+67 and localPosition.y>=615 and localPosition.y<=615+62){
+
+
+                            AttackCommand* attaque= new AttackCommand(0,1,"Coup d'Epée");
+                            engine.addCommand(1,attaque);
+                            engine.update();
+
+                        }
+                        
+                        //Bouton Fin du Tour
+                        if(localPosition.x>=0.874*149*8  and localPosition.y>=0.661*86*9 and localPosition.y<=0.661*86*9+145){
+                            //Changement de Tour
+                            state->setTour(state->getTour()+1);
+                            break;
+                        }
+
+
+                        else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<height and int(y_mouse_iso)>0 and int(y_mouse_iso)<width and localPosition.y<=615 ) {
+
+                        //Gestion Surbrillance//
+
+                            SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
+                            engine.addCommand(1, case_rouge);
+                            engine.update();
+
+
+
+                                           try{
+
+                                               //Gestion Déplacement//
+                                               int vectX=int(x_mouse_iso)-c_ptr->getPosition().getX();
+                                               int vectY=int(y_mouse_iso)-c_ptr->getPosition().getY();
+
+                                               //cout<<vectX<<endl;
+                                               //cout<<vectY<<endl;
+                                               cout<<"Déplacement du personnage !"<<endl;
+
+                                               MoveCharacterCommand* deplacement=new MoveCharacterCommand(0,vectX,vectY);
+                                               engine.addCommand(1,deplacement);
+                                               engine.update();
+                                              
+
+
+
+                                           }
+                                           catch(const char* e){
+                                               cout<<"Exception :"<<e<<endl;
+                                           }
+                        }
+
+
+
+
+                    }
         // on dessine le niveau
-        window.clear();
-        window.draw(*elmtTabLayer_ptr->getSurface()); 
-        window.draw(*elmtTabLayerMenu_ptr->getSurface());
-        window.draw(*elmtTabLayerRed_ptr->getSurface());
-        window.draw(*elmtTabLayerLandscape_ptr->getSurface());
-        window.draw(*elmtTabLayerWall_ptr->getSurface());
-        window.draw(*elmtTabLayer2_ptr->getSurface());
-	window.draw(stateLayerMenu_ptr->getTextpv());
-        window.draw(stateLayerMenu_ptr->getTextpvSram());
-        window.draw(stateLayerMenu_ptr->getTextpa());
-        window.draw(stateLayerMenu_ptr->getTextpm());
-        
+            window.clear();
+            window.draw(*elmtTabLayer_ptr->getSurface()); 
+            window.draw(*elmtTabLayerMenu_ptr->getSurface());
+            window.draw(*elmtTabLayerRed_ptr->getSurface());
+                window.draw(*elmtTabLayerLandscape_ptr->getSurface());
+                window.draw(*elmtTabLayerWall_ptr->getSurface());
+                window.draw(*elmtTabLayer2_ptr->getSurface());
+                window.draw(stateLayerMenu_ptr->getTextpv());
+                window.draw(stateLayerMenu_ptr->getTextpvSram());
+                window.draw(stateLayerMenu_ptr->getTextpa());
+                window.draw(stateLayerMenu_ptr->getTextpm());
+                window.display();
+            
+            
+            
+        }
+        }
+            
+        ////Tour IA////
+            else if (state->getTour()%2==0){
+                cout<<"Tour :"<<state->getTour()<<endl;
+                cout<<"//Tour IA//"<<endl;
+                ///Gestion de l'IA///
+                ai.run(engine,1,*state);
+                
+                state->getCharacters()->getElementList()[1]->affiche_Position();
 
-        window.display();
+                
+                //Changement de Tour
+                state->setTour(state->getTour()+1);
+                
+                // on dessine le niveau
+                window.clear();
+                window.draw(*elmtTabLayer_ptr->getSurface()); 
+                window.draw(*elmtTabLayerMenu_ptr->getSurface());
+                window.draw(*elmtTabLayerRed_ptr->getSurface());
+                window.draw(*elmtTabLayerLandscape_ptr->getSurface());
+                window.draw(*elmtTabLayerWall_ptr->getSurface());
+                window.draw(*elmtTabLayer2_ptr->getSurface());
+                window.draw(stateLayerMenu_ptr->getTextpv());
+                window.draw(stateLayerMenu_ptr->getTextpvSram());
+                window.draw(stateLayerMenu_ptr->getTextpa());
+                window.draw(stateLayerMenu_ptr->getTextpm());
+                window.display();
+                
+            }
+       
+    
+
+        
     }
     }
     
+        
+    catch(const char* e){
+        cout<<"Exception :"<<e<<endl;
     }
-        catch(const char* e){
-            cout<<"Exception :"<<e<<endl;
-        }
 
 
 

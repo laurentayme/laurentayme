@@ -51,4 +51,11 @@ ElementTab* State::getLandscape() const {
 	return landscape;     
  }
 
+void State::setTour(int act_tour){
+    tour=act_tour;
+}
+
+int State::getTour() const{
+    return(tour);
+}
 

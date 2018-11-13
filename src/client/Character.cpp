@@ -46,7 +46,7 @@ Character::Character (std::string Classname){
         }
         else if (characterClass=="Sram"){
             pv=40;
-            pa=2;
+            pa=4;
             pm=4;
 
             //Création de l'equipement initial
@@ -54,10 +54,10 @@ Character::Character (std::string Classname){
             equipment_List.push_back(baton);
 
             //Création des abilités adéquates
-            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,3));
+            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,15));
             AbilitiesList.push_back(coup_baton);
 
-            Abilities* sortilege(new Abilities("Sortilège",4,3,6));
+            Abilities* sortilege(new Abilities("Sortilège",4,3,20));
             AbilitiesList.push_back(sortilege);
         }
 

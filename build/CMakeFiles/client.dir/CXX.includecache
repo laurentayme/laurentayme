@@ -103,10 +103,6 @@ ai/Random_AI.h
 ../src/shared/ai/AI.h
 vector
 -
-memory
--
-engine/Command.h
-../src/shared/ai/engine/Command.h
 
 ../src/shared/ai/Random_AI.h
 random

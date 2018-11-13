@@ -24,6 +24,7 @@ namespace state {
     ElementTab* characters;
     ElementTab* menu;
     ElementTab* red_map;
+    int tour;
     // Operations
   public:
     ElementTab* getMap () const;
@@ -36,6 +37,8 @@ namespace state {
     void setRedMap (ElementTab* red_map);
     ElementTab* getLandscape () const;
     void setLandscape (ElementTab* landscape);
+    int getTour () const;
+    void setTour (int tour);
     // Setters and Getters
   };
 
