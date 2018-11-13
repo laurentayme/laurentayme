@@ -98,10 +98,10 @@ int const CharacterTileSet::getCellWidth() const{
 }
 int const CharacterTileSet::getCellWidth(state::Element& elmt) const{
     if(elmt.getClass()=="Iop"){
-        return(181/1.75);
+        return(170/1.75);
     }
     else if (elmt.getClass()=="Sram"){
-        return(145/1.75);
+        return(120/1.75);
     }
               
 }
@@ -113,10 +113,10 @@ int const CharacterTileSet::getCellHeight() const{
 
 int const CharacterTileSet::getCellHeight(state::Element& elmt) const{
             if(elmt.getClass()=="Iop"){
-        return(306/1.75);
+        return(266/1.75);
     }
     else if (elmt.getClass()=="Sram"){
-        return(275/1.75);
+        return(215/1.75);
     }
 
 }

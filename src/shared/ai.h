@@ -3,5 +3,5 @@
 #define __AI__H
 
 #include "ai/AI.h"
-#include "ai/Random AI.h"
+#include "ai/Random_AI.h"
 #endif

@@ -1,0 +1,57 @@
+Scanning dependencies of target client
+[  4%] Building CXX object CMakeFiles/client.dir/src/client/State.cpp.o
+[  8%] Building CXX object CMakeFiles/client.dir/src/client/Element.cpp.o
+[ 12%] Building CXX object CMakeFiles/client.dir/src/client/ElementTab.cpp.o
+[ 16%] Building CXX object CMakeFiles/client.dir/src/client/Wall.cpp.o
+[ 20%] Building CXX object CMakeFiles/client.dir/src/client/StaticElement.cpp.o
+[ 25%] Building CXX object CMakeFiles/client.dir/src/client/Surface.cpp.o
+[ 29%] Building CXX object CMakeFiles/client.dir/src/client/main_old.cpp.o
+/home/valentin/laurentayme/src/client/main_old.cpp:54:2: warning: "/*" within comment [-Wcomment]
+  /*carre[0].texCoords = sf::Vector2f(0, 0);
+  ^
+/home/valentin/laurentayme/src/client/main_old.cpp:197:5: warning: "/*" within comment [-Wcomment]
+     /*cout << "It works !" << endl;*/
+     ^
+/home/valentin/laurentayme/src/client/main_old.cpp:274:25: warning: "/*" within comment [-Wcomment]
+                         /*
+                         ^
+[ 33%] Building CXX object CMakeFiles/client.dir/src/client/Abilities.cpp.o
+[ 37%] Building CXX object CMakeFiles/client.dir/src/client/Position.cpp.o
+[ 41%] Building CXX object CMakeFiles/client.dir/src/client/Obstacle.cpp.o
+[ 45%] Building CXX object CMakeFiles/client.dir/src/client/Landscape.cpp.o
+[ 50%] Building CXX object CMakeFiles/client.dir/src/client/Character.cpp.o
+[ 54%] Building CXX object CMakeFiles/client.dir/src/client/Equipment.cpp.o
+[ 58%] Building CXX object CMakeFiles/client.dir/src/client/Space.cpp.o
+[ 62%] Building CXX object CMakeFiles/client.dir/src/client/main.cpp.o
+[ 66%] Building CXX object CMakeFiles/client.dir/src/client/render/ElementTabLayer.cpp.o
+/home/valentin/laurentayme/src/client/render/ElementTabLayer.cpp: In member function ‘virtual void render::ElementTabLayer::initSurface()’:
+/home/valentin/laurentayme/src/client/render/ElementTabLayer.cpp:32:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i=0; i<list.size(); i++){
+                   ^
+/home/valentin/laurentayme/src/client/render/ElementTabLayer.cpp:39:15: warning: unused variable ‘abs’ [-Wunused-variable]
+         float abs=(e.getPosition().getX()/t.getWidth())*(149/1.25);
+               ^
+/home/valentin/laurentayme/src/client/render/ElementTabLayer.cpp:40:15: warning: unused variable ‘ord’ [-Wunused-variable]
+         float ord=(e.getPosition().getY()/t.getHeight())*(149/1.25);
+               ^
+[ 70%] Building CXX object CMakeFiles/client.dir/src/client/render/StateLayer.cpp.o
+[ 75%] Building CXX object CMakeFiles/client.dir/src/client/render/TileSet.cpp.o
+/home/valentin/laurentayme/src/client/render/TileSet.cpp: In member function ‘virtual const render::Tile& render::TileSet::getTile(const state::Element&)’:
+/home/valentin/laurentayme/src/client/render/TileSet.cpp:21:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+[ 79%] Building CXX object CMakeFiles/client.dir/src/client/render/CharacterTileSet.cpp.o
+/home/valentin/laurentayme/src/client/render/CharacterTileSet.cpp: In member function ‘virtual const render::Tile& render::CharacterTileSet::getTile(const state::Element&)’:
+/home/valentin/laurentayme/src/client/render/CharacterTileSet.cpp:65:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+[ 83%] Building CXX object CMakeFiles/client.dir/src/client/render/Layer.cpp.o
+[ 87%] Building CXX object CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.o
+/home/valentin/laurentayme/src/client/render/MapTileSet.cpp: In member function ‘virtual const render::Tile& render::MapTileSet::getTile(const state::Element&)’:
+/home/valentin/laurentayme/src/client/render/MapTileSet.cpp:76:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+[ 91%] Building CXX object CMakeFiles/client.dir/src/client/render/StateTileSet.cpp.o
+[ 95%] Building CXX object CMakeFiles/client.dir/src/client/render/Tile.cpp.o
+[100%] Linking CXX executable ../bin/client
+[100%] Built target client

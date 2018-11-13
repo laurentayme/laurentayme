@@ -37,7 +37,7 @@ CommandTypeId WhiteSurbrillanceCommand::getTypeId() const{
 void WhiteSurbrillanceCommand::execute(state::State& act_state){
     
     int case_x=(x-362)/67;
-    int case_y=(y-615)/62;
+    int case_y=(y-595)/62;
     
     if(case_x==0){
         float loc_x=(362);

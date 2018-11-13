@@ -136,7 +136,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
                 					state::Position& posRef=pos;
                 					act_state.getCharacters()->setElement(posRef,character);
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
-            					}
+                                                        //std::this_thread::sleep_for(std::chrono::nanoseconds(100));
+                                                }
 						/*else if(obstacle==true){
 							throw "un obstacle se trouve à cet endroit !";
 						}
@@ -180,7 +181,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
                 					state::Position& posRef=pos;
                 					act_state.getCharacters()->setElement(posRef,character);
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
-						}
+                                                        //std::this_thread::sleep_for(std::chrono::nanoseconds(100));
+                                                }
 						/*else if(obstacle==true){
 							throw "un obstacle se trouve à cet endroit !";
 						}
@@ -269,7 +271,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
                 					state::Position& posRef=pos;
                 					act_state.getCharacters()->setElement(posRef,character);
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
-						}
+                                                        //std::this_thread::sleep_for(std::chrono::nanoseconds(100));
+                                                }
 						/*else if(obstacle==true){
 							throw "un obstacle se trouve à cet endroit !";
 						}
@@ -312,7 +315,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
                 					state::Position& posRef=pos;
                 					act_state.getCharacters()->setElement(posRef,character);
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
-						}
+                                                        //std::this_thread::sleep_for(std::chrono::nanoseconds(100));
+                                                }
 						/*else if(obstacle==true){
 							throw "un obstacle se trouve à cet endroit !";
 						}

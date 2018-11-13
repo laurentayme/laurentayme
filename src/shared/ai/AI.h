@@ -7,10 +7,12 @@
 
 namespace engine {
   class Engine;
-  class Command;
 };
 namespace state {
   class State;
+};
+namespace engine {
+  class Command;
 }
 
 #include "engine/Command.h"
@@ -21,9 +23,9 @@ namespace ai {
   class AI {
     // Operations
   public:
-    void run (engine::Engine& engine, int character);
+    virtual void run (engine::Engine& Engine, int character, state::State& state) = 0;
   protected:
-    void listCommands (std::vector<std::unique_ptr<engine::Command>>& list, const state::State& state, int character);
+    void listCommands (const state::State& state, int character, std::vector<std::unique_ptr<engine::Command>>& move_list);
     // Setters and Getters
   };
 

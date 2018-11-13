@@ -13,6 +13,7 @@
 #include "state.h"
 #include "render.h"
 #include "engine.h"
+#include "ai.h"
 
 std::chrono::system_clock::time_point a = std::chrono::system_clock::now();
 std::chrono::system_clock::time_point b = std::chrono::system_clock::now();
@@ -40,8 +41,8 @@ void testSFML() {
         sf::Font font;*/
 
         //Paramètres de Map//
-        int width=9;
-        int height=12;
+        int width=11;
+        int height=16;
         
         try{
 
@@ -51,7 +52,8 @@ void testSFML() {
                 for(int i=0;i<height;i++){
                     for(int j=0;j<width;j++){
                         if(i==0 || j==0){
-                            Space* s_ptr=new Space(0);
+                            //Affichage Pierre
+                            Space* s_ptr=new Space(1);
                             Position position(i,j);
                             Position posref=position;
                             s_ptr->setPosition(posref);
@@ -71,8 +73,8 @@ void testSFML() {
             ////////////////////
 
             //Création du Landscape//
-                for(int i=2;i<height-1;i++){
-                    for(int j=2;j<width-1;j++){
+                for(int i=2;i<height-2;i++){
+                    for(int j=2;j<width-2;j++){
                         Landscape* l_ptr=new Landscape;
 
                         //Aleatoire//
@@ -160,13 +162,13 @@ void testSFML() {
 
         //Création des ElementTab//
 
-        ElementTab* elmtTab_ptr=new ElementTab(8,12,elmt_list);
-        ElementTab* elmtTab2_ptr=new ElementTab(8,12,elmt_list2);
-        ElementTab* elmtTabLandscape_ptr=new ElementTab(8,12,elmt_list_landscape);
-        ElementTab* elmtTabWall_ptr=new ElementTab(8,12,elmt_list_wall);
-        ElementTab* elmtTabRed_ptr=new ElementTab(8,12,elmt_listRed);
+        ElementTab* elmtTab_ptr=new ElementTab(width,height,elmt_list);
+        ElementTab* elmtTab2_ptr=new ElementTab(width,height,elmt_list2);
+        ElementTab* elmtTabLandscape_ptr=new ElementTab(width,height,elmt_list_landscape);
+        ElementTab* elmtTabWall_ptr=new ElementTab(width,height,elmt_list_wall);
+        ElementTab* elmtTabRed_ptr=new ElementTab(width,height,elmt_listRed);
         
-        ElementTab* elmtTabMenu_ptr = new ElementTab(8,12,listMenu);
+        ElementTab* elmtTabMenu_ptr = new ElementTab(width,height,listMenu);
 
 
 	//Creation de State
@@ -248,18 +250,18 @@ void testSFML() {
         }
 
         //Définition du State
-        /*State state;
-        state.setMap(&elmtTabLayer_ptr->getTab());
-        state.setCharacters(&elmtTabLayer2_ptr->getTab());*/
 
         //Surbrillance
         state->setRedMap(&elmtTabLayerRed_ptr->getTab());
 
-    //Engine & Observables
+        //Engine & Observables
 	Engine engine;
         Observable observable;
 
         engine.setState(*state);
+        
+        //Random IA 
+        ai::Random_AI ai(1);
         
         
     ///// Création de la fenêtre/////
@@ -281,14 +283,19 @@ void testSFML() {
         std::chrono::duration<double, std::milli> sleep_time = b - a;
 
         
-
+        
+       
+        
+        /////////////////////
+        
         // on gère les évènements
         sf::Event event;
         while (window.waitEvent(event)){
+            engine.update();
             
             sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-            float Tile_height=75.0/1.25;
-            float Tile_Width=149.0/1.25;
+            float Tile_height=60.0/1.25;
+            float Tile_Width=120.0/1.25;
 
 
             float x_mouse_iso=(localPosition.y-40)/Tile_height-(localPosition.x-650-Tile_Width/2)/Tile_Width;
@@ -310,12 +317,12 @@ void testSFML() {
                     engine.update();
                 }
 
-                else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9 and ((x_mouse_iso+y_mouse_iso)<18) and localPosition.y<=615) {
+                else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<height and int(y_mouse_iso)>0 and int(y_mouse_iso)<width and ((x_mouse_iso+y_mouse_iso)<22) and localPosition.y<=615) {
                     
                     //Gestion Surbrillance//
 
                     SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
-                    engine.addCommand(2, case_rouge);
+                    engine.addCommand(1, case_rouge);
                     engine.update();
                 }
             }
@@ -333,12 +340,13 @@ void testSFML() {
                     }
                 
                 
-                    else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<12 and int(y_mouse_iso)>0 and int(y_mouse_iso)<9 and localPosition.y<=615 ) {
+                    else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<height and int(y_mouse_iso)>0 and int(y_mouse_iso)<width and localPosition.y<=615 ) {
 
                     //Gestion Surbrillance//
 
                         SurbrillanceCommand* case_rouge=new SurbrillanceCommand(int(x_mouse_iso),int(y_mouse_iso));
-                        engine.addCommand(2, case_rouge);
+                        engine.addCommand(1, case_rouge);
+                        engine.update();
                 
 
 
@@ -348,11 +356,12 @@ void testSFML() {
                                            int vectX=int(x_mouse_iso)-c_ptr->getPosition().getX();
                                            int vectY=int(y_mouse_iso)-c_ptr->getPosition().getY();
 
-                                           cout<<vectX<<endl;
-                                           cout<<vectY<<endl;
+                                           //cout<<vectX<<endl;
+                                           //cout<<vectY<<endl;
+                                           cout<<"Déplacement du personnage !"<<endl;
 
                                            MoveCharacterCommand* deplacement=new MoveCharacterCommand(0,vectX,vectY);
-                                           engine.addCommand(2,deplacement);
+                                           engine.addCommand(1,deplacement);
                                            engine.update();
               
                                           
@@ -379,7 +388,10 @@ void testSFML() {
                 }
             }*/
         ///////////////////////////////////////////
-        
+            
+        ///Gestion de l'IA///
+        /////////////////////
+        //ai.run(engine,1,*state); 
 
 
         // on dessine le niveau
