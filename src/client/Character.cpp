@@ -46,18 +46,26 @@ Character::Character (std::string Classname){
         }
         else if (characterClass=="Sram"){
             pv=40;
+<<<<<<< HEAD
             pa=2;
             pm=2;
+||||||| merged common ancestors
+            pa=2;
+            pm=4;
+=======
+            pa=4;
+            pm=4;
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
 
             //Création de l'equipement initial
             Equipment* baton(new Equipment("Bâton","main",4));
             equipment_List.push_back(baton);
 
             //Création des abilités adéquates
-            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,3));
+            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,15));
             AbilitiesList.push_back(coup_baton);
 
-            Abilities* sortilege(new Abilities("Sortilège",4,3,6));
+            Abilities* sortilege(new Abilities("Sortilège",4,3,20));
             AbilitiesList.push_back(sortilege);
         }
 

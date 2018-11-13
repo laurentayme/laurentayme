@@ -15,7 +15,13 @@ using namespace ai;
 using namespace std;
 
 
+<<<<<<< HEAD
 void AI::listCommands(const state::State& state, int character,std::vector<std::shared_ptr<engine::Command>>& move_list){
+||||||| merged common ancestors
+void AI::listCommands(const state::State& state, int character,std::vector<std::unique_ptr<engine::Command>>& move_list){
+=======
+void AI::listCommands(const state::State& state, int character,std::vector<engine::Command*>& move_list){
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
     
     std::vector<state::Element*> chars=state.getCharacters()->getElementList();
     //Obtention Nbre PM
@@ -32,6 +38,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<std::
         
         //Vérification que le personnage pourra effectuer le(s) mouvement(s)//
         //////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
             if(chars[character]->getPosition().getX()>i+1){//Déplacement Nord
                move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,-i,0)));
 
@@ -43,31 +50,114 @@ void AI::listCommands(const state::State& state, int character,std::vector<std::
 
                        if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
                            move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+||||||| merged common ancestors
+            if(chars[character]->getPosition().getX()>i+1){//Déplacement Nord
+               move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,-i,0)));
+
+                if(chars[character]->getPosition().getY()<=width-i){//Déplacement Est
+                   move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand> (new engine::MoveCharacterCommand(character,0,i))); 
+
+                   if(chars[character]->getPosition().getX()<=height-i){//Déplacement Sud
+                       move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
+
+                       if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
+                           move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+=======
+        
+            //Déplacement Nord
+            if(chars[character]->getPosition().getX()>i+1){
+               engine::MoveCharacterCommand* move_north=new engine::MoveCharacterCommand(character,-i,0);
+               move_list.push_back(move_north);
+               //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,-i,0)));
+
+               //Déplacement Est
+                if(chars[character]->getPosition().getY()<=width-i){
+                   //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand> (new engine::MoveCharacterCommand(character,0,i))); 
+                    engine::MoveCharacterCommand* move_east=new engine::MoveCharacterCommand(character,0,i);
+                    move_list.push_back(move_east);
+                   //Déplacement Sud
+                   if(chars[character]->getPosition().getX()<=height-i){
+                       //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
+                       engine::MoveCharacterCommand* move_south=new engine::MoveCharacterCommand(character,i,0);
+                       move_list.push_back(move_south);
+                       
+                       
+                       //Déplacement Ouest
+                       if(chars[character]->getPosition().getY()>i+1){
+                           //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+                           engine::MoveCharacterCommand* move_west=new engine::MoveCharacterCommand(character,0,-i);
+                           move_list.push_back(move_west);
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
                        }
                    }
+<<<<<<< HEAD
                    else{//Déplacement Sud Impossible
                        if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
                            move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+||||||| merged common ancestors
+                   else{//Déplacement Sud Impossible
+                       if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
+                           move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+=======
+                   //Déplacement Sud Impossible
+                   else{
+                       if(chars[character]->getPosition().getY()>i+1){
+                           //Déplacement Ouest
+                           //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+                           engine::MoveCharacterCommand* move_west=new engine::MoveCharacterCommand(character,0,-i);
+                           move_list.push_back(move_west); 
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
                        }
                    }
                 }
                 else{//Déplacement Est Impossible
+<<<<<<< HEAD
                     if(chars[character]->getPosition().getX()<=height-i){//Déplacement Sud
                        move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
 
                        if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
                            move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+||||||| merged common ancestors
+                    if(chars[character]->getPosition().getX()<=height-i){//Déplacement Sud
+                       move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
+
+                       if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
+                           move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+=======
+                    //Déplacement Sud
+                    if(chars[character]->getPosition().getX()<=height-i){
+                       //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
+                       engine::MoveCharacterCommand* move_south=new engine::MoveCharacterCommand(character,i,0);
+                       move_list.push_back(move_south);
+                       //Déplacement Ouest
+                       if(chars[character]->getPosition().getY()>i+1){
+                           //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+                           engine::MoveCharacterCommand* move_west=new engine::MoveCharacterCommand(character,0,-i);
+                           move_list.push_back(move_west);
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
                        }
                    }
                    else{//Déplacement Sud Impossible
+<<<<<<< HEAD
                        if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
                            move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+||||||| merged common ancestors
+                       if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
+                           move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+=======
+                       if(chars[character]->getPosition().getY()>i+1){
+                           //Déplacement Ouest
+                           //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+                           engine::MoveCharacterCommand* move_west=new engine::MoveCharacterCommand(character,0,-i);
+                           move_list.push_back(move_west);
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
                        }
                    }
 
                 }
 
             }
+<<<<<<< HEAD
             else{//Déplacement Nord Impossible
 
                 if(chars[character]->getPosition().getY()<=width-i){//Déplacement Est
@@ -78,25 +168,104 @@ void AI::listCommands(const state::State& state, int character,std::vector<std::
 
                        if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
                            move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+||||||| merged common ancestors
+            else{//Déplacement Nord Impossible
+                if(chars[character]->getPosition().getY()<=width-i){//Déplacement Est
+                   move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand> (new engine::MoveCharacterCommand(character,0,i))); 
+
+                   if(chars[character]->getPosition().getX()<=height-i){//Déplacement Sud
+                       move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
+
+                       if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
+                           move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+=======
+            //Déplacement Nord Impossible
+            else{
+                //Déplacement Est
+                if(chars[character]->getPosition().getY()<=width-i){
+                    //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand> (new engine::MoveCharacterCommand(character,0,i))); 
+                    engine::MoveCharacterCommand* move_east=new engine::MoveCharacterCommand(character,0,i);
+                    move_list.push_back(move_east);
+                   //Déplacement Sud
+                   if(chars[character]->getPosition().getX()<=height-i){
+                       //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
+                       engine::MoveCharacterCommand* move_south=new engine::MoveCharacterCommand(character,i,0);
+                       move_list.push_back(move_south);
+                       //Déplacement Ouest
+                       if(chars[character]->getPosition().getY()>i+1){
+                           //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+                           engine::MoveCharacterCommand* move_west=new engine::MoveCharacterCommand(character,0,-i);
+                           move_list.push_back(move_west);
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
                        }
                    }
+<<<<<<< HEAD
                    else{//Déplacement Sud Impossible
                        if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
                            move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+||||||| merged common ancestors
+                   else{//Déplacement Sud Impossible
+                       if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
+                           move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+=======
+                   //Déplacement Sud Impossible
+                   else{
+                       //Déplacement Ouest
+                       if(chars[character]->getPosition().getY()>i+1){
+                           //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+                           engine::MoveCharacterCommand* move_west=new engine::MoveCharacterCommand(character,0,-i);
+                           move_list.push_back(move_west);
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
                        }
                    }
                 }
+<<<<<<< HEAD
                 else{//Déplacement Est Impossible
                     if(chars[character]->getPosition().getX()<=height-i){//Déplacement Sud
                        move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
 
                        if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
                            move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+||||||| merged common ancestors
+                else{//Déplacement Est Impossible
+                    if(chars[character]->getPosition().getX()<=height-i){//Déplacement Sud
+                       move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
+
+                       if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
+                           move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+=======
+                //Déplacement Est Impossible
+                else{
+                    //Déplacement Sud
+                    if(chars[character]->getPosition().getX()<=height-i){
+                       //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
+                       engine::MoveCharacterCommand* move_south=new engine::MoveCharacterCommand(character,i,0);
+                       move_list.push_back(move_south);
+                       //Déplacement Ouest
+                       if(chars[character]->getPosition().getY()>i+1){
+                           //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+                           engine::MoveCharacterCommand* move_west=new engine::MoveCharacterCommand(character,0,-i);
+                           move_list.push_back(move_west);
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
                        }
                    }
+<<<<<<< HEAD
                    else{//Déplacement Sud Impossible
                        if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
                            move_list.push_back(std::shared_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+||||||| merged common ancestors
+                   else{//Déplacement Sud Impossible
+                       if(chars[character]->getPosition().getY()>i+1){//Déplacement Ouest
+                           move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+=======
+                   //Déplacement Sud Impossible
+                   else{
+                       //Déplacement Ouest
+                       if(chars[character]->getPosition().getY()>i+1){
+                           //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
+                           engine::MoveCharacterCommand* move_west=new engine::MoveCharacterCommand(character,0,-i);
+                           move_list.push_back(move_west);
+>>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
                        }
                    }
 
@@ -107,15 +276,6 @@ void AI::listCommands(const state::State& state, int character,std::vector<std::
     }
     //////////FIN Déplacement Personnage////////////
     ////////////////////////////////////////////////
-    
-    
-    /*//On met dans la liste d'attaque, toutes les attaques qu le personnage possède
-    //car on ne sait pas encore où est ce qu'il va se déplacer.
-    std::vector<state::Abilities*> abilities_list=chars[character]->getAbilitiesList();
-    for(int i=0;i<abilities_list.size();i++){
-        attack_list.push_back(std::unique_ptr<state::Abilities>(abilities_list[i]->getName(),abilities_list[i]->getDegats(),abilities_list[i]->getnb_pa(),abilities_list[i]->getUseDistance()));
-    }*/
-    
 }
 
 
