@@ -10,4 +10,5 @@
 #include "engine/AttackCommand.h"
 #include "engine/SurbrillanceCommand.h"
 #include "engine/WhiteSurbrillanceCommand.h"
+#include "engine/TurnSurbrillanceCommand.h"
 #endif

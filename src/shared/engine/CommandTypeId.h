@@ -12,7 +12,8 @@ namespace engine {
     LIFE     = 4,
     ATTACK     = 5,
     SURBRILLANCE     = 6,
-    WHITESURBRILLANCE     = 7
+    WHITESURBRILLANCE     = 7,
+    TURNSURBRILLANCE     = 8
   };
 
 };

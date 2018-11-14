@@ -8,8 +8,12 @@
 #include "ai.h"
 #include "engine.h"
 #include <memory>
+#include <stdlib.h>
+#include <iostream>
+#include <math.h>
 
 using namespace ai;
+using namespace std;
 
 
 void AI::listCommands(const state::State& state, int character,std::vector<engine::Command*>& move_list){
@@ -25,10 +29,11 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
     int height=state.getMap()->getHeight();
     
     //On fait une boucle sur le nbre de PM du character
-    for(int i=1; i<=pm;i++){
+    /*for(int i=1; i<=pm;i++){
         
         //Vérification que le personnage pourra effectuer le(s) mouvement(s)//
         //////////////////////////////////////////////////////////////////////
+
         
             //Déplacement Nord
             if(chars[character]->getPosition().getX()>i+1){
@@ -55,6 +60,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
                            move_list.push_back(move_west);
                        }
                    }
+
                    //Déplacement Sud Impossible
                    else{
                        if(chars[character]->getPosition().getY()>i+1){
@@ -66,6 +72,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
                    }
                 }
                 else{//Déplacement Est Impossible
+
                     //Déplacement Sud
                     if(chars[character]->getPosition().getX()<=height-i){
                        //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,i,0)));
@@ -79,6 +86,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
                        }
                    }
                    else{//Déplacement Sud Impossible
+
                        if(chars[character]->getPosition().getY()>i+1){
                            //Déplacement Ouest
                            //move_list.push_back(std::unique_ptr<engine::MoveCharacterCommand>(new engine::MoveCharacterCommand(character,0,-i)));
@@ -90,6 +98,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
                 }
 
             }
+
             //Déplacement Nord Impossible
             else{
                 //Déplacement Est
@@ -109,6 +118,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
                            move_list.push_back(move_west);
                        }
                    }
+
                    //Déplacement Sud Impossible
                    else{
                        //Déplacement Ouest
@@ -119,6 +129,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
                        }
                    }
                 }
+
                 //Déplacement Est Impossible
                 else{
                     //Déplacement Sud
@@ -147,9 +158,23 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
             }
 
 
-    }
+    }*/
     //////////FIN Déplacement Personnage////////////
     ////////////////////////////////////////////////
+
+	for(int i=-pm;i<=pm;i++){
+		for(int j=-(pm-abs(i));j<=pm-abs(i);j++){
+			if(chars[character]->getPosition().getX()+i<height and chars[character]->getPosition().getX()+i>1 and chars[character]->getPosition().getY()+j<width and chars[character]->getPosition().getY()+j>1){
+                            
+                            engine::MoveCharacterCommand* move = new engine::MoveCharacterCommand(character,i,j);
+                            move_list.push_back(move);
+
+			}
+		}
+	}
+
+
+
 }
 
 

@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.dir/src/client/LoadCommand.cpp.o"
   "CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o"
   "CMakeFiles/client.dir/src/client/Observer.cpp.o"
+  "CMakeFiles/client.dir/src/client/TurnSurbrillanceCommand.cpp.o"
   "CMakeFiles/client.dir/src/client/main.cpp.o"
   "CMakeFiles/client.dir/src/client/Position.cpp.o"
   "CMakeFiles/client.dir/src/client/Engine.cpp.o"

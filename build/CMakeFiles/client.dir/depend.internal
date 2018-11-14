@@ -13,6 +13,7 @@ CMakeFiles/client.dir/src/client/AI.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state/Abilities.h
  ../src/shared/state/Direction.h
@@ -62,6 +63,7 @@ CMakeFiles/client.dir/src/client/AttackCommand.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -127,6 +129,7 @@ CMakeFiles/client.dir/src/client/Command.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -220,6 +223,7 @@ CMakeFiles/client.dir/src/client/Engine.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -341,6 +345,7 @@ CMakeFiles/client.dir/src/client/LoadCommand.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -378,6 +383,7 @@ CMakeFiles/client.dir/src/client/MoveCharacterCommand.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -530,6 +536,7 @@ CMakeFiles/client.dir/src/client/Random_AI.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state/Abilities.h
  ../src/shared/state/Direction.h
@@ -663,6 +670,7 @@ CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -757,6 +765,44 @@ CMakeFiles/client.dir/src/client/TabEvent.cpp.o
  ../src/shared/state/Wall.h
  ../src/shared/state/WallTypeId.h
  /home/valentin/laurentayme/src/client/TabEvent.cpp
+CMakeFiles/client.dir/src/client/TurnSurbrillanceCommand.cpp.o
+ ../src/shared/engine.h
+ ../src/shared/engine/AttackCommand.h
+ ../src/shared/engine/Command.h
+ ../src/shared/engine/CommandTypeId.h
+ ../src/shared/engine/Engine.h
+ ../src/shared/engine/LoadCommand.h
+ ../src/shared/engine/MoveCharacterCommand.h
+ ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
+ ../src/shared/engine/WhiteSurbrillanceCommand.h
+ ../src/shared/state.h
+ ../src/shared/state/Abilities.h
+ ../src/shared/state/Character.h
+ ../src/shared/state/Direction.h
+ ../src/shared/state/Element.h
+ ../src/shared/state/ElementTab.h
+ ../src/shared/state/Equipment.h
+ ../src/shared/state/Event.h
+ ../src/shared/state/EventTypeId.h
+ ../src/shared/state/Landscape.h
+ ../src/shared/state/LandscapeType.h
+ ../src/shared/state/Observable.h
+ ../src/shared/state/Observer.h
+ ../src/shared/state/Obstacle.h
+ ../src/shared/state/Position.h
+ ../src/shared/state/Space.h
+ ../src/shared/state/SpaceTypeId.h
+ ../src/shared/state/State.h
+ ../src/shared/state/StateEvent.h
+ ../src/shared/state/StateEventId.h
+ ../src/shared/state/StaticElement.h
+ ../src/shared/state/Statut.h
+ ../src/shared/state/TabEvent.h
+ ../src/shared/state/TypeId.h
+ ../src/shared/state/Wall.h
+ ../src/shared/state/WallTypeId.h
+ /home/valentin/laurentayme/src/client/TurnSurbrillanceCommand.cpp
 CMakeFiles/client.dir/src/client/Wall.cpp.o
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -794,6 +840,7 @@ CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state.h
  ../src/shared/state/Abilities.h
@@ -834,6 +881,7 @@ CMakeFiles/client.dir/src/client/main.cpp.o
  ../src/shared/engine/LoadCommand.h
  ../src/shared/engine/MoveCharacterCommand.h
  ../src/shared/engine/SurbrillanceCommand.h
+ ../src/shared/engine/TurnSurbrillanceCommand.h
  ../src/shared/engine/WhiteSurbrillanceCommand.h
  ../src/shared/state.h
  ../src/shared/state/Abilities.h

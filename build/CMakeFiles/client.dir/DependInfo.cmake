@@ -29,6 +29,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/valentin/laurentayme/src/client/SurbrillanceCommand.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/SurbrillanceCommand.cpp.o"
   "/home/valentin/laurentayme/src/client/Surface.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Surface.cpp.o"
   "/home/valentin/laurentayme/src/client/TabEvent.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/TabEvent.cpp.o"
+  "/home/valentin/laurentayme/src/client/TurnSurbrillanceCommand.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/TurnSurbrillanceCommand.cpp.o"
   "/home/valentin/laurentayme/src/client/Wall.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/Wall.cpp.o"
   "/home/valentin/laurentayme/src/client/WhiteSurbrillanceCommand.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.o"
   "/home/valentin/laurentayme/src/client/main.cpp" "/home/valentin/laurentayme/build/CMakeFiles/client.dir/src/client/main.cpp.o"

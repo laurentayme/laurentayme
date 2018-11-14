@@ -14,10 +14,6 @@
 
 
 
-
-
-
-
 using namespace engine;
 
 
@@ -59,10 +55,9 @@ void MoveCharacterCommand::execute(state::State& act_state){
 	posMap.setY(pos.getY());
 
 	if(chars[character]->getPM()>0){
-	
 
-    		if(vectY<=0){	
-			//East Direction
+    		if(vectY<=0){
+			//West Direction
 			this->direction=2;
 
       			std::vector<state::Element*> chars=act_state.getCharacters()->getElementList();
@@ -93,12 +88,7 @@ void MoveCharacterCommand::execute(state::State& act_state){
 						act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
               					//std::this_thread::sleep_for(std::chrono::nanoseconds(100));
 					}
-					/*else if(obstacle==true){
-						throw "un obstacle se trouve à cet endroit !";
-					}
-					else if(filledcase==false){
-						throw "un personnage se trouve déjà à cet endroit !";
-					}*/
+
           			}
           			else if(pos.getY()>largeur){
              				throw "Déplacement vers l'Ouest Impossible !";
@@ -110,7 +100,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
         			this->direction=3;
 
           			std::vector<state::Element*> chars=act_state.getCharacters()->getElementList();
-          			act_state.getCharacters()->setElementDirection(direction,character);
+          			act_state.getCharacters()->setElementDirection(this->direction,character);
+                //std::cout<<"La direction vient detre modifiée et vaut :"<<direction<<std::endl;
 
           			for(int i=0; i<abs(vectX);i++){
             				if(pos.getX()<=longueur){ //Vérification Bordure de Map
@@ -138,15 +129,11 @@ void MoveCharacterCommand::execute(state::State& act_state){
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
                                                         //std::this_thread::sleep_for(std::chrono::nanoseconds(100));
                                                 }
-						/*else if(obstacle==true){
-							throw "un obstacle se trouve à cet endroit !";
-						}
-						else if(filledcase==false){
-							throw "un personnage se trouve déjà à cet endroit !";
-						}*/
+
 					}
            		 		else if(pos.getX()>longueur){
-                			throw "Déplacement vers le Sud Impossible !";
+                                            throw "Déplacement vers le Sud Impossible !";
+
             				}
           			}
         		}
@@ -156,9 +143,10 @@ void MoveCharacterCommand::execute(state::State& act_state){
 
           			std::vector<state::Element*> chars=act_state.getCharacters()->getElementList();
           			act_state.getCharacters()->setElementDirection(direction,character);
+                //std::cout<<"La direction vient detre modifiée et vaut :"<<direction<<std::endl;
 
           			for(int i=0; i<abs(vectX);i++){
-				
+
             				if(pos.getX()<=longueur){ //Vérification Bordure de Map
 						bool obstacle=false;
 						//Vérification d'obstacle
@@ -195,13 +183,14 @@ void MoveCharacterCommand::execute(state::State& act_state){
             				}
 				}
     			}
-		}	
-		else if(vectY>=0){
+		}
+		else if(vectY>0){
       			//East Direction
       			this->direction=4;
 
       			std::vector<state::Element*> chars=act_state.getCharacters()->getElementList();
       			act_state.getCharacters()->setElementDirection(direction,character);
+            //std::cout<<"La direction vient detre modifiée et vaut :"<<direction<<std::endl;
       			//////////////////
 
         		for(int i=0; i<abs(vectY);i++){
@@ -243,10 +232,11 @@ void MoveCharacterCommand::execute(state::State& act_state){
 
         		if(vectX>0){
           			//South Direction
-          			direction=3;
+          			this->direction=3;
 
           			std::vector<state::Element*> chars=act_state.getCharacters()->getElementList();
           			act_state.getCharacters()->setElementDirection(direction,character);
+                //std::cout<<"La direction vient detre modifiée et vaut :"<<direction<<std::endl;
 
           			for(int i=0; i<abs(vectX);i++){
            				if(pos.getX()<=longueur){ //Vérification Bordure de Map
@@ -287,10 +277,11 @@ void MoveCharacterCommand::execute(state::State& act_state){
         		}
         		else if(vectX<0){
 				//North Direction
-         			direction=1;
+         			this->direction=1;
 
           			std::vector<state::Element*> chars=act_state.getCharacters()->getElementList();
           			act_state.getCharacters()->setElementDirection(direction,character);
+                //std::cout<<"La direction vient detre modifiée et vaut :"<<direction<<std::endl;
 
           			for(int i=0; i<abs(vectX);i++){
             				if(pos.getX()<=longueur){ //Vérification Bordure de Map
@@ -298,7 +289,6 @@ void MoveCharacterCommand::execute(state::State& act_state){
 						//Vérification d'obstacle
 						for(auto it = lands.begin(); it != lands.end(); ++it){
     							if((*it)->getPosition().getX()==(posMap.getX()-1) and (*it)->getPosition().getY()==posMap.getY()){
-								//obstacle=(*it)->isObstacle();
 								obstacle=true;
 							}
 						}
@@ -317,12 +307,7 @@ void MoveCharacterCommand::execute(state::State& act_state){
 							act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
                                                         //std::this_thread::sleep_for(std::chrono::nanoseconds(100));
                                                 }
-						/*else if(obstacle==true){
-							throw "un obstacle se trouve à cet endroit !";
-						}
-						else if(filledcase==false){
-							throw "un personnage se trouve déjà à cet endroit !";
-						}*/
+
             				}
             				else if(pos.getX()<=0){
                 				throw "Déplacement vers le Nord Impossible !";

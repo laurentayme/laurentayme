@@ -16,6 +16,7 @@ namespace state {
     size_t Trap     = 3;
     size_t RedSpace     = 4;
     size_t WhiteSpace     = 5;
+    size_t TurnSurbrillance     = 6;
     // Setters and Getters
   };
 

@@ -62,6 +62,14 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
 
 
                 }
+                else if(elmt_list[i]->getTypeId()==0 and elmt_list[i]->getSpaceType()==6){
+                    quad_ptr[0].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y());
+                    quad_ptr[1].position=sf::Vector2f(elmt_list[i]->getLoc_x()+232,elmt_list[i]->getLoc_y());
+                    quad_ptr[2].position=sf::Vector2f(elmt_list[i]->getLoc_x()+232,elmt_list[i]->getLoc_y()+100);
+                    quad_ptr[3].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y()+100);
+
+
+                }
                 //Space "normaux"
                 else{
                     quad_ptr[0].position=sf::Vector2f(650-((x-y))*tileSet.getCellWidth(*elmt_list[i])/2,((x+y))*tileSet.getCellHeight(*elmt_list[i])/2+40);

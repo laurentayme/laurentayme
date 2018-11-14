@@ -49,8 +49,8 @@
         <in>SurbrillanceCommand.cpp</in>
         <in>Surface.cpp</in>
         <in>TabEvent.cpp</in>
+        <in>TurnSurbrillanceCommand.cpp</in>
         <in>Wall.cpp</in>
-        <in>WhiteSurbrillanceCommand.c</in>
         <in>WhiteSurbrillanceCommand.cpp</in>
         <in>main.cpp</in>
         <in>main_old.cpp</in>
@@ -62,13 +62,7 @@
           <in>Random_AI.h</in>
         </df>
         <df name="engine">
-          <in>AttackCommand.h</in>
           <in>Command.h</in>
-          <in>CommandTypeId.h</in>
-          <in>Engine.h</in>
-          <in>LoadCommand.h</in>
-          <in>MoveCharacterCommand.h</in>
-          <in>SurbrillanceCommand.h</in>
           <in>WhiteSurbrillanceCommand.h</in>
         </df>
         <df name="state">

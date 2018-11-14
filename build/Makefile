@@ -798,6 +798,33 @@ src/client/TabEvent.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TabEvent.cpp.s
 .PHONY : src/client/TabEvent.cpp.s
 
+src/client/TurnSurbrillanceCommand.o: src/client/TurnSurbrillanceCommand.cpp.o
+
+.PHONY : src/client/TurnSurbrillanceCommand.o
+
+# target to build an object file
+src/client/TurnSurbrillanceCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TurnSurbrillanceCommand.cpp.o
+.PHONY : src/client/TurnSurbrillanceCommand.cpp.o
+
+src/client/TurnSurbrillanceCommand.i: src/client/TurnSurbrillanceCommand.cpp.i
+
+.PHONY : src/client/TurnSurbrillanceCommand.i
+
+# target to preprocess a source file
+src/client/TurnSurbrillanceCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TurnSurbrillanceCommand.cpp.i
+.PHONY : src/client/TurnSurbrillanceCommand.cpp.i
+
+src/client/TurnSurbrillanceCommand.s: src/client/TurnSurbrillanceCommand.cpp.s
+
+.PHONY : src/client/TurnSurbrillanceCommand.s
+
+# target to generate assembly for a file
+src/client/TurnSurbrillanceCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TurnSurbrillanceCommand.cpp.s
+.PHONY : src/client/TurnSurbrillanceCommand.cpp.s
+
 src/client/Wall.o: src/client/Wall.cpp.o
 
 .PHONY : src/client/Wall.o
@@ -1179,6 +1206,9 @@ help:
 	@echo "... src/client/TabEvent.o"
 	@echo "... src/client/TabEvent.i"
 	@echo "... src/client/TabEvent.s"
+	@echo "... src/client/TurnSurbrillanceCommand.o"
+	@echo "... src/client/TurnSurbrillanceCommand.i"
+	@echo "... src/client/TurnSurbrillanceCommand.s"
 	@echo "... src/client/Wall.o"
 	@echo "... src/client/Wall.i"
 	@echo "... src/client/Wall.s"
