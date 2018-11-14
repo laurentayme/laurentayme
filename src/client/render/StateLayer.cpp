@@ -9,7 +9,12 @@ using namespace state;
 
 StateLayer::StateLayer (const state::State& state) : state(state) {
 	std::shared_ptr<StateTileSet> tileseto;
+<<<<<<< HEAD
 		//std::shared_ptr<StateTileSet> tileset=std::shared_ptr<StateTileSet>(tileset);
+||||||| merged common ancestors
+		/*std::shared_ptr<StateTileSet> tileset=std::shared_ptr<StateTileSet>(tileset);*/
+=======
+>>>>>>> b23b24f78641bd60b2449a525f8714d13e9d030f
 	this->tileset=tileseto;
 	
 	
@@ -33,15 +38,7 @@ void StateLayer::initSurface (){
 
 
 
-//Menu de State
-       /*try{
-            Space* state_ptr=new Space(1);
-            state_ptr->setTypeId(2);
-            elmt_list_menu.push_back(state_ptr);
-        }
-        catch(const char* e){
-            std::cout<<"Exception: "<<e<<std::endl;
-        }*/
+    //Menu de State
         
         //Affichage de l'état
        if(!font.loadFromFile("res/font.TTF")){

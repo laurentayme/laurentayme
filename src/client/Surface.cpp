@@ -14,6 +14,7 @@ using namespace render;
 void Surface::initQuads(int count){
     quads.setPrimitiveType(sf::Quads);
     quads.resize(count*4);
+    texture.setSmooth(true);
 }
 
 void Surface::loadTexture(const std::string& image_file){
@@ -135,6 +136,7 @@ void Surface::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     states.transform *= getTransform();
 
     // On applique la texture du tileset
+    
     states.texture = &texture;
 
     // Et on dessine enfin le tableau de vertex
