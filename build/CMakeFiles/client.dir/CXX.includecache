@@ -127,6 +127,8 @@ engine/SurbrillanceCommand.h
 ../src/shared/engine/SurbrillanceCommand.h
 engine/WhiteSurbrillanceCommand.h
 ../src/shared/engine/WhiteSurbrillanceCommand.h
+engine/TurnSurbrillanceCommand.h
+../src/shared/engine/TurnSurbrillanceCommand.h
 
 ../src/shared/engine/AttackCommand.h
 string
@@ -171,6 +173,12 @@ state/Direction.h
 ../src/shared/engine/state/Direction.h
 
 ../src/shared/engine/SurbrillanceCommand.h
+CommandTypeId.h
+../src/shared/engine/CommandTypeId.h
+Command.h
+../src/shared/engine/Command.h
+
+../src/shared/engine/TurnSurbrillanceCommand.h
 CommandTypeId.h
 ../src/shared/engine/CommandTypeId.h
 Command.h
@@ -394,6 +402,12 @@ ai.h
 engine.h
 /home/valentin/laurentayme/src/client/engine.h
 memory
+-
+stdlib.h
+-
+iostream
+-
+math.h
 -
 
 /home/valentin/laurentayme/src/client/Abilities.cpp
@@ -647,6 +661,20 @@ iostream
 -
 state.h
 /home/valentin/laurentayme/src/client/state.h
+
+/home/valentin/laurentayme/src/client/TurnSurbrillanceCommand.cpp
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+state.h
+/home/valentin/laurentayme/src/client/state.h
+engine.h
+/home/valentin/laurentayme/src/client/engine.h
+math.h
+-
 
 /home/valentin/laurentayme/src/client/Wall.cpp
 stdio.h

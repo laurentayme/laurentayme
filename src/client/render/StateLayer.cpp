@@ -124,7 +124,58 @@ void StateLayer::initSurface (){
 
 void StateLayer::stateChanged(const state::Event& event){
 	//std::cout<<"Un evenement a eu lieu et la couche StateLayer est au courant"<<std::endl;
-	initSurface();
+	//PV Iop//
+	textpv.setFont(font);
+	textpv.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPV()));
+        textpv.setCharacterSize(24);
+        textpv.setColor(sf::Color::White);
+        textpv.setPosition(240,86*7.4-25);
+        /////////
+        
+        //PV Sram//
+        
+        //Sram Vivant/ 
+        if(state.getCharacters()->getElementList().size()!=1){
+        
+            textpv_sram.setFont(font);
+            textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[1]->getPV()));
+            textpv_sram.setCharacterSize(18);
+            textpv_sram.setColor(sf::Color::White);
+            if(state.getCharacters()->getElementList()[1]->getPV()<10){
+                textpv_sram.setPosition(154,130);
+            }
+            else{
+                textpv_sram.setPosition(142,130);
+            }
+            
+        }
+        //Sram Mort
+        else{
+            textpv_sram.setFont(font);
+            textpv_sram.setString(std::to_string(0));
+            textpv_sram.setCharacterSize(18);
+            textpv_sram.setColor(sf::Color::White);
+            textpv_sram.setPosition(154,130);
+        }
+        ///////////
+        
+        textpa.setFont(font);
+        
+        textpa.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPA()));
+        textpa.setCharacterSize(23);
+        textpa.setColor(sf::Color::White);
+        textpa.setPosition(297,86*8.43-25);
+        
+        textpm.setFont(font);
+        textpm.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPM()));
+        textpm.setCharacterSize(23);
+        textpm.setColor(sf::Color::White);
+        if(state.getCharacters()->getElementList()[0]->getPM()>10){
+            textpm.setPosition(205,86*8.44-25);
+        }
+        else{
+            textpm.setPosition(220,86*8.44-25);
+        }
 	
 }
 

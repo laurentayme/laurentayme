@@ -50,7 +50,7 @@ void Random_AI::run(engine::Engine& Engine, int character, state::State& state){
 
     //std::cout<<"Move List created !"<<std::endl;
     std::cout<<"Move List size: "<<move_list.size()<<endl;
-    
+
 
 >>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
     //Choix Aléatoire Uniforme de la direction//
@@ -83,7 +83,7 @@ void Random_AI::run(engine::Engine& Engine, int character, state::State& state){
 >>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
         }
     }
-    std::cout<<"Nb Commands in Engine: "<<Engine.getNbCommands()<<std::endl;
+    //std::cout<<"Nb Commands in Engine: "<<Engine.getNbCommands()<<std::endl;
     Engine.update();
 
     //Test si le character peut attaquer l'adversaire//

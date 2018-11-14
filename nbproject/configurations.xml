@@ -40,6 +40,7 @@
         <in>SurbrillanceCommand.cpp</in>
         <in>Surface.cpp</in>
         <in>TabEvent.cpp</in>
+        <in>TurnSurbrillanceCommand.cpp</in>
         <in>Wall.cpp</in>
         <in>WhiteSurbrillanceCommand.cpp</in>
         <in>main.cpp</in>
@@ -203,6 +204,11 @@
       <item path="src/client/TabEvent.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/client/TurnSurbrillanceCommand.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="src/client/Wall.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
