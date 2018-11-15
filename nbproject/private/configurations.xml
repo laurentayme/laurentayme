@@ -62,7 +62,14 @@
           <in>Random_AI.h</in>
         </df>
         <df name="engine">
+          <in>AttackCommand.h</in>
           <in>Command.h</in>
+          <in>CommandTypeId.h</in>
+          <in>Engine.h</in>
+          <in>LoadCommand.h</in>
+          <in>MoveCharacterCommand.h</in>
+          <in>SurbrillanceCommand.h</in>
+          <in>TurnSurbrillanceCommand.h</in>
           <in>WhiteSurbrillanceCommand.h</in>
         </df>
         <df name="state">

@@ -160,3 +160,12 @@ void ElementTab::eraseCharacter(){
         
 }
 
+void ElementTab::setElementMove(int element, bool move){
+    for(size_t i=0;i<elementList.size();i++){
+        	if (i==element){
+            		elementList[element]->setMoving(move);
+        	}
+    	}
+    	StateEvent s(StateEventId::PAChanged);
+    	notifyObservers(s);
+}

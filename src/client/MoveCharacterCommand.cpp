@@ -7,10 +7,13 @@
 
 #include <stdio.h>
 #include "state.h"
+#include "render.h"
 #include "engine.h"
 #include <iostream>
 #include <chrono>
 #include <thread>
+
+#include <SFML/Graphics.hpp>
 
 
 
@@ -65,6 +68,11 @@ void MoveCharacterCommand::execute(state::State& act_state){
       			//////////////////
 
         		for(int i=0; i<abs(vectY);i++){
+                            //Test Horloge//
+                            
+                                //Démarrage Chrono
+                                sf::Clock clock;
+                            
           			if(pos.getY()<largeur){ //Vérification Bordure de Map
 					bool obstacle=false;
 					//Vérification d'obstacle
@@ -84,6 +92,26 @@ void MoveCharacterCommand::execute(state::State& act_state){
               					pos.setY(pos.getY()-1);
 						posMap.setY(posMap.getY()-1);
               					state::Position& posRef=pos;
+                                                
+                                                //Changement de Tile//
+                                                /*act_state.getCharacters()->setElementMove(character,true);
+                                                
+                                                //On place le personnage entre deux cases
+                                                
+                                                int char_x=act_state.getCharacters()->getElementList()[character]->getPosition().getX();
+                                                int char_y=act_state.getCharacters()->getElementList()[character]->getPosition().getY();
+                                                
+                                                state::Element* elmt= act_state.getCharacters()->getElementList()[character];
+                                                std::shared_ptr<render::TileSet> tileset=act_state.getCharacters()->getTileset();
+                                                
+                                                
+                                                int charPix_X=(120/2.5)*(char_y-char_x)-tileSet.getCellWidth(*elmt_list[i])/2+650+120/2.5;
+                                                int charPix_Y=(60/2.5)*(char_x+char_y)+40+60/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
+                                                
+                                                act_state.getCharacters()->getElementList()[character]->setLoc(,);
+                                                
+                                                //Wait un certain Temps
+                                                */
               					act_state.getCharacters()->setElement(posRef,character);
 						act_state.getCharacters()->setCharacterPM(character,chars[character]->getPM()-1);
               					//std::this_thread::sleep_for(std::chrono::nanoseconds(100));

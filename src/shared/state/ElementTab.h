@@ -44,6 +44,7 @@ namespace state {
     void setCharacterStatut (int element, int statut);
     void setLocation (float x, float y, int elmt);
     void eraseCharacter ();
+    void setElementMove (int elmt, bool move);
     // Setters and Getters
   };
 

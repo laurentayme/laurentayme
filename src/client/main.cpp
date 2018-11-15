@@ -281,7 +281,9 @@ void testSFML() {
 
             //cout<<sram_pm<<endl;
 
-
+    //Horloge
+            
+    sf::Clock clock;
 
 
     ///// Création de la fenêtre/////
@@ -392,7 +394,7 @@ void testSFML() {
 
 
 
-                            AttackCommand* attaque= new AttackCommand(0,1,"Coup d'Epée");
+                            AttackCommand* attaque= new AttackCommand(0,1,localPosition.x,localPosition.y);
                             engine.addCommand(1,attaque);
                             engine.update();
 
@@ -513,7 +515,7 @@ int main(int argc,char* argv[])
 
         }
 
-        else if (strcmp(argv[1],"engine")==0){
+        else if (strcmp(argv[1],"ai")==0){
             //Test Map
             testSFML();
 

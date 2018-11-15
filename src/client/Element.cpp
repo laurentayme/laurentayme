@@ -62,5 +62,12 @@ float Element::getLoc_y() const{
     return(loc_y);
 }
 
+bool Element::getMoving() const{
+    return(moving);
+}
+
+void Element::setMoving(bool move){
+    this->moving=move;
+}
 
 

@@ -27,6 +27,7 @@ namespace state {
     float loc_x;
     float loc_y;
     std::vector<Abilities*> AbilitiesList;
+    bool moving;
     // Operations
   public:
     Element ();
@@ -55,6 +56,8 @@ namespace state {
     virtual void setStatut (int statut) = 0;
     virtual int getStatut () const = 0;
     virtual void setLoc (float x, float y);
+    bool getMoving () const;
+    void setMoving (bool move);
     // Setters and Getters
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);

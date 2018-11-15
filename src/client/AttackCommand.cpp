@@ -11,13 +11,41 @@ AttackCommand::AttackCommand(int CharacterAttacker,int CharacterTarget,std::stri
 	this->CharacterAttacker=CharacterAttacker;
 	this->CharacterTarget=CharacterTarget;
 	this->AbilityUsed=AbilityUsed;
+        this->mouse_x=0;
+        this->mouse_y=0;
+
+}
+
+AttackCommand::AttackCommand(int CharacterAttacker,int CharacterTarget, int x, int y){
+	this->CharacterAttacker=CharacterAttacker;
+	this->CharacterTarget=CharacterTarget;
+        this->mouse_x=x;
+        this->mouse_y=y;
+        
+         //On récupère l'attque sur laquelle le joueur a cliqué//
+        int case_x=(mouse_x-362)/67;
+        int case_y=(mouse_y-595)/62;
+        
+        //Attaque Coup d'Epée
+        if(case_x==0 and case_y==0){
+            this->AbilityUsed="Coup d'Epée";
+        }
+        else if(case_x==1 and case_y==0){
+            this->AbilityUsed="Colère";
+        }
+        else if(case_x==2 and case_y==0){
+            this->AbilityUsed="Puissance";
+        }
+        else if(case_x==3 and case_y==0){
+            this->AbilityUsed="Epée Destructrice";
+        }
 
 }
 
 
 
 void AttackCommand::execute(state::State& state){
-        
+    
         //Récupération de la liste de characters
         std::vector<state::Element*> chars=state.getCharacters()->getElementList();
         //On récupère la liste des abilités du Character attaquant
@@ -57,6 +85,7 @@ void AttackCommand::execute(state::State& state){
                         
 		}
 	}
+           
 
 }
 

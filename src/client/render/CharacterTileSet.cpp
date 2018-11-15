@@ -60,8 +60,15 @@ const Tile& CharacterTileSet::getTile(const state::Element& e) {
                 }
 
                 else if(e.getDirection()==4){ //East
-                    s=iop[1];
-                    return(s);
+                    if(e.getMoving()==true){
+                        s=iop[5];
+                       return(s);   
+                    }
+                    else{
+                       s=iop[1];
+                       return(s); 
+                    }
+                    
                 }
             }
 

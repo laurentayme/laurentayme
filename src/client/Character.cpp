@@ -40,6 +40,12 @@ Character::Character (std::string Classname){
 
             Abilities* colere(new Abilities("Colère",3,1,5));
             AbilitiesList.push_back(colere);
+            
+            Abilities* puissance(new Abilities("Puissance",0,3,20));
+            AbilitiesList.push_back(puissance);
+            
+            Abilities* destructrice(new Abilities("Epée Destructrice",50,4,7));
+            AbilitiesList.push_back(destructrice);
 
 
 
