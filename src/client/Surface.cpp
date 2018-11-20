@@ -57,8 +57,8 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
                 if(elmt_list[i]->getTypeId()==0 and elmt_list[i]->getSpaceType()==5){
                     quad_ptr[0].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y()-17);
                     quad_ptr[1].position=sf::Vector2f(elmt_list[i]->getLoc_x()+67,elmt_list[i]->getLoc_y()-17);
-                    quad_ptr[2].position=sf::Vector2f(elmt_list[i]->getLoc_x()+67,elmt_list[i]->getLoc_y()+57-17);
-                    quad_ptr[3].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y()+57-17);
+                    quad_ptr[2].position=sf::Vector2f(elmt_list[i]->getLoc_x()+67,elmt_list[i]->getLoc_y()+55-17);
+                    quad_ptr[3].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y()+55-17);
 
 
                 }

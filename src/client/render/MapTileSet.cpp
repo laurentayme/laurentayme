@@ -226,7 +226,7 @@ int const MapTileSet::getCellHeight(state::Element& elmt) const{
     }
     else{//Space
         if(elmt.getSpaceType()==5){
-            return(20);
+            return(18);
         }
         else if(elmt.getSpaceType()==6){
             return(100);
