@@ -19,3 +19,11 @@ std::unique_ptr<Surface> const& Layer::getSurface(){
     //const Surface* const s=&surf;
     return(surface);
 }
+
+void Layer::setSurface(Surface* surface){
+    //this->surface.reset(*surface);
+}
+
+std::shared_ptr<TileSet> Layer::getTileset(){
+    return(tileset);
+}

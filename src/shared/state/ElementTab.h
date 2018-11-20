@@ -28,20 +28,23 @@ namespace state {
     std::vector<Element*> elementList;
     // Operations
   public:
-    ElementTab (int width, int height, std::vector<Element*> elementsList);
+    ElementTab (int width, int height, std::vector<Element*>& elementsList);
     ~ElementTab ();
     size_t const getHeight () const;
     size_t const getWidth () const;
     std::vector<Element*> getElementList () const;
     void addElement (Element* e);
-    Element* const getLocatedElement (Position* position);
+    Element*  getLocatedElement (Position* position) const;
     void setElement (Position& position, int element);
     void resize (size_t width, size_t height);
     void setElementDirection (int direction, int element);
     void setCharacterPV (int element, int pv);
     void setCharacterPM (int element, int pm);
     void setCharacterPA (int element, int pa);
+    void setCharacterStatut (int element, int statut);
     void setLocation (float x, float y, int elmt);
+    void eraseCharacter ();
+    void setElementMove (int elmt, bool move);
     // Setters and Getters
   };
 

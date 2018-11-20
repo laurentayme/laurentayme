@@ -12,7 +12,7 @@
 
 using namespace state;
 
-ElementTab::ElementTab(int w, int h,std::vector<Element*> elementList){
+ElementTab::ElementTab(int w, int h,std::vector<Element*>& elementList){
 	if(w>=0&&h>=0){
 		width=w;
 		height=h;
@@ -51,7 +51,7 @@ void ElementTab::addElement(Element* elmt){
     notifyObservers(e);
 }
 
-Element* const ElementTab::getLocatedElement(Position *loc){
+Element* ElementTab::getLocatedElement(Position *loc)const{
     for(size_t i=0;i<elementList.size();i++){
         Position actu_pos=elementList[i]->getPosition();
         if(actu_pos.getX()==loc->getX() && actu_pos.getY()==loc->getY()){
@@ -60,8 +60,6 @@ Element* const ElementTab::getLocatedElement(Position *loc){
         
         
     }
-    TabEvent e;
-    notifyObservers(e);
     
     //Cas où il n'y a aucun élément sur cette position
     return(nullptr);
@@ -138,5 +136,36 @@ void ElementTab::setCharacterPA(int element,int pa){
     	notifyObservers(s);
 }
 
+void ElementTab::setCharacterStatut(int element, int statut){
+    for(size_t i=0;i<elementList.size();i++){
+        	if (i==element){
+            		elementList[element]->setStatut(statut);
+        	}
+    	}
+    	StateEvent s(StateEventId::PAChanged);
+    	notifyObservers(s);
+}
 
+void ElementTab::eraseCharacter(){
+    for(size_t i=0;i<elementList.size();i++){
+        if(elementList[i]->getStatut()==3){
+            std::string name =elementList[i]->getClass();
+             elementList.erase(elementList.begin() + i);
+             std::cout<<name<<" a été tué !"<<std::endl; 
+        }
+        
+    }
+    	StateEvent s(StateEventId::PAChanged);
+    	notifyObservers(s);
+        
+}
 
+void ElementTab::setElementMove(int element, bool move){
+    for(size_t i=0;i<elementList.size();i++){
+        	if (i==element){
+            		elementList[element]->setMoving(move);
+        	}
+    	}
+    	StateEvent s(StateEventId::PAChanged);
+    	notifyObservers(s);
+}

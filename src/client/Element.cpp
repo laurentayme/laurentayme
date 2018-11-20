@@ -12,15 +12,9 @@
 
 using namespace state;
 
-Element::Element(size_t idtype){
-    if(idtype==0 || idtype==1 || idtype==2){
+Element::Element(){
         position =0; // Initialisation du pointeur à l'adresse nulle
         position = new Position();
-        idType=idtype; //Initialisation du type d'Element
-    }
-    else{
-        throw "Type d'Element Incorrect ! (0=StaticElement / 1=Character /2=State)";
-    }
     
 }
 
@@ -33,7 +27,7 @@ Position Element::getPosition() const{
     return(*position);
 }
 
-size_t const Element::getTypeId() const {
+size_t Element::getTypeId() const {
     return(idType);
 }
 
@@ -68,5 +62,12 @@ float Element::getLoc_y() const{
     return(loc_y);
 }
 
+bool Element::getMoving() const{
+    return(moving);
+}
+
+void Element::setMoving(bool move){
+    this->moving=move;
+}
 
 

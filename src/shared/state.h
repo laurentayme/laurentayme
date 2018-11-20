@@ -26,4 +26,5 @@
 #include "state/TabEvent.h"
 #include "state/StateEventId.h"
 #include "state/StateEvent.h"
+#include "state/LandscapeType.h"
 #endif

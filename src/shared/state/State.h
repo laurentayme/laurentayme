@@ -17,11 +17,14 @@ namespace state {
   class State : public state::Observable {
     // Associations
     // Attributes
+  public:
+    ElementTab* landscape;
   private:
     ElementTab* carte;
     ElementTab* characters;
     ElementTab* menu;
     ElementTab* red_map;
+    int tour;
     // Operations
   public:
     ElementTab* getMap () const;
@@ -32,6 +35,10 @@ namespace state {
     void setMenu (ElementTab* menu);
     ElementTab* getRedMap () const;
     void setRedMap (ElementTab* red_map);
+    ElementTab* getLandscape () const;
+    void setLandscape (ElementTab* landscape);
+    int getTour () const;
+    void setTour (int tour);
     // Setters and Getters
   };
 

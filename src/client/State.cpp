@@ -42,4 +42,20 @@ void State::setRedMap(ElementTab* red_map){
 	this->red_map=red_map;     
  }
 
+void State::setLandscape(ElementTab* landscape){
+    this->landscape=landscape;
+}
+
+
+ElementTab* State::getLandscape() const {
+	return landscape;     
+ }
+
+void State::setTour(int act_tour){
+    tour=act_tour;
+}
+
+int State::getTour() const{
+    return(tour);
+}
 

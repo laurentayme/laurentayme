@@ -46,8 +46,10 @@ MapTileSet::MapTileSet(){
     //Instanciation Tile Space Red
     Tile t_red(0,86*3,149,86);
     Tile t_white((149-66)/2,6*86,66,62);
+    Tile turn_tile(0,86*7+8,300,150);
     red.push_back(t_red);
     red.push_back(t_white);
+    red.push_back(turn_tile);
 }
 
 MapTileSet::~MapTileSet(){
@@ -158,6 +160,10 @@ const Tile& MapTileSet::getTile(const state::Element& e){
             Tile& s=red[1];
             return(s);
         }
+        else if(e.getSpaceType()==6){
+            Tile& s=red[2];
+            return(s);
+        }
    }
     // Cas d'un Character
     else{
@@ -169,17 +175,17 @@ int const MapTileSet::getCellWidth(state::Element& elmt) const{
     if (elmt.isObstacle()==true){
         if(elmt.isWall()==true){
             //return(61);
-            return(64);
+            return(55);
         }
         else{//Landscape
             
             //Cad d'un Stone Block
             if(elmt.getLandscapeType()==0){
-                return(86/1.26);
+                return(60/1.26);
             }
             
             else{
-                return(96/1.26);
+                return(86/1.26);
             }
             
         }
@@ -189,8 +195,11 @@ int const MapTileSet::getCellWidth(state::Element& elmt) const{
         if(elmt.getSpaceType()==5){
             return(40);
         }
+        else if(elmt.getSpaceType()==6){
+            return(400);
+        }
         else{
-          return(149/1.25);  
+          return(120/1.25);  
         }
         
     }
@@ -202,12 +211,12 @@ int const MapTileSet::getCellHeight(state::Element& elmt) const{
     if (elmt.isObstacle()==true){
         if(elmt.isWall()==true){
             //return(146);
-            return(146);
+            return(136);
         }
         else{//Landscape
             //Cad d'un Stone Block
             if(elmt.getLandscapeType()==0){
-                return(86/1.26);
+                return(55/1.26);
             }
             
             else{
@@ -217,10 +226,13 @@ int const MapTileSet::getCellHeight(state::Element& elmt) const{
     }
     else{//Space
         if(elmt.getSpaceType()==5){
-            return(20);
+            return(18);
+        }
+        else if(elmt.getSpaceType()==6){
+            return(100);
         }
         else{
-            return(75/1.25);
+            return(60/1.25);
         }
     }
 }
