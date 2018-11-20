@@ -13,17 +13,15 @@ namespace state {
   private:
     std::string name_ability;
     int degats_ability;
-    int nb_pa;
-    int use_distance;
+    int classOwner_ability;
     // Operations
   public:
-    Abilities (std::string name, int degats, int nb_pa, int use_dist);
+    Abilities (std::string const name, int const degats);
      ~Abilities ();
-    std::string getName () const;
-    size_t getDegats () const;
-    size_t getnb_pa () const;
-    void afficheStats () const;
-    int getUseDistance () const;
+    std::string const getName ();
+    size_t const getDegats ();
+    size_t const getClassOwner ();
+    void const afficheStats ();
     // Setters and Getters
   };
 

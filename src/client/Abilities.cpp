@@ -13,16 +13,14 @@
 using namespace std;
 using namespace state;
 
-Abilities::Abilities(std::string const name,int const  degats, int nb_pa, int use_dist){
+Abilities::Abilities(std::string const name,int const  degats){
     
-    if(degats>=0 and use_dist>=0){
-        this->name_ability=name;
-        this->degats_ability=degats;
-        this->use_distance=use_dist;
-        this->nb_pa=nb_pa;
+    if(degats>=0){
+        name_ability=name;
+        degats_ability=degats;
     }
     else{
-        throw "Degats ou Distance Abilité Incorrects !";
+        throw "Degats Abilité Incorrects !";
     }
     
     
@@ -33,23 +31,19 @@ Abilities::~Abilities(){
 }
 
 
-std::string Abilities::getName() const{
+std::string const Abilities::getName(){
     return(name_ability);
 }
 
-size_t Abilities::getDegats() const {
+size_t const Abilities::getDegats(){
     return(degats_ability);
 }
 
-size_t Abilities::getnb_pa() const{
-    return(nb_pa);
+size_t const Abilities::getClassOwner(){
+    return(classOwner_ability);
 }
 
-int Abilities::getUseDistance()const {
-    return(use_distance);
-}
-
-/*void Abilities::afficheStats() const{
+void const Abilities::afficheStats(){
     cout<<"Nom de compétence: "<<name_ability<<endl;
     cout<<"Dégats: "<<degats_ability<<endl;
     
@@ -65,7 +59,7 @@ int Abilities::getUseDistance()const {
     
     
     
-}*/
+}
 
 
 

@@ -33,7 +33,6 @@ namespace render {
     Text textpa;
     Text textpm;
     Font font;
-    Text textpv_sram;
     // Operations
   public:
     StateLayer (const state::State& state);
@@ -43,7 +42,6 @@ namespace render {
     Text getTextpa () const;
     Text getTextpm () const;
     Font getFont () const;
-    Text getTextpvSram () const;
     // Setters and Getters
   };
 

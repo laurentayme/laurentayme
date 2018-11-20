@@ -8,6 +8,7 @@
 
 namespace state {
   class Equipment;
+  class Abilities;
   class Element;
 }
 
@@ -26,13 +27,14 @@ namespace state {
     size_t pm;
     size_t pa;
     std::vector<Equipment*> equipment_List;
+    std::vector<Abilities*> abilities_List;
     size_t statut;
     bool  player;
     // Operations
   public:
     Character (std::string characterClass);
      ~Character ();
-    std::string getClass () const;
+    std::string const getClass () const;
     size_t getPV () const;
     void setPV (int pv);
     size_t getPA () const;
@@ -43,24 +45,23 @@ namespace state {
     void addEquipment (std::string nom, std::string emplacement, size_t degats);
     void addEquipment (Equipment* equipment);
     void removeEquipment (Equipment* equipment);
-    bool isEquipped (Equipment* equipment_ptr) const;
-    int getStatut () const;
+    bool const isEquipped (Equipment* equipment_ptr);
+    size_t const getStatut ();
     void setStatut (int act_statut);
-    std::vector<Abilities*>  getAbilitiesList ();
-    size_t getDirection () const;
+    std::vector<Abilities*>  getAbilitiesList () const;
+    size_t const getDirection () const;
     void setDirection (size_t direction);
-    bool  isPlayer () const;
+    bool const isPlayer ();
     void affiche_Classe ();
-    void affiche_Stats () const;
-    void affiche_EquipmentList () const;
-    virtual void  affiche_AbilitiesList () const;
-    void afficheStatut () const;
-    bool isObstacle () const;
-    bool isWall () const;
-    size_t getSpaceType () const;
+    void const affiche_Stats ();
+    void const affiche_EquipmentList ();
+    virtual void const affiche_AbilitiesList ();
+    void const afficheStatut ();
+    bool const isObstacle () const;
+    bool const isWall () const;
+    size_t const getSpaceType () const;
     int getWallType () const;
     int getLandscapeType () const;
-    size_t getTypeId () const;
     // Setters and Getters
     const std::string& getCharacterClass() const;
     void setCharacterClass(const std::string& characterClass);
@@ -72,6 +73,8 @@ namespace state {
     void setPa(const size_t& pa);
     const std::vector<Equipment*>& getEquipment_List() const;
     void setEquipment_List(const std::vector<Equipment*>& equipment_List);
+    const std::vector<Abilities*>& getAbilities_List() const;
+    void setAbilities_List(const std::vector<Abilities*>& abilities_List);
     const bool & getPlayer() const;
     void setPlayer(const bool & player);
   };

@@ -37,17 +37,17 @@ CommandTypeId WhiteSurbrillanceCommand::getTypeId() const{
 void WhiteSurbrillanceCommand::execute(state::State& act_state){
     
     int case_x=(x-362)/67;
-    int case_y=(y-595)/62;
+    int case_y=(y-615)/62;
     
     if(case_x==0){
-        float loc_x=(360);
-        float loc_y=(615)+case_y*(61-5);
+        float loc_x=(362);
+        float loc_y=(615)+case_y*61;
     
         act_state.getRedMap()->setLocation(loc_x,loc_y,1);
     }
     else{
         float loc_x=(362)+abs((case_x-1))*67+64;
-        float loc_y=(615)+case_y*(61-5);
+        float loc_y=(615)+case_y*61;
     
         act_state.getRedMap()->setLocation(loc_x,loc_y,1);
     }

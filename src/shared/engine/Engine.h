@@ -32,9 +32,7 @@ namespace engine {
     const state::State& getState () const;
     void addPassiveCommands ();
     void addCommand (int priority, Command* cmd);
-    void addCommand (int priority, std::unique_ptr<Command> cmd);
     void update ();
-    int getNbCommands () const;
     // Setters and Getters
   };
 

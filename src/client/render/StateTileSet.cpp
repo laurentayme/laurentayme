@@ -13,17 +13,10 @@ using namespace render;
 
 
 StateTileSet::StateTileSet(){
-    Tile t(0,0,1996,1412);
+    Tile t(0,0,1490,1053);
+    //Tile t_light(1490,0,1490,1053);
     state.push_back(t);
-    
-    Tile t_StartMenu(0,1760,2315,2174);
-    state.push_back(t_StartMenu);
-    
-    Tile t_StartMenu_1(0,3934,2315,2174);
-    state.push_back(t_StartMenu_1);
-    
-    Tile t_StartMenu_2(0,6108,2315,2174);
-    state.push_back(t_StartMenu_2);
+    //state.push_back(t_light);
    
 }
 
@@ -43,7 +36,6 @@ StateTileSet::~StateTileSet(){
 }
 
 const Tile& StateTileSet::getTile(const state::Element& e){ 
-    
     Tile& s=state[0];
     return(s);
 }

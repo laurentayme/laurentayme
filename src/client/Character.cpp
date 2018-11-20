@@ -14,77 +14,68 @@ using namespace std;
 using namespace state;
 
 Character::Character (std::string Classname){
-    if(Classname=="Iop" or Classname=="Sram"){
-        this->characterClass=Classname;
-        this->player= true;
-        this->statut=1;
-        this->direction=1;
-        this->idType=1;
+    characterClass=Classname;
+    player= true;
+    statut=1;
+    direction=1;
+    idType=1;
     
-
-    //Attribution des stats en fonction de la classe choisie//
-
-        //Classe Iop
-        if (characterClass=="Iop"){
-            pv=100;
-            pa=4;
-            pm=30;
-
-            //Création de l'equipement initial
-            Equipment* epee(new Equipment("Epée","main",5));
-            equipment_List.push_back(epee);
-
-            //Création des abilités adéquates
-            Abilities* coup_epee(new Abilities("Coup d'Epée",20,2,3));
-            AbilitiesList.push_back(coup_epee);
-
-            Abilities* colere(new Abilities("Colère",3,1,5));
-            AbilitiesList.push_back(colere);
-            
-            Abilities* puissance(new Abilities("Puissance",0,3,20));
-            AbilitiesList.push_back(puissance);
-            
-            Abilities* destructrice(new Abilities("Epée Destructrice",50,4,7));
-            AbilitiesList.push_back(destructrice);
-
-
-
-        }
-        else if (characterClass=="Sram"){
-            pv=40;
-            pa=4;
-            pm=4;
-
-            //Création de l'equipement initial
-            Equipment* baton(new Equipment("Bâton","main",4));
-            equipment_List.push_back(baton);
-
-            //Création des abilités adéquates
-            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,15));
-            AbilitiesList.push_back(coup_baton);
-
-            Abilities* sortilege(new Abilities("Sortilège",4,3,20));
-            AbilitiesList.push_back(sortilege);
-        }
-
-    else{
-        throw "Classe Incorrecte ! (Tapez 'Iop' ou 'Sram')";
+//Attribution des stats en fonction de la classe choisie//
+    
+    //Classe Iop
+    if (characterClass=="Iop"){
+        pv=100;
+        pa=3;
+        pm=3;
+        
+        //Création de l'equipement initial
+        Equipment* epee(new Equipment("Epée","main",5));
+        equipment_List.push_back(epee);
+        
+        //Création des abilités adéquates
+        Abilities* coup_epee(new Abilities("Coup d'Epée",4));
+        abilities_List.push_back(coup_epee);
+        
+        Abilities* colere(new Abilities("Colère",3));
+        abilities_List.push_back(colere);
+        
+        
+        
     }
-}
+    else if (characterClass=="Sadida"){
+        pv=110;
+        pa=2;
+        pm=4;
+        
+        //Création de l'equipement initial
+        Equipment* baton(new Equipment("Bâton","main",4));
+        equipment_List.push_back(baton);
+                         
+        //Création des abilités adéquates
+        Abilities* coup_baton(new Abilities("Coup de bâton",2));
+        abilities_List.push_back(coup_baton);
+        
+        Abilities* sortilege(new Abilities("Sortilège",4));
+        abilities_List.push_back(sortilege);
+    }
+    
+    else{
+        throw "Classe Incorrecte ! (Tapez 'Iop' ou 'Sadida')";
+    }
 }
 
 Character::~Character(){
     // Destruction des pointeurs vers Equipement
-    delete[] &equipment_List;
-    delete[] &AbilitiesList;
-    
-    
+    for(size_t i=0;i<equipment_List.size();i++){
+        delete equipment_List[i];
+        equipment_List[i]=0; //Remise à 0 des pointeurs equipement.
+    }
     
     // Destruction des pointeurs vers Abilite
-    /*for(size_t i=0;i<AbilitiesList.size();i++){
-        delete AbilitiesList[i];
-        AbilitiesList[i]=0; //Remise à 0 des pointeurs equipement.
-    }*/
+    for(size_t i=0;i<abilities_List.size();i++){
+        delete abilities_List[i];
+        abilities_List[i]=0; //Remise à 0 des pointeurs equipement.
+    }
     
 }
 
@@ -114,7 +105,7 @@ void Character::removeEquipment(Equipment *equipment){
     }
 }
 
-std::string Character::getClass() const {
+std::string const Character::getClass() const {
     return(characterClass);
 }
 
@@ -130,11 +121,11 @@ size_t Character::getPM()  const {
     return(pm);
 }
 
-int Character::getStatut() const{
+size_t const Character::getStatut(){
     return(statut);
 }
 
-size_t Character::getDirection() const {
+size_t const Character::getDirection() const {
     return(direction);
 }
 
@@ -142,13 +133,19 @@ vector<Equipment*> const Character::getEquipmentList(){
     return(equipment_List);
 }
 
-vector<Abilities*> Character::getAbilitiesList() {
-    return(AbilitiesList);
+vector<Abilities*> Character::getAbilitiesList() const {
+    return(abilities_List);
 }
 
-bool Character::isPlayer() const{
+bool const Character::isPlayer(){
     return(player);
 }
+
+
+//Inutile
+/*void Character::setClass(string classe){
+    characterClass=classe;
+}*/
 
 void Character::setPV(int life){
     if(life>=0){
@@ -198,14 +195,14 @@ void Character::affiche_Classe(){
     cout<<"Je suis un "<<characterClass<<"."<<endl;
 }
 
-void Character::affiche_Stats() const{
+void const Character::affiche_Stats(){
     cout<<"Stats actuelles:"<<endl;
     cout<<"  "<<pv<<" PV"<<endl;
     cout<<"  "<<pm<<" PM"<<endl;
     cout<<"  "<<pa<<" PA"<<endl;
 }
 
-void Character::affiche_EquipmentList() const{
+void const Character::affiche_EquipmentList(){
     cout<<"Equipement actuel:"<<endl;
     if (equipment_List.size()==0){
         cout<<"Aucun objet n'est équipé."<<endl;
@@ -218,15 +215,15 @@ void Character::affiche_EquipmentList() const{
     }
 }
 
-void Character::affiche_AbilitiesList() const{
+void const Character::affiche_AbilitiesList(){
     cout<<"Abilités actuelles:"<<endl;
-    if (AbilitiesList.size()==0){
+    if (abilities_List.size()==0){
         cout<<"Aucune Abilité."<<endl;
     }
     else{
-        for(size_t i=0;i<AbilitiesList.size();i++){
+        for(size_t i=0;i<abilities_List.size();i++){
             cout<<"  ";
-            cout<<AbilitiesList[i]->getName()<<endl;
+            cout<<abilities_List[i]->getName()<<endl;
         }
     }
 }
@@ -240,7 +237,7 @@ void Character::setStatut(int act_statut){
     }
 }
 
-void Character::afficheStatut() const{
+void const Character::afficheStatut(){
     if(statut==1){
         cout<<"Votre personnage est en état 'normal'."<<endl;
     }
@@ -252,15 +249,15 @@ void Character::afficheStatut() const{
     }
 }
 
-bool Character::isObstacle() const {
+bool const Character::isObstacle() const {
     return(false);
 }
 
-bool Character::isWall() const {
+bool const Character::isWall() const {
     return(false);
 }
 
-size_t Character::getSpaceType() const {
+size_t const Character::getSpaceType() const {
 	return 0;
 }
 
@@ -271,12 +268,6 @@ int Character::getWallType() const{
 int Character::getLandscapeType() const{
     return(-1);
 }
-
-size_t Character::getTypeId() const{
-    return(idType);
-}
-
-
 
 
 

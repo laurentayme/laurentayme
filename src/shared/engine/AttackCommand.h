@@ -23,14 +23,12 @@ namespace engine {
     int CharacterAttacker;
     int CharacterTarget;
     std::string AbilityUsed;
-    int mouse_x;
-    int mouse_y;
     // Operations
   public:
     AttackCommand (int CharacterAttacker, int CharacterTarget, std::string AbilityUsed);
-    AttackCommand (int CharacterAttacker, int CharacterTarget, int x, int y);
     CommandTypeId getTypeId () const;
     void execute (state::State& state);
+    ~AttackCommand ();
     // Setters and Getters
     int getCharacterAttacker() const;
     void setCharacterAttacker(int CharacterAttacker);
@@ -38,10 +36,6 @@ namespace engine {
     void setCharacterTarget(int CharacterTarget);
     const std::string& getAbilityUsed() const;
     void setAbilityUsed(const std::string& AbilityUsed);
-    int getMouse_x() const;
-    void setMouse_x(int mouse_x);
-    int getMouse_y() const;
-    void setMouse_y(int mouse_y);
   };
 
 };

@@ -6,9 +6,10 @@
 #include "engine/Command.h"
 #include "engine/LoadCommand.h"
 #include "engine/MoveCharacterCommand.h"
+#include "engine/OrientationCommand.h"
 #include "engine/Engine.h"
+#include "engine/LifeCommand.h"
 #include "engine/AttackCommand.h"
 #include "engine/SurbrillanceCommand.h"
 #include "engine/WhiteSurbrillanceCommand.h"
-#include "engine/TurnSurbrillanceCommand.h"
 #endif
