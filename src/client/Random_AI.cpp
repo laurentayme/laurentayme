@@ -24,25 +24,6 @@ Random_AI::Random_AI(int randomSeed){
 
 
 void Random_AI::run(engine::Engine& Engine, int character, state::State& state){
-<<<<<<< HEAD
-    
-    std::vector<std::shared_ptr<engine::Command>> move_list;
-
-    listCommands(state,character,move_list);   
-
-	//cout<<move_list.size()<<endl;
-
-    std::cout<<"Move List created !"<<std::endl;
-    
-||||||| merged common ancestors
-    
-    std::vector<std::unique_ptr<engine::Command>> move_list;
-    
-    listCommands(state,character,move_list);
-    
-    std::cout<<"Move List created !"<<std::endl;
-    
-=======
 
     std::vector<engine::Command*> move_list;
 
@@ -52,35 +33,16 @@ void Random_AI::run(engine::Engine& Engine, int character, state::State& state){
     std::cout<<"Move List size: "<<move_list.size()<<endl;
 
 
->>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
     //Choix Aléatoire Uniforme de la direction//
     std::uniform_int_distribution<int> dis(0,move_list.size()-1);
     int x=dis(randgen);
     std::cout<<"Tirage X= "<<x<<std::endl;
     ////////////////////////////////////////////
-<<<<<<< HEAD
-    
-    int pm=state.getCharacters()->getElementList()[character]->getPM();
-    
-    //On fait une boucle sur le nbre de PM du character
-    for(int i=1; i<=pm;i++){
-        if(x==i){ //Se déplace vers le Nord
-            Engine.addCommand(3,move_list[i].get());
-||||||| merged common ancestors
-    
-    int pm=state.getCharacters()->getElementList()[character]->getPM();
-    
-    //On fait une boucle sur le nbre de PM du character
-    for(int i=1; i<=x;i++){
-        if(x==i){ //Se déplace vers le Nord
-            Engine.addCommand(3,move_list[i].get());
-=======
 
     //On fait une boucle sur l'ensemble des commandes possibles
     for(int i=0; i<move_list.size();i++){
         if(x==i){
             Engine.addCommand(3,move_list[i]);
->>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
         }
     }
     //std::cout<<"Nb Commands in Engine: "<<Engine.getNbCommands()<<std::endl;
@@ -144,13 +106,9 @@ void Random_AI::run(engine::Engine& Engine, int character, state::State& state){
             }
 
         }
-<<<<<<< HEAD
-      
 }
-||||||| merged common ancestors
-      
-}
-=======
 
+void Random_AI::stateChanged(const state::Event& event){
 }
->>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
+
+

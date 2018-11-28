@@ -55,6 +55,8 @@ namespace state {
     virtual void setStatut (int statut) = 0;
     virtual int getStatut () const = 0;
     virtual void setLoc (float x, float y);
+    virtual int getTeam () const = 0;
+    virtual void setTeam (int teamset) = 0;
     // Setters and Getters
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);

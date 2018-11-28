@@ -9,12 +9,6 @@ using namespace state;
 
 StateLayer::StateLayer (const state::State& state) : state(state) {
 	std::shared_ptr<StateTileSet> tileseto;
-<<<<<<< HEAD
-		//std::shared_ptr<StateTileSet> tileset=std::shared_ptr<StateTileSet>(tileset);
-||||||| merged common ancestors
-		/*std::shared_ptr<StateTileSet> tileset=std::shared_ptr<StateTileSet>(tileset);*/
-=======
->>>>>>> b23b24f78641bd60b2449a525f8714d13e9d030f
 	this->tileset=tileseto;
 	
 	

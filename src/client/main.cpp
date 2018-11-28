@@ -441,28 +441,6 @@ void testSFML() {
             window.draw(stateLayerMenu_ptr->getTextpa());
             window.draw(stateLayerMenu_ptr->getTextpm());
             window.display();
-<<<<<<< HEAD
-            
-            
-<<<<<<< HEAD
-        ///Gestion de l'IA///
-        /////////////////////
-       	ai.run(engine,1,*state); 
-||||||| merged common ancestors
-        ///Gestion de l'IA///
-        /////////////////////
-        //ai.run(engine,1,*state); 
-=======
-            
-||||||| merged common ancestors
-            
-            
-            
-=======
-
-
-
->>>>>>> f9cb8b644759ca4ebb14a1502e16a2fc6209bf88
         }
         }
 
@@ -472,15 +450,8 @@ void testSFML() {
                 cout<<"//Tour IA//"<<endl;
                 ///Gestion de l'IA///
                 ai.run(engine,1,*state);
-<<<<<<< HEAD
                 
                 state->getCharacters()->getElementList()[1]->affiche_Position();
->>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
-||||||| merged common ancestors
-                
-                state->getCharacters()->getElementList()[1]->affiche_Position();
-=======
->>>>>>> f9cb8b644759ca4ebb14a1502e16a2fc6209bf88
 
                 /*MoveCharacterCommand* move = new MoveCharacterCommand(1,1,0);
                 engine.addCommand(2,move);

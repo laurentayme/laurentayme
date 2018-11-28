@@ -41,6 +41,8 @@ namespace state {
     size_t getTypeId () const;
     void setStatut (int statut);
     int getStatut () const;
+    int getTeam () const;
+    void setTeam (int teamset);
     // Setters and Getters
   };
 

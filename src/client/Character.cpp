@@ -28,7 +28,7 @@ Character::Character (std::string Classname){
         if (characterClass=="Iop"){
             pv=100;
             pa=4;
-            pm=30;
+            pm=5;
 
             //Création de l'equipement initial
             Equipment* epee(new Equipment("Epée","main",5));
@@ -46,16 +46,8 @@ Character::Character (std::string Classname){
         }
         else if (characterClass=="Sram"){
             pv=40;
-<<<<<<< HEAD
-            pa=2;
-            pm=2;
-||||||| merged common ancestors
-            pa=2;
-            pm=4;
-=======
             pa=4;
             pm=4;
->>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
 
             //Création de l'equipement initial
             Equipment* baton(new Equipment("Bâton","main",4));
@@ -278,7 +270,13 @@ size_t Character::getTypeId() const{
     return(idType);
 }
 
+int Character::getTeam() const {
+	return(team);
+}
 
+void Character::setTeam(int teamset) {
+	this->team=teamset;
+}
 
 
 

@@ -23,7 +23,7 @@ namespace engine {
     // Attributes
   private:
     state::State currentState;
-    std::map<int,std::shared_ptr<Command>> currentCommands;
+    std::map<int,std::unique_ptr<Command>> currentCommands;
     // Operations
   public:
     Engine ();

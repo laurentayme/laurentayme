@@ -12,23 +12,22 @@ namespace state {
 };
 namespace engine {
   class Command;
+};
+namespace state {
+  class Observer;
 }
+
+#include "state/Observer.h"
 
 namespace ai {
 
   /// class AI - 
-  class AI {
+  class AI : public state::Observer {
     // Operations
   public:
-    virtual void run (engine::Engine& Engine, int character, state::State& state) = 0;
+    virtual void run (engine::Engine& engine, int character, state::State& state) = 0;
   protected:
-<<<<<<< HEAD
-    void listCommands (const state::State& state, int character, std::vector<std::shared_ptr<engine::Command>>& move_list);
-||||||| merged common ancestors
-    void listCommands (const state::State& state, int character, std::vector<std::unique_ptr<engine::Command>>& move_list);
-=======
     void listCommands (const state::State& state, int character, std::vector<engine::Command*>& move_list);
->>>>>>> 330fe8f9d28ecb1a90a2a1445243b9cac34a7a12
     // Setters and Getters
   };
 

@@ -104,3 +104,11 @@ int Wall::getStatut() const{
 
 void Wall::setStatut(int statut){
 }
+
+
+int Wall::getTeam() const {
+	return(0);
+}
+
+void Wall::setTeam(int teamset) {
+}
