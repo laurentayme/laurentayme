@@ -28,7 +28,7 @@ Character::Character (std::string Classname){
         if (characterClass=="Iop"){
             pv=100;
             pa=4;
-            pm=30;
+            pm=5;
 
             //Création de l'equipement initial
             Equipment* epee(new Equipment("Epée","main",5));

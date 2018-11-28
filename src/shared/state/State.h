@@ -21,6 +21,7 @@ namespace state {
     ElementTab* landscape;
   private:
     ElementTab* carte;
+    ElementTab* wall;
     ElementTab* characters;
     ElementTab* menu;
     ElementTab* red_map;

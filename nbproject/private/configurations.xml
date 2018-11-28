@@ -3,6 +3,10 @@
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="src" name="0">
       <df name="client">
+        <df name="json">
+          <in>json-forwards.h</in>
+          <in>json.h</in>
+        </df>
         <df name="render">
           <in>CharacterTileSet.cpp</in>
           <in>CharacterTileSet.h</in>
@@ -32,6 +36,7 @@
         <in>Engine.cpp</in>
         <in>Equipment.cpp</in>
         <in>Event.cpp</in>
+        <in>HeuristicAI.cpp</in>
         <in>Landscape.cpp</in>
         <in>LifeCommand.cpp</in>
         <in>LoadCommand.cpp</in>
@@ -40,6 +45,9 @@
         <in>Observer.cpp</in>
         <in>Obstacle.cpp</in>
         <in>OrientationCommand.cpp</in>
+        <in>PathMap.cpp</in>
+        <in>Point.cpp</in>
+        <in>PointCompareWeight.cpp</in>
         <in>Position.cpp</in>
         <in>Random_AI.cpp</in>
         <in>Space.cpp</in>
@@ -52,6 +60,7 @@
         <in>TurnSurbrillanceCommand.cpp</in>
         <in>Wall.cpp</in>
         <in>WhiteSurbrillanceCommand.cpp</in>
+        <in>jsoncpp.cpp</in>
         <in>main.cpp</in>
         <in>main_old.cpp</in>
         <in>render.h</in>
@@ -59,6 +68,10 @@
       <df name="shared">
         <df name="ai">
           <in>AI.h</in>
+          <in>HeuristicAI.h</in>
+          <in>PathMap.h</in>
+          <in>Point.h</in>
+          <in>PointCompareWeight.h</in>
           <in>Random_AI.h</in>
         </df>
         <df name="engine">
@@ -101,6 +114,8 @@
         </df>
         <in>ai.h</in>
         <in>engine.h</in>
+        <in>json-forwards.h</in>
+        <in>json.h</in>
         <in>state.h</in>
       </df>
     </df>

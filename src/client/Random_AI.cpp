@@ -30,7 +30,7 @@ void Random_AI::run(engine::Engine& Engine, int character, state::State& state){
     listCommands(state,character,move_list);
 
     //std::cout<<"Move List created !"<<std::endl;
-    std::cout<<"Move List size: "<<move_list.size()<<endl;
+    //std::cout<<"Move List size: "<<move_list.size()<<endl;
 
 
     //Choix Aléatoire Uniforme de la direction//
@@ -107,4 +107,7 @@ void Random_AI::run(engine::Engine& Engine, int character, state::State& state){
 
         }
 
+}
+
+void Random_AI::stateChanged(const state::Event& event){   
 }

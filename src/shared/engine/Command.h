@@ -20,6 +20,8 @@ namespace engine {
     virtual ~Command ();
     virtual CommandTypeId getTypeId () const = 0;
     virtual void execute (state::State& state) = 0;
+    virtual int getVectX () const;
+    virtual int getVectY () const;
     // Setters and Getters
   };
 

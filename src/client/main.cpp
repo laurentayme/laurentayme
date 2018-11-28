@@ -9,6 +9,9 @@
 #include <chrono>
 #include <thread>
 #include <memory>
+#include <fstream>
+//Json
+#include "json/json.h"
 
 #include "state.h"
 #include "render.h"
@@ -26,6 +29,92 @@ using namespace engine;
 
 // Les lignes suivantes ne servent qu'à vérifier que la compilation avec SFML fonctionne
 #include <SFML/Graphics.hpp>
+#include <valarray>
+
+
+
+std::vector<std::vector<Element*>> LoadMapFromFile(std::string filePath){
+    std::vector<std::vector<Element*>> Liste_Layers;
+    std::vector<Element*> elmt_list;
+    std::vector<Element*> elmt_list_landscape;
+    std::vector<Element*> elmt_list_wall;
+    bool alive = true;
+    Json::Value root;   // will contains the root value after parsing.
+    Json::Reader reader;
+    std::ifstream test(filePath, std::ifstream::binary);
+    bool parsingSuccessful = reader.parse( test, root, false );
+    if ( !parsingSuccessful )
+    {
+        // report to the user the failure and their locations in the document.
+        std::cout  << reader.getFormatedErrorMessages()
+               << "\n";
+    }
+    
+    /// Affichage Space Layer ///
+    /////////////////////////////
+    int c=root["layers"][0]["data"].size();
+    //std::vector<int> space_list=root["layers"][0]["data"];
+    for(int i=0;i<c;i++){
+        int ord=i%11;
+        int abs=i/11;
+        //Pierre Bord de Map
+        if (root["layers"][0]["data"][i].asInt()==4){
+           Space* s_ptr=new Space(1);
+           Position position(abs,ord);
+           //Position posref=position;
+           s_ptr->setPosition(position);
+           elmt_list.push_back(s_ptr);                 
+        }
+        else{//Cas d'un Space "classique"
+          Space* s_ptr=new Space(0);
+          Position position(abs,ord);
+          //Position posref=position;
+          s_ptr->setPosition(position);
+          elmt_list.push_back(s_ptr);                                                                        
+                        
+        }
+    }
+    
+    
+    
+    /// Affichage Landscape Layer ///
+    /////////////////////////////////
+    int c_1=root["layers"][1]["data"].size();
+    for(int i=0;i<c_1;i++){
+        int ord=i%11;
+        int abs=i/11;
+        //Mur Bord de Map
+        if (root["layers"][1]["data"][i].asInt()==1){
+           Wall* w_ptr= new Wall;
+           Position position(abs,ord);
+           w_ptr->setPosition(position);
+           elmt_list_wall.push_back(w_ptr);                 
+        }
+        //Stone classique
+        else if (root["layers"][1]["data"][i].asInt()==3){
+           Landscape* l_ptr=new Landscape;
+           Position position(abs,ord);
+           l_ptr->setPosition(position);
+           l_ptr->setLandscapeType(0);
+           elmt_list_landscape.push_back(l_ptr);                 
+        }
+        
+        //Double Stone
+        else if (root["layers"][1]["data"][i].asInt()==2){
+          Landscape* l_ptr=new Landscape;
+          Position position(abs,ord);
+          l_ptr->setPosition(position);
+          l_ptr->setLandscapeType(1);
+          elmt_list_landscape.push_back(l_ptr);                                                                        
+                        
+        }
+    }
+    //////////////////////
+    Liste_Layers.push_back(elmt_list);
+    Liste_Layers.push_back(elmt_list_landscape);
+    Liste_Layers.push_back(elmt_list_wall);
+    return(Liste_Layers);  
+}
 
 void testSFML() {
     	sf::Texture texture;
@@ -40,16 +129,16 @@ void testSFML() {
         int width=11;
         int height=16;
 
-        try{
+        
 
         ////Instanciation de la  MAP////
 
             //Création des cases//
-                for(int i=0;i<height;i++){
+                /*for(int i=0;i<height;i++){
                     for(int j=0;j<width;j++){
                         if(i==0 || j==0){
                             //Affichage Pierre
-                            Space* s_ptr=new Space(1);
+                            /*Space* s_ptr=new Space(1);
                             Position position(i,j);
                             Position posref=position;
                             s_ptr->setPosition(posref);
@@ -65,12 +154,12 @@ void testSFML() {
 
 
                     }
-                }
+                }*/
             ////////////////////
 
             //Création du Landscape//
-                for(int i=2;i<height-2;i++){
-                    for(int j=2;j<width-2;j++){
+                /*for(int i=2;i<height-2;i++){
+                    for(int j=1;j<width-2;j++){
                         Landscape* l_ptr=new Landscape;
 
                         //Aleatoire//
@@ -97,11 +186,11 @@ void testSFML() {
 
 
                     }
-                }
+                }*/
             ////////////////////
 
             //Affichage des Wall//
-                for(int i=0;i<height;i++){
+                /*for(int i=0;i<height;i++){
                     for(int j=0;j<width;j++){
                         if(i==0|| j==0){//Visible Wall
                             Wall* w_ptr= new Wall;
@@ -110,7 +199,7 @@ void testSFML() {
                             w_ptr->setPosition(posref_wall);
                             elmt_list_wall.push_back(w_ptr);
                         }
-                       /* //Invisible Wall
+                        //Invisible Wall
                         else if(i==height-1|| j==width-1){
                             Wall* w_ptr= new Wall;
                             w_ptr->setWallType(2);
@@ -118,9 +207,9 @@ void testSFML() {
                             Position posref_wall=position_wall;
                             w_ptr->setPosition(posref_wall);
                             elmt_list_wall.push_back(w_ptr);
-                        }*/
+                        }
                     }
-                }
+                }*/
             ////////////////////
 
 
@@ -135,7 +224,7 @@ void testSFML() {
                 //Création du Sram//
                 Character* sad_ptr=new Character("Sram");
                 sad_ptr->setDirection(3); //Sud
-                Position pos_sad(1,4);
+                Position pos_sad(3,4);
                 sad_ptr->setPosition(pos_sad);
                 elmt_list2.push_back(sad_ptr);
 
@@ -165,8 +254,11 @@ void testSFML() {
 
         /////// FIN Instanciation MAP /////////////
 
+        std::string filePath="/home/valentin/laurentayme/res/First_Dungeon.json";
         //Création des ElementTab//
-
+        elmt_list=LoadMapFromFile(filePath)[0];
+        elmt_list_landscape=LoadMapFromFile(filePath)[1];
+        elmt_list_wall=LoadMapFromFile(filePath)[2];
         ElementTab* elmtTab_ptr=new ElementTab(width,height,elmt_list);
         ElementTab* elmtTab2_ptr=new ElementTab(width,height,elmt_list2);
         ElementTab* elmtTabLandscape_ptr=new ElementTab(width,height,elmt_list_landscape);
@@ -236,6 +328,7 @@ void testSFML() {
             elmtTabMenu_ptr->addObserver(elmtTabLayerMenu_ptr);
             //Stats dans le Menu
             elmtTab2_ptr->addObserver(stateLayerMenu_ptr);
+            
         //////////////////////////////////////////////////////////
 
         //Initialisation de la Surface de chaque Layer
@@ -264,7 +357,11 @@ void testSFML() {
         engine.setState(*state);
 
         //Random IA
-        ai::Random_AI ai(1);
+        //ai::Random_AI ai(1);
+        ai::HeuristicAI* ai;
+        ai=new ai::HeuristicAI(*state,1);
+        
+        elmtTab2_ptr->addObserver(ai);
 
         //Gestion des tours
         int tour=state->getTour();
@@ -454,7 +551,7 @@ void testSFML() {
                 cout<<"Tour :"<<state->getTour()<<endl;
                 cout<<"//Tour IA//"<<endl;
                 ///Gestion de l'IA///
-                ai.run(engine,1,*state);
+                ai->run(engine,1,*state);
 
                 /*MoveCharacterCommand* move = new MoveCharacterCommand(1,1,0);
                 engine.addCommand(2,move);
@@ -487,20 +584,45 @@ void testSFML() {
 
 
     }
-    }
-
-
-    catch(const char* e){
-        cout<<"Exception :"<<e<<endl;
-    }
+}
 
 
 
 
 //fin test map
 
-}
+
 ///// Fin Fenetre SFML /////
+
+
+    
+    
+    /*Json::Reader reader;
+    Json::Value root;
+    bool parsing = reader.parse(ifs,root,false);
+    if(parsing){
+     }
+        
+    //std::string text="{ \"people\": [{\"id\": 1, \"name\":\"MIKE\",\"surname\":\"TAYLOR\"}, {\"id\": 2, \"name\":\"TOM\",\"surname\":\"JERRY\"} ]}";
+    
+    const Json::Value defValue; //used for default reference
+    //bool parsing=reader.parse(ifs,root);
+    
+        
+        
+        
+        Json::Value height=root["height"];
+        cout<<height.asInt()<<endl;
+        
+    }
+    else{
+        cout<<"Parsing doesn't work !"<<endl;
+    }*/
+    
+    
+
+    
+ 
 
 
 int main(int argc,char* argv[])
