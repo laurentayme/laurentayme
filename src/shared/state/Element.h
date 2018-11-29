@@ -58,6 +58,8 @@ namespace state {
     virtual void setLoc (float x, float y);
     bool getMoving () const;
     void setMoving (bool move);
+    virtual size_t getTeam () const = 0;
+    virtual void setTeam (size_t team) = 0;
     // Setters and Getters
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);

@@ -2,6 +2,7 @@
 #ifndef STATE__STATE__H
 #define STATE__STATE__H
 
+#include <string>
 
 namespace state {
   class ElementTab;
@@ -17,10 +18,9 @@ namespace state {
   class State : public state::Observable {
     // Associations
     // Attributes
-  public:
-    ElementTab* landscape;
   private:
     ElementTab* carte;
+    ElementTab* landscape;
     ElementTab* wall;
     ElementTab* characters;
     ElementTab* menu;
@@ -40,6 +40,8 @@ namespace state {
     void setLandscape (ElementTab* landscape);
     int getTour () const;
     void setTour (int tour);
+    void LoadMapFromFile (std::string filePath);
+    void setWall (ElementTab* mur);
     // Setters and Getters
   };
 

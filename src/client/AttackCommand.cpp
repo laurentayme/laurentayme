@@ -26,6 +26,10 @@ AttackCommand::AttackCommand(int CharacterAttacker,int CharacterTarget, int x, i
         int case_x=(mouse_x-362)/67;
         int case_y=(mouse_y-595)/62;
         
+        //std::cout<<"Case X: "<<case_x<<std::endl;
+        //std::cout<<"Case Y: "<<case_y<<std::endl;
+        
+        
         //Attaque Coup d'Epée
         if(case_x==0 and case_y==0){
             this->AbilityUsed="Coup d'Epée";

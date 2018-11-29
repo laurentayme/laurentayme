@@ -95,3 +95,11 @@ int Space::getStatut() const{
 
 void Space::setStatut(int statut){
 }
+
+
+size_t Space::getTeam() const {
+	return(0);
+}
+
+void Space::setTeam(size_t team) {
+}

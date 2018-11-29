@@ -60,10 +60,10 @@ Character::Character (std::string Classname){
             equipment_List.push_back(baton);
 
             //Création des abilités adéquates
-            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,15));
+            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,10));
             AbilitiesList.push_back(coup_baton);
 
-            Abilities* sortilege(new Abilities("Sortilège",4,3,20));
+            Abilities* sortilege(new Abilities("Sortilège",4,3,1));
             AbilitiesList.push_back(sortilege);
         }
 
@@ -274,6 +274,14 @@ int Character::getLandscapeType() const{
 
 size_t Character::getTypeId() const{
     return(idType);
+}
+
+size_t Character::getTeam() const {
+	return(team);
+}
+
+void Character::setTeam(size_t team) {
+	this->team=team;
 }
 
 

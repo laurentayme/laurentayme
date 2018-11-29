@@ -11,4 +11,6 @@
 #include "engine/SurbrillanceCommand.h"
 #include "engine/WhiteSurbrillanceCommand.h"
 #include "engine/TurnSurbrillanceCommand.h"
+#include "engine/ClickCommand.h"
+#include "engine/MouseMovedCommand.h"
 #endif

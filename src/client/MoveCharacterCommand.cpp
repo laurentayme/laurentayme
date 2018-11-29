@@ -722,7 +722,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
 			
 
 		}
-		if(pathMem.size()>2){
+		std::cout<<" il y a "<<pathMem.size()<<"positions en memoire"<<std::endl;
+		if(pathMem.size()>=2){
 			if(pathMem[pathMem.size()-1].getX()-pathMem[pathMem.size()-2].getX()==-1){
 				this->direction=1;
 				act_state.getCharacters()->setElementDirection(direction,character);

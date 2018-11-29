@@ -26,6 +26,8 @@
         <in>Abilities.cpp</in>
         <in>AttackCommand.cpp</in>
         <in>Character.cpp</in>
+        <in>ClickCommand.cpp</in>
+        <in>ClickCommand.h</in>
         <in>Command.cpp</in>
         <in>Element.cpp</in>
         <in>ElementTab.cpp</in>
@@ -34,8 +36,8 @@
         <in>Event.cpp</in>
         <in>HeuristicAI.cpp</in>
         <in>Landscape.cpp</in>
-        <in>LifeCommand.cpp</in>
-        <in>LoadCommand.cpp</in>
+        <in>MouseMovedCommand.cpp</in>
+        <in>MouseMovedCommand.h</in>
         <in>MoveCharacterCommand.cpp</in>
         <in>Observable.cpp</in>
         <in>Observer.cpp</in>
@@ -58,7 +60,6 @@
         <in>WhiteSurbrillanceCommand.cpp</in>
         <in>jsoncpp.cpp</in>
         <in>main.cpp</in>
-        <in>main_old.cpp</in>
       </df>
     </df>
     <logicalFolder name="ExternalFiles"
@@ -144,6 +145,10 @@
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="src/client/ClickCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/client/ClickCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/client/Command.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
@@ -176,13 +181,9 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/LifeCommand.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
+      <item path="src/client/MouseMovedCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/client/LoadCommand.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
+      <item path="src/client/MouseMovedCommand.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/client/MoveCharacterCommand.cpp"
             ex="false"
@@ -278,10 +279,6 @@
         </ccTool>
       </item>
       <item path="src/client/main.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
-      </item>
-      <item path="src/client/main_old.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>

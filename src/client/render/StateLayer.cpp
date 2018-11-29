@@ -28,7 +28,7 @@ void StateLayer::initSurface (){
 
 	surface->initQuads(1);
 	surface->loadTexture(statetileset.getImageFile());
-	
+	//std::cout<<"la taille maximale de surface est de : "<<surface.texture.getMaximumSize()<<std::endl;
 
 
 

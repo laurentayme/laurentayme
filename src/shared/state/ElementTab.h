@@ -33,6 +33,7 @@ namespace state {
     size_t const getHeight () const;
     size_t const getWidth () const;
     std::vector<Element*> getElementList () const;
+    void setElementList (std::vector<Element*> elmt_list);
     void addElement (Element* e);
     Element*  getLocatedElement (Position* position) const;
     void setElement (Position& position, int element);

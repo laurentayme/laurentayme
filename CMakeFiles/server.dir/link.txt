@@ -1,1 +1,0 @@
-/usr/bin/c++    -Wall -std=c++11 -pthread -g -pg -O3 -DNDEBUG   CMakeFiles/server.dir/extern/jsoncpp-1.8.0/jsoncpp.cpp.o  -o bin/server -rdynamic 

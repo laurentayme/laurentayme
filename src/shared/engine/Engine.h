@@ -12,7 +12,6 @@ namespace engine {
   class Command;
 }
 
-#include "state/State.h"
 #include "Command.h"
 
 namespace engine {
@@ -22,19 +21,19 @@ namespace engine {
     // Associations
     // Attributes
   private:
-    state::State currentState;
+    state::State* currentState;
     std::map<int,std::unique_ptr<Command>> currentCommands;
     // Operations
   public:
     Engine ();
     ~Engine ();
-    void setState (state::State state);
+    void setState (state::State* state);
     const state::State& getState () const;
     void addPassiveCommands ();
     void addCommand (int priority, Command* cmd);
     void addCommand (int priority, std::unique_ptr<Command> cmd);
-    void update ();
     int getNbCommands () const;
+    void update ();
     // Setters and Getters
   };
 

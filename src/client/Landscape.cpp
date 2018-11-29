@@ -103,3 +103,12 @@ int Landscape::getStatut() const{
 
 void Landscape::setStatut(int statut){
 }
+
+
+size_t Landscape::getTeam() const {
+	return(0);
+}
+
+void Landscape::setTeam(size_t team) {
+}
+
