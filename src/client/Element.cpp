@@ -36,11 +36,11 @@ void Element::setPosition(Position& futur_position){
 }
 
 void Element::setTypeId(size_t ty){
-    if(ty==0 || ty==1 || ty==2){
+    if(ty>=0 && ty<=6){
         idType=ty;
     }
     else{
-        throw "Type d'Element Incorrect ! (0=StaticElement / 1=Character /2=Menu)";
+        throw "Type d'Element Incorrect ! (0=StaticElement / 1=Character /2=Battle_Menu /3=Main_Menu)";
     }
 }
 

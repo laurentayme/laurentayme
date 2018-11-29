@@ -150,12 +150,12 @@ void ElementTab::eraseCharacter(){
     for(size_t i=0;i<elementList.size();i++){
         if(elementList[i]->getStatut()==3){
             std::string name =elementList[i]->getClass();
-             elementList.erase(elementList.begin() + i);
+             //elementList.erase(elementList.begin() + i);
              std::cout<<name<<" a été tué !"<<std::endl;
         }
 
     }
-    	StateEvent s(StateEventId::PAChanged);
+    	StateEvent s(StateEventId::PVChanged);
     	notifyObservers(s);
 
 }
@@ -172,4 +172,14 @@ void ElementTab::setElementMove(int element, bool move){
 
 void ElementTab::setElementList(std::vector<Element*> elmt_list){
 	this->elementList=elmt_list;
+}
+
+void ElementTab::setElementType(int element, int type){
+    for(size_t i=0;i<elementList.size();i++){
+        	if (i==element){
+            		elementList[element]->setTypeId(type);
+                }
+    }
+    StateEvent s(StateEventId::PAChanged);
+    notifyObservers(s);
 }

@@ -13,7 +13,8 @@ namespace state {
   private:
     size_t staticElement     = 0;
     size_t character     = 1;
-    size_t menu     = 2;
+    size_t battle_menu     = 2;
+    size_t main_menu     = 3;
     // Setters and Getters
   };
 

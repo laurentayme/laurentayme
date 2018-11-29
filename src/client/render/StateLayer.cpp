@@ -32,145 +32,184 @@ void StateLayer::initSurface (){
 
 
 
-    //Menu de State
+        //Menu de State
         
-        //Affichage de l'état
-       if(!font.loadFromFile("res/font.TTF")){
-            throw "Error Font Loading !";
-        }
+       
+                //Affichage de l'état
+            if(!font.loadFromFile("res/font.TTF") or !font2.loadFromFile("res/fontDofus.ttf")){
+                 throw "Error Font Loading !";
+             }
         
-        //PV Iop//
-	textpv.setFont(font);
-	textpv.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPV()));
-        textpv.setCharacterSize(24);
-        textpv.setColor(sf::Color::White);
-        textpv.setPosition(240,86*7.4-25);
-        /////////
-        
-        //PV Sram//
-        
-        //Sram Vivant/ 
-        if(state.getCharacters()->getElementList().size()!=1){
-        
-            textpv_sram.setFont(font);
-            textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[1]->getPV()));
-            textpv_sram.setCharacterSize(18);
-            textpv_sram.setColor(sf::Color::White);
-            if(state.getCharacters()->getElementList()[1]->getPV()<10){
-                textpv_sram.setPosition(154,130);
-            }
-            else{
-                textpv_sram.setPosition(142,130);
-            }
+            //Sram Vivant/ 
+            if(state.getCharacters()->getElementList().size()>1){
+                //PV Iop//
+                textpv.setFont(font);
+                textpv.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPV()));
+                textpv.setCharacterSize(24);
+                textpv.setColor(sf::Color::White);
+                textpv.setPosition(240,86*7.4-25);
+                /////////
+
+                //PV Sram//
+                 textpv_sram.setFont(font);
+                 textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[1]->getPV()));
+                 textpv_sram.setCharacterSize(18);
+                 textpv_sram.setColor(sf::Color::White);
+                 
+                 if(state.getCharacters()->getElementList()[1]->getPV()<10){
+                     textpv_sram.setPosition(154,130);
+                 }
+                 else{
+                     textpv_sram.setPosition(142,130);
+                 }
+
+             }
+             //Un Personnage Mort
+            for(int i=0; i<state.getCharacters()->getElementList().size();i++){
+                if(state.getCharacters()->getElementList()[0]->getStatut()==3){
+                    textpv.setFont(font);
+                    textpv.setString(std::to_string(0));
+                    textpv.setCharacterSize(24);
+                    textpv.setColor(sf::Color::White);
+                    textpv.setPosition(240,86*7.4-25);  
+                
+                }
+                else{
+                    textpv_sram.setFont(font);
+                    textpv_sram.setString(std::to_string(0));
+                    textpv_sram.setCharacterSize(18);
+                    textpv_sram.setColor(sf::Color::White);
+                    textpv_sram.setPosition(154,130);
+                }
             
-        }
-        //Sram Mort
-        else{
-            textpv_sram.setFont(font);
-            textpv_sram.setString(std::to_string(0));
-            textpv_sram.setCharacterSize(18);
-            textpv_sram.setColor(sf::Color::White);
-            textpv_sram.setPosition(154,130);
-        }
-        ///////////
+            }
+                
+             ///////////
+
+             textpa.setFont(font);
+
+             textpa.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPA()));
+             textpa.setCharacterSize(23);
+             textpa.setColor(sf::Color::White);
+             textpa.setPosition(297,86*8.43-25);
+
+             textpm.setFont(font);
+             textpm.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPM()));
+             textpm.setCharacterSize(23);
+             textpm.setColor(sf::Color::White);
+             if(state.getCharacters()->getElementList()[0]->getPM()>10){
+                 textpm.setPosition(205,86*8.44-25);
+             }
+             else{
+                 textpm.setPosition(220,86*8.44-25);
+             } 
         
-        textpa.setFont(font);
         
-        textpa.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPA()));
-        textpa.setCharacterSize(23);
-        textpa.setColor(sf::Color::White);
-        textpa.setPosition(297,86*8.43-25);
-        
-        textpm.setFont(font);
-        textpm.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPM()));
-        textpm.setCharacterSize(23);
-        textpm.setColor(sf::Color::White);
-        if(state.getCharacters()->getElementList()[0]->getPM()>10){
-            textpm.setPosition(205,86*8.44-25);
-        }
-        else{
-            textpm.setPosition(220,86*8.44-25);
-        }
         
 
 	const ElementTab* menu =state.getMenu();
-	const ElementTab& menu_ref=*menu;
+	//const ElementTab& menu_ref=*menu;
 
-	surface->setSpriteLocation(0,0,0,to,menu_ref);
+	surface->setSpriteLocation(0,0,0,to,*menu);
 
-	surface->setSpriteTexture(0,t,menu_ref);
-	
-
-	//State
-       // ElementTab& tab_ref3=elmt_tab3;
-       // ElementTabLayer elmt_tab_layer3(tab_ref3);
-
-
-	/* window.draw(*elmt_tab_layer3.getSurface());
-	window.draw(text);
-        window.draw(textpa);
-        window.draw(textpm);*/
-	
-	
-	
-	
+	surface->setSpriteTexture(0,t,*menu);
+		
 }
 
 void StateLayer::stateChanged(const state::Event& event){
-	//std::cout<<"Un evenement a eu lieu et la couche StateLayer est au courant"<<std::endl;
-	//PV Iop//
-	textpv.setFont(font);
-	textpv.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPV()));
-        textpv.setCharacterSize(24);
-        textpv.setColor(sf::Color::White);
-        textpv.setPosition(240,86*7.4-25);
-        /////////
+    
+        std::vector<Element*> elmt_list_menu= state.getMenu()->getElementList();
+	state::Element& e=*elmt_list_menu[0];
         
-        //PV Sram//
-        
-        //Sram Vivant/ 
-        if(state.getCharacters()->getElementList().size()!=1){
-        
-            textpv_sram.setFont(font);
-            textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[1]->getPV()));
-            textpv_sram.setCharacterSize(18);
-            textpv_sram.setColor(sf::Color::White);
-            if(state.getCharacters()->getElementList()[1]->getPV()<10){
+        if(e.getTypeId()==2){
+            //PV Iop//
+            textpv.setFont(font);
+            textpv.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPV()));
+            textpv.setCharacterSize(24);
+            textpv.setColor(sf::Color::White);
+            textpv.setPosition(240,86*7.4-25);
+            /////////
+
+            //PV Sram//
+
+            //Sram Vivant/ 
+            if(state.getCharacters()->getElementList().size()>1){
+
+                textpv_sram.setFont(font);
+                textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[1]->getPV()));
+                textpv_sram.setCharacterSize(18);
+                textpv_sram.setColor(sf::Color::White);
+                if(state.getCharacters()->getElementList()[1]->getPV()<10){
+                    textpv_sram.setPosition(154,130);
+                }
+                else{
+                    textpv_sram.setPosition(142,130);
+                }
+
+            }
+            //Sram Mort
+            else{
+                textpv_sram.setFont(font);
+                textpv_sram.setString(std::to_string(0));
+                textpv_sram.setCharacterSize(18);
+                textpv_sram.setColor(sf::Color::White);
                 textpv_sram.setPosition(154,130);
             }
+            ///////////
+
+            textpa.setFont(font);
+
+            textpa.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPA()));
+            textpa.setCharacterSize(23);
+            textpa.setColor(sf::Color::White);
+            textpa.setPosition(297,86*8.43-25);
+
+            textpm.setFont(font);
+            textpm.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPM()));
+            textpm.setCharacterSize(23);
+            textpm.setColor(sf::Color::White);
+            if(state.getCharacters()->getElementList()[0]->getPM()>10){
+                textpm.setPosition(205,86*8.44-25);
+            }
             else{
-                textpv_sram.setPosition(142,130);
+                textpm.setPosition(220,86*8.44-25);
+            }
+        }
+        
+        
+        
+        else if (e.getTypeId()==6){
+            textwin.setFont(font2);
+            
+            if(state.getCharacters()->getElementList()[0]->getStatut()!=3){
+                textwin.setString("You Win !");
+                textwin.setColor(sf::Color::Yellow);
+            }
+            else if(state.getCharacters()->getElementList()[0]->getStatut()==3){
+                textwin.setString("You Loose...");
+                textwin.setColor(sf::Color::Red);
             }
             
-        }
-        //Sram Mort
-        else{
-            textpv_sram.setFont(font);
-            textpv_sram.setString(std::to_string(0));
-            textpv_sram.setCharacterSize(18);
-            textpv_sram.setColor(sf::Color::White);
-            textpv_sram.setPosition(154,130);
-        }
-        ///////////
-        
-        textpa.setFont(font);
-        
-        textpa.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPA()));
-        textpa.setCharacterSize(23);
-        textpa.setColor(sf::Color::White);
-        textpa.setPosition(297,86*8.43-25);
-        
-        textpm.setFont(font);
-        textpm.setString(std::to_string(state.getCharacters()->getElementList()[0]->getPM()));
-        textpm.setCharacterSize(23);
-        textpm.setColor(sf::Color::White);
-        if(state.getCharacters()->getElementList()[0]->getPM()>10){
-            textpm.setPosition(205,86*8.44-25);
+            
+            textwin.setCharacterSize(100);
+            textwin.setPosition(149*3,86*4);
+            
+            const ElementTab* menu =state.getMenu();
+            //const ElementTab& menu_ref=*menu;
+            StateTileSet statetileset;
+            surface->setSpriteLocation(0,0,0,statetileset,*menu);
+            Tile t1(0,0,1490,1053);
+            surface->setSpriteTexture(0,t1,*menu);
         }
         else{
-            textpm.setPosition(220,86*8.44-25);
+            const ElementTab* menu =state.getMenu();
+            //const ElementTab& menu_ref=*menu;
+            StateTileSet statetileset;
+            surface->setSpriteLocation(0,0,0,statetileset,*menu);
+            Tile t1(0,0,1490,1053);
+            surface->setSpriteTexture(0,t1,*menu);
         }
-	
+        	
 }
 
 sf::Text StateLayer::getTextpv() const {
@@ -191,4 +230,12 @@ sf::Text StateLayer::getTextpm() const {
 
 sf::Font StateLayer::getFont() const {
 	return(font);
+}
+
+sf::Font StateLayer::getFont2() const {
+	return(font2);
+}
+
+sf::Text StateLayer::getTextwin() const{
+    return (textwin);
 }

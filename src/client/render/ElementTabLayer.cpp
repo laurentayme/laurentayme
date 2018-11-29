@@ -17,7 +17,7 @@ ElementTabLayer::ElementTabLayer (state::ElementTab& tab) : tab(tab) {
         tileset.reset(new CharacterTileSet);
     }
 
-    else if (list[0]->getTypeId()==2){
+    else if (list[0]->getTypeId()>=2){
         tileset.reset(new StateTileSet);
     }
 
@@ -47,11 +47,29 @@ void ElementTabLayer::stateChanged(const state::Event& event){
     //Boucle sur l'ensemble des éléments d'un ElementTab
     for(size_t i=0; i<list.size(); i++){
         state::Element& e=*list[i];
+        
         const Tile& t=tileset->getTile(e);
-	       TileSet& tileSet2= *tileset;
+        TileSet& tileSet2= *tileset;
 
-        surface->setSpriteLocation(i,e.getPosition().getX(),e.getPosition().getY(),tileSet2,tab);
-        surface->setSpriteTexture(i,t,tab);
+        //std::cout<<"1st Step !"<<std::endl;
+        //Cas des Character//
+        if(e.getTypeId()==1){
+            //std::cout<<"2nd Step !"<<std::endl;
+            if(e.getStatut()!=3){
+               surface->setSpriteLocation(i,e.getPosition().getX(),e.getPosition().getY(),tileSet2,tab);
+               surface->setSpriteTexture(i,t,tab); 
+            }
+            
+        }
+        
+
+        else{
+            surface->setSpriteLocation(i,e.getPosition().getX(),e.getPosition().getY(),tileSet2,tab);
+            surface->setSpriteTexture(i,t,tab);
+        }
+        
+        
+        
 
 
 

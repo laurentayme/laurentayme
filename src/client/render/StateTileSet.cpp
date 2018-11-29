@@ -16,19 +16,23 @@ StateTileSet::StateTileSet(){
     Tile t(0,0,1996,1412);
     state.push_back(t);
     
-    Tile t_StartMenu(0,1760,2315,2174);
+    Tile t_StartMenu(0,1753,2305,2178);
     state.push_back(t_StartMenu);
     
-    Tile t_StartMenu_1(0,3934,2315,2174);
+    Tile t_StartMenu_1(0,3920,2305,2178);
     state.push_back(t_StartMenu_1);
     
-    Tile t_StartMenu_2(0,6108,2315,2174);
+    Tile t_StartMenu_2(0,6098,2305,2178);
     state.push_back(t_StartMenu_2);
+    
+    Tile t_EndMenu(0,8276,2305,2178);
+    state.push_back(t_EndMenu);
    
 }
 
 int const StateTileSet::getCellWidth(state::Element& elmt) const{
     return(1490);
+    
 }
 
 int const StateTileSet::getCellHeight(state::Element& elmt) const{
@@ -44,6 +48,31 @@ StateTileSet::~StateTileSet(){
 
 const Tile& StateTileSet::getTile(const state::Element& e){ 
     
-    Tile& s=state[0];
-    return(s);
+    //Cas d'un Main Menu
+    if(e.getTypeId()==3){
+        Tile& s=state[1];
+        return(s);
+    }
+    
+    else if(e.getTypeId()==4){
+        Tile& s=state[2];
+        return(s);
+    }
+    
+    else if(e.getTypeId()==5){
+        Tile& s=state[3];
+        return(s);
+    }
+    
+    else if(e.getTypeId()==6){
+        Tile& s=state[4];
+        return(s);
+    }
+    
+    //Cas d'un Battle Menu
+    else if(e.getTypeId()==2){
+       Tile& s=state[0];
+       return(s); 
+    }
+    
 }

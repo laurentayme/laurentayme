@@ -34,6 +34,8 @@ namespace render {
     Text textpm;
     Font font;
     Text textpv_sram;
+    Text textwin;
+    Font font2;
     // Operations
   public:
     StateLayer (const state::State& state);
@@ -44,6 +46,8 @@ namespace render {
     Text getTextpm () const;
     Font getFont () const;
     Text getTextpvSram () const;
+    Text getTextwin () const;
+    Font getFont2 () const;
     // Setters and Getters
   };
 

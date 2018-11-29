@@ -9,11 +9,9 @@ using namespace engine;
 
 
 Engine::Engine(){
-	
-
 }
-Engine::~Engine(){
 
+Engine::~Engine(){
 }
 
 const state::State& Engine::getState() const {
@@ -21,7 +19,6 @@ const state::State& Engine::getState() const {
 }
 
 void Engine::addPassiveCommands(){
-
 }
 
 void Engine::addCommand(int priority,Command* cmd){

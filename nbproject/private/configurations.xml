@@ -69,7 +69,11 @@
       <df name="shared">
         <df name="ai">
           <in>AI.h</in>
+          <in>HeuristicAI.h</in>
           <in>PathMap.h</in>
+          <in>Point.h</in>
+          <in>PointCompareWeight.h</in>
+          <in>Random_AI.h</in>
         </df>
         <df name="engine">
           <in>AttackCommand.h</in>
@@ -102,6 +106,7 @@
           <in>Space.h</in>
           <in>SpaceTypeId.h</in>
           <in>State.h</in>
+          <in>StateEtat.h</in>
           <in>StateEvent.h</in>
           <in>StateEventId.h</in>
           <in>StaticElement.h</in>

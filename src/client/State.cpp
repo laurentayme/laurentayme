@@ -151,3 +151,11 @@ void State::LoadMapFromFile(std::string filePath){
 
     /////////////////////////////////
 }
+
+void State::setEtat(int etat){
+    this->etat=etat;
+}
+
+int State::getEtat() const{
+    return(etat);
+}

@@ -18,7 +18,7 @@
 
 std::chrono::system_clock::time_point a = std::chrono::system_clock::now();
 std::chrono::system_clock::time_point b = std::chrono::system_clock::now();
-
+sf::Time tempo = sf::seconds(0.5);
 
 using namespace std;
 using namespace state;
@@ -81,7 +81,7 @@ void testSFML() {
 
 
 
-            //State MEnu list
+            //State Menu list
             Space* state_menu=new Space(1);
             state_menu->setTypeId(2);
             listMenu.push_back(state_menu);
@@ -107,12 +107,14 @@ void testSFML() {
 	state->setMenu(elmtTabMenu_ptr);
 	state->setLandscape(elmtTabLandscape_ptr);
         state->setTour(1);
+        int etat=1;
+        state->setEtat(etat);
 
         //Chargement du niveau depuis un fichier json//
         std::string filePath="res/Second_Dungeon.json";
         state->LoadMapFromFile(filePath);
         ///////////////////////
-
+        
 
         //Création de l'ElementTabLayer//
         ElementTabLayer* elmtTabLayer_ptr=new ElementTabLayer(*elmtTab_ptr);
@@ -139,14 +141,14 @@ void testSFML() {
 
         //Initialisation de la Surface de chaque Layer
         try{
-
-            elmtTabLayer_ptr->initSurface();
-            elmtTabLayer2_ptr->initSurface();
-            elmtTabLayerLandscape_ptr->initSurface();
-            elmtTabLayerWall_ptr->initSurface();
-            elmtTabLayerRed_ptr->initSurface();
-            elmtTabLayerMenu_ptr->initSurface();
-            stateLayerMenu_ptr->initSurface();
+                elmtTabLayer_ptr->initSurface();
+                elmtTabLayer2_ptr->initSurface();
+                elmtTabLayerLandscape_ptr->initSurface();
+                elmtTabLayerWall_ptr->initSurface();
+                elmtTabLayerRed_ptr->initSurface();
+                elmtTabLayerMenu_ptr->initSurface();
+                stateLayerMenu_ptr->initSurface();
+            
         }
         catch(const char* e){
             cout<<"Exception: "<<e<<endl;
@@ -164,11 +166,12 @@ void testSFML() {
         engine.setState(state);
 
         //Random IA
-        //ai::Random_AI ai(1);
-        ai::HeuristicAI* ai;
-        ai=new ai::HeuristicAI(*state,1);
+        ai::Random_AI ai(1);
+        ai::Random_AI ai_2(0);
+        //ai::HeuristicAI* ai;
+        //ai=new ai::HeuristicAI(*state,1);
 
-        elmtTab2_ptr->addObserver(ai);
+        //elmtTab2_ptr->addObserver(ai);
 
         //Gestion des tours
         int tour=state->getTour();
@@ -182,15 +185,20 @@ void testSFML() {
             //PM
             int iop_pm=state->getCharacters()->getElementList()[0]->getPM();
             int sram_pm=state->getCharacters()->getElementList()[1]->getPM();
-        ////////////////////
+        ////////////////////  
 
-            
     ///// Création de la fenêtre/////
     sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Tilemap");
     window.setVerticalSyncEnabled(true);
     //window.setFramerateLimit(24);
 
     while (window.isOpen()){
+        
+        
+        
+        if(state->getEtat()==1){
+            
+        //stateLayerMenu_ptr->initSurface();
         //Réinitialisation des Stats//
         state->getCharacters()->setCharacterPA(0,iop_pa);
         state->getCharacters()->setCharacterPA(1,sram_pa);
@@ -202,10 +210,16 @@ void testSFML() {
 
         ////Tour Joueur////
         if(state->getTour()%2==1){
+            
             cout<<"Tour :"<<state->getTour()<<endl;
             cout<<"//Tour Joueur//"<<endl;
+            
+	    ai_2.run(engine,0,*state);
+            state->setTour(state->getTour()+1);
+            
+            
             // on gère les évènements
-            sf::Event event;
+           /* sf::Event event;
             while (window.waitEvent(event)){
                 engine.update();
                 sf::Vector2i localPosition = sf::Mouse::getPosition(window);
@@ -213,10 +227,10 @@ void testSFML() {
                     window.close();
                 }
                 // Souris déplacé seulement !
-                else if(event.type==sf::Event::MouseMoved){   
+                else if(event.type==sf::Event::MouseMoved){
                     MouseMovedCommand* mouse_moved=new MouseMovedCommand(localPosition.x,localPosition.y);
                     engine.addCommand(1,mouse_moved);
-                    engine.update();    
+                    engine.update();
                 }
 
                 else if (event.type == sf::Event::MouseButtonPressed ){
@@ -226,60 +240,156 @@ void testSFML() {
                     if (state->getTour()%2==0){
                         break;
                     }
+                }*/
+                if (state->getMenu()->getElementList()[0]->getTypeId()==6){
+                    window.clear();
+                    state->setEtat(2);
+                   // break;
                 }
-            
-
-
+                
+                //Fin d'une partie//
+                for(int i=0; i<state->getCharacters()->getElementList().size();i++){
+                    if(state->getCharacters()->getElementList()[i]->getStatut()==3){
+                        break;
+                    }
+                }
+         
         // on dessine le niveau
             window.clear();
-
             window.draw(*elmtTabLayer_ptr->getSurface());
-            window.draw(*elmtTabLayerMenu_ptr->getSurface());
-            window.draw(*elmtTabLayerRed_ptr->getSurface());
             window.draw(*elmtTabLayerLandscape_ptr->getSurface());
             window.draw(*elmtTabLayerWall_ptr->getSurface());
+            window.draw(*elmtTabLayerMenu_ptr->getSurface());
+            window.draw(*elmtTabLayerRed_ptr->getSurface());
             window.draw(*elmtTabLayer2_ptr->getSurface());
             window.draw(stateLayerMenu_ptr->getTextpv());
             window.draw(stateLayerMenu_ptr->getTextpvSram());
             window.draw(stateLayerMenu_ptr->getTextpa());
             window.draw(stateLayerMenu_ptr->getTextpm());
             window.display();
+            sf::sleep(tempo);
 
 
-            }
+            //}
 
         }
 
         ////Tour IA////
          else if (state->getTour()%2==0){
+                
                 cout<<"Tour :"<<state->getTour()<<endl;
                 cout<<"//Tour IA//"<<endl;
                 ///Gestion de l'IA///
-                ai->run(engine,1,*state);
+                
+                ai.run(engine,1,*state);
 
-                MoveCharacterCommand* move = new MoveCharacterCommand(1,1,0);
-                engine.addCommand(2,move);
-                engine.update();
-
+                //MoveCharacterCommand* move = new MoveCharacterCommand(1,1,0);
+                //engine.addCommand(2,move);
+                //engine.update();
+                
                 //Changement de Tour
                 state->setTour(state->getTour()+1);
-
+                if (state->getMenu()->getElementList()[0]->getTypeId()==6){
+                    window.clear();
+                    state->setEtat(2);
+                }
+                
+                //Fin d'une partie//
+                for(int i=0; i<state->getCharacters()->getElementList().size();i++){
+                    if(state->getCharacters()->getElementList()[i]->getStatut()==3){
+                        break;
+                    }
+                }
+                
                 // on dessine le niveau
                 window.clear();
 
                 window.draw(*elmtTabLayer_ptr->getSurface());
-                window.draw(*elmtTabLayerMenu_ptr->getSurface());
-                window.draw(*elmtTabLayerRed_ptr->getSurface());
+
+
                 window.draw(*elmtTabLayerLandscape_ptr->getSurface());
                 window.draw(*elmtTabLayerWall_ptr->getSurface());
+
+
+                window.draw(*elmtTabLayerMenu_ptr->getSurface());
+                window.draw(*elmtTabLayerRed_ptr->getSurface());
                 window.draw(*elmtTabLayer2_ptr->getSurface());
                 window.draw(stateLayerMenu_ptr->getTextpv());
                 window.draw(stateLayerMenu_ptr->getTextpvSram());
                 window.draw(stateLayerMenu_ptr->getTextpa());
                 window.draw(stateLayerMenu_ptr->getTextpm());
                 window.display();
-
+                sf::sleep(tempo);
             }
+        
+        
+        
+        
+        ////////////////////
+    }
+    else if(state->getEtat()==0){
+        
+        // on gère les évènements
+        sf::Event event;
+        while (window.waitEvent(event)){
+            engine.update();
+            sf::Vector2i localPosition = sf::Mouse::getPosition(window);
+            if(event.type == sf::Event::Closed){
+                window.close();
+            }
+            
+            // Souris déplacé seulement !
+            else if(event.type==sf::Event::MouseMoved){
+                MouseMovedCommand* mouse_moved=new MouseMovedCommand(localPosition.x,localPosition.y);
+                engine.addCommand(1,mouse_moved);
+                engine.update();
+            }
+            
+            else if (event.type == sf::Event::MouseButtonPressed ){
+                ClickCommand* click=new ClickCommand(localPosition.x,localPosition.y);
+                engine.addCommand(1,click);
+                engine.update();
+                if (state->getEtat()==1){
+                    break;
+                }
+                else if(state->getEtat()==3){//Exit State
+                    window.close();
+                }
+            }
+            
+            window.clear();
+            window.draw(*elmtTabLayerMenu_ptr->getSurface());
+            window.display();
+            
+            
+            
+        }
+        
+        
+        
+        //window.clear();
+        //window.draw(*elmtTabLayerMenu_ptr->getSurface());
+        //window.display();
+    }
+    else if(state->getEtat()==2){
+        window.clear();
+        window.draw(*elmtTabLayerMenu_ptr->getSurface());
+        window.draw(stateLayerMenu_ptr->getTextwin());
+        window.display();
+
+        sf::Event event;
+        while (window.waitEvent(event)){
+            if(event.type == sf::Event::Closed){
+                window.close();
+            }
+
+            window.clear();
+            window.draw(*elmtTabLayerMenu_ptr->getSurface());
+            window.draw(stateLayerMenu_ptr->getTextwin());
+            window.display();
+        }
+        
+    }
     }
 }
 
@@ -304,7 +414,7 @@ int main(int argc,char* argv[])
 
         }
 
-        else if (strcmp(argv[1],"ai")==0){
+        else if (strcmp(argv[1],"random_ai")==0){
             //Test Map
             testSFML();
 

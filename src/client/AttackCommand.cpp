@@ -74,7 +74,10 @@ void AttackCommand::execute(state::State& state){
                             std::cout<<"Vous avez utilisé l'attaque: "<<abilities_list[i]->getName()<<std::endl;
                             if(chars[CharacterTarget]->getPV()==0){
                                 state.getCharacters()->setCharacterStatut(CharacterTarget,3);
+                                state.getMenu()->setElementType(0,6);
+                                state.setEtat(2);
                                 state.getCharacters()->eraseCharacter();
+                                
                             }
                         
                         }
