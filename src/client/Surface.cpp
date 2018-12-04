@@ -42,10 +42,10 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
                     quad_ptr[0].position=sf::Vector2f((120/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+120/2.5,(60/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+60/2.5+0.1*tileSet.getCellHeight(*elmt_list[i]));
                 }  
                 else{
-                    quad_ptr[3].position=sf::Vector2f((120/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(60/2.5)*(x+y)+40+60/2.5+0.25*tileSet.getCellHeight(*elmt_list[i]));
-                    quad_ptr[2].position=sf::Vector2f((120/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(60/2.5)*(x+y)+40+60/2.5+0.25*tileSet.getCellHeight(*elmt_list[i]));
-                    quad_ptr[1].position=sf::Vector2f((120/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(60/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+60/2.5+0.25*tileSet.getCellHeight(*elmt_list[i]));
-                    quad_ptr[0].position=sf::Vector2f((120/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5,(60/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+60/2.5+0.25*tileSet.getCellHeight(*elmt_list[i]));
+                    quad_ptr[3].position=sf::Vector2f((120/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5-0.25*tileSet.getCellWidth(*elmt_list[i]),(60/2.5)*(x+y)+40+60/2.5+0.20*tileSet.getCellHeight(*elmt_list[i]));
+                    quad_ptr[2].position=sf::Vector2f((120/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5-0.25*tileSet.getCellWidth(*elmt_list[i]),(60/2.5)*(x+y)+40+60/2.5+0.20*tileSet.getCellHeight(*elmt_list[i]));
+                    quad_ptr[1].position=sf::Vector2f((120/2.5)*(y-x)+tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5-0.25*tileSet.getCellWidth(*elmt_list[i]),(60/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+60/2.5+0.20*tileSet.getCellHeight(*elmt_list[i]));
+                    quad_ptr[0].position=sf::Vector2f((120/2.5)*(y-x)-tileSet.getCellWidth(*elmt_list[i])/2+650+149/2.5-0.25*tileSet.getCellWidth(*elmt_list[i]),(60/2.5)*(x+y)-tileSet.getCellHeight(*elmt_list[i])+40+60/2.5+0.20*tileSet.getCellHeight(*elmt_list[i]));
 
 
                 }
@@ -57,8 +57,8 @@ void Surface::setSpriteLocation(int i, int x, int y,TileSet& tileSet,  const sta
                 if(elmt_list[i]->getTypeId()==0 and elmt_list[i]->getSpaceType()==5){
                     quad_ptr[0].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y()-17);
                     quad_ptr[1].position=sf::Vector2f(elmt_list[i]->getLoc_x()+67,elmt_list[i]->getLoc_y()-17);
-                    quad_ptr[2].position=sf::Vector2f(elmt_list[i]->getLoc_x()+67,elmt_list[i]->getLoc_y()+57-17);
-                    quad_ptr[3].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y()+57-17);
+                    quad_ptr[2].position=sf::Vector2f(elmt_list[i]->getLoc_x()+67,elmt_list[i]->getLoc_y()+55-17);
+                    quad_ptr[3].position=sf::Vector2f(elmt_list[i]->getLoc_x(),elmt_list[i]->getLoc_y()+55-17);
 
 
                 }

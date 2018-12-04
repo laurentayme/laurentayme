@@ -35,11 +35,17 @@ Character::Character (std::string Classname){
             equipment_List.push_back(epee);
 
             //Création des abilités adéquates
-            Abilities* coup_epee(new Abilities("Coup d'Epée",20,2,3));
+            Abilities* coup_epee(new Abilities("Coup d'Epée",2,2,3));
             AbilitiesList.push_back(coup_epee);
 
             Abilities* colere(new Abilities("Colère",3,1,5));
             AbilitiesList.push_back(colere);
+            
+            Abilities* puissance(new Abilities("Puissance",0,3,20));
+            AbilitiesList.push_back(puissance);
+            
+            Abilities* destructrice(new Abilities("Epée Destructrice",5,4,7));
+            AbilitiesList.push_back(destructrice);
 
 
 
@@ -54,10 +60,10 @@ Character::Character (std::string Classname){
             equipment_List.push_back(baton);
 
             //Création des abilités adéquates
-            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,15));
+            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,10));
             AbilitiesList.push_back(coup_baton);
 
-            Abilities* sortilege(new Abilities("Sortilège",4,3,20));
+            Abilities* sortilege(new Abilities("Sortilège",4,3,1));
             AbilitiesList.push_back(sortilege);
         }
 
@@ -270,13 +276,15 @@ size_t Character::getTypeId() const{
     return(idType);
 }
 
-int Character::getTeam() const {
+size_t Character::getTeam() const {
 	return(team);
 }
 
-void Character::setTeam(int teamset) {
-	this->team=teamset;
+void Character::setTeam(size_t team) {
+	this->team=team;
 }
+
+
 
 
 

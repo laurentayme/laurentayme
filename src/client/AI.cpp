@@ -98,6 +98,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
                 }
 
             }
+
             //Déplacement Nord Impossible
             else{
                 //Déplacement Est
@@ -117,6 +118,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
                            move_list.push_back(move_west);
                        }
                    }
+
                    //Déplacement Sud Impossible
                    else{
                        //Déplacement Ouest
@@ -127,6 +129,7 @@ void AI::listCommands(const state::State& state, int character,std::vector<engin
                        }
                    }
                 }
+
                 //Déplacement Est Impossible
                 else{
                     //Déplacement Sud

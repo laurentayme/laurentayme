@@ -17,7 +17,7 @@ Engine::~Engine(){
 }
 
 const state::State& Engine::getState() const {
-	return(currentState);
+	return(*currentState);
 }
 
 void Engine::addPassiveCommands(){
@@ -29,7 +29,8 @@ void Engine::addCommand(int priority,Command* cmd){
 
 }
 
-void Engine::setState(state::State state){
+
+void Engine::setState(state::State* state){
     currentState=state;
 }
 
@@ -44,13 +45,21 @@ void Engine::update(){
 		for(auto it =currentCommands.begin();it!=currentCommands.end();it++){
                         
 			if(it->first==i){
-				it->second->execute(currentState);
+			
+                            if(it->second->getTypeId()==CommandTypeId::CLICK or it->second->getTypeId()==CommandTypeId::MOUSEMOVED){
+                                it->second->execute(*currentState,*this);
+                            }
+                            else{
+                                it->second->execute(*currentState);
+                            }
+                            
 			}
 		}
 	}
         currentCommands.erase (currentCommands.begin(), currentCommands.end() );
-}
 
+	
+}
 
 
 

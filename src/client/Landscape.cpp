@@ -105,11 +105,10 @@ void Landscape::setStatut(int statut){
 }
 
 
-int Landscape::getTeam() const {
+size_t Landscape::getTeam() const {
 	return(0);
 }
 
-void Landscape::setTeam(int teamset) {
+void Landscape::setTeam(size_t team) {
 }
-
 

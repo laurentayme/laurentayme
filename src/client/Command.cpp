@@ -21,3 +21,15 @@ CommandTypeId Command::getTypeId() const{
 
 void Command::execute(state::State& state){
 }
+
+int Command::getVectX() const{
+    return(0);
+}
+
+int Command::getVectY() const{
+    return(0);
+}
+
+void Command::execute(state::State& state, engine::Engine& engine){
+    
+}

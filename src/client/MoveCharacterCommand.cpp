@@ -58,9 +58,9 @@ void MoveCharacterCommand::execute(state::State& act_state){
 	//std::vector<state::Element*>::iterator<state::Element*> it;
 
 	// Déclaration de la position de la case où l'on va vérifier si un obstacle y est
-	/*state::Position posMap;
+	state::Position posMap;
 	posMap.setX(pos.getX());
-	posMap.setY(pos.getY());*/
+	posMap.setY(pos.getY());
 
 ///////////////////////////////////////////////////////////solution actuelle///////////////////////////////////////////////////:	
 	/*if(chars[character]->getPM()>0){
@@ -722,7 +722,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
 			
 
 		}
-		if(pathMem.size()>2){
+		std::cout<<" il y a "<<pathMem.size()<<"positions en memoire"<<std::endl;
+		if(pathMem.size()>=2){
 			if(pathMem[pathMem.size()-1].getX()-pathMem[pathMem.size()-2].getX()==-1){
 				this->direction=1;
 				act_state.getCharacters()->setElementDirection(direction,character);
@@ -747,3 +748,12 @@ void MoveCharacterCommand::execute(state::State& act_state){
 	std::cout<<"x actuel : "<<chars[character]->getPosition().getX()<<"  y actuel : "<<chars[character]->getPosition().getY()<<std::endl;
 	
 }
+
+int MoveCharacterCommand::getVectX() const{
+    return(vectX);
+}
+
+int MoveCharacterCommand::getVectY() const{
+    return(vectY);
+}
+

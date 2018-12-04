@@ -28,7 +28,7 @@ ElementTab::~ElementTab(){
     for(size_t i=0 ;i<elementList.size();i++){
         delete elementList[i];
         elementList[i]=0;
-        
+
     }
 }
 
@@ -42,7 +42,7 @@ size_t const ElementTab::getWidth() const {
 
 std::vector<Element*> ElementTab::getElementList() const {
     return(elementList);
-    
+
 }
 
 void ElementTab::addElement(Element* elmt){
@@ -57,10 +57,10 @@ Element* ElementTab::getLocatedElement(Position *loc)const{
         if(actu_pos.getX()==loc->getX() && actu_pos.getY()==loc->getY()){
             return(elementList[i]);
         }
-        
-        
+
+
     }
-    
+
     //Cas où il n'y a aucun élément sur cette position
     return(nullptr);
 }
@@ -80,7 +80,7 @@ void ElementTab::setElement(Position& pos,int elmt){
     }
     TabEvent e;
     notifyObservers(e);
-    
+
 }
 
 
@@ -102,7 +102,7 @@ void ElementTab::setLocation(float x, float y,int elmt){
     }
     TabEvent e;
     notifyObservers(e);
-    
+
 }
 
 void ElementTab::setCharacterPV(int element,int pv){
@@ -151,12 +151,25 @@ void ElementTab::eraseCharacter(){
         if(elementList[i]->getStatut()==3){
             std::string name =elementList[i]->getClass();
              elementList.erase(elementList.begin() + i);
-             std::cout<<name<<" a été tué !"<<std::endl; 
+             std::cout<<name<<" a été tué !"<<std::endl;
         }
-        
+
     }
     	StateEvent s(StateEventId::PAChanged);
     	notifyObservers(s);
-        
+
 }
 
+void ElementTab::setElementMove(int element, bool move){
+    for(size_t i=0;i<elementList.size();i++){
+        	if (i==element){
+            		elementList[element]->setMoving(move);
+        	}
+    	}
+    	StateEvent s(StateEventId::PAChanged);
+    	notifyObservers(s);
+}
+
+void ElementTab::setElementList(std::vector<Element*> elmt_list){
+	this->elementList=elmt_list;
+}
