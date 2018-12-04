@@ -10,6 +10,7 @@
 #include "ai.h"
 #include "state/State.h"
 #include <math.h>
+#include <iostream>
 
 using namespace ai;
 
@@ -28,7 +29,7 @@ const int* PathMap::getWeights()const {
     return (w_ptr);
 }
 
-void PathMap::init(const state::State& act_state){
+void PathMap::init(const state::State& act_state,int character){
     
     state::ElementTab* Chars=act_state.getCharacters();
     state::ElementTab* Map=act_state.getMap();
@@ -37,16 +38,23 @@ void PathMap::init(const state::State& act_state){
     std::vector<state::Element*> elmt_list=Map->getElementList();
     std::vector<state::Element*> Obstacle_list=Landscape->getElementList();
     std::vector<state::Element*> Character_list=Chars->getElementList();
-    
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+    int distance_cible;
     //On met tous les points dans la queue
-    for(int i=0; i<elmt_list.size();i++){
+    for(size_t i=0; i<elmt_list.size();i++){
         int x=elmt_list[i]->getPosition().getX();
         int y=elmt_list[i]->getPosition().getY();
+        for(size_t j=0; j<Character_list.size();j++){
+		if(Character_list[character]->getTeam()!=Character_list[j]->getTeam()){
+        		int diff_x=x-Character_list[j]->getPosition().getX();
+        		int diff_y=y-Character_list[j]->getPosition().getY();
         
-        int diff_x=x-Character_list[0]->getPosition().getX();
-        int diff_y=y-Character_list[0]->getPosition().getY();
-        
-        int distance_cible=sqrt((float)(pow(diff_x,2.0) + pow(diff_y,2.0))); //Cible
+        		//distance_cible=sqrt((float)(pow(diff_x,2.0) + pow(diff_y,2.0))); //Cible
+			distance_cible=abs(diff_x) + abs(diff_y);
+		}
+	}
         
         Point p(x,y,distance_cible);
         
@@ -64,7 +72,7 @@ void PathMap::init(const state::State& act_state){
 }
 
 
-void PathMap::update(const state::State& act_state){
+void PathMap::update(const state::State& act_state,int character){
     state::ElementTab* Chars=act_state.getCharacters();
     state::ElementTab* Map=act_state.getMap();
     state::ElementTab* Landscape=act_state.getLandscape();
@@ -75,16 +83,26 @@ void PathMap::update(const state::State& act_state){
     
     //Queue Tampon
     std::priority_queue<Point,std::vector<Point>,PointCompareWeight> queue_tampon;
-    
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //On met tous les points dans la queue tampon
     while(!queue.empty()){
+	int distance_cible;
         Point p=queue.top();
         queue.pop();
+        for(size_t j=0; j<Character_list.size();j++){
+		if(Character_list[character]->getTeam()!=Character_list[j]->getTeam()){
+        		int diff_x=p.getX()-Character_list[j]->getPosition().getX();
+        		int diff_y=p.getY()-Character_list[j]->getPosition().getY();
         
-        int diff_x=p.getX()-Character_list[0]->getPosition().getX();
-        int diff_y=p.getY()-Character_list[0]->getPosition().getY();
+        		//distance_cible=sqrt((float)(pow(diff_x,2.0) + pow(diff_y,2.0))); //Cible
+			distance_cible=abs(diff_x) + abs(diff_y);
+		}
+	}
+        /*int diff_x=p.getX()-Character_list[target]->getPosition().getX();
+        int diff_y=p.getY()-Character_list[target]->getPosition().getY();
         //Mise a jour de la distance a la cible
-        int distance_cible=sqrt((float)(pow(diff_x,2.0) + pow(diff_y,2.0))); //Cible
+        int distance_cible=sqrt((float)(pow(diff_x,2.0) + pow(diff_y,2.0))); //Cible*/
         //Mise a jour du poids de chaque Point
         p.setWeight(distance_cible);  
         

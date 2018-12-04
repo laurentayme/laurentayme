@@ -35,9 +35,9 @@ namespace ai {
     int getWeight (const Point& p) const;
     void setWeight (Point& p);
     const int* getWeights () const;
-    void init (const state::State& grid);
+    void init (const state::State& grid, int character);
     void addSink (Point p);
-    void update (const state::State& grid);
+    void update (const state::State& grid, int character);
     std::priority_queue<Point,std::vector<Point>,PointCompareWeight> getQueue () const;
     // Setters and Getters
   };

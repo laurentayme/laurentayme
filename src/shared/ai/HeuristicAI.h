@@ -31,9 +31,10 @@ namespace ai {
     std::mt19937 randgen;
     PathMap characterMap;
     state::State current_state;
+    int character;
     // Operations
   public:
-    HeuristicAI (const state::State& state, int randomseed);
+    HeuristicAI (const state::State& state, int randomseed, int chara);
     void stateChanged (const state::Event& event);
     void run (engine::Engine& engine, int character, state::State& state);
     // Setters and Getters

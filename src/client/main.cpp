@@ -10,6 +10,7 @@
 #include <thread>
 #include <memory>
 #include <fstream>
+#include <unistd.h>
 
 #include "state.h"
 #include "render.h"
@@ -18,7 +19,8 @@
 
 std::chrono::system_clock::time_point a = std::chrono::system_clock::now();
 std::chrono::system_clock::time_point b = std::chrono::system_clock::now();
-sf::Time tempo = sf::seconds(0.5);
+//sf::Time tempo = sf::seconds(0.5);
+
 
 using namespace std;
 using namespace state;
@@ -37,6 +39,8 @@ void testSFML() {
         std::vector<Element*> elmt_list2;
         std::vector<Element*> elmt_listRed;
 	std::vector<Element*> listMenu;
+        //Durée: 1s
+        unsigned int microseconds=500000;
 
         //Paramètres de Map//
         int width=11;
@@ -50,7 +54,7 @@ void testSFML() {
 
                 //Création du Iop//
                 Character* c_ptr=new Character("Iop");
-                Position pos(height-1,width/2);
+                Position pos(height-1,width-4);
                 c_ptr->setPosition(pos);
 		c_ptr->setTeam(1);
                 elmt_list2.push_back(c_ptr);
@@ -111,7 +115,7 @@ void testSFML() {
         state->setEtat(etat);
 
         //Chargement du niveau depuis un fichier json//
-        std::string filePath="res/Second_Dungeon.json";
+        std::string filePath="res/First_Dungeon.json";
         state->LoadMapFromFile(filePath);
         ///////////////////////
         
@@ -166,10 +170,14 @@ void testSFML() {
         engine.setState(state);
 
         //Random IA
-        ai::Random_AI ai(1);
-        ai::Random_AI ai_2(0);
-        //ai::HeuristicAI* ai;
-        //ai=new ai::HeuristicAI(*state,1);
+        //ai::Heuristic_AI ai(1);
+        //ai::Random_AI ai_2(0);
+        ai::HeuristicAI* ai=new ai::HeuristicAI(*state,1,1);
+        ai::HeuristicAI* ai_2=new ai::HeuristicAI(*state,2,0);
+        
+        //Mise en place d'Observers sur les Heuristic_AI
+        elmtTab2_ptr->addObserver(ai);
+        elmtTab2_ptr->addObserver(ai_2);
 
         //elmtTab2_ptr->addObserver(ai);
 
@@ -197,7 +205,6 @@ void testSFML() {
         
         
         if(state->getEtat()==1){
-            
         //stateLayerMenu_ptr->initSurface();
         //Réinitialisation des Stats//
         state->getCharacters()->setCharacterPA(0,iop_pa);
@@ -207,20 +214,29 @@ void testSFML() {
         state->getCharacters()->setCharacterPM(1,sram_pm);
         /////////////////////////////
 
-
+        
         ////Tour Joueur////
         if(state->getTour()%2==1){
+            
             
             cout<<"Tour :"<<state->getTour()<<endl;
             cout<<"//Tour Joueur//"<<endl;
             
-	    ai_2.run(engine,0,*state);
-            state->setTour(state->getTour()+1);
+            usleep(microseconds);
+            try{
+                ai_2->run(engine,0,*state);
+                state->setTour(state->getTour()+1);
+            }
+            catch(const char* e){
+                cout<<"Exception :"<<e<<endl;
+            }
+            
+           
             
             
             // on gère les évènements
-           /* sf::Event event;
-            while (window.waitEvent(event)){
+            sf::Event event;
+           /* while (window.waitEvent(event)){
                 engine.update();
                 sf::Vector2i localPosition = sf::Mouse::getPosition(window);
                 if(event.type == sf::Event::Closed){
@@ -240,11 +256,11 @@ void testSFML() {
                     if (state->getTour()%2==0){
                         break;
                     }
-                }*/
-                if (state->getMenu()->getElementList()[0]->getTypeId()==6){
+                }
+                else if (state->getMenu()->getElementList()[0]->getTypeId()==6){
                     window.clear();
                     state->setEtat(2);
-                   // break;
+                    break;
                 }
                 
                 //Fin d'une partie//
@@ -255,7 +271,7 @@ void testSFML() {
                 }
          
         // on dessine le niveau
-            window.clear();
+        */  window.clear();
             window.draw(*elmtTabLayer_ptr->getSurface());
             window.draw(*elmtTabLayerLandscape_ptr->getSurface());
             window.draw(*elmtTabLayerWall_ptr->getSurface());
@@ -267,8 +283,7 @@ void testSFML() {
             window.draw(stateLayerMenu_ptr->getTextpa());
             window.draw(stateLayerMenu_ptr->getTextpm());
             window.display();
-            sf::sleep(tempo);
-
+            
 
             //}
 
@@ -280,12 +295,8 @@ void testSFML() {
                 cout<<"Tour :"<<state->getTour()<<endl;
                 cout<<"//Tour IA//"<<endl;
                 ///Gestion de l'IA///
-                
-                ai.run(engine,1,*state);
-
-                //MoveCharacterCommand* move = new MoveCharacterCommand(1,1,0);
-                //engine.addCommand(2,move);
-                //engine.update();
+                usleep(microseconds);
+                ai->run(engine,1,*state);
                 
                 //Changement de Tour
                 state->setTour(state->getTour()+1);
@@ -305,12 +316,8 @@ void testSFML() {
                 window.clear();
 
                 window.draw(*elmtTabLayer_ptr->getSurface());
-
-
                 window.draw(*elmtTabLayerLandscape_ptr->getSurface());
                 window.draw(*elmtTabLayerWall_ptr->getSurface());
-
-
                 window.draw(*elmtTabLayerMenu_ptr->getSurface());
                 window.draw(*elmtTabLayerRed_ptr->getSurface());
                 window.draw(*elmtTabLayer2_ptr->getSurface());
@@ -319,7 +326,7 @@ void testSFML() {
                 window.draw(stateLayerMenu_ptr->getTextpa());
                 window.draw(stateLayerMenu_ptr->getTextpm());
                 window.display();
-                sf::sleep(tempo);
+                
             }
         
         
@@ -365,11 +372,6 @@ void testSFML() {
             
         }
         
-        
-        
-        //window.clear();
-        //window.draw(*elmtTabLayerMenu_ptr->getSurface());
-        //window.display();
     }
     else if(state->getEtat()==2){
         window.clear();
@@ -414,7 +416,7 @@ int main(int argc,char* argv[])
 
         }
 
-        else if (strcmp(argv[1],"random_ai")==0){
+        else if (strcmp(argv[1],"heuristic_ai")==0){
             //Test Map
             testSFML();
 
