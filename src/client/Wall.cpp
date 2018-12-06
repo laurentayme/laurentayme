@@ -111,3 +111,15 @@ size_t Wall::getTeam() const {
 
 void Wall::setTeam(size_t team) {
 }
+
+
+bool Wall::isPlayer() const{
+	return(false);
+}
+
+void Wall::setPlayer(bool player){
+}
+
+
+
+

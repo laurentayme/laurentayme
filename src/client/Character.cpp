@@ -16,7 +16,7 @@ using namespace state;
 Character::Character (std::string Classname){
     if(Classname=="Iop" or Classname=="Sram"){
         this->characterClass=Classname;
-        this->player= true;
+        //this->player= true;
         this->statut=1;
         this->direction=1;
         this->idType=1;
@@ -28,7 +28,7 @@ Character::Character (std::string Classname){
         if (characterClass=="Iop"){
             pv=100;
             pa=4;
-            pm=5;
+            pm=2;
 
             //Création de l'equipement initial
             Equipment* epee(new Equipment("Epée","main",5));
@@ -63,7 +63,7 @@ Character::Character (std::string Classname){
             Abilities* coup_baton(new Abilities("Coup de bâton",2,2,10));
             AbilitiesList.push_back(coup_baton);
 
-            Abilities* sortilege(new Abilities("Sortilège",4,3,1));
+            Abilities* sortilege(new Abilities("Sortilège",5,3,1));
             AbilitiesList.push_back(sortilege);
         }
 
@@ -283,7 +283,9 @@ size_t Character::getTeam() const {
 void Character::setTeam(size_t team) {
 	this->team=team;
 }
-
+ void Character::setPlayer(bool player){
+	this->player=player;
+}
 
 
 

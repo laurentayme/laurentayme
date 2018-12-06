@@ -29,6 +29,7 @@ void HeuristicAI::run(engine::Engine& Engine, int character, state::State& state
         
         int i_min=0;
         int w_min=100;
+	int movmin=100;
         
        /* for(int i=0;i<move_list.size();i++){
             int x_final=move_list[i]->getVectX()+chars[character]->getPosition().getX();
@@ -85,7 +86,7 @@ void HeuristicAI::run(engine::Engine& Engine, int character, state::State& state
 
 	    }
 	    
-
+		
             //int distance = std::sqrt(std::pow(ecart_x,2.0)+std::pow(ecart_y,2.0));
             //cout<<"Ecart X :"<<ecart_x<<endl;
             //cout<<"Ecart Y :"<<ecart_x<<endl;
@@ -113,7 +114,7 @@ void HeuristicAI::run(engine::Engine& Engine, int character, state::State& state
             //On récupère l'abilité ayant les dégats Maximum
             for(int i=0; i<abilities_usable.size();i++){
                 if(abilities_usable[i]->getDegats()>damage){
-                	damage=liste_abilities[i]->getDegats();
+                	damage=abilities_usable[i]->getDegats();
 			attackMax=i;
                 }
             }
@@ -124,20 +125,18 @@ void HeuristicAI::run(engine::Engine& Engine, int character, state::State& state
 	    }
 	    else{
 
-	    	for(int i=0;i<move_list.size();i++){
+	    	for(size_t i=0;i<move_list.size();i++){
             		int x_final=move_list[i]->getVectX()+chars[character]->getPosition().getX();
             		int y_final=move_list[i]->getVectY()+chars[character]->getPosition().getY();
-            
             		std::priority_queue<Point,std::vector<Point>,PointCompareWeight> queue=characterMap.getQueue();
-                
-            
+
             		while(!queue.empty()){
                 		Point p=queue.top();
                 		queue.pop();
-                
                 		if(x_final==p.getX() and y_final==p.getY() and p.getWeight()<w_min){
                     			i_min=i;
                     			w_min=p.getWeight();
+					std::cout<<"la longuer du deplacement est "<<move_list[i]->getVectX()<<"la largeur du deplacement est "<<move_list[i]->getVectY()<<std::endl;
                 		}   
             		}
             
@@ -149,7 +148,7 @@ void HeuristicAI::run(engine::Engine& Engine, int character, state::State& state
         	Engine.addCommand(1,move_list[i_min]);
         	Engine.update();
 
-		distance=std::abs((int)(chars[target]->getPosition().getX()-chars[character]->getPosition().getX())) + std::abs((int)(chars[character]->getPosition().getY()-chars[target]->getPosition().getY()));
+		distance=abs((int)(chars[target]->getPosition().getX()-chars[character]->getPosition().getX())) + abs((int)(chars[character]->getPosition().getY()-chars[target]->getPosition().getY()));
 		std::cout<<" la cible est en "<<chars[target]->getPosition().getX()<<"   "<<chars[target]->getPosition().getY()<<"le character 0 est en "<<chars[0]->getPosition().getX()<<"  "<<chars[0]->getPosition().getY()<<std::endl;
 		if(abilities_usable[attackMax]->getUseDistance()>=distance){
 	    	engine::AttackCommand* attack=new engine::AttackCommand(character,target,abilities_usable[attackMax]->getName());
@@ -182,5 +181,4 @@ void HeuristicAI::run(engine::Engine& Engine, int character, state::State& state
 
 void HeuristicAI::stateChanged(const state::Event& event){
     characterMap.update(current_state,character);
-	std::cout<<"le character 0 est en "<<current_state.getCharacters()->getElementList()[0]->getPosition().getX()<<"  "<<current_state.getCharacters()->getElementList()[0]->getPosition().getY()<<std::endl;
 }

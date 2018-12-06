@@ -663,6 +663,8 @@ void MoveCharacterCommand::execute(state::State& act_state){
 				std::cout<<"difference pos ini final : "<<diff<<std::endl;
 				nbPosUsed=indice;
 				std::cout<<"nbre positions utilisees : "<<nbPosUsed<<std::endl;
+				std::cout<<"chemin memoire de taille : "<<pathMem.size()<<std::endl;
+				std::cout<<"chemin de taille : "<<path.size()<<std::endl;
 				if(pathMem.size()<path.size()){
 					for(size_t u=0;u<pathMem.size();u++){
 						pathMem[u]=path[u];
@@ -672,7 +674,7 @@ void MoveCharacterCommand::execute(state::State& act_state){
 					}
 				}
 				else if(pathMem.size()>path.size()){
-					while(path.size()>pathMem.size()){
+					while(path.size()<pathMem.size()){
 						pathMem.pop_back();
 					}
 					for(size_t j=0;j<path.size();j++){

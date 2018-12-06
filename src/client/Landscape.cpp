@@ -112,3 +112,12 @@ size_t Landscape::getTeam() const {
 void Landscape::setTeam(size_t team) {
 }
 
+bool Landscape::isPlayer() const{
+	return(false);
+}
+
+void Landscape::setPlayer(bool player){
+}
+
+
+

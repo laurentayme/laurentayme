@@ -20,7 +20,7 @@
 
 std::chrono::system_clock::time_point a = std::chrono::system_clock::now();
 std::chrono::system_clock::time_point b = std::chrono::system_clock::now();
-sf::Time tempo = sf::seconds(0.5);
+unsigned int tempo = 1000000;
 
 using namespace std;
 using namespace state;
@@ -51,10 +51,11 @@ void testSFML() {
             //Affichage Personnages//
 
                 //Création du Iop//
-                Character* c_ptr=new Character("Iop");
+                Character* c_ptr=new Character("Sram");
                 Position pos(height-1,width/2);
                 c_ptr->setPosition(pos);
 		c_ptr->setTeam(1);
+		c_ptr->setPlayer(true);
                 elmt_list2.push_back(c_ptr);
 
                 //Création du Sram//
@@ -63,6 +64,7 @@ void testSFML() {
                 Position pos_sad(3,4);
                 sad_ptr->setPosition(pos_sad);
 		sad_ptr->setTeam(2);
+		sad_ptr->setPlayer(false);
                 elmt_list2.push_back(sad_ptr);
             ////////////////////////
 
@@ -199,6 +201,7 @@ void testSFML() {
     //window.setFramerateLimit(24);
 
     while (window.isOpen()){
+	if(state->getCharacters()->getElementList().size()>1 and state->getCharacters()->getElementList()[0]->getPV()!=0){
         //Réinitialisation des Stats//
         state->getCharacters()->setCharacterPA(0,iop_pa);
         state->getCharacters()->setCharacterPA(1,sram_pa);
@@ -212,7 +215,7 @@ void testSFML() {
         if(state->getTour()%2==1){
             cout<<"Tour :"<<state->getTour()<<endl;
             cout<<"//Tour Joueur//"<<endl;
-	    sf::sleep(tempo);
+	    usleep(tempo);
 	    ai2->run(engine,0,*state);
 	    state->setTour(state->getTour()+1);
 
@@ -269,7 +272,7 @@ void testSFML() {
          else if (state->getTour()%2==0){
                 cout<<"Tour :"<<state->getTour()<<endl;
                 cout<<"//Tour IA//"<<endl;
-		sf::sleep(tempo);
+		usleep(tempo);
                 ///Gestion de l'IA///
                 ai->run(engine,1,*state);
 
@@ -295,7 +298,8 @@ void testSFML() {
                 window.draw(stateLayerMenu_ptr->getTextpm());
                 window.display();
 
-            }
+          }
+    }
     }
 }
 
@@ -320,7 +324,7 @@ int main(int argc,char* argv[])
 
         }
 
-        else if (strcmp(argv[1],"random_ai")==0){
+        else if (strcmp(argv[1],"heuristic_ai")==0){
             //Test Map
             testSFML();
 

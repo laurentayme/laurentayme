@@ -148,7 +148,7 @@ void ElementTab::setCharacterStatut(int element, int statut){
 
 void ElementTab::eraseCharacter(){
     for(size_t i=0;i<elementList.size();i++){
-        if(elementList[i]->getStatut()==3){
+        if(elementList[i]->getStatut()==3 and elementList[i]->isPlayer()==false){
             std::string name =elementList[i]->getClass();
              elementList.erase(elementList.begin() + i);
              std::cout<<name<<" a été tué !"<<std::endl;

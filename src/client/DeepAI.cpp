@@ -15,7 +15,7 @@ using namespace std;
 
 
 DeepAI::DeepAI(const state::State& state){
-
+	current_state=state;
 }
 
 void DeepAI::stateChanged(const state::Event&){

@@ -73,6 +73,7 @@ void PathMap::init(const state::State& act_state,int character){
 
 
 void PathMap::update(const state::State& act_state,int character){
+if(act_state.getCharacters()->getElementList().size()>1){
     state::ElementTab* Chars=act_state.getCharacters();
     state::ElementTab* Map=act_state.getMap();
     state::ElementTab* Landscape=act_state.getLandscape();
@@ -85,6 +86,7 @@ void PathMap::update(const state::State& act_state,int character){
     std::priority_queue<Point,std::vector<Point>,PointCompareWeight> queue_tampon;
     /////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(character<Character_list.size()){
     //On met tous les points dans la queue tampon
     while(!queue.empty()){
 	int distance_cible;
@@ -118,6 +120,8 @@ void PathMap::update(const state::State& act_state,int character){
     }
     //recopie du contenu de la queue tampon
     queue=queue_tampon;
+}
+}
 }
 
 std::priority_queue<Point,std::vector<Point>,PointCompareWeight> PathMap::getQueue() const{
