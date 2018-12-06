@@ -40,14 +40,14 @@ void WhiteSurbrillanceCommand::execute(state::State& act_state){
     int case_y=(y-595)/62;
     
     if(case_x==0){
-        float loc_x=(360);
-        float loc_y=(615)+case_y*(61-5);
+        float loc_x=(360+3);
+        float loc_y=(615-2)+case_y*(61-5);
     
         act_state.getRedMap()->setLocation(loc_x,loc_y,1);
     }
     else{
-        float loc_x=(362)+abs((case_x-1))*67+64;
-        float loc_y=(615)+case_y*(61-5);
+        float loc_x=(362+3)+abs((case_x-1))*67+64;
+        float loc_y=(615-2)+case_y*(61-5);
     
         act_state.getRedMap()->setLocation(loc_x,loc_y,1);
     }

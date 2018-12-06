@@ -29,7 +29,7 @@ void MouseMovedCommand::execute(state::State& state, engine::Engine& engine){
     state::Position position(100,100);
     
     if(state.getEtat()==1){
-        if(y_mouse>=590 and  x_mouse>=362 and x_mouse<=1000 ){
+        if(y_mouse>=590 and  x_mouse>=362 and x_mouse<=760 ){
         //On masque les autres surbrillances
         state.getRedMap()->setElement(position,0);
         state.getRedMap()->setLocation(-100,-100,2); //TurnSurbrillance

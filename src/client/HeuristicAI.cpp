@@ -124,7 +124,6 @@ void HeuristicAI::run(engine::Engine& Engine, int character, state::State& state
 	    }
 	    else{
 
-                //std::cout<<"Ok !"<<std::endl;
                 
 	    	for(int i=0;i<move_list.size();i++){
             		int x_final=move_list[i]->getVectX()+chars[character]->getPosition().getX();
@@ -142,9 +141,6 @@ void HeuristicAI::run(engine::Engine& Engine, int character, state::State& state
                     			w_min=p.getWeight();
                 		}
             		}
-
-
-
         	}
 
 		//On ajoute le "meilleur" déplacement possible à la liste de commandes

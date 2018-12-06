@@ -35,6 +35,6 @@ CommandTypeId TurnSurbrillanceCommand::getTypeId() const{
 }
 
 void TurnSurbrillanceCommand::execute(state::State& act_state){
-    act_state.getRedMap()->setLocation(1030,495,2); 
+    act_state.getRedMap()->setLocation(1035,495,2); 
 }
 

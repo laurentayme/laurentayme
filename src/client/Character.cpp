@@ -28,17 +28,17 @@ Character::Character (std::string Classname){
         if (characterClass=="Iop"){
             pv=100;
             pa=4;
-            pm=2;
+            pm=4;
 
             //Création de l'equipement initial
             Equipment* epee(new Equipment("Epée","main",5));
             equipment_List.push_back(epee);
 
             //Création des abilités adéquates
-            Abilities* coup_epee(new Abilities("Coup d'Epée",15,2,4));
+            Abilities* coup_epee(new Abilities("Coup d'Epée",15,4,3));
             AbilitiesList.push_back(coup_epee);
 
-            Abilities* colere(new Abilities("Colère",10,1,5));
+            Abilities* colere(new Abilities("Colère",10,3,5));
             AbilitiesList.push_back(colere);
             
             Abilities* puissance(new Abilities("Puissance",0,3,20));
@@ -53,17 +53,17 @@ Character::Character (std::string Classname){
         else if (characterClass=="Sram"){
             pv=40;
             pa=4;
-            pm=2;
+            pm=4;
 
             //Création de l'equipement initial
             Equipment* baton(new Equipment("Bâton","main",4));
             equipment_List.push_back(baton);
 
             //Création des abilités adéquates
-            Abilities* coup_baton(new Abilities("Coup de bâton",20,4,3));
+            Abilities* coup_baton(new Abilities("Coup de bâton",20,4,6));
             AbilitiesList.push_back(coup_baton);
 
-            Abilities* sortilege(new Abilities("Sortilège",12,3,6));
+            Abilities* sortilege(new Abilities("Sortilège",12,3,10));
             AbilitiesList.push_back(sortilege);
         }
 

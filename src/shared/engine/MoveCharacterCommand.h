@@ -36,9 +36,9 @@ namespace engine {
     ~MoveCharacterCommand ();
     CommandTypeId getTypeId () const;
     void execute (state::State& state);
+    void execute (state::State& state, engine::Engine& engine);
     int getVectX () const;
     int getVectY () const;
-    void execute (state::State& state, engine::Engine& engine);
     // Setters and Getters
     int getCharacter() const;
     void setCharacter(int character);
