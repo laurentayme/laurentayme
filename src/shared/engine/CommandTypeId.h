@@ -13,7 +13,9 @@ namespace engine {
     ATTACK     = 5,
     SURBRILLANCE     = 6,
     WHITESURBRILLANCE     = 7,
-    TURNSURBRILLANCE     = 8
+    TURNSURBRILLANCE     = 8,
+    CLICK     = 9,
+    MOUSEMOVED     = 10
   };
 
 };

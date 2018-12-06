@@ -4,6 +4,9 @@
 
 #include <random>
 
+namespace ai {
+  class PathMap;
+};
 namespace state {
   class State;
 };
@@ -14,20 +17,26 @@ namespace ai {
   class AI;
 }
 
+#include "PathMap.h"
+#include "state/State.h"
 #include "AI.h"
 
 namespace ai {
 
   /// class HeuristicAI - 
   class HeuristicAI : public ai::AI {
+    // Associations
     // Attributes
   private:
     std::mt19937 randgen;
+    PathMap characterMap;
+    state::State current_state;
+    int character;
     // Operations
   public:
-    HeuristicAI (const state::State& state, int randomseed);
-    void run (engine::Engine& engine, int character, state::State& state);
+    HeuristicAI (const state::State& state, int randomseed, int chara);
     void stateChanged (const state::Event& event);
+    void run (engine::Engine& engine, int character, state::State& state);
     // Setters and Getters
   };
 

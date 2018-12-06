@@ -26,8 +26,8 @@ namespace ai {
     // Operations
   public:
     Random_AI (int randomSeed);
-    void run (engine::Engine& engine, int character, state::State& state);
     void stateChanged (const state::Event& event);
+    void run (engine::Engine& Engine, int character, state::State& state);
     // Setters and Getters
   };
 

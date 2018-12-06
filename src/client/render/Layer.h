@@ -28,8 +28,8 @@ namespace render {
     std::unique_ptr<Surface> const& getSurface ();
     void setSurface (Surface* surface);
     virtual void initSurface () = 0;
+    virtual std::shared_ptr<TileSet> getTileset ();
     // Setters and Getters
-    const std::shared_ptr<TileSet>& getTileset() const;
     void setTileset(const std::shared_ptr<TileSet>& tileset);
   };
 

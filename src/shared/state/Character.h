@@ -28,7 +28,7 @@ namespace state {
     std::vector<Equipment*> equipment_List;
     size_t statut;
     bool  player;
-    int team;
+    size_t team;
     // Operations
   public:
     Character (std::string characterClass);
@@ -62,8 +62,9 @@ namespace state {
     int getWallType () const;
     int getLandscapeType () const;
     size_t getTypeId () const;
-    int getTeam () const;
-    void setTeam (int teamset);
+    size_t getTeam () const;
+    void setTeam (size_t team);
+    void setPlayer (bool player);
     // Setters and Getters
     const std::string& getCharacterClass() const;
     void setCharacterClass(const std::string& characterClass);
@@ -76,7 +77,6 @@ namespace state {
     const std::vector<Equipment*>& getEquipment_List() const;
     void setEquipment_List(const std::vector<Equipment*>& equipment_List);
     const bool & getPlayer() const;
-    void setPlayer(const bool & player);
   };
 
 };

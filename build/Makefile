@@ -231,6 +231,33 @@ src/client/Character.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Character.cpp.s
 .PHONY : src/client/Character.cpp.s
 
+src/client/ClickCommand.o: src/client/ClickCommand.cpp.o
+
+.PHONY : src/client/ClickCommand.o
+
+# target to build an object file
+src/client/ClickCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/ClickCommand.cpp.o
+.PHONY : src/client/ClickCommand.cpp.o
+
+src/client/ClickCommand.i: src/client/ClickCommand.cpp.i
+
+.PHONY : src/client/ClickCommand.i
+
+# target to preprocess a source file
+src/client/ClickCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/ClickCommand.cpp.i
+.PHONY : src/client/ClickCommand.cpp.i
+
+src/client/ClickCommand.s: src/client/ClickCommand.cpp.s
+
+.PHONY : src/client/ClickCommand.s
+
+# target to generate assembly for a file
+src/client/ClickCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/ClickCommand.cpp.s
+.PHONY : src/client/ClickCommand.cpp.s
+
 src/client/Command.o: src/client/Command.cpp.o
 
 .PHONY : src/client/Command.o
@@ -257,6 +284,33 @@ src/client/Command.s: src/client/Command.cpp.s
 src/client/Command.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Command.cpp.s
 .PHONY : src/client/Command.cpp.s
+
+src/client/DeepAI.o: src/client/DeepAI.cpp.o
+
+.PHONY : src/client/DeepAI.o
+
+# target to build an object file
+src/client/DeepAI.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/DeepAI.cpp.o
+.PHONY : src/client/DeepAI.cpp.o
+
+src/client/DeepAI.i: src/client/DeepAI.cpp.i
+
+.PHONY : src/client/DeepAI.i
+
+# target to preprocess a source file
+src/client/DeepAI.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/DeepAI.cpp.i
+.PHONY : src/client/DeepAI.cpp.i
+
+src/client/DeepAI.s: src/client/DeepAI.cpp.s
+
+.PHONY : src/client/DeepAI.s
+
+# target to generate assembly for a file
+src/client/DeepAI.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/DeepAI.cpp.s
+.PHONY : src/client/DeepAI.cpp.s
 
 src/client/Element.o: src/client/Element.cpp.o
 
@@ -447,32 +501,32 @@ src/client/Landscape.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Landscape.cpp.s
 .PHONY : src/client/Landscape.cpp.s
 
-src/client/LoadCommand.o: src/client/LoadCommand.cpp.o
+src/client/MouseMovedCommand.o: src/client/MouseMovedCommand.cpp.o
 
-.PHONY : src/client/LoadCommand.o
+.PHONY : src/client/MouseMovedCommand.o
 
 # target to build an object file
-src/client/LoadCommand.cpp.o:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LoadCommand.cpp.o
-.PHONY : src/client/LoadCommand.cpp.o
+src/client/MouseMovedCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/MouseMovedCommand.cpp.o
+.PHONY : src/client/MouseMovedCommand.cpp.o
 
-src/client/LoadCommand.i: src/client/LoadCommand.cpp.i
+src/client/MouseMovedCommand.i: src/client/MouseMovedCommand.cpp.i
 
-.PHONY : src/client/LoadCommand.i
+.PHONY : src/client/MouseMovedCommand.i
 
 # target to preprocess a source file
-src/client/LoadCommand.cpp.i:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LoadCommand.cpp.i
-.PHONY : src/client/LoadCommand.cpp.i
+src/client/MouseMovedCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/MouseMovedCommand.cpp.i
+.PHONY : src/client/MouseMovedCommand.cpp.i
 
-src/client/LoadCommand.s: src/client/LoadCommand.cpp.s
+src/client/MouseMovedCommand.s: src/client/MouseMovedCommand.cpp.s
 
-.PHONY : src/client/LoadCommand.s
+.PHONY : src/client/MouseMovedCommand.s
 
 # target to generate assembly for a file
-src/client/LoadCommand.cpp.s:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/LoadCommand.cpp.s
-.PHONY : src/client/LoadCommand.cpp.s
+src/client/MouseMovedCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/MouseMovedCommand.cpp.s
+.PHONY : src/client/MouseMovedCommand.cpp.s
 
 src/client/MoveCharacterCommand.o: src/client/MoveCharacterCommand.cpp.o
 
@@ -581,6 +635,87 @@ src/client/Obstacle.s: src/client/Obstacle.cpp.s
 src/client/Obstacle.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Obstacle.cpp.s
 .PHONY : src/client/Obstacle.cpp.s
+
+src/client/PathMap.o: src/client/PathMap.cpp.o
+
+.PHONY : src/client/PathMap.o
+
+# target to build an object file
+src/client/PathMap.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/PathMap.cpp.o
+.PHONY : src/client/PathMap.cpp.o
+
+src/client/PathMap.i: src/client/PathMap.cpp.i
+
+.PHONY : src/client/PathMap.i
+
+# target to preprocess a source file
+src/client/PathMap.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/PathMap.cpp.i
+.PHONY : src/client/PathMap.cpp.i
+
+src/client/PathMap.s: src/client/PathMap.cpp.s
+
+.PHONY : src/client/PathMap.s
+
+# target to generate assembly for a file
+src/client/PathMap.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/PathMap.cpp.s
+.PHONY : src/client/PathMap.cpp.s
+
+src/client/Point.o: src/client/Point.cpp.o
+
+.PHONY : src/client/Point.o
+
+# target to build an object file
+src/client/Point.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Point.cpp.o
+.PHONY : src/client/Point.cpp.o
+
+src/client/Point.i: src/client/Point.cpp.i
+
+.PHONY : src/client/Point.i
+
+# target to preprocess a source file
+src/client/Point.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Point.cpp.i
+.PHONY : src/client/Point.cpp.i
+
+src/client/Point.s: src/client/Point.cpp.s
+
+.PHONY : src/client/Point.s
+
+# target to generate assembly for a file
+src/client/Point.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Point.cpp.s
+.PHONY : src/client/Point.cpp.s
+
+src/client/PointCompareWeight.o: src/client/PointCompareWeight.cpp.o
+
+.PHONY : src/client/PointCompareWeight.o
+
+# target to build an object file
+src/client/PointCompareWeight.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/PointCompareWeight.cpp.o
+.PHONY : src/client/PointCompareWeight.cpp.o
+
+src/client/PointCompareWeight.i: src/client/PointCompareWeight.cpp.i
+
+.PHONY : src/client/PointCompareWeight.i
+
+# target to preprocess a source file
+src/client/PointCompareWeight.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/PointCompareWeight.cpp.i
+.PHONY : src/client/PointCompareWeight.cpp.i
+
+src/client/PointCompareWeight.s: src/client/PointCompareWeight.cpp.s
+
+.PHONY : src/client/PointCompareWeight.s
+
+# target to generate assembly for a file
+src/client/PointCompareWeight.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/PointCompareWeight.cpp.s
+.PHONY : src/client/PointCompareWeight.cpp.s
 
 src/client/Position.o: src/client/Position.cpp.o
 
@@ -906,6 +1041,33 @@ src/client/WhiteSurbrillanceCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/WhiteSurbrillanceCommand.cpp.s
 .PHONY : src/client/WhiteSurbrillanceCommand.cpp.s
 
+src/client/jsoncpp.o: src/client/jsoncpp.cpp.o
+
+.PHONY : src/client/jsoncpp.o
+
+# target to build an object file
+src/client/jsoncpp.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/jsoncpp.cpp.o
+.PHONY : src/client/jsoncpp.cpp.o
+
+src/client/jsoncpp.i: src/client/jsoncpp.cpp.i
+
+.PHONY : src/client/jsoncpp.i
+
+# target to preprocess a source file
+src/client/jsoncpp.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/jsoncpp.cpp.i
+.PHONY : src/client/jsoncpp.cpp.i
+
+src/client/jsoncpp.s: src/client/jsoncpp.cpp.s
+
+.PHONY : src/client/jsoncpp.s
+
+# target to generate assembly for a file
+src/client/jsoncpp.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/jsoncpp.cpp.s
+.PHONY : src/client/jsoncpp.cpp.s
+
 src/client/main.o: src/client/main.cpp.o
 
 .PHONY : src/client/main.o
@@ -1170,9 +1332,15 @@ help:
 	@echo "... src/client/Character.o"
 	@echo "... src/client/Character.i"
 	@echo "... src/client/Character.s"
+	@echo "... src/client/ClickCommand.o"
+	@echo "... src/client/ClickCommand.i"
+	@echo "... src/client/ClickCommand.s"
 	@echo "... src/client/Command.o"
 	@echo "... src/client/Command.i"
 	@echo "... src/client/Command.s"
+	@echo "... src/client/DeepAI.o"
+	@echo "... src/client/DeepAI.i"
+	@echo "... src/client/DeepAI.s"
 	@echo "... src/client/Element.o"
 	@echo "... src/client/Element.i"
 	@echo "... src/client/Element.s"
@@ -1194,9 +1362,9 @@ help:
 	@echo "... src/client/Landscape.o"
 	@echo "... src/client/Landscape.i"
 	@echo "... src/client/Landscape.s"
-	@echo "... src/client/LoadCommand.o"
-	@echo "... src/client/LoadCommand.i"
-	@echo "... src/client/LoadCommand.s"
+	@echo "... src/client/MouseMovedCommand.o"
+	@echo "... src/client/MouseMovedCommand.i"
+	@echo "... src/client/MouseMovedCommand.s"
 	@echo "... src/client/MoveCharacterCommand.o"
 	@echo "... src/client/MoveCharacterCommand.i"
 	@echo "... src/client/MoveCharacterCommand.s"
@@ -1209,6 +1377,15 @@ help:
 	@echo "... src/client/Obstacle.o"
 	@echo "... src/client/Obstacle.i"
 	@echo "... src/client/Obstacle.s"
+	@echo "... src/client/PathMap.o"
+	@echo "... src/client/PathMap.i"
+	@echo "... src/client/PathMap.s"
+	@echo "... src/client/Point.o"
+	@echo "... src/client/Point.i"
+	@echo "... src/client/Point.s"
+	@echo "... src/client/PointCompareWeight.o"
+	@echo "... src/client/PointCompareWeight.i"
+	@echo "... src/client/PointCompareWeight.s"
 	@echo "... src/client/Position.o"
 	@echo "... src/client/Position.i"
 	@echo "... src/client/Position.s"
@@ -1245,6 +1422,9 @@ help:
 	@echo "... src/client/WhiteSurbrillanceCommand.o"
 	@echo "... src/client/WhiteSurbrillanceCommand.i"
 	@echo "... src/client/WhiteSurbrillanceCommand.s"
+	@echo "... src/client/jsoncpp.o"
+	@echo "... src/client/jsoncpp.i"
+	@echo "... src/client/jsoncpp.s"
 	@echo "... src/client/main.o"
 	@echo "... src/client/main.i"
 	@echo "... src/client/main.s"
