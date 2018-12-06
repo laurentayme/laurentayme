@@ -102,7 +102,6 @@ int Landscape::getStatut() const{
 }
 
 void Landscape::setStatut(int statut){
-<<<<<<< HEAD
 }
 
 
@@ -119,20 +118,3 @@ bool Landscape::isPlayer() const{
 
 void Landscape::setPlayer(bool player){
 }
-
-
-
-||||||| merged common ancestors
-}
-=======
-}
-
-
-size_t Landscape::getTeam() const {
-	return(0);
-}
-
-void Landscape::setTeam(size_t team) {
-}
-
->>>>>>> refs/remotes/origin/master

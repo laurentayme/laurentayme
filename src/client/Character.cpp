@@ -35,33 +35,17 @@ Character::Character (std::string Classname){
             equipment_List.push_back(epee);
 
             //Création des abilités adéquates
-<<<<<<< HEAD
-            Abilities* coup_epee(new Abilities("Coup d'Epée",2,2,3));
-||||||| merged common ancestors
-            Abilities* coup_epee(new Abilities("Coup d'Epée",20,2,3));
-=======
             Abilities* coup_epee(new Abilities("Coup d'Epée",15,2,4));
->>>>>>> refs/remotes/origin/master
             AbilitiesList.push_back(coup_epee);
 
             Abilities* colere(new Abilities("Colère",10,1,5));
             AbilitiesList.push_back(colere);
-<<<<<<< HEAD
-            
-            Abilities* puissance(new Abilities("Puissance",0,3,20));
-            AbilitiesList.push_back(puissance);
-            
-            Abilities* destructrice(new Abilities("Epée Destructrice",5,4,7));
-            AbilitiesList.push_back(destructrice);
-||||||| merged common ancestors
-=======
             
             Abilities* puissance(new Abilities("Puissance",0,3,20));
             AbilitiesList.push_back(puissance);
             
             Abilities* destructrice(new Abilities("Epée Destructrice",20,4,2));
             AbilitiesList.push_back(destructrice);
->>>>>>> refs/remotes/origin/master
 
 
 
@@ -76,22 +60,10 @@ Character::Character (std::string Classname){
             equipment_List.push_back(baton);
 
             //Création des abilités adéquates
-<<<<<<< HEAD
-            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,10));
-||||||| merged common ancestors
-            Abilities* coup_baton(new Abilities("Coup de bâton",2,2,15));
-=======
             Abilities* coup_baton(new Abilities("Coup de bâton",20,4,3));
->>>>>>> refs/remotes/origin/master
             AbilitiesList.push_back(coup_baton);
 
-<<<<<<< HEAD
-            Abilities* sortilege(new Abilities("Sortilège",5,3,1));
-||||||| merged common ancestors
-            Abilities* sortilege(new Abilities("Sortilège",4,3,20));
-=======
             Abilities* sortilege(new Abilities("Sortilège",12,3,6));
->>>>>>> refs/remotes/origin/master
             AbilitiesList.push_back(sortilege);
         }
 
@@ -304,7 +276,6 @@ size_t Character::getTypeId() const{
     return(idType);
 }
 
-<<<<<<< HEAD
 size_t Character::getTeam() const {
 	return(team);
 }
@@ -315,18 +286,6 @@ void Character::setTeam(size_t team) {
  void Character::setPlayer(bool player){
 	this->player=player;
 }
-||||||| merged common ancestors
-=======
-size_t Character::getTeam() const {
-	return(team);
-}
-
-void Character::setTeam(size_t team) {
-	this->team=team;
-}
-
->>>>>>> refs/remotes/origin/master
-
 
 
 

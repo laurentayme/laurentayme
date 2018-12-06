@@ -103,7 +103,6 @@ int Wall::getStatut() const{
 }
 
 void Wall::setStatut(int statut){
-<<<<<<< HEAD
 }
 
 size_t Wall::getTeam() const {
@@ -112,7 +111,6 @@ size_t Wall::getTeam() const {
 
 void Wall::setTeam(size_t team) {
 }
-
 
 bool Wall::isPlayer() const{
 	return(false);
@@ -120,19 +118,3 @@ bool Wall::isPlayer() const{
 
 void Wall::setPlayer(bool player){
 }
-
-
-
-
-||||||| merged common ancestors
-}
-=======
-}
-
-size_t Wall::getTeam() const {
-	return(0);
-}
-
-void Wall::setTeam(size_t team) {
-}
->>>>>>> refs/remotes/origin/master

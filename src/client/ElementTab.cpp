@@ -150,16 +150,8 @@ void ElementTab::eraseCharacter(){
     for(size_t i=0;i<elementList.size();i++){
         if(elementList[i]->getStatut()==3 and elementList[i]->isPlayer()==false){
             std::string name =elementList[i]->getClass();
-<<<<<<< HEAD
-             elementList.erase(elementList.begin() + i);
-             std::cout<<name<<" a été tué !"<<std::endl;
-||||||| merged common ancestors
-             elementList.erase(elementList.begin() + i);
-             std::cout<<name<<" a été tué !"<<std::endl; 
-=======
              //elementList.erase(elementList.begin() + i);
              std::cout<<name<<" a été tué !"<<std::endl;
->>>>>>> refs/remotes/origin/master
         }
 
     }
@@ -176,30 +168,8 @@ void ElementTab::setElementMove(int element, bool move){
     	}
     	StateEvent s(StateEventId::PAChanged);
     	notifyObservers(s);
-<<<<<<< HEAD
-
 }
 
-void ElementTab::setElementMove(int element, bool move){
-    for(size_t i=0;i<elementList.size();i++){
-        	if (i==element){
-            		elementList[element]->setMoving(move);
-        	}
-    	}
-    	StateEvent s(StateEventId::PAChanged);
-    	notifyObservers(s);
-||||||| merged common ancestors
-        
-=======
->>>>>>> refs/remotes/origin/master
-}
-
-<<<<<<< HEAD
-void ElementTab::setElementList(std::vector<Element*> elmt_list){
-	this->elementList=elmt_list;
-}
-||||||| merged common ancestors
-=======
 void ElementTab::setElementList(std::vector<Element*> elmt_list){
 	this->elementList=elmt_list;
 }
@@ -213,4 +183,3 @@ void ElementTab::setElementType(int element, int type){
     StateEvent s(StateEventId::PAChanged);
     notifyObservers(s);
 }
->>>>>>> refs/remotes/origin/master

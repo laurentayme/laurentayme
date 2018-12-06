@@ -94,7 +94,6 @@ int Space::getStatut() const{
 }
 
 void Space::setStatut(int statut){
-<<<<<<< HEAD
 }
 
 
@@ -104,7 +103,6 @@ size_t Space::getTeam() const {
 
 void Space::setTeam(size_t team) {
 }
-
 
 bool Space::isPlayer() const{
 	return(false);
@@ -112,18 +110,3 @@ bool Space::isPlayer() const{
 
 void Space::setPlayer(bool player){
 }
-
-
-||||||| merged common ancestors
-}
-=======
-}
-
-
-size_t Space::getTeam() const {
-	return(0);
-}
-
-void Space::setTeam(size_t team) {
-}
->>>>>>> refs/remotes/origin/master
