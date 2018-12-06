@@ -7,6 +7,7 @@ namespace state {
   class State;
 };
 namespace engine {
+  class Engine;
   class Command;
 };
 namespace state {
@@ -35,8 +36,15 @@ namespace engine {
     ~MoveCharacterCommand ();
     CommandTypeId getTypeId () const;
     void execute (state::State& state);
+<<<<<<< HEAD
     int getVectX () const;
     int getVectY () const;
+||||||| merged common ancestors
+=======
+    int getVectX () const;
+    int getVectY () const;
+    void execute (state::State& state, engine::Engine& engine);
+>>>>>>> refs/remotes/origin/master
     // Setters and Getters
     int getCharacter() const;
     void setCharacter(int character);

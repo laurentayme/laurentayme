@@ -26,6 +26,7 @@ namespace state {
     ElementTab* menu;
     ElementTab* red_map;
     int tour;
+    int etat;
     // Operations
   public:
     ElementTab* getMap () const;
@@ -40,8 +41,16 @@ namespace state {
     void setLandscape (ElementTab* landscape);
     int getTour () const;
     void setTour (int tour);
+<<<<<<< HEAD
     void LoadMapFromFile (std::string filePath);
     void setWall (ElementTab* mur);
+||||||| merged common ancestors
+=======
+    void LoadMapFromFile (std::string filePath);
+    void setWall (ElementTab* mur);
+    void setEtat (int etat);
+    int getEtat () const;
+>>>>>>> refs/remotes/origin/master
     // Setters and Getters
   };
 

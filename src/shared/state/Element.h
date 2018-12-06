@@ -56,12 +56,20 @@ namespace state {
     virtual void setStatut (int statut) = 0;
     virtual int getStatut () const = 0;
     virtual void setLoc (float x, float y);
+<<<<<<< HEAD
     bool getMoving () const;
     void setMoving (bool move);
     virtual size_t getTeam () const = 0;
     virtual void setTeam (size_t team) = 0;
     virtual bool isPlayer () const = 0;
     virtual void setPlayer (bool player) = 0;
+||||||| merged common ancestors
+=======
+    bool getMoving () const;
+    void setMoving (bool move);
+    virtual size_t getTeam () const = 0;
+    virtual void setTeam (size_t team) = 0;
+>>>>>>> refs/remotes/origin/master
     // Setters and Getters
     const size_t& getIdType() const;
     void setIdType(const size_t& idType);

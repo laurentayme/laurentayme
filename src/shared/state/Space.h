@@ -41,10 +41,16 @@ namespace state {
     size_t getTypeId () const;
     void setStatut (int statut);
     int getStatut () const;
+<<<<<<< HEAD
     size_t getTeam () const;
     void setTeam (size_t team);
     bool isPlayer () const;
     void setPlayer (bool player);
+||||||| merged common ancestors
+=======
+    size_t getTeam () const;
+    void setTeam (size_t team);
+>>>>>>> refs/remotes/origin/master
     // Setters and Getters
   };
 

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="jsoncpp-1.8.0"
+                   displayName="jsoncpp-1.8.0"
+                   projectFiles="true"
+                   root="extern/jsoncpp-1.8.0">
+      <logicalFolder name="json" displayName="json" projectFiles="true">
+        <itemPath>extern/jsoncpp-1.8.0/json/json.h</itemPath>
+      </logicalFolder>
+      <itemPath>extern/jsoncpp-1.8.0/jsoncpp.cpp</itemPath>
+    </logicalFolder>
     <df root="src" name="0">
       <df name="client">
         <df name="render">
@@ -17,20 +26,26 @@
         <in>Abilities.cpp</in>
         <in>AttackCommand.cpp</in>
         <in>Character.cpp</in>
+        <in>ClickCommand.cpp</in>
+        <in>ClickCommand.h</in>
         <in>Command.cpp</in>
         <in>Element.cpp</in>
         <in>ElementTab.cpp</in>
         <in>Engine.cpp</in>
         <in>Equipment.cpp</in>
         <in>Event.cpp</in>
+        <in>HeuristicAI.cpp</in>
         <in>Landscape.cpp</in>
-        <in>LifeCommand.cpp</in>
-        <in>LoadCommand.cpp</in>
+        <in>MouseMovedCommand.cpp</in>
+        <in>MouseMovedCommand.h</in>
         <in>MoveCharacterCommand.cpp</in>
         <in>Observable.cpp</in>
         <in>Observer.cpp</in>
         <in>Obstacle.cpp</in>
         <in>OrientationCommand.cpp</in>
+        <in>PathMap.cpp</in>
+        <in>Point.cpp</in>
+        <in>PointCompareWeight.cpp</in>
         <in>Position.cpp</in>
         <in>Random_AI.cpp</in>
         <in>Space.cpp</in>
@@ -43,8 +58,8 @@
         <in>TurnSurbrillanceCommand.cpp</in>
         <in>Wall.cpp</in>
         <in>WhiteSurbrillanceCommand.cpp</in>
+        <in>jsoncpp.cpp</in>
         <in>main.cpp</in>
-        <in>main_old.cpp</in>
       </df>
     </df>
     <logicalFolder name="ExternalFiles"
@@ -84,7 +99,6 @@
               <pElem>src/client</pElem>
               <pElem>src/server</pElem>
               <pElem>src/shared</pElem>
-              <pElem>build</pElem>
             </incDir>
             <preprocessorList>
               <Elem>NDEBUG</Elem>
@@ -96,6 +110,25 @@
           <preBuildCommand>${CMAKE} -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=${IDE_CC} -DCMAKE_CXX_COMPILER=${IDE_CXX} -DCMAKE_C_FLAGS_DEBUG="-g3 -gdwarf-2" -DCMAKE_CXX_FLAGS_DEBUG="-g3 -gdwarf-2" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..</preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="extern/jsoncpp-1.8.0/jsoncpp.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <folder path="0">
+        <ccTool>
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="jsoncpp-1.8.0">
+        <ccTool>
+          <incDir>
+            <pElem>extern/jsoncpp-1.8.0</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
       <item path="src/client/AI.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
@@ -111,6 +144,10 @@
       <item path="src/client/Character.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/client/ClickCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/client/ClickCommand.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/client/Command.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -136,17 +173,17 @@
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="src/client/HeuristicAI.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
       <item path="src/client/Landscape.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/LifeCommand.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
+      <item path="src/client/MouseMovedCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/client/LoadCommand.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
+      <item path="src/client/MouseMovedCommand.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/client/MoveCharacterCommand.cpp"
             ex="false"
@@ -171,11 +208,25 @@
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="src/client/PathMap.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/client/Point.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/client/PointCompareWeight.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
       <item path="src/client/Position.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/Random_AI.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/Random_AI.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
       <item path="src/client/Space.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -208,7 +259,9 @@
       <item path="src/client/TurnSurbrillanceCommand.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
       <item path="src/client/Wall.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -221,11 +274,11 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/main.cpp" ex="false" tool="1" flavor2="8">
+      <item path="src/client/jsoncpp.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/main_old.cpp" ex="false" tool="1" flavor2="8">
+      <item path="src/client/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>

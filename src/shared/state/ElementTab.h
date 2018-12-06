@@ -45,7 +45,14 @@ namespace state {
     void setCharacterStatut (int element, int statut);
     void setLocation (float x, float y, int elmt);
     void eraseCharacter ();
+<<<<<<< HEAD
     void setElementMove (int elmt, bool move);
+||||||| merged common ancestors
+=======
+    void setElementMove (int elmt, bool move);
+    void setElementType (int elmt, int type);
+    void setElementTile (int tile_number, int elmt);
+>>>>>>> refs/remotes/origin/master
     // Setters and Getters
   };
 

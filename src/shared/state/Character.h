@@ -62,9 +62,15 @@ namespace state {
     int getWallType () const;
     int getLandscapeType () const;
     size_t getTypeId () const;
+<<<<<<< HEAD
     size_t getTeam () const;
     void setTeam (size_t team);
     void setPlayer (bool player);
+||||||| merged common ancestors
+=======
+    size_t getTeam () const;
+    void setTeam (size_t team);
+>>>>>>> refs/remotes/origin/master
     // Setters and Getters
     const std::string& getCharacterClass() const;
     void setCharacterClass(const std::string& characterClass);
