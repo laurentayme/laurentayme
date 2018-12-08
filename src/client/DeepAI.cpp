@@ -32,6 +32,14 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
     state::Position best_Position(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
     int max_value=-pow(10,10.0);
     int target=0;
+    if(this->character==0){
+        target=1;
+    }
+    else{
+        target=0;
+    }
+	int compter=0;
+	std::vector<ai::Point> stpaidemoi;
     //On retire tous les mouvements amenant sur des obstacles
     
     int EcartX_init=abs(chars[character]->getPosition().getX()-chars[target]->getPosition().getX());
@@ -40,18 +48,17 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
     int Distance_init=EcartX_init+EcartY_init;
     
     int Poids_min=std::max(Distance_init-int(chars[character]->getPM()),0);
-    
     while(!queue.empty()){
         Point pt=queue.top();
         queue.pop();
         //On filtre les obstacles
-        if((pt.getWeight()>=Poids_min) and (pt.getWeight()<pow(10,3.0))){
+        if((pt.getWeight()>=Poids_min) and (pt.getWeight()<pow(10,3.0)) and (abs(pt.getX()-chars[character]->getPosition().getX())+abs(pt.getY()-chars[character]->getPosition().getY()))<=chars[character]->getPM()and pt.getX()!=0 and pt.getY()!=0){
             state::Position pos(pt.getX(),pt.getY());
             move_list.push_back(pos);
+		stpaidemoi.push_back(pt);
         }
     }
-    
-    
+
     
     
     //std::cout<<"I'll test the different movements"<<std::endl;
@@ -64,19 +71,22 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
         state.getCharacters()->setElement(move_list[i],character);
         
         int val=Min(state,character,depth-1);
+	//std::cout<<"VALEUR : "<<val<<std::endl;
+	compter+=1;
+
         if(val>max_value){
             max_value=val;
             state::Position p(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
             best_Position=p ;
             std::cout<<"ScoreMax ="<<max_value<<std::endl;
         }
-
+     
         //On annule les déplacements précédemment faits//
         state.getCharacters()->setElement(Position_init,character); 
             
             /////////////////////////////////////////////////
     }
-    
+    //std::cout<<"compter min : "<<compter<<std::endl;
     //Détermination du Vecteur de déplacement associé
     int best_VectX=best_Position.getX()-chars[character]->getPosition().getX();
     int best_VectY=best_Position.getY()-chars[character]->getPosition().getY();
@@ -123,14 +133,19 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
     
     
     
-    //Execution du meilleur Coup à jouer (Déplacement + attaque) //
-    engine::MoveCharacterCommand* best_move=new engine::MoveCharacterCommand(character,best_VectX,best_VectY);
-    engine.addCommand(2,best_move);
-    
-    
-    engine::AttackCommand* best_attack=new engine::AttackCommand(character, target, abilities_usable[attackMax]->getName());
-    engine.addCommand(3,best_attack);
-    engine.update();
+    	//Execution du meilleur Coup à jouer (Déplacement + attaque) //
+    	engine::MoveCharacterCommand* best_move=new engine::MoveCharacterCommand(character,best_VectX,best_VectY);
+    	engine.addCommand(2,best_move);
+	if(abilities_usable.size()>0){
+    		//std::cout<<" le personnage joueur est : "<<character<<std::endl<<"  le personnage cible est :  "<<target<<std::endl<<" le nombre d'attaques possibles est de    "<<abilities_usable.size()<<std::endl<<" l'attaque max est l'attaque à la place  "<<attackMax<<std::endl;
+    		engine::AttackCommand* best_attack=new engine::AttackCommand(character, target, abilities_usable[attackMax]->getName());//// ÇA BUG ICI
+    		engine.addCommand(3,best_attack);
+    	}
+    	engine.update();
+	for(int k=0;k<stpaidemoi.size();k++){
+	//std::cout<<"position X : "<<stpaidemoi[k].getX()<<"position Y : "<<stpaidemoi[k].getY()<<"poids : "<<stpaidemoi[k].getWeight()<<std::endl;
+	}
+	std::cout<<Distance_init<<std::endl;
     
 }
 
@@ -153,7 +168,7 @@ int DeepAI::Evaluate(state::State& state, int elmt){
             damage=liste_abilities[i]->getDegats();
         }
     }
-    
+
     score=damage;
     
     //Récupère les Abilités de l'ENNEMI//
@@ -167,13 +182,11 @@ int DeepAI::Evaluate(state::State& state, int elmt){
             damage_target=liste_abilities_target[i]->getDegats();
         }
     }
-   
     score-=damage_target;
     
     if(damage==0){
         score-=abs(distance);
     }
-    
     
     //std::cout<<"Score :"<<score<<std::endl;
     return(score);   
@@ -185,7 +198,7 @@ void DeepAI::stateChanged(const state::Event&){
 }
 
 int DeepAI::Min(state::State& state, int character, int depth){
-    
+    int compter2=0;
     //On récupère la liste des mvts possibles
     std::priority_queue<Point,std::vector<Point>,PointCompareWeight> queue=characterMap.getQueue();
     std::vector<state::Position> move_list;
@@ -194,7 +207,7 @@ int DeepAI::Min(state::State& state, int character, int depth){
         Point pt=queue.top();
         queue.pop();
         //On filtre les obstacles
-        if(pt.getWeight()<pow(10,3.0)){
+        if(pt.getWeight()<pow(10,3.0) and state.getCharacters()->getElementList()[character]->getPA()and (abs(pt.getX()-state.getCharacters()->getElementList()[character]->getPosition().getX())+abs(pt.getY()-state.getCharacters()->getElementList()[character]->getPosition().getY()))<=state.getCharacters()->getElementList()[character]->getPM()and pt.getX()!=0 and pt.getY()!=0){
             state::Position pos(pt.getX(),pt.getY());
             move_list.push_back(pos);
         }
@@ -209,8 +222,10 @@ int DeepAI::Min(state::State& state, int character, int depth){
     }
     else{
         int min_value=pow(10,5.0);
+	
     
         for(int i=0; i<move_list.size();i++){
+		compter2+=1;
             //On sauvegarde la position initiale
             state::Position Position_init(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
             //On effectue le déplacement///
@@ -220,12 +235,14 @@ int DeepAI::Min(state::State& state, int character, int depth){
 
             if(Max(state,character,depth-1)<min_value){
                 min_value=Max(state,character,depth-1);
+		//std::cout<<"min value : "<<min_value<<std::endl;
             }
 
             //On annule les déplacements précédemment faits//
             state.getCharacters()->setElement(Position_init,character); 
             /////////////////////////////////////////////////
         }
+	//std::cout<<"compter max : "<<compter2<<std::endl;
         return(min_value);  
     }
 }
@@ -244,7 +261,7 @@ int DeepAI::Max(state::State& state, int character, int depth){
         Point pt=queue.top();
         queue.pop();
         //On filtre les obstacles
-        if(pt.getWeight()<pow(10,3.0)){
+        if(pt.getWeight()<pow(10,3.0)and (abs(pt.getX()-chars[character]->getPosition().getX())+abs(pt.getY()-chars[character]->getPosition().getY()))<=chars[character]->getPM()and pt.getX()!=0 and pt.getY()!=0){
             state::Position pos(pt.getX(),pt.getY());
             move_list.push_back(pos);
         }
@@ -254,7 +271,6 @@ int DeepAI::Max(state::State& state, int character, int depth){
         return(Evaluate(state,character));
     }
     else{
-    
         for(int i=0; i<move_list.size();i++){
             //On sauvegarde la position initiale
             state::Position Position_init(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());

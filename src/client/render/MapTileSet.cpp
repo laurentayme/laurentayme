@@ -47,9 +47,11 @@ MapTileSet::MapTileSet(){
     Tile t_red(0,86*3,149,86);
     Tile t_white((149-66)/2,6*86,66,62);
     Tile turn_tile(0,86*7+8,300,150);
+    Tile t_blue(3*149,86*5,149,86);
     red.push_back(t_red);
     red.push_back(t_white);
     red.push_back(turn_tile);
+    red.push_back(t_blue);
 }
 
 MapTileSet::~MapTileSet(){
@@ -162,6 +164,10 @@ const Tile& MapTileSet::getTile(const state::Element& e){
         }
         else if(e.getSpaceType()==6){
             Tile& s=red[2];
+            return(s);
+        }
+        else if(e.getSpaceType()==7){
+            Tile& s=red[3];
             return(s);
         }
    }

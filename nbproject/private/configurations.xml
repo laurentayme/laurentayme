@@ -15,7 +15,6 @@
           <in>Layer.cpp</in>
           <in>Layer.h</in>
           <in>MapTileSet.cpp</in>
-          <in>MapTileSet.h</in>
           <in>StateLayer.cpp</in>
           <in>StateLayer.h</in>
           <in>StateTileSet.cpp</in>
@@ -24,7 +23,6 @@
           <in>Tile.cpp</in>
           <in>Tile.h</in>
           <in>TileSet.cpp</in>
-          <in>TileSet.h</in>
         </df>
         <in>AI.cpp</in>
         <in>Abilities.cpp</in>

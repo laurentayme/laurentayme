@@ -46,8 +46,6 @@ void testSFML() {
         int width=11;
         int height=16;
 
-
-
         ////Instanciation de qqes objets de la  MAP////
 
             //Affichage Personnages//
@@ -62,7 +60,7 @@ void testSFML() {
                 //Création du Sram//
                 Character* sad_ptr=new Character("Sram");
                 sad_ptr->setDirection(3); //Sud
-                Position pos_sad(4,4);
+                Position pos_sad(1,4);
                 sad_ptr->setPosition(pos_sad);
 		sad_ptr->setTeam(2);
                 elmt_list2.push_back(sad_ptr);
@@ -72,14 +70,32 @@ void testSFML() {
                 Space* red_space=new Space(4);
                 Space* white_space= new Space(5);
                 Space* turn_space= new Space(6);
+     
                 Position position(100,100);
                 Position& posi_ref=position;
                 red_space->setPosition(posi_ref);
                 white_space->setLoc(-100,-100);
                 turn_space->setLoc(-100,-100);
+                
                 elmt_listRed.push_back(red_space);
                 elmt_listRed.push_back(white_space);
                 elmt_listRed.push_back(turn_space);
+                
+                int nbre=0;
+                
+                for(int i=2; i<6;i++){
+                    nbre+=pow(2,i);
+                }
+                
+                
+                
+                for(int i=0; i<nbre;i++){
+                    Space* blue_space= new Space(7);
+                    blue_space->setPosition(posi_ref);
+                    elmt_listRed.push_back(blue_space);
+                }
+                
+                
             ////////////////////////////
 
 
@@ -175,12 +191,13 @@ void testSFML() {
         //ai::HeuristicAI* ai=new ai::HeuristicAI(*state,1,1);
         //ai::HeuristicAI* ai_2=new ai::HeuristicAI(*state,2,0);
         
-        ai::DeepAI* ai=new ai::DeepAI(*state,1,1);
+        ai::DeepAI* ai=new ai::DeepAI(*state,2,1);
+        ai::DeepAI* ai_2=new ai::DeepAI(*state,2,0);
         
         
         //Mise en place d'Observers sur les AI
         elmtTab2_ptr->addObserver(ai);
-        //elmtTab2_ptr->addObserver(ai_2);
+        elmtTab2_ptr->addObserver(ai_2);
 
         //elmtTab2_ptr->addObserver(ai);
 
@@ -225,8 +242,8 @@ void testSFML() {
             cout<<"Tour :"<<state->getTour()<<endl;
             cout<<"//Tour Joueur//"<<endl;
             
-            //usleep(microseconds);
-            /*try{
+            /*//usleep(microseconds);
+            try{
                 ai_2->run(engine,0,*state);
                 state->setTour(state->getTour()+1);
             }
@@ -297,7 +314,7 @@ void testSFML() {
                 cout<<"Tour :"<<state->getTour()<<endl;
                 cout<<"//Tour IA//"<<endl;
                 ///Gestion de l'IA///
-                //usleep(microseconds);
+               // usleep(microseconds);
                 try{
                     ai->run(engine,1,*state);
                 }
