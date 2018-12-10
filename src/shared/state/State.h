@@ -6,6 +6,7 @@
 
 namespace state {
   class ElementTab;
+  class State;
   class Observable;
 }
 
@@ -45,6 +46,7 @@ namespace state {
     void setWall (ElementTab* mur);
     void setEtat (int etat);
     int getEtat () const;
+    State Clone ();
     // Setters and Getters
   };
 

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ai.h"
+#include "state.h"
 #include "engine.h"
 #include <vector>
 #include <random>
@@ -66,9 +67,16 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
         //On sauvegarde la position initiale
         state::Position Position_init(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
         //On effectue le déplacement///
-        //std::cout<<"I Update the Character position"<<std::endl;
-        //On Update le character a la position sélectionnée
+        
+        state::State state_clone=state.Clone();   
         state.getCharacters()->setElement(move_list[i],character);
+        
+        /*int vectX=move_list[i].getX()-chars[character]->getPosition().getX();
+        int vectY=move_list[i].getY()-chars[character]->getPosition().getY();
+        
+        engine::MoveCharacterCommand* move_cmd=new engine::MoveCharacterCommand(character,vectX,vectY);
+        engine.addCommand(1,move_cmd)
+        engine.update();*/
         
         int val=Min(state,character,depth-1);
 	//std::cout<<"VALEUR : "<<val<<std::endl;
@@ -82,9 +90,17 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
         }
      
         //On annule les déplacements précédemment faits//
-        state.getCharacters()->setElement(Position_init,character); 
+        //state.getCharacters()->setElement(Position_init,character); 
+       
+        
+        
+        
+        
+        
+        state::Position pos=state_clone.getCharacters()->getElementList()[character]->getPosition();
+        state.getCharacters()->setElement(pos,int(character));       
             
-            /////////////////////////////////////////////////
+        /////////////////////////////////////////////////
     }
     //std::cout<<"compter min : "<<compter<<std::endl;
     //Détermination du Vecteur de déplacement associé
@@ -99,9 +115,7 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
     ecart_x=abs(ecart_x);
     ecart_y=abs(ecart_y);
     
-    
-    
-    
+
     int distance =ecart_x+ecart_y;
     //std::cout<<"Distance entre les persos :"<<distance<<std::endl;
 
@@ -145,7 +159,7 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
 	for(int k=0;k<stpaidemoi.size();k++){
 	//std::cout<<"position X : "<<stpaidemoi[k].getX()<<"position Y : "<<stpaidemoi[k].getY()<<"poids : "<<stpaidemoi[k].getWeight()<<std::endl;
 	}
-	std::cout<<Distance_init<<std::endl;
+	//std::cout<<Distance_init<<std::endl;
     
 }
 
@@ -217,6 +231,7 @@ int DeepAI::Min(state::State& state, int character, int depth){
     std::vector<state::Element*> chars=state.getCharacters()->getElementList();
     
     
+    
     if(depth==0){
         return(Evaluate(state,character));
     }
@@ -229,8 +244,8 @@ int DeepAI::Min(state::State& state, int character, int depth){
             //On sauvegarde la position initiale
             state::Position Position_init(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
             //On effectue le déplacement///
-            //std::cout<<"I Update the Character position"<<std::endl;
-            //On Update le character a la position sélectionnée
+
+            state::State state_clone=state.Clone();
             state.getCharacters()->setElement(move_list[i],character);
 
             if(Max(state,character,depth-1)<min_value){
@@ -239,7 +254,9 @@ int DeepAI::Min(state::State& state, int character, int depth){
             }
 
             //On annule les déplacements précédemment faits//
-            state.getCharacters()->setElement(Position_init,character); 
+            state::Position pos=state_clone.getCharacters()->getElementList()[character]->getPosition();
+            state.getCharacters()->setElement(pos,int(character)); 
+            
             /////////////////////////////////////////////////
         }
 	//std::cout<<"compter max : "<<compter2<<std::endl;
@@ -275,16 +292,18 @@ int DeepAI::Max(state::State& state, int character, int depth){
             //On sauvegarde la position initiale
             state::Position Position_init(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
             //On effectue le déplacement///
-            //std::cout<<"I Update the Character position"<<std::endl;
-            //On Update le character a la position sélectionnée
+
             state.getCharacters()->setElement(move_list[i],character);
+            state::State state_clone=state.Clone();
 
             if(Min(state,character,depth-1)>max_value){
                 max_value=Min(state,character,depth-1);
             }
 
             //On annule les déplacements précédemment faits//
-            state.getCharacters()->setElement(Position_init,character); 
+            //state.getCharacters()->setElement(Position_init,character); 
+            state::Position pos=state_clone.getCharacters()->getElementList()[character]->getPosition();
+            state.getCharacters()->setElement(pos,int(character)); 
             /////////////////////////////////////////////////
         }
         return(max_value);  
