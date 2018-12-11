@@ -6,17 +6,19 @@
 namespace state {
   class State;
 };
+namespace ai {
+  class PathMap;
+};
 namespace engine {
   class Engine;
 };
 namespace ai {
   class AI;
-  class PathMap;
 }
 
 #include "state/State.h"
-#include "AI.h"
 #include "PathMap.h"
+#include "AI.h"
 
 namespace ai {
 
@@ -27,15 +29,20 @@ namespace ai {
   private:
     state::State current_state;
     int updatesCount;
+    PathMap characterMap;
+    int character;
   protected:
     int maxDepth;
     int maxUpdates;
     // Operations
   public:
-    DeepAI (const state::State& state);
+    DeepAI (const state::State& state, int depth, int character);
     void stateChanged ( const state::Event&);
-    void run (engine::Engine& engine, int character);
-    int minimax_rec (engine::Engine& engine, state::Direction& bestDir, int depth, int character);
+    void run (engine::Engine& engine, int character, state::State& state);
+    void minimax (engine::Engine& engine, int depth, int character, state::State& state);
+    int Evaluate (state::State& state, int elmt);
+    int Min (state::State& state, int character, int depth);
+    int Max (state::State& state, int character, int depth);
     // Setters and Getters
     int getMaxDepth() const;
     void setMaxDepth(int maxDepth);

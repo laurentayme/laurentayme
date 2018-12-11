@@ -28,23 +28,26 @@ Character::Character (std::string Classname){
         if (characterClass=="Iop"){
             pv=100;
             pa=4;
-            pm=2;
+            pm=4;
+	    MaxStats.push_back(pv);
+	    MaxStats.push_back(pm);
+	    MaxStats.push_back(pa);
 
             //Création de l'equipement initial
             Equipment* epee(new Equipment("Epée","main",5));
             equipment_List.push_back(epee);
 
             //Création des abilités adéquates
-            Abilities* coup_epee(new Abilities("Coup d'Epée",15,2,4));
+            Abilities* coup_epee(new Abilities("Coup d'Epée",15,4,3));
             AbilitiesList.push_back(coup_epee);
 
-            Abilities* colere(new Abilities("Colère",10,1,5));
+            Abilities* colere(new Abilities("Colère",10,3,5));
             AbilitiesList.push_back(colere);
             
             Abilities* puissance(new Abilities("Puissance",0,3,20));
             AbilitiesList.push_back(puissance);
             
-            Abilities* destructrice(new Abilities("Epée Destructrice",20,4,2));
+            Abilities* destructrice(new Abilities("Epée Destructrice",20,5,2));
             AbilitiesList.push_back(destructrice);
 
 
@@ -53,17 +56,20 @@ Character::Character (std::string Classname){
         else if (characterClass=="Sram"){
             pv=40;
             pa=4;
-            pm=2;
+            pm=4;
+	    MaxStats.push_back(pv);
+	    MaxStats.push_back(pm);
+	    MaxStats.push_back(pa);
 
             //Création de l'equipement initial
             Equipment* baton(new Equipment("Bâton","main",4));
             equipment_List.push_back(baton);
 
             //Création des abilités adéquates
-            Abilities* coup_baton(new Abilities("Coup de bâton",20,4,3));
+            Abilities* coup_baton(new Abilities("Coup de bâton",20,4,6));
             AbilitiesList.push_back(coup_baton);
 
-            Abilities* sortilege(new Abilities("Sortilège",12,3,6));
+            Abilities* sortilege(new Abilities("Sortilège",12,3,10));
             AbilitiesList.push_back(sortilege);
         }
 
@@ -232,7 +238,7 @@ void Character::affiche_AbilitiesList() const{
 }
 
 void Character::setStatut(int act_statut){
-    if(act_statut>=1 && act_statut<=3){
+    if(act_statut>=1 && act_statut<=5){
         statut=act_statut;
     }
     else{
@@ -287,5 +293,13 @@ void Character::setTeam(size_t team) {
 	this->player=player;
 }
 
+int Character::getMaxStat(int stat) const {
+	return(MaxStats[stat]);
+}
 
+
+
+void Character::setMaxStat(int stat, int stat_value){
+	MaxStats[stat]=stat_value;
+}
 

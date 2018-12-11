@@ -62,7 +62,7 @@ void testSFML() {
                 //Création du Sram//
                 Character* sad_ptr=new Character("Sram");
                 sad_ptr->setDirection(3); //Sud
-                Position pos_sad(3,4);
+                Position pos_sad(4,4);
                 sad_ptr->setPosition(pos_sad);
 		sad_ptr->setTeam(2);
                 elmt_list2.push_back(sad_ptr);
@@ -172,12 +172,16 @@ void testSFML() {
         //Random IA
         //ai::Heuristic_AI ai(1);
         //ai::Random_AI ai_2(0);
-        ai::HeuristicAI* ai=new ai::HeuristicAI(*state,1,1);
-        ai::HeuristicAI* ai_2=new ai::HeuristicAI(*state,2,0);
+        //ai::HeuristicAI* ai=new ai::HeuristicAI(*state,1,1);
+        //ai::HeuristicAI* ai_2=new ai::HeuristicAI(*state,2,0);
         
-        //Mise en place d'Observers sur les Heuristic_AI
+        ai::DeepAI* ai=new ai::DeepAI(*state,2,1);
+	ai::DeepAI* ai2=new ai::DeepAI(*state,2,0);
+        
+        
+        //Mise en place d'Observers sur les AI
         elmtTab2_ptr->addObserver(ai);
-        elmtTab2_ptr->addObserver(ai_2);
+        //elmtTab2_ptr->addObserver(ai_2);
 
         //elmtTab2_ptr->addObserver(ai);
 
@@ -207,24 +211,26 @@ void testSFML() {
         if(state->getEtat()==1){
         //stateLayerMenu_ptr->initSurface();
         //Réinitialisation des Stats//
-        state->getCharacters()->setCharacterPA(0,iop_pa);
+        /*state->getCharacters()->setCharacterPA(0,iop_pa);
         state->getCharacters()->setCharacterPA(1,sram_pa);
 
         state->getCharacters()->setCharacterPM(0,iop_pm);
-        state->getCharacters()->setCharacterPM(1,sram_pm);
+        state->getCharacters()->setCharacterPM(1,sram_pm);*/
         /////////////////////////////
 
         
         ////Tour Joueur////
         if(state->getTour()%2==1){
             
-            
+            HandleStatut* statut_control=new HandleStatut(0);
+	    engine.addCommand(1,statut_control);
+	    engine.update();
             cout<<"Tour :"<<state->getTour()<<endl;
             cout<<"//Tour Joueur//"<<endl;
-            
+
             usleep(microseconds);
             try{
-                ai_2->run(engine,0,*state);
+                ai2->run(engine,0,*state);
                 state->setTour(state->getTour()+1);
             }
             catch(const char* e){
@@ -235,8 +241,8 @@ void testSFML() {
             
             
             // on gère les évènements
-            sf::Event event;
-           /* while (window.waitEvent(event)){
+            /*sf::Event event;
+            while (window.waitEvent(event)){
                 engine.update();
                 sf::Vector2i localPosition = sf::Mouse::getPosition(window);
                 if(event.type == sf::Event::Closed){
@@ -261,7 +267,7 @@ void testSFML() {
                     window.clear();
                     state->setEtat(2);
                     break;
-                }
+                }*/
                 
                 //Fin d'une partie//
                 for(int i=0; i<state->getCharacters()->getElementList().size();i++){
@@ -271,7 +277,7 @@ void testSFML() {
                 }
          
         // on dessine le niveau
-        */  window.clear();
+          window.clear();
             window.draw(*elmtTabLayer_ptr->getSurface());
             window.draw(*elmtTabLayerLandscape_ptr->getSurface());
             window.draw(*elmtTabLayerWall_ptr->getSurface());
@@ -284,7 +290,6 @@ void testSFML() {
             window.draw(stateLayerMenu_ptr->getTextpm());
             window.display();
             
-
             //}
 
         }
@@ -295,8 +300,17 @@ void testSFML() {
                 cout<<"Tour :"<<state->getTour()<<endl;
                 cout<<"//Tour IA//"<<endl;
                 ///Gestion de l'IA///
+		HandleStatut* statut_control=new HandleStatut(1);
+	    	engine.addCommand(1,statut_control);
+	   	engine.update();
                 usleep(microseconds);
-                ai->run(engine,1,*state);
+                try{
+                    ai->run(engine,1,*state);
+                }
+                catch(const char* e){
+                    cout<<"Exception :"<<e<<endl;
+                }
+                
                 
                 //Changement de Tour
                 state->setTour(state->getTour()+1);
@@ -416,7 +430,7 @@ int main(int argc,char* argv[])
 
         }
 
-        else if (strcmp(argv[1],"heuristic_ai")==0){
+        else if (strcmp(argv[1],"deep_ai")==0){
             //Test Map
             testSFML();
 

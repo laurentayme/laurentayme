@@ -118,3 +118,13 @@ bool Wall::isPlayer() const{
 
 void Wall::setPlayer(bool player){
 }
+
+int Wall::getMaxStat(int stat) const {
+	return(0);
+}
+
+
+
+void Wall::setMaxStat(int stat, int stat_value){
+}
+

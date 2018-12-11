@@ -110,3 +110,10 @@ bool Space::isPlayer() const{
 
 void Space::setPlayer(bool player){
 }
+
+int Space::getMaxStat(int stat) const {
+	return(0);
+}
+
+void Space::setMaxStat(int stat, int stat_value){
+}

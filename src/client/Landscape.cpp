@@ -118,3 +118,14 @@ bool Landscape::isPlayer() const{
 
 void Landscape::setPlayer(bool player){
 }
+
+
+int Landscape::getMaxStat(int stat) const {
+	return(0);
+}
+
+
+
+void Landscape::setMaxStat(int stat, int stat_value){
+}
+

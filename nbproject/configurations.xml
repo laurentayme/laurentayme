@@ -29,6 +29,7 @@
         <in>ClickCommand.cpp</in>
         <in>ClickCommand.h</in>
         <in>Command.cpp</in>
+        <in>DeepAI.cpp</in>
         <in>Element.cpp</in>
         <in>ElementTab.cpp</in>
         <in>Engine.cpp</in>
@@ -152,6 +153,8 @@
       <item path="src/client/Command.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/client/DeepAI.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/client/Element.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">

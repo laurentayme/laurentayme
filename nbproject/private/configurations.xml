@@ -33,6 +33,7 @@
         <in>ClickCommand.cpp</in>
         <in>ClickCommand.h</in>
         <in>Command.cpp</in>
+        <in>DeepAI.cpp</in>
         <in>Element.cpp</in>
         <in>ElementTab.cpp</in>
         <in>Engine.cpp</in>
