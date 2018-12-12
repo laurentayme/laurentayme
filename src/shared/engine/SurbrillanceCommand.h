@@ -7,6 +7,7 @@ namespace state {
   class State;
 };
 namespace engine {
+  class Engine;
   class Command;
 }
 
@@ -26,6 +27,7 @@ namespace engine {
     SurbrillanceCommand (int x, int y);
     CommandTypeId getTypeId () const;
     void execute (state::State& state);
+    void execute (state::State& state, engine::Engine& engine);
     // Setters and Getters
   };
 

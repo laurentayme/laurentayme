@@ -58,7 +58,7 @@ void testSFML(int isRoll) {
 
                 //Création du Iop//
                 Character* c_ptr=new Character("Iop");
-                Position pos(height-1,width-4);
+                Position pos(height-4,width-4);
                 c_ptr->setPosition(pos);
 		c_ptr->setTeam(1);
                 elmt_list2.push_back(c_ptr);
@@ -73,17 +73,26 @@ void testSFML(int isRoll) {
             ////////////////////////
 
             //Element List Surbrillance//
-                Space* red_space=new Space(4);
+                
                 Space* white_space= new Space(5);
                 Space* turn_space= new Space(6);
      
                 Position position(100,100);
                 Position& posi_ref=position;
-                red_space->setPosition(posi_ref);
+                
+                //Elements de Surbrilance Rouge
+                for(size_t i=0;i<5;i++){
+                    Space* red_space=new Space(4);
+                    red_space->setPosition(posi_ref);
+                    elmt_listRed.push_back(red_space);
+                }
+                
+                
+                
                 white_space->setLoc(-100,-100);
                 turn_space->setLoc(-100,-100);
                 
-                elmt_listRed.push_back(red_space);
+                
                 elmt_listRed.push_back(white_space);
                 elmt_listRed.push_back(turn_space);
                 
@@ -92,8 +101,6 @@ void testSFML(int isRoll) {
                 for(int i=2; i<6;i++){
                     nbre+=pow(2,i);
                 }
-                
-                
                 
                 for(int i=0; i<nbre;i++){
                     Space* blue_space= new Space(7);
@@ -250,19 +257,19 @@ void testSFML(int isRoll) {
                 cout<<"//Tour Joueur//"<<endl;
 
                 //usleep(microseconds);
-                try{
+                /*try{
                     ai_2->run(engine,0,*state);
                     state->setTour(state->getTour()+1);
                 }
                 catch(const char* e){
                     cout<<"Exception :"<<e<<endl;
-                }
+                }*/
 
 
 
 
                 // on gère les évènements
-                /*sf::Event event;
+                sf::Event event;
                 while (window.waitEvent(event)){
                     engine.update();
                     sf::Vector2i localPosition = sf::Mouse::getPosition(window);
@@ -295,7 +302,7 @@ void testSFML(int isRoll) {
                         if(state->getCharacters()->getElementList()[i]->getStatut()==3){
                             break;
                         }
-                    }*/
+                    }
 
             // on dessine le niveau
               window.clear();
@@ -311,7 +318,7 @@ void testSFML(int isRoll) {
                 window.draw(stateLayerMenu_ptr->getTextpm());
                 window.display();
 
-                //}
+                }
 
             }
 
@@ -434,7 +441,7 @@ void testSFML(int isRoll) {
         while (window.isOpen()){
             
             std::cout<<"Actual Time :"<<float(clock())/CLOCKS_PER_SEC<<std::endl;
-            if(float(clock())/CLOCKS_PER_SEC>=10){
+            if(float(clock())/CLOCKS_PER_SEC>=50){
                 
                 std::cout<<"Taille de Pile :"<<state_stack.size()<<std::endl;
                 
@@ -475,8 +482,8 @@ void testSFML(int isRoll) {
                         window.display();
                         
                         if(i==0){
-                            cout<<"Iop Cloné :"<<chars_clone[i]->getPV()<<endl;
-                            cout<<"Iop :"<<chars->getElementList()[0]->getPV()<<endl;
+                            //cout<<"Iop Cloné :"<<chars_clone[i]->getPV()<<endl;
+                            //cout<<"Iop :"<<chars->getElementList()[0]->getPV()<<endl;
                         }
                         
                         

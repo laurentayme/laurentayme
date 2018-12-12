@@ -14,8 +14,8 @@ Engine::Engine(){
 Engine::~Engine(){
 }
 
-const state::State& Engine::getState() const {
-	return(*currentState);
+const state::State* Engine::getState() const {
+	return(currentState);
 }
 
 void Engine::addPassiveCommands(){
@@ -43,7 +43,7 @@ void Engine::update(){
                         
 			if(it->first==i){
 			
-                            if(it->second->getTypeId()==CommandTypeId::CLICK or it->second->getTypeId()==CommandTypeId::MOUSEMOVED){
+                            if(it->second->getTypeId()==CommandTypeId::CLICK or it->second->getTypeId()==CommandTypeId::MOUSEMOVED or it->second->getTypeId()==CommandTypeId::SURBRILLANCE){
                                 it->second->execute(*currentState,*this);
                             }
                             else{
