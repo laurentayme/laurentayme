@@ -23,8 +23,8 @@ void ClickCommand::execute(state::State& state, engine::Engine& engine){
     float Tile_height=60.0/1.30;
     float Tile_Width=120.0/1.28;
     
-    float x_mouse_iso=(this->y_mouse-30)/Tile_height-(this->x_mouse-650-Tile_Width/2)/Tile_Width;
-    float y_mouse_iso=(this->y_mouse-30)/Tile_height+(this->x_mouse-650-Tile_Width/2)/Tile_Width;
+    float x_mouse_iso=(this->y_mouse-40)/Tile_height-(this->x_mouse-650-Tile_Width/2)/Tile_Width;
+    float y_mouse_iso=(this->y_mouse-40)/Tile_height+(this->x_mouse-650-Tile_Width/2)/Tile_Width;
 
     if(state.getEtat()==1){
         if(this->y_mouse>=590 and  this->x_mouse>=362 and this->x_mouse<=1000 ){

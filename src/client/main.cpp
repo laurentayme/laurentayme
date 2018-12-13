@@ -257,19 +257,19 @@ void testSFML(int isRoll) {
                 cout<<"//Tour Joueur//"<<endl;
 
                 //usleep(microseconds);
-                /*try{
+                try{
                     ai_2->run(engine,0,*state);
                     state->setTour(state->getTour()+1);
                 }
                 catch(const char* e){
                     cout<<"Exception :"<<e<<endl;
-                }*/
+                }
 
 
 
 
                 // on gère les évènements
-                sf::Event event;
+                /*sf::Event event;
                 while (window.waitEvent(event)){
                     engine.update();
                     sf::Vector2i localPosition = sf::Mouse::getPosition(window);
@@ -302,7 +302,7 @@ void testSFML(int isRoll) {
                         if(state->getCharacters()->getElementList()[i]->getStatut()==3){
                             break;
                         }
-                    }
+                    }*/
 
             // on dessine le niveau
               window.clear();
@@ -318,7 +318,7 @@ void testSFML(int isRoll) {
                 window.draw(stateLayerMenu_ptr->getTextpm());
                 window.display();
 
-                }
+                //}
 
             }
 
@@ -328,7 +328,7 @@ void testSFML(int isRoll) {
                     cout<<"Tour :"<<state->getTour()<<endl;
                     cout<<"//Tour IA//"<<endl;
                     ///Gestion de l'IA///
-                   // usleep(microseconds);
+                    //usleep(microseconds);
                     try{
                         ai->run(engine,1,*state);
                     }
@@ -441,7 +441,7 @@ void testSFML(int isRoll) {
         while (window.isOpen()){
             
             std::cout<<"Actual Time :"<<float(clock())/CLOCKS_PER_SEC<<std::endl;
-            if(float(clock())/CLOCKS_PER_SEC>=50){
+            if(float(clock())/CLOCKS_PER_SEC>=30){
                 
                 std::cout<<"Taille de Pile :"<<state_stack.size()<<std::endl;
                 

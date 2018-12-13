@@ -33,17 +33,17 @@ void SurbrillanceCommand::execute(state::State& act_state){
     
     int x_character=chars[character]->getPosition().getX();
     int y_character=chars[character]->getPosition().getY();
-    int pa=chars[character]->getPA();
+    int pm=chars[character]->getPM();
     
     int ecart_X=x_mouse_iso-x_character;
     int ecart_Y=y_mouse_iso-y_character;
     
     int distance=abs(ecart_X)+abs(ecart_Y);
     
-    std::cout<<"PA actuels: "<<pa<<std::endl;
+    std::cout<<"PM actuels: "<<pm<<std::endl;
     
     
-    if(distance<=pa){
+    if(distance<=pm){
         
         state::Position pos(x_mouse_iso,y_mouse_iso);
         state::Position pos_character=chars[character]->getPosition();
@@ -91,17 +91,17 @@ void SurbrillanceCommand::execute(state::State& act_state, engine::Engine& engin
     
     int x_character=chars[character]->getPosition().getX();
     int y_character=chars[character]->getPosition().getY();
-    int pa=chars[character]->getPA();
+    int pm=chars[character]->getPM();
     
     int ecart_X=x_mouse_iso-x_character;
     int ecart_Y=y_mouse_iso-y_character;
     
     int distance=abs(ecart_X)+abs(ecart_Y);
     
-    std::cout<<"PA actuels: "<<pa<<std::endl;
+    //std::cout<<"PM actuels: "<<pm<<std::endl;
     
     
-    if(distance<=pa){
+    if(distance<=pm){
         
         state::Position pos(x_mouse_iso,y_mouse_iso);
         state::Position pos_character=chars[character]->getPosition();
