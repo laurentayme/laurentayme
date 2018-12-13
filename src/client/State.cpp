@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
 #include <fstream>
 #include "state.h"
@@ -160,3 +161,50 @@ void State::setEtat(int etat){
 int State::getEtat() const{
     return(etat);
 }
+
+
+State State::Clone(){
+    State clone_state;
+    //Clonage des Characters
+    std::vector<Element*> elmt_list=this->characters->getElementList();
+    std::vector<Element*> elmt_list_clone;
+    std::vector<Element*> menu_elmt_list;
+    
+    
+    
+    
+    for(size_t i=0;i<this->characters->getElementList().size();i++){
+        Character* character=new Character(elmt_list[i]->getClass());
+        character->setDirection(elmt_list[i]->getDirection());
+        character->setPV(elmt_list[i]->getPV());
+        character->setPA(elmt_list[i]->getPA());
+        character->setPM(elmt_list[i]->getPM());
+        state::Position pos=elmt_list[i]->getPosition();
+        character->setPosition(pos);
+        character->setTeam(elmt_list[i]->getTeam());
+        character->setStatut(elmt_list[i]->getStatut());
+        
+        elmt_list_clone.push_back(character);
+        
+    }
+    
+    ElementTab* characters_clone =new state::ElementTab(this->characters->getWidth(),this->characters->getHeight(),elmt_list_clone);
+    
+
+    menu_elmt_list=this->menu->getElementList();
+    
+    ElementTab* menu_clone =new state::ElementTab(this->menu->getWidth(),this->menu->getHeight(),menu_elmt_list);
+   
+    //Initialisation du state cloné//
+    clone_state.setCharacters(characters_clone);
+    clone_state.setMap(this->carte);
+    clone_state.setLandscape(this->landscape);
+    clone_state.setMenu(menu_clone);
+    clone_state.setWall(this->wall);
+    clone_state.setRedMap(this->red_map);
+    clone_state.setTour(this->tour);
+    clone_state.setEtat(this->etat);
+    
+    return(clone_state);   
+}
+
