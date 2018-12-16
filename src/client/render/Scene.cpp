@@ -4,13 +4,12 @@
 
 using namespace render;
 
-/*Scene::Scene(const state::State& state_v):state(state_v),debugLayer(DebugLayer(state_v)){
-    
-    state::ElementTab map(state_v.getMap()->getWidth(),state_v.getMap()->getHeight(),state_v.getMap()->getElementList());
-    gridLayer=ElementTabLayer(map);
-    charsLayer=ElementTabLayer(*state_v.getCharacters()); 
-    stateLayer=StateLayer(state_v);
-}*/
+Scene::Scene(const state::State& state_v):state(state_v){
+    //state::ElementTab map(state_v.getMap()->getWidth(),state_v.getMap()->getHeight(),state_v.getMap()->getElementList());
+    this->gridLayer = *state_v.getMap();
+    this->charsLayer=*state_v.getCharacters(); 
+    this->stateLayer =*state_v.getMenu();
+}
 
 
 size_t Scene::getWidth() const{
@@ -18,7 +17,7 @@ size_t Scene::getWidth() const{
 }
 
 size_t Scene::getHeight() const{
-    return( this->height);
+    return(this->height);
 }
 
 void Scene::stateChanged(const state::Event& event){

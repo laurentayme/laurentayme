@@ -80,7 +80,13 @@
       </df>
       <df name="shared">
         <df name="ai">
+          <in>AI.h</in>
+          <in>DeepAI.h</in>
+          <in>HeuristicAI.h</in>
+          <in>PathMap.h</in>
           <in>Point.h</in>
+          <in>PointCompareWeight.h</in>
+          <in>Random_AI.h</in>
         </df>
         <df name="engine">
           <in>AttackCommand.h</in>
@@ -98,10 +104,32 @@
           <in>WhiteSurbrillanceCommand.h</in>
         </df>
         <df name="state">
+          <in>Abilities.h</in>
+          <in>Character.h</in>
+          <in>Direction.h</in>
           <in>Element.h</in>
+          <in>ElementTab.h</in>
           <in>Equipment.h</in>
+          <in>Event.h</in>
+          <in>EventTypeId.h</in>
           <in>Landscape.h</in>
+          <in>LandscapeType.h</in>
+          <in>Observable.h</in>
+          <in>Observer.h</in>
+          <in>Obstacle.h</in>
+          <in>Position.h</in>
+          <in>Space.h</in>
+          <in>SpaceTypeId.h</in>
+          <in>State.h</in>
+          <in>StateEtat.h</in>
           <in>StateEvent.h</in>
+          <in>StateEventId.h</in>
+          <in>StaticElement.h</in>
+          <in>Statut.h</in>
+          <in>TabEvent.h</in>
+          <in>TypeId.h</in>
+          <in>Wall.h</in>
+          <in>WallTypeId.h</in>
         </df>
         <in>ai.h</in>
         <in>engine.h</in>
