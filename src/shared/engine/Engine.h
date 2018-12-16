@@ -10,14 +10,16 @@ namespace state {
 };
 namespace engine {
   class Command;
+  class Engine_Observable;
 }
 
 #include "Command.h"
+#include "Engine_Observable.h"
 
 namespace engine {
 
   /// class Engine - 
-  class Engine {
+  class Engine : public engine::Engine_Observable {
     // Associations
     // Attributes
   private:

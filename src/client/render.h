@@ -11,4 +11,6 @@
 #include "render/Layer.h"
 #include "render/StateLayer.h"
 #include "render/ElementTabLayer.h"
+#include "render/DebugLayer.h"
+#include "render/Scene.h"
 #endif

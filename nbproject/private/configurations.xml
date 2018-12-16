@@ -3,6 +3,9 @@
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="src" name="0">
       <df name="client">
+        <df name="client">
+          <in>Client.h</in>
+        </df>
         <df name="json">
           <in>json-forwards.h</in>
           <in>json.h</in>
@@ -10,12 +13,16 @@
         <df name="render">
           <in>CharacterTileSet.cpp</in>
           <in>CharacterTileSet.h</in>
+          <in>DebugLayer.cpp</in>
+          <in>DebugLayer.h</in>
           <in>ElementTabLayer.cpp</in>
           <in>ElementTabLayer.h</in>
           <in>Layer.cpp</in>
           <in>Layer.h</in>
           <in>MapTileSet.cpp</in>
           <in>MapTileSet.h</in>
+          <in>Scene.cpp</in>
+          <in>Scene.h</in>
           <in>StateLayer.cpp</in>
           <in>StateLayer.h</in>
           <in>StateTileSet.cpp</in>
@@ -32,11 +39,14 @@
         <in>Character.cpp</in>
         <in>ClickCommand.cpp</in>
         <in>ClickCommand.h</in>
+        <in>Client.cpp</in>
         <in>Command.cpp</in>
         <in>DeepAI.cpp</in>
         <in>Element.cpp</in>
         <in>ElementTab.cpp</in>
         <in>Engine.cpp</in>
+        <in>Engine_Observable.cpp</in>
+        <in>Engine_Observer.cpp</in>
         <in>Equipment.cpp</in>
         <in>Event.cpp</in>
         <in>HeuristicAI.cpp</in>
@@ -63,19 +73,14 @@
         <in>TurnSurbrillanceCommand.cpp</in>
         <in>Wall.cpp</in>
         <in>WhiteSurbrillanceCommand.cpp</in>
+        <in>client.h</in>
         <in>jsoncpp.cpp</in>
         <in>main.cpp</in>
         <in>render.h</in>
       </df>
       <df name="shared">
         <df name="ai">
-          <in>AI.h</in>
-          <in>DeepAI.h</in>
-          <in>HeuristicAI.h</in>
-          <in>PathMap.h</in>
           <in>Point.h</in>
-          <in>PointCompareWeight.h</in>
-          <in>Random_AI.h</in>
         </df>
         <df name="engine">
           <in>AttackCommand.h</in>
@@ -83,6 +88,8 @@
           <in>Command.h</in>
           <in>CommandTypeId.h</in>
           <in>Engine.h</in>
+          <in>Engine_Observable.h</in>
+          <in>Engine_Observer.h</in>
           <in>LoadCommand.h</in>
           <in>MouseMovedCommand.h</in>
           <in>MoveCharacterCommand.h</in>
@@ -91,32 +98,10 @@
           <in>WhiteSurbrillanceCommand.h</in>
         </df>
         <df name="state">
-          <in>Abilities.h</in>
-          <in>Character.h</in>
-          <in>Direction.h</in>
           <in>Element.h</in>
-          <in>ElementTab.h</in>
           <in>Equipment.h</in>
-          <in>Event.h</in>
-          <in>EventTypeId.h</in>
           <in>Landscape.h</in>
-          <in>LandscapeType.h</in>
-          <in>Observable.h</in>
-          <in>Observer.h</in>
-          <in>Obstacle.h</in>
-          <in>Position.h</in>
-          <in>Space.h</in>
-          <in>SpaceTypeId.h</in>
-          <in>State.h</in>
-          <in>StateEtat.h</in>
           <in>StateEvent.h</in>
-          <in>StateEventId.h</in>
-          <in>StaticElement.h</in>
-          <in>Statut.h</in>
-          <in>TabEvent.h</in>
-          <in>TypeId.h</in>
-          <in>Wall.h</in>
-          <in>WallTypeId.h</in>
         </df>
         <in>ai.h</in>
         <in>engine.h</in>

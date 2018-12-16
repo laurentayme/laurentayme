@@ -6,6 +6,8 @@
 #include "engine/Command.h"
 #include "engine/LoadCommand.h"
 #include "engine/MoveCharacterCommand.h"
+#include "engine/Engine_Observer.h"
+#include "engine/Engine_Observable.h"
 #include "engine/Engine.h"
 #include "engine/AttackCommand.h"
 #include "engine/SurbrillanceCommand.h"
