@@ -3,6 +3,9 @@
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="src" name="0">
       <df name="client">
+        <df name="client">
+          <in>Client.h</in>
+        </df>
         <df name="json">
           <in>json-forwards.h</in>
           <in>json.h</in>
@@ -10,12 +13,16 @@
         <df name="render">
           <in>CharacterTileSet.cpp</in>
           <in>CharacterTileSet.h</in>
+          <in>DebugLayer.cpp</in>
+          <in>DebugLayer.h</in>
           <in>ElementTabLayer.cpp</in>
           <in>ElementTabLayer.h</in>
           <in>Layer.cpp</in>
           <in>Layer.h</in>
           <in>MapTileSet.cpp</in>
           <in>MapTileSet.h</in>
+          <in>Scene.cpp</in>
+          <in>Scene.h</in>
           <in>StateLayer.cpp</in>
           <in>StateLayer.h</in>
           <in>StateTileSet.cpp</in>
@@ -32,11 +39,14 @@
         <in>Character.cpp</in>
         <in>ClickCommand.cpp</in>
         <in>ClickCommand.h</in>
+        <in>Client.cpp</in>
         <in>Command.cpp</in>
         <in>DeepAI.cpp</in>
         <in>Element.cpp</in>
         <in>ElementTab.cpp</in>
         <in>Engine.cpp</in>
+        <in>Engine_Observable.cpp</in>
+        <in>Engine_Observer.cpp</in>
         <in>Equipment.cpp</in>
         <in>Event.cpp</in>
         <in>HeuristicAI.cpp</in>
@@ -63,6 +73,7 @@
         <in>TurnSurbrillanceCommand.cpp</in>
         <in>Wall.cpp</in>
         <in>WhiteSurbrillanceCommand.cpp</in>
+        <in>client.h</in>
         <in>jsoncpp.cpp</in>
         <in>main.cpp</in>
         <in>render.h</in>
@@ -83,6 +94,8 @@
           <in>Command.h</in>
           <in>CommandTypeId.h</in>
           <in>Engine.h</in>
+          <in>Engine_Observable.h</in>
+          <in>Engine_Observer.h</in>
           <in>LoadCommand.h</in>
           <in>MouseMovedCommand.h</in>
           <in>MoveCharacterCommand.h</in>

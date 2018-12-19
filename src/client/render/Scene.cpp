@@ -1,15 +1,14 @@
 #include <stdio.h>
-#include "state.h"
 #include "render.h"
-
+#include "state.h"
 
 using namespace render;
 
-Scene::Scene(const state::State& state_v):state(state_v),gridLayer(*state_v.getMap()),charsLayer(*state_v.getCharacters()),stateLayer(state_v){
+Scene::Scene(const state::State& state_v):state(state_v){
     //state::ElementTab map(state_v.getMap()->getWidth(),state_v.getMap()->getHeight(),state_v.getMap()->getElementList());
-	gridLayer.initSurface();
-	charsLayer.initSurface();
-	stateLayer.initSurface();
+    this->gridLayer = *state_v.getMap();
+    this->charsLayer=*state_v.getCharacters(); 
+    this->stateLayer =*state_v.getMenu();
 }
 
 
@@ -53,4 +52,7 @@ void Scene::draw(sf::RenderWindow& window){
 
 }
 
-
+DebugLayer& Scene::getDebugLayer(){
+    return(this->debugLayer);
+}
+>>>>>>> refs/remotes/origin/master

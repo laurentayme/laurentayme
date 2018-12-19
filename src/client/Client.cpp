@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include "state.h"
 #include "engine.h"
@@ -29,3 +30,14 @@ void Client::engineUpdated(){
 void Client::run(){
 	//engine.run();
 }
+||||||| merged common ancestors
+=======
+#include <stdio.h>
+#include "client.h"
+#include <memory>
+#include <stdlib.h>
+#include <iostream>
+#include <math.h>
+
+using namespace client;
+>>>>>>> refs/remotes/origin/master

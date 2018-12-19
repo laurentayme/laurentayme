@@ -194,7 +194,7 @@ void testSFML(int isRoll) {
 
         //Engine & Observables
 	Engine engine;
-        Observable observable;
+        state::Observable observable;
 
         engine.setState(state);
 
