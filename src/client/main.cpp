@@ -58,7 +58,7 @@ void testSFML(int isRoll) {
 
                 //Création du Iop//
                 Character* c_ptr=new Character("Iop");
-                Position pos(height-1,width-4);
+                Position pos(height-4,width-4);
                 c_ptr->setPosition(pos);
 		c_ptr->setTeam(1);
                 elmt_list2.push_back(c_ptr);
@@ -73,17 +73,26 @@ void testSFML(int isRoll) {
             ////////////////////////
 
             //Element List Surbrillance//
-                Space* red_space=new Space(4);
+                
                 Space* white_space= new Space(5);
                 Space* turn_space= new Space(6);
      
                 Position position(100,100);
                 Position& posi_ref=position;
-                red_space->setPosition(posi_ref);
+                
+                //Elements de Surbrilance Rouge
+                for(size_t i=0;i<5;i++){
+                    Space* red_space=new Space(4);
+                    red_space->setPosition(posi_ref);
+                    elmt_listRed.push_back(red_space);
+                }
+                
+                
+                
                 white_space->setLoc(-100,-100);
                 turn_space->setLoc(-100,-100);
                 
-                elmt_listRed.push_back(red_space);
+                
                 elmt_listRed.push_back(white_space);
                 elmt_listRed.push_back(turn_space);
                 
@@ -92,8 +101,6 @@ void testSFML(int isRoll) {
                 for(int i=2; i<6;i++){
                     nbre+=pow(2,i);
                 }
-                
-                
                 
                 for(int i=0; i<nbre;i++){
                     Space* blue_space= new Space(7);
@@ -328,7 +335,7 @@ void testSFML(int isRoll) {
 	    	    engine.addCommand(1,statut_control);
 	    	    engine.update();
                     ///Gestion de l'IA///
-                   // usleep(microseconds);
+                    //usleep(microseconds);
                     try{
                         ai->run(engine,1,*state);
                     }
@@ -441,7 +448,7 @@ void testSFML(int isRoll) {
         while (window.isOpen()){
             
             std::cout<<"Actual Time :"<<float(clock())/CLOCKS_PER_SEC<<std::endl;
-            if(float(clock())/CLOCKS_PER_SEC>=10){
+            if(float(clock())/CLOCKS_PER_SEC>=30){
                 
                 std::cout<<"Taille de Pile :"<<state_stack.size()<<std::endl;
                 
@@ -482,8 +489,8 @@ void testSFML(int isRoll) {
                         window.display();
                         
                         if(i==0){
-                            cout<<"Iop Cloné :"<<chars_clone[i]->getPV()<<endl;
-                            cout<<"Iop :"<<chars->getElementList()[0]->getPV()<<endl;
+                            //cout<<"Iop Cloné :"<<chars_clone[i]->getPV()<<endl;
+                            //cout<<"Iop :"<<chars->getElementList()[0]->getPV()<<endl;
                         }
                         
                         

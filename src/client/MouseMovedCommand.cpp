@@ -23,8 +23,8 @@ void MouseMovedCommand::execute(state::State& state, engine::Engine& engine){
     float Tile_height=60.0/1.30;
     float Tile_Width=120.0/1.28;
     
-    float x_mouse_iso=(this->y_mouse-30)/Tile_height-(this->x_mouse-650-Tile_Width/2)/Tile_Width;
-    float y_mouse_iso=(this->y_mouse-30)/Tile_height+(this->x_mouse-650-Tile_Width/2)/Tile_Width;
+    float x_mouse_iso=(this->y_mouse-40)/Tile_height-(this->x_mouse-650-Tile_Width/2)/Tile_Width;
+    float y_mouse_iso=(this->y_mouse-40)/Tile_height+(this->x_mouse-650-Tile_Width/2)/Tile_Width;
 
     state::Position position(100,100);
     
@@ -32,8 +32,11 @@ void MouseMovedCommand::execute(state::State& state, engine::Engine& engine){
         //Menu d'attaques
         if(y_mouse>=590 and  x_mouse>=362 and x_mouse<=760 ){
         //On masque les autres surbrillances
-        state.getRedMap()->setElement(position,0);
-        state.getRedMap()->setLocation(-100,-100,2); //TurnSurbrillance
+        for(size_t i=0;i<5;i++){
+        state::Position posRef(100,100);
+        state.getRedMap()->setElement(posRef,i);
+        }
+        state.getRedMap()->setLocation(-100,-100,6); //TurnSurbrillance
         for(int i=3; i<state.getRedMap()->getElementList().size();i++){
             state.getRedMap()->setElement(position,i);//Cases Bleues
         }
@@ -45,9 +48,13 @@ void MouseMovedCommand::execute(state::State& state, engine::Engine& engine){
     //Bouton Fin du Tour
     else if(x_mouse>=1030  and y_mouse>=470 and y_mouse<=540){
         //On masque les autres surbrillances
-        state.getRedMap()->setElement(position,0);//Case Rouge
-        state.getRedMap()->setLocation(-100,-100,1);//WhiteSurbrillance
-        for(int i=3; i<state.getRedMap()->getElementList().size();i++){
+        //Cases Rouges
+        for(size_t i=0;i<5;i++){
+        state::Position posRef(100,100);
+        state.getRedMap()->setElement(posRef,i);
+        }
+        state.getRedMap()->setLocation(-100,-100,5);//WhiteSurbrillance
+        for(int i=8; i<state.getRedMap()->getElementList().size();i++){
             state.getRedMap()->setElement(position,i);//Cases Bleues
         }
         
@@ -61,10 +68,10 @@ void MouseMovedCommand::execute(state::State& state, engine::Engine& engine){
     //Plateau de jeu
     else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<16 and int(y_mouse_iso)>0 and int(y_mouse_iso)<11 and ((x_mouse_iso+y_mouse_iso)<22) and y_mouse<=615) {
 
-        state.getRedMap()->setLocation(-100,-100,1);//WhiteSurbrillance
-        state.getRedMap()->setLocation(-100,-100,2);//TurnSurbrillance
+        state.getRedMap()->setLocation(-100,-100,5);//WhiteSurbrillance
+        state.getRedMap()->setLocation(-100,-100,6);//TurnSurbrillance
        
-        for(int i=3; i<state.getRedMap()->getElementList().size();i++){
+        for(int i=8; i<state.getRedMap()->getElementList().size();i++){
             state.getRedMap()->setElement(position,i);//Cases Bleues
         }
         
@@ -76,10 +83,16 @@ void MouseMovedCommand::execute(state::State& state, engine::Engine& engine){
 
     else{
         //Masque toutes les surbrillances
-        state.getRedMap()->setLocation(-100,-100,2);
-        state.getRedMap()->setLocation(-100,-100,1);
-        state.getRedMap()->setElement(position,0);
-        for(int i=3; i<state.getRedMap()->getElementList().size();i++){
+        state.getRedMap()->setLocation(-100,-100,6);
+        state.getRedMap()->setLocation(-100,-100,5);
+        //Cases Rouges
+        for(size_t i=0;i<5;i++){
+            state::Position posRef(100,100);
+            state.getRedMap()->setElement(posRef,i);
+        }
+        
+        
+        for(int i=8; i<state.getRedMap()->getElementList().size();i++){
             state.getRedMap()->setElement(position,i);//Cases Bleues
         }
     }
@@ -100,7 +113,6 @@ void MouseMovedCommand::execute(state::State& state, engine::Engine& engine){
         
         
     }
-    
     
 }
 

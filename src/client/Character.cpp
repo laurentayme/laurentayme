@@ -38,16 +38,16 @@ Character::Character (std::string Classname){
             equipment_List.push_back(epee);
 
             //Création des abilités adéquates
-            Abilities* coup_epee(new Abilities("Coup d'Epée",15,4,2));
+            Abilities* coup_epee(new Abilities("Coup d'Epée",13,4,2));
             AbilitiesList.push_back(coup_epee);
 
-            Abilities* colere(new Abilities("Colère",10,3,3));
+            Abilities* colere(new Abilities("Colère",8,3,3));
             AbilitiesList.push_back(colere);
             
             Abilities* puissance(new Abilities("Puissance",0,1,0));
             AbilitiesList.push_back(puissance);
             
-            Abilities* destructrice(new Abilities("Epée Destructrice",25,4,1));
+            Abilities* destructrice(new Abilities("Epée Destructrice",20,4,1));
             AbilitiesList.push_back(destructrice);
 
 
@@ -63,14 +63,14 @@ Character::Character (std::string Classname){
 
 
             //Création de l'equipement initial
-            Equipment* baton(new Equipment("Bâton","main",4));
+            Equipment* baton(new Equipment("Bâton","main",7));
             equipment_List.push_back(baton);
 
             //Création des abilités adéquates
-            Abilities* coup_baton(new Abilities("Coup de bâton",20,4,6));
+            Abilities* coup_baton(new Abilities("Coup de bâton",15,4,6));
             AbilitiesList.push_back(coup_baton);
 
-            Abilities* sortilege(new Abilities("Sortilège",12,3,10));
+            Abilities* sortilege(new Abilities("Sortilège",10,3,10));
             AbilitiesList.push_back(sortilege);
         }
 

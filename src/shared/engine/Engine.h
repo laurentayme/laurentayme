@@ -28,7 +28,7 @@ namespace engine {
     Engine ();
     ~Engine ();
     void setState (state::State* state);
-    const state::State& getState () const;
+    const state::State* getState () const;
     void addPassiveCommands ();
     void addCommand (int priority, Command* cmd);
     void addCommand (int priority, std::unique_ptr<Command> cmd);
