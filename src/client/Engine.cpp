@@ -23,6 +23,9 @@ void Engine::addPassiveCommands(){
 
 void Engine::addCommand(int priority,Command* cmd){
 	this->currentCommands[priority]=std::unique_ptr<Command>(cmd);
+	if(cmd->getTypeId()==CommandTypeId::TURN){
+		update();
+	}
 
 }
 
@@ -37,6 +40,7 @@ int Engine::getNbCommands() const {
 
 
 void Engine::update(){ 
+	    notifyUpdating();
            for(int i=0;i<4;i++){
             //std::cout<<"1st Loop !"<<std::endl;
 		for(auto it =currentCommands.begin();it!=currentCommands.end();it++){
@@ -54,6 +58,7 @@ void Engine::update(){
 		}
 	}
         currentCommands.erase (currentCommands.begin(), currentCommands.end() );
+	notifyUpdated();
 
 	
 }
