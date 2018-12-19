@@ -47,6 +47,9 @@ namespace state {
     void setEtat (int etat);
     int getEtat () const;
     State Clone ();
+    void setEnableCache (bool enableCache);
+    void setEnableNotifications (bool enableNotifications);
+    void flushCachedEvents () const;
     // Setters and Getters
   };
 

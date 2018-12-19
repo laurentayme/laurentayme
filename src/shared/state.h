@@ -27,5 +27,4 @@
 #include "state/StateEventId.h"
 #include "state/StateEvent.h"
 #include "state/LandscapeType.h"
-#include "state/StateEtat.h"
 #endif

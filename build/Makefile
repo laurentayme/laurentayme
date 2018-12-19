@@ -258,6 +258,33 @@ src/client/ClickCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/ClickCommand.cpp.s
 .PHONY : src/client/ClickCommand.cpp.s
 
+src/client/Client.o: src/client/Client.cpp.o
+
+.PHONY : src/client/Client.o
+
+# target to build an object file
+src/client/Client.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Client.cpp.o
+.PHONY : src/client/Client.cpp.o
+
+src/client/Client.i: src/client/Client.cpp.i
+
+.PHONY : src/client/Client.i
+
+# target to preprocess a source file
+src/client/Client.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Client.cpp.i
+.PHONY : src/client/Client.cpp.i
+
+src/client/Client.s: src/client/Client.cpp.s
+
+.PHONY : src/client/Client.s
+
+# target to generate assembly for a file
+src/client/Client.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Client.cpp.s
+.PHONY : src/client/Client.cpp.s
+
 src/client/Command.o: src/client/Command.cpp.o
 
 .PHONY : src/client/Command.o
@@ -393,6 +420,60 @@ src/client/Engine.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine.cpp.s
 .PHONY : src/client/Engine.cpp.s
 
+src/client/Engine_Observable.o: src/client/Engine_Observable.cpp.o
+
+.PHONY : src/client/Engine_Observable.o
+
+# target to build an object file
+src/client/Engine_Observable.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine_Observable.cpp.o
+.PHONY : src/client/Engine_Observable.cpp.o
+
+src/client/Engine_Observable.i: src/client/Engine_Observable.cpp.i
+
+.PHONY : src/client/Engine_Observable.i
+
+# target to preprocess a source file
+src/client/Engine_Observable.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine_Observable.cpp.i
+.PHONY : src/client/Engine_Observable.cpp.i
+
+src/client/Engine_Observable.s: src/client/Engine_Observable.cpp.s
+
+.PHONY : src/client/Engine_Observable.s
+
+# target to generate assembly for a file
+src/client/Engine_Observable.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine_Observable.cpp.s
+.PHONY : src/client/Engine_Observable.cpp.s
+
+src/client/Engine_Observer.o: src/client/Engine_Observer.cpp.o
+
+.PHONY : src/client/Engine_Observer.o
+
+# target to build an object file
+src/client/Engine_Observer.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine_Observer.cpp.o
+.PHONY : src/client/Engine_Observer.cpp.o
+
+src/client/Engine_Observer.i: src/client/Engine_Observer.cpp.i
+
+.PHONY : src/client/Engine_Observer.i
+
+# target to preprocess a source file
+src/client/Engine_Observer.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine_Observer.cpp.i
+.PHONY : src/client/Engine_Observer.cpp.i
+
+src/client/Engine_Observer.s: src/client/Engine_Observer.cpp.s
+
+.PHONY : src/client/Engine_Observer.s
+
+# target to generate assembly for a file
+src/client/Engine_Observer.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Engine_Observer.cpp.s
+.PHONY : src/client/Engine_Observer.cpp.s
+
 src/client/Equipment.o: src/client/Equipment.cpp.o
 
 .PHONY : src/client/Equipment.o
@@ -446,6 +527,33 @@ src/client/Event.s: src/client/Event.cpp.s
 src/client/Event.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/Event.cpp.s
 .PHONY : src/client/Event.cpp.s
+
+src/client/HandleStatut.o: src/client/HandleStatut.cpp.o
+
+.PHONY : src/client/HandleStatut.o
+
+# target to build an object file
+src/client/HandleStatut.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/HandleStatut.cpp.o
+.PHONY : src/client/HandleStatut.cpp.o
+
+src/client/HandleStatut.i: src/client/HandleStatut.cpp.i
+
+.PHONY : src/client/HandleStatut.i
+
+# target to preprocess a source file
+src/client/HandleStatut.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/HandleStatut.cpp.i
+.PHONY : src/client/HandleStatut.cpp.i
+
+src/client/HandleStatut.s: src/client/HandleStatut.cpp.s
+
+.PHONY : src/client/HandleStatut.s
+
+# target to generate assembly for a file
+src/client/HandleStatut.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/HandleStatut.cpp.s
+.PHONY : src/client/HandleStatut.cpp.s
 
 src/client/HeuristicAI.o: src/client/HeuristicAI.cpp.o
 
@@ -960,6 +1068,33 @@ src/client/TabEvent.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TabEvent.cpp.s
 .PHONY : src/client/TabEvent.cpp.s
 
+src/client/TurnCommand.o: src/client/TurnCommand.cpp.o
+
+.PHONY : src/client/TurnCommand.o
+
+# target to build an object file
+src/client/TurnCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TurnCommand.cpp.o
+.PHONY : src/client/TurnCommand.cpp.o
+
+src/client/TurnCommand.i: src/client/TurnCommand.cpp.i
+
+.PHONY : src/client/TurnCommand.i
+
+# target to preprocess a source file
+src/client/TurnCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TurnCommand.cpp.i
+.PHONY : src/client/TurnCommand.cpp.i
+
+src/client/TurnCommand.s: src/client/TurnCommand.cpp.s
+
+.PHONY : src/client/TurnCommand.s
+
+# target to generate assembly for a file
+src/client/TurnCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/TurnCommand.cpp.s
+.PHONY : src/client/TurnCommand.cpp.s
+
 src/client/TurnSurbrillanceCommand.o: src/client/TurnSurbrillanceCommand.cpp.o
 
 .PHONY : src/client/TurnSurbrillanceCommand.o
@@ -1203,6 +1338,33 @@ src/client/render/MapTileSet.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/MapTileSet.cpp.s
 .PHONY : src/client/render/MapTileSet.cpp.s
 
+src/client/render/Scene.o: src/client/render/Scene.cpp.o
+
+.PHONY : src/client/render/Scene.o
+
+# target to build an object file
+src/client/render/Scene.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Scene.cpp.o
+.PHONY : src/client/render/Scene.cpp.o
+
+src/client/render/Scene.i: src/client/render/Scene.cpp.i
+
+.PHONY : src/client/render/Scene.i
+
+# target to preprocess a source file
+src/client/render/Scene.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Scene.cpp.i
+.PHONY : src/client/render/Scene.cpp.i
+
+src/client/render/Scene.s: src/client/render/Scene.cpp.s
+
+.PHONY : src/client/render/Scene.s
+
+# target to generate assembly for a file
+src/client/render/Scene.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client/render/Scene.cpp.s
+.PHONY : src/client/render/Scene.cpp.s
+
 src/client/render/StateLayer.o: src/client/render/StateLayer.cpp.o
 
 .PHONY : src/client/render/StateLayer.o
@@ -1335,6 +1497,9 @@ help:
 	@echo "... src/client/ClickCommand.o"
 	@echo "... src/client/ClickCommand.i"
 	@echo "... src/client/ClickCommand.s"
+	@echo "... src/client/Client.o"
+	@echo "... src/client/Client.i"
+	@echo "... src/client/Client.s"
 	@echo "... src/client/Command.o"
 	@echo "... src/client/Command.i"
 	@echo "... src/client/Command.s"
@@ -1350,12 +1515,21 @@ help:
 	@echo "... src/client/Engine.o"
 	@echo "... src/client/Engine.i"
 	@echo "... src/client/Engine.s"
+	@echo "... src/client/Engine_Observable.o"
+	@echo "... src/client/Engine_Observable.i"
+	@echo "... src/client/Engine_Observable.s"
+	@echo "... src/client/Engine_Observer.o"
+	@echo "... src/client/Engine_Observer.i"
+	@echo "... src/client/Engine_Observer.s"
 	@echo "... src/client/Equipment.o"
 	@echo "... src/client/Equipment.i"
 	@echo "... src/client/Equipment.s"
 	@echo "... src/client/Event.o"
 	@echo "... src/client/Event.i"
 	@echo "... src/client/Event.s"
+	@echo "... src/client/HandleStatut.o"
+	@echo "... src/client/HandleStatut.i"
+	@echo "... src/client/HandleStatut.s"
 	@echo "... src/client/HeuristicAI.o"
 	@echo "... src/client/HeuristicAI.i"
 	@echo "... src/client/HeuristicAI.s"
@@ -1413,6 +1587,9 @@ help:
 	@echo "... src/client/TabEvent.o"
 	@echo "... src/client/TabEvent.i"
 	@echo "... src/client/TabEvent.s"
+	@echo "... src/client/TurnCommand.o"
+	@echo "... src/client/TurnCommand.i"
+	@echo "... src/client/TurnCommand.s"
 	@echo "... src/client/TurnSurbrillanceCommand.o"
 	@echo "... src/client/TurnSurbrillanceCommand.i"
 	@echo "... src/client/TurnSurbrillanceCommand.s"
@@ -1440,6 +1617,9 @@ help:
 	@echo "... src/client/render/MapTileSet.o"
 	@echo "... src/client/render/MapTileSet.i"
 	@echo "... src/client/render/MapTileSet.s"
+	@echo "... src/client/render/Scene.o"
+	@echo "... src/client/render/Scene.i"
+	@echo "... src/client/render/Scene.s"
 	@echo "... src/client/render/StateLayer.o"
 	@echo "... src/client/render/StateLayer.i"
 	@echo "... src/client/render/StateLayer.s"

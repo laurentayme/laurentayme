@@ -6,6 +6,66 @@
 
 #IncludeRegexTransform: 
 
+../src/client/json/json.h
+stddef.h
+-
+stdint.h
+-
+string
+-
+cpptl/config.h
+-
+version.h
+../src/client/json/version.h
+allocator.h
+../src/client/json/allocator.h
+config.h
+../src/client/json/config.h
+forwards.h
+../src/client/json/forwards.h
+forwards.h
+../src/client/json/forwards.h
+exception
+-
+string
+-
+vector
+-
+map
+-
+cpptl/smallmap.h
+-
+cpptl/forwards.h
+-
+features.h
+../src/client/json/features.h
+value.h
+../src/client/json/value.h
+deque
+-
+iosfwd
+-
+istream
+-
+stack
+-
+string
+-
+value.h
+../src/client/json/value.h
+ostream
+-
+string
+-
+vector
+-
+sstream
+-
+stdlib.h
+-
+config.h
+../src/client/json/config.h
+
 ../src/client/render.h
 render/Tile.h
 ../src/client/render/Tile.h
@@ -25,6 +85,8 @@ render/StateLayer.h
 ../src/client/render/StateLayer.h
 render/ElementTabLayer.h
 ../src/client/render/ElementTabLayer.h
+render/Scene.h
+../src/client/render/Scene.h
 
 ../src/client/render/CharacterTileSet.h
 vector
@@ -61,6 +123,18 @@ Tile.h
 ../src/client/render/Tile.h
 TileSet.h
 ../src/client/render/TileSet.h
+
+../src/client/render/Scene.h
+stdlib.h
+-
+SFML/Graphics.hpp
+-
+StateLayer.h
+../src/client/render/StateLayer.h
+ElementTabLayer.h
+../src/client/render/ElementTabLayer.h
+state/State.h
+../src/client/render/state/State.h
 
 ../src/client/render/StateLayer.h
 Layer.h
@@ -119,10 +193,10 @@ state/Observer.h
 ../src/shared/ai/DeepAI.h
 state/State.h
 ../src/shared/ai/state/State.h
-AI.h
-../src/shared/ai/AI.h
 PathMap.h
 ../src/shared/ai/PathMap.h
+AI.h
+../src/shared/ai/AI.h
 
 ../src/shared/ai/HeuristicAI.h
 random
@@ -171,6 +245,10 @@ engine/LoadCommand.h
 ../src/shared/engine/LoadCommand.h
 engine/MoveCharacterCommand.h
 ../src/shared/engine/MoveCharacterCommand.h
+engine/Engine_Observer.h
+../src/shared/engine/Engine_Observer.h
+engine/Engine_Observable.h
+../src/shared/engine/Engine_Observable.h
 engine/Engine.h
 ../src/shared/engine/Engine.h
 engine/AttackCommand.h
@@ -185,6 +263,10 @@ engine/ClickCommand.h
 ../src/shared/engine/ClickCommand.h
 engine/MouseMovedCommand.h
 ../src/shared/engine/MouseMovedCommand.h
+engine/HandleStatut.h
+../src/shared/engine/HandleStatut.h
+engine/TurnCommand.h
+../src/shared/engine/TurnCommand.h
 
 ../src/shared/engine/AttackCommand.h
 string
@@ -213,6 +295,26 @@ map
 -
 memory
 -
+mutex
+-
+json/json.h
+-
+Command.h
+../src/shared/engine/Command.h
+Engine_Observable.h
+../src/shared/engine/Engine_Observable.h
+
+../src/shared/engine/Engine_Observable.h
+vector
+-
+Engine_Observer.h
+../src/shared/engine/Engine_Observer.h
+
+../src/shared/engine/Engine_Observer.h
+
+../src/shared/engine/HandleStatut.h
+CommandTypeId.h
+../src/shared/engine/CommandTypeId.h
 Command.h
 ../src/shared/engine/Command.h
 
@@ -243,6 +345,10 @@ CommandTypeId.h
 ../src/shared/engine/CommandTypeId.h
 Command.h
 ../src/shared/engine/Command.h
+
+../src/shared/engine/TurnCommand.h
+CommandTypeId.h
+../src/shared/engine/CommandTypeId.h
 
 ../src/shared/engine/TurnSurbrillanceCommand.h
 CommandTypeId.h
@@ -520,6 +626,28 @@ iostream
 math.h
 /home/vincent/cloneplt/laurentayme/src/client/math.h
 
+/home/vincent/cloneplt/laurentayme/src/client/Client.cpp
+stdio.h
+-
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/state.h
+engine.h
+/home/vincent/cloneplt/laurentayme/src/client/engine.h
+client.h
+/home/vincent/cloneplt/laurentayme/src/client/client.h
+iostream
+-
+chrono
+-
+thread
+-
+math.h
+-
+SFML/Graphics.hpp
+-
+SFML/System/Time.hpp
+-
+
 /home/vincent/cloneplt/laurentayme/src/client/Command.cpp
 stdio.h
 -
@@ -535,6 +663,8 @@ stdlib.h
 -
 ai.h
 /home/vincent/cloneplt/laurentayme/src/client/ai.h
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/state.h
 engine.h
 /home/vincent/cloneplt/laurentayme/src/client/engine.h
 vector
@@ -578,6 +708,18 @@ engine.h
 utility
 -
 
+/home/vincent/cloneplt/laurentayme/src/client/Engine_Observable.cpp
+stdio.h
+-
+engine.h
+/home/vincent/cloneplt/laurentayme/src/client/engine.h
+
+/home/vincent/cloneplt/laurentayme/src/client/Engine_Observer.cpp
+stdio.h
+-
+engine.h
+/home/vincent/cloneplt/laurentayme/src/client/engine.h
+
 /home/vincent/cloneplt/laurentayme/src/client/Equipment.cpp
 stdio.h
 -
@@ -595,6 +737,20 @@ iostream
 -
 state.h
 /home/vincent/cloneplt/laurentayme/src/client/state.h
+
+/home/vincent/cloneplt/laurentayme/src/client/HandleStatut.cpp
+stdio.h
+-
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/state.h
+engine.h
+/home/vincent/cloneplt/laurentayme/src/client/engine.h
+iostream
+-
+math.h
+/home/vincent/cloneplt/laurentayme/src/client/math.h
+algorithm
+-
 
 /home/vincent/cloneplt/laurentayme/src/client/HeuristicAI.cpp
 stdio.h
@@ -650,6 +806,10 @@ chrono
 thread
 -
 math.h
+-
+SFML/Graphics.hpp
+-
+SFML/System/Time.hpp
 -
 
 /home/vincent/cloneplt/laurentayme/src/client/Observable.cpp
@@ -763,6 +923,8 @@ iostream
 /home/vincent/cloneplt/laurentayme/src/client/State.cpp
 stdio.h
 -
+stdlib.h
+-
 iostream
 -
 fstream
@@ -820,6 +982,18 @@ iostream
 state.h
 /home/vincent/cloneplt/laurentayme/src/client/state.h
 
+/home/vincent/cloneplt/laurentayme/src/client/TurnCommand.cpp
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/state.h
+engine.h
+/home/vincent/cloneplt/laurentayme/src/client/engine.h
+
 /home/vincent/cloneplt/laurentayme/src/client/TurnSurbrillanceCommand.cpp
 stdio.h
 -
@@ -853,8 +1027,30 @@ state.h
 /home/vincent/cloneplt/laurentayme/src/client/state.h
 engine.h
 /home/vincent/cloneplt/laurentayme/src/client/engine.h
+ai.h
+/home/vincent/cloneplt/laurentayme/src/client/ai.h
 math.h
 -
+algorithm
+-
+
+/home/vincent/cloneplt/laurentayme/src/client/client.h
+client/Client.h
+/home/vincent/cloneplt/laurentayme/src/client/client/Client.h
+
+/home/vincent/cloneplt/laurentayme/src/client/client/Client.h
+memory
+-
+mutex
+-
+engine/Engine.h
+/home/vincent/cloneplt/laurentayme/src/client/client/engine/Engine.h
+ai/AI.h
+/home/vincent/cloneplt/laurentayme/src/client/client/ai/AI.h
+engine/Engine_Observer.h
+/home/vincent/cloneplt/laurentayme/src/client/client/engine/Engine_Observer.h
+render/Scene.h
+/home/vincent/cloneplt/laurentayme/src/client/client/render/Scene.h
 
 /home/vincent/cloneplt/laurentayme/src/client/json/json.h
 stddef.h
@@ -1033,8 +1229,6 @@ memory
 -
 fstream
 -
-ctime
--
 unistd.h
 -
 state.h
@@ -1048,6 +1242,8 @@ ai.h
 SFML/Graphics.hpp
 -
 valarray
+-
+stack
 -
 
 /home/vincent/cloneplt/laurentayme/src/client/render.h
@@ -1069,6 +1265,8 @@ render/StateLayer.h
 /home/vincent/cloneplt/laurentayme/src/client/render/StateLayer.h
 render/ElementTabLayer.h
 /home/vincent/cloneplt/laurentayme/src/client/render/ElementTabLayer.h
+render/Scene.h
+/home/vincent/cloneplt/laurentayme/src/client/render/Scene.h
 
 /home/vincent/cloneplt/laurentayme/src/client/render/CharacterTileSet.cpp
 stdio.h
@@ -1155,6 +1353,26 @@ Tile.h
 /home/vincent/cloneplt/laurentayme/src/client/render/Tile.h
 TileSet.h
 /home/vincent/cloneplt/laurentayme/src/client/render/TileSet.h
+
+/home/vincent/cloneplt/laurentayme/src/client/render/Scene.cpp
+stdio.h
+-
+state.h
+/home/vincent/cloneplt/laurentayme/src/client/render/state.h
+render.h
+/home/vincent/cloneplt/laurentayme/src/client/render/render.h
+
+/home/vincent/cloneplt/laurentayme/src/client/render/Scene.h
+stdlib.h
+-
+SFML/Graphics.hpp
+-
+StateLayer.h
+/home/vincent/cloneplt/laurentayme/src/client/render/StateLayer.h
+ElementTabLayer.h
+/home/vincent/cloneplt/laurentayme/src/client/render/ElementTabLayer.h
+state/State.h
+/home/vincent/cloneplt/laurentayme/src/client/render/state/State.h
 
 /home/vincent/cloneplt/laurentayme/src/client/render/StateLayer.cpp
 stdio.h

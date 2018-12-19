@@ -15,19 +15,6 @@ using namespace render;
 StateTileSet::StateTileSet(){
     Tile t(0,0,1996,1412);
     state.push_back(t);
-<<<<<<< HEAD
-    
-    Tile t_StartMenu(0,1760,2315,2174);
-    state.push_back(t_StartMenu);
-    
-    Tile t_StartMenu_1(0,3934,2315,2174);
-    state.push_back(t_StartMenu_1);
-    
-    Tile t_StartMenu_2(0,6108,2315,2174);
-    state.push_back(t_StartMenu_2);
-||||||| merged common ancestors
-    //state.push_back(t_light);
-=======
     
     Tile t_StartMenu(0,1753,2305,2178);
     state.push_back(t_StartMenu);
@@ -40,7 +27,6 @@ StateTileSet::StateTileSet(){
     
     Tile t_EndMenu(0,8276,2305,2178);
     state.push_back(t_EndMenu);
->>>>>>> refs/remotes/origin/master
    
 }
 
@@ -61,15 +47,7 @@ StateTileSet::~StateTileSet(){
 }
 
 const Tile& StateTileSet::getTile(const state::Element& e){ 
-<<<<<<< HEAD
-    
-    Tile& s=state[0];
-    return(s);
-||||||| merged common ancestors
-    Tile& s=state[0];
-    return(s);
-=======
-    
+
     //Cas d'un Main Menu
     if(e.getTypeId()==3){
         Tile& s=state[1];
@@ -96,6 +74,5 @@ const Tile& StateTileSet::getTile(const state::Element& e){
        Tile& s=state[0];
        return(s); 
     }
-    
->>>>>>> refs/remotes/origin/master
+   
 }

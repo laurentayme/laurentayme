@@ -15,7 +15,9 @@ namespace engine {
     WHITESURBRILLANCE     = 7,
     TURNSURBRILLANCE     = 8,
     CLICK     = 9,
-    MOUSEMOVED     = 10
+    MOUSEMOVED     = 10,
+    Statut     = 11,
+    TURN     = 12
   };
 
 };
