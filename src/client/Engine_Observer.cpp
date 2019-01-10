@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-#include <stdio.h>
-#include "engine.h"
-
-using namespace engine;
-
-
-
-||||||| merged common ancestors
-=======
 #include <stdio.h>
 #include "engine.h"
 
@@ -22,4 +12,3 @@ void Engine_Observer::engineUpdating(){
     
 }
 
->>>>>>> refs/remotes/origin/master

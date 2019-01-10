@@ -93,3 +93,19 @@ void WhiteSurbrillanceCommand::execute(state::State& act_state){
     
     }
 }
+
+Json::Value WhiteSurbrillanceCommand::serialize(){
+	Json::Value cmd;
+	cmd[" Type "]=this->getTypeId();
+	cmd[" X "]=this->x;
+	cmd[" Y "]=this->y;
+	return cmd;
+
+}
+
+void WhiteSurbrillanceCommand::deserialize(Json::Value cmd){
+	this->x=cmd[" X "].asFloat();
+	this->y=cmd[" Y "].asFloat();
+}
+
+

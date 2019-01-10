@@ -53,7 +53,7 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
         Point pt=queue.top();
         queue.pop();
         //On filtre les obstacles
-        if((pt.getWeight()>=Poids_min) and (pt.getWeight()<pow(10,3.0)) and (abs(pt.getX()-chars[character]->getPosition().getX())+abs(pt.getY()-chars[character]->getPosition().getY()))<=chars[character]->getPM()and pt.getX()!=0 and pt.getY()!=0){
+        if((pt.getWeight()>=Poids_min) and (pt.getWeight()<pow(10,3.0)) and (abs(pt.getX()-chars[character]->getPosition().getX())+abs(pt.getY()-chars[character]->getPosition().getY()))<=chars[character]->getPM() and pt.getX()>0 and pt.getY()>0){
             state::Position pos(pt.getX(),pt.getY());
             move_list.push_back(pos);
 		stpaidemoi.push_back(pt);
@@ -221,7 +221,7 @@ int DeepAI::Min(state::State& state, int character, int depth){
         Point pt=queue.top();
         queue.pop();
         //On filtre les obstacles
-        if(pt.getWeight()<pow(10,3.0) and state.getCharacters()->getElementList()[character]->getPA()and (abs(pt.getX()-state.getCharacters()->getElementList()[character]->getPosition().getX())+abs(pt.getY()-state.getCharacters()->getElementList()[character]->getPosition().getY()))<=state.getCharacters()->getElementList()[character]->getPM()and pt.getX()!=0 and pt.getY()!=0){
+        if(pt.getWeight()<pow(10,3.0) and state.getCharacters()->getElementList()[character]->getPA()and (abs(pt.getX()-state.getCharacters()->getElementList()[character]->getPosition().getX())+abs(pt.getY()-state.getCharacters()->getElementList()[character]->getPosition().getY()))<=state.getCharacters()->getElementList()[character]->getPM()and pt.getX()>0 and pt.getY()>0){
             state::Position pos(pt.getX(),pt.getY());
             move_list.push_back(pos);
         }
@@ -278,7 +278,7 @@ int DeepAI::Max(state::State& state, int character, int depth){
         Point pt=queue.top();
         queue.pop();
         //On filtre les obstacles
-        if(pt.getWeight()<pow(10,3.0)and (abs(pt.getX()-chars[character]->getPosition().getX())+abs(pt.getY()-chars[character]->getPosition().getY()))<=chars[character]->getPM()and pt.getX()!=0 and pt.getY()!=0){
+        if(pt.getWeight()<pow(10,3.0)and (abs(pt.getX()-chars[character]->getPosition().getX())+abs(pt.getY()-chars[character]->getPosition().getY()))<=chars[character]->getPM()and pt.getX()>0 and pt.getY()>0){
             state::Position pos(pt.getX(),pt.getY());
             move_list.push_back(pos);
         }

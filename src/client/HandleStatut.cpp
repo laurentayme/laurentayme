@@ -13,7 +13,7 @@ HandleStatut::HandleStatut(int chara){
 }
 
 CommandTypeId HandleStatut::getTypeId() const {
-	return(CommandTypeId::Statut);
+	return(CommandTypeId::STATUT);
 
 }
 
@@ -46,5 +46,18 @@ void HandleStatut::execute(state::State& state){
 	
 }
 
+Json::Value HandleStatut::serialize(){
+	Json::Value cmd;
+	cmd[" Type "]=this->getTypeId();
+	cmd[" Character "]=this->character;
+	return cmd;
+
+}
+
+void HandleStatut::deserialize(Json::Value cmd){
+	//std::cout<<cmd[" Character "].asInt()<<"taille  json "<<sizeof(cmd[" Character "].asInt())<<"taille int    "<<sizeof(int)<<cmd[" Type "]<<std::endl;
+	this->character=cmd[" Character "].asInt();
+	std::cout<<"le personnage   "<<this->character<<std::endl;
+}
 
 

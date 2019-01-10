@@ -62,3 +62,18 @@ void ClickCommand::execute(state::State& state, engine::Engine& engine){
     
 }
 
+Json::Value ClickCommand::serialize(){
+	Json::Value cmd;
+	cmd[" Type "]=this->getTypeId();
+	cmd[" X Mouse "]=this->x_mouse;
+	cmd[" Y Mouse "]=this->y_mouse;
+	return cmd;
+
+}
+
+void ClickCommand::deserialize(Json::Value cmd){
+	this->x_mouse=cmd[" X Mouse "].asInt();
+	this->y_mouse=cmd[" Y Mouse "].asInt();
+}
+	
+

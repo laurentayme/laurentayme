@@ -38,3 +38,13 @@ void TurnSurbrillanceCommand::execute(state::State& act_state){
     act_state.getRedMap()->setLocation(1035,495,6); 
 }
 
+
+Json::Value TurnSurbrillanceCommand::serialize(){
+	Json::Value cmd;
+	cmd[" Type "]=this->getTypeId();
+	return cmd;
+
+}
+
+void TurnSurbrillanceCommand::deserialize(Json::Value cmd){
+}

@@ -137,6 +137,20 @@ void SurbrillanceCommand::execute(state::State& act_state, engine::Engine& engin
 } 
     
     
+Json::Value SurbrillanceCommand::serialize(){
+	Json::Value cmd;
+	cmd[" Type "]=this->getTypeId();
+	cmd[" X Mouse iso "]=this->x_mouse_iso;
+	cmd[" Y Mouse iso "]=this->y_mouse_iso;
+	return cmd;
+
+}
+
+void SurbrillanceCommand::deserialize(Json::Value cmd){
+	this->x_mouse_iso=cmd[" X Mouse iso "].asInt();
+	this->y_mouse_iso=cmd[" Y Mouse iso "].asInt();
+}
+	
     
     
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <stdio.h>
 #include "state.h"
 #include "engine.h"
@@ -19,25 +18,15 @@ Client::Client(){
 }
 
 void Client::engineUpdating(){
-	characters_ai->run(engine,0,engine.getState());
+	
+	//characters_ai->run(engine,0,engine.getState());
 	
 }
 
 void Client::engineUpdated(){
-	engine.getState()->flushCachedEvents();
+	//engine.getState()->flushCachedEvents();
 }
 
 void Client::run(){
 	//engine.run();
 }
-||||||| merged common ancestors
-=======
-#include <stdio.h>
-#include "client.h"
-#include <memory>
-#include <stdlib.h>
-#include <iostream>
-#include <math.h>
-
-using namespace client;
->>>>>>> refs/remotes/origin/master

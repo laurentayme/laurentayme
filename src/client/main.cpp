@@ -12,6 +12,7 @@
 #include <fstream>
 #include <unistd.h>
 
+#include "json/json.h"
 #include "state.h"
 #include "render.h"
 #include "engine.h"
@@ -32,7 +33,90 @@ using namespace engine;
 #include <valarray>
 #include <stack>
 
-void testSFML(int isRoll) {
+
+/*void replay(Engine engine, State* state){
+	Json::Value root;   // will contains the root value after parsing.
+    	Json::Reader reader;
+    	std::ifstream test("replay.txt", std::ifstream::binary);
+    	bool parsingSuccessful = reader.parse( test, root, false );
+    	if ( !parsingSuccessful ){
+        // report to the user the failure and their locations in the document.
+        std::cout  << reader.getFormatedErrorMessages()
+               << "\n";
+    	}
+	for(int j=0;j<root.size();j++){
+	
+		if(root[j][" Type "].asInt()==1){
+			LoadCommand* load;
+			load->deserialize(root[j]);
+			engine.addCommand(1,load);
+			engine.update();
+		
+		}
+		if(root[j][" Type "].asInt()==3){
+			MoveCharacterCommand* move;
+			move->deserialize(root[j]);
+			engine.addCommand(1,move);
+			engine.update();
+		
+		}
+		if(root[j][" Type "].asInt()==5){
+			AttackCommand* attack;
+			attack->deserialize(root[j]);
+			engine.addCommand(1,attack);
+			engine.update();
+
+		}
+		if(root[j][" Type "].asInt()==6){
+			SurbrillanceCommand* surbri;
+			surbri->deserialize(root[j]);
+			engine.addCommand(1,surbri);
+			engine.update();
+		}
+		if(root[j][" Type "].asInt()==7){
+			WhiteSurbrillanceCommand* white;
+			white->deserialize(root[j]);
+			engine.addCommand(1,white);
+			engine.update();
+		}
+		if(root[j][" Type "].asInt()==8){
+			TurnSurbrillanceCommand* turnSurbri;
+			turnSurbri->deserialize(root[j]);
+			engine.addCommand(1,turnSurbri);
+			engine.update();
+		}
+		if(root[j][" Type "].asInt()==9){
+			ClickCommand* click;
+			click->deserialize(root[j]);
+			engine.addCommand(1,click);
+			engine.update();
+		}
+		if(root[j][" Type "].asInt()==10){
+			MouseMovedCommand* mouse;
+			mouse->deserialize(root[j]);
+			engine.addCommand(1,mouse);
+			engine.update();
+		}
+		if(root[j][" Type "].asInt()==11){
+			HandleStatut* statut;
+			statut->deserialize(root[j]);
+			engine.addCommand(1,statut);
+			engine.update();
+		}
+		if(root[j][" Type "].asInt()==12){
+			TurnCommand* turn;
+			turn->deserialize(root[j]);
+			engine.addCommand(1,turn);
+			engine.update();
+		}
+	}
+	int i=remove("replay.txt");
+	cout<< "fichier supprimé " <<i<<endl;
+}*/
+
+
+
+void testSFML(int isRoll,int isRecord,int isReplay) {
     	sf::Texture texture;
         std::vector<Element*> elmt_list;
         std::vector<Element*> elmt_list_landscape;
@@ -197,6 +281,9 @@ void testSFML(int isRoll) {
         state::Observable observable;
 
         engine.setState(state);
+	if(isRecord==1){
+		engine.setEnableRecord(true);
+	}
 
         //Random IA
         //ai::Heuristic_AI ai(1);
@@ -234,6 +321,106 @@ void testSFML(int isRoll) {
     //window.setFramerateLimit(24);
 
     if(isRoll==0){
+		if(isReplay==1){
+			while (window.isOpen()){
+				Json::Value root;   // will contains the root value after parsing.
+			    	Json::Reader reader;
+			    	std::ifstream test("replay.json", std::ifstream::binary);
+			    	bool parsingSuccessful = reader.parse( test, root, false );
+			    	if ( !parsingSuccessful ){
+					// report to the user the failure and their locations in the document.
+					std::cout  << reader.getFormatedErrorMessages()
+					       << "\n";
+			    	}
+				int c=root.size();
+				//for(Json::Value::iterator it=root.begin(); it != root.end(); ++it){
+				for(int i=0;i<c;i++){
+	
+					if(root[i][" Type "].asInt()==1){
+						LoadCommand* load=new LoadCommand("");
+						load->deserialize((root[i]));
+						engine.addCommand(1,load);
+						engine.update();
+		
+					}
+					if(root[i][" Type "].asInt()==3){
+						MoveCharacterCommand* move=new MoveCharacterCommand(0,0,0);
+						move->deserialize(root[i]);
+						engine.addCommand(1,move);
+						engine.update();
+		
+					}
+					if(root[i][" Type "].asInt()==5){
+						AttackCommand* attack=new AttackCommand(0,0,"");
+						attack->deserialize(root[i]);
+						engine.addCommand(1,attack);
+						engine.update();
+
+					}
+					if(root[i][" Type "].asInt()==6){
+						SurbrillanceCommand* surbri=new SurbrillanceCommand(0,0);
+						surbri->deserialize(root[i]);
+						engine.addCommand(1,surbri);
+						engine.update();
+					}
+					if(root[i][" Type "].asInt()==7){
+						WhiteSurbrillanceCommand* white=new WhiteSurbrillanceCommand(0,0);
+						white->deserialize(root[i]);
+						engine.addCommand(1,white);
+						engine.update();
+					}
+					if(root[i][" Type "].asInt()==8){
+						TurnSurbrillanceCommand* turnSurbri=new TurnSurbrillanceCommand;
+						turnSurbri->deserialize(root[i]);
+						engine.addCommand(1,turnSurbri);
+						engine.update();
+					}
+					if(root[i][" Type "].asInt()==9){
+						ClickCommand* click=new ClickCommand(0,0);
+						click->deserialize(root[i]);
+						engine.addCommand(1,click);
+						engine.update();
+					}
+					if(root[i][" Type "].asInt()==10){
+						MouseMovedCommand* mouse=new MouseMovedCommand(0,0);
+						mouse->deserialize(root[i]);
+						engine.addCommand(1,mouse);
+						engine.update();
+					}
+					if(root[i][" Type "].asInt()==11){
+						std::cout<< " ON EST ICI 1 "<< std::endl;
+						HandleStatut* statut=new HandleStatut(0);
+						std::cout<< " ON EST ICI 2 "<< std::endl;
+						statut->deserialize(root[i]);
+						std::cout<< " ON EST ICI 3 "<<statut->character<< std::endl;
+						engine.addCommand(2,statut);
+						std::cout<< " ON EST ICI 4 "<< std::endl;
+						engine.update();
+						std::cout<< " ON EST ICI 5 "<< std::endl;
+					}
+					/*if(root[i][" Type "].asInt()==12){
+						TurnCommand* turn=new TurnCommand(*state);
+						turn->deserialize(root[i]);
+						engine.addCommand(1,turn);
+						engine.update();
+					}*/
+					window.clear();
+               		 		window.draw(*elmtTabLayer_ptr->getSurface());
+					window.draw(*elmtTabLayerLandscape_ptr->getSurface());
+					window.draw(*elmtTabLayerWall_ptr->getSurface());
+					window.draw(*elmtTabLayerMenu_ptr->getSurface());
+					window.draw(*elmtTabLayerRed_ptr->getSurface());
+					window.draw(*elmtTabLayer2_ptr->getSurface());
+					window.draw(stateLayerMenu_ptr->getTextpv());
+					window.draw(stateLayerMenu_ptr->getTextpvSram());
+					window.draw(stateLayerMenu_ptr->getTextpa());
+					window.draw(stateLayerMenu_ptr->getTextpm());
+					window.display();
+				}
+				int i=remove("replay.txt");
+			}
+		}
+		else{
         while (window.isOpen()){
 
 
@@ -439,6 +626,7 @@ void testSFML(int isRoll) {
 
         }
         }
+	}
     }
     //Cas du RollBack
     else if(isRoll==1){
@@ -734,6 +922,9 @@ void testSFML(int isRoll) {
 int main(int argc,char* argv[])
 {
     int isRoll=0;
+	int isReplay=0;
+	int isRecord=0;
+
     //testSFML();
     if (argc>1){                 // vérifie s'il y a un argument
         if  (strcmp(argv[1],"hello")==0) {   // vérification que l'argument est le bon
@@ -750,13 +941,29 @@ int main(int argc,char* argv[])
             if(strcmp(argv[1],"rollback")==0){
                 isRoll=1;
             }
-            
-            testSFML(isRoll);
+            	testSFML(isRoll,isRecord,isReplay);
 
         }
+	else if(strcmp(argv[1],"record")==0){
+		isRecord=1;
+		testSFML(isRoll,isRecord,isReplay);
+	
+	}
+	else if(strcmp(argv[1],"replay")==0){
+		isReplay=1;
+		//std::ofstream myfile;
+		//myfile.open("replay.json",std::ofstream::out | std::ofstream::app);
+		//myfile<<]
+		testSFML(isRoll,isRecord,isReplay);
+	}
 
     }
 
     return(0);
 
 }
+
+
+
+
+

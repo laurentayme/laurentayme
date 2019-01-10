@@ -33,3 +33,6 @@ int Command::getVectY() const{
 void Command::execute(state::State& state, engine::Engine& engine){
     
 }
+
+void Command::deserialize(Json::Value cmd){
+}

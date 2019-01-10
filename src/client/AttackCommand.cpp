@@ -103,3 +103,24 @@ CommandTypeId AttackCommand::getTypeId() const {
 	return(CommandTypeId::ATTACK);
 
 }
+
+Json::Value AttackCommand::serialize() {
+	Json::Value cmd;
+	cmd[" Type "]=this->getTypeId();
+	cmd[" Attacker "]=this->CharacterAttacker;
+	cmd[" Target "]=this->CharacterTarget;
+	cmd[" AbilityUsed "]=this->AbilityUsed;
+	cmd[" Mouse_x "]=this->mouse_x;
+	cmd[" Mouse_y "]=this->mouse_y;
+	return cmd;
+}
+
+void AttackCommand::deserialize(Json::Value cmd) {
+	this->CharacterAttacker=cmd[" Attacker "].asInt();
+	this->CharacterTarget=cmd[" Target "].asInt();
+	this->AbilityUsed=cmd[" AbilityUsed "].asString();
+	this->mouse_x=cmd[" Mouse_x "].asInt();
+	this->mouse_y=cmd[" Mouse_y "].asInt();
+}
+
+
