@@ -86,7 +86,7 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
             max_value=val;
             state::Position p(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
             best_Position=p ;
-            std::cout<<"ScoreMax ="<<max_value<<std::endl;
+            //std::cout<<"ScoreMax ="<<max_value<<std::endl;
         }
      
         //On annule les déplacements précédemment faits//

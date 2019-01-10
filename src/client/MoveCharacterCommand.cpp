@@ -35,7 +35,6 @@ CommandTypeId MoveCharacterCommand::getTypeId() const {
 }
 
 void MoveCharacterCommand::execute(state::State& act_state){
-	std::cout<<"VECTX : "<<vectX<<"  VECTY : "<<vectY<<std::endl;
 	if(vectX==0 and vectY==0){
 		std::cout<<"Reste sur place "<<std::endl;
 	}
@@ -1020,7 +1019,6 @@ Json::Value MoveCharacterCommand::serialize(){
 	Json::Value cmd;
 	cmd[" Type "]=this->getTypeId();
 	cmd[" Character "]=this->character;
-	std::cout<<"En serialisation X : "<<this->getVectX()<<"  ou  : "<<vectX<<"   En serialisation Y : "<<this->getVectY()<<std::endl;
 	cmd[" X Move "]=this->getVectX();
 	cmd[" Y Move "]=this->getVectY();
 	return cmd;

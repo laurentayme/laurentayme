@@ -388,15 +388,10 @@ void testSFML(int isRoll,int isRecord,int isReplay) {
 						engine.update();
 					}
 					if(root[i][" Type "].asInt()==11){
-						std::cout<< " ON EST ICI 1 "<< std::endl;
 						HandleStatut* statut=new HandleStatut(0);
-						std::cout<< " ON EST ICI 2 "<< std::endl;
 						statut->deserialize(root[i]);
-						std::cout<< " ON EST ICI 3 "<<statut->character<< std::endl;
 						engine.addCommand(2,statut);
-						std::cout<< " ON EST ICI 4 "<< std::endl;
 						engine.update();
-						std::cout<< " ON EST ICI 5 "<< std::endl;
 					}
 					/*if(root[i][" Type "].asInt()==12){
 						TurnCommand* turn=new TurnCommand(*state);
@@ -416,8 +411,9 @@ void testSFML(int isRoll,int isRecord,int isReplay) {
 					window.draw(stateLayerMenu_ptr->getTextpa());
 					window.draw(stateLayerMenu_ptr->getTextpm());
 					window.display();
+					usleep(200000);
 				}
-				int i=remove("replay.txt");
+				int i=remove("replay.json");
 			}
 		}
 		else{
