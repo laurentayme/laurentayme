@@ -73,7 +73,7 @@ void replay(Engine& engine, State* state){
 	int c=root.size();
 	//for(Json::Value::iterator it=root.begin(); it != root.end(); ++it){
 	for(int i=0;i<c;i++){
-            m2.lock();
+            //m2.lock();
             
 	
             if(root[i][" Type "].asInt()==1){
@@ -143,7 +143,7 @@ void replay(Engine& engine, State* state){
                 engine.update();
             }
             
-            m2.unlock();
+            //m2.unlock();
             
             usleep(200000);
             

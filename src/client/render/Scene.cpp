@@ -10,14 +10,19 @@ Scene::Scene(state::State& state):state(state),stateLayer(state),
     gridLayer(*state.getMap()),charsLayer(*state.getCharacters()),
     LandscapeLayer(*state.getLandscape()),WallLayer(*state.getWall()),
     RedLayer(*state.getRedMap()), MenuLayer(*state.getMenu()){
- 
-    stateLayer.initSurface();
-    gridLayer.initSurface();
-    charsLayer.initSurface();
-    LandscapeLayer.initSurface();
-    WallLayer.initSurface();
-    RedLayer.initSurface();
-    MenuLayer.initSurface();  
+
+    try{
+	    gridLayer.initSurface();
+	    charsLayer.initSurface();
+	    LandscapeLayer.initSurface();
+	    WallLayer.initSurface();
+	    RedLayer.initSurface();
+	    MenuLayer.initSurface();
+	    stateLayer.initSurface();  
+	}
+	catch(const char* e){
+            std::cout<<"Exception: "<<e<<std::endl;
+        }
 }
 
 
