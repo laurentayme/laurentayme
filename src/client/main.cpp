@@ -60,7 +60,7 @@ unsigned int microseconds=5000000000;
 sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Dofus Dungeon");
 
 
-void testSFML() {
+void initGame() {
     
     	sf::Texture texture;
         std::vector<Element*> elmt_list;
@@ -75,11 +75,6 @@ void testSFML() {
         //Paramètres de Map//
         int width=11;
         int height=16;
-        
-        
-        
-        //CLock
-        //clock_t t=clock();
         
 
         ////Instanciation de qqes objets de la  MAP////
@@ -148,7 +143,6 @@ void testSFML() {
             Space* state_menu=new Space(1);
             state_menu->setTypeId(2);
             listMenu.push_back(state_menu);
-
         /////// FIN Instanciation MAP /////////////
 
 
@@ -164,7 +158,6 @@ void testSFML() {
         
 
 	//Initialisation de State
-        //State* state1=new State;
         state1=new State;
 	state1->setMap(elmtTab_ptr);
 	state1->setCharacters(elmtTab2_ptr);
@@ -182,7 +175,6 @@ void testSFML() {
         state1->LoadMapFromFile(filePath);
         ///////////////////////
         
-        
 
         //Création de l'ElementTabLayer//
         ElementTabLayer* elmtTabLayer_ptr=new ElementTabLayer(*elmtTab_ptr);
@@ -195,57 +187,10 @@ void testSFML() {
         ////////////////////////////////
 
 
-        //Ajout d'observers sur chaque Couche: map + Personnages//
-            //Liaisons Observers/Observable//
-            /*elmtTab_ptr->addObserver(elmtTabLayer_ptr);
-            elmtTab2_ptr->addObserver(elmtTabLayer2_ptr);
-            elmtTabRed_ptr->addObserver(elmtTabLayerRed_ptr);
-            //Menu
-            elmtTabMenu_ptr->addObserver(elmtTabLayerMenu_ptr);
-            //Stats dans le Menu
-            elmtTab2_ptr->addObserver(stateLayerMenu_ptr);*/
-
-        //////////////////////////////////////////////////////////
-        
-        //Initialisation de la Surface de chaque Layer
-        /*try{
-                elmtTabLayer_ptr->initSurface();
-                elmtTabLayer2_ptr->initSurface();
-                elmtTabLayerLandscape_ptr->initSurface();
-                elmtTabLayerWall_ptr->initSurface();
-                elmtTabLayerRed_ptr->initSurface();
-                elmtTabLayerMenu_ptr->initSurface();
-                stateLayerMenu_ptr->initSurface();
-            
-        }
-        catch(const char* e){
-            cout<<"Exception: "<<e<<endl;
-        }*/
-
-        //Définition du State
-
-        
-
-        //Engine & Observables
-	
-        //Observable observable;
-        //Engine engine;
-        //engine1.setState(state1);
-
         //Deep AI
         
         ai_1=new ai::DeepAI(*state1,1,1);
         ai_2=new ai::DeepAI(*state1,1,0);
-        
- 
-        //Mise en place d'Observers sur les AI
-        /*elmtTab2_ptr->addObserver(ai_1);
-        elmtTab2_ptr->addObserver(ai_2);*/
-
-        //elmtTab2_ptr->addObserver(ai);
-
-        //Gestion des tours
-        //int tour=state->getTour();
         
         //PA et PM initiaux//
 
@@ -261,8 +206,21 @@ void testSFML() {
         scene =new Scene(*state1);
         engine1.setState(&scene->getState());
         
+        //Mise en place des Observers//
+        scene->getState().getRedMap()->addObserver(scene->getRedLayer());
+        scene->getState().getCharacters()->addObserver(scene->getCharsLayer());
+        scene->getState().getCharacters()->addObserver(scene->getStateLayer());
+        scene->getState().getMap()->addObserver(scene->getMapLayer());
+    
+        //Mise en place d'Observers sur les AI
+        scene->getState().getCharacters()->addObserver(ai_1);
+        scene->getState().getCharacters()->addObserver(ai_2);
         
+        //Window Settings
         window.setVerticalSyncEnabled(true);
+        
+        //Affichage Ecran
+        scene->draw(window);
 }
 
 
@@ -275,41 +233,42 @@ void Moteur(){
 }
 
 void IA(){  
-    while(1){
-        m2.lock();
+    while(1){   
+        //Vérification de Tour de Jeu et si la partie est terminée
         if(window.isOpen()and scene->getState().getTour()%2==0 and scene->getState().getCharacters()->getElementList()[0]->getStatut()!=3 and scene->getState().getCharacters()->getElementList()[1]->getStatut()!=3){
+           m2.lock();
+                cout<<"Tour :"<<scene->getState().getTour()<<endl;
+                cout<<"//Tour Sram//"<<endl; 
+                ai_1->run(engine1,1,scene->getState());
+                //Changement de Tour
+                scene->getState().setTour(scene->getState().getTour()+1);     
+            sleep(1);
+            m2.unlock(); 
+            sleep(1);
             scene->getState().getCharacters()->setCharacterPA(1,sram_pa);
             scene->getState().getCharacters()->setCharacterPM(1,sram_pm);
-            cout<<"Tour :"<<scene->getState().getTour()<<endl;
-            cout<<"//Tour Sram//"<<endl; 
-            ai_1->run(engine1,1,scene->getState());
-            sleep(2);
-            //Changement de Tour
-            scene->getState().setTour(scene->getState().getTour()+1);
-        }
-        m2.unlock();  
-        
+        }    
     }
 }
 
 void IA_2(){  
     while(1){
-        m2.lock();
+        //Vérification de Tour de Jeu et si la partie est terminée
         if(window.isOpen()and scene->getState().getTour()%2==1 and scene->getState().getCharacters()->getElementList()[0]->getStatut()!=3 and scene->getState().getCharacters()->getElementList()[1]->getStatut()!=3){
-            scene->getState().getCharacters()->setCharacterPA(1,iop_pa);
-            scene->getState().getCharacters()->setCharacterPM(1,iop_pm);
-            
+            m2.lock();
             cout<<"Tour :"<<scene->getState().getTour()<<endl;
             cout<<"//Tour Iop//"<<endl;
             
             ai_2->run(engine1,0,scene->getState());
-            sleep(2);
 
             //Changement de Tour
             scene->getState().setTour(scene->getState().getTour()+1);
-        }
-        m2.unlock();  
-        
+            sleep(1);
+            m2.unlock();   
+            sleep(1);
+            scene->getState().getCharacters()->setCharacterPA(0,iop_pa);
+            scene->getState().getCharacters()->setCharacterPM(0,iop_pm);
+        }    
     }
 }
 
@@ -319,33 +278,23 @@ void IA_2(){
 
 
 void Rendu(){
-
-    //Mise en place des Observers//
-    scene->getState().getRedMap()->addObserver(scene->getRedLayer());
-    scene->getState().getCharacters()->addObserver(scene->getCharsLayer());
-    scene->getState().getCharacters()->addObserver(scene->getStateLayer());
-    scene->getState().getMap()->addObserver(scene->getMapLayer());
-    scene->draw(window);
-    //Mise en place d'Observers sur les AI
-    scene->getState().getCharacters()->addObserver(ai_1);
-    scene->getState().getCharacters()->addObserver(ai_2);
-    
-    int new_turn=1;
+    //int new_turn=1;
     ////////////////////////////////
-    while (window.isOpen()){
-        
+    while (window.isOpen()){      
         //Phase de Combat//
         if(scene->getState().getEtat()==1){
+            m2.lock();
             scene->draw(window);
+            m2.unlock();
             // on gère les évènements
                     
             sf::Event event;
-            while (window.waitEvent(event)){
+            /*while (window.waitEvent(event)){
                 //m2.lock();
                 
-                if(event.type == sf::Event::Closed){
+                */if(event.type == sf::Event::Closed){
                         window.close();
-                }        
+                }/*        
                 /*if(new_turn==1){
                     scene->getState().getCharacters()->setCharacterPA(0,iop_pa);
                     scene->getState().getCharacters()->setCharacterPM(0,iop_pm);
@@ -386,21 +335,12 @@ void Rendu(){
                 
                 //m2.unlock();
                 // on dessine le niveau
-                scene->draw(window); 
+                //scene->draw(window); 
                 
-            }
+            //}
         }  
     }  
 }
-    
-
-
-
-
-//fin test map
-
-
-///// Fin Fenetre SFML /////
 
 
 int main(int argc,char* argv[])
@@ -411,19 +351,15 @@ int main(int argc,char* argv[])
             cout << "Bonjour le monde!" << endl;
         }
 
-        else if (strcmp(argv[1],"deep_ai")==0){
-            //Test Map
+        else if (strcmp(argv[1],"thread")==0){
+            //Initialisation du Jeu        
+            initGame();
             
-            testSFML();
-            
-            //thread th(Moteur);
+            //Threads
             thread th2(Rendu);
             thread th3(IA);
             thread th4(IA_2);
-            
-           
-            
-            //th.join();
+      
             th2.join();
             th3.join();
             th4.join();
