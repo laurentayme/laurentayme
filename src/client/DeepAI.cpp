@@ -22,6 +22,8 @@ DeepAI::DeepAI(const state::State& state, int depth, int character){
 
 void DeepAI::run(engine::Engine& engine, int character, state::State& state){
     minimax(engine, maxDepth,character,state);
+    //engine::TurnCommand* turn=new engine::TurnCommand(state);
+    //engine.addCommand(3,turn);
 }
 
 void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::State& state){
@@ -152,9 +154,11 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
     	engine.addCommand(2,best_move);
 	if(abilities_usable.size()>0){
     		//std::cout<<" le personnage joueur est : "<<character<<std::endl<<"  le personnage cible est :  "<<target<<std::endl<<" le nombre d'attaques possibles est de    "<<abilities_usable.size()<<std::endl<<" l'attaque max est l'attaque à la place  "<<attackMax<<std::endl;
-    		engine::AttackCommand* best_attack=new engine::AttackCommand(character, target, abilities_usable[attackMax]->getName());//// ÇA BUG ICI
+    		engine::AttackCommand* best_attack=new engine::AttackCommand(character, target, abilities_usable[attackMax]->getName());
     		engine.addCommand(3,best_attack);
     	}
+	engine::TurnCommand* turn=new engine::TurnCommand(state);
+    	engine.addCommand(4,turn);
     	engine.update();
 	for(int k=0;k<stpaidemoi.size();k++){
 	//std::cout<<"position X : "<<stpaidemoi[k].getX()<<"position Y : "<<stpaidemoi[k].getY()<<"poids : "<<stpaidemoi[k].getWeight()<<std::endl;

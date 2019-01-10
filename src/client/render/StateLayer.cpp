@@ -25,7 +25,7 @@ void StateLayer::initSurface (){
 	TileSet& tileSet2= *tileset;
 	StateTileSet statetileset;
 	StateTileSet& to= statetileset;
-
+	
 	surface->initQuads(1);
 	surface->loadTexture(statetileset.getImageFile());
 	//std::cout<<"la taille maximale de surface est de : "<<surface.texture.getMaximumSize()<<std::endl;
@@ -34,12 +34,11 @@ void StateLayer::initSurface (){
 
         //Menu de State
         
-       
                 //Affichage de l'état
             if(!font.loadFromFile("res/font.TTF") or !font2.loadFromFile("res/fontDofus.ttf")){
                  throw "Error Font Loading !";
              }
-        
+       
             //Sram Vivant/ 
             if(state.getCharacters()->getElementList().size()>1){
                 //PV Iop//
@@ -49,7 +48,6 @@ void StateLayer::initSurface (){
                 textpv.setColor(sf::Color::White);
                 textpv.setPosition(240,86*7.4-25);
                 /////////
-
                 //PV Sram//
                  textpv_sram.setFont(font);
                  textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[1]->getPV()));
@@ -62,7 +60,6 @@ void StateLayer::initSurface (){
                  else{
                      textpv_sram.setPosition(142,130);
                  }
-
              }
              //Un Personnage Mort
             for(int i=0; i<state.getCharacters()->getElementList().size();i++){
@@ -76,10 +73,10 @@ void StateLayer::initSurface (){
                 }
                 else{
                     textpv_sram.setFont(font);
-                    textpv_sram.setString(std::to_string(0));
+                    textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[i]->getPV()));
                     textpv_sram.setCharacterSize(18);
                     textpv_sram.setColor(sf::Color::White);
-                    textpv_sram.setPosition(154,130);
+                    textpv_sram.setPosition(142,130);
                 }
             
             }

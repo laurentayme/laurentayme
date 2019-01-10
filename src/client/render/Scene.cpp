@@ -1,15 +1,30 @@
 #include <stdio.h>
 #include "state.h"
 #include "render.h"
+#include <iostream>
 
 
 using namespace render;
 
-Scene::Scene(const state::State& state_v):state(state_v),gridLayer(*state_v.getMap()),charsLayer(*state_v.getCharacters()),stateLayer(state_v){
-    //state::ElementTab map(state_v.getMap()->getWidth(),state_v.getMap()->getHeight(),state_v.getMap()->getElementList());
-	gridLayer.initSurface();
-	charsLayer.initSurface();
-	stateLayer.initSurface();
+Scene::Scene(state::State& state):state(state),stateLayer(state),
+    gridLayer(*state.getMap()),charsLayer(*state.getCharacters()),
+    LandscapeLayer(*state.getLandscape()),WallLayer(*state.getWall()),
+    RedLayer(*state.getRedMap()), MenuLayer(*state.getMenu()){
+	try{
+    
+    gridLayer.initSurface();
+    charsLayer.initSurface();
+    LandscapeLayer.initSurface();
+    WallLayer.initSurface();
+    RedLayer.initSurface();
+    MenuLayer.initSurface(); 
+    stateLayer.initSurface();
+	}
+	catch(const char* e){
+            std::cout<<"Exception: "<<e<<std::endl;
+        }
+
+ 
 }
 
 
@@ -20,6 +35,7 @@ size_t Scene::getWidth() const{
 size_t Scene::getHeight() const{
     return(this->height);
 }
+
 
 void Scene::stateChanged(const state::Event& event){
     if(event.getEventType()==state::StateEventId::CharactersChanged){
@@ -37,19 +53,40 @@ void Scene::stateChanged(const state::Event& event){
 
 void Scene::draw(sf::RenderWindow& window){
     window.clear();
-    //window.draw(this->gridLayer.getSurface());
-    //window.draw(*elmtTabLayerLandscape_ptr->getSurface());
-    //window.draw(*elmtTabLayerWall_ptr->getSurface());
-    //window.draw(this->stateLayer.getSurface());
-    //window.draw(*elmtTabLayerRed_ptr->getSurface());
-    //window.draw(this->charsLayer.getSurface());
+    window.draw(*this->gridLayer.getSurface().get());
+    window.draw(*this->LandscapeLayer.getSurface().get());
+    window.draw(*this->WallLayer.getSurface().get());
+    window.draw(*this->MenuLayer.getSurface().get());
+    window.draw(*this->RedLayer.getSurface().get());
+    window.draw(*this->charsLayer.getSurface().get());
     window.draw(this->stateLayer.getTextpv());
     window.draw(this->stateLayer.getTextpvSram());
     window.draw(this->stateLayer.getTextpa());
     window.draw(this->stateLayer.getTextpm());
     window.display();
+}
 
-    
+ElementTabLayer& Scene::getCharsLayer(){
+    ElementTabLayer& chars=this->charsLayer;
+    return (chars);
+}
 
+ElementTabLayer& Scene::getRedLayer(){
+    ElementTabLayer& red=this->RedLayer;
+    return (red);
+}
+
+StateLayer& Scene::getStateLayer(){
+    StateLayer& statelayer=this->stateLayer;
+    return (statelayer);
+}
+
+ElementTabLayer& Scene::getMapLayer(){
+    return this->gridLayer;
+}
+
+state::State& Scene::getState(){
+    //state::State& stat=this->state;
+    return(this->state);
 }
 

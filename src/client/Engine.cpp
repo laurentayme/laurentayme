@@ -43,7 +43,7 @@ int Engine::getNbCommands() const {
 
 void Engine::update(){ 
 	    notifyUpdating();
-           for(int i=0;i<4;i++){
+           for(int i=0;i<5;i++){
             //std::cout<<"1st Loop !"<<std::endl;
 		for(auto it =currentCommands.begin();it!=currentCommands.end();it++){
                         
