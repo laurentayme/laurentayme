@@ -1,0 +1,243 @@
+[
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : 0,
+	" Y Move " : -3
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : 0,
+	" Y Move " : -3
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : 0,
+	" Y Move " : 0
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : 5,
+	" Y Move " : 0
+},
+{
+	" AbilityUsed " : "Coup de b\u00e2ton",
+	" Attacker " : 1,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 0,
+	" Type " : 5
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : 1,
+	" Y Move " : 0
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : -4,
+	" Y Move " : 0
+},
+{
+	" AbilityUsed " : "Ep\u00e9e Destructrice",
+	" Attacker " : 0,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 1,
+	" Type " : 5
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : 0,
+	" Y Move " : 0
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : -5,
+	" Y Move " : 0
+},
+{
+	" AbilityUsed " : "Coup de b\u00e2ton",
+	" Attacker " : 1,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 0,
+	" Type " : 5
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : 1,
+	" Y Move " : 0
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : -4,
+	" Y Move " : 0
+},
+{
+	" AbilityUsed " : "Ep\u00e9e Destructrice",
+	" Attacker " : 0,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 1,
+	" Type " : 5
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : 0,
+	" Y Move " : 0
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : 0,
+	" Y Move " : 5
+},
+{
+	" AbilityUsed " : "Coup de b\u00e2ton",
+	" Attacker " : 1,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 0,
+	" Type " : 5
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : 0,
+	" Y Move " : -1
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : -1,
+	" Y Move " : 3
+},
+{
+	" AbilityUsed " : "Ep\u00e9e Destructrice",
+	" Attacker " : 0,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 1,
+	" Type " : 5
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : 0,
+	" Y Move " : 0
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : 3,
+	" Y Move " : 2
+},
+{
+	" AbilityUsed " : "Coup de b\u00e2ton",
+	" Attacker " : 1,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 0,
+	" Type " : 5
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : -1,
+	" Y Move " : 0
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : 1,
+	" Y Move " : 3
+},
+{
+	" AbilityUsed " : "Ep\u00e9e Destructrice",
+	" Attacker " : 0,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 1,
+	" Type " : 5
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : 0,
+	" Y Move " : 0
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : 2,
+	" Y Move " : -3
+},
+{
+	" AbilityUsed " : "Coup de b\u00e2ton",
+	" Attacker " : 1,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 0,
+	" Type " : 5
+},
+{
+	" Character " : 1,
+	" Type " : 3,
+	" X Move " : -1,
+	" Y Move " : 0
+},
+{
+	" Type " : 12
+},
+{
+	" Character " : 0,
+	" Type " : 3,
+	" X Move " : 1,
+	" Y Move " : -3
+},
+{
+	" AbilityUsed " : "Ep\u00e9e Destructrice",
+	" Attacker " : 0,
+	" Mouse_x " : 0,
+	" Mouse_y " : 0,
+	" Target " : 1,
+	" Type " : 5
+},

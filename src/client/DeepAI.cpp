@@ -22,8 +22,8 @@ DeepAI::DeepAI(const state::State& state, int depth, int character){
 
 void DeepAI::run(engine::Engine& engine, int character, state::State& state){
     minimax(engine, maxDepth,character,state);
-    //engine::TurnCommand* turn=new engine::TurnCommand(state);
-    //engine.addCommand(3,turn);
+    engine::TurnCommand* turn=new engine::TurnCommand(state);
+    engine.addCommand(3,turn);
 }
 
 void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::State& state){

@@ -73,7 +73,7 @@ void replay(Engine& engine, State* state){
 	int c=root.size();
 	//for(Json::Value::iterator it=root.begin(); it != root.end(); ++it){
 	for(int i=0;i<c;i++){
-            //m2.lock();
+            m2.lock();
             
 	
             if(root[i][" Type "].asInt()==1){
@@ -143,7 +143,7 @@ void replay(Engine& engine, State* state){
                 engine.update();
             }
             
-            //m2.unlock();
+            m2.unlock();
             
             usleep(200000);
             
@@ -277,12 +277,12 @@ void initGame(){
 	ElementTabLayer* elmtTabLayerMenu_ptr=new ElementTabLayer(*elmtTabMenu_ptr);
 	StateLayer* stateLayerMenu_ptr=new StateLayer(*state1);
         ////////////////////////////////
-
-
+        
         //Deep AI
         
         ai_1=new ai::DeepAI(*state1,1,1);
         ai_2=new ai::DeepAI(*state1,1,0);
+        
         //PA et PM initiaux//
 
         //PA
@@ -293,8 +293,8 @@ void initGame(){
         iop_pm=state1->getCharacters()->getElementList()[0]->getPM();
         sram_pm=state1->getCharacters()->getElementList()[1]->getPM();
         
+        
         scene =new Scene(*state1);
-	
         engine1.setState(&scene->getState());
         
         
@@ -307,7 +307,6 @@ void initGame(){
         scene->getState().getCharacters()->addObserver(scene->getCharsLayer());
         scene->getState().getCharacters()->addObserver(scene->getStateLayer());
         scene->getState().getMap()->addObserver(scene->getMapLayer());
-	
     
         //Mise en place d'Observers sur les AI
         scene->getState().getCharacters()->addObserver(ai_1);
@@ -343,8 +342,6 @@ void IA(){
            m2.lock();
                 cout<<"Tour :"<<scene->getState().getTour()<<endl;
                 cout<<"//Tour Sram//"<<endl; 
-		cout<<"PA : "<<state1->getCharacters()->getElementList()[1]->getPA()<<endl;
-		cout<<"PM : "<<state1->getCharacters()->getElementList()[1]->getPM()<<endl;
                 HandleStatut* statut_control=new HandleStatut(1);
                 ai_1->run(engine1,1,scene->getState());
                 //Changement de Tour
@@ -470,6 +467,7 @@ int main(int argc,char* argv[]){
            
             //Initialisation du Jeu        
             initGame();
+            
             //Threads
             thread th(Moteur);
             thread th2(Rendu);
