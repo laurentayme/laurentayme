@@ -31,6 +31,7 @@ namespace state {
     void addObserver (Observer* obs);
     void removeObserver (Observer* obs);
     void notifyObservers (Event& e);
+    void addObserver (Observer& obs);
     // Setters and Getters
     bool getEnableNotifications() const;
     void setEnableNotifications(bool enableNotifications);

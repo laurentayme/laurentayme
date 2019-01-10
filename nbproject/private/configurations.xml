@@ -38,7 +38,6 @@
         <in>AttackCommand.cpp</in>
         <in>Character.cpp</in>
         <in>ClickCommand.cpp</in>
-        <in>ClickCommand.h</in>
         <in>Client.cpp</in>
         <in>Command.cpp</in>
         <in>DeepAI.cpp</in>
@@ -49,10 +48,11 @@
         <in>Engine_Observer.cpp</in>
         <in>Equipment.cpp</in>
         <in>Event.cpp</in>
+        <in>HandleStatut.cpp</in>
         <in>HeuristicAI.cpp</in>
         <in>Landscape.cpp</in>
+        <in>LoadCommand.cpp</in>
         <in>MouseMovedCommand.cpp</in>
-        <in>MouseMovedCommand.h</in>
         <in>MoveCharacterCommand.cpp</in>
         <in>Observable.cpp</in>
         <in>Observer.cpp</in>
@@ -70,6 +70,7 @@
         <in>SurbrillanceCommand.cpp</in>
         <in>Surface.cpp</in>
         <in>TabEvent.cpp</in>
+        <in>TurnCommand.cpp</in>
         <in>TurnSurbrillanceCommand.cpp</in>
         <in>Wall.cpp</in>
         <in>WhiteSurbrillanceCommand.cpp</in>
@@ -96,10 +97,12 @@
           <in>Engine.h</in>
           <in>Engine_Observable.h</in>
           <in>Engine_Observer.h</in>
+          <in>HandleStatut.h</in>
           <in>LoadCommand.h</in>
           <in>MouseMovedCommand.h</in>
           <in>MoveCharacterCommand.h</in>
           <in>SurbrillanceCommand.h</in>
+          <in>TurnCommand.h</in>
           <in>TurnSurbrillanceCommand.h</in>
           <in>WhiteSurbrillanceCommand.h</in>
         </df>
@@ -121,7 +124,6 @@
           <in>Space.h</in>
           <in>SpaceTypeId.h</in>
           <in>State.h</in>
-          <in>StateEtat.h</in>
           <in>StateEvent.h</in>
           <in>StateEventId.h</in>
           <in>StaticElement.h</in>
@@ -133,8 +135,6 @@
         </df>
         <in>ai.h</in>
         <in>engine.h</in>
-        <in>json-forwards.h</in>
-        <in>json.h</in>
         <in>state.h</in>
       </df>
     </df>

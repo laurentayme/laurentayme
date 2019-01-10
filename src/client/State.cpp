@@ -26,7 +26,7 @@ ElementTab* State::getRedMap() const{
 
 
 ElementTab* State::getMenu() const{
-    return menu;
+    return (this->menu);
 }
 
 void State::setMap(ElementTab* map){
@@ -66,6 +66,10 @@ int State::getTour() const{
 
 void State::setWall(ElementTab* mur){
     this->wall=mur;
+}
+
+ElementTab* State::getWall() const{
+    return(this->wall);
 }
 
 void State::LoadMapFromFile(std::string filePath){

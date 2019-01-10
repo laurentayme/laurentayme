@@ -22,6 +22,8 @@ DeepAI::DeepAI(const state::State& state, int depth, int character){
 
 void DeepAI::run(engine::Engine& engine, int character, state::State& state){
     minimax(engine, maxDepth,character,state);
+    engine::TurnCommand* turn=new engine::TurnCommand(state);
+    engine.addCommand(3,turn);
 }
 
 void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::State& state){
@@ -86,7 +88,7 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
             max_value=val;
             state::Position p(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
             best_Position=p ;
-            std::cout<<"ScoreMax ="<<max_value<<std::endl;
+            //std::cout<<"ScoreMax ="<<max_value<<std::endl;
         }
      
         //On annule les déplacements précédemment faits//

@@ -50,6 +50,7 @@ namespace state {
     void setEnableCache (bool enableCache);
     void setEnableNotifications (bool enableNotifications);
     void flushCachedEvents () const;
+    ElementTab* getWall () const;
     // Setters and Getters
   };
 

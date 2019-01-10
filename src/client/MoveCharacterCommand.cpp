@@ -35,7 +35,7 @@ CommandTypeId MoveCharacterCommand::getTypeId() const {
 }
 
 void MoveCharacterCommand::execute(state::State& act_state){
-	std::cout<<"VECTX : "<<vectX<<"  VECTY : "<<vectY<<std::endl;
+	//std::cout<<"VECTX : "<<vectX<<"  VECTY : "<<vectY<<std::endl;
 	if(vectX==0 and vectY==0){
 		std::cout<<"Reste sur place "<<std::endl;
 	}
