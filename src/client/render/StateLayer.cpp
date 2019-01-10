@@ -76,10 +76,10 @@ void StateLayer::initSurface (){
                 }
                 else{
                     textpv_sram.setFont(font);
-                    textpv_sram.setString(std::to_string(state.getCharacters()->getElementList()[i]->getPV()));
+                    textpv_sram.setString(std::to_string(0));
                     textpv_sram.setCharacterSize(18);
                     textpv_sram.setColor(sf::Color::White);
-                    textpv_sram.setPosition(142,130);
+                    textpv_sram.setPosition(154,130);
                 }
             
             }

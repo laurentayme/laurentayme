@@ -19,10 +19,6 @@ void Observable::addObserver(Observer* obs ) {
 	observers.push_back(obs);
 }
 
-void Observable::addObserver(Observer& obs ) {
-	observers.push_back(&obs);
-}
-
 void Observable::removeObserver(Observer* obs) {
 	auto beginList = this->observers.vector::begin();
 	auto endList = this->observers.vector::end();

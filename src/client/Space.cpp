@@ -104,3 +104,17 @@ size_t Space::getTeam() const {
 
 void Space::setTeam(size_t team) {
 }
+
+bool Space::isPlayer() const{
+	return(false);
+}
+
+void Space::setPlayer(bool player){
+}
+
+int Space::getMaxStat(int stat) const {
+	return(0);
+}
+
+void Space::setMaxStat(int stat, int stat_value){
+}

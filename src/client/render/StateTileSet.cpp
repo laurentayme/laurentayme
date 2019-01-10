@@ -47,7 +47,7 @@ StateTileSet::~StateTileSet(){
 }
 
 const Tile& StateTileSet::getTile(const state::Element& e){ 
-    
+
     //Cas d'un Main Menu
     if(e.getTypeId()==3){
         Tile& s=state[1];
@@ -74,5 +74,5 @@ const Tile& StateTileSet::getTile(const state::Element& e){
        Tile& s=state[0];
        return(s); 
     }
-    
+   
 }

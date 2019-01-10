@@ -113,7 +113,7 @@ void HeuristicAI::run(engine::Engine& Engine, int character, state::State& state
             //On récupère l'abilité ayant les dégats Maximum
             for(int i=0; i<abilities_usable.size();i++){
                 if(abilities_usable[i]->getDegats()>damage){
-                	damage=liste_abilities[i]->getDegats();
+                	damage=abilities_usable[i]->getDegats();
 			attackMax=i;
                 }
             }

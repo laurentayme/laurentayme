@@ -16,7 +16,7 @@ using namespace state;
 Character::Character (std::string Classname){
     if(Classname=="Iop" or Classname=="Sram"){
         this->characterClass=Classname;
-        this->player= true;
+        //this->player= true;
         this->statut=1;
         this->direction=1;
         this->idType=1;
@@ -29,6 +29,9 @@ Character::Character (std::string Classname){
             pv=100;
             pa=4;
             pm=4;
+	    MaxStats.push_back(pv);
+	    MaxStats.push_back(pm);
+	    MaxStats.push_back(pa);
 
             //Création de l'equipement initial
             Equipment* epee(new Equipment("Epée","main",5));
@@ -53,7 +56,11 @@ Character::Character (std::string Classname){
         else if (characterClass=="Sram"){
             pv=100;
             pa=4;
-            pm=6;
+	    pm=6;
+	    MaxStats.push_back(pv);
+	    MaxStats.push_back(pm);
+	    MaxStats.push_back(pa);
+
 
             //Création de l'equipement initial
             Equipment* baton(new Equipment("Bâton","main",7));
@@ -232,7 +239,7 @@ void Character::affiche_AbilitiesList() const{
 }
 
 void Character::setStatut(int act_statut){
-    if(act_statut>=1 && act_statut<=3){
+    if(act_statut>=1 && act_statut<=5){
         statut=act_statut;
     }
     else{
@@ -283,8 +290,17 @@ size_t Character::getTeam() const {
 void Character::setTeam(size_t team) {
 	this->team=team;
 }
+ void Character::setPlayer(bool player){
+	this->player=player;
+}
+
+int Character::getMaxStat(int stat) const {
+	return(MaxStats[stat]);
+}
 
 
 
-
+void Character::setMaxStat(int stat, int stat_value){
+	MaxStats[stat]=stat_value;
+}
 

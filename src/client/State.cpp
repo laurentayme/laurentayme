@@ -26,7 +26,7 @@ ElementTab* State::getRedMap() const{
 
 
 ElementTab* State::getMenu() const{
-    return (this->menu);
+    return menu;
 }
 
 void State::setMap(ElementTab* map){
@@ -63,12 +63,9 @@ int State::getTour() const{
     return(tour);
 }
 
+
 void State::setWall(ElementTab* mur){
     this->wall=mur;
-}
-
-ElementTab* State::getWall() const{
-    return(this->wall);
 }
 
 void State::LoadMapFromFile(std::string filePath){
@@ -210,3 +207,4 @@ State State::Clone(){
     
     return(clone_state);   
 }
+
