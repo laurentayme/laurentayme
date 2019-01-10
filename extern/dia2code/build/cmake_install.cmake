@@ -1,4 +1,4 @@
-# Install script for directory: /home/vincent/cloneplt/laurentayme/extern/dia2code
+# Install script for directory: /home/valentin/laurentayme/extern/dia2code
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/vincent/cloneplt/laurentayme/extern/dia2code/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/valentin/laurentayme/extern/dia2code/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
