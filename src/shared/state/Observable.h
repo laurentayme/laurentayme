@@ -3,6 +3,7 @@
 #define STATE__OBSERVABLE__H
 
 #include <vector>
+#include <memory>
 
 namespace state {
   class Observer;
@@ -20,13 +21,24 @@ namespace state {
     // Attributes
   public:
     std::vector<Observer*> observers;
+  private:
+    mutable std::vector<std::shared_ptr<Event>> cachedEvents;
+  protected:
+    bool enableNotifications     = true;
+    bool enableCache     = false;
     // Operations
   public:
     ~Observable ();
     void addObserver (Observer* obs);
     void removeObserver (Observer* obs);
     void notifyObservers (Event& e);
+    void flushCachedEvents () const;
+    void addObserver (Observer& obs);
     // Setters and Getters
+    bool getEnableNotifications() const;
+    void setEnableNotifications(bool enableNotifications);
+    bool getEnableCache() const;
+    void setEnableCache(bool enableCache);
   };
 
 };

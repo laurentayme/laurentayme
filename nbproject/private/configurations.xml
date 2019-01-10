@@ -13,8 +13,8 @@
         <df name="render">
           <in>CharacterTileSet.cpp</in>
           <in>CharacterTileSet.h</in>
+          <in>Client.cpp</in>
           <in>DebugLayer.cpp</in>
-          <in>DebugLayer.h</in>
           <in>ElementTabLayer.cpp</in>
           <in>ElementTabLayer.h</in>
           <in>Layer.cpp</in>

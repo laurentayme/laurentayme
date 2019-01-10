@@ -32,13 +32,13 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
     std::vector<state::Element*> chars=state.getCharacters()->getElementList(); 
     state::Position best_Position(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
     int max_value=-pow(10,10.0);
-    int target=0;
-    if(this->character==0){
+    int target=1-this->character;
+    /*if(this->character==0){
         target=1;
     }
     else{
         target=0;
-    }
+    }*/
 	int compter=0;
 	std::vector<ai::Point> stpaidemoi;
     //On retire tous les mouvements amenant sur des obstacles
@@ -86,7 +86,7 @@ void DeepAI::minimax(engine::Engine& engine, int depth, int character, state::St
             max_value=val;
             state::Position p(chars[character]->getPosition().getX(),chars[character]->getPosition().getY());
             best_Position=p ;
-            std::cout<<"ScoreMax ="<<max_value<<std::endl;
+            //std::cout<<"ScoreMax ="<<max_value<<std::endl;
         }
      
         //On annule les déplacements précédemment faits//

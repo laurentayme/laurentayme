@@ -36,9 +36,12 @@ void ClickCommand::execute(state::State& state, engine::Engine& engine){
         //Bouton Fin du Tour
         else if(this->x_mouse>=1030  and this->y_mouse>=470 and this->y_mouse<=540){
             //Changement de Tour
-            std::cout<<state.getTour()<<std::endl;
+            
+            //std::cout<<"Tour Actuel :"<<state.getTour()<<std::endl;
+            //std::cout<<"Changement de Tour... "<<std::endl;
             int tour=state.getTour()+1;
             state.setTour(tour);
+            //std::cout<<"Tour Actuel :"<<state.getTour()<<std::endl;
         }
 
         else if(int(x_mouse_iso)>0 and int(x_mouse_iso)<16 and int(y_mouse_iso)>0 and int(y_mouse_iso)<11 and ((x_mouse_iso+y_mouse_iso)<22) and y_mouse<=600) {

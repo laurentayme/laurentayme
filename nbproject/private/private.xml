@@ -12,10 +12,9 @@
         <group>
             <file>file:/home/valentin/laurentayme/src/client/DeepAI.cpp</file>
             <file>file:/home/valentin/laurentayme/src/client/Engine.cpp</file>
+            <file>file:/home/valentin/laurentayme/src/client/render/Scene.cpp</file>
             <file>file:/home/valentin/laurentayme/src/client/main.cpp</file>
-            <file>file:/home/valentin/laurentayme/src/client/ClickCommand.cpp</file>
-            <file>file:/home/valentin/laurentayme/src/client/Character.cpp</file>
-            <file>file:/home/valentin/laurentayme/src/client/MouseMovedCommand.cpp</file>
+            <file>file:/home/valentin/laurentayme/src/client/State.cpp</file>
         </group>
     </open-files>
 </project-private>

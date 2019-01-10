@@ -43,10 +43,14 @@ namespace state {
     int getTour () const;
     void setTour (int tour);
     void LoadMapFromFile (std::string filePath);
+    ElementTab* getWall () const;
     void setWall (ElementTab* mur);
     void setEtat (int etat);
     int getEtat () const;
     State Clone ();
+    void setEnableCache (bool enableCache);
+    void setEnableNotifications (bool enableNotifications);
+    void flushCachedEvents () const;
     // Setters and Getters
   };
 

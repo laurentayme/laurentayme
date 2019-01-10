@@ -14,6 +14,7 @@
       <df name="client">
         <df name="render">
           <in>CharacterTileSet.cpp</in>
+          <in>Client.cpp</in>
           <in>DebugLayer.cpp</in>
           <in>ElementTabLayer.cpp</in>
           <in>Layer.cpp</in>
@@ -29,7 +30,6 @@
         <in>AttackCommand.cpp</in>
         <in>Character.cpp</in>
         <in>ClickCommand.cpp</in>
-        <in>ClickCommand.h</in>
         <in>Client.cpp</in>
         <in>Command.cpp</in>
         <in>DeepAI.cpp</in>
@@ -43,7 +43,6 @@
         <in>HeuristicAI.cpp</in>
         <in>Landscape.cpp</in>
         <in>MouseMovedCommand.cpp</in>
-        <in>MouseMovedCommand.h</in>
         <in>MoveCharacterCommand.cpp</in>
         <in>Observable.cpp</in>
         <in>Observer.cpp</in>
@@ -151,17 +150,19 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/ClickCommand.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/ClickCommand.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
-      <item path="src/client/ClickCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/client/Client.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/Client.cpp" ex="false" tool="1" flavor2="4">
       </item>
       <item path="src/client/Command.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/DeepAI.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/DeepAI.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
       <item path="src/client/Element.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -175,9 +176,11 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/Engine_Observable.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/Engine_Observable.cpp" ex="false" tool="1" flavor2="4">
       </item>
-      <item path="src/client/Engine_Observer.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/Engine_Observer.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
       <item path="src/client/Equipment.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -195,9 +198,9 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/MouseMovedCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/client/MouseMovedCommand.h" ex="false" tool="3" flavor2="0">
+      <item path="src/client/MouseMovedCommand.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
       <item path="src/client/MoveCharacterCommand.cpp"
             ex="false"
@@ -303,7 +306,13 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/render/DebugLayer.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/render/Client.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/client/render/DebugLayer.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
       <item path="src/client/render/ElementTabLayer.cpp"
             ex="false"
@@ -320,7 +329,9 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <item path="src/client/render/Scene.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/client/render/Scene.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
       </item>
       <item path="src/client/render/StateLayer.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">

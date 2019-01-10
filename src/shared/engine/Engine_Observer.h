@@ -9,8 +9,8 @@ namespace engine {
   class Engine_Observer {
     // Operations
   public:
-    void engineUpdating ();
-    void engineUpdated ();
+    virtual void engineUpdated () = 0;
+    virtual void engineUpdating () = 0;
     // Setters and Getters
   };
 

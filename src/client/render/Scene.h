@@ -11,7 +11,6 @@ namespace state {
 namespace render {
   class StateLayer;
   class ElementTabLayer;
-  class DebugLayer;
 };
 namespace sf {
   class RenderWindow;
@@ -19,7 +18,6 @@ namespace sf {
 
 #include "StateLayer.h"
 #include "ElementTabLayer.h"
-#include "DebugLayer.h"
 #include "state/State.h"
 
 namespace render {
@@ -29,21 +27,28 @@ namespace render {
     // Associations
     // Attributes
   private:
-    const state::State& state;
+    state::State& state;
     size_t width     = 0;
     size_t height     = 0;
     StateLayer stateLayer;
     ElementTabLayer gridLayer;
+    ElementTabLayer MenuLayer;
+    ElementTabLayer LandscapeLayer;
+    ElementTabLayer WallLayer;
+    ElementTabLayer RedLayer;
     ElementTabLayer charsLayer;
-    DebugLayer debugLayer;
     // Operations
   public:
-    Scene (const state::State& state);
+    Scene (state::State& state);
     size_t getWidth () const;
     size_t getHeight () const;
     void stateChanged (const state::Event& event);
     void draw (sf::RenderWindow& window);
-    DebugLayer& getDebugLayer ();
+    ElementTabLayer& getCharsLayer ();
+    ElementTabLayer& getRedLayer ();
+    StateLayer& getStateLayer ();
+    state::State& getState ();
+    ElementTabLayer& getMapLayer ();
     // Setters and Getters
   };
 

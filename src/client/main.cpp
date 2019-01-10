@@ -1,5 +1,5 @@
-#include <iostream>
 #include <stdio.h>
+#include <iostream>
 #include <string.h>
 #include <vector>
 #include <exception>
@@ -7,10 +7,12 @@
 #include "math.h"
 #include <cstdio>
 #include <chrono>
-#include <thread>
 #include <memory>
 #include <fstream>
 #include <unistd.h>
+
+#include <thread>
+#include <condition_variable>
 
 #include "state.h"
 #include "render.h"
@@ -19,7 +21,7 @@
 
 std::chrono::system_clock::time_point a = std::chrono::system_clock::now();
 std::chrono::system_clock::time_point b = std::chrono::system_clock::now();
-//sf::Time tempo = sf::seconds(0.5);
+sf::Time tempo = sf::seconds(2);
 
 
 using namespace std;
@@ -32,7 +34,34 @@ using namespace engine;
 #include <valarray>
 #include <stack>
 
-void testSFML(int isRoll) {
+
+mutex m1;
+mutex m2;
+mutex m3;
+
+Engine engine1;
+State* state1;
+
+render::Scene* scene=nullptr;
+
+
+
+ai::DeepAI* ai_1;
+ai::DeepAI* ai_2;
+
+int iop_pa=0;
+int sram_pa=0;
+int iop_pm=0;
+int sram_pm=0;
+
+unsigned int microseconds=5000000000;
+
+///// Création de la fenêtre/////
+sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Dofus Dungeon");
+
+
+void testSFML() {
+    
     	sf::Texture texture;
         std::vector<Element*> elmt_list;
         std::vector<Element*> elmt_list_landscape;
@@ -41,16 +70,17 @@ void testSFML(int isRoll) {
         std::vector<Element*> elmt_listRed;
 	std::vector<Element*> listMenu;
         //Durée: 1s
-        unsigned int microseconds=500000;
-
+        
+        
         //Paramètres de Map//
         int width=11;
         int height=16;
         
         
+        
         //CLock
-        clock_t t;
-        t=clock();
+        //clock_t t=clock();
+        
 
         ////Instanciation de qqes objets de la  MAP////
 
@@ -111,7 +141,7 @@ void testSFML(int isRoll) {
                 
             ////////////////////////////
 
-
+                
 
 
             //State Menu list
@@ -131,22 +161,27 @@ void testSFML(int isRoll) {
         ElementTab* elmtTabMenu_ptr = new ElementTab(width,height,listMenu);
         //////////////////////////
 
+        
 
-	//Creation de State
-        State* state=new State;
-	state->setMap(elmtTab_ptr);
-	state->setCharacters(elmtTab2_ptr);
-        state->setWall(elmtTabWall_ptr);
-	state->setMenu(elmtTabMenu_ptr);
-	state->setLandscape(elmtTabLandscape_ptr);
-        state->setTour(1);
+	//Initialisation de State
+        //State* state1=new State;
+        state1=new State;
+	state1->setMap(elmtTab_ptr);
+	state1->setCharacters(elmtTab2_ptr);
+        state1->setWall(elmtTabWall_ptr);
+	state1->setMenu(elmtTabMenu_ptr);
+	state1->setLandscape(elmtTabLandscape_ptr);
+        state1->setTour(1);
         int etat=1;
-        state->setEtat(etat);
+        state1->setEtat(etat);
+        //Surbrillance
+        state1->setRedMap(elmtTabRed_ptr);
 
         //Chargement du niveau depuis un fichier json//
         std::string filePath="res/First_Dungeon.json";
-        state->LoadMapFromFile(filePath);
+        state1->LoadMapFromFile(filePath);
         ///////////////////////
+        
         
 
         //Création de l'ElementTabLayer//
@@ -156,24 +191,24 @@ void testSFML(int isRoll) {
         ElementTabLayer* elmtTabLayerWall_ptr=new ElementTabLayer(*elmtTabWall_ptr);
         ElementTabLayer* elmtTabLayerRed_ptr=new ElementTabLayer(*elmtTabRed_ptr);
 	ElementTabLayer* elmtTabLayerMenu_ptr=new ElementTabLayer(*elmtTabMenu_ptr);
-	StateLayer* stateLayerMenu_ptr=new StateLayer(*state);
+	StateLayer* stateLayerMenu_ptr=new StateLayer(*state1);
         ////////////////////////////////
 
 
         //Ajout d'observers sur chaque Couche: map + Personnages//
             //Liaisons Observers/Observable//
-            elmtTab_ptr->addObserver(elmtTabLayer_ptr);
+            /*elmtTab_ptr->addObserver(elmtTabLayer_ptr);
             elmtTab2_ptr->addObserver(elmtTabLayer2_ptr);
             elmtTabRed_ptr->addObserver(elmtTabLayerRed_ptr);
             //Menu
             elmtTabMenu_ptr->addObserver(elmtTabLayerMenu_ptr);
             //Stats dans le Menu
-            elmtTab2_ptr->addObserver(stateLayerMenu_ptr);
+            elmtTab2_ptr->addObserver(stateLayerMenu_ptr);*/
 
         //////////////////////////////////////////////////////////
-
+        
         //Initialisation de la Surface de chaque Layer
-        try{
+        /*try{
                 elmtTabLayer_ptr->initSurface();
                 elmtTabLayer2_ptr->initSurface();
                 elmtTabLayerLandscape_ptr->initSurface();
@@ -185,530 +220,179 @@ void testSFML(int isRoll) {
         }
         catch(const char* e){
             cout<<"Exception: "<<e<<endl;
-        }
+        }*/
 
         //Définition du State
 
-        //Surbrillance
-        state->setRedMap(&elmtTabLayerRed_ptr->getTab());
+        
 
         //Engine & Observables
-	Engine engine;
-        state::Observable observable;
+	
+        //Observable observable;
+        //Engine engine;
+        //engine1.setState(state1);
 
-        engine.setState(state);
-
-        //Random IA
-        //ai::Heuristic_AI ai(1);
-        //ai::Random_AI ai_2(0);
-        //ai::HeuristicAI* ai=new ai::HeuristicAI(*state,1,1);
-        //ai::HeuristicAI* ai_2=new ai::HeuristicAI(*state,2,0);
+        //Deep AI
         
-        ai::DeepAI* ai=new ai::DeepAI(*state,2,1);
-        ai::DeepAI* ai_2=new ai::DeepAI(*state,2,0);
+        ai_1=new ai::DeepAI(*state1,1,1);
+        ai_2=new ai::DeepAI(*state1,1,0);
         
-        
+ 
         //Mise en place d'Observers sur les AI
-        elmtTab2_ptr->addObserver(ai);
-        elmtTab2_ptr->addObserver(ai_2);
+        /*elmtTab2_ptr->addObserver(ai_1);
+        elmtTab2_ptr->addObserver(ai_2);*/
 
         //elmtTab2_ptr->addObserver(ai);
 
         //Gestion des tours
-        int tour=state->getTour();
-
+        //int tour=state->getTour();
+        
         //PA et PM initiaux//
 
-            //PA
-            int iop_pa=state->getCharacters()->getElementList()[0]->getPA();
-            int sram_pa=state->getCharacters()->getElementList()[1]->getPA();
+        //PA
+        iop_pa=state1->getCharacters()->getElementList()[0]->getPA();
+        sram_pa=state1->getCharacters()->getElementList()[1]->getPA();
 
-            //PM
-            int iop_pm=state->getCharacters()->getElementList()[0]->getPM();
-            int sram_pm=state->getCharacters()->getElementList()[1]->getPM();
-        ////////////////////  
-
-    ///// Création de la fenêtre/////
-    sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Tilemap");
-    window.setVerticalSyncEnabled(true);
-    //window.setFramerateLimit(24);
-
-    if(isRoll==0){
-        while (window.isOpen()){
-
+        //PM
+        iop_pm=state1->getCharacters()->getElementList()[0]->getPM();
+        sram_pm=state1->getCharacters()->getElementList()[1]->getPM();
+        
+        
+        scene =new Scene(*state1);
+        engine1.setState(&scene->getState());
+        
+        
+        window.setVerticalSyncEnabled(true);
+}
 
 
-            if(state->getEtat()==1){
-            //stateLayerMenu_ptr->initSurface();
-            //Réinitialisation des Stats//
-            state->getCharacters()->setCharacterPA(0,iop_pa);
-            state->getCharacters()->setCharacterPA(1,sram_pa);
+void Moteur(){
+        while(1){
+            m2.lock();
+            engine1.update();
+            m2.unlock();
+        }         
+}
 
-            state->getCharacters()->setCharacterPM(0,iop_pm);
-            state->getCharacters()->setCharacterPM(1,sram_pm);
-            /////////////////////////////
-
-
-            ////Tour Joueur////
-            if(state->getTour()%2==1){
-
-
-                cout<<"Tour :"<<state->getTour()<<endl;
-                cout<<"//Tour Joueur//"<<endl;
-
-                //usleep(microseconds);
-                try{
-                    ai_2->run(engine,0,*state);
-                    state->setTour(state->getTour()+1);
-                }
-                catch(const char* e){
-                    cout<<"Exception :"<<e<<endl;
-                }
-
-
-
-
-                // on gère les évènements
-                /*sf::Event event;
-                while (window.waitEvent(event)){
-                    engine.update();
-                    sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-                    if(event.type == sf::Event::Closed){
-                        window.close();
-                    }
-                    // Souris déplacé seulement !
-                    else if(event.type==sf::Event::MouseMoved){
-                        MouseMovedCommand* mouse_moved=new MouseMovedCommand(localPosition.x,localPosition.y);
-                        engine.addCommand(1,mouse_moved);
-                        engine.update();
-                    }
-
-                    else if (event.type == sf::Event::MouseButtonPressed ){
-                        ClickCommand* click=new ClickCommand(localPosition.x,localPosition.y);
-                        engine.addCommand(1,click);
-                        engine.update();
-                        if (state->getTour()%2==0){
-                            break;
-                        }
-                    }
-                    else if (state->getMenu()->getElementList()[0]->getTypeId()==6){
-                        window.clear();
-                        state->setEtat(2);
-                        break;
-                    }
-
-                    //Fin d'une partie//
-                    for(int i=0; i<state->getCharacters()->getElementList().size();i++){
-                        if(state->getCharacters()->getElementList()[i]->getStatut()==3){
-                            break;
-                        }
-                    }*/
-
-            // on dessine le niveau
-              window.clear();
-                window.draw(*elmtTabLayer_ptr->getSurface());
-                window.draw(*elmtTabLayerLandscape_ptr->getSurface());
-                window.draw(*elmtTabLayerWall_ptr->getSurface());
-                window.draw(*elmtTabLayerMenu_ptr->getSurface());
-                window.draw(*elmtTabLayerRed_ptr->getSurface());
-                window.draw(*elmtTabLayer2_ptr->getSurface());
-                window.draw(stateLayerMenu_ptr->getTextpv());
-                window.draw(stateLayerMenu_ptr->getTextpvSram());
-                window.draw(stateLayerMenu_ptr->getTextpa());
-                window.draw(stateLayerMenu_ptr->getTextpm());
-                window.display();
-
-                //}
-
-            }
-
-            ////Tour IA////
-             else if (state->getTour()%2==0){
-
-                    cout<<"Tour :"<<state->getTour()<<endl;
-                    cout<<"//Tour IA//"<<endl;
-                    ///Gestion de l'IA///
-                    //usleep(microseconds);
-                    try{
-                        ai->run(engine,1,*state);
-                    }
-                    catch(const char* e){
-                        cout<<"Exception :"<<e<<endl;
-                    }
-
-
-                    //Changement de Tour
-                    state->setTour(state->getTour()+1);
-                    if (state->getMenu()->getElementList()[0]->getTypeId()==6){
-                        window.clear();
-                        state->setEtat(2);
-                    }
-
-                    //Fin d'une partie//
-                    for(int i=0; i<state->getCharacters()->getElementList().size();i++){
-                        if(state->getCharacters()->getElementList()[i]->getStatut()==3){
-                            break;
-                        }
-                    }
-
-                    // on dessine le niveau
-                    window.clear();
-
-                    window.draw(*elmtTabLayer_ptr->getSurface());
-                    window.draw(*elmtTabLayerLandscape_ptr->getSurface());
-                    window.draw(*elmtTabLayerWall_ptr->getSurface());
-                    window.draw(*elmtTabLayerMenu_ptr->getSurface());
-                    window.draw(*elmtTabLayerRed_ptr->getSurface());
-                    window.draw(*elmtTabLayer2_ptr->getSurface());
-                    window.draw(stateLayerMenu_ptr->getTextpv());
-                    window.draw(stateLayerMenu_ptr->getTextpvSram());
-                    window.draw(stateLayerMenu_ptr->getTextpa());
-                    window.draw(stateLayerMenu_ptr->getTextpm());
-                    window.display();
-
-                }
-
-
-
-
-            ////////////////////
+void IA(){  
+    while(1){
+        m2.lock();
+        if(window.isOpen()and scene->getState().getTour()%2==0 and scene->getState().getCharacters()->getElementList()[0]->getStatut()!=3 and scene->getState().getCharacters()->getElementList()[1]->getStatut()!=3){
+            scene->getState().getCharacters()->setCharacterPA(1,sram_pa);
+            scene->getState().getCharacters()->setCharacterPM(1,sram_pm);
+            cout<<"Tour :"<<scene->getState().getTour()<<endl;
+            cout<<"//Tour Sram//"<<endl; 
+            ai_1->run(engine1,1,scene->getState());
+            sleep(2);
+            //Changement de Tour
+            scene->getState().setTour(scene->getState().getTour()+1);
         }
-        else if(state->getEtat()==0){
-
-            // on gère les évènements
-            sf::Event event;
-            while (window.waitEvent(event)){
-                engine.update();
-                sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-                if(event.type == sf::Event::Closed){
-                    window.close();
-                }
-
-                // Souris déplacé seulement !
-                else if(event.type==sf::Event::MouseMoved){
-                    MouseMovedCommand* mouse_moved=new MouseMovedCommand(localPosition.x,localPosition.y);
-                    engine.addCommand(1,mouse_moved);
-                    engine.update();
-                }
-
-                else if (event.type == sf::Event::MouseButtonPressed ){
-                    ClickCommand* click=new ClickCommand(localPosition.x,localPosition.y);
-                    engine.addCommand(1,click);
-                    engine.update();
-                    if (state->getEtat()==1){
-                        break;
-                    }
-                    else if(state->getEtat()==3){//Exit State
-                        window.close();
-                    }
-                }
-
-                window.clear();
-                window.draw(*elmtTabLayerMenu_ptr->getSurface());
-                window.display();
-
-
-
-            }
-
-        }
-        else if(state->getEtat()==2){
-            window.clear();
-            window.draw(*elmtTabLayerMenu_ptr->getSurface());
-            window.draw(stateLayerMenu_ptr->getTextwin());
-            window.display();
-
-            sf::Event event;
-            while (window.waitEvent(event)){
-                if(event.type == sf::Event::Closed){
-                    window.close();
-                }
-
-                window.clear();
-                window.draw(*elmtTabLayerMenu_ptr->getSurface());
-                window.draw(stateLayerMenu_ptr->getTextwin());
-                window.display();
-            }
-
-        }
-        }
-    }
-    //Cas du RollBack
-    else if(isRoll==1){
+        m2.unlock();  
         
-        stack<State> state_stack;
-        
-        while (window.isOpen()){
-            
-            std::cout<<"Actual Time :"<<float(clock())/CLOCKS_PER_SEC<<std::endl;
-            if(float(clock())/CLOCKS_PER_SEC>=30){
-                
-                std::cout<<"Taille de Pile :"<<state_stack.size()<<std::endl;
-                
-                while(!state_stack.empty()){
-                    State state_prec=state_stack.top();
-
-                    state_stack.pop();
-                    
-                    ElementTab* chars=state->getCharacters();
-                    ElementTab* menu=state->getMenu();
-                    std::vector<Element*> chars_clone=state_prec.getCharacters()->getElementList();
-                    std::vector<Element*> menu_clone=state_prec.getMenu()->getElementList();
-                    
-                    for(size_t i=0;i<chars->getElementList().size();i++){
-                        chars->setElementDirection(chars_clone[i]->getDirection(),i);
-                        chars->setCharacterStatut(i,chars_clone[i]->getStatut());
-                        Position pos=chars_clone[i]->getPosition();
-                        chars->setElement(pos,i);
-                        chars->setCharacterPV(i,chars_clone[i]->getPV());
-                        chars->setCharacterPM(i,chars_clone[i]->getPM());
-                        chars->setCharacterPA(i,chars_clone[i]->getPA());  
-                        
-                        menu->getElementList().pop_back();
-                        menu->getElementList().push_back(menu_clone[0]);
-                        
-                        
-                        window.clear();
-                        window.draw(*elmtTabLayer_ptr->getSurface());
-                        window.draw(*elmtTabLayerLandscape_ptr->getSurface());
-                        window.draw(*elmtTabLayerWall_ptr->getSurface());
-                        window.draw(*elmtTabLayerMenu_ptr->getSurface());
-                        window.draw(*elmtTabLayerRed_ptr->getSurface());
-                        window.draw(*elmtTabLayer2_ptr->getSurface());
-                        window.draw(stateLayerMenu_ptr->getTextpv());
-                        window.draw(stateLayerMenu_ptr->getTextpvSram());
-                        window.draw(stateLayerMenu_ptr->getTextpa());
-                        window.draw(stateLayerMenu_ptr->getTextpm());
-                        window.display();
-                        
-                        if(i==0){
-                            //cout<<"Iop Cloné :"<<chars_clone[i]->getPV()<<endl;
-                            //cout<<"Iop :"<<chars->getElementList()[0]->getPV()<<endl;
-                        }
-                        
-                        
-                        
-                        
-                        usleep(microseconds);
-                        
-                    }
-                  
-                }
-
-                window.close();
-            }
-            else{
-                
-                //On met l'état initial
-                state_stack.push(state->Clone());
-                
-                
-                if(state->getEtat()==1){
-        //stateLayerMenu_ptr->initSurface();
-        //Réinitialisation des Stats//
-        state->getCharacters()->setCharacterPA(0,iop_pa);
-        state->getCharacters()->setCharacterPA(1,sram_pa);
-
-        state->getCharacters()->setCharacterPM(0,iop_pm);
-        state->getCharacters()->setCharacterPM(1,sram_pm);
-        /////////////////////////////
-
-        
-        ////Tour Joueur////
-        if(state->getTour()%2==1){
-            
-            
-            cout<<"Tour :"<<state->getTour()<<endl;
-            cout<<"//Tour Joueur//"<<endl;
-            
-            usleep(microseconds);
-            try{
-                ai_2->run(engine,0,*state);
-                state->setTour(state->getTour()+1);
-            }
-            catch(const char* e){
-                cout<<"Exception :"<<e<<endl;
-            }
-            
-           
-            
-            
-            // on gère les évènements
-            /*sf::Event event;
-            while (window.waitEvent(event)){
-                engine.update();
-                sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-                if(event.type == sf::Event::Closed){
-                    window.close();
-                }
-                // Souris déplacé seulement !
-                else if(event.type==sf::Event::MouseMoved){
-                    MouseMovedCommand* mouse_moved=new MouseMovedCommand(localPosition.x,localPosition.y);
-                    engine.addCommand(1,mouse_moved);
-                    engine.update();
-                }
-
-                else if (event.type == sf::Event::MouseButtonPressed ){
-                    ClickCommand* click=new ClickCommand(localPosition.x,localPosition.y);
-                    engine.addCommand(1,click);
-                    engine.update();
-                    if (state->getTour()%2==0){
-                        break;
-                    }
-                }
-                else if (state->getMenu()->getElementList()[0]->getTypeId()==6){
-                    window.clear();
-                    state->setEtat(2);
-                    break;
-                }
-                
-                //Fin d'une partie//
-                for(int i=0; i<state->getCharacters()->getElementList().size();i++){
-                    if(state->getCharacters()->getElementList()[i]->getStatut()==3){
-                        break;
-                    }
-                }*/
-         
-        // on dessine le niveau
-          window.clear();
-            window.draw(*elmtTabLayer_ptr->getSurface());
-            window.draw(*elmtTabLayerLandscape_ptr->getSurface());
-            window.draw(*elmtTabLayerWall_ptr->getSurface());
-            window.draw(*elmtTabLayerMenu_ptr->getSurface());
-            window.draw(*elmtTabLayerRed_ptr->getSurface());
-            window.draw(*elmtTabLayer2_ptr->getSurface());
-            window.draw(stateLayerMenu_ptr->getTextpv());
-            window.draw(stateLayerMenu_ptr->getTextpvSram());
-            window.draw(stateLayerMenu_ptr->getTextpa());
-            window.draw(stateLayerMenu_ptr->getTextpm());
-            window.display();
-            
-            //}
-            
-            //On sauvegarde l'état dans la pile des états
-            state_stack.push(state->Clone());
-
-        }
-
-        ////Tour IA////
-         else if (state->getTour()%2==0){
-                
-                cout<<"Tour :"<<state->getTour()<<endl;
-                cout<<"//Tour IA//"<<endl;
-                ///Gestion de l'IA///
-                usleep(microseconds);
-                try{
-                    ai->run(engine,1,*state);
-                }
-                catch(const char* e){
-                    cout<<"Exception :"<<e<<endl;
-                }
-                
-                
-                //Changement de Tour
-                state->setTour(state->getTour()+1);
-                if (state->getMenu()->getElementList()[0]->getTypeId()==6){
-                    window.clear();
-                    state->setEtat(2);
-                }
-                
-                //Fin d'une partie//
-                for(int i=0; i<state->getCharacters()->getElementList().size();i++){
-                    if(state->getCharacters()->getElementList()[i]->getStatut()==3){
-                        break;
-                    }
-                }
-                
-                // on dessine le niveau
-                window.clear();
-
-                window.draw(*elmtTabLayer_ptr->getSurface());
-                window.draw(*elmtTabLayerLandscape_ptr->getSurface());
-                window.draw(*elmtTabLayerWall_ptr->getSurface());
-                window.draw(*elmtTabLayerMenu_ptr->getSurface());
-                window.draw(*elmtTabLayerRed_ptr->getSurface());
-                window.draw(*elmtTabLayer2_ptr->getSurface());
-                window.draw(stateLayerMenu_ptr->getTextpv());
-                window.draw(stateLayerMenu_ptr->getTextpvSram());
-                window.draw(stateLayerMenu_ptr->getTextpa());
-                window.draw(stateLayerMenu_ptr->getTextpm());
-                window.display();
-                
-                //On sauvegarde l'état dans la pile des états
-                state_stack.push(state->Clone());
-                
-            }
-        
-        
-        
-        
-        ////////////////////
-    }
-    else if(state->getEtat()==0){
-        
-        // on gère les évènements
-        sf::Event event;
-        while (window.waitEvent(event)){
-            engine.update();
-            sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-            if(event.type == sf::Event::Closed){
-                window.close();
-            }
-            
-            // Souris déplacé seulement !
-            else if(event.type==sf::Event::MouseMoved){
-                MouseMovedCommand* mouse_moved=new MouseMovedCommand(localPosition.x,localPosition.y);
-                engine.addCommand(1,mouse_moved);
-                engine.update();
-            }
-            
-            else if (event.type == sf::Event::MouseButtonPressed ){
-                ClickCommand* click=new ClickCommand(localPosition.x,localPosition.y);
-                engine.addCommand(1,click);
-                engine.update();
-                if (state->getEtat()==1){
-                    break;
-                }
-                else if(state->getEtat()==3){//Exit State
-                    window.close();
-                }
-            }
-            
-            window.clear();
-            window.draw(*elmtTabLayerMenu_ptr->getSurface());
-            window.display();
-            
-            
-            
-        }
-        
-    }
-    else if(state->getEtat()==2){
-        window.clear();
-        window.draw(*elmtTabLayerMenu_ptr->getSurface());
-        window.draw(stateLayerMenu_ptr->getTextwin());
-        window.display();
-
-        sf::Event event;
-        while (window.waitEvent(event)){
-            if(event.type == sf::Event::Closed){
-                window.close();
-            }
-
-            window.clear();
-            window.draw(*elmtTabLayerMenu_ptr->getSurface());
-            window.draw(stateLayerMenu_ptr->getTextwin());
-            window.display();
-        }
-        
-    }
-            }
-        
-        
-        
-    }
     }
 }
+
+void IA_2(){  
+    while(1){
+        m2.lock();
+        if(window.isOpen()and scene->getState().getTour()%2==1 and scene->getState().getCharacters()->getElementList()[0]->getStatut()!=3 and scene->getState().getCharacters()->getElementList()[1]->getStatut()!=3){
+            scene->getState().getCharacters()->setCharacterPA(1,iop_pa);
+            scene->getState().getCharacters()->setCharacterPM(1,iop_pm);
+            
+            cout<<"Tour :"<<scene->getState().getTour()<<endl;
+            cout<<"//Tour Iop//"<<endl;
+            
+            ai_2->run(engine1,0,scene->getState());
+            sleep(2);
+
+            //Changement de Tour
+            scene->getState().setTour(scene->getState().getTour()+1);
+        }
+        m2.unlock();  
+        
+    }
+}
+
+
+
+
+
+
+void Rendu(){
+
+    //Mise en place des Observers//
+    scene->getState().getRedMap()->addObserver(scene->getRedLayer());
+    scene->getState().getCharacters()->addObserver(scene->getCharsLayer());
+    scene->getState().getCharacters()->addObserver(scene->getStateLayer());
+    scene->getState().getMap()->addObserver(scene->getMapLayer());
+    scene->draw(window);
+    //Mise en place d'Observers sur les AI
+    scene->getState().getCharacters()->addObserver(ai_1);
+    scene->getState().getCharacters()->addObserver(ai_2);
+    
+    int new_turn=1;
+    ////////////////////////////////
+    while (window.isOpen()){
+        
+        //Phase de Combat//
+        if(scene->getState().getEtat()==1){
+            scene->draw(window);
+            // on gère les évènements
+                    
+            sf::Event event;
+            while (window.waitEvent(event)){
+                //m2.lock();
+                
+                if(event.type == sf::Event::Closed){
+                        window.close();
+                }        
+                /*if(new_turn==1){
+                    scene->getState().getCharacters()->setCharacterPA(0,iop_pa);
+                    scene->getState().getCharacters()->setCharacterPM(0,iop_pm);
+                    cout<<"Tour :"<<scene->getState().getTour()<<endl;
+                    cout<<"//Tour Joueur//"<<endl;
+                    new_turn=0;
+                }
+                        
+                else if(scene->getState().getTour()%2==1){
+                    sf::Vector2i localPosition = sf::Mouse::getPosition(window);
+                    // Souris déplacé seulement !
+                    else if(event.type==sf::Event::MouseMoved){  
+                        MouseMovedCommand* mouse_moved=new MouseMovedCommand(localPosition.x,localPosition.y);
+                        engine1.addCommand(1,mouse_moved);
+                    }
+
+                    else if (event.type == sf::Event::MouseButtonPressed ){    
+                        ClickCommand* click=new ClickCommand(localPosition.x,localPosition.y);
+                        engine1.addCommand(1,click);
+                        if(localPosition.x>=1030  and localPosition.y>=470 and localPosition.y<=540){
+                            new_turn=1;
+                        }
+                    }
+                }*/
+
+                    /*else if (scene->getState().getMenu()->getElementList()[0]->getTypeId()==6){
+                            window.clear();
+                            scene->getState().setEtat(2);
+                            break;
+                    }
+                    
+                    //Fin d'une partie//
+                        for(int i=0; i<scene->getState().getCharacters()->getElementList().size();i++){
+                            if(scene->getState().getCharacters()->getElementList()[i]->getStatut()==3){
+                                break;
+                            }
+                    }*/
+                
+                //m2.unlock();
+                // on dessine le niveau
+                scene->draw(window); 
+                
+            }
+        }  
+    }  
+}
+    
 
 
 
@@ -721,26 +405,29 @@ void testSFML(int isRoll) {
 
 int main(int argc,char* argv[])
 {
-    int isRoll=0;
-    //testSFML();
+ 
     if (argc>1){                 // vérifie s'il y a un argument
         if  (strcmp(argv[1],"hello")==0) {   // vérification que l'argument est le bon
             cout << "Bonjour le monde!" << endl;
         }
-        else if (strcmp(argv[1],"state")==0){
-                //Test_Unitaire();
 
-        }
-
-        else if (strcmp(argv[1],"deep_ai")==0 or strcmp(argv[1],"rollback")==0){
+        else if (strcmp(argv[1],"deep_ai")==0){
             //Test Map
             
-            if(strcmp(argv[1],"rollback")==0){
-                isRoll=1;
-            }
+            testSFML();
             
-            testSFML(isRoll);
-
+            //thread th(Moteur);
+            thread th2(Rendu);
+            thread th3(IA);
+            thread th4(IA_2);
+            
+           
+            
+            //th.join();
+            th2.join();
+            th3.join();
+            th4.join();
+            
         }
 
     }

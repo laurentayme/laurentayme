@@ -4,6 +4,8 @@
 
 #include <map>
 #include <memory>
+#include <mutex>
+#include <json/json.h>
 
 namespace state {
   class State;
@@ -25,6 +27,11 @@ namespace engine {
   private:
     state::State* currentState;
     std::map<int,std::unique_ptr<Command>> currentCommands;
+    mutable std::mutex commands_mutex;
+  protected:
+    bool enableRecord     = false;
+    Json::Value record;
+    bool stop     = false;
     // Operations
   public:
     Engine ();
@@ -37,6 +44,12 @@ namespace engine {
     int getNbCommands () const;
     void update ();
     // Setters and Getters
+    bool getEnableRecord() const;
+    void setEnableRecord(bool enableRecord);
+    const Json::Value& getRecord() const;
+    void setRecord(const Json::Value& record);
+    bool getStop() const;
+    void setStop(bool stop);
   };
 
 };
