@@ -19,14 +19,16 @@ namespace server {
     // Attributes
   protected:
     std::string msg;
+    HttpStatus status;
     // Operations
   public:
     ServiceException (HttpStatus status, std::string msg);
-    HttpStatus const status ();
-    const char* const what ();
+    HttpStatus getStatus () const;
+    const char* what () const;
     // Setters and Getters
     const std::string& getMsg() const;
     void setMsg(const std::string& msg);
+    void setStatus(HttpStatus status);
   };
 
 };

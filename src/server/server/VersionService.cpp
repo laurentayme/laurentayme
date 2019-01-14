@@ -5,10 +5,14 @@
  * @copyright CNRS
  */
 #include <stdio.h>
-#include "client.h"
+#include "server.h"
 #include "json/json.h"
 
-VersionService::VersionService () : AbstractService("/version") {
+using namespace server;
+
+
+
+VersionService::VersionService() : AbstractService("/version") {
     
 }
 

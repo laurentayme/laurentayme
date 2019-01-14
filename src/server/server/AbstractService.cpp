@@ -5,10 +5,10 @@
  * @copyright CNRS
  */
 #include <stdio.h>
-#include "client.h"
+#include "server.h"
 
 using namespace std;
-using namespace client;
+using namespace server;
 
 AbstractService::AbstractService (const string& pattern) {
     setPattern(pattern);
@@ -39,5 +39,9 @@ HttpStatus AbstractService::put (Json::Value& out, const Json::Value& in) {
 }
 
 HttpStatus AbstractService::remove (int id) {
-    throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
+    throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté"); 
+}
+
+Game AbstractService::getGame() const{
+    
 }
