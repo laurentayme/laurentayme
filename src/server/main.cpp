@@ -45,8 +45,7 @@ request_completed (void *cls, struct MHD_Connection *connection,
 }
 
 // Gestionnaire principal
-static int
-main_handler (void *cls,      
+static int main_handler (void *cls,      
           struct MHD_Connection *connection,
           const char *url, // 
           const char *method,
@@ -126,6 +125,8 @@ int main(int argc, char *const *argv)
 
         Game game;
         game.addPlayer(Player("Paul",true));
+
+	serviceManager.registerService(std::unique_ptr<PlayerService>(new PlayerService(game)));
         
         struct MHD_Daemon *d;
         if (argc != 2) {

@@ -35,8 +35,8 @@ void Game::setPlayer (int id, Player player) {
 
 void Game::removePlayer (int id) {
     for(size_t i=0; i<players.size();i++){
-        if(id==i){
-            players.erase(players.begin()+id);
+        if(id-1==i){
+            players.erase(players.begin()+i);
         }
     }
 }

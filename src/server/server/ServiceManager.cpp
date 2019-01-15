@@ -28,15 +28,23 @@ void ServiceManager::registerService (unique_ptr<AbstractService> service) {
 AbstractService* ServiceManager::findService (const string& url) const {
     //throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
     
-    for(size_t i=0; i<services.size();i++){
+   /* for(size_t i=0; i<services.size();i++){
         if(services[i]->getPattern()=="/version" or services[i]->getPattern()=="version/suite" or services[i]->getPattern()=="version/23"){
             return(services[i].get());
         }
         else{
             return(nullptr);
         }
-    }
-      
+    }*/
+	for (auto& service : services) {
+        const string& pattern(service->getPattern());
+        if (url.find(pattern) != 0)
+        	continue;
+        if (url.size() > pattern.size() && url[pattern.size()] != '/')
+        	continue;
+        return service.get();
+    	}
+    	return nullptr;
 }
 
 HttpStatus ServiceManager::queryService (string& out, const string& in, const string& url, const string& method) { 
@@ -45,7 +53,6 @@ HttpStatus ServiceManager::queryService (string& out, const string& in, const st
    
     size_t i=20;
     string contenu;
-    
     
     if(url.compare(0,8,"/version")==0){
         
@@ -72,8 +79,9 @@ HttpStatus ServiceManager::queryService (string& out, const string& in, const st
     
     else if(url.compare(0,5,"/user")==0){
         int id;
-        if(stoi(url)){
-            id=stoi(url);
+	size_t t;
+        if(stoi(url,&t)!=0){
+            id=stoi(url,&t);
         }
         else{
             id=0;
@@ -83,10 +91,12 @@ HttpStatus ServiceManager::queryService (string& out, const string& in, const st
             
             AbstractService* my_service;
             my_service=findService(url);
+	    Json::Value json_out;
+            HttpStatus status =my_service->get(json_out,id);
+	    out=json_out.toStyledString();
             
-            
-            Json::Value object;
-            throw ServiceException(my_service->get(object,id),out);
+            return status;
+            //throw ServiceException(my_service->get(object,id),out);
             
         }
         
@@ -113,6 +123,7 @@ HttpStatus ServiceManager::queryService (string& out, const string& in, const st
             my_service->post(root,id);
             Json::Value object;
             my_service->get(object,id);
+	    out=object.toStyledString();
             
             
             if(root.isMember("name") and !root.isMember("free")){

@@ -18,7 +18,7 @@ PlayerService::PlayerService (Game& game) : AbstractService("/user"),
 HttpStatus PlayerService::get (Json::Value& out, int id) const {
     //throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
     Player* player;
-    if(id!=1 and id !=2){
+    if(id<1 and id>2){
         throw(HttpStatus::NOT_FOUND, "Invalid Player ID !");
     }
     else{
@@ -31,7 +31,7 @@ HttpStatus PlayerService::get (Json::Value& out, int id) const {
 HttpStatus PlayerService::post (const Json::Value& in, int id) {
     //throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
     
-    if(in.isMember("name")){
+    if(in.isMember("free")){
         //Copie des données d'utilisateur
         Player futur_user(game.getPlayer(id));
         

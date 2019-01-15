@@ -480,6 +480,10 @@ int main(int argc,char* argv[]){
             th4.join();
             
         }
+	else if(strcmp(argv[1],"network")==0){
+		system("curl http://localhost:8080/version");
+		//system("curl -X PUT --data '{\"name\":\"Jean\",\"free\":true}' http://localhost:8080/user");
+	}
     }
     return(0);
 }
