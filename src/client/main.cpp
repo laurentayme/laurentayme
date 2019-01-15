@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include "json/json.h"
 #include <thread>
-#include <condition_variable>
+#include <cstdlib>
 
 #include "state.h"
 #include "render.h"
@@ -484,6 +484,18 @@ int main(int argc,char* argv[]){
 		system("curl http://localhost:8080/version");
 		//system("curl -X PUT --data '{\"name\":\"Jean\",\"free\":true}' http://localhost:8080/user");
 	}
+    }
+    else{
+        int id=-1;
+        const char* url="Salut 12";
+        for(size_t i=0;i<11;i++){
+            if(isdigit(url[i])){
+                id=atoi(url+i);
+            }
+        }
+
+        
+        cout<<"URL id: "<<id<<endl;
     }
     return(0);
 }

@@ -122,11 +122,13 @@ int main(int argc, char *const *argv)
         
         ServiceManager serviceManager;
         serviceManager.registerService(std::unique_ptr<VersionService>(new VersionService));
+         
 
         Game game;
-        game.addPlayer(Player("Paul",true));
-
-	serviceManager.registerService(std::unique_ptr<PlayerService>(new PlayerService(game)));
+        //game.addPlayer(Player("Paul",true));
+        //game.addPlayer(Player("Jean",true));
+        
+        serviceManager.registerService(std::unique_ptr<PlayerService>(new PlayerService(game)));
         
         struct MHD_Daemon *d;
         if (argc != 2) {

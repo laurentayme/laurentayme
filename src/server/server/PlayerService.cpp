@@ -17,14 +17,13 @@ PlayerService::PlayerService (Game& game) : AbstractService("/user"),
 
 HttpStatus PlayerService::get (Json::Value& out, int id) const {
     //throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
-    Player* player;
-    if(id<1 and id>2){
-        throw(HttpStatus::NOT_FOUND, "Invalid Player ID !");
+    if(id<1 or id>2){
+        throw ServiceException(HttpStatus::NOT_FOUND, "Invalid Player ID !");
     }
     else{
-        *player=game.getPlayer(id);
-        out["name"]=player->name;
-        out["free"]=player->free;
+        out["name"]=game.getPlayer(id).name;
+        out["free"]=game.getPlayer(id).free;
+        return(HttpStatus::OK);
     }     
 }
 
@@ -36,7 +35,28 @@ HttpStatus PlayerService::post (const Json::Value& in, int id) {
         Player futur_user(game.getPlayer(id));
         
         futur_user.free=in["free"].asBool();
-        game.setPlayer(id, futur_user);    
+        game.setPlayer(id, futur_user);  
+        return(HttpStatus::OK);
+    }   
+    else if(in.isMember("name")){
+        //Copie des données d'utilisateur
+        Player futur_user(game.getPlayer(id));
+        
+        futur_user.name=in["name"].asString();
+        game.setPlayer(id, futur_user); 
+        return(HttpStatus::OK);
+    }
+    else if(in.isMember("name") and in.isMember("free")){
+        //Copie des données d'utilisateur
+        Player futur_user(game.getPlayer(id));
+        
+        futur_user.name=in["name"].asString();
+        futur_user.free=in["free"].asBool();
+        game.setPlayer(id, futur_user); 
+        return(HttpStatus::OK);
+    }
+    else{
+        throw ServiceException(HttpStatus::BAD_REQUEST,"Bad POST Request");
     }
     
     
@@ -44,21 +64,32 @@ HttpStatus PlayerService::post (const Json::Value& in, int id) {
 
 HttpStatus PlayerService::put (Json::Value& out,const Json::Value& in) {
     //throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
+    int id=-1;
     
-    Player new_player(in["name"].asString(),true);
-    int id=game.getPlayers().size()+1;
-    game.addPlayer(new_player);
+    if(in.isMember("free")){
+        Player new_player(in["name"].asString(),in["free"].asBool());
+        id=game.getPlayers().size()+1;
+        game.addPlayer(new_player);
+    }
+    else{
+        Player new_player(in["name"].asString(),true);
+        id=game.getPlayers().size()+1;
+        game.addPlayer(new_player);
+        
+    }
+    
+    
                 
     //Ecriture de la sortie
     out["id"]=id;
-    
+    return(HttpStatus::OK);
 }
 
 HttpStatus PlayerService::remove (int id) {
     //throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
-    if(id>=0 and id<game.getPlayers().size()){
+    if(id>=0 and id<=game.getPlayers().size()){
         game.removePlayer(id);
-        return(HttpStatus::OK);
+       return(HttpStatus::OK);
     }
     else{
         throw(HttpStatus::BAD_REQUEST,"Bad Player ID !");
