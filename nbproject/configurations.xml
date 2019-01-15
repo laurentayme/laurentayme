@@ -133,7 +133,7 @@
         <ccTool flags="0">
         </ccTool>
       </item>
-      <folder path="0/client">
+      <folder path="0/client/render">
         <ccTool>
           <incDir>
             <pElem>build</pElem>
@@ -158,74 +158,135 @@
       </folder>
       <item path="src/client/AI.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Abilities.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/AbstractService.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/AttackCommand.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Character.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/ClickCommand.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Client.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="src/client/Command.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/DeepAI.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Element.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/ElementTab.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Engine.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Engine_Observable.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="src/client/Engine_Observer.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Equipment.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Event.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/HeuristicAI.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Landscape.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/MouseMovedCommand.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/MoveCharacterCommand.cpp"
@@ -233,74 +294,128 @@
             tool="1"
             flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Observable.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Observer.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Obstacle.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/OrientationCommand.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/PathMap.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Point.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/PointCompareWeight.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Position.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Random_AI.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Space.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/State.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/StateEvent.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/StaticElement.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/SurbrillanceCommand.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Surface.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/TabEvent.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/TurnCommand.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/TurnSurbrillanceCommand.cpp"
@@ -308,10 +423,16 @@
             tool="1"
             flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/Wall.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/WhiteSurbrillanceCommand.cpp"
@@ -319,14 +440,24 @@
             tool="1"
             flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/jsoncpp.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>extern/jsoncpp-1.8.0</pElem>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="src/client/render/CharacterTileSet.cpp"

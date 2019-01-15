@@ -16,6 +16,7 @@
 #include <string.h>
 #include <sstream>
 #include <memory>
+#include <cstdlib>
 
 using namespace std;
 using namespace server;
@@ -26,28 +27,81 @@ void ServiceManager::registerService (unique_ptr<AbstractService> service) {
 }
 
 AbstractService* ServiceManager::findService (const string& url) const {
-    //throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
-    
-    for(size_t i=0; i<services.size();i++){
-        if(services[i]->getPattern()=="/version" or services[i]->getPattern()=="version/suite" or services[i]->getPattern()=="version/23"){
-            return(services[i].get());
-        }
-        else{
-            return(nullptr);
-        }
+    for (auto& service : services) {
+        const string& pattern(service->getPattern());
+        if (url.find(pattern) != 0)
+            continue;
+        if (url.size() > pattern.size() && url[pattern.size()] != '/')
+            continue;
+        return service.get();
     }
-      
+    return nullptr;
 }
 
 HttpStatus ServiceManager::queryService (string& out, const string& in, const string& url, const string& method) { 
     //throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
-
-   
+    AbstractService* service = findService(url);
+    if (!service)
+        throw ServiceException(HttpStatus::NOT_FOUND,"Service "+url+" non trouvé");
+    // Recherche un éventuel id (ex: /mon/service/<id>)
+    const string& pattern(service->getPattern());
+    int id = 0;
+    if (url.size() > pattern.size()) {
+        string end = url.substr(pattern.size());
+        if (end[0] != '/')
+            throw ServiceException(HttpStatus::BAD_REQUEST,"Url malformée (forme attendue: <service>/<nombre>)");
+        end = end.substr(1);
+        if (end.empty())
+            throw ServiceException(HttpStatus::BAD_REQUEST,"Url malformée (forme attendue: <service>/<nombre>)");
+        try {
+            size_t pos = 0;
+            id = stoi(end,&pos);
+            if (pos != end.size())
+                throw ServiceException(HttpStatus::BAD_REQUEST,"Url malformée: '"+end+"' n'est pas un nombre");
+        }
+        catch(...) {
+            throw ServiceException(HttpStatus::BAD_REQUEST,"Url malformée: '"+end+"' n'est pas un nombre");
+        }
+    }
+    // Traite les différentes méthodes
+    if (method == "GET") {
+        cerr << "Requête GET " << pattern << " avec id=" << id << endl;
+        Json::Value jsonOut;
+        HttpStatus status = service->get(jsonOut,id);
+        out = jsonOut.toStyledString();
+        return status;
+    }
+    else if (method == "POST") {
+        cerr << "Requête POST " << pattern << " avec contenu: " << in << endl;
+        Json::Reader jsonReader;
+        Json::Value jsonIn;
+        if (!jsonReader.parse(in,jsonIn))
+            throw ServiceException(HttpStatus::BAD_REQUEST,"Données invalides: "+jsonReader.getFormattedErrorMessages());
+        return service->post(jsonIn,id);
+    }
+    else if (method == "PUT") {
+        cerr << "Requête PUT " << pattern << " avec contenu: " << in << endl;
+        Json::Reader jsonReader;
+        Json::Value jsonIn;
+        if (!jsonReader.parse(in,jsonIn))
+            throw ServiceException(HttpStatus::BAD_REQUEST,"Données invalides: "+jsonReader.getFormattedErrorMessages());
+        Json::Value jsonOut;
+        HttpStatus status = service->put(jsonOut,jsonIn);
+        out = jsonOut.toStyledString();
+        return status;
+    }
+    else if (method == "DELETE") {
+        cerr << "Requête DELETE" << endl;
+        return service->remove(id);
+    }
+    throw ServiceException(HttpStatus::BAD_REQUEST,"Méthode "+method+" invalide");
+}
+/*   
     size_t i=20;
     string contenu;
     
     
-    if(url.compare(0,8,"/version")==0){
+    if(url.compare(0,10,"/version\0")==0){
         
         AbstractService* my_service;
         my_service=findService(url);
@@ -70,23 +124,25 @@ HttpStatus ServiceManager::queryService (string& out, const string& in, const st
         
     }
     
-    else if(url.compare(0,5,"/user")==0){
-        int id;
-        if(stoi(url)){
-            id=stoi(url);
-        }
-        else{
-            id=0;
+    else if(url.compare(0,6,"/user/")==0){
+        
+        int id=-1;
+        const char* char_url=url.c_str();
+        for(size_t i=0;i<url.size();i++){
+            if(isdigit((int)url[i])){
+                id=atoi(char_url+i);
+            }
         }
         
         if(method=="GET"){
-            
             AbstractService* my_service;
             my_service=findService(url);
             
-            
             Json::Value object;
-            throw ServiceException(my_service->get(object,id),out);
+            my_service->get(object,id);
+            out=object.toStyledString();
+
+            throw ServiceException(HttpStatus::OK,out);
             
         }
         
@@ -190,7 +246,7 @@ HttpStatus ServiceManager::queryService (string& out, const string& in, const st
         }
         
         else{
-            return(HttpStatus::BAD_REQUEST);
+            throw ServiceException(HttpStatus::OK,out);
         }
         
         
@@ -204,7 +260,7 @@ HttpStatus ServiceManager::queryService (string& out, const string& in, const st
     
     
         
-}
+}*/
 
 /*std::ifstream file("version.json");
         if(!file){  

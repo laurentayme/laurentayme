@@ -10,9 +10,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/valentin/laurentayme/src/server/server/VersionService.cpp</file>
+            <file>file:/home/valentin/laurentayme/src/server/server/Game.cpp</file>
             <file>file:/home/valentin/laurentayme/src/server/server/main.cpp</file>
-            <file>file:/home/valentin/laurentayme/src/server/server/ServicesManager.cpp</file>
-            <file>file:/home/valentin/laurentayme/src/server/server/PlayerService.cpp</file>
+            <file>file:/home/valentin/laurentayme/src/server/server/ServiceManager.cpp</file>
         </group>
     </open-files>
 </project-private>

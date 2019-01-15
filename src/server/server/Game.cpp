@@ -14,11 +14,11 @@ Game::Game(){
 
 server::Player Game::getPlayer (int id) const {
     for(size_t i=0; i<players.size(); i++){
-        if(i==id){
+        if(i==id-1 and id<=players.size()){
             return(players[i]);
         }
     }
-    throw (HttpStatus::NOT_FOUND,"Incorrect Player id !");
+    throw ServiceException(HttpStatus::NOT_FOUND,"Incorrect Player id !");
 
 }
 
@@ -27,16 +27,15 @@ void Game::addPlayer (Player player) {
 }
 
 void Game::setPlayer (int id, Player player) {
-    for(size_t i=id; i<players.size()+1;i++){
-        players[i+1]=players[i];
-    }
-    players[id] = player;
+    if(id>=0 and id<=players.size()){
+        players[id-1] = player;
+    }  
 }
 
 void Game::removePlayer (int id) {
     for(size_t i=0; i<players.size();i++){
-        if(id==i){
-            players.erase(players.begin()+id);
+        if(id-1==i){
+            players.erase(players.begin()+i);
         }
     }
 }
