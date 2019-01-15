@@ -24,7 +24,7 @@ namespace server {
     // Operations
   public:
     void registerService (std::unique_ptr<AbstractService> service);
-    AbstractService const findService (const std::string& url);
+    AbstractService* findService (const std::string& url) const;
     HttpStatus queryService (std::string& out, const std::string& in, const std::string& url,  const std::string& method);
     // Setters and Getters
     const std::vector<std::unique_ptr<AbstractService>>& getServices() const;

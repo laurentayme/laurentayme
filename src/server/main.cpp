@@ -1,12 +1,14 @@
-#include "client.h"
+#include "server.h"
 
 
 #include <iostream>
 #include <sstream>
 #include <microhttpd.h>
 #include <string.h>
+#include <memory>
 
 using namespace std;
+using namespace server;
 
 class Request {
 public:
@@ -87,11 +89,11 @@ main_handler (void *cls,
     string response;
     try {
 
-        ServicesManager *manager = (ServicesManager*) cls;
+        ServiceManager *manager = (ServiceManager*) cls;
         status = manager->queryService(response,request->data,url,method);
     }
     catch(ServiceException& e) {
-        status = e.status();
+        status = e.getStatus();
         response = e.what();
         response += "\n";
     }
@@ -119,13 +121,12 @@ int main(int argc, char *const *argv)
 {
     try {
         
-        ServicesManager servicesManager;
-        servicesManager.registerService(make_unique<VersionService>());
+        ServiceManager serviceManager;
+        serviceManager.registerService(std::unique_ptr<VersionService>(new VersionService));
 
-        UserDB userDB;
-        userDB.addUser(make_unique<User>("Paul",23));
-//        servicesManager.registerService(make_unique<UserService>(std::ref(userDB)));
-
+        Game game;
+        game.addPlayer(Player("Paul",true));
+        
         struct MHD_Daemon *d;
         if (argc != 2) {
             printf("%s PORT\n", argv[0]);
@@ -137,7 +138,7 @@ int main(int argc, char *const *argv)
                 // MHD_USE_THREAD_PER_CONNECTION | MHD_USE_DEBUG,
                 atoi(argv[1]),
                 NULL, NULL, 
-                &main_handler, (void*) &servicesManager,
+                &main_handler, (void*) &serviceManager,
                 MHD_OPTION_NOTIFY_COMPLETED, request_completed, NULL,
                 MHD_OPTION_END);
         if (d == NULL)

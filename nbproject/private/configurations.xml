@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
@@ -188,3 +189,222 @@
     </conf>
   </confs>
 </configurationDescriptor>
+||||||| merged common ancestors
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="src" name="0">
+      <df name="client">
+        <df name="client">
+          <in>Client.h</in>
+        </df>
+        <df name="json">
+          <in>json-forwards.h</in>
+          <in>json.h</in>
+        </df>
+        <df name="render">
+          <in>CharacterTileSet.cpp</in>
+          <in>CharacterTileSet.h</in>
+          <in>Client.cpp</in>
+          <in>DebugLayer.cpp</in>
+          <in>ElementTabLayer.cpp</in>
+          <in>ElementTabLayer.h</in>
+          <in>Layer.cpp</in>
+          <in>Layer.h</in>
+          <in>MapTileSet.cpp</in>
+          <in>MapTileSet.h</in>
+          <in>Scene.cpp</in>
+          <in>Scene.h</in>
+          <in>StateLayer.cpp</in>
+          <in>StateLayer.h</in>
+          <in>StateTileSet.cpp</in>
+          <in>StateTileSet.h</in>
+          <in>Surface.h</in>
+          <in>Tile.cpp</in>
+          <in>Tile.h</in>
+          <in>TileSet.cpp</in>
+          <in>TileSet.h</in>
+        </df>
+        <in>AI.cpp</in>
+        <in>Abilities.cpp</in>
+        <in>AbstractService.cpp</in>
+        <in>AttackCommand.cpp</in>
+        <in>Character.cpp</in>
+        <in>ClickCommand.cpp</in>
+        <in>Client.cpp</in>
+        <in>Command.cpp</in>
+        <in>DeepAI.cpp</in>
+        <in>Element.cpp</in>
+        <in>ElementTab.cpp</in>
+        <in>Engine.cpp</in>
+        <in>Engine_Observable.cpp</in>
+        <in>Engine_Observer.cpp</in>
+        <in>Equipment.cpp</in>
+        <in>Event.cpp</in>
+        <in>HandleStatut.cpp</in>
+        <in>HeuristicAI.cpp</in>
+        <in>Landscape.cpp</in>
+        <in>LoadCommand.cpp</in>
+        <in>MouseMovedCommand.cpp</in>
+        <in>MoveCharacterCommand.cpp</in>
+        <in>Observable.cpp</in>
+        <in>Observer.cpp</in>
+        <in>Obstacle.cpp</in>
+        <in>OrientationCommand.cpp</in>
+        <in>PathMap.cpp</in>
+        <in>Point.cpp</in>
+        <in>PointCompareWeight.cpp</in>
+        <in>Position.cpp</in>
+        <in>Random_AI.cpp</in>
+        <in>Space.cpp</in>
+        <in>State.cpp</in>
+        <in>StateEvent.cpp</in>
+        <in>StaticElement.cpp</in>
+        <in>SurbrillanceCommand.cpp</in>
+        <in>Surface.cpp</in>
+        <in>TabEvent.cpp</in>
+        <in>TurnCommand.cpp</in>
+        <in>TurnSurbrillanceCommand.cpp</in>
+        <in>Wall.cpp</in>
+        <in>WhiteSurbrillanceCommand.cpp</in>
+        <in>client.h</in>
+        <in>jsoncpp.cpp</in>
+        <in>main.cpp</in>
+        <in>render.h</in>
+      </df>
+      <df name="server">
+        <df name="server">
+          <df name="json">
+            <in>json-forwards.h</in>
+            <in>json.h</in>
+          </df>
+          <in>AbstractService.cpp</in>
+          <in>AbstractService.h</in>
+          <in>Game.cpp</in>
+          <in>Game.h</in>
+          <in>HttpStatus.h</in>
+          <in>Player.cpp</in>
+          <in>Player.h</in>
+          <in>PlayerService.cpp</in>
+          <in>PlayerService.h</in>
+          <in>ServiceException.cpp</in>
+          <in>ServiceException.h</in>
+          <in>ServiceManager.cpp</in>
+          <in>ServiceManager.h</in>
+          <in>VersionService.cpp</in>
+          <in>VersionService.h</in>
+          <in>main.cpp</in>
+        </df>
+        <in>server.h</in>
+      </df>
+      <df name="shared">
+        <df name="ai">
+          <in>AI.h</in>
+          <in>DeepAI.h</in>
+          <in>HeuristicAI.h</in>
+          <in>PathMap.h</in>
+          <in>Point.h</in>
+          <in>PointCompareWeight.h</in>
+          <in>Random_AI.h</in>
+        </df>
+        <df name="engine">
+          <in>AttackCommand.h</in>
+          <in>ClickCommand.h</in>
+          <in>Command.h</in>
+          <in>CommandTypeId.h</in>
+          <in>Engine.h</in>
+          <in>Engine_Observable.h</in>
+          <in>Engine_Observer.h</in>
+          <in>HandleStatut.h</in>
+          <in>LoadCommand.h</in>
+          <in>MouseMovedCommand.h</in>
+          <in>MoveCharacterCommand.h</in>
+          <in>SurbrillanceCommand.h</in>
+          <in>TurnCommand.h</in>
+          <in>TurnSurbrillanceCommand.h</in>
+          <in>WhiteSurbrillanceCommand.h</in>
+        </df>
+        <df name="state">
+          <in>Abilities.h</in>
+          <in>Character.h</in>
+          <in>Direction.h</in>
+          <in>Element.h</in>
+          <in>ElementTab.h</in>
+          <in>Equipment.h</in>
+          <in>Event.h</in>
+          <in>EventTypeId.h</in>
+          <in>Landscape.h</in>
+          <in>LandscapeType.h</in>
+          <in>Observable.h</in>
+          <in>Observer.h</in>
+          <in>Obstacle.h</in>
+          <in>Position.h</in>
+          <in>Space.h</in>
+          <in>SpaceTypeId.h</in>
+          <in>State.h</in>
+          <in>StateEvent.h</in>
+          <in>StateEventId.h</in>
+          <in>StaticElement.h</in>
+          <in>Statut.h</in>
+          <in>TabEvent.h</in>
+          <in>TypeId.h</in>
+          <in>Wall.h</in>
+          <in>WallTypeId.h</in>
+        </df>
+        <in>ai.h</in>
+        <in>engine.h</in>
+        <in>state.h</in>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>build/Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>build</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>
+>>>>>>> refs/remotes/origin/master

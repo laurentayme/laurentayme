@@ -62,3 +62,8 @@ rapport/module.pdf: src/module.dia
 	rm -f rapport/module.ps
 
 .PHONY: configure build clean extern test 
+
+
+
+cd build
+make -j5

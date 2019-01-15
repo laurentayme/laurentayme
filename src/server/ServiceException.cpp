@@ -7,16 +7,17 @@
 #include <stdio.h>
 #include "server.h"
 
-using namespace client;
+using namespace std;
+using namespace server;
 
 ServiceException::ServiceException (HttpStatus status, string msg) 
-    : httpStatus(status),msg(msg) {    
+    : status(status),msg(msg) {    
 }
 
-HttpStatus ServiceException::status () const {
-    return httpStatus;
+HttpStatus ServiceException::getStatus () const {
+    return status;
 }
 
-const char* ServiceException::what () const noexcept {
+const char* ServiceException::what () const {
     return msg.c_str();
 }
