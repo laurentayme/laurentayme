@@ -5,28 +5,20 @@
 #include <memory>
 #include <mutex>
 
-namespace engine {
-  class Engine;
-};
 namespace ai {
   class AI;
-};
-namespace engine {
-  class Engine_Observer;
 };
 namespace render {
   class Scene;
 }
 
-#include "engine/Engine.h"
 #include "ai/AI.h"
-#include "engine/Engine_Observer.h"
 #include "render/Scene.h"
 
 namespace client {
 
   /// class Client - 
-  class Client : public engine::Engine_Observer {
+  class Client {
     // Associations
     // Attributes
   private:
