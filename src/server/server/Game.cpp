@@ -1,4 +1,4 @@
-/** 
+/**
  * @file UserDB.cpp
  * @author Philippe-Henri Gosselin
  * @date 9 décembre 2015
@@ -9,7 +9,7 @@
 
 using namespace server;
 
-Game::Game(){ 
+Game::Game(){
 }
 
 server::Player Game::getPlayer (int id) const {
@@ -29,18 +29,22 @@ void Game::addPlayer (Player player) {
 void Game::setPlayer (int id, Player player) {
     if(id>=0 and id<=players.size()){
         players[id-1] = player;
-    }  
+    }
 }
 
 void Game::removePlayer (int id) {
+  if(players.size()==0 or id-1>players.size()){
+    throw ServiceException (HttpStatus::BAD_REQUEST, "Invalid Player Id !");
+  }
+  else{
     for(size_t i=0; i<players.size();i++){
         if(id-1==i){
             players.erase(players.begin()+i);
         }
     }
+  }
 }
 
 std::vector<Player> Game::getPlayers()const {
     return players;
 }
-

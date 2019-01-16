@@ -59,11 +59,12 @@ int isRecord=0;
 ///// Création de la fenêtre/////
 sf::RenderWindow window(sf::VideoMode(149*8, 86*9), "Dofus Dungeon");
 
+
 void replay(Engine& engine, State* state){
 	Json::Value root;   // will contains the root value after parsing.
         Json::Reader reader;
 	std::ifstream test("replay.json", std::ifstream::binary);
-                                
+
 	bool parsingSuccessful = reader.parse( test, root, false );
 	if ( !parsingSuccessful ){
             // report to the user the failure and their locations in the document.
@@ -74,8 +75,8 @@ void replay(Engine& engine, State* state){
 	//for(Json::Value::iterator it=root.begin(); it != root.end(); ++it){
 	for(int i=0;i<c;i++){
             //m2.lock();
-            
-	
+
+
             if(root[i][" Type "].asInt()==1){
                 LoadCommand* load=new LoadCommand("");
                 load->deserialize((root[i]));
@@ -135,26 +136,26 @@ void replay(Engine& engine, State* state){
                 engine.update();
                 std::cout<< " ON EST ICI 5 "<< std::endl;
             }
-            
+
             if(root[i][" Type "].asInt()==12){
                 TurnCommand* turn=new TurnCommand(*state);
                 turn->deserialize(root[i]);
                 engine.addCommand(1,turn);
                 engine.update();
             }
-            
+
             //m2.unlock();
-            
+
             usleep(200000);
-            
-        } 
-                                        
+
+        }
+
         int i=remove("replay.json");
-        
+
 }
 
 void initGame(){
-    
+
     	sf::Texture texture;
         std::vector<Element*> elmt_list;
         std::vector<Element*> elmt_list_landscape;
@@ -163,12 +164,12 @@ void initGame(){
         std::vector<Element*> elmt_listRed;
 	std::vector<Element*> listMenu;
         //Durée: 1s
-        
-        
+
+
         //Paramètres de Map//
         int width=11;
         int height=16;
-        
+
 
         ////Instanciation de qqes objets de la  MAP////
 
@@ -191,45 +192,45 @@ void initGame(){
             ////////////////////////
 
             //Element List Surbrillance//
-                
+
                 Space* white_space= new Space(5);
                 Space* turn_space= new Space(6);
-     
+
                 Position position(100,100);
                 Position& posi_ref=position;
-                
+
                 //Elements de Surbrilance Rouge
                 for(size_t i=0;i<5;i++){
                     Space* red_space=new Space(4);
                     red_space->setPosition(posi_ref);
                     elmt_listRed.push_back(red_space);
                 }
-                
-                
-                
+
+
+
                 white_space->setLoc(-100,-100);
                 turn_space->setLoc(-100,-100);
-                
-                
+
+
                 elmt_listRed.push_back(white_space);
                 elmt_listRed.push_back(turn_space);
-                
+
                 int nbre=0;
-                
+
                 for(int i=2; i<6;i++){
                     nbre+=pow(2,i);
                 }
-                
+
                 for(int i=0; i<nbre;i++){
                     Space* blue_space= new Space(7);
                     blue_space->setPosition(posi_ref);
                     elmt_listRed.push_back(blue_space);
                 }
-                
-                
+
+
             ////////////////////////////
 
-                
+
 
             //State Menu list
             Space* state_menu=new Space(1);
@@ -247,7 +248,7 @@ void initGame(){
         ElementTab* elmtTabMenu_ptr = new ElementTab(width,height,listMenu);
         //////////////////////////
 
-        
+
 
 	//Initialisation de State
         state1=new State;
@@ -266,7 +267,7 @@ void initGame(){
         std::string filePath="res/First_Dungeon.json";
         state1->LoadMapFromFile(filePath);
         ///////////////////////
-        
+
 
         //Création de l'ElementTabLayer//
         ElementTabLayer* elmtTabLayer_ptr=new ElementTabLayer(*elmtTab_ptr);
@@ -277,12 +278,12 @@ void initGame(){
 	ElementTabLayer* elmtTabLayerMenu_ptr=new ElementTabLayer(*elmtTabMenu_ptr);
 	StateLayer* stateLayerMenu_ptr=new StateLayer(*state1);
         ////////////////////////////////
-        
+
         //Deep AI
-        
+
         ai_1=new ai::DeepAI(*state1,1,1);
         ai_2=new ai::DeepAI(*state1,1,0);
-        
+
         //PA et PM initiaux//
 
         //PA
@@ -292,31 +293,34 @@ void initGame(){
         //PM
         iop_pm=state1->getCharacters()->getElementList()[0]->getPM();
         sram_pm=state1->getCharacters()->getElementList()[1]->getPM();
-        
-        
+
+
         scene =new Scene(*state1);
         engine1.setState(&scene->getState());
-        
-        
+
+
         if(isRecord==1){
 		engine1.setEnableRecord(true);
         }
-        
+
         //Mise en place des Observers//
         scene->getState().getRedMap()->addObserver(scene->getRedLayer());
         scene->getState().getCharacters()->addObserver(scene->getCharsLayer());
         scene->getState().getCharacters()->addObserver(scene->getStateLayer());
         scene->getState().getMap()->addObserver(scene->getMapLayer());
-    
+
         //Mise en place d'Observers sur les AI
         scene->getState().getCharacters()->addObserver(ai_1);
         scene->getState().getCharacters()->addObserver(ai_2);
-        
+
         //Window Settings
         window.setVerticalSyncEnabled(true);
-        
+
         //Affichage Ecran
         scene->draw(window);
+
+
+
 }
 
 
@@ -324,38 +328,38 @@ void Moteur(){
     while(window.isOpen() and isReplay==1){
         if(isReplay==1){
             //m2.lock();
-            replay(engine1, &scene->getState());		
+            replay(engine1, &scene->getState());
             //m2.unlock();
         }
         else{
             m2.lock();
             engine1.update();
-            m2.unlock(); 
-        }   
-    }        
+            m2.unlock();
+        }
+    }
 }
 
-void IA(){  
-    while(1){   
+void IA(){
+    while(1){
         //Vérification de Tour de Jeu et si la partie est terminée
         if(window.isOpen()and scene->getState().getTour()%2==0 and scene->getState().getCharacters()->getElementList()[0]->getStatut()!=3 and scene->getState().getCharacters()->getElementList()[1]->getStatut()!=3 and isReplay!=1){
            m2.lock();
                 cout<<"Tour :"<<scene->getState().getTour()<<endl;
-                cout<<"//Tour Sram//"<<endl; 
+                cout<<"//Tour Sram//"<<endl;
                 HandleStatut* statut_control=new HandleStatut(1);
                 ai_1->run(engine1,1,scene->getState());
                 //Changement de Tour
-                //scene->getState().setTour(scene->getState().getTour()+1);     
+                //scene->getState().setTour(scene->getState().getTour()+1);
             sleep(1);
-            m2.unlock(); 
+            m2.unlock();
             sleep(1);
             //scene->getState().getCharacters()->setCharacterPA(1,sram_pa);
             //scene->getState().getCharacters()->setCharacterPM(1,sram_pm);
-        }    
+        }
     }
 }
 
-void IA_2(){  
+void IA_2(){
     while(1){
         //Vérification de Tour de Jeu et si la partie est terminée
         if(window.isOpen()and scene->getState().getTour()%2==1 and scene->getState().getCharacters()->getElementList()[0]->getStatut()!=3 and scene->getState().getCharacters()->getElementList()[1]->getStatut()!=3 and isReplay!=1){
@@ -363,17 +367,17 @@ void IA_2(){
             cout<<"Tour :"<<scene->getState().getTour()<<endl;
             cout<<"//Tour Iop//"<<endl;
             HandleStatut* statut_control=new HandleStatut(0);
-            
+
             ai_2->run(engine1,0,scene->getState());
 
             //Changement de Tour
             //scene->getState().setTour(scene->getState().getTour()+1);
             sleep(1);
-            m2.unlock();   
+            m2.unlock();
             sleep(1);
             //scene->getState().getCharacters()->setCharacterPA(0,iop_pa);
             //scene->getState().getCharacters()->setCharacterPM(0,iop_pm);
-        }    
+        }
     }
 }
 
@@ -381,21 +385,21 @@ void IA_2(){
 void Rendu(){
     //int new_turn=1;
     ////////////////////////////////
-    while (window.isOpen()){      
+    while (window.isOpen()){
         //Phase de Combat//
         if(scene->getState().getEtat()==1){
             m2.lock();
             scene->draw(window);
             m2.unlock();
             // on gère les évènements
-                    
+
             sf::Event event;
             /*while (window.waitEvent(event)){
                 //m2.lock();
-                
+
                 */if(event.type == sf::Event::Closed){
                         window.close();
-                }/*        
+                }/*
                 /*if(new_turn==1){
                     scene->getState().getCharacters()->setCharacterPA(0,iop_pa);
                     scene->getState().getCharacters()->setCharacterPM(0,iop_pm);
@@ -404,16 +408,16 @@ void Rendu(){
                     new_turn=0;
 
                 }
-                        
+
                 else if(scene->getState().getTour()%2==1){
                     sf::Vector2i localPosition = sf::Mouse::getPosition(window);
                     // Souris déplacé seulement !
-                    else if(event.type==sf::Event::MouseMoved){  
+                    else if(event.type==sf::Event::MouseMoved){
                         MouseMovedCommand* mouse_moved=new MouseMovedCommand(localPosition.x,localPosition.y);
                         engine1.addCommand(1,mouse_moved);
                     }
 
-                    else if (event.type == sf::Event::MouseButtonPressed ){    
+                    else if (event.type == sf::Event::MouseButtonPressed ){
                         ClickCommand* click=new ClickCommand(localPosition.x,localPosition.y);
                         engine1.addCommand(1,click);
                         if(localPosition.x>=1030  and localPosition.y>=470 and localPosition.y<=540){
@@ -438,14 +442,14 @@ void Rendu(){
                             }
                     }*/
 
-                
+
                 //m2.unlock();
                 // on dessine le niveau
-                //scene->draw(window); 
-                
+                //scene->draw(window);
+
             //}
-        }  
-    }  
+        }
+    }
 }
 
 
@@ -456,30 +460,31 @@ int main(int argc,char* argv[]){
         }
 
         else if (strcmp(argv[1],"thread")==0 or strcmp(argv[1],"record")==0 or strcmp(argv[1],"replay")==0){
-            
+
             if(strcmp(argv[1],"record")==0){
                 isRecord=1;
             }
-            
+
             else if(strcmp(argv[1],"replay")==0){
                 isReplay=1;
             }
-            //Initialisation du Jeu        
+            //Initialisation du Jeu
             initGame();
-            
+
             //Threads
             thread th(Moteur);
             thread th2(Rendu);
             thread th3(IA);
             thread th4(IA_2);
-      
+
             th.join();
             th2.join();
             th3.join();
             th4.join();
-            
+
         }
 	else if(strcmp(argv[1],"network")==0){
+		window.close();
 		//system("curl http://localhost:8080/version");
 		std::cout<<" entrez votre nom : ";
 		std::string name;
@@ -498,38 +503,16 @@ int main(int argc,char* argv[]){
 		s="curl -X DELETE http://localhost:8080/user/";
 		s+=std::to_string(id);
 		system(s.c_str());
-		
-		
+		//cout<<"URL id: "<<id<<endl;
+
+	}
+	else if(strcmp(argv[1],"listen")==0){
+		window.close();
+		std::string s="./run";
+		system(s.c_str());
+
 	}
     }
-    else{
-        int id=-1;
-        const char* url="Salut 12";
-        for(size_t i=0;i<11;i++){
-            if(isdigit(url[i])){
-                id=atoi(url+i);
-            }
-        }
 
-        
-        cout<<"URL id: "<<id<<endl;
-    }
     return(0);
 }
-
-
-
-
-
-
-
-    
-    
-		
-    
-
-
-
-
-
-
