@@ -101,11 +101,14 @@ HttpStatus PlayerService::remove (Json::Value& out,int id) {
 	    		out.append(valeur);
 	    	}
 	}
+	else{
+		out["joueur"]="aucun";
+	}
        return(HttpStatus::OK);
     }
     
     else{
-        throw(HttpStatus::BAD_REQUEST,"Bad Player ID !");
+        throw ServiceException(HttpStatus::BAD_REQUEST,"Bad Player ID !");
     }
 }
 

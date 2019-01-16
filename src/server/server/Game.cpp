@@ -44,3 +44,12 @@ std::vector<Player> Game::getPlayers()const {
     return players;
 }
 
+engine::Engine& Game::getEngine() const {
+ 	return engine;
+
+}
+
+void Game::run(){
+
+}
+
