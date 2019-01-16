@@ -1,4 +1,4 @@
-/** 
+/**
  * @file AbstractService.cpp
  * @author Philippe-Henri Gosselin
  * @date 9 décembre 2015
@@ -15,7 +15,7 @@ AbstractService::AbstractService (const string& pattern) {
 }
 
 AbstractService::~AbstractService() {
-    
+
 }
 
 const string& AbstractService::getPattern () const {
@@ -39,9 +39,9 @@ HttpStatus AbstractService::put (Json::Value& out, const Json::Value& in) {
 }
 
 HttpStatus AbstractService::remove (Json::Value& out,int id) {
-    throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté"); 
+    throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
 }
 
-Game AbstractService::getGame() const{
-    
+Game& AbstractService::getGame() const{
+  
 }

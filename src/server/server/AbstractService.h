@@ -10,7 +10,6 @@ namespace server {
 }
 
 #include "HttpStatus.h"
-#include "Game.h"
 
 namespace server {
 
@@ -28,7 +27,7 @@ namespace server {
     virtual HttpStatus put (Json::Value& out, const Json::Value& in);
     virtual HttpStatus remove (Json::Value& out, int id);
     const std::string& getPattern () const;
-    virtual Game getGame () const;
+    virtual Game& getGame () const;
     // Setters and Getters
     void setPattern(const std::string& pattern);
   };

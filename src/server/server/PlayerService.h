@@ -10,8 +10,8 @@ namespace server {
 }
 
 #include "HttpStatus.h"
-#include "Game.h"
 #include "AbstractService.h"
+#include "Game.h"
 
 namespace server {
 
@@ -28,7 +28,7 @@ namespace server {
     HttpStatus post (const Json::Value& in, int id);
     HttpStatus put (Json::Value& out, const Json::Value& in);
     HttpStatus remove (Json::Value& out, int id);
-    Game getGame () const;
+    Game& getGame () const;
     // Setters and Getters
   };
 

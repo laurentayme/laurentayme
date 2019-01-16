@@ -337,6 +337,12 @@ void Moteur(){
             m2.unlock();
         }
     }
+		sf::Event event;
+		while(window.pollEvent(event)){
+			if(event.type == sf::Event::Closed){
+							window.close();
+			}
+		}
 }
 
 void IA(){
@@ -356,6 +362,12 @@ void IA(){
             //scene->getState().getCharacters()->setCharacterPA(1,sram_pa);
             //scene->getState().getCharacters()->setCharacterPM(1,sram_pm);
         }
+				sf::Event event;
+				while(window.pollEvent(event)){
+					if(event.type == sf::Event::Closed){
+									window.close();
+					}
+				}
     }
 }
 
@@ -378,6 +390,12 @@ void IA_2(){
             //scene->getState().getCharacters()->setCharacterPA(0,iop_pa);
             //scene->getState().getCharacters()->setCharacterPM(0,iop_pm);
         }
+				sf::Event event;
+				while(window.pollEvent(event)){
+					if(event.type == sf::Event::Closed){
+									window.close();
+					}
+				}
     }
 }
 

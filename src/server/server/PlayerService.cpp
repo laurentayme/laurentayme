@@ -112,6 +112,6 @@ HttpStatus PlayerService::remove (Json::Value& out,int id) {
     }
 }
 
-Game PlayerService::getGame() const{
+Game& PlayerService::getGame() const{
     return(game);
 }
