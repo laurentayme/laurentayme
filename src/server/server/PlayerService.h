@@ -27,7 +27,7 @@ namespace server {
     HttpStatus get (Json::Value& out, int id) const;
     HttpStatus post (const Json::Value& in, int id);
     HttpStatus put (Json::Value& out, const Json::Value& in);
-    HttpStatus remove (int id);
+    HttpStatus remove (Json::Value& out, int id);
     Game getGame () const;
     // Setters and Getters
   };

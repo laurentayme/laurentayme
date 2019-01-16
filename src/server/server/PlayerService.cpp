@@ -77,20 +77,33 @@ HttpStatus PlayerService::put (Json::Value& out,const Json::Value& in) {
         game.addPlayer(new_player);
         
     }
-    
-    
-                
+    for(int i=0;i<game.getPlayers().size();i++){
+    Json::Value valeur;
+    valeur["name"]=game.getPlayers()[i].name;
+    valeur["free"]=game.getPlayers()[i].free;
+    out.append(valeur);
+    }
+               
     //Ecriture de la sortie
-    out["id"]=id;
+    //out["id"]=id;
     return(HttpStatus::OK);
 }
 
-HttpStatus PlayerService::remove (int id) {
+HttpStatus PlayerService::remove (Json::Value& out,int id) {
     //throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
     if(id>=0 and id<=game.getPlayers().size()){
         game.removePlayer(id);
+	if(game.getPlayers().size()!=0){
+		for(int i=0;i<game.getPlayers().size();i++){
+	    		Json::Value valeur;
+	    		valeur["name"]=game.getPlayers()[i].name;
+	    		valeur["free"]=game.getPlayers()[i].free;
+	    		out.append(valeur);
+	    	}
+	}
        return(HttpStatus::OK);
     }
+    
     else{
         throw(HttpStatus::BAD_REQUEST,"Bad Player ID !");
     }

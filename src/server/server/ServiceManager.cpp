@@ -92,7 +92,10 @@ HttpStatus ServiceManager::queryService (string& out, const string& in, const st
     }
     else if (method == "DELETE") {
         cerr << "Requête DELETE" << endl;
-        return service->remove(id);
+	Json::Value jsonOut;
+        HttpStatus status = service->remove(jsonOut,id);
+	out = jsonOut.toStyledString();
+	return status;
     }
     throw ServiceException(HttpStatus::BAD_REQUEST,"Méthode "+method+" invalide");
 }

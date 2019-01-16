@@ -464,7 +464,6 @@ int main(int argc,char* argv[]){
             else if(strcmp(argv[1],"replay")==0){
                 isReplay=1;
             }
-           
             //Initialisation du Jeu        
             initGame();
             
@@ -481,8 +480,26 @@ int main(int argc,char* argv[]){
             
         }
 	else if(strcmp(argv[1],"network")==0){
-		system("curl http://localhost:8080/version");
-		//system("curl -X PUT --data '{\"name\":\"Jean\",\"free\":true}' http://localhost:8080/user");
+		//system("curl http://localhost:8080/version");
+		std::cout<<" entrez votre nom : ";
+		std::string name;
+		std::getline(std::cin,name);
+		std::cout<<std::endl;
+		std::string s="curl -X PUT --data '{\"name\":\"";
+		s+=name;
+		s+="\",\"free\":true}' http://localhost:8080/user";
+		cout<<s<<endl;
+		system(s.c_str());
+		cout << endl<<"Pressez <entrée> pour continuer" << endl;
+        	(void) getc(stdin);
+		cout << " entrez votre id (votre place dans la liste) : ";
+		int id;
+		std::cin >> id;
+		s="curl -X DELETE http://localhost:8080/user/";
+		s+=std::to_string(id);
+		system(s.c_str());
+		
+		
 	}
     }
     else{

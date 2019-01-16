@@ -38,7 +38,7 @@ HttpStatus AbstractService::put (Json::Value& out, const Json::Value& in) {
     throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté");
 }
 
-HttpStatus AbstractService::remove (int id) {
+HttpStatus AbstractService::remove (Json::Value& out,int id) {
     throw ServiceException(HttpStatus::NOT_IMPLEMENTED,"Non implanté"); 
 }
 

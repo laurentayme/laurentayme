@@ -26,7 +26,7 @@ namespace server {
     virtual HttpStatus get (Json::Value& out, int id) const;
     virtual HttpStatus post (const Json::Value& in, int id);
     virtual HttpStatus put (Json::Value& out, const Json::Value& in);
-    virtual HttpStatus remove (int id);
+    virtual HttpStatus remove (Json::Value& out, int id);
     const std::string& getPattern () const;
     virtual Game getGame () const;
     // Setters and Getters
